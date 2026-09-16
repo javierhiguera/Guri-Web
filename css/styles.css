@@ -507,43 +507,83 @@ select {
 
 .work-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 0.85fr 1.4fr;
+    grid-template-rows: auto auto;
     gap: 24px;
+    align-items: center;
 }
 
 .work-card {
     display: block;
+    min-width: 0;
 }
 
-.work-card.work-large {
-    grid-row: span 2;
+.work-card:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+.work-card:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.work-card:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
 }
 
 
 /* =========================================================
-   PROJECT SLIDER
+   CONTENEDORES DE PROYECTOS
    ========================================================= */
 
 .work-placeholder {
     position: relative;
-    min-height: 360px;
     overflow: hidden;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     border: 1px solid var(--border);
     border-radius: 4px;
+
     background: #141414;
+
     transition: transform var(--transition);
 }
 
-.work-large .work-placeholder {
-    min-height: 744px;
+
+/* Proyecto 1 — GRANDE */
+
+.work-card:nth-child(1) .work-placeholder {
+    min-height: 620px;
 }
+
+
+/* Proyecto 2 — MEDIANO */
+
+.work-card:nth-child(2) .work-placeholder {
+    min-height: 420px;
+}
+
+
+/* Proyecto 3 — PEQUEÑO */
+
+.work-card:nth-child(3) .work-placeholder {
+    min-height: 250px;
+}
+
 
 .work-card:hover .work-placeholder {
     transform: translateY(-5px);
 }
+
+
+/* =========================================================
+   SLIDER PROYECTO 1
+   ========================================================= */
 
 .project-slider {
     position: relative;
@@ -552,10 +592,14 @@ select {
 .project-slide {
     position: absolute;
     inset: 0;
+
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     opacity: 0;
+
     transition: opacity 0.8s ease;
 }
 
@@ -565,14 +609,34 @@ select {
 
 
 /* =========================================================
-   WORK INFO
+   PREVIEW PROYECTOS 2 Y 3
    ========================================================= */
 
-.work-placeholder span {
-    color: var(--gray-dark);
-    font-size: 12px;
-    letter-spacing: 0.2em;
+.project-preview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 8px;
 }
+
+.project-preview img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 0;
+
+    object-fit: cover;
+    object-position: top;
+
+    display: block;
+
+    border: 1px solid var(--border);
+}
+
+
+/* =========================================================
+   WORK INFO
+   ========================================================= */
 
 .work-info {
     padding-top: 18px;
@@ -589,6 +653,8 @@ select {
     color: var(--gray);
     font-size: 13px;
 }
+
+
 /* =========================================================
    PROCESS
    ========================================================= */
@@ -895,67 +961,6 @@ select {
 
 
 /* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-    .plans-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .plan-card {
-        min-height: auto;
-    }
-
-    .plans-category {
-        margin-top: 80px;
-    }
-
-    .plans-category-heading h3 {
-        font-size: 36px;
-    }
-}
-
-
-@media (max-width: 600px) {
-
-    .plans-category {
-        margin-top: 65px;
-    }
-
-    .plans-category-heading {
-        margin-bottom: 28px;
-    }
-
-    .plans-category-heading h3 {
-        font-size: 32px;
-    }
-
-    .plans-category-heading p {
-        font-size: 14px;
-    }
-
-    .plan-card {
-        padding: 30px;
-    }
-
-    .plan-card h3 {
-        margin-top: 35px;
-        font-size: 32px;
-    }
-
-    .plans-coming-soon {
-        padding: 30px;
-    }
-
-    .plans-custom {
-        margin-top: 55px;
-    }
-}
-
-
-/* =========================================================
    FINAL CTA
    ========================================================= */
 
@@ -1063,6 +1068,8 @@ select {
     color: var(--gray-dark);
     font-size: 11px;
 }
+
+
 /* =========================================================
    HEADER SCROLL
    ========================================================= */
@@ -1109,6 +1116,7 @@ select {
     .menu-toggle.active span:last-child {
         transform: translateY(-4px) rotate(-45deg);
     }
+
 }
 
 
@@ -1137,6 +1145,143 @@ select {
 
 
 /* =========================================================
+   RESPONSIVE WORK
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .work-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .work-card:nth-child(1) {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+    }
+
+    .work-card:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .work-card:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .work-card:nth-child(1) .work-placeholder {
+        min-height: 600px;
+    }
+
+    .work-card:nth-child(2) .work-placeholder {
+        min-height: 360px;
+    }
+
+    .work-card:nth-child(3) .work-placeholder {
+        min-height: 260px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE PLANES
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .plan-card {
+        min-height: auto;
+    }
+
+    .plans-category {
+        margin-top: 80px;
+    }
+
+    .plans-category-heading h3 {
+        font-size: 36px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .plans-category {
+        margin-top: 65px;
+    }
+
+    .plans-category-heading {
+        margin-bottom: 28px;
+    }
+
+    .plans-category-heading h3 {
+        font-size: 32px;
+    }
+
+    .plans-category-heading p {
+        font-size: 14px;
+    }
+
+    .plan-card {
+        padding: 30px;
+    }
+
+    .plan-card h3 {
+        margin-top: 35px;
+        font-size: 32px;
+    }
+
+    .plans-coming-soon {
+        padding: 30px;
+    }
+
+    .plans-custom {
+        margin-top: 55px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE GENERAL
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .work-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .work-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .work-card:nth-child(1),
+    .work-card:nth-child(2),
+    .work-card:nth-child(3) {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .work-card:nth-child(1) .work-placeholder,
+    .work-card:nth-child(2) .work-placeholder,
+    .work-card:nth-child(3) .work-placeholder {
+        min-height: 320px;
+    }
+
+}
+
+
+/* =========================================================
    ACCESIBILIDAD
    ========================================================= */
 
@@ -1150,6 +1295,7 @@ select {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
     }
+
 }
 
 
