@@ -770,6 +770,11 @@ select {
     max-width: 320px;
 }
 
+.footer-brand .logo img {
+    width: 85px;
+    height: auto;
+}
+
 .footer-brand p {
     margin-top: 22px;
     color: var(--gray);
@@ -812,7 +817,6 @@ select {
     color: var(--gray-dark);
     font-size: 11px;
 }
-
 
 /* =========================================================
    HEADER SCROLL
