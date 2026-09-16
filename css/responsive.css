@@ -1,1 +1,337 @@
+/* =========================================================
+   GURI — RESPONSIVE
+   ========================================================= */
 
+@media (max-width: 1100px) {
+
+    .main-nav {
+        gap: 18px;
+    }
+
+    .hero-inner {
+        gap: 50px;
+    }
+
+    .hero h1 {
+        font-size: clamp(64px, 9vw, 105px);
+    }
+
+    .why-inner {
+        gap: 60px;
+    }
+
+    .footer-links {
+        gap: 50px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .container {
+        width: min(100% - 36px, var(--container));
+    }
+
+    .section {
+        padding: 100px 0;
+    }
+
+
+    /* HEADER */
+
+    .main-nav,
+    .header-button {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: auto;
+        padding: 100px 0;
+    }
+
+    .hero-inner {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 70px;
+    }
+
+    .hero-content {
+        max-width: 800px;
+    }
+
+    .hero h1 {
+        font-size: clamp(68px, 12vw, 110px);
+    }
+
+    .hero-visual {
+        justify-content: flex-start;
+    }
+
+    .hero-card {
+        max-width: 380px;
+    }
+
+
+    /* SERVICES */
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* WORK */
+
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .work-card.work-large {
+        grid-row: auto;
+    }
+
+    .work-large .work-placeholder {
+        min-height: 500px;
+    }
+
+
+    /* PROCESS */
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-item:nth-child(3) {
+        border-left: 1px solid var(--border);
+    }
+
+
+    /* WHY */
+
+    .why-inner {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+
+    /* PLANS */
+
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .plan-card {
+        min-height: 350px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: min(100% - 28px, var(--container));
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+
+    /* HEADER */
+
+    .header-inner {
+        min-height: 70px;
+    }
+
+    .logo img {
+        width: 90px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding: 80px 0;
+    }
+
+    .hero-inner {
+        gap: 55px;
+    }
+
+    .hero h1 {
+        font-size: clamp(58px, 17vw, 88px);
+        line-height: 0.88;
+    }
+
+    .hero-content > p {
+        margin-top: 28px;
+        font-size: 16px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 32px;
+    }
+
+    .hero-actions .button {
+        width: 100%;
+    }
+
+    .hero-card {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        padding: 32px;
+        border-radius: 24px;
+    }
+
+    .hero-card strong {
+        font-size: 100px;
+    }
+
+
+    /* HEADINGS */
+
+    .section-heading {
+        margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(40px, 12vw, 62px);
+    }
+
+
+    /* SERVICES */
+
+    .service-card {
+        min-height: 290px;
+        padding: 30px;
+    }
+
+    .service-card h3 {
+        margin-top: 55px;
+        font-size: 28px;
+    }
+
+    .service-link {
+        right: 30px;
+        bottom: 30px;
+    }
+
+
+    /* WORK */
+
+    .work-heading {
+        display: block;
+    }
+
+    .work-heading .text-link {
+        display: inline-block;
+        margin-top: 25px;
+    }
+
+    .work-placeholder,
+    .work-large .work-placeholder {
+        min-height: 300px;
+    }
+
+
+    /* PROCESS */
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-item,
+    .process-item:first-child,
+    .process-item:nth-child(3) {
+        min-height: auto;
+        padding: 30px;
+        border-left: 1px solid var(--border);
+    }
+
+    .process-item h3 {
+        margin-top: 45px;
+    }
+
+
+    /* WHY */
+
+    .why-content > p {
+        font-size: 18px;
+    }
+
+    .why-list {
+        margin-top: 40px;
+    }
+
+
+    /* PLANS */
+
+    .plan-card {
+        min-height: 360px;
+        padding: 30px;
+    }
+
+    .plan-card h3 {
+        margin-top: 55px;
+        font-size: 36px;
+    }
+
+
+    /* CTA */
+
+    .final-cta {
+        padding: 110px 0;
+    }
+
+    .final-cta h2 {
+        font-size: clamp(54px, 15vw, 82px);
+    }
+
+    .final-cta p {
+        font-size: 15px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-inner {
+        padding: 60px 0;
+    }
+
+    .footer-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        padding: 20px 0;
+    }
+
+}
