@@ -1,149 +1,143 @@
 /* =========================================================
-GURI — JAVASCRIPT
-========================================================= */
+   GURI — JAVASCRIPT
+   ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-```
-/* =====================================================
-   MENÚ MÓVIL
-   ===================================================== */
+    /* =====================================================
+       MENÚ MÓVIL
+       ===================================================== */
 
-const menuToggle = document.querySelector(".menu-toggle");
-const mainNav = document.querySelector(".main-nav");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.querySelector(".main-nav");
 
-if (menuToggle && mainNav) {
+    if (menuToggle && mainNav) {
 
-    menuToggle.addEventListener("click", () => {
+        menuToggle.addEventListener("click", () => {
 
-        const isOpen = mainNav.classList.toggle("mobile-open");
+            const isOpen = mainNav.classList.toggle("mobile-open");
 
-        menuToggle.classList.toggle("active", isOpen);
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            isOpen ? "true" : "false"
-        );
-
-    });
-
-
-    /* Cerrar al seleccionar una opción */
-
-    mainNav.querySelectorAll("a").forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            mainNav.classList.remove("mobile-open");
-            menuToggle.classList.remove("active");
+            menuToggle.classList.toggle("active", isOpen);
 
             menuToggle.setAttribute(
                 "aria-expanded",
-                "false"
+                isOpen ? "true" : "false"
             );
 
         });
 
-    });
 
-}
+        /* Cerrar menú al seleccionar una opción */
 
+        mainNav.querySelectorAll("a").forEach(link => {
 
-/* =====================================================
-   HEADER AL HACER SCROLL
-   ===================================================== */
+            link.addEventListener("click", () => {
 
-const header = document.querySelector(".site-header");
+                mainNav.classList.remove("mobile-open");
+                menuToggle.classList.remove("active");
 
-if (header) {
-
-    const updateHeader = () => {
-
-        if (window.scrollY > 20) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-
-    };
-
-
-    window.addEventListener("scroll", updateHeader, {
-        passive: true
-    });
-
-
-    updateHeader();
-
-}
-
-
-/* =====================================================
-   ANIMACIONES AL ENTRAR EN PANTALLA
-   ===================================================== */
-
-const animatedElements = document.querySelectorAll(
-    ".service-card, .work-card, .process-item, .plan-card"
-);
-
-
-if (
-    "IntersectionObserver" in window &&
-    animatedElements.length
-) {
-
-    const observer = new IntersectionObserver(
-        entries => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("visible");
-
-                    observer.unobserve(entry.target);
-
-                }
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
             });
 
-        },
-        {
-            threshold: 0.12
-        }
+        });
+
+    }
+
+
+    /* =====================================================
+       HEADER AL HACER SCROLL
+       ===================================================== */
+
+    const header = document.querySelector(".site-header");
+
+    if (header) {
+
+        const updateHeader = () => {
+
+            if (window.scrollY > 20) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+
+        };
+
+        window.addEventListener("scroll", updateHeader, {
+            passive: true
+        });
+
+        updateHeader();
+
+    }
+
+
+    /* =====================================================
+       ANIMACIONES AL ENTRAR EN PANTALLA
+       ===================================================== */
+
+    const animatedElements = document.querySelectorAll(
+        ".service-card, .work-card, .process-item, .plan-card"
     );
 
+    if (
+        "IntersectionObserver" in window &&
+        animatedElements.length
+    ) {
 
-    animatedElements.forEach(element => {
-        observer.observe(element);
-    });
+        const observer = new IntersectionObserver(
+            entries => {
 
-} else {
+                entries.forEach(entry => {
 
-    /* Fallback para navegadores sin IntersectionObserver */
+                    if (entry.isIntersecting) {
 
-    animatedElements.forEach(element => {
-        element.classList.add("visible");
-    });
+                        entry.target.classList.add("visible");
 
-}
+                        observer.unobserve(entry.target);
 
+                    }
 
-/* =====================================================
-   AÑO AUTOMÁTICO DEL FOOTER
-   ===================================================== */
+                });
 
-const currentYear = document.querySelector(
-    "[data-current-year]"
-);
+            },
+            {
+                threshold: 0.12
+            }
+        );
 
 
-if (currentYear) {
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
 
-    currentYear.textContent =
-        new Date().getFullYear();
+    } else {
 
-}
-```
+        /* Fallback */
+
+        animatedElements.forEach(element => {
+            element.classList.add("visible");
+        });
+
+    }
+
+
+    /* =====================================================
+       AÑO AUTOMÁTICO DEL FOOTER
+       ===================================================== */
+
+    const currentYear = document.querySelector(
+        "[data-current-year]"
+    );
+
+    if (currentYear) {
+
+        currentYear.textContent =
+            new Date().getFullYear();
+
+    }
 
 });
