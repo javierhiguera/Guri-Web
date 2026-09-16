@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
-
         /* Cerrar menú al seleccionar una opción */
 
         mainNav.querySelectorAll("a").forEach(link => {
@@ -109,7 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
 
-
         animatedElements.forEach(element => {
             observer.observe(element);
         });
@@ -145,25 +143,82 @@ document.addEventListener("DOMContentLoaded", () => {
        SLIDER DE PROYECTOS
        ===================================================== */
 
-    const projectSliders = document.querySelectorAll(".project-slider");
+    const projectSliders =
+        document.querySelectorAll(".project-slider");
 
-    projectSliders.forEach(slider => {
+    /*
+     * Cada proyecto tiene su propio ritmo.
+     *
+     * Proyecto 1 → 3000 ms
+     * Proyecto 2 → 4500 ms
+     * Proyecto 3 → 6200 ms
+     *
+     * Además, cada uno comienza con un retraso diferente
+     * para evitar que las transiciones coincidan.
+     */
 
-        const slides = slider.querySelectorAll(".project-slide");
+    const sliderSettings = [
+        {
+            interval: 3000,
+            delay: 0
+        },
+        {
+            interval: 4500,
+            delay: 1500
+        },
+        {
+            interval: 6200,
+            delay: 2800
+        }
+    ];
 
-        if (slides.length <= 1) return;
+    projectSliders.forEach((slider, index) => {
+
+        const slides =
+            slider.querySelectorAll(".project-slide");
+
+        if (slides.length <= 1) {
+            return;
+        }
 
         let currentSlide = 0;
 
-        setInterval(() => {
+        const settings =
+            sliderSettings[index] || {
+                interval: 4000,
+                delay: 1000
+            };
+
+        const changeSlide = () => {
 
             slides[currentSlide].classList.remove("active");
 
-            currentSlide = (currentSlide + 1) % slides.length;
+            currentSlide =
+                (currentSlide + 1) % slides.length;
 
             slides[currentSlide].classList.add("active");
 
-        }, 3000);
+        };
+
+        /*
+         * Primer cambio con retraso independiente.
+         */
+
+        setTimeout(() => {
+
+            changeSlide();
+
+            /*
+             * Después del primer cambio,
+             * continúa con su propio intervalo.
+             */
+
+            setInterval(
+                changeSlide,
+                settings.interval
+            );
+
+        }, settings.delay + settings.interval);
 
     });
 
