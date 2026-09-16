@@ -140,4 +140,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+
+    /* =====================================================
+       SLIDER DE PROYECTOS
+       ===================================================== */
+
+    const projectSliders = document.querySelectorAll(".project-slider");
+
+    projectSliders.forEach(slider => {
+
+        const slides = slider.querySelectorAll(".project-slide");
+
+        if (slides.length <= 1) return;
+
+        let currentSlide = 0;
+
+        setInterval(() => {
+
+            slides[currentSlide].classList.remove("active");
+
+            currentSlide = (currentSlide + 1) % slides.length;
+
+            slides[currentSlide].classList.add("active");
+
+        }, 3000);
+
+    });
+
 });
