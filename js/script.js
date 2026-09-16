@@ -1,106 +1,149 @@
 /* =========================================================
-   GURI — JAVASCRIPT
-   ========================================================= */
+GURI — JAVASCRIPT
+========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* =====================================================
-       MENÚ MÓVIL
-       ===================================================== */
+```
+/* =====================================================
+   MENÚ MÓVIL
+   ===================================================== */
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const mainNav = document.querySelector(".main-nav");
+const menuToggle = document.querySelector(".menu-toggle");
+const mainNav = document.querySelector(".main-nav");
 
-    if (menuToggle && mainNav) {
+if (menuToggle && mainNav) {
 
-        menuToggle.addEventListener("click", () => {
-            mainNav.classList.toggle("mobile-open");
-            menuToggle.classList.toggle("active");
-        });
+    menuToggle.addEventListener("click", () => {
 
+        const isOpen = mainNav.classList.toggle("mobile-open");
 
-        /* Cerrar menú al seleccionar una opción */
+        menuToggle.classList.toggle("active", isOpen);
 
-        mainNav.querySelectorAll("a").forEach(link => {
-
-            link.addEventListener("click", () => {
-                mainNav.classList.remove("mobile-open");
-                menuToggle.classList.remove("active");
-            });
-
-        });
-
-    }
-
-
-    /* =====================================================
-       HEADER AL HACER SCROLL
-       ===================================================== */
-
-    const header = document.querySelector(".site-header");
-
-    if (header) {
-
-        window.addEventListener("scroll", () => {
-
-            if (window.scrollY > 20) {
-                header.classList.add("scrolled");
-            } else {
-                header.classList.remove("scrolled");
-            }
-
-        });
-
-    }
-
-
-    /* =====================================================
-       ANIMACIONES AL ENTRAR EN PANTALLA
-       ===================================================== */
-
-    const animatedElements = document.querySelectorAll(
-        ".service-card, .work-card, .process-item, .plan-card"
-    );
-
-    if ("IntersectionObserver" in window && animatedElements.length) {
-
-        const observer = new IntersectionObserver(
-            entries => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("visible");
-
-                        observer.unobserve(entry.target);
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.12
-            }
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
         );
 
+    });
 
-        animatedElements.forEach(element => {
-            observer.observe(element);
+
+    /* Cerrar al seleccionar una opción */
+
+    mainNav.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            mainNav.classList.remove("mobile-open");
+            menuToggle.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
         });
 
-    }
+    });
+
+}
 
 
-    /* =====================================================
-       AÑO AUTOMÁTICO DEL FOOTER
-       ===================================================== */
+/* =====================================================
+   HEADER AL HACER SCROLL
+   ===================================================== */
 
-    const currentYear = document.querySelector("[data-current-year]");
+const header = document.querySelector(".site-header");
 
-    if (currentYear) {
-        currentYear.textContent = new Date().getFullYear();
-    }
+if (header) {
+
+    const updateHeader = () => {
+
+        if (window.scrollY > 20) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+
+    };
+
+
+    window.addEventListener("scroll", updateHeader, {
+        passive: true
+    });
+
+
+    updateHeader();
+
+}
+
+
+/* =====================================================
+   ANIMACIONES AL ENTRAR EN PANTALLA
+   ===================================================== */
+
+const animatedElements = document.querySelectorAll(
+    ".service-card, .work-card, .process-item, .plan-card"
+);
+
+
+if (
+    "IntersectionObserver" in window &&
+    animatedElements.length
+) {
+
+    const observer = new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+
+} else {
+
+    /* Fallback para navegadores sin IntersectionObserver */
+
+    animatedElements.forEach(element => {
+        element.classList.add("visible");
+    });
+
+}
+
+
+/* =====================================================
+   AÑO AUTOMÁTICO DEL FOOTER
+   ===================================================== */
+
+const currentYear = document.querySelector(
+    "[data-current-year]"
+);
+
+
+if (currentYear) {
+
+    currentYear.textContent =
+        new Date().getFullYear();
+
+}
+```
 
 });
