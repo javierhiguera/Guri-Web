@@ -181,19 +181,8 @@ img {
     width: auto;
     max-width: 150px;
     height: auto;
-
-    /* Convierte el isotipo negro en naranja */
-    filter:
-        brightness(0)
-        saturate(100%)
-        invert(42%)
-        sepia(97%)
-        saturate(3000%)
-        hue-rotate(352deg)
-        brightness(101%)
-        contrast(104%);
+    filter: none;
 }
-
 .main-nav {
     display: flex;
     align-items: center;
