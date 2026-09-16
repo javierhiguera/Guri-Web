@@ -212,18 +212,14 @@ select {
     gap: 32px;
 }
 
-.logo {
-    display: inline-flex;
-    align-items: center;
-    flex-shrink: 0;
-}
-
 .logo img {
-    display: block;
-    width: auto;
-    max-width: 150px;
-    height: auto;
-    filter: none;
+    display: block !important;
+    width: 150px !important;
+    height: auto !important;
+    max-width: 150px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    filter: none !important;
 }
 
 .main-nav {
