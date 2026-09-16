@@ -2,6 +2,11 @@
    GURI — RESPONSIVE
    ========================================================= */
 
+
+/* =========================================================
+   TABLET / NOTEBOOK
+   ========================================================= */
+
 @media (max-width: 1100px) {
 
     .main-nav {
@@ -41,7 +46,7 @@
     }
 
 
-    /* HEADER */
+    /* ================= HEADER ================= */
 
     .main-nav,
     .header-button {
@@ -53,7 +58,7 @@
     }
 
 
-    /* HERO */
+    /* ================= HERO ================= */
 
     .hero {
         min-height: auto;
@@ -83,14 +88,14 @@
     }
 
 
-    /* SERVICES */
+    /* ================= SERVICES ================= */
 
     .services-grid {
         grid-template-columns: 1fr;
     }
 
 
-    /* WORK */
+    /* ================= WORK ================= */
 
     .work-grid {
         grid-template-columns: 1fr;
@@ -105,7 +110,7 @@
     }
 
 
-    /* PROCESS */
+    /* ================= PROCESS ================= */
 
     .process-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -116,7 +121,7 @@
     }
 
 
-    /* WHY */
+    /* ================= WHY ================= */
 
     .why-inner {
         grid-template-columns: 1fr;
@@ -124,7 +129,7 @@
     }
 
 
-    /* PLANS */
+    /* ================= PLANS ================= */
 
     .plans-grid {
         grid-template-columns: 1fr;
@@ -135,7 +140,7 @@
     }
 
 
-    /* FOOTER */
+    /* ================= FOOTER ================= */
 
     .footer-inner {
         grid-template-columns: 1fr;
@@ -159,7 +164,7 @@
     }
 
 
-    /* HEADER */
+    /* ================= HEADER ================= */
 
     .header-inner {
         min-height: 70px;
@@ -170,7 +175,7 @@
     }
 
 
-    /* HERO */
+    /* ================= HERO ================= */
 
     .hero {
         padding: 80px 0;
@@ -204,7 +209,7 @@
         width: 100%;
         aspect-ratio: 1 / 1;
         padding: 32px;
-        border-radius: 24px;
+        border-radius: 4px;
     }
 
     .hero-card strong {
@@ -212,7 +217,7 @@
     }
 
 
-    /* HEADINGS */
+    /* ================= HEADINGS ================= */
 
     .section-heading {
         margin-bottom: 42px;
@@ -223,7 +228,7 @@
     }
 
 
-    /* SERVICES */
+    /* ================= SERVICES ================= */
 
     .service-card {
         min-height: 290px;
@@ -241,7 +246,7 @@
     }
 
 
-    /* WORK */
+    /* ================= WORK ================= */
 
     .work-heading {
         display: block;
@@ -258,7 +263,7 @@
     }
 
 
-    /* PROCESS */
+    /* ================= PROCESS ================= */
 
     .process-grid {
         grid-template-columns: 1fr;
@@ -277,7 +282,7 @@
     }
 
 
-    /* WHY */
+    /* ================= WHY ================= */
 
     .why-content > p {
         font-size: 18px;
@@ -288,7 +293,7 @@
     }
 
 
-    /* PLANS */
+    /* ================= PLANS ================= */
 
     .plan-card {
         min-height: 360px;
@@ -301,7 +306,7 @@
     }
 
 
-    /* CTA */
+    /* ================= CTA ================= */
 
     .final-cta {
         padding: 110px 0;
@@ -316,7 +321,7 @@
     }
 
 
-    /* FOOTER */
+    /* ================= FOOTER ================= */
 
     .footer-inner {
         padding: 60px 0;
@@ -333,5 +338,4 @@
         gap: 8px;
         padding: 20px 0;
     }
-
 }
