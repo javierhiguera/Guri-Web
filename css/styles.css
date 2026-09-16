@@ -770,7 +770,13 @@ select {
     max-width: 320px;
 }
 
+.footer-brand .logo {
+    width: 35px;
+    height: auto;
+}
+
 .footer-brand .logo img {
+    display: block;
     width: 35px;
     height: auto;
 }
@@ -817,7 +823,6 @@ select {
     color: var(--gray-dark);
     font-size: 11px;
 }
-
 /* =========================================================
    HEADER SCROLL
    ========================================================= */
