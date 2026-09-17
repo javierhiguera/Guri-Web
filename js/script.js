@@ -56,8 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-        /* Cerrar menú al seleccionar una opción */
-
         mainNav.querySelectorAll("a").forEach(link => {
 
             link.addEventListener("click", () => {
@@ -66,8 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
-
-        /* Cerrar menú con ESC */
 
         document.addEventListener("keydown", event => {
 
@@ -80,8 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
-
-        /* Cerrar menú al pasar de mobile a desktop */
 
         window.addEventListener("resize", () => {
 
@@ -195,12 +189,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         quoteForm.addEventListener("submit", event => {
 
-            /*
-             * El formulario queda preparado para conectar
-             * posteriormente con el servicio de envío.
-             * Por ahora, prevenimos el envío por defecto.
-             */
-
             if (quoteForm.getAttribute("action") === "#") {
                 event.preventDefault();
             }
@@ -208,79 +196,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     }
-
-
-    /* =====================================================
-       SLIDER DE PROYECTOS
-       ===================================================== */
-
-    const projectSliders =
-        document.querySelectorAll(".project-slider");
-
-    const sliderSettings = [
-        {
-            interval: 3000,
-            delay: 0
-        },
-        {
-            interval: 4500,
-            delay: 1500
-        },
-        {
-            interval: 6200,
-            delay: 2800
-        }
-    ];
-
-    projectSliders.forEach((slider, index) => {
-
-        const slides =
-            slider.querySelectorAll(".project-slide");
-
-        if (slides.length <= 1) {
-            return;
-        }
-
-        let currentSlide = 0;
-
-        const settings =
-            sliderSettings[index] || {
-                interval: 4000,
-                delay: 1000
-            };
-
-        const changeSlide = () => {
-
-            slides[currentSlide].classList.remove("active");
-
-            currentSlide =
-                (currentSlide + 1) % slides.length;
-
-            slides[currentSlide].classList.add("active");
-
-        };
-
-
-        /*
-         * Primer cambio con retraso independiente.
-         */
-
-        window.setTimeout(() => {
-
-            changeSlide();
-
-            /*
-             * Después del primer cambio,
-             * continúa con su propio intervalo.
-             */
-
-            window.setInterval(
-                changeSlide,
-                settings.interval
-            );
-
-        }, settings.delay + settings.interval);
-
-    });
 
 });
