@@ -294,7 +294,7 @@
             <svg
                 class="process-svg"
                 viewBox="0 0 2000 700"
-                preserveAspectRatio="xMidYMid meet"
+                preserveAspectRatio="none"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true"
             >
@@ -313,15 +313,11 @@
                     stroke-width="3"
                     stroke-linecap="round"
                     stroke-linejoin="round"
+                    vector-effect="non-scaling-stroke"
                 />
 
-                <!--
-                   PASOS — cada uno dentro de un foreignObject
-                   centrado EXACTAMENTE sobre un punto de la curva.
-                -->
-
-                <!-- PASO 1 — Hablamos (sobre la cresta izquierda) -->
-                <foreignObject x="420" y="160" width="260" height="260">
+                <!-- PASO 1 — Hablamos (x≈330, y≈300) -->
+                <foreignObject x="180" y="220" width="300" height="300">
                     <div xmlns="http://www.w3.org/1999/xhtml" class="process-step process-step-1">
                         <div class="process-step-icon">
                             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -336,8 +332,8 @@
                     </div>
                 </foreignObject>
 
-                <!-- PASO 2 — Diseñamos (sobre el valle central) -->
-                <foreignObject x="820" y="400" width="260" height="280">
+                <!-- PASO 2 — Diseñamos (x≈830, y≈430) -->
+                <foreignObject x="680" y="350" width="300" height="300">
                     <div xmlns="http://www.w3.org/1999/xhtml" class="process-step process-step-2">
                         <div class="process-step-icon">
                             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -351,8 +347,8 @@
                     </div>
                 </foreignObject>
 
-                <!-- PASO 3 — Desarrollamos (sobre la cresta derecha) -->
-                <foreignObject x="1220" y="100" width="260" height="260">
+                <!-- PASO 3 — Desarrollamos (x≈1230, y≈270) -->
+                <foreignObject x="1080" y="190" width="300" height="300">
                     <div xmlns="http://www.w3.org/1999/xhtml" class="process-step process-step-3">
                         <div class="process-step-icon">
                             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -365,8 +361,8 @@
                     </div>
                 </foreignObject>
 
-                <!-- PASO 4 — Publicamos (sobre el valle derecho) -->
-                <foreignObject x="1620" y="360" width="260" height="280">
+                <!-- PASO 4 — Publicamos (x≈1650, y≈385) -->
+                <foreignObject x="1500" y="305" width="300" height="300">
                     <div xmlns="http://www.w3.org/1999/xhtml" class="process-step process-step-4">
                         <div class="process-step-icon">
                             <svg viewBox="0 0 24 24" aria-hidden="true">
