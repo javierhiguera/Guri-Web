@@ -199,9 +199,10 @@
     padding-top: 80px;
     padding-bottom: 90px;
 
-    /* Cuadrícula ajustada para móvil */
     background-size:
       100% 100%,
+      70px 70px,
+      70px 70px,
       70px 70px,
       70px 70px,
       14px 14px,
@@ -403,8 +404,9 @@
     padding-top: 90px;
     padding-bottom: 90px;
 
-    /* Cuadrícula ajustada para móvil */
     background-size:
+      70px 70px,
+      70px 70px,
       70px 70px,
       70px 70px,
       14px 14px,
@@ -480,6 +482,8 @@
 
     background-size:
       100% 100%,
+      50px 50px,
+      50px 50px,
       50px 50px,
       50px 50px,
       10px 10px,
@@ -814,8 +818,9 @@
     padding-top: 76px;
     padding-bottom: 76px;
 
-    /* Cuadrícula más chica en móvil chico */
     background-size:
+      50px 50px,
+      50px 50px,
       50px 50px,
       50px 50px,
       10px 10px,
