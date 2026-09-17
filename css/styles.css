@@ -501,12 +501,10 @@ button {
 
 
 /* =========================================================
-   BUTTONS — Difuminados a los lados
+   BUTTONS — Estilo rectangular original
    ========================================================= */
 
 .button {
-    position: relative;
-
     display: inline-flex;
 
     align-items: center;
@@ -514,32 +512,16 @@ button {
 
     min-height: 50px;
 
-    padding: 0 35px;
+    padding: 0 25px;
 
-    border: none;
-
-    border-radius: 0;
-
-    background: transparent;
+    border: 1px solid transparent;
 
     font-size: 12px;
 
     transition:
+        background var(--transition),
         color var(--transition),
-        transform var(--transition);
-}
-
-.button::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: -1;
-
-    transition:
-        opacity var(--transition),
+        border-color var(--transition),
         transform var(--transition);
 }
 
@@ -547,73 +529,32 @@ button {
     transform: translateY(-2px);
 }
 
-.button span,
-.button {
-    position: relative;
-}
-
-
-/* Botón primario (naranja difuminado) */
-
 .button-primary {
+    border-color: var(--orange);
+
+    background: var(--orange);
+
     color: #080808;
 }
 
-.button-primary::before {
-    background:
-        radial-gradient(
-            ellipse at center,
-            var(--orange) 0%,
-            var(--orange) 40%,
-            rgba(255, 90, 31, 0.7) 70%,
-            rgba(255, 90, 31, 0) 100%
-        );
+.button-primary:hover {
+    background: var(--orange-bright);
 
-    opacity: 1;
+    border-color: var(--orange-bright);
 }
-
-.button-primary:hover::before {
-    background:
-        radial-gradient(
-            ellipse at center,
-            var(--orange-bright) 0%,
-            var(--orange-bright) 40%,
-            rgba(255, 107, 0, 0.7) 70%,
-            rgba(255, 107, 0, 0) 100%
-        );
-}
-
-
-/* Botón secundario (transparente con borde difuminado) */
 
 .button-secondary {
+    border-color: var(--border);
+
+    background: transparent;
+
     color: var(--white);
 }
 
-.button-secondary::before {
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(255, 90, 31, 0.15) 0%,
-            rgba(255, 90, 31, 0.08) 50%,
-            rgba(255, 90, 31, 0) 100%
-        );
-
-    border: none;
-}
-
 .button-secondary:hover {
-    color: var(--orange);
-}
+    border-color: var(--orange);
 
-.button-secondary:hover::before {
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(255, 90, 31, 0.3) 0%,
-            rgba(255, 90, 31, 0.15) 50%,
-            rgba(255, 90, 31, 0) 100%
-        );
+    color: var(--orange);
 }
 
 
@@ -815,7 +756,7 @@ button {
 
 
 /* =========================================================
-   WORK FRAMES — iPhone, Mac, iPad
+   WORK FRAMES — iPhone 17 Pro, Mac, iPad (realistas)
    ========================================================= */
 
 .work-frame {
@@ -823,199 +764,437 @@ button {
 
     width: 100%;
 
-    overflow: hidden;
+    display: flex;
 
-    background: #121212;
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
 }
 
-/* iPhone 17 Pro */
+
+/* =========================================================
+   iPHONE 17 PRO — realista
+   ========================================================= */
+
 .work-frame-iphone {
-    border: 8px solid #1a1a1a;
+    position: relative;
 
-    border-radius: 38px;
+    width: 100%;
 
-    background: #0a0a0a;
+    max-width: 320px;
 
-    padding: 4px;
+    margin: 0 auto;
+
+    /* Marco metálico del iPhone */
+    padding: 10px;
+
+    border-radius: 52px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #2a2a2a 0%,
+            #1a1a1a 25%,
+            #0d0d0d 50%,
+            #1a1a1a 75%,
+            #2a2a2a 100%
+        );
 
     box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.05),
-        0 20px 40px rgba(0, 0, 0, 0.5);
+        /* Sombra exterior */
+        0 30px 60px rgba(0, 0, 0, 0.8),
+        0 15px 30px rgba(0, 0, 0, 0.6),
+        /* Brillo del marco */
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.5);
 }
 
-.work-frame-iphone .work-placeholder {
-    border: none;
-    border-radius: 30px;
 
-    overflow: hidden;
+/* Isla dinámica (notch) */
 
-    min-height: 620px;
-}
-
-.work-frame-notch {
+.iphone-notch {
     position: absolute;
 
-    top: 12px;
+    top: 22px;
     left: 50%;
 
     transform: translateX(-50%);
 
-    width: 90px;
-    height: 22px;
+    width: 100px;
+    height: 26px;
 
     border-radius: 20px;
 
     background: #000;
 
-    z-index: 3;
-}
-
-/* Mac */
-.work-frame-mac {
-    border: 6px solid #1a1a1a;
-
-    border-radius: 12px;
-
-    background: #0a0a0a;
-
-    padding: 0;
+    z-index: 10;
 
     box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.05),
-        0 20px 40px rgba(0, 0, 0, 0.5);
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
-.work-frame-mac .work-placeholder {
-    border: none;
-    border-radius: 6px;
+.iphone-notch::before {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    right: 12px;
+
+    transform: translateY(-50%);
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            #1a1a2e,
+            #000
+        );
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+
+/* Pantalla del iPhone */
+
+.iphone-screen {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 9 / 19.5;
+
+    border-radius: 44px;
+
+    background: #000;
 
     overflow: hidden;
 
-    min-height: 420px;
+    box-shadow:
+        inset 0 0 0 2px #000;
 }
 
-.work-frame-bar {
+
+/* Contenedor con scroll automático */
+
+.iphone-scroll {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.iphone-scroll-img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    animation:
+        iphone-scroll-anim 25s linear infinite;
+}
+
+@keyframes iphone-scroll-anim {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(calc(-100% + 100vh));
+    }
+}
+
+
+/* Botones laterales del iPhone (volumen y encendido) */
+
+.work-frame-iphone::before {
+    content: "";
+
+    position: absolute;
+
+    top: 120px;
+    left: -3px;
+
+    width: 3px;
+    height: 30px;
+
+    border-radius: 2px 0 0 2px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #2a2a2a,
+            #0d0d0d
+        );
+}
+
+.work-frame-iphone::after {
+    content: "";
+
+    position: absolute;
+
+    top: 170px;
+    left: -3px;
+
+    width: 3px;
+    height: 55px;
+
+    border-radius: 2px 0 0 2px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #2a2a2a,
+            #0d0d0d
+        );
+}
+
+
+/* =========================================================
+   MAC — realista
+   ========================================================= */
+
+.work-frame-mac {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+
+/* Pantalla del Mac */
+
+.mac-screen {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 10;
+
+    border-radius: 12px 12px 0 0;
+
+    /* Marco metálico */
+    padding: 12px 12px 0 12px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #2a2a2a 0%,
+            #1a1a1a 100%
+        );
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+
+/* Barra superior del Mac (los 3 botones) */
+
+.mac-bar {
     display: flex;
 
     align-items: center;
 
-    gap: 6px;
+    gap: 8px;
 
-    height: 22px;
+    height: 26px;
 
-    padding: 0 10px;
+    padding: 0 12px;
+
+    border-radius: 8px 8px 0 0;
 
     background: #1a1a1a;
 
     border-bottom: 1px solid #2a2a2a;
 }
 
-.work-frame-bar span {
-    width: 8px;
-    height: 8px;
+.mac-dot {
+    width: 12px;
+    height: 12px;
 
     border-radius: 50%;
 
-    background: #333;
+    display: inline-block;
 }
 
-.work-frame-bar span:nth-child(1) { background: #ff5f56; }
-.work-frame-bar span:nth-child(2) { background: #ffbd2e; }
-.work-frame-bar span:nth-child(3) { background: #27c93f; }
-
-/* iPad */
-.work-frame-ipad {
-    border: 10px solid #1a1a1a;
-
-    border-radius: 22px;
-
-    background: #0a0a0a;
-
-    padding: 4px;
-
-    box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.05),
-        0 20px 40px rgba(0, 0, 0, 0.5);
+.mac-dot-red {
+    background: #ff5f56;
 }
 
-.work-frame-ipad .work-placeholder {
-    border: none;
-    border-radius: 14px;
-
-    overflow: hidden;
-
-    min-height: 250px;
+.mac-dot-yellow {
+    background: #ffbd2e;
 }
 
-.work-frame-camera {
-    position: absolute;
-
-    top: 6px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 6px;
-    height: 6px;
-
-    border-radius: 50%;
-
-    background: #1a1a1a;
-
-    z-index: 3;
+.mac-dot-green {
+    background: #27c93f;
 }
 
 
-/* =========================================================
-   WORK PLACEHOLDERS
-   ========================================================= */
+/* Contenido (pantalla propiamente dicha) */
 
-.work-placeholder {
+.mac-content {
     position: relative;
 
     width: 100%;
 
-    overflow: hidden;
+    aspect-ratio: 16 / 10;
 
-    background: #121212;
-
-    border: 1px solid var(--border);
-}
-
-
-/* =========================================================
-   PROJECT SLIDER
-   ========================================================= */
-
-.project-slider {
-    position: relative;
+    border-radius: 0 0 4px 4px;
 
     overflow: hidden;
+
+    background: #000;
 }
 
-.project-slide {
-    position: absolute;
-
-    inset: 0;
-
+.mac-content img {
     width: 100%;
     height: 100%;
 
     object-fit: cover;
-
-    opacity: 0;
-
-    transition:
-        opacity 0.8s ease;
 }
 
-.project-slide.active {
-    opacity: 1;
+
+/* Base del Mac (parte inferior metálica) */
+
+.mac-base {
+    position: relative;
+
+    width: 100%;
+
+    height: 18px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #2a2a2a 0%,
+            #1a1a1a 100%
+        );
+
+    border-radius: 0 0 12px 12px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 }
 
-.project-slider img {
-    min-width: 100%;
-    min-height: 100%;
+.mac-base::after {
+    content: "";
+
+    width: 60px;
+    height: 4px;
+
+    border-radius: 2px;
+
+    background: #0d0d0d;
+}
+
+
+/* =========================================================
+   iPAD — realista
+   ========================================================= */
+
+.work-frame-ipad {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 520px;
+
+    margin: 0 auto;
+
+    /* Marco del iPad */
+    padding: 14px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #2a2a2a 0%,
+            #1a1a1a 50%,
+            #0d0d0d 100%
+        );
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.75),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+}
+
+
+/* Cámara frontal del iPad */
+
+.ipad-camera {
+    position: absolute;
+
+    top: 50%;
+    left: 6px;
+
+    transform: translateY(-50%);
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            #1a1a2e,
+            #000
+        );
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+
+    z-index: 5;
+}
+
+
+/* Pantalla del iPad */
+
+.ipad-screen {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    background: #000;
+
+    box-shadow:
+        inset 0 0 0 2px #000;
+}
+
+.ipad-screen img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
 }
 
 
@@ -1049,7 +1228,7 @@ button {
 
 
 /* =========================================================
-   PROCESS — Estilo n8n (nodos con fondo + líneas punteadas)
+   PROCESS — Estilo n8n
    ========================================================= */
 
 .process {
@@ -1085,8 +1264,6 @@ button {
 
     pointer-events: none;
 }
-
-/* Puertos de conexión estilo n8n */
 
 .process-port {
     position: absolute;
@@ -1141,14 +1318,12 @@ button {
     padding: 20px;
 }
 
-/* PASO 01: Arriba izquierda */
 .process-step-1 {
     grid-column: 1;
     grid-row: 1;
     align-self: start;
 }
 
-/* PASO 02: Abajo centro-izquierda */
 .process-step-2 {
     grid-column: 2;
     grid-row: 2;
@@ -1156,7 +1331,6 @@ button {
     margin-top: 80px;
 }
 
-/* PASO 03: Abajo centro-derecha */
 .process-step-3 {
     grid-column: 3;
     grid-row: 2;
@@ -1164,7 +1338,6 @@ button {
     margin-top: 80px;
 }
 
-/* PASO 04: Arriba derecha */
 .process-step-4 {
     grid-column: 4;
     grid-row: 1;
@@ -1342,7 +1515,7 @@ button {
 
 
 /* =========================================================
-   GESTIÓN DIGITAL — Sin recuadros
+   GESTIÓN DIGITAL
    ========================================================= */
 
 .digital-management {
@@ -1976,7 +2149,7 @@ button {
 
 
 /* =========================================================
-   FOOTER — Sin texto grande GURI
+   FOOTER
    ========================================================= */
 
 .site-footer {
@@ -2262,20 +2435,6 @@ button {
         gap: 60px;
     }
 
-    .hero-brand-horizontal {
-        gap: 12px;
-    }
-
-    .hero-brand-icon {
-        width: 40px;
-        height: 40px;
-    }
-
-    .hero-brand-name span,
-    .hero-brand-name strong {
-        font-size: 38px;
-    }
-
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -2303,7 +2462,6 @@ button {
         font-size: 11px;
     }
 
-    /* Proceso en móvil: columna vertical */
     .process-map {
         display: flex;
 
@@ -2377,18 +2535,6 @@ button {
     .work-card:nth-child(3) {
         grid-column: 2;
         grid-row: 2;
-    }
-
-    .work-frame-iphone .work-placeholder {
-        min-height: 500px;
-    }
-
-    .work-frame-mac .work-placeholder {
-        min-height: 300px;
-    }
-
-    .work-frame-ipad .work-placeholder {
-        min-height: 220px;
     }
 
     .why-inner {
@@ -2558,10 +2704,34 @@ button {
         grid-row: auto;
     }
 
-    .work-frame-iphone .work-placeholder,
-    .work-frame-mac .work-placeholder,
-    .work-frame-ipad .work-placeholder {
-        min-height: 280px;
+    .work-frame-iphone {
+        max-width: 260px;
+        padding: 8px;
+        border-radius: 44px;
+    }
+
+    .iphone-screen {
+        border-radius: 36px;
+    }
+
+    .iphone-notch {
+        width: 80px;
+        height: 22px;
+        top: 18px;
+    }
+
+    .work-frame-mac {
+        max-width: 100%;
+    }
+
+    .work-frame-ipad {
+        max-width: 100%;
+        padding: 10px;
+        border-radius: 22px;
+    }
+
+    .ipad-screen {
+        border-radius: 14px;
     }
 
     .brainstorm-item {
