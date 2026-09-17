@@ -49,12 +49,6 @@
     --orange-bright: #ff6b00;
     --orange-dark: #e64a15;
 
-    --metal-1: #3a3a3a;
-    --metal-2: #2a2a2a;
-    --metal-3: #1a1a1a;
-    --metal-4: #0d0d0d;
-    --metal-highlight: #4a4a4a;
-
     --container: 1240px;
 
     --radius: 18px;
@@ -456,25 +450,20 @@ button {
     background-color: var(--board);
 
     background-image:
-        /* Glow radial naranja */
         radial-gradient(
             circle at 80% 45%,
             rgba(255, 90, 31, 0.12),
             transparent 35%
         ),
 
-        /* SVG de la tabla de corte (números, letras, marcas) */
         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,90,31,0.5);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,90,31,0.5);}.tick{stroke:rgba(255,90,31,0.35);stroke-width:1;}.tick-major{stroke:rgba(255,90,31,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(255,90,31,0.15);stroke-width:0.5;}.angle{stroke:rgba(255,90,31,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(255,90,31,0.45)' stroke-width='1' fill='none'/></g></svg>"),
 
-        /* Líneas principales naranjas */
         linear-gradient(rgba(255, 90, 31, 0.28) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 90, 31, 0.28) 1px, transparent 1px),
 
-        /* Líneas de "grabado" oscuro */
         linear-gradient(rgba(0, 0, 0, 0.5) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 0, 0, 0.5) 1px, transparent 1px),
 
-        /* Líneas secundarias */
         linear-gradient(rgba(255, 90, 31, 0.10) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 90, 31, 0.10) 1px, transparent 1px);
 
@@ -608,7 +597,7 @@ button {
 
 
 /* =========================================================
-   SERVICES — Iconos izquierda, texto derecha
+   SERVICES
    ========================================================= */
 
 .services {
@@ -928,9 +917,9 @@ button {
         inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Barra de estado del iPhone (hora + iconos) */
+/* Barra de estado del iPhone */
 
-.iphone-status-bar {
+.device-status-bar {
     position: absolute;
 
     top: 0;
@@ -948,24 +937,24 @@ button {
 
     color: #fff;
 
-    font-family: "Bunken", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Bunken", sans-serif;
 
-    font-size: 13px;
-
-    font-weight: 400;
-
-    pointer-events: none;
-}
-
-.iphone-time {
     font-size: 13px;
 
     font-weight: 500;
 
+    pointer-events: none;
+}
+
+.device-time {
+    font-size: 13px;
+
+    font-weight: 600;
+
     letter-spacing: -0.02em;
 }
 
-.iphone-status-icons {
+.device-status-icons {
     display: flex;
 
     align-items: center;
@@ -973,14 +962,14 @@ button {
     gap: 5px;
 }
 
-.iphone-icon {
+.device-icon {
     width: 16px;
     height: 11px;
 
     fill: currentColor;
 }
 
-.iphone-battery {
+.device-battery {
     width: 24px;
     height: 11px;
 }
@@ -1068,7 +1057,7 @@ button {
 
 
 /* =========================================================
-   iMAC — Metalizado realista (todo-en-uno)
+   iMAC — Metalizado oscuro + barra macOS
    ========================================================= */
 
 .work-frame-imac {
@@ -1096,32 +1085,33 @@ button {
 
     border-radius: 14px 14px 0 0;
 
-    padding: 22px 22px 42px 22px;
+    padding: 18px 18px 44px 18px;
 
+    /* Marco oscuro metalizado (como los otros dispositivos) */
     background:
         linear-gradient(
             180deg,
-            #f0f0f0 0%,
-            #e8e8e8 50%,
-            #d8d8d8 100%
+            #2a2a2a 0%,
+            #1a1a1a 50%,
+            #0d0d0d 100%
         );
 
     box-shadow:
-        0 25px 50px rgba(0, 0, 0, 0.6),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9),
-        inset 0 -2px 4px rgba(0, 0, 0, 0.15);
+        0 25px 50px rgba(0, 0, 0, 0.85),
+        inset 0 2px 1px rgba(255, 255, 255, 0.1),
+        inset 0 -2px 2px rgba(0, 0, 0, 0.6);
 }
 
 .imac-camera {
     position: absolute;
 
-    top: 8px;
+    top: 7px;
     left: 50%;
 
     transform: translateX(-50%);
 
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
 
     border-radius: 50%;
 
@@ -1133,7 +1123,7 @@ button {
         );
 
     box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.15),
         0 0 2px rgba(0, 0, 0, 0.6);
 
     z-index: 5;
@@ -1157,36 +1147,132 @@ button {
         inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-.imac-screen img {
+/* Barra superior de macOS */
+
+.mac-os-bar {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 12px;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    backdrop-filter: blur(8px);
+
+    color: #fff;
+
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Bunken", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    z-index: 3;
+}
+
+.mac-os-left,
+.mac-os-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.mac-os-apple {
+    width: 11px;
+    height: 11px;
+
+    fill: currentColor;
+
+    flex: 0 0 11px;
+}
+
+.mac-os-menu-item {
+    font-size: 10px;
+
+    opacity: 0.95;
+}
+
+.mac-os-icon {
+    width: 12px;
+    height: 12px;
+
+    fill: currentColor;
+
+    flex: 0 0 12px;
+
+    opacity: 0.95;
+}
+
+.mac-os-date {
+    font-size: 10px;
+
+    opacity: 0.95;
+
+    white-space: nowrap;
+}
+
+/* Contenido debajo de la barra */
+
+.imac-screen .mac-content {
+    position: absolute;
+
+    top: 22px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    overflow: hidden;
+
+    background: #000;
+}
+
+.imac-screen .mac-content img {
     width: 100%;
     height: 100%;
 
     object-fit: cover;
+    object-position: center top;
 }
+
+/* Cuello del iMac */
 
 .imac-neck {
     position: relative;
 
-    width: 90px;
-    height: 40px;
+    width: 110px;
+    height: 45px;
 
     background:
         linear-gradient(
             180deg,
-            #d8d8d8 0%,
-            #c0c0c0 50%,
-            #a8a8a8 100%
+            #1a1a1a 0%,
+            #2a2a2a 50%,
+            #1a1a1a 100%
         );
 
     box-shadow:
-        inset 1px 0 1px rgba(255, 255, 255, 0.6),
-        inset -1px 0 1px rgba(0, 0, 0, 0.2);
+        inset 1px 0 1px rgba(255, 255, 255, 0.08),
+        inset -1px 0 1px rgba(0, 0, 0, 0.5);
 }
+
+/* Base del iMac */
 
 .imac-base {
     position: relative;
 
-    width: 200px;
+    width: 240px;
     height: 12px;
 
     border-radius: 0 0 8px 8px;
@@ -1194,15 +1280,15 @@ button {
     background:
         linear-gradient(
             180deg,
-            #c0c0c0 0%,
-            #a8a8a8 50%,
-            #909090 100%
+            #2a2a2a 0%,
+            #1a1a1a 50%,
+            #0d0d0d 100%
         );
 
     box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.5),
-        inset 0 -1px 2px rgba(0, 0, 0, 0.3),
-        0 4px 8px rgba(0, 0, 0, 0.4);
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.5),
+        0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .imac-base::after {
@@ -1215,7 +1301,7 @@ button {
 
     transform: translateX(-50%);
 
-    width: 240px;
+    width: 280px;
     height: 4px;
 
     border-radius: 50%;
@@ -1223,14 +1309,14 @@ button {
     background:
         radial-gradient(
             ellipse at center,
-            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0.6) 0%,
             transparent 70%
         );
 }
 
 
 /* =========================================================
-   iPAD — Metalizado realista
+   iPAD — Metalizado negro + barra de estado
    ========================================================= */
 
 .work-frame-ipad {
@@ -1309,11 +1395,49 @@ button {
         inset 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-.ipad-screen img {
+/* Barra de estado del iPad */
+
+.device-status-ipad {
+    padding: 10px 20px 0 20px;
+
+    font-size: 12px;
+}
+
+.device-status-ipad .device-time {
+    font-size: 12px;
+}
+
+.device-status-ipad .device-status-icons {
+    gap: 6px;
+}
+
+.ipad-battery-percent {
+    font-size: 11px;
+
+    font-weight: 500;
+
+    margin-left: 2px;
+}
+
+.ipad-content {
+    position: absolute;
+
+    top: 26px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    overflow: hidden;
+
+    background: #000;
+}
+
+.ipad-content img {
     width: 100%;
     height: 100%;
 
     object-fit: cover;
+    object-position: center top;
 }
 
 
@@ -1347,7 +1471,7 @@ button {
 
 
 /* =========================================================
-   PROCESS — Estilo n8n
+   PROCESS
    ========================================================= */
 
 .process {
@@ -2248,18 +2372,14 @@ button {
     text-align: center;
 
     background-image:
-        /* SVG de la tabla de corte (números y letras blancos) */
         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,255,255,0.55);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,255,255,0.55);}.tick-major{stroke:rgba(255,255,255,0.45);stroke-width:1.5;}.angle{stroke:rgba(255,255,255,0.5);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/></g></svg>"),
 
-        /* Líneas principales blancas */
         linear-gradient(rgba(255, 255, 255, 0.22) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px),
 
-        /* Líneas de grabado oscuro */
         linear-gradient(rgba(0, 0, 0, 0.15) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 0, 0, 0.15) 1px, transparent 1px),
 
-        /* Líneas secundarias */
         linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
 
@@ -2885,21 +3005,21 @@ button {
         top: 18px;
     }
 
-    .iphone-status-bar {
+    .device-status-bar {
         padding: 10px 16px 0 16px;
         font-size: 11px;
     }
 
-    .iphone-time {
+    .device-time {
         font-size: 11px;
     }
 
-    .iphone-icon {
+    .device-icon {
         width: 13px;
         height: 9px;
     }
 
-    .iphone-battery {
+    .device-battery {
         width: 20px;
         height: 9px;
     }
@@ -2909,22 +3029,54 @@ button {
     }
 
     .imac-display {
-        padding: 16px 16px 32px 16px;
+        padding: 12px 12px 30px 12px;
     }
 
     .imac-camera {
-        top: 6px;
+        top: 5px;
         width: 4px;
         height: 4px;
     }
 
+    .mac-os-bar {
+        height: 18px;
+        padding: 0 8px;
+        font-size: 8px;
+    }
+
+    .mac-os-left,
+    .mac-os-right {
+        gap: 8px;
+    }
+
+    .mac-os-apple {
+        width: 9px;
+        height: 9px;
+        flex: 0 0 9px;
+    }
+
+    .mac-os-menu-item,
+    .mac-os-date {
+        font-size: 8px;
+    }
+
+    .mac-os-icon {
+        width: 10px;
+        height: 10px;
+        flex: 0 0 10px;
+    }
+
+    .imac-screen .mac-content {
+        top: 18px;
+    }
+
     .imac-neck {
-        width: 70px;
-        height: 30px;
+        width: 80px;
+        height: 32px;
     }
 
     .imac-base {
-        width: 150px;
+        width: 170px;
         height: 10px;
     }
 
@@ -2936,6 +3088,23 @@ button {
 
     .ipad-screen {
         border-radius: 14px;
+    }
+
+    .device-status-ipad {
+        padding: 8px 14px 0 14px;
+        font-size: 10px;
+    }
+
+    .device-status-ipad .device-time {
+        font-size: 10px;
+    }
+
+    .ipad-battery-percent {
+        font-size: 9px;
+    }
+
+    .ipad-content {
+        top: 20px;
     }
 
     .brainstorm-item {
