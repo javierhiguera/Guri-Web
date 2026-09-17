@@ -57,11 +57,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const updateHeader = () => {
 
-            if (window.scrollY > 20) {
-                header.classList.add("scrolled");
-            } else {
-                header.classList.remove("scrolled");
-            }
+            header.classList.toggle(
+                "scrolled",
+                window.scrollY > 20
+            );
 
         };
 
@@ -92,13 +91,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 entries.forEach(entry => {
 
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("visible");
-
-                        observer.unobserve(entry.target);
-
+                    if (!entry.isIntersecting) {
+                        return;
                     }
+
+                    entry.target.classList.add("visible");
+
+                    observer.unobserve(entry.target);
 
                 });
 
@@ -132,10 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     if (currentYear) {
-
-        currentYear.textContent =
-            new Date().getFullYear();
-
+        currentYear.textContent = new Date().getFullYear();
     }
 
 
@@ -153,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
      * Proyecto 2 → 4500 ms
      * Proyecto 3 → 6200 ms
      *
-     * Además, cada uno comienza con un retraso diferente
+     * Cada slider comienza con un retraso diferente
      * para evitar que las transiciones coincidan.
      */
 
@@ -204,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
          * Primer cambio con retraso independiente.
          */
 
-        setTimeout(() => {
+        window.setTimeout(() => {
 
             changeSlide();
 
@@ -213,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
              * continúa con su propio intervalo.
              */
 
-            setInterval(
+            window.setInterval(
                 changeSlide,
                 settings.interval
             );
