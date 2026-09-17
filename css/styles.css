@@ -480,6 +480,8 @@ button {
 
     font-family: "Xenois", serif;
 
+    color: var(--orange);
+
     font-size: clamp(
         70px,
         9vw,
@@ -967,6 +969,138 @@ button {
 
 
 /* =========================================================
+   GESTIÓN DIGITAL
+   ========================================================= */
+
+.digital-management {
+    background: var(--black-soft);
+}
+
+.digital-management .section-heading {
+    max-width: 760px;
+}
+
+.digital-management .section-heading p {
+    max-width: 600px;
+
+    margin-top: 22px;
+
+    color: var(--gray);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+.digital-management-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.digital-management-item {
+    min-height: 250px;
+
+    padding: 30px;
+
+    border: 1px solid var(--border);
+
+    background: var(--black);
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background var(--transition);
+}
+
+.digital-management-item:hover {
+    transform: translateY(-5px);
+
+    border-color: #3b3b3b;
+
+    background: #0d0d0d;
+}
+
+.digital-logo {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 28px;
+
+    border: 1px solid var(--border);
+
+    color: var(--orange);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+.digital-logo-google span {
+    font-size: 27px;
+}
+
+.digital-logo-instagram span {
+    font-size: 31px;
+
+    line-height: 1;
+}
+
+.digital-logo-facebook span {
+    font-size: 30px;
+}
+
+.digital-logo-whatsapp span {
+    font-size: 30px;
+}
+
+.digital-management-item h3 {
+    font-family: "Xenois", serif;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    letter-spacing: -0.03em;
+}
+
+.digital-management-item p {
+    max-width: 260px;
+
+    margin-top: 14px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   WHATSAPP — NARANJA GURI
+   ========================================================= */
+
+.digital-logo-whatsapp {
+    border-color: var(--orange);
+
+    background: rgba(255, 90, 31, 0.08);
+
+    color: var(--orange);
+}
+
+
+/* =========================================================
    PLANS
    ========================================================= */
 
@@ -1312,8 +1446,25 @@ button {
     padding-bottom: 60px;
 }
 
+
+/* =========================================================
+   FOOTER BRAND
+   ========================================================= */
+
+.footer-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
 .footer-brand .logo {
-    display: inline-flex;
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
 }
 
 .footer-brand .logo img {
@@ -1325,16 +1476,19 @@ button {
 }
 
 .footer-brand p {
-    max-width: 300px;
-
-    margin-top: 20px;
+    margin: 0;
 
     color: var(--gray);
 
-    font-size: 13px;
+    font-size: 14px;
 
-    line-height: 1.7;
+    line-height: 1.4;
 }
+
+
+/* =========================================================
+   FOOTER LINKS
+   ========================================================= */
 
 .footer-links {
     display: grid;
@@ -1456,6 +1610,11 @@ button {
             repeat(2, 1fr);
     }
 
+    .digital-management-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
 }
 
 
@@ -1546,6 +1705,14 @@ button {
         grid-template-columns: 1fr;
 
         gap: 60px;
+    }
+
+
+    /* DIGITAL MANAGEMENT */
+
+    .digital-management-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
 
@@ -1687,6 +1854,21 @@ button {
     }
 
 
+    /* DIGITAL MANAGEMENT */
+
+    .digital-management-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .digital-management-item {
+        min-height: auto;
+
+        padding: 25px;
+    }
+
+
     /* PLANS */
 
     .plans-category {
@@ -1736,6 +1918,20 @@ button {
 
 
     /* FOOTER */
+
+    .footer-brand {
+        gap: 10px;
+
+        align-items: center;
+    }
+
+    .footer-brand .logo img {
+        width: 35px;
+    }
+
+    .footer-brand p {
+        font-size: 14px;
+    }
 
     .footer-links {
         grid-template-columns: 1fr;
