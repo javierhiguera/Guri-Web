@@ -2178,13 +2178,23 @@ button {
 }
 
 .form-field input:focus,
-.form-field select:focus,
 .form-field textarea:focus {
     border-color: var(--orange);
 
     background: #0d0d0d;
 
     color: var(--orange);
+
+    box-shadow: 0 0 0 2px rgba(255, 90, 31, 0.15);
+}
+
+/* El select mantiene el texto blanco al enfocarse */
+.form-field select:focus {
+    border-color: var(--orange);
+
+    background-color: #0d0d0d;
+
+    color: var(--white);
 
     box-shadow: 0 0 0 2px rgba(255, 90, 31, 0.15);
 }
