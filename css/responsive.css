@@ -41,31 +41,15 @@
     font-size: clamp(48px, 6vw, 76px);
   }
 
-  .hero-brand-main {
+  .hero-brand-horizontal {
     transform: scale(0.9);
     transform-origin: center;
   }
 
   /* SERVICES */
 
-  .services-cloud {
-    min-height: 500px;
-  }
-
-  .service-node-web {
-    left: 3%;
-  }
-
-  .service-node-landing {
-    right: 3%;
-  }
-
-  .service-node-store {
-    left: 8%;
-  }
-
-  .service-node-maintenance {
-    right: 8%;
+  .services-grid {
+    gap: 20px;
   }
 
   /* WORK */
@@ -80,12 +64,16 @@
 
   /* PROCESS */
 
-  .process-roadmap {
-    gap: 30px;
+  .process-flow {
+    gap: 15px;
   }
 
-  .process-item {
-    max-width: 220px;
+  .process-step {
+    min-width: 180px;
+  }
+
+  .process-arrow {
+    width: 30px;
   }
 
   /* PLANS */
@@ -246,7 +234,7 @@
     align-items: center;
   }
 
-  .hero-brand-main {
+  .hero-brand-horizontal {
     transform: none;
   }
 
@@ -260,45 +248,12 @@
 
 
   /* -------------------------------------------------------
-     SERVICES CLOUD
+     SERVICES
      ------------------------------------------------------- */
 
-  .services-cloud {
-    min-height: 600px;
-    margin-top: 20px;
-  }
-
-  .services-cloud-center {
-    width: 150px;
-    height: 150px;
-  }
-
-  .service-node {
-    width: 210px;
-  }
-
-  .service-node-web {
-    left: 0;
-    top: 6%;
-  }
-
-  .service-node-landing {
-    right: 0;
-    top: 8%;
-  }
-
-  .service-node-store {
-    left: 0;
-    bottom: 7%;
-  }
-
-  .service-node-maintenance {
-    right: 0;
-    bottom: 7%;
-  }
-
-  .services-cloud-line {
-    opacity: 0.65;
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
 
@@ -324,24 +279,20 @@
      PROCESS
      ------------------------------------------------------- */
 
-  .process-roadmap {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px 30px;
-    padding-top: 20px;
+  .process-flow {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .process-roadmap-line {
-    display: none;
-  }
-
-  .process-item {
-    max-width: none;
+  .process-step {
+    max-width: 100%;
     width: 100%;
   }
 
-  .process-node {
-    margin-bottom: 20px;
+  .process-arrow {
+    width: 100%;
+    height: 30px;
+    transform: rotate(90deg);
   }
 
 
@@ -367,10 +318,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .digital-management-item {
-    min-height: 150px;
-  }
-
 
   /* -------------------------------------------------------
      PLANS
@@ -379,10 +326,6 @@
   .plans-integrated-grid {
     grid-template-columns: 1fr;
     gap: 24px;
-  }
-
-  .plan-card.plan-integrated {
-    width: 100%;
   }
 
   .plans-contact {
@@ -397,6 +340,15 @@
 
   .quote-form-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .plans-coming-soon {
+    margin-top: 40px;
+    padding: 25px;
+  }
+
+  .plans-coming-soon h3 {
+    font-size: 28px;
   }
 
 
@@ -452,8 +404,8 @@
     min-height: 68px;
   }
 
-  .logo {
-    max-width: 125px;
+  .logo img {
+    width: 72px;
   }
 
   .menu-toggle {
@@ -504,13 +456,13 @@
     min-height: 180px;
   }
 
-  .hero-brand-main {
-    gap: 12px;
+  .hero-brand-horizontal {
+    gap: 10px;
   }
 
   .hero-brand-icon {
-    width: 42px;
-    height: 42px;
+    width: 35px;
+    height: 35px;
   }
 
   .hero-brand-name {
@@ -538,69 +490,35 @@
 
 
   /* -------------------------------------------------------
-     SERVICES CLOUD — MOBILE
+     SERVICES
      ------------------------------------------------------- */
 
-  .services-cloud {
-    min-height: 650px;
-    margin-top: 20px;
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
-  .services-cloud-center {
-    width: 118px;
-    height: 118px;
+  .service-item {
+    padding: 30px 20px;
   }
 
-  .services-cloud-center-icon {
-    width: 34px;
-    height: 34px;
+  .service-item-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 18px;
   }
 
-  .service-node {
-    width: min(175px, 46vw);
-    min-height: 82px;
-    padding: 14px;
-    gap: 10px;
+  .service-item-icon svg {
+    width: 40px;
+    height: 40px;
   }
 
-  .service-node-icon {
-    width: 34px;
-    height: 34px;
-    flex: 0 0 34px;
+  .service-item h3 {
+    font-size: 20px;
   }
 
-  .service-node-content h3 {
-    font-size: 13px;
-    line-height: 1.2;
-  }
-
-  .service-node-content p {
-    font-size: 11px;
-    line-height: 1.4;
-  }
-
-  .service-node-web {
-    left: 0;
-    top: 3%;
-  }
-
-  .service-node-landing {
-    right: 0;
-    top: 18%;
-  }
-
-  .service-node-store {
-    left: 0;
-    bottom: 18%;
-  }
-
-  .service-node-maintenance {
-    right: 0;
-    bottom: 3%;
-  }
-
-  .services-cloud-line {
-    opacity: 0.35;
+  .service-item p {
+    font-size: 12px;
   }
 
 
@@ -634,34 +552,26 @@
      PROCESS
      ------------------------------------------------------- */
 
-  .process-roadmap {
-    grid-template-columns: 1fr;
-    gap: 38px;
-    padding-top: 10px;
+  .process-step-icon {
+    width: 60px;
+    height: 60px;
   }
 
-  .process-item {
-    display: grid;
-    grid-template-columns: 52px 1fr;
-    gap: 18px;
-    text-align: left;
-    align-items: start;
+  .process-step-icon svg {
+    width: 30px;
+    height: 30px;
   }
 
-  .process-node {
-    width: 52px;
-    height: 52px;
-    margin: 0;
+  .process-step h3 {
+    font-size: 18px;
   }
 
-  .process-item-content h3 {
-    font-size: 17px;
-    margin-bottom: 7px;
+  .process-step p {
+    font-size: 12px;
   }
 
-  .process-item-content p {
-    font-size: 13px;
-    line-height: 1.55;
+  .process-arrow {
+    height: 24px;
   }
 
 
@@ -673,49 +583,47 @@
     gap: 20px;
   }
 
-  .why-list li {
+  .brainstorm-item {
     gap: 12px;
-    font-size: 14px;
-    line-height: 1.55;
+    padding: 10px 0;
   }
 
-  .why-check {
+  .brainstorm-check {
     width: 20px;
     height: 20px;
     flex: 0 0 20px;
   }
 
-
-  /* -------------------------------------------------------
-     DIGITAL MANAGEMENT — 2 x 2
-     ------------------------------------------------------- */
-
-  .digital-management-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-  }
-
-  .digital-management-item {
-    min-height: 125px;
-    padding: 18px 12px;
-  }
-
-  .digital-logo {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 12px;
-  }
-
-  .digital-management-item h3 {
+  .brainstorm-item span {
     font-size: 14px;
   }
 
-  .digital-management-item p {
-    font-size: 11px;
-    line-height: 1.45;
+
+  /* -------------------------------------------------------
+     DIGITAL MANAGEMENT
+     ------------------------------------------------------- */
+
+  .digital-management-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
-  .service-link {
+  .digital-logo {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 15px;
+  }
+
+  .digital-logo img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .digital-management-item h3 {
+    font-size: 18px;
+  }
+
+  .digital-management-item p {
     font-size: 11px;
   }
 
@@ -765,7 +673,16 @@
   }
 
   .plans-coming-soon {
-    margin-top: 18px;
+    margin-top: 35px;
+    padding: 20px;
+  }
+
+  .plans-coming-soon h3 {
+    font-size: 24px;
+  }
+
+  .plans-coming-soon p {
+    font-size: 13px;
   }
 
   .coming-soon-label {
@@ -910,6 +827,10 @@
     width: calc(100% - 28px);
   }
 
+  .logo img {
+    width: 60px;
+  }
+
   .hero-title {
     font-size: 40px;
   }
@@ -923,21 +844,26 @@
     height: 36px;
   }
 
-  .services-cloud {
-    min-height: 600px;
+  .services-grid {
+    gap: 12px;
   }
 
-  .service-node {
-    width: 160px;
-    padding: 12px;
+  .service-item {
+    padding: 20px 15px;
   }
 
-  .service-node-content h3 {
-    font-size: 12px;
+  .service-item-icon {
+    width: 50px;
+    height: 50px;
   }
 
-  .service-node-content p {
-    font-size: 10px;
+  .service-item-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .service-item h3 {
+    font-size: 18px;
   }
 
   .digital-management-item {
