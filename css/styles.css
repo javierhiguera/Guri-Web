@@ -451,24 +451,8 @@ button {
     overflow: hidden;
 }
 
-.hero-card::before {
-    content: "";
-
-    position: absolute;
-
-    width: 280px;
-    height: 280px;
-
-    right: -100px;
-    top: -100px;
-
-    border: 1px solid rgba(255, 90, 31, 0.3);
-
-    transform: rotate(45deg);
-}
-
 .hero-card span {
-    color: var(--orange);
+    color: var(--white);
 
     font-size: 13px;
 
@@ -1038,30 +1022,15 @@ button {
     border: 1px solid var(--border);
 
     color: var(--orange);
-
-    font-family: Arial, sans-serif;
-
-    font-size: 25px;
-
-    font-weight: 700;
 }
 
-.digital-logo-google span {
-    font-size: 27px;
-}
+.digital-logo svg {
+    width: 27px;
+    height: 27px;
 
-.digital-logo-instagram span {
-    font-size: 31px;
+    display: block;
 
-    line-height: 1;
-}
-
-.digital-logo-facebook span {
-    font-size: 30px;
-}
-
-.digital-logo-whatsapp span {
-    font-size: 30px;
+    color: currentColor;
 }
 
 .digital-management-item h3 {
@@ -1556,6 +1525,31 @@ button {
     font-size: 10px;
 }
 
+.footer-credit {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    white-space: nowrap;
+}
+
+.footer-credit-logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+.footer-credit-logo img {
+    width: 18px;
+    height: auto;
+
+    display: block;
+}
+
 
 /* =========================================================
    ANIMACIONES
@@ -1945,6 +1939,14 @@ button {
         align-items: flex-start;
 
         padding: 25px 0;
+    }
+
+    .footer-credit {
+        gap: 7px;
+    }
+
+    .footer-credit-logo img {
+        width: 18px;
     }
 
 }
