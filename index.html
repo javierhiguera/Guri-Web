@@ -166,15 +166,15 @@
 </section>
 
 <!-- =====================================================
-     SERVICIOS — Mundo naranja + iconos flotantes
+     SERVICIOS — Mundo a la derecha + iconos alrededor
      ===================================================== -->
 
 <section class="services section">
 
     <div class="container services-inner">
 
-        <!-- Título -->
-        <div class="section-heading services-heading">
+        <!-- IZQUIERDA: título -->
+        <div class="services-heading">
 
             <h2>
                 Todo lo que necesitás
@@ -184,13 +184,20 @@
         </div>
 
 
-        <!-- Bloque central: iconos alrededor del mundo -->
+        <!-- DERECHA: mundo + iconos alrededor -->
         <div class="services-orbit">
 
 
-            <!-- ============================================
-                 ICONO 1 — PÁGINAS WEB (arriba izquierda)
-                 ============================================ -->
+            <!-- MUNDO -->
+            <img
+                src="./assets/seleccion/mundo.svg"
+                alt=""
+                class="services-globe"
+                aria-hidden="true"
+            >
+
+
+            <!-- ICONO 1 — PÁGINAS WEB (arriba izquierda del mundo) -->
             <a href="./paginas-web/" class="orbit-item orbit-item-1">
 
                 <div class="orbit-icon">
@@ -210,9 +217,7 @@
             </a>
 
 
-            <!-- ============================================
-                 ICONO 2 — LANDING PAGES (arriba derecha)
-                 ============================================ -->
+            <!-- ICONO 2 — LANDING PAGES (arriba derecha del mundo) -->
             <a href="./landing-pages/" class="orbit-item orbit-item-2">
 
                 <div class="orbit-icon">
@@ -230,132 +235,7 @@
             </a>
 
 
-            <!-- ============================================
-                 MUNDO (centro)
-                 ============================================ -->
-            <div class="services-globe-wrap" aria-hidden="true">
-
-                <svg class="services-globe" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-
-                    <!-- Círculo base del planeta -->
-                    <circle cx="200" cy="200" r="195"
-                            fill="#ff5a1f"/>
-
-                    <!-- Sombra lateral sutil para dar volumen -->
-                    <path d="M200 5
-                             A 195 195 0 0 1 200 395
-                             A 195 195 0 0 0 200 5 Z"
-                          fill="rgba(0,0,0,0.18)"/>
-
-                    <!-- Continentes (silueta realista estilizada) -->
-                    <g fill="#080808" opacity="0.92">
-
-                        <!-- América del Norte -->
-                        <path d="M60 90
-                                 Q 90 60 130 70
-                                 Q 150 75 155 95
-                                 Q 160 115 145 130
-                                 Q 135 140 120 150
-                                 Q 110 165 95 165
-                                 Q 80 160 75 145
-                                 Q 60 130 55 115
-                                 Q 50 100 60 90 Z"/>
-
-                        <!-- América Central -->
-                        <path d="M120 165
-                                 Q 140 165 145 180
-                                 Q 145 195 130 200
-                                 Q 118 200 115 185
-                                 Q 115 172 120 165 Z"/>
-
-                        <!-- América del Sur -->
-                        <path d="M130 205
-                                 Q 155 195 170 215
-                                 Q 180 235 175 260
-                                 Q 170 290 155 315
-                                 Q 145 335 135 340
-                                 Q 128 340 125 325
-                                 Q 118 295 120 265
-                                 Q 118 235 125 215
-                                 Q 126 208 130 205 Z"/>
-
-                        <!-- Groenlandia -->
-                        <path d="M165 40
-                                 Q 190 30 205 45
-                                 Q 210 65 200 80
-                                 Q 185 85 175 75
-                                 Q 162 60 165 40 Z"/>
-
-                        <!-- Europa -->
-                        <path d="M215 80
-                                 Q 240 70 260 80
-                                 Q 270 95 265 115
-                                 Q 255 130 240 130
-                                 Q 225 125 220 110
-                                 Q 212 95 215 80 Z"/>
-
-                        <!-- África -->
-                        <path d="M225 140
-                                 Q 255 130 280 145
-                                 Q 295 165 290 195
-                                 Q 285 225 270 250
-                                 Q 255 270 245 265
-                                 Q 235 255 230 230
-                                 Q 222 200 220 175
-                                 Q 218 155 225 140 Z"/>
-
-                        <!-- Asia -->
-                        <path d="M270 75
-                                 Q 310 60 350 85
-                                 Q 365 105 355 130
-                                 Q 340 150 315 150
-                                 Q 295 150 285 135
-                                 Q 275 120 272 100
-                                 Q 268 85 270 75 Z"/>
-
-                        <!-- India -->
-                        <path d="M305 155
-                                 Q 325 150 335 170
-                                 Q 335 195 320 205
-                                 Q 308 205 303 190
-                                 Q 300 172 305 155 Z"/>
-
-                        <!-- Sudeste asiático -->
-                        <path d="M340 175
-                                 Q 360 170 370 185
-                                 Q 372 205 358 215
-                                 Q 345 215 340 200
-                                 Q 338 185 340 175 Z"/>
-
-                        <!-- Oceanía (Australia) -->
-                        <path d="M320 245
-                                 Q 350 235 370 255
-                                 Q 380 275 365 295
-                                 Q 348 305 330 295
-                                 Q 318 280 315 260
-                                 Q 315 250 320 245 Z"/>
-
-                        <!-- Antártida (mínima) -->
-                        <path d="M60 355
-                                 Q 200 340 340 355
-                                 Q 350 375 340 385
-                                 Q 200 395 60 385
-                                 Q 50 375 60 355 Z"/>
-
-                    </g>
-
-                    <!-- Brillo superior -->
-                    <ellipse cx="140" cy="90" rx="60" ry="30"
-                             fill="rgba(255,255,255,0.06)"/>
-
-                </svg>
-
-            </div>
-
-
-            <!-- ============================================
-                 ICONO 3 — TIENDAS ONLINE (abajo izquierda)
-                 ============================================ -->
+            <!-- ICONO 3 — TIENDAS ONLINE (abajo izquierda del mundo) -->
             <a href="./tiendas-online/" class="orbit-item orbit-item-3">
 
                 <div class="orbit-icon">
@@ -373,9 +253,7 @@
             </a>
 
 
-            <!-- ============================================
-                 ICONO 4 — MANTENIMIENTO WEB (abajo derecha)
-                 ============================================ -->
+            <!-- ICONO 4 — MANTENIMIENTO WEB (abajo derecha del mundo) -->
             <a href="./mantenimiento-web/" class="orbit-item orbit-item-4">
 
                 <div class="orbit-icon">
@@ -399,7 +277,6 @@
     </div>
 
 </section>
-
 
 <!-- =====================================================
      TRABAJOS
