@@ -1572,17 +1572,32 @@ button {
 
 
 /* =========================================================
-   PROCESS — Línea naranja continua + iconos sobre la línea
+   PROCESS — Línea naranja como fondo + iconos
    ========================================================= */
 
 .process {
-    background: var(--black);
+    position: relative;
+
+    background-color: var(--black);
+
+    background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 700' preserveAspectRatio='none'><path d='M 0 550 C 200 500, 350 380, 550 320 C 700 275, 800 320, 900 450 C 980 560, 1080 560, 1140 420 C 1180 320, 1220 320, 1260 420 C 1300 540, 1360 560, 1440 490 C 1560 390, 1660 260, 1800 200 C 1900 160, 1960 160, 2000 170' fill='none' stroke='rgba(255,90,31,0.9)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+
+    background-repeat: no-repeat;
+
+    background-size: 100% 100%;
+
+    background-position: center center;
 }
 
 
-/* Título → a la izquierda */
+/* Título */
 
 .process-heading {
+    position: relative;
+
+    z-index: 2;
+
     max-width: 100%;
 
     margin-bottom: 40px;
@@ -1605,45 +1620,20 @@ button {
 }
 
 
-/* Mapa donde vive la línea + los iconos */
+/* Mapa */
 
 .process-map {
     position: relative;
 
     width: 100%;
 
-    aspect-ratio: 2000 / 600;
+    aspect-ratio: 2000 / 700;
 
-    min-height: 560px;
+    min-height: 600px;
 }
 
 
-/* Línea SVG */
-
-.process-line {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    color: var(--orange);
-
-    z-index: 1;
-
-    pointer-events: none;
-}
-
-.process-line-solid {
-    filter:
-        drop-shadow(0 0 6px rgba(255, 90, 31, 0.6))
-        drop-shadow(0 0 20px rgba(255, 90, 31, 0.3));
-}
-
-
-/* Pasos — sobre la línea */
+/* Pasos */
 
 .process-step {
     position: absolute;
@@ -1742,28 +1732,26 @@ button {
 }
 
 
-/* =========================================================
-   POSICIONES — Coinciden con los círculos blancos de la referencia
-   ========================================================= */
+/* Posiciones */
 
 .process-step-1 {
-    top: 55%;
-    left: 33%;
+    top: 40%;
+    left: 27%;
 }
 
 .process-step-2 {
-    top: 88%;
+    top: 78%;
     left: 44%;
 }
 
 .process-step-3 {
     top: 65%;
-    left: 60%;
+    left: 62%;
 }
 
 .process-step-4 {
-    top: 45%;
-    left: 86%;
+    top: 35%;
+    left: 85%;
 }
 
 
