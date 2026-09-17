@@ -603,7 +603,7 @@ button {
 
 
 /* =========================================================
-   SERVICES — Mundo izquierda + título derecha
+   SERVICES — Mundo a la derecha + iconos alrededor
    ========================================================= */
 
 .services {
@@ -611,12 +611,51 @@ button {
 
     overflow: hidden;
 
-    background-color: var(--black);
+    background-color: var(--board);
+
+    /* ===== MISMO FONDO QUE EL HERO ===== */
+    background-image:
+        radial-gradient(
+            circle at 70% 50%,
+            rgba(255, 90, 31, 0.12),
+            transparent 40%
+        ),
+
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,90,31,0.5);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,90,31,0.5);}.tick-major{stroke:rgba(255,90,31,0.55);stroke-width:1.5;}.angle{stroke:rgba(255,90,31,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(255,90,31,0.45)' stroke-width='1' fill='none'/></g></svg>"),
+
+        linear-gradient(rgba(255, 90, 31, 0.28) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 90, 31, 0.28) 1px, transparent 1px),
+
+        linear-gradient(rgba(0, 0, 0, 0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.5) 1px, transparent 1px),
+
+        linear-gradient(rgba(255, 90, 31, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 90, 31, 0.10) 1px, transparent 1px);
+
+    background-size:
+        100% 100%,
+        500px 500px,
+        100px 100px,
+        100px 100px,
+        100px 100px,
+        100px 100px,
+        20px 20px,
+        20px 20px;
+
+    background-position:
+        center center,
+        center center,
+        center center,
+        center center,
+        center center,
+        center center,
+        center center,
+        center center;
 }
 
 
 /* =========================================================
-   LAYOUT: mundo izquierda + título derecha
+   LAYOUT: título izquierda + mundo derecha
    ========================================================= */
 
 .services-inner {
@@ -625,25 +664,43 @@ button {
 
     display: grid;
 
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 1fr 1fr;
 
     align-items: center;
 
     gap: 60px;
+}
 
-    min-height: 700px;
+.services-heading {
+    max-width: 560px;
+
+    margin: 0;
+}
+
+.services-heading h2 {
+    font-family: "Xenois", serif;
+
+    font-size: clamp(42px, 5vw, 72px);
+
+    line-height: 0.98;
+
+    letter-spacing: -0.055em;
+}
+
+.services-heading h2 span {
+    color: var(--orange);
 }
 
 
-/* Mundo + iconos → izquierda */
+/* =========================================================
+   ORBIT — Mundo + iconos alrededor
+   ========================================================= */
 
 .services-orbit {
-    order: 1;
-
     position: relative;
 
     width: 100%;
-    max-width: 780px;
+    max-width: 620px;
 
     aspect-ratio: 1 / 1;
 
@@ -655,37 +712,6 @@ button {
 }
 
 
-/* Título → derecha */
-
-.services-heading {
-    order: 2;
-
-    max-width: 560px;
-
-    margin: 0;
-
-    align-self: center;
-
-    text-align: right;
-
-    justify-self: end;
-}
-
-.services-heading h2 {
-    font-family: "Xenois", serif;
-
-    font-size: clamp(42px, 5vw, 76px);
-
-    line-height: 0.96;
-
-    letter-spacing: -0.055em;
-}
-
-.services-heading h2 span {
-    color: var(--orange);
-}
-
-
 /* =========================================================
    MUNDO
    ========================================================= */
@@ -693,7 +719,7 @@ button {
 .services-globe {
     position: relative;
 
-    width: 100%;
+    width: 62%;
     height: auto;
 
     display: block;
@@ -701,58 +727,14 @@ button {
     z-index: 1;
 
     filter:
-        drop-shadow(0 0 70px rgba(255, 90, 31, 0.35))
-        drop-shadow(0 0 140px rgba(255, 90, 31, 0.15));
+        drop-shadow(0 0 40px rgba(255, 90, 31, 0.25))
+        drop-shadow(0 0 80px rgba(255, 90, 31, 0.10));
 
-    animation: globe-breathe 8s ease-in-out infinite;
+    transition: transform 0.6s ease;
 }
 
-@keyframes globe-breathe {
-    0% {
-        transform: scale(1) rotate(0deg);
-    }
-    50% {
-        transform: scale(1.03) rotate(3deg);
-    }
-    100% {
-        transform: scale(1) rotate(0deg);
-    }
-}
-
-
-/* Anillo orbital decorativo alrededor del mundo */
-
-.services-orbit::before {
-    content: "";
-
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    width: 100%;
-    height: 100%;
-
-    transform: translate(-50%, -50%) rotate(-20deg);
-
-    border: 1px dashed rgba(255, 90, 31, 0.25);
-
-    border-radius: 50%;
-
-    pointer-events: none;
-
-    animation: orbit-rotate 60s linear infinite;
-
-    z-index: 0;
-}
-
-@keyframes orbit-rotate {
-    0% {
-        transform: translate(-50%, -50%) rotate(-20deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(340deg);
-    }
+.services-orbit:hover .services-globe {
+    transform: rotate(8deg) scale(1.02);
 }
 
 
@@ -764,16 +746,13 @@ button {
     position: absolute;
 
     display: flex;
-    flex-direction: column;
-
     align-items: center;
-    text-align: center;
 
-    gap: 10px;
+    gap: 12px;
 
     color: var(--white);
 
-    max-width: 150px;
+    max-width: 240px;
 
     z-index: 3;
 
@@ -784,15 +763,17 @@ button {
 
 .orbit-item:hover {
     color: var(--orange);
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 
 
-.orbit-icon {
-    width: 62px;
-    height: 62px;
+/* Icono circular */
 
-    flex: 0 0 62px;
+.orbit-icon {
+    width: 58px;
+    height: 58px;
+
+    flex: 0 0 58px;
 
     display: flex;
     align-items: center;
@@ -815,8 +796,8 @@ button {
 }
 
 .orbit-icon svg {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
 
     stroke: currentColor;
     stroke-width: 1.4;
@@ -835,11 +816,11 @@ button {
 }
 
 
+/* Texto */
+
 .orbit-text {
     display: flex;
     flex-direction: column;
-
-    align-items: center;
 
     gap: 4px;
 }
@@ -849,8 +830,8 @@ button {
 
     font-family: "Xenois", serif;
 
-    font-size: 16px;
-    line-height: 1.15;
+    font-size: 17px;
+    line-height: 1.1;
 
     letter-spacing: -0.025em;
 
@@ -874,56 +855,180 @@ button {
 
 
 /* =========================================================
-   POSICIONES DISPERSAS ALREDEDOR DEL MUNDO
+   POSICIONES DE LOS 4 ICONOS
    ========================================================= */
 
+/* 1 — Páginas web (arriba izquierda) */
 .orbit-item-1 {
-    top: 4%;
-    left: 6%;
-
-    animation: float-1 6s ease-in-out infinite;
-}
-
-.orbit-item-2 {
-    top: 8%;
-    right: 2%;
-
-    animation: float-2 7s ease-in-out infinite;
-}
-
-.orbit-item-3 {
-    bottom: 10%;
+    top: 0;
     left: 0;
 
-    animation: float-3 8s ease-in-out infinite;
+    flex-direction: row;
 }
 
+/* 2 — Landing pages (arriba derecha) */
+.orbit-item-2 {
+    top: 0;
+    right: 0;
+
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.orbit-item-2 .orbit-text {
+    align-items: flex-end;
+}
+
+/* 3 — Tiendas online (abajo izquierda) */
+.orbit-item-3 {
+    bottom: 0;
+    left: 0;
+
+    flex-direction: row;
+}
+
+/* 4 — Mantenimiento web (abajo derecha) */
 .orbit-item-4 {
-    bottom: 4%;
-    right: 8%;
+    bottom: 0;
+    right: 0;
 
-    animation: float-4 6.5s ease-in-out infinite;
+    flex-direction: row-reverse;
+    text-align: right;
 }
 
+.orbit-item-4 .orbit-text {
+    align-items: flex-end;
+}
+/* =========================================================
+   GRID DE SERVICIOS
+   ========================================================= */
 
-@keyframes float-1 {
-    0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(-10px); }
+.services-grid {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 24px;
+
+    max-width: 1120px;
+
+    margin: 0 auto;
 }
 
-@keyframes float-2 {
-    0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(8px); }
+.service-item {
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    text-align: left;
+
+    gap: 16px;
+
+    padding: 26px 22px;
+
+    border: 1px solid var(--border);
+
+    background: rgba(8, 8, 8, 0.92);
+
+    color: var(--white);
+
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
-@keyframes float-3 {
-    0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(-8px); }
+/* Hover tipo botón: fondo naranja, texto negro */
+.service-item:hover {
+    background: var(--orange);
+
+    border-color: var(--orange);
+
+    color: var(--black);
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 12px 30px rgba(255, 90, 31, 0.25);
 }
 
-@keyframes float-4 {
-    0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(10px); }
+.service-item-icon {
+    width: 56px;
+    height: 56px;
+
+    flex: 0 0 56px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--orange);
+
+    transition:
+        color var(--transition),
+        transform var(--transition);
+}
+
+.service-item:hover .service-item-icon {
+    color: var(--black);
+    transform: scale(1.1);
+}
+
+.service-item-icon svg {
+    width: 40px;
+    height: 40px;
+
+    stroke: currentColor;
+
+    stroke-width: 1.2;
+
+    fill: none;
+}
+
+.service-item-content {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    min-width: 0;
+}
+
+.service-item-content h3 {
+    margin: 0;
+
+    font-family: "Xenois", serif;
+
+    font-size: 19px;
+
+    line-height: 1.05;
+
+    letter-spacing: -0.025em;
+
+    transition: color var(--transition);
+}
+
+.service-item-content p {
+    margin: 0;
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    transition: color var(--transition);
+}
+
+.service-item:hover .service-item-content p {
+    color: rgba(8, 8, 8, 0.75);
 }
 
 
@@ -935,6 +1040,31 @@ button {
     position: relative;
 
     background-color: var(--black);
+
+    background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='500' viewBox='0 0 120 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:10px;font-weight:bold;fill:rgba(255,90,31,0.4);}.let{font-family:Arial,sans-serif;font-size:10px;font-weight:bold;fill:rgba(255,90,31,0.4);}.tick-left{stroke:rgba(255,90,31,0.35);stroke-width:1.2;}</style></defs><g><line x1='30' y1='0' x2='30' y2='500' class='tick-left'/><text x='18' y='70' class='let' text-anchor='middle'>A</text><text x='18' y='170' class='let' text-anchor='middle'>B</text><text x='18' y='270' class='let' text-anchor='middle'>C</text><text x='18' y='370' class='let' text-anchor='middle'>D</text><text x='18' y='470' class='let' text-anchor='middle'>E</text><text x='55' y='30' class='num' text-anchor='start'>1</text><text x='55' y='130' class='num' text-anchor='start'>2</text><text x='55' y='230' class='num' text-anchor='start'>3</text><text x='55' y='330' class='num' text-anchor='start'>4</text><text x='55' y='430' class='num' text-anchor='start'>5</text></g></svg>"),
+
+        linear-gradient(rgba(255, 90, 31, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 90, 31, 0.10) 1px, transparent 1px),
+
+        linear-gradient(rgba(255, 90, 31, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 90, 31, 0.04) 1px, transparent 1px);
+
+    background-size:
+        120px 500px,
+        100px 100px,
+        100px 100px,
+        20px 20px,
+        20px 20px;
+
+    background-position:
+        left top,
+        left top,
+        left top,
+        left top,
+        left top;
+
+    background-repeat: repeat;
 }
 
 .work-heading {
@@ -1572,61 +1702,30 @@ button {
 
 
 /* =========================================================
-   PROCESS — Línea + iconos con foreignObject
+   PROCESS
    ========================================================= */
 
 .process {
-    position: relative;
-
-    background-color: var(--black);
+    background: var(--black-soft);
 }
-
-
-/* Título */
-
-.process-heading {
-    position: relative;
-
-    z-index: 2;
-
-    max-width: 100%;
-
-    margin-bottom: 40px;
-
-    text-align: left;
-}
-
-.process-heading h2 {
-    font-family: "Xenois", serif;
-
-    font-size: clamp(48px, 6vw, 82px);
-
-    line-height: 0.95;
-
-    letter-spacing: -0.055em;
-}
-
-.process-heading h2 span {
-    color: var(--orange);
-}
-
-
-/* Mapa: 2000x700 = aspect ratio 20:7 */
 
 .process-map {
     position: relative;
 
-    width: 100%;
+    display: grid;
 
-    aspect-ratio: 2000 / 700;
+    grid-template-columns: repeat(4, 1fr);
 
-    min-height: 500px;
+    grid-template-rows: auto auto;
+
+    gap: 40px 20px;
+
+    padding: 40px 0;
+
+    min-height: 480px;
 }
 
-
-/* SVG: ocupa todo el contenedor, estirado 100% */
-
-.process-svg {
+.process-map-line {
     position: absolute;
 
     top: 0;
@@ -1635,70 +1734,139 @@ button {
     width: 100%;
     height: 100%;
 
-    color: var(--orange);
+    z-index: 1;
 
-    overflow: visible;
+    pointer-events: none;
 }
 
-.process-line {
-    filter:
-        drop-shadow(0 0 6px rgba(255, 90, 31, 0.6))
-        drop-shadow(0 0 20px rgba(255, 90, 31, 0.3));
+.process-port {
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: var(--orange);
+
+    box-shadow: 0 0 12px rgba(255, 90, 31, 0.8);
+
+    z-index: 3;
+
+    pointer-events: none;
 }
 
+.process-port-1 {
+    top: 18%;
+    left: 12%;
+}
 
-/* =========================================================
-   PASOS — dentro de foreignObject
-   ========================================================= */
+.process-port-2 {
+    top: 60%;
+    left: 38%;
+}
+
+.process-port-3 {
+    top: 60%;
+    left: 62%;
+}
+
+.process-port-4 {
+    top: 18%;
+    left: 88%;
+}
 
 .process-step {
-    width: 100%;
-    height: 100%;
+    position: relative;
+
+    z-index: 2;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
-    justify-content: flex-start;
 
     text-align: center;
 
-    padding-top: 0;
+    padding: 20px;
+}
+
+.process-step-1 {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+}
+
+.process-step-2 {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: end;
+    margin-top: 80px;
+}
+
+.process-step-3 {
+    grid-column: 3;
+    grid-row: 2;
+    align-self: end;
+    margin-top: 80px;
+}
+
+.process-step-4 {
+    grid-column: 4;
+    grid-row: 1;
+    align-self: start;
 }
 
 .process-step-icon {
-    width: 90px;
-    height: 90px;
-
-    flex: 0 0 90px;
+    width: 72px;
+    height: 72px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 
-    border: 2px solid var(--orange);
+    border: 1.5px solid var(--orange);
 
     border-radius: 50%;
 
-    background: var(--black);
+    background: var(--black-soft);
 
     color: var(--orange);
 
     box-shadow:
         0 0 0 6px rgba(255, 90, 31, 0.08),
-        0 0 20px rgba(255, 90, 31, 0.2);
+        0 0 20px rgba(255, 90, 31, 0.15);
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.process-step:hover .process-step-icon {
+    background: var(--orange);
+
+    color: var(--black);
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 0 8px rgba(255, 90, 31, 0.15),
+        0 0 30px rgba(255, 90, 31, 0.4);
 }
 
 .process-step-icon svg {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
 
     stroke: currentColor;
 
-    stroke-width: 1.4;
+    stroke-width: 1.2;
 
     fill: none;
 }
@@ -1708,13 +1876,11 @@ button {
 
     font-family: "Xenois", serif;
 
-    font-size: 22px;
+    font-size: 20px;
 
     line-height: 1;
 
     letter-spacing: -0.03em;
-
-    color: var(--white);
 }
 
 .process-step p {
@@ -1724,56 +1890,11 @@ button {
 
     font-size: 13px;
 
-    line-height: 1.55;
+    line-height: 1.5;
 
-    max-width: 240px;
+    max-width: 220px;
 }
 
-
-/* =========================================================
-   ANIMACIÓN EN BUCLE — latido desfasado
-   ========================================================= */
-
-@keyframes process-pulse {
-    0%,
-    60%,
-    100% {
-        background: var(--black);
-        color: var(--orange);
-        box-shadow:
-            0 0 0 6px rgba(255, 90, 31, 0.08),
-            0 0 20px rgba(255, 90, 31, 0.2);
-    }
-
-    15%,
-    30% {
-        background: var(--orange);
-        color: var(--black);
-        box-shadow:
-            0 0 0 10px rgba(255, 90, 31, 0.18),
-            0 0 35px rgba(255, 90, 31, 0.6);
-    }
-}
-
-.process-step-1 .process-step-icon {
-    animation: process-pulse 8s ease-in-out infinite;
-    animation-delay: 0s;
-}
-
-.process-step-2 .process-step-icon {
-    animation: process-pulse 8s ease-in-out infinite;
-    animation-delay: 2s;
-}
-
-.process-step-3 .process-step-icon {
-    animation: process-pulse 8s ease-in-out infinite;
-    animation-delay: 4s;
-}
-
-.process-step-4 .process-step-icon {
-    animation: process-pulse 8s ease-in-out infinite;
-    animation-delay: 6s;
-}
 
 /* =========================================================
    WHY GURI
@@ -2311,7 +2432,9 @@ button {
     transition: color var(--transition);
 }
 
-.form-field:focus-within label {
+.form-field input:focus + label,
+.form-field select:focus + label,
+.form-field textarea:focus + label {
     color: var(--orange);
 }
 
@@ -2382,17 +2505,15 @@ button {
     box-shadow: 0 0 0 2px rgba(255, 90, 31, 0.15);
 }
 
+/* El select mantiene el texto blanco al enfocarse */
 .form-field select:focus {
     border-color: var(--orange);
 
     background-color: #0d0d0d;
 
-    box-shadow: 0 0 0 2px rgba(255, 90, 31, 0.15);
-}
-
-.form-field select:required:valid,
-.form-field select:focus {
     color: var(--orange);
+
+    box-shadow: 0 0 0 2px rgba(255, 90, 31, 0.15);
 }
 
 .form-field input:not(:placeholder-shown),
@@ -2629,8 +2750,10 @@ button {
    ANIMACIONES
    ========================================================= */
 
+.service-item,
 .work-card,
 .plan-card,
+.process-step,
 .brainstorm-item,
 .digital-management-item {
     opacity: 0;
@@ -2641,30 +2764,16 @@ button {
         opacity 0.7s ease,
         transform 0.7s ease,
         border-color var(--transition),
-        background var(--transition),
-        color var(--transition);
+        background var(--transition);
 }
 
+.service-item.visible,
 .work-card.visible,
 .plan-card.visible,
+.process-step.visible,
 .brainstorm-item.visible,
 .digital-management-item.visible {
     opacity: 1;
 
     transform: translateY(0);
-}
-
-/* Iconos de la órbita: solo fade-in, sin desplazar */
-
-.orbit-item {
-    opacity: 0;
-
-    transition:
-        opacity 0.7s ease,
-        color var(--transition),
-        transform var(--transition);
-}
-
-.orbit-item.visible {
-    opacity: 1;
 }
