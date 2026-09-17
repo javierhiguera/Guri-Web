@@ -1591,7 +1591,7 @@ button {
 
     max-width: 100%;
 
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 
     text-align: left;
 }
@@ -1620,11 +1620,11 @@ button {
 
     aspect-ratio: 2000 / 700;
 
-    min-height: 560px;
+    min-height: 500px;
 }
 
 
-/* SVG: ocupa todo el contenedor, alineado 1:1 */
+/* SVG: ocupa todo el contenedor, estirado 100% */
 
 .process-svg {
     position: absolute;
@@ -1648,7 +1648,7 @@ button {
 
 
 /* =========================================================
-   PASOS — dentro de foreignObject, centrados en su punto
+   PASOS — dentro de foreignObject
    ========================================================= */
 
 .process-step {
@@ -1667,19 +1667,19 @@ button {
 }
 
 .process-step-icon {
-    width: 76px;
-    height: 76px;
+    width: 90px;
+    height: 90px;
 
-    flex: 0 0 76px;
+    flex: 0 0 90px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 
-    border: 1.5px solid var(--orange);
+    border: 2px solid var(--orange);
 
     border-radius: 50%;
 
@@ -1693,8 +1693,8 @@ button {
 }
 
 .process-step-icon svg {
-    width: 34px;
-    height: 34px;
+    width: 40px;
+    height: 40px;
 
     stroke: currentColor;
 
@@ -1774,6 +1774,7 @@ button {
     animation: process-pulse 8s ease-in-out infinite;
     animation-delay: 6s;
 }
+
 /* =========================================================
    WHY GURI
    ========================================================= */
