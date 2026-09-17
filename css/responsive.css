@@ -63,7 +63,7 @@
     }
 
 
-    /* SERVICES — se apila: título arriba, mundo abajo */
+    /* SERVICES — se apila */
 
     .services-inner {
         grid-template-columns: 1fr;
@@ -83,6 +83,10 @@
         justify-self: center;
     }
 
+    .services-heading h2 {
+        font-size: clamp(38px, 6vw, 56px);
+    }
+
     .services-orbit {
         max-width: 620px;
 
@@ -90,7 +94,7 @@
     }
 
     .services-globe {
-        width: 72%;
+        width: 100%;
     }
 
     .orbit-icon {
@@ -113,7 +117,7 @@
     }
 
     .orbit-item {
-        max-width: 150px;
+        max-width: 140px;
     }
 }
 
@@ -283,6 +287,10 @@
         max-width: 560px;
     }
 
+    .services-orbit::before {
+        display: none;
+    }
+
     .services-globe {
         width: 55%;
         max-width: 280px;
@@ -311,6 +319,8 @@
         text-align: left;
 
         gap: 16px;
+
+        animation: none;
     }
 
     .orbit-text {
