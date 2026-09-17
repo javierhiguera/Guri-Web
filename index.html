@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
@@ -50,6 +49,7 @@
         <a
             href="./"
             class="logo"
+            aria-label="GURI"
         >
 
             <img
@@ -90,7 +90,7 @@
 
 
         <a
-            href="#presupuesto"
+            href="./contacto/"
             class="header-button"
         >
             Solicitar proyecto
@@ -144,7 +144,7 @@
             <div class="hero-actions">
 
                 <a
-                    href="#presupuesto"
+                    href="./contacto/"
                     class="button button-primary"
                 >
                     Solicitar proyecto
@@ -163,16 +163,20 @@
         </div>
 
 
+        <!-- =================================================
+             GURI WEB
+             ================================================= -->
+
         <div class="hero-visual">
 
-            <div class="hero-card">
+            <div class="hero-brand">
 
-                <div class="hero-brand">
+                <div class="hero-brand-main">
 
                     <img
                         src="./assets/logo/guri_isotipo.svg"
                         alt="GURI"
-                        class="hero-brand-logo"
+                        class="hero-brand-icon"
                     >
 
                     <div class="hero-brand-name">
@@ -222,152 +226,272 @@
         </div>
 
 
+        <!-- =================================================
+             NUBE DE SERVICIOS
+             ================================================= -->
+
         <div class="services-cloud">
+
+
+            <!-- CONEXIONES -->
+
+            <div
+                class="services-cloud-line services-cloud-line-1"
+                aria-hidden="true"
+            ></div>
+
+            <div
+                class="services-cloud-line services-cloud-line-2"
+                aria-hidden="true"
+            ></div>
+
+            <div
+                class="services-cloud-line services-cloud-line-3"
+                aria-hidden="true"
+            ></div>
+
+            <div
+                class="services-cloud-line services-cloud-line-4"
+                aria-hidden="true"
+            ></div>
+
+
+            <!-- NODO CENTRAL -->
+
+            <div class="services-cloud-center">
+
+                <span class="services-cloud-center-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M4 5.5h16v13H4z"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                        />
+                        <path
+                            d="M8 9h8M8 12h5M8 15h8"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                        />
+                    </svg>
+
+                </span>
+
+                <span>
+                    GURI WEB
+                </span>
+
+            </div>
 
 
             <!-- PÁGINAS WEB -->
 
             <a
                 href="./paginas-web/"
-                class="service-cloud-item service-cloud-web"
+                class="service-node service-node-web"
             >
 
-                <span class="service-icon" aria-hidden="true">
+                <span class="service-node-icon">
 
-                    <svg viewBox="0 0 24 24" fill="none">
-                        <rect x="3" y="4" width="18" height="16" rx="1.5"></rect>
-                        <path d="M3 8h18"></path>
-                        <path d="M7 12h4"></path>
-                        <path d="M7 15h7"></path>
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <rect
+                            x="3"
+                            y="4"
+                            width="18"
+                            height="16"
+                            rx="1"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                        />
+                        <path
+                            d="M3 8h18"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                        />
+                        <circle
+                            cx="6"
+                            cy="6"
+                            r=".7"
+                            fill="currentColor"
+                        />
+                        <circle
+                            cx="8.5"
+                            cy="6"
+                            r=".7"
+                            fill="currentColor"
+                        />
                     </svg>
 
                 </span>
 
-                <span class="service-cloud-content">
+                <span class="service-node-content">
 
                     <strong>
                         Páginas web
                     </strong>
 
-                    <span>
+                    <small>
                         Sitios profesionales para tu negocio.
-                    </span>
+                    </small>
 
                 </span>
 
             </a>
 
 
-
-            <!-- LANDING PAGES -->
+            <!-- LANDING -->
 
             <a
                 href="./landing-pages/"
-                class="service-cloud-item service-cloud-landing"
+                class="service-node service-node-landing"
             >
 
-                <span class="service-icon" aria-hidden="true">
+                <span class="service-node-icon">
 
-                    <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M4 5h16v14H4z"></path>
-                        <path d="M7 9h10"></path>
-                        <path d="M7 12h6"></path>
-                        <path d="M7 15h4"></path>
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M5 3h14v18H5z"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                        />
+                        <path
+                            d="M8 7h8M8 11h5M8 15h8"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                        />
                     </svg>
 
                 </span>
 
-                <span class="service-cloud-content">
+                <span class="service-node-content">
 
                     <strong>
                         Landing pages
                     </strong>
 
-                    <span>
+                    <small>
                         Páginas enfocadas en convertir.
-                    </span>
+                    </small>
 
                 </span>
 
             </a>
 
 
-
-            <!-- TIENDAS ONLINE -->
+            <!-- TIENDAS -->
 
             <a
                 href="./tiendas-online/"
-                class="service-cloud-item service-cloud-store"
+                class="service-node service-node-store"
             >
 
-                <span class="service-icon" aria-hidden="true">
+                <span class="service-node-icon">
 
-                    <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M4 9h16"></path>
-                        <path d="M5 9l1-5h12l1 5"></path>
-                        <path d="M5 9v10h14V9"></path>
-                        <path d="M9 19v-6h6v6"></path>
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M4 9h16l-1 11H5L4 9z"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                        />
+                        <path
+                            d="M7 9V6a5 5 0 0 1 10 0v3"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                        />
                     </svg>
 
                 </span>
 
-                <span class="service-cloud-content">
+                <span class="service-node-content">
 
                     <strong>
                         Tiendas online
                     </strong>
 
-                    <span>
-                        Vendé desde internet.
-                    </span>
+                    <small>
+                        Vendé tus productos por internet.
+                    </small>
 
                 </span>
 
             </a>
-
 
 
             <!-- MANTENIMIENTO -->
 
             <a
                 href="./mantenimiento-web/"
-                class="service-cloud-item service-cloud-maintenance"
+                class="service-node service-node-maintenance"
             >
 
-                <span class="service-icon" aria-hidden="true">
+                <span class="service-node-icon">
 
-                    <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M12 3v3"></path>
-                        <path d="M12 18v3"></path>
-                        <path d="M3 12h3"></path>
-                        <path d="M18 12h3"></path>
-                        <path d="M5.6 5.6l2.1 2.1"></path>
-                        <path d="M16.3 16.3l2.1 2.1"></path>
-                        <path d="M18.4 5.6l-2.1 2.1"></path>
-                        <path d="M7.7 16.3l-2.1 2.1"></path>
-                        <circle cx="12" cy="12" r="3.5"></circle>
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M12 3v3M12 18v3M3 12h3M18 12h3"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                        />
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="5"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                        />
+                        <path
+                            d="M12 9v3l2 1"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                        />
                     </svg>
 
                 </span>
 
-                <span class="service-cloud-content">
+                <span class="service-node-content">
 
                     <strong>
                         Mantenimiento web
                     </strong>
 
-                    <span>
-                        Tu sitio actualizado y funcionando.
-                    </span>
+                    <small>
+                        Sitio actualizado, seguro y funcionando.
+                    </small>
 
                 </span>
 
             </a>
 
-
-            <span class="services-cloud-line services-cloud-line-one"></span>
-            <span class="services-cloud-line services-cloud-line-two"></span>
-            <span class="services-cloud-line services-cloud-line-three"></span>
 
         </div>
 
@@ -616,18 +740,25 @@
         </div>
 
 
-        <div class="process-journey">
+        <div class="process-roadmap">
 
 
-            <!-- ETAPA 01 -->
+            <div class="process-roadmap-line" aria-hidden="true"></div>
 
-            <div class="process-node">
 
-                <div class="process-node-marker">
-                    <span>01</span>
+            <!-- PASO 01 -->
+
+            <div class="process-item">
+
+                <div class="process-node">
+
+                    <span>
+                        01
+                    </span>
+
                 </div>
 
-                <div class="process-node-content">
+                <div class="process-item-content">
 
                     <h3>
                         Hablamos
@@ -643,20 +774,19 @@
             </div>
 
 
+            <!-- PASO 02 -->
 
-            <span class="process-connector"></span>
+            <div class="process-item">
 
+                <div class="process-node">
 
+                    <span>
+                        02
+                    </span>
 
-            <!-- ETAPA 02 -->
-
-            <div class="process-node">
-
-                <div class="process-node-marker">
-                    <span>02</span>
                 </div>
 
-                <div class="process-node-content">
+                <div class="process-item-content">
 
                     <h3>
                         Diseñamos
@@ -672,20 +802,19 @@
             </div>
 
 
+            <!-- PASO 03 -->
 
-            <span class="process-connector"></span>
+            <div class="process-item">
 
+                <div class="process-node">
 
+                    <span>
+                        03
+                    </span>
 
-            <!-- ETAPA 03 -->
-
-            <div class="process-node">
-
-                <div class="process-node-marker">
-                    <span>03</span>
                 </div>
 
-                <div class="process-node-content">
+                <div class="process-item-content">
 
                     <h3>
                         Desarrollamos
@@ -701,20 +830,19 @@
             </div>
 
 
+            <!-- PASO 04 -->
 
-            <span class="process-connector"></span>
+            <div class="process-item">
 
+                <div class="process-node">
 
+                    <span>
+                        04
+                    </span>
 
-            <!-- ETAPA 04 -->
-
-            <div class="process-node">
-
-                <div class="process-node-marker">
-                    <span>04</span>
                 </div>
 
-                <div class="process-node-content">
+                <div class="process-item-content">
 
                     <h3>
                         Publicamos
@@ -971,7 +1099,7 @@
             <!-- WHATSAPP -->
 
             <a
-                href="#presupuesto"
+                href="./contacto/"
                 class="digital-management-item digital-whatsapp"
             >
 
@@ -1012,7 +1140,7 @@
      PLANES
      ===================================================== -->
 
-<section class="plans section">
+<section class="plans section" id="planes">
 
     <div class="container">
 
@@ -1029,36 +1157,39 @@
 
 
         <!-- =================================================
-             PLAN BÁSICO
+             PLANES INTEGRALES
              ================================================= -->
 
-        <div class="plan-level plan-basic">
+        <div class="plans-grid plans-integrated-grid">
 
 
-            <div class="plan-level-heading">
+            <!-- =================================================
+                 BÁSICO
+                 ================================================= -->
+
+            <article class="plan-card plan-integrated">
+
 
                 <span class="plan-label">
                     BÁSICO
                 </span>
 
+
                 <h3>
-                    Para empezar a estar online.
+                    Para empezar
                 </h3>
 
-                <p>
-                    Una solución simple para negocios que necesitan
-                    presencia digital, una landing o mantenimiento habitual.
+
+                <p class="plan-integrated-description">
+                    Una combinación de servicios esenciales para
+                    tener una presencia digital clara y funcional.
                 </p>
 
-            </div>
-
-
-            <div class="plan-services-grid">
 
 
                 <!-- WEB BÁSICA -->
 
-                <article class="plan-service">
+                <div class="plan-service">
 
                     <h4>
                         Web básica
@@ -1071,22 +1202,39 @@
 
                     <ul class="plan-features">
 
-                        <li>Hasta 5 secciones</li>
-                        <li>Hasta 10 imágenes</li>
-                        <li>1 formulario de contacto</li>
-                        <li>Botón de WhatsApp</li>
-                        <li>Diseño responsive</li>
-                        <li>SEO básico</li>
+                        <li>
+                            Hasta 5 secciones
+                        </li>
+
+                        <li>
+                            Hasta 10 imágenes
+                        </li>
+
+                        <li>
+                            1 formulario de contacto
+                        </li>
+
+                        <li>
+                            Botón de WhatsApp
+                        </li>
+
+                        <li>
+                            Diseño responsive
+                        </li>
+
+                        <li>
+                            SEO básico
+                        </li>
 
                     </ul>
 
-                </article>
+                </div>
 
 
 
                 <!-- LANDING BÁSICA -->
 
-                <article class="plan-service">
+                <div class="plan-service">
 
                     <h4>
                         Landing básica
@@ -1099,24 +1247,47 @@
 
                     <ul class="plan-features">
 
-                        <li>1 página</li>
-                        <li>Hasta 6 secciones</li>
-                        <li>Hasta 8 imágenes</li>
-                        <li>1 formulario</li>
-                        <li>Botón principal de acción</li>
-                        <li>WhatsApp</li>
-                        <li>Diseño responsive</li>
-                        <li>SEO básico</li>
+                        <li>
+                            1 página
+                        </li>
+
+                        <li>
+                            Hasta 6 secciones
+                        </li>
+
+                        <li>
+                            Hasta 8 imágenes
+                        </li>
+
+                        <li>
+                            1 formulario
+                        </li>
+
+                        <li>
+                            Botón principal de acción
+                        </li>
+
+                        <li>
+                            WhatsApp
+                        </li>
+
+                        <li>
+                            Diseño responsive
+                        </li>
+
+                        <li>
+                            SEO básico
+                        </li>
 
                     </ul>
 
-                </article>
+                </div>
 
 
 
                 <!-- MANTENIMIENTO BÁSICO -->
 
-                <article class="plan-service">
+                <div class="plan-service">
 
                     <h4>
                         Mantenimiento básico
@@ -1129,56 +1300,70 @@
 
                     <ul class="plan-features">
 
-                        <li>Hasta 4 cambios mensuales</li>
-                        <li>Actualización de textos</li>
-                        <li>Reemplazo de imágenes</li>
-                        <li>Cambios de botones y enlaces</li>
-                        <li>Cambios menores de secciones</li>
-                        <li>Correcciones menores</li>
-                        <li>Revisión general</li>
+                        <li>
+                            Hasta 4 cambios mensuales
+                        </li>
+
+                        <li>
+                            Actualización de textos
+                        </li>
+
+                        <li>
+                            Reemplazo de imágenes
+                        </li>
+
+                        <li>
+                            Cambios de botones y enlaces
+                        </li>
+
+                        <li>
+                            Cambios menores de secciones
+                        </li>
+
+                        <li>
+                            Correcciones menores
+                        </li>
+
+                        <li>
+                            Revisión general
+                        </li>
 
                     </ul>
 
-                </article>
+                </div>
 
 
-            </div>
-
-        </div>
+            </article>
 
 
 
-        <!-- =================================================
-             PLAN PROFESIONAL
-             ================================================= -->
+            <!-- =================================================
+                 PROFESIONAL
+                 ================================================= -->
 
-        <div class="plan-level plan-professional">
+            <article class="plan-card plan-integrated plan-featured">
 
-
-            <div class="plan-level-heading">
 
                 <span class="plan-label">
                     PROFESIONAL
                 </span>
 
+
                 <h3>
-                    Para proyectos que necesitan más.
+                    Para crecer
                 </h3>
 
-                <p>
-                    Soluciones más completas, personalizadas y preparadas
-                    para acompañar el crecimiento de tu negocio.
+
+                <p class="plan-integrated-description">
+                    Servicios más completos y personalizados para
+                    proyectos que necesitan crecer y evolucionar.
                 </p>
 
-            </div>
-
-
-            <div class="plan-services-grid">
 
 
                 <!-- WEB PROFESIONAL -->
 
-                <article class="plan-service">
+                <div class="plan-service">
 
                     <h4>
                         Web profesional
@@ -1191,26 +1376,55 @@
 
                     <ul class="plan-features">
 
-                        <li>Hasta 10 secciones</li>
-                        <li>Hasta 25 imágenes</li>
-                        <li>Hasta 3 formularios</li>
-                        <li>Botón de WhatsApp</li>
-                        <li>Galería y portfolio</li>
-                        <li>Animaciones y efectos</li>
-                        <li>Secciones personalizadas</li>
-                        <li>Integración con redes sociales</li>
-                        <li>SEO desde la base</li>
-                        <li>Diseño responsive</li>
+                        <li>
+                            Hasta 10 secciones
+                        </li>
+
+                        <li>
+                            Hasta 25 imágenes
+                        </li>
+
+                        <li>
+                            Hasta 3 formularios
+                        </li>
+
+                        <li>
+                            Botón de WhatsApp
+                        </li>
+
+                        <li>
+                            Galería y portfolio
+                        </li>
+
+                        <li>
+                            Animaciones y efectos
+                        </li>
+
+                        <li>
+                            Secciones personalizadas
+                        </li>
+
+                        <li>
+                            Integración con redes sociales
+                        </li>
+
+                        <li>
+                            SEO desde la base
+                        </li>
+
+                        <li>
+                            Diseño responsive
+                        </li>
 
                     </ul>
 
-                </article>
+                </div>
 
 
 
                 <!-- LANDING PROFESIONAL -->
 
-                <article class="plan-service">
+                <div class="plan-service">
 
                     <h4>
                         Landing profesional
@@ -1223,27 +1437,59 @@
 
                     <ul class="plan-features">
 
-                        <li>1 página</li>
-                        <li>Hasta 10 secciones</li>
-                        <li>Hasta 20 imágenes</li>
-                        <li>Hasta 3 formularios</li>
-                        <li>Botones personalizados</li>
-                        <li>WhatsApp</li>
-                        <li>Galería</li>
-                        <li>Animaciones avanzadas</li>
-                        <li>Secciones personalizadas</li>
-                        <li>Integración con redes sociales</li>
-                        <li>SEO desde la base</li>
+                        <li>
+                            1 página
+                        </li>
+
+                        <li>
+                            Hasta 10 secciones
+                        </li>
+
+                        <li>
+                            Hasta 20 imágenes
+                        </li>
+
+                        <li>
+                            Hasta 3 formularios
+                        </li>
+
+                        <li>
+                            Botones personalizados
+                        </li>
+
+                        <li>
+                            WhatsApp
+                        </li>
+
+                        <li>
+                            Galería
+                        </li>
+
+                        <li>
+                            Animaciones avanzadas
+                        </li>
+
+                        <li>
+                            Secciones personalizadas
+                        </li>
+
+                        <li>
+                            Integración con redes sociales
+                        </li>
+
+                        <li>
+                            SEO desde la base
+                        </li>
 
                     </ul>
 
-                </article>
+                </div>
 
 
 
                 <!-- MANTENIMIENTO PROFESIONAL -->
 
-                <article class="plan-service">
+                <div class="plan-service">
 
                     <h4>
                         Mantenimiento profesional
@@ -1256,30 +1502,60 @@
 
                     <ul class="plan-features">
 
-                        <li>Hasta 10 cambios mensuales</li>
-                        <li>Actualización de contenido</li>
-                        <li>Modificaciones de secciones</li>
-                        <li>Cambios de diseño</li>
-                        <li>Correcciones técnicas</li>
-                        <li>Optimización técnica</li>
-                        <li>Revisión de rendimiento</li>
-                        <li>Actualizaciones generales</li>
-                        <li>Modificaciones personalizadas</li>
-                        <li>Prioridad en solicitudes</li>
+                        <li>
+                            Hasta 10 cambios mensuales
+                        </li>
+
+                        <li>
+                            Actualización de contenido
+                        </li>
+
+                        <li>
+                            Modificaciones de secciones
+                        </li>
+
+                        <li>
+                            Cambios de diseño
+                        </li>
+
+                        <li>
+                            Correcciones técnicas
+                        </li>
+
+                        <li>
+                            Optimización técnica
+                        </li>
+
+                        <li>
+                            Revisión de rendimiento
+                        </li>
+
+                        <li>
+                            Actualizaciones generales
+                        </li>
+
+                        <li>
+                            Modificaciones personalizadas
+                        </li>
+
+                        <li>
+                            Prioridad en solicitudes
+                        </li>
 
                     </ul>
 
-                </article>
+                </div>
 
 
-            </div>
+            </article>
+
 
         </div>
 
 
 
         <!-- =================================================
-             TIENDAS ONLINE
+             TIENDAS ONLINE — COMING SOON
              ================================================= -->
 
         <div class="plans-category plans-coming-soon">
@@ -1297,21 +1573,271 @@
                     vender tus productos desde Internet.
                 </p>
 
+                <div class="coming-soon-label">
+
+                    <span
+                        class="coming-soon-spinner"
+                        aria-hidden="true"
+                    ></span>
+
+                    <span>
+                        Coming soon
+                    </span>
+
+                </div>
+
             </div>
 
 
-            <div class="coming-soon-status">
+        </div>
 
-                <span
-                    class="coming-soon-spinner"
-                    aria-hidden="true"
-                ></span>
 
-                <span>
-                    Coming soon
-                </span>
+
+        <!-- =================================================
+             CONTACTO + PROYECTOS PERSONALIZADOS
+             ================================================= -->
+
+        <div class="plans-contact">
+
+
+            <div class="plans-custom">
+
+                <h3>
+                    ¿Necesitás algo diferente?
+                </h3>
+
+                <p>
+                    También desarrollamos proyectos personalizados según
+                    las necesidades de cada negocio.
+                </p>
 
             </div>
+
+
+
+            <div class="plans-contact-copy">
+
+                <h3>
+                    Hagamos que
+                    <span>pase.</span>
+                </h3>
+
+                <p>
+                    Contanos qué necesitás y empezamos
+                    a construir tu próxima web.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FORMULARIO DE PRESUPUESTO
+                 ================================================= -->
+
+            <form
+                class="quote-form"
+                action="#"
+                method="post"
+            >
+
+
+                <div class="quote-form-grid">
+
+
+                    <!-- NOMBRE -->
+
+                    <div class="form-field">
+
+                        <label for="quote-name">
+                            Nombre
+                        </label>
+
+                        <input
+                            type="text"
+                            id="quote-name"
+                            name="name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-field">
+
+                        <label for="quote-email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="quote-email"
+                            name="email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- WHATSAPP -->
+
+                    <div class="form-field">
+
+                        <label for="quote-whatsapp">
+                            WhatsApp
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="quote-whatsapp"
+                            name="whatsapp"
+                            autocomplete="tel"
+                        >
+
+                    </div>
+
+
+
+                    <!-- TIPO DE PROYECTO -->
+
+                    <div class="form-field">
+
+                        <label for="quote-project">
+                            Tipo de proyecto
+                        </label>
+
+                        <select
+                            id="quote-project"
+                            name="project_type"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Seleccioná una opción
+                            </option>
+
+                            <option value="web-basica">
+                                Web básica
+                            </option>
+
+                            <option value="web-profesional">
+                                Web profesional
+                            </option>
+
+                            <option value="landing-basica">
+                                Landing básica
+                            </option>
+
+                            <option value="landing-profesional">
+                                Landing profesional
+                            </option>
+
+                            <option value="mantenimiento-basico">
+                                Mantenimiento básico
+                            </option>
+
+                            <option value="mantenimiento-profesional">
+                                Mantenimiento profesional
+                            </option>
+
+                            <option value="tienda-online">
+                                Tienda online
+                            </option>
+
+                            <option value="proyecto-personalizado">
+                                Proyecto personalizado
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- PRESUPUESTO -->
+
+                    <div class="form-field">
+
+                        <label for="quote-budget">
+                            Presupuesto / rango de inversión
+                        </label>
+
+                        <select
+                            id="quote-budget"
+                            name="budget"
+                        >
+
+                            <option
+                                value=""
+                                selected
+                                disabled
+                            >
+                                Seleccioná una opción
+                            </option>
+
+                            <option value="consultar">
+                                Prefiero consultarlo
+                            </option>
+
+                            <option value="rango-1">
+                                Rango a definir
+                            </option>
+
+                            <option value="rango-2">
+                                Presupuesto disponible
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- MENSAJE -->
+
+                    <div class="form-field form-field-full">
+
+                        <label for="quote-message">
+                            Mensaje / qué necesitás
+                        </label>
+
+                        <textarea
+                            id="quote-message"
+                            name="message"
+                            rows="6"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="quote-form-submit">
+
+                    <button
+                        type="submit"
+                        class="button button-primary"
+                    >
+                        Solicitar presupuesto
+                    </button>
+
+                </div>
+
+
+            </form>
 
 
         </div>
@@ -1324,243 +1850,24 @@
 
 
 <!-- =====================================================
-     CONTACTO / PRESUPUESTO
+     CTA FINAL
      ===================================================== -->
 
-<section
-    class="custom-contact section"
-    id="presupuesto"
->
+<section class="final-cta">
 
     <div class="container">
 
+        <h2>
+            Tu próxima web
+            <span>empieza acá.</span>
+        </h2>
 
-        <div class="custom-contact-intro">
-
-
-            <div class="section-heading">
-
-                <h2>
-                    ¿Necesitás algo
-                    <span>diferente?</span>
-                </h2>
-
-            </div>
-
-
-            <p>
-                También desarrollamos proyectos personalizados según
-                las necesidades de cada negocio.
-            </p>
-
-
-            <h2 class="custom-contact-cta">
-                Hagamos que
-                <span>pase.</span>
-            </h2>
-
-
-            <p>
-                Contanos qué necesitás y empezamos
-                a construir tu próxima web.
-            </p>
-
-
-        </div>
-
-
-
-        <form
-            class="budget-form"
-            id="budget-form"
-            action="#"
-            method="post"
+        <a
+            href="#planes"
+            class="button button-primary"
         >
-
-
-            <div class="budget-form-grid">
-
-
-                <div class="form-field">
-
-                    <label for="budget-name">
-                        Nombre
-                    </label>
-
-                    <input
-                        type="text"
-                        id="budget-name"
-                        name="name"
-                        autocomplete="name"
-                        required
-                    >
-
-                </div>
-
-
-
-                <div class="form-field">
-
-                    <label for="budget-email">
-                        Email
-                    </label>
-
-                    <input
-                        type="email"
-                        id="budget-email"
-                        name="email"
-                        autocomplete="email"
-                        required
-                    >
-
-                </div>
-
-
-
-                <div class="form-field">
-
-                    <label for="budget-whatsapp">
-                        WhatsApp
-                    </label>
-
-                    <input
-                        type="tel"
-                        id="budget-whatsapp"
-                        name="whatsapp"
-                        autocomplete="tel"
-                    >
-
-                </div>
-
-
-
-                <div class="form-field">
-
-                    <label for="budget-project">
-                        Tipo de proyecto
-                    </label>
-
-                    <select
-                        id="budget-project"
-                        name="project_type"
-                        required
-                    >
-
-                        <option
-                            value=""
-                            selected
-                            disabled
-                        >
-                            Seleccioná una opción
-                        </option>
-
-                        <option value="web-basica">
-                            Web básica
-                        </option>
-
-                        <option value="web-profesional">
-                            Web profesional
-                        </option>
-
-                        <option value="landing-basica">
-                            Landing básica
-                        </option>
-
-                        <option value="landing-profesional">
-                            Landing profesional
-                        </option>
-
-                        <option value="mantenimiento-basico">
-                            Mantenimiento básico
-                        </option>
-
-                        <option value="mantenimiento-profesional">
-                            Mantenimiento profesional
-                        </option>
-
-                        <option value="tienda-online">
-                            Tienda online
-                        </option>
-
-                        <option value="proyecto-personalizado">
-                            Proyecto personalizado
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-
-                <div class="form-field">
-
-                    <label for="budget-range">
-                        Presupuesto / rango de inversión
-                    </label>
-
-                    <select
-                        id="budget-range"
-                        name="budget_range"
-                    >
-
-                        <option
-                            value=""
-                            selected
-                            disabled
-                        >
-                            Seleccioná una opción
-                        </option>
-
-                        <option value="consultar">
-                            Prefiero consultarlo
-                        </option>
-
-                        <option value="rango-1">
-                            Rango a definir
-                        </option>
-
-                        <option value="rango-2">
-                            Presupuesto disponible a definir
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-
-                <div class="form-field form-field-full">
-
-                    <label for="budget-message">
-                        Mensaje / qué necesitás
-                    </label>
-
-                    <textarea
-                        id="budget-message"
-                        name="message"
-                        rows="6"
-                        required
-                    ></textarea>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="budget-form-actions">
-
-                <button
-                    type="submit"
-                    class="button button-primary"
-                >
-                    Solicitar presupuesto
-                </button>
-
-            </div>
-
-
-        </form>
+            Ver cómo empezar
+        </a>
 
     </div>
 
@@ -1581,6 +1888,28 @@
 
     <div class="container footer-inner">
 
+
+        <!-- =================================================
+             MARCA TEXTUAL
+             ================================================= -->
+
+        <div class="footer-brand">
+
+            <a
+                href="./"
+                class="footer-brand-name"
+                aria-label="GURI"
+            >
+                GURI
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ENLACES
+             ================================================= -->
 
         <div class="footer-links">
 
@@ -1643,10 +1972,14 @@
 
 
 
+    <!-- =================================================
+         FOOTER BOTTOM
+         ================================================= -->
+
     <div class="container footer-bottom">
 
 
-        <span>
+        <span class="footer-copyright">
             © <span data-current-year></span> GURI. All rights reserved.
         </span>
 
@@ -1655,7 +1988,8 @@
 
             <img
                 src="./assets/logo/guri_isotipo.svg"
-                alt="GURI"
+                alt=""
+                aria-hidden="true"
             >
 
             <span>
