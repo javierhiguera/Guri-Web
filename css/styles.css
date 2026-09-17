@@ -35,7 +35,6 @@
     --black-soft: #111111;
     --black-card: #151515;
 
-    /* Nuevo gris oscuro para la "tabla de corte" */
     --board: #0d0d0d;
 
     --white: #f5f5f5;
@@ -48,11 +47,8 @@
 
     --orange: #ff5a1f;
     --orange-bright: #ff6b00;
-
-    /* Naranja ligeramente más oscuro para el CTA */
     --orange-dark: #e64a15;
 
-    /* Grises metalizados para los dispositivos */
     --metal-1: #3a3a3a;
     --metal-2: #2a2a2a;
     --metal-3: #1a1a1a;
@@ -444,7 +440,7 @@ button {
 
 
 /* =========================================================
-   HERO — Tabla de corte (gris oscuro + cuadrícula grabada)
+   HERO — Tabla de corte con números/letras
    ========================================================= */
 
 .hero {
@@ -460,16 +456,21 @@ button {
     background-color: var(--board);
 
     background-image:
-        /* Glow radial naranja (mantenido) */
+        /* Glow radial naranja */
         radial-gradient(
             circle at 80% 45%,
             rgba(255, 90, 31, 0.12),
             transparent 35%
         ),
 
-        /* Líneas principales "grabadas" — con desplazamiento 1px para simular profundidad */
+        /* SVG de la tabla de corte (números, letras, marcas) */
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,90,31,0.5);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,90,31,0.5);}.tick{stroke:rgba(255,90,31,0.35);stroke-width:1;}.tick-major{stroke:rgba(255,90,31,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(255,90,31,0.15);stroke-width:0.5;}.angle{stroke:rgba(255,90,31,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(255,90,31,0.45)' stroke-width='1' fill='none'/></g></svg>"),
+
+        /* Líneas principales naranjas */
         linear-gradient(rgba(255, 90, 31, 0.28) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 90, 31, 0.28) 1px, transparent 1px),
+
+        /* Líneas de "grabado" oscuro */
         linear-gradient(rgba(0, 0, 0, 0.5) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 0, 0, 0.5) 1px, transparent 1px),
 
@@ -479,6 +480,7 @@ button {
 
     background-size:
         100% 100%,
+        500px 500px,
         100px 100px,
         100px 100px,
         100px 100px,
@@ -487,6 +489,7 @@ button {
         20px 20px;
 
     background-position:
+        center center,
         center center,
         center center,
         center center,
@@ -547,7 +550,7 @@ button {
 
 
 /* =========================================================
-   BUTTONS — Estilo rectangular original
+   BUTTONS
    ========================================================= */
 
 .button {
@@ -802,7 +805,7 @@ button {
 
 
 /* =========================================================
-   WORK FRAMES — Metalizados realistas
+   WORK FRAMES
    ========================================================= */
 
 .work-frame {
@@ -837,7 +840,6 @@ button {
 
     border-radius: 52px;
 
-    /* Marco metálico tipo titanio pulido */
     background:
         linear-gradient(
             145deg,
@@ -852,16 +854,11 @@ button {
         );
 
     box-shadow:
-        /* Sombra exterior profunda */
         0 30px 60px rgba(0, 0, 0, 0.9),
         0 15px 30px rgba(0, 0, 0, 0.7),
-        /* Reflejo superior (highlight del metal) */
         inset 0 2px 1px rgba(255, 255, 255, 0.15),
-        /* Sombra inferior interna */
         inset 0 -2px 1px rgba(0, 0, 0, 0.6),
-        /* Reflejo lateral izquierdo */
         inset 2px 0 1px rgba(255, 255, 255, 0.08),
-        /* Sombra lateral derecha */
         inset -2px 0 1px rgba(0, 0, 0, 0.4);
 }
 
@@ -931,6 +928,63 @@ button {
         inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
+/* Barra de estado del iPhone (hora + iconos) */
+
+.iphone-status-bar {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 22px 0 22px;
+
+    z-index: 5;
+
+    color: #fff;
+
+    font-family: "Bunken", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    pointer-events: none;
+}
+
+.iphone-time {
+    font-size: 13px;
+
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+}
+
+.iphone-status-icons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.iphone-icon {
+    width: 16px;
+    height: 11px;
+
+    fill: currentColor;
+}
+
+.iphone-battery {
+    width: 24px;
+    height: 11px;
+}
+
 .iphone-scroll {
     position: absolute;
 
@@ -961,8 +1015,6 @@ button {
         transform: translateY(calc(-100% + 100vh));
     }
 }
-
-/* Botones laterales del iPhone (metalizados) */
 
 .work-frame-iphone::before {
     content: "";
@@ -1016,10 +1068,10 @@ button {
 
 
 /* =========================================================
-   MAC — Metalizado realista
+   iMAC — Metalizado realista (todo-en-uno)
    ========================================================= */
 
-.work-frame-mac {
+.work-frame-imac {
     position: relative;
 
     width: 100%;
@@ -1027,9 +1079,15 @@ button {
     max-width: 700px;
 
     margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
 }
 
-.mac-screen {
+.imac-display {
     position: relative;
 
     width: 100%;
@@ -1038,147 +1096,136 @@ button {
 
     border-radius: 14px 14px 0 0;
 
-    padding: 14px 14px 0 14px;
-
-    /* Marco metálico tipo aluminio Apple */
-    background:
-        linear-gradient(
-            180deg,
-            #4a4a4a 0%,
-            #3a3a3a 20%,
-            #2a2a2a 50%,
-            #3a3a3a 80%,
-            #2a2a2a 100%
-        );
-
-    box-shadow:
-        0 25px 50px rgba(0, 0, 0, 0.85),
-        inset 0 2px 1px rgba(255, 255, 255, 0.15),
-        inset 0 -1px 1px rgba(0, 0, 0, 0.5);
-}
-
-.mac-bar {
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    height: 28px;
-
-    padding: 0 14px;
-
-    border-radius: 10px 10px 0 0;
+    padding: 22px 22px 42px 22px;
 
     background:
         linear-gradient(
             180deg,
-            #2a2a2a 0%,
-            #1a1a1a 100%
+            #f0f0f0 0%,
+            #e8e8e8 50%,
+            #d8d8d8 100%
         );
 
-    border-bottom: 1px solid #0d0d0d;
-
     box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        0 25px 50px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.15);
 }
 
-.mac-dot {
-    width: 12px;
-    height: 12px;
+.imac-camera {
+    position: absolute;
+
+    top: 8px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 6px;
+    height: 6px;
 
     border-radius: 50%;
 
-    display: inline-block;
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            #1a1a2e,
+            #000
+        );
 
     box-shadow:
-        inset 0 -1px 1px rgba(0, 0, 0, 0.3),
-        inset 0 1px 1px rgba(255, 255, 255, 0.3);
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+        0 0 2px rgba(0, 0, 0, 0.6);
+
+    z-index: 5;
 }
 
-.mac-dot-red {
-    background: #ff5f56;
-}
-
-.mac-dot-yellow {
-    background: #ffbd2e;
-}
-
-.mac-dot-green {
-    background: #27c93f;
-}
-
-.mac-content {
+.imac-screen {
     position: relative;
 
     width: 100%;
 
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
 
-    border-radius: 0 0 4px 4px;
+    border-radius: 4px;
 
     overflow: hidden;
 
     background: #000;
 
     box-shadow:
-        inset 0 0 15px rgba(0, 0, 0, 0.5);
+        inset 0 0 0 1px rgba(0, 0, 0, 0.8),
+        inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-.mac-content img {
+.imac-screen img {
     width: 100%;
     height: 100%;
 
     object-fit: cover;
 }
 
-/* Base del Mac con efecto aluminio */
-
-.mac-base {
+.imac-neck {
     position: relative;
 
-    width: 100%;
-
-    height: 22px;
+    width: 90px;
+    height: 40px;
 
     background:
         linear-gradient(
             180deg,
-            #3a3a3a 0%,
-            #2a2a2a 40%,
-            #1a1a1a 100%
+            #d8d8d8 0%,
+            #c0c0c0 50%,
+            #a8a8a8 100%
         );
 
-    border-radius: 0 0 14px 14px;
-
     box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        inset 0 -1px 2px rgba(0, 0, 0, 0.5);
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
+        inset 1px 0 1px rgba(255, 255, 255, 0.6),
+        inset -1px 0 1px rgba(0, 0, 0, 0.2);
 }
 
-.mac-base::after {
-    content: "";
+.imac-base {
+    position: relative;
 
-    width: 70px;
-    height: 5px;
+    width: 200px;
+    height: 12px;
 
-    border-radius: 3px;
+    border-radius: 0 0 8px 8px;
 
     background:
         linear-gradient(
             180deg,
-            #1a1a1a,
-            #0d0d0d
+            #c0c0c0 0%,
+            #a8a8a8 50%,
+            #909090 100%
         );
 
     box-shadow:
-        inset 0 1px 1px rgba(255, 255, 255, 0.08);
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.imac-base::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -4px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 240px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(0, 0, 0, 0.5) 0%,
+            transparent 70%
+        );
 }
 
 
@@ -1199,35 +1246,34 @@ button {
 
     border-radius: 28px;
 
-    /* Marco metálico tipo aluminio */
     background:
         linear-gradient(
             145deg,
-            #4a4a4a 0%,
-            #3a3a3a 25%,
-            #2a2a2a 50%,
-            #3a3a3a 75%,
-            #4a4a4a 100%
+            #2a2a2a 0%,
+            #1a1a1a 25%,
+            #0d0d0d 50%,
+            #1a1a1a 75%,
+            #2a2a2a 100%
         );
 
     box-shadow:
         0 25px 50px rgba(0, 0, 0, 0.85),
-        inset 0 2px 1px rgba(255, 255, 255, 0.15),
-        inset 0 -2px 1px rgba(0, 0, 0, 0.5),
-        inset 2px 0 1px rgba(255, 255, 255, 0.06),
-        inset -2px 0 1px rgba(0, 0, 0, 0.4);
+        inset 0 2px 1px rgba(255, 255, 255, 0.1),
+        inset 0 -2px 1px rgba(0, 0, 0, 0.6),
+        inset 2px 0 1px rgba(255, 255, 255, 0.04),
+        inset -2px 0 1px rgba(0, 0, 0, 0.5);
 }
 
 .ipad-camera {
     position: absolute;
 
     top: 50%;
-    left: 6px;
+    left: 5px;
 
     transform: translateY(-50%);
 
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
 
     border-radius: 50%;
 
@@ -2189,7 +2235,7 @@ button {
 
 
 /* =========================================================
-   FINAL CTA — Tabla de corte sobre naranja
+   FINAL CTA — Tabla de corte blanca sobre naranja
    ========================================================= */
 
 .final-cta {
@@ -2202,17 +2248,24 @@ button {
     text-align: center;
 
     background-image:
+        /* SVG de la tabla de corte (números y letras blancos) */
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,255,255,0.55);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,255,255,0.55);}.tick-major{stroke:rgba(255,255,255,0.45);stroke-width:1.5;}.angle{stroke:rgba(255,255,255,0.5);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/></g></svg>"),
+
         /* Líneas principales blancas */
         linear-gradient(rgba(255, 255, 255, 0.22) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px),
-        /* Líneas de "grabado" oscuro */
+
+        /* Líneas de grabado oscuro */
         linear-gradient(rgba(0, 0, 0, 0.15) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 0, 0, 0.15) 1px, transparent 1px),
+
         /* Líneas secundarias */
         linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
 
     background-size:
+        100% 100%,
+        500px 500px,
         100px 100px,
         100px 100px,
         100px 100px,
@@ -2221,6 +2274,8 @@ button {
         20px 20px;
 
     background-position:
+        center center,
+        center center,
         center center,
         center center,
         center calc(center + 1px),
@@ -2724,6 +2779,7 @@ button {
 
         background-size:
             100% 100%,
+            300px 300px,
             60px 60px,
             60px 60px,
             60px 60px,
@@ -2829,8 +2885,47 @@ button {
         top: 18px;
     }
 
-    .work-frame-mac {
+    .iphone-status-bar {
+        padding: 10px 16px 0 16px;
+        font-size: 11px;
+    }
+
+    .iphone-time {
+        font-size: 11px;
+    }
+
+    .iphone-icon {
+        width: 13px;
+        height: 9px;
+    }
+
+    .iphone-battery {
+        width: 20px;
+        height: 9px;
+    }
+
+    .work-frame-imac {
         max-width: 100%;
+    }
+
+    .imac-display {
+        padding: 16px 16px 32px 16px;
+    }
+
+    .imac-camera {
+        top: 6px;
+        width: 4px;
+        height: 4px;
+    }
+
+    .imac-neck {
+        width: 70px;
+        height: 30px;
+    }
+
+    .imac-base {
+        width: 150px;
+        height: 10px;
     }
 
     .work-frame-ipad {
@@ -2972,6 +3067,7 @@ button {
         padding: 85px 0;
 
         background-size:
+            300px 300px,
             60px 60px,
             60px 60px,
             60px 60px,
