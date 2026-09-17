@@ -171,9 +171,77 @@
      SERVICIOS
      ===================================================== -->
 
+<!-- =====================================================
+     SERVICIOS — Blueprint con mundo e iconos
+     ===================================================== -->
+
 <section class="services section">
 
-    <div class="container">
+    <!-- Decoración: mundo + iconos + líneas (solo desktop) -->
+    <div class="services-decor" aria-hidden="true">
+
+        <!-- Globo terráqueo -->
+        <svg class="services-globe" viewBox="0 0 300 300" fill="none">
+            <circle cx="150" cy="150" r="130" stroke="currentColor" stroke-width="2"/>
+            <ellipse cx="150" cy="150" rx="130" ry="50" stroke="currentColor" stroke-width="1.5"/>
+            <ellipse cx="150" cy="150" rx="50" ry="130" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M40 100 Q150 130 260 100" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M40 200 Q150 170 260 200" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <!-- "Continentes" estilizados -->
+            <path d="M80 120 Q110 100 140 120 Q160 140 140 160 Q110 170 90 150 Q70 135 80 120 Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M170 90 Q200 80 220 100 Q230 130 210 150 Q185 155 175 130 Q165 110 170 90 Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M120 200 Q150 190 170 210 Q175 240 150 250 Q120 245 115 225 Q110 210 120 200 Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+        </svg>
+
+        <!-- Icono: mail -->
+        <svg class="services-decor-icon decor-mail" viewBox="0 0 60 60" fill="none">
+            <rect x="6" y="14" width="48" height="34" rx="3" stroke="currentColor" stroke-width="2"/>
+            <path d="M6 18 L30 36 L54 18" stroke="currentColor" stroke-width="2" fill="none"/>
+            <circle cx="14" cy="20" r="1.5" fill="currentColor"/>
+            <circle cx="18" cy="20" r="1.5" fill="currentColor"/>
+        </svg>
+
+        <!-- Icono: documento -->
+        <svg class="services-decor-icon decor-doc" viewBox="0 0 60 60" fill="none">
+            <path d="M14 6 H42 L52 16 V54 H14 Z" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M42 6 V16 H52" stroke="currentColor" stroke-width="2" fill="none"/>
+            <line x1="20" y1="26" x2="44" y2="26" stroke="currentColor" stroke-width="2"/>
+            <line x1="20" y1="34" x2="44" y2="34" stroke="currentColor" stroke-width="2"/>
+            <line x1="20" y1="42" x2="36" y2="42" stroke="currentColor" stroke-width="2"/>
+        </svg>
+
+        <!-- Icono: candado -->
+        <svg class="services-decor-icon decor-lock" viewBox="0 0 60 60" fill="none">
+            <rect x="14" y="26" width="32" height="26" rx="3" stroke="currentColor" stroke-width="2"/>
+            <path d="M22 26 V18 A8 8 0 0 1 38 18 V26" stroke="currentColor" stroke-width="2" fill="none"/>
+            <circle cx="30" cy="38" r="3" fill="currentColor"/>
+        </svg>
+
+        <!-- Icono: dólar -->
+        <svg class="services-decor-icon decor-dollar" viewBox="0 0 60 60" fill="none">
+            <path d="M30 8 V52" stroke="currentColor" stroke-width="2"/>
+            <path d="M42 18 Q42 12 30 12 Q18 12 18 20 Q18 28 30 28 Q42 28 42 36 Q42 48 30 48 Q18 48 18 42" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+
+        <!-- Líneas conectoras (apuntan de cada icono a cada tarjeta) -->
+        <svg class="services-lines" viewBox="0 0 1200 700" fill="none" preserveAspectRatio="none">
+            <path d="M 220 640 Q 400 500 720 480" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M 480 640 Q 620 540 800 500" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M 760 640 Q 820 580 900 540" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M 1000 640 Q 1020 580 1050 540" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M 900 200 Q 800 320 760 460" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            <path d="M 1050 180 Q 1000 340 900 520" stroke="currentColor" stroke-width="1.5" fill="none"/>
+        </svg>
+
+        <!-- Flechas punta -->
+        <svg class="services-arrow arrow-1" viewBox="0 0 20 20" fill="none"><path d="M 2 18 L 18 2 M 18 2 L 10 2 M 18 2 L 18 10" stroke="currentColor" stroke-width="2"/></svg>
+        <svg class="services-arrow arrow-2" viewBox="0 0 20 20" fill="none"><path d="M 2 18 L 18 2 M 18 2 L 10 2 M 18 2 L 18 10" stroke="currentColor" stroke-width="2"/></svg>
+        <svg class="services-arrow arrow-3" viewBox="0 0 20 20" fill="none"><path d="M 2 18 L 18 2 M 18 2 L 10 2 M 18 2 L 18 10" stroke="currentColor" stroke-width="2"/></svg>
+
+    </div>
+
+
+    <div class="container services-inner">
 
         <div class="section-heading">
 
