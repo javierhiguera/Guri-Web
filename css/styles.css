@@ -1572,7 +1572,7 @@ button {
 
 
 /* =========================================================
-   PROCESS — Línea naranja de fondo + iconos
+   PROCESS — Línea naranja + iconos alineados
    ========================================================= */
 
 .process {
@@ -1580,8 +1580,16 @@ button {
 
     background-color: var(--black);
 
+    /*
+       SVG con viewBox 1000x500.
+       La curva pasa EXACTAMENTE por estos 4 puntos:
+         P1: x=250  y=250   →  25% H, 50% V
+         P2: x=450  y=400   →  45% H, 80% V
+         P3: x=650  y=150   →  65% H, 30% V
+         P4: x=850  y=350   →  85% H, 70% V
+    */
     background-image:
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 700' preserveAspectRatio='none'><path d='M 0 550 C 200 500, 350 380, 550 320 C 700 275, 800 320, 900 450 C 980 560, 1080 560, 1140 420 C 1180 320, 1220 320, 1260 420 C 1300 540, 1360 560, 1440 490 C 1560 390, 1660 260, 1800 200 C 1900 160, 1960 160, 2000 170' fill='none' stroke='rgba(255,90,31,0.9)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 500' preserveAspectRatio='none'><path d='M 0 400 C 100 300, 180 250, 250 250 C 330 250, 400 350, 450 400 C 510 460, 600 200, 650 150 C 700 100, 800 300, 850 350 C 910 410, 960 280, 1000 220' fill='none' stroke='rgba(255,90,31,0.9)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>");
 
     background-repeat: no-repeat;
 
@@ -1620,16 +1628,16 @@ button {
 }
 
 
-/* Mapa */
+/* Mapa: mismo aspect-ratio que el viewBox del SVG (1000:500 = 2:1) */
 
 .process-map {
     position: relative;
 
     width: 100%;
 
-    aspect-ratio: 2000 / 700;
+    aspect-ratio: 1000 / 500;
 
-    min-height: 600px;
+    min-height: 500px;
 }
 
 
@@ -1760,28 +1768,33 @@ button {
 }
 
 
-/* Posiciones de los 4 iconos (sobre la curva) */
+/* =========================================================
+   POSICIONES — 100% sincronizadas con los puntos del SVG
+   ========================================================= */
 
+/* 1 — Hablamos: x=250, y=250 → 25% H, 50% V */
 .process-step-1 {
-    top: 40%;
-    left: 27%;
+    top: 50%;
+    left: 25%;
 }
 
+/* 2 — Diseñamos: x=450, y=400 → 45% H, 80% V */
 .process-step-2 {
-    top: 78%;
-    left: 44%;
+    top: 80%;
+    left: 45%;
 }
 
+/* 3 — Desarrollamos: x=650, y=150 → 65% H, 30% V */
 .process-step-3 {
-    top: 65%;
-    left: 62%;
+    top: 30%;
+    left: 65%;
 }
 
+/* 4 — Publicamos: x=850, y=350 → 85% H, 70% V */
 .process-step-4 {
-    top: 35%;
+    top: 70%;
     left: 85%;
 }
-
 
 /* =========================================================
    WHY GURI
