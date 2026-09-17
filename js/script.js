@@ -124,11 +124,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const animatedElements = document.querySelectorAll(
         [
-            ".service-node",
+            ".service-item",
             ".work-card",
-            ".process-node",
+            ".process-step",
             ".plan-card",
-            ".marketing-tool"
+            ".brainstorm-item",
+            ".digital-management-item"
         ].join(", ")
     );
 
@@ -197,6 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
             /*
              * El formulario queda preparado para conectar
              * posteriormente con el servicio de envío.
+             * Por ahora, prevenimos el envío por defecto.
              */
 
             if (quoteForm.getAttribute("action") === "#") {
@@ -214,14 +216,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const projectSliders =
         document.querySelectorAll(".project-slider");
-
-    /*
-     * Cada proyecto tiene su propio ritmo.
-     *
-     * Proyecto 1 → 3000 ms
-     * Proyecto 2 → 4500 ms
-     * Proyecto 3 → 6200 ms
-     */
 
     const sliderSettings = [
         {
