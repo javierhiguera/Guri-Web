@@ -38,6 +38,7 @@
     --white: #f5f5f5;
 
     --gray: #999999;
+    --gray-light: #cfcfcf;
     --gray-dark: #666666;
 
     --border: #262626;
@@ -82,6 +83,10 @@ body {
 img {
     display: block;
     max-width: 100%;
+}
+
+svg {
+    display: block;
 }
 
 a {
@@ -149,6 +154,32 @@ button {
 
 .section-heading h2 span {
     color: var(--orange);
+}
+
+.section-eyebrow {
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: var(--orange);
+
+    font-size: 11px;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+}
+
+.section-intro {
+    max-width: 620px;
+
+    margin-top: 22px;
+
+    color: var(--gray);
+
+    font-size: 15px;
+
+    line-height: 1.7;
 }
 
 
@@ -338,13 +369,15 @@ button {
     top: 23px;
 }
 
-.menu-toggle.active span:first-child {
+.menu-toggle.active span:first-child,
+.menu-toggle[aria-expanded="true"] span:first-child {
     top: 19.5px;
 
     transform: rotate(45deg);
 }
 
-.menu-toggle.active span:last-child {
+.menu-toggle.active span:last-child,
+.menu-toggle[aria-expanded="true"] span:last-child {
     top: 19.5px;
 
     transform: rotate(-45deg);
@@ -430,7 +463,7 @@ button {
 
 
 /* =========================================================
-   HERO VISUAL
+   HERO VISUAL — NUEVA IDENTIDAD GURI WEB
    ========================================================= */
 
 .hero-visual {
@@ -438,43 +471,60 @@ button {
 
     justify-content: center;
     align-items: center;
+
+    min-height: 300px;
 }
 
+
+/*
+   Se mantiene la clase hero-card por compatibilidad
+   con versiones anteriores, pero el nuevo hero no utiliza
+   un cuadro alrededor de GURI WEB.
+*/
+
 .hero-card {
-    width: min(100%, 420px);
-    aspect-ratio: 1 / 1;
+    width: auto;
+    aspect-ratio: auto;
 
     display: flex;
     flex-direction: column;
 
     justify-content: center;
 
-    padding: 50px;
+    padding: 0;
 
-    border: 1px solid var(--border);
+    border: 0;
 
-    background:
-        linear-gradient(
-            145deg,
-            #171717,
-            #0c0c0c
-        );
+    background: transparent;
 
     position: relative;
 
-    overflow: hidden;
+    overflow: visible;
 }
 
 .hero-brand {
     display: flex;
-    align-items: center;
+    flex-direction: column;
 
-    gap: 13px;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0;
+
+    text-align: center;
 }
 
+.hero-brand-main {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.hero-brand-icon,
 .hero-brand-logo {
-    width: 42px;
-    height: 42px;
+    width: 48px;
+    height: 48px;
 
     flex: 0 0 auto;
 }
@@ -483,7 +533,7 @@ button {
     display: flex;
     align-items: baseline;
 
-    gap: 8px;
+    gap: 7px;
 }
 
 .hero-brand-name span {
@@ -491,9 +541,17 @@ button {
 
     font-family: "Bunken", sans-serif;
 
-    font-size: 15px;
+    font-size: clamp(
+        38px,
+        4.5vw,
+        66px
+    );
 
-    letter-spacing: 0.12em;
+    font-weight: 300;
+
+    line-height: 0.9;
+
+    letter-spacing: -0.035em;
 }
 
 .hero-brand-name strong {
@@ -504,24 +562,27 @@ button {
     color: var(--orange);
 
     font-size: clamp(
-        58px,
-        7vw,
-        94px
+        38px,
+        4.5vw,
+        66px
     );
 
     line-height: 0.85;
 
-    letter-spacing: -0.06em;
+    letter-spacing: -0.05em;
 }
 
+.hero-brand > small,
 .hero-card small {
-    margin-top: 25px;
+    margin-top: 14px;
 
     color: var(--gray-dark);
 
-    font-size: 11px;
+    font-size: 10px;
 
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
 }
 
 
@@ -592,28 +653,237 @@ button {
 }
 
 .services-cloud {
-    min-height: 500px;
-
-    display: grid;
-
-    grid-template-columns:
-        1fr
-        1fr;
-
-    grid-template-rows:
-        1fr
-        1fr;
-
-    gap: 70px 90px;
-
     position: relative;
 
-    max-width: 1050px;
+    width: 100%;
+
+    max-width: 1080px;
+
+    min-height: 560px;
 
     margin: 0 auto;
 
-    padding: 55px;
+    padding: 40px;
 }
+
+.services-cloud-center {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 150px;
+    height: 150px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 90, 31, 0.4);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 90, 31, 0.07),
+            transparent 68%
+        );
+
+    transform: translate(-50%, -50%);
+
+    z-index: 3;
+}
+
+.services-cloud-center::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 50%;
+}
+
+.services-cloud-center-icon {
+    position: relative;
+
+    z-index: 2;
+
+    width: 38px;
+    height: 38px;
+
+    color: var(--orange);
+}
+
+.services-cloud-line {
+    position: absolute;
+
+    z-index: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 90, 31, 0.32),
+            transparent
+        );
+
+    transform-origin: center;
+}
+
+.services-cloud-line-1 {
+    width: 42%;
+
+    top: 37%;
+    left: 29%;
+
+    transform: rotate(23deg);
+}
+
+.services-cloud-line-2 {
+    width: 42%;
+
+    top: 63%;
+    left: 29%;
+
+    transform: rotate(-23deg);
+}
+
+.services-cloud-line-3 {
+    width: 42%;
+
+    top: 50%;
+    left: 29%;
+
+    transform: rotate(0deg);
+}
+
+.services-cloud-line-4 {
+    display: none;
+}
+
+
+/* =========================================================
+   SERVICE NODES — NUEVA ESTRUCTURA
+   ========================================================= */
+
+.service-node {
+    position: absolute;
+
+    z-index: 4;
+
+    width: 250px;
+    min-height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 18px;
+
+    border: 1px solid var(--border);
+
+    background: rgba(8, 8, 8, 0.94);
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background var(--transition);
+}
+
+.service-node:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(255, 90, 31, 0.55);
+
+    background: #0d0d0d;
+}
+
+.service-node-web {
+    top: 7%;
+    left: 3%;
+}
+
+.service-node-landing {
+    top: 7%;
+    right: 3%;
+}
+
+.service-node-store {
+    bottom: 7%;
+    left: 7%;
+}
+
+.service-node-maintenance {
+    bottom: 7%;
+    right: 7%;
+}
+
+.service-node-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 44px;
+
+    border: 1px solid rgba(255, 90, 31, 0.3);
+
+    color: var(--orange);
+}
+
+.service-node-icon svg {
+    width: 21px;
+    height: 21px;
+
+    stroke: currentColor;
+
+    stroke-width: 1.4;
+
+    fill: none;
+}
+
+.service-node-content {
+    min-width: 0;
+}
+
+.service-node-content h3 {
+    margin: 0 0 5px;
+
+    font-family: "Xenois", serif;
+
+    font-size: 18px;
+
+    line-height: 1.05;
+
+    letter-spacing: -0.025em;
+}
+
+.service-node-content p {
+    margin: 0;
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   COMPATIBILIDAD — ANTIGUA NUBE DE SERVICIOS
+   ========================================================= */
 
 .service-cloud-item {
     position: relative;
@@ -701,45 +971,6 @@ button {
     font-size: 13px;
 
     line-height: 1.5;
-}
-
-.services-cloud-line {
-    position: absolute;
-
-    z-index: 1;
-
-    height: 1px;
-
-    background: var(--border);
-
-    transform-origin: left center;
-}
-
-.services-cloud-line-one {
-    width: 115px;
-
-    left: 44%;
-    top: 31%;
-
-    transform: rotate(25deg);
-}
-
-.services-cloud-line-two {
-    width: 115px;
-
-    left: 44%;
-    top: 69%;
-
-    transform: rotate(-25deg);
-}
-
-.services-cloud-line-three {
-    width: 100px;
-
-    left: 45%;
-    top: 50%;
-
-    transform: rotate(0deg);
 }
 
 
@@ -920,12 +1151,111 @@ button {
 
 
 /* =========================================================
-   PROCESS — RECORRIDO VISUAL
+   PROCESS — NUEVO ROADMAP
    ========================================================= */
 
 .process {
     background: var(--black-soft);
 }
+
+.process-roadmap {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 30px;
+
+    padding: 30px 0;
+}
+
+.process-roadmap-line {
+    position: absolute;
+
+    top: 57px;
+
+    left: 9%;
+    right: 9%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 90, 31, 0.45),
+            transparent
+        );
+}
+
+.process-item {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+.process-node {
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 24px;
+
+    border: 1px solid var(--orange);
+
+    border-radius: 50%;
+
+    background: var(--black-soft);
+
+    color: var(--orange);
+
+    font-size: 11px;
+
+    letter-spacing: 0.08em;
+}
+
+.process-item-content h3 {
+    margin-bottom: 9px;
+
+    font-family: "Xenois", serif;
+
+    font-size: 23px;
+
+    line-height: 1;
+
+    letter-spacing: -0.03em;
+}
+
+.process-item-content p {
+    max-width: 230px;
+
+    margin: 0 auto;
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   PROCESS — COMPATIBILIDAD ANTERIOR
+   ========================================================= */
 
 .process-journey {
     display: grid;
@@ -944,24 +1274,6 @@ button {
     gap: 0;
 
     padding: 30px 0;
-}
-
-.process-node {
-    min-width: 0;
-
-    opacity: 0;
-
-    transform: translateY(25px);
-
-    transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
-}
-
-.process-node.visible {
-    opacity: 1;
-
-    transform: translateY(0);
 }
 
 .process-node-marker {
@@ -1013,7 +1325,7 @@ button {
 .process-connector {
     height: 1px;
 
-    align-self: 56px;
+    align-self: center;
 
     margin: 0 15px;
 
@@ -1039,6 +1351,12 @@ button {
     opacity: 1;
 
     transform: scaleX(1);
+}
+
+.process-node.visible {
+    opacity: 1;
+
+    transform: translateY(0);
 }
 
 
@@ -1097,7 +1415,14 @@ button {
 .why-list .why-check {
     width: 30px;
 
+    height: 30px;
+
     flex: 0 0 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
 
     color: var(--orange);
 
@@ -1108,6 +1433,11 @@ button {
     line-height: 1;
 
     text-align: center;
+}
+
+.why-check svg {
+    width: 18px;
+    height: 18px;
 }
 
 .why-list span {
@@ -1218,23 +1548,175 @@ button {
     line-height: 1.6;
 }
 
-
-/* =========================================================
-   WHATSAPP
-   ========================================================= */
-
 .digital-whatsapp {
     display: block;
 }
 
 
 /* =========================================================
-   PLANS
+   PLANES — NUEVA ESTRUCTURA INTEGRAL
    ========================================================= */
 
 .plans {
     background: var(--black);
 }
+
+.plans-integrated-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+.plan-card {
+    position: relative;
+
+    min-width: 0;
+
+    border: 1px solid var(--border);
+
+    background: var(--black-soft);
+
+    transition:
+        border-color var(--transition),
+        transform var(--transition);
+}
+
+.plan-card:hover {
+    transform: translateY(-4px);
+}
+
+.plan-integrated {
+    padding: 42px;
+}
+
+.plan-featured {
+    border-color: var(--orange);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 90, 31, 0.08),
+            var(--black-soft)
+        );
+}
+
+.plan-label {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: var(--orange);
+
+    font-size: 11px;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+}
+
+.plan-integrated-description {
+    max-width: 570px;
+
+    margin-bottom: 8px;
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   SERVICIOS DENTRO DE CADA PLAN
+   ========================================================= */
+
+.plan-integrated .plan-service {
+    padding: 25px 0;
+
+    border-top: 1px solid var(--border);
+
+    background: transparent;
+}
+
+.plan-integrated .plan-service:first-of-type {
+    margin-top: 28px;
+}
+
+.plan-integrated .plan-service h3 {
+    margin-bottom: 9px;
+
+    font-family: "Xenois", serif;
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    letter-spacing: -0.035em;
+}
+
+.plan-integrated .plan-service p {
+    max-width: 570px;
+
+    margin-bottom: 15px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.plan-integrated .plan-features {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+.plan-integrated .plan-features li {
+    position: relative;
+
+    padding-left: 18px;
+
+    color: #c5c5c5;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+.plan-integrated .plan-features li::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0.62em;
+
+    left: 0;
+
+    width: 5px;
+    height: 5px;
+
+    background: var(--orange);
+
+    transform: translateY(-50%);
+}
+
+
+/* =========================================================
+   PLANES — COMPATIBILIDAD ESTRUCTURA ANTERIOR
+   ========================================================= */
 
 .plan-level {
     padding: 55px;
@@ -1280,16 +1762,6 @@ button {
     margin-bottom: 45px;
 }
 
-.plan-label {
-    color: var(--orange);
-
-    font-size: 11px;
-
-    font-weight: 300;
-
-    letter-spacing: 0.15em;
-}
-
 .plan-level-heading h3 {
     margin-top: 20px;
 
@@ -1314,11 +1786,6 @@ button {
     line-height: 1.7;
 }
 
-
-/* =========================================================
-   PLAN SERVICES
-   ========================================================= */
-
 .plan-services-grid {
     display: grid;
 
@@ -1332,7 +1799,7 @@ button {
     background: var(--border);
 }
 
-.plan-service {
+.plan-services-grid .plan-service {
     min-width: 0;
 
     padding: 32px;
@@ -1340,7 +1807,7 @@ button {
     background: var(--black);
 }
 
-.plan-service h4 {
+.plan-services-grid .plan-service h4 {
     font-family: "Xenois", serif;
 
     font-size: 27px;
@@ -1350,7 +1817,7 @@ button {
     letter-spacing: -0.035em;
 }
 
-.plan-service > p {
+.plan-services-grid .plan-service > p {
     min-height: 70px;
 
     margin-top: 16px;
@@ -1362,80 +1829,31 @@ button {
     line-height: 1.6;
 }
 
-.plan-features {
-    display: flex;
-    flex-direction: column;
-
-    gap: 10px;
-
-    margin: 25px 0 0;
-
-    padding: 0;
-
-    list-style: none;
-}
-
-.plan-features li {
-    position: relative;
-
-    padding-left: 18px;
-
-    color: #c5c5c5;
-
-    font-size: 13px;
-
-    line-height: 1.5;
-}
-
-.plan-features li::before {
-    content: "—";
-
-    position: absolute;
-
-    left: 0;
-
-    color: var(--orange);
-}
-
 
 /* =========================================================
    COMING SOON
    ========================================================= */
 
 .plans-coming-soon {
-    margin-top: 70px;
-
-    padding: 50px;
-
-    border: 1px solid var(--border);
-
-    background: var(--black-soft);
-}
-
-.plans-coming-soon .plans-category-heading {
-    max-width: 650px;
-
-    margin-bottom: 0;
-}
-
-.plans-coming-soon .plans-category-heading h3 {
-    color: var(--orange);
-}
-
-.coming-soon-status {
-    display: inline-flex;
+    display: flex;
 
     align-items: center;
 
     gap: 10px;
 
-    margin-top: 28px;
+    margin-top: 55px;
 
-    color: var(--orange);
+    color: var(--gray);
+
+    font-size: 12px;
+}
+
+.coming-soon-label {
+    color: var(--gray);
 
     font-size: 12px;
 
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
 }
 
 .coming-soon-spinner {
@@ -1462,7 +1880,191 @@ button {
 
 
 /* =========================================================
-   CONTACTO / PRESUPUESTO
+   CONTACTO / PROYECTO PERSONALIZADO
+   ========================================================= */
+
+.plans-contact {
+    display: grid;
+
+    grid-template-columns:
+        0.8fr
+        1.2fr;
+
+    align-items: start;
+
+    gap: 75px;
+
+    margin-top: 70px;
+
+    padding-top: 70px;
+
+    border-top: 1px solid var(--border);
+}
+
+.plans-custom,
+.plans-contact-copy {
+    max-width: 500px;
+}
+
+.plans-custom h3,
+.plans-contact-copy h3 {
+    margin-bottom: 17px;
+
+    font-family: "Xenois", serif;
+
+    font-size: clamp(
+        34px,
+        4vw,
+        52px
+    );
+
+    line-height: 0.98;
+
+    letter-spacing: -0.045em;
+}
+
+.plans-custom p,
+.plans-contact-copy p {
+    color: var(--gray);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FORMULARIO NUEVO
+   ========================================================= */
+
+.quote-form {
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 32px;
+
+    border: 1px solid var(--border);
+
+    background: var(--black);
+}
+
+.quote-form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.form-field {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.form-field-full {
+    grid-column: 1 / -1;
+}
+
+.form-field label {
+    color: #cfcfcf;
+
+    font-size: 11px;
+
+    letter-spacing: 0.04em;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+
+    border: 1px solid var(--border);
+
+    border-radius: 0;
+
+    outline: none;
+
+    background: var(--black-soft);
+
+    color: var(--white);
+
+    font-family: "Bunken", sans-serif;
+
+    font-size: 13px;
+
+    transition:
+        border-color var(--transition),
+        background var(--transition);
+}
+
+.form-field input,
+.form-field select {
+    min-height: 48px;
+
+    padding: 0 14px;
+}
+
+.form-field textarea {
+    min-height: 140px;
+
+    padding: 14px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: var(--gray-dark);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: var(--orange);
+
+    background: #0d0d0d;
+}
+
+.form-field select {
+    appearance: none;
+
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 50%,
+            var(--gray) 50%
+        ),
+        linear-gradient(
+            135deg,
+            var(--gray) 50%,
+            transparent 50%
+        );
+
+    background-position:
+        calc(100% - 17px) 20px,
+        calc(100% - 12px) 20px;
+
+    background-size:
+        5px 5px,
+        5px 5px;
+
+    background-repeat: no-repeat;
+}
+
+.quote-form-submit {
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   COMPATIBILIDAD FORMULARIO ANTERIOR
    ========================================================= */
 
 .custom-contact {
@@ -1509,15 +2111,6 @@ button {
     color: var(--orange);
 }
 
-.custom-contact-cta + p {
-    margin-top: 22px;
-}
-
-
-/* =========================================================
-   FORMULARIO
-   ========================================================= */
-
 .budget-form {
     max-width: 1000px;
 
@@ -1537,110 +2130,69 @@ button {
     gap: 28px 22px;
 }
 
-.form-field {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 9px;
-}
-
-.form-field-full {
-    grid-column: 1 / -1;
-}
-
-.form-field label {
-    color: #cfcfcf;
-
-    font-size: 12px;
-}
-
-.form-field input,
-.form-field select,
-.form-field textarea {
-    width: 100%;
-
-    border: 1px solid var(--border);
-
-    border-radius: 0;
-
-    outline: none;
-
-    background: var(--black-soft);
-
-    color: var(--white);
-
-    font-family: "Bunken", sans-serif;
-
-    font-size: 13px;
-
-    transition:
-        border-color var(--transition),
-        background var(--transition);
-}
-
-.form-field input,
-.form-field select {
-    min-height: 50px;
-
-    padding: 0 15px;
-}
-
-.form-field textarea {
-    min-height: 150px;
-
-    padding: 15px;
-
-    resize: vertical;
-
-    line-height: 1.6;
-}
-
-.form-field select {
-    appearance: none;
-
-    background-image:
-        linear-gradient(
-            45deg,
-            transparent 50%,
-            var(--gray) 50%
-        ),
-        linear-gradient(
-            135deg,
-            var(--gray) 50%,
-            transparent 50%
-        );
-
-    background-position:
-        calc(100% - 17px) 21px,
-        calc(100% - 12px) 21px;
-
-    background-size:
-        5px 5px,
-        5px 5px;
-
-    background-repeat: no-repeat;
-}
-
-.form-field input:focus,
-.form-field select:focus,
-.form-field textarea:focus {
-    border-color: var(--orange);
-
-    background: #0d0d0d;
-}
-
-.form-field input::placeholder,
-.form-field textarea::placeholder {
-    color: var(--gray-dark);
-}
-
 .budget-form-actions {
     display: flex;
 
     justify-content: flex-start;
 
     margin-top: 35px;
+}
+
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.final-cta {
+    padding: 140px 0;
+
+    background: var(--orange);
+
+    color: var(--black);
+
+    text-align: center;
+}
+
+.final-cta .container {
+    max-width: 1000px;
+}
+
+.final-cta h2 {
+    font-family: "Xenois", serif;
+
+    font-size: clamp(
+        52px,
+        7vw,
+        94px
+    );
+
+    line-height: 0.9;
+
+    letter-spacing: -0.06em;
+}
+
+.final-cta p {
+    max-width: 600px;
+
+    margin: 25px auto 30px;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+.final-cta .button {
+    border-color: var(--black);
+
+    background: var(--black);
+
+    color: var(--white);
+}
+
+.final-cta .button:hover {
+    background: transparent;
+
+    color: var(--black);
 }
 
 
@@ -1658,6 +2210,26 @@ button {
 
 .footer-inner {
     padding-bottom: 60px;
+}
+
+
+/*
+   Nuevo footer:
+   GURI grande como texto, sin isotipo grande arriba.
+*/
+
+.footer-brand-name {
+    display: inline-block;
+
+    color: var(--white);
+
+    font-family: "Xenois", serif;
+
+    font-size: 64px;
+
+    line-height: 0.9;
+
+    letter-spacing: -0.055em;
 }
 
 
@@ -1684,7 +2256,8 @@ button {
     gap: 11px;
 }
 
-.footer-links strong {
+.footer-links strong,
+.footer-links h4 {
     margin-bottom: 8px;
 
     color: var(--white);
@@ -1731,12 +2304,22 @@ button {
     font-size: 10px;
 }
 
+.footer-copyright {
+    color: var(--gray-dark);
+
+    font-size: 10px;
+}
+
 .footer-credit {
     display: inline-flex;
 
     align-items: center;
 
     gap: 7px;
+
+    color: var(--gray);
+
+    font-size: 10px;
 
     white-space: nowrap;
 }
@@ -1797,8 +2380,17 @@ button {
     }
 
     .services-cloud {
-        gap: 50px;
-        padding: 35px;
+        min-height: 520px;
+
+        padding: 30px;
+    }
+
+    .service-node {
+        width: 220px;
+    }
+
+    .process-roadmap {
+        gap: 20px;
     }
 
     .process-journey {
@@ -1815,6 +2407,14 @@ button {
     .digital-management-grid {
         grid-template-columns:
             repeat(2, 1fr);
+    }
+
+    .plans-integrated-grid {
+        gap: 20px;
+    }
+
+    .plan-integrated {
+        padding: 35px;
     }
 
     .plan-level {
@@ -1852,6 +2452,54 @@ button {
     }
 
 
+    /*
+       El responsive.css también controla la apertura.
+       Estas reglas garantizan que el nav no quede detrás
+       de otras capas.
+    */
+
+    .main-nav.active,
+    .main-nav.is-open {
+        display: flex;
+
+        position: absolute;
+
+        top: 86px;
+        left: 0;
+        right: 0;
+
+        z-index: 1100;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        margin: 0;
+
+        padding: 12px 24px 20px;
+
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+
+        background: rgba(8, 8, 8, 0.98);
+
+        backdrop-filter: blur(14px);
+    }
+
+    .main-nav.active a,
+    .main-nav.is-open a {
+        display: flex;
+
+        align-items: center;
+
+        min-height: 48px;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+
     /* HERO */
 
     .hero-inner {
@@ -1861,36 +2509,42 @@ button {
     }
 
     .hero-visual {
-        justify-content: flex-start;
+        justify-content: center;
     }
 
     .hero-card {
-        width: min(100%, 420px);
+        width: auto;
+
+        min-height: 0;
     }
 
 
     /* SERVICES */
 
     .services-cloud {
-        min-height: 0;
-
-        grid-template-columns:
-            1fr
-            1fr;
-
-        gap: 30px;
+        min-height: 560px;
 
         padding: 20px;
     }
 
-    .service-cloud-item {
-        min-height: 130px;
-
-        padding: 25px;
+    .service-node {
+        width: 210px;
     }
 
-    .services-cloud-line {
-        display: none;
+    .service-node-web {
+        left: 0;
+    }
+
+    .service-node-landing {
+        right: 0;
+    }
+
+    .service-node-store {
+        left: 3%;
+    }
+
+    .service-node-maintenance {
+        right: 3%;
     }
 
 
@@ -1937,6 +2591,17 @@ button {
 
     /* PROCESS */
 
+    .process-roadmap {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 45px 30px;
+    }
+
+    .process-roadmap-line {
+        display: none;
+    }
+
     .process-journey {
         display: flex;
 
@@ -1953,10 +2618,13 @@ button {
         grid-template-columns: 55px 1fr;
 
         gap: 25px;
+
+        align-items: start;
     }
 
     .process-node-content {
         padding-top: 3px;
+
         padding-bottom: 35px;
     }
 
@@ -1968,9 +2636,7 @@ button {
         width: 1px;
         height: 35px;
 
-        margin: 0;
-
-        margin-left: 26px;
+        margin: 0 0 0 26px;
 
         background:
             linear-gradient(
@@ -2008,12 +2674,18 @@ button {
 
     /* PLANS */
 
-    .plan-services-grid {
+    .plans-integrated-grid {
         grid-template-columns: 1fr;
     }
 
-    .plan-service > p {
-        min-height: 0;
+    .plans-contact {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .plan-services-grid {
+        grid-template-columns: 1fr;
     }
 
 
@@ -2062,6 +2734,15 @@ button {
         min-height: 76px;
     }
 
+    .main-nav.active,
+    .main-nav.is-open {
+        top: 76px;
+
+        padding:
+            10px 16px
+            20px;
+    }
+
 
     /* HERO */
 
@@ -2080,34 +2761,46 @@ button {
     .hero-actions {
         flex-direction: column;
 
-        align-items: flex-start;
+        align-items: stretch;
+    }
+
+    .hero-actions .button {
+        width: 100%;
     }
 
     .hero-card {
-        padding: 30px;
+        width: 100%;
     }
 
-    .hero-brand {
+    .hero-brand-main {
         gap: 10px;
     }
 
+    .hero-brand-icon,
     .hero-brand-logo {
-        width: 32px;
-        height: 32px;
+        width: 35px;
+        height: 35px;
     }
 
     .hero-brand-name span {
-        font-size: 11px;
+        font-size: 31px;
     }
 
     .hero-brand-name strong {
-        font-size: 55px;
+        font-size: 42px;
+    }
+
+    .hero-brand > small,
+    .hero-card small {
+        font-size: 9px;
     }
 
 
     /* SERVICES */
 
     .services-cloud {
+        min-height: 0;
+
         display: flex;
 
         flex-direction: column;
@@ -2116,6 +2809,64 @@ button {
 
         padding: 0;
     }
+
+    .services-cloud-center {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        order: -1;
+
+        width: 110px;
+        height: 110px;
+
+        margin: 0 auto 12px;
+
+        transform: none;
+    }
+
+    .services-cloud-center-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .services-cloud-line {
+        display: none;
+    }
+
+    .service-node {
+        position: relative;
+
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+
+        width: 100%;
+
+        min-height: 90px;
+
+        padding: 18px;
+    }
+
+    .service-node-icon {
+        width: 40px;
+        height: 40px;
+
+        flex-basis: 40px;
+    }
+
+    .service-node-content h3 {
+        font-size: 16px;
+    }
+
+    .service-node-content p {
+        font-size: 11px;
+    }
+
+
+    /* OLD SERVICES COMPATIBILITY */
 
     .service-cloud-item {
         min-height: 110px;
@@ -2177,10 +2928,48 @@ button {
 
     /* PROCESS */
 
+    .process-roadmap {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding-top: 10px;
+    }
+
+    .process-item {
+        display: grid;
+
+        grid-template-columns: 50px 1fr;
+
+        gap: 18px;
+
+        text-align: left;
+
+        align-items: start;
+    }
+
+    .process-node {
+        width: 50px;
+        height: 50px;
+
+        margin: 0;
+    }
+
+    .process-item-content h3 {
+        font-size: 20px;
+    }
+
+    .process-item-content p {
+        margin: 0;
+
+        font-size: 12px;
+    }
+
+
+    /* OLD PROCESS */
+
     .process-node {
         grid-template-columns: 45px 1fr;
-
-        gap: 20px;
     }
 
     .process-node-marker {
@@ -2188,12 +2977,12 @@ button {
         height: 45px;
     }
 
-    .process-connector {
-        margin-left: 22px;
-    }
-
     .process-node-content h3 {
         font-size: 27px;
+    }
+
+    .process-connector {
+        margin-left: 22px;
     }
 
 
@@ -2203,40 +2992,46 @@ button {
         margin-top: 35px;
     }
 
+    .why-list > div {
+        align-items: flex-start;
+    }
 
-    /* DIGITAL MANAGEMENT */
+
+    /* DIGITAL MANAGEMENT — 2 x 2 */
 
     .digital-management-grid {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
 
-        gap: 12px;
+        gap: 10px;
     }
 
     .digital-management-item {
-        min-height: 0;
+        min-height: 125px;
 
-        padding: 20px;
+        padding: 17px 13px;
     }
 
     .digital-logo {
-        width: 38px;
-        height: 38px;
+        width: 34px;
+        height: 34px;
 
-        margin-bottom: 18px;
+        margin-bottom: 14px;
     }
 
     .digital-logo img {
-        width: 21px;
-        height: 21px;
+        width: 20px;
+        height: 20px;
     }
 
     .digital-management-item h3 {
-        font-size: 20px;
+        font-size: 17px;
     }
 
     .digital-management-item p {
-        font-size: 11px;
+        margin-top: 9px;
+
+        font-size: 10px;
     }
 
     .digital-management-item .service-link {
@@ -2246,73 +3041,122 @@ button {
 
     /* PLANS */
 
-    .plan-level {
-        padding: 30px;
+    .plans-integrated-grid {
+        gap: 16px;
     }
 
-    .plan-level-heading {
-        margin-bottom: 32px;
+    .plan-integrated {
+        padding: 27px 20px;
     }
 
-    .plan-level-heading h3 {
-        font-size: 34px;
+    .plan-label {
+        font-size: 10px;
     }
 
-    .plan-level-heading p {
-        font-size: 14px;
+    .plan-integrated-description {
+        font-size: 13px;
     }
 
-    .plan-services-grid {
-        grid-template-columns: 1fr;
+    .plan-integrated .plan-service {
+        padding: 20px 0;
     }
 
-    .plan-service {
-        padding: 25px;
+    .plan-integrated .plan-service h3 {
+        font-size: 20px;
     }
 
-    .plan-service h4 {
-        font-size: 25px;
+    .plan-integrated .plan-service p {
+        font-size: 12px;
+    }
+
+    .plan-integrated .plan-features li {
+        font-size: 11px;
     }
 
     .plans-coming-soon {
+        margin-top: 40px;
+    }
+
+    .coming-soon-label {
+        font-size: 10px;
+    }
+
+    .coming-soon-spinner {
+        width: 11px;
+        height: 11px;
+    }
+
+
+    /* CONTACT */
+
+    .plans-contact {
         margin-top: 50px;
 
-        padding: 30px;
+        padding-top: 50px;
     }
 
-
-    /* CONTACTO */
-
-    .custom-contact-intro {
-        margin-bottom: 45px;
+    .plans-custom h3,
+    .plans-contact-copy h3 {
+        font-size: 34px;
     }
 
-    .custom-contact-cta {
-        margin-top: 55px;
-
-        font-size: 52px;
+    .plans-custom p,
+    .plans-contact-copy p {
+        font-size: 13px;
     }
 
-    .budget-form {
-        padding: 25px;
+    .quote-form {
+        padding: 22px 17px;
     }
 
-    .budget-form-grid {
+    .quote-form-grid {
         grid-template-columns: 1fr;
 
-        gap: 22px;
+        gap: 18px;
     }
 
     .form-field-full {
         grid-column: auto;
     }
 
-    .budget-form-actions .button {
+    .form-field input,
+    .form-field select {
+        min-height: 46px;
+    }
+
+    .form-field textarea {
+        min-height: 125px;
+    }
+
+    .quote-form-submit {
         width: 100%;
     }
 
 
+    /* FINAL CTA */
+
+    .final-cta {
+        padding: 85px 0;
+    }
+
+    .final-cta h2 {
+        font-size: 52px;
+    }
+
+    .final-cta p {
+        font-size: 14px;
+    }
+
+
     /* FOOTER */
+
+    .site-footer {
+        padding-top: 55px;
+    }
+
+    .footer-brand-name {
+        font-size: 48px;
+    }
 
     .footer-links {
         grid-template-columns: 1fr;
@@ -2328,15 +3172,66 @@ button {
         align-items: flex-start;
 
         padding: 25px 0;
+
+        gap: 10px;
     }
 
+    .footer-copyright,
     .footer-credit {
-        gap: 7px;
+        font-size: 10px;
     }
 
     .footer-credit img {
-        width: 14px;
-        height: 14px;
+        width: 13px;
+        height: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 400PX
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .hero h1 {
+        font-size: 56px;
+    }
+
+    .hero-brand-name span {
+        font-size: 26px;
+    }
+
+    .hero-brand-name strong {
+        font-size: 36px;
+    }
+
+    .hero-brand-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .digital-management-item {
+        min-height: 115px;
+
+        padding: 14px 10px;
+    }
+
+    .digital-management-item h3 {
+        font-size: 14px;
+    }
+
+    .plan-integrated {
+        padding: 23px 16px;
+    }
+
+    .footer-brand-name {
+        font-size: 42px;
     }
 
 }
