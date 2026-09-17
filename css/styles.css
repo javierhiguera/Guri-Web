@@ -995,7 +995,7 @@ button {
     display: block;
 
     animation:
-        iphone-scroll-anim 45s linear infinite;
+        iphone-scroll-anim 60s linear infinite;
 }
 
 @keyframes iphone-scroll-anim {
