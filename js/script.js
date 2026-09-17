@@ -87,11 +87,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
         /* Cerrar menú al pasar de mobile a desktop */
 
+        let resizeTimer;
+
         window.addEventListener("resize", () => {
 
-            if (window.innerWidth > 900) {
-                closeMenu();
-            }
+            clearTimeout(resizeTimer);
+
+            resizeTimer = setTimeout(() => {
+
+                if (window.innerWidth > 900) {
+                    closeMenu();
+                }
+
+            }, 120);
 
         });
 
@@ -104,6 +112,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (header) {
 
+        let ticking = false;
+
         const updateHeader = () => {
 
             header.classList.toggle(
@@ -111,9 +121,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 window.scrollY > 20
             );
 
+            ticking = false;
+
         };
 
-        window.addEventListener("scroll", updateHeader, {
+        const onScroll = () => {
+
+            if (ticking) {
+                return;
+            }
+
+            ticking = true;
+
+            window.requestAnimationFrame(updateHeader);
+
+        };
+
+        window.addEventListener("scroll", onScroll, {
             passive: true
         });
 
@@ -199,8 +223,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
         quoteForm.addEventListener("submit", event => {
 
-            if (quoteForm.getAttribute("action") === "#") {
+            const action = quoteForm.getAttribute("action");
+
+            /* Bloquea el envío si todavía no configuraste
+               el endpoint real (Formspree, EmailJS, etc.) */
+
+            if (
+                !action ||
+                action === "#" ||
+                action.includes("TU_ID")
+            ) {
+
                 event.preventDefault();
+
+                console.warn(
+                    "Formulario no configurado: reemplazá TU_ID en el action del <form>."
+                );
+
             }
 
         });
