@@ -46,14 +46,6 @@
         grid-column: span 2;
     }
 
-    .process-map {
-        gap: 30px 15px;
-    }
-
-    .process-step {
-        padding: 15px;
-    }
-
     .plans-integrated-grid {
         gap: 24px;
     }
@@ -118,6 +110,36 @@
 
     .orbit-item {
         max-width: 140px;
+    }
+
+
+    /* PROCESO — mantiene línea, ajusta tamaños */
+
+    .process-map {
+        min-height: 460px;
+    }
+
+    .process-step {
+        max-width: 220px;
+    }
+
+    .process-step-icon {
+        width: 64px;
+        height: 64px;
+    }
+
+    .process-step-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .process-step h3 {
+        font-size: 19px;
+    }
+
+    .process-step p {
+        font-size: 12px;
+        max-width: 200px;
     }
 }
 
@@ -414,35 +436,44 @@
     }
 
 
-    /* PROCESO */
+    /* PROCESO — se apila vertical, sin línea */
 
     .process-map {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+
+        aspect-ratio: auto;
+
+        gap: 50px;
+
         padding: 20px 0;
+
         min-height: auto;
     }
 
-    .process-map-line,
-    .process-port {
+    .process-line {
         display: none;
     }
 
-    .process-step {
-        max-width: 100%;
-        width: 100%;
-        margin-top: 0 !important;
-        align-self: auto;
-    }
-
+    .process-step,
     .process-step-1,
     .process-step-2,
     .process-step-3,
     .process-step-4 {
-        grid-column: auto;
-        grid-row: auto;
+        position: relative;
+
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+
+        transform: none;
+
+        max-width: 100%;
+        width: 100%;
+
         align-self: auto;
+
         margin-top: 0;
     }
 
@@ -770,6 +801,10 @@
 
 
     /* PROCESO */
+
+    .process-map {
+        gap: 40px;
+    }
 
     .process-step-icon {
         width: 56px;
