@@ -707,7 +707,6 @@ button {
     animation: globe-breathe 8s ease-in-out infinite;
 }
 
-/* Sensación de movimiento: respiración suave + rotación mínima */
 @keyframes globe-breathe {
     0% {
         transform: scale(1) rotate(0deg);
@@ -758,7 +757,7 @@ button {
 
 
 /* =========================================================
-   ICONOS ALREDEDOR DEL MUNDO (texto debajo del icono)
+   ICONOS ALREDEDOR DEL MUNDO
    ========================================================= */
 
 .orbit-item {
@@ -788,8 +787,6 @@ button {
     transform: scale(1.08);
 }
 
-
-/* Icono circular */
 
 .orbit-icon {
     width: 62px;
@@ -838,8 +835,6 @@ button {
 }
 
 
-/* Texto debajo del icono */
-
 .orbit-text {
     display: flex;
     flex-direction: column;
@@ -882,7 +877,6 @@ button {
    POSICIONES DISPERSAS ALREDEDOR DEL MUNDO
    ========================================================= */
 
-/* 1 — Arriba izquierda */
 .orbit-item-1 {
     top: 4%;
     left: 6%;
@@ -890,7 +884,6 @@ button {
     animation: float-1 6s ease-in-out infinite;
 }
 
-/* 2 — Arriba derecha */
 .orbit-item-2 {
     top: 8%;
     right: 2%;
@@ -898,7 +891,6 @@ button {
     animation: float-2 7s ease-in-out infinite;
 }
 
-/* 3 — Abajo izquierda */
 .orbit-item-3 {
     bottom: 10%;
     left: 0;
@@ -906,7 +898,6 @@ button {
     animation: float-3 8s ease-in-out infinite;
 }
 
-/* 4 — Abajo derecha */
 .orbit-item-4 {
     bottom: 4%;
     right: 8%;
@@ -914,8 +905,6 @@ button {
     animation: float-4 6.5s ease-in-out infinite;
 }
 
-
-/* Flotación suave de cada icono */
 
 @keyframes float-1 {
     0%, 100% { transform: translateY(0); }
@@ -1582,13 +1571,41 @@ button {
 }
 
 
-//* =========================================================
-   PROCESS — Línea naranja continua de lado a lado
+/* =========================================================
+   PROCESS — Línea naranja continua + iconos sobre la línea
    ========================================================= */
 
 .process {
     background: var(--black);
 }
+
+
+/* Título → a la izquierda */
+
+.process-heading {
+    max-width: 100%;
+
+    margin-bottom: 40px;
+
+    text-align: left;
+}
+
+.process-heading h2 {
+    font-family: "Xenois", serif;
+
+    font-size: clamp(48px, 6vw, 82px);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.055em;
+}
+
+.process-heading h2 span {
+    color: var(--orange);
+}
+
+
+/* Mapa donde vive la línea + los iconos */
 
 .process-map {
     position: relative;
@@ -1598,12 +1615,10 @@ button {
     aspect-ratio: 2000 / 600;
 
     min-height: 560px;
-
-    margin-top: 40px;
 }
 
 
-/* Línea SVG continua de lado a lado */
+/* Línea SVG */
 
 .process-line {
     position: absolute;
@@ -1628,9 +1643,7 @@ button {
 }
 
 
-/* =========================================================
-   PASOS — Sobre la línea, en las posiciones de los círculos blancos
-   ========================================================= */
+/* Pasos — sobre la línea */
 
 .process-step {
     position: absolute;
@@ -1650,9 +1663,6 @@ button {
 
     transform: translate(-50%, -50%);
 }
-
-
-/* El icono va CENTRADO en el punto de la línea */
 
 .process-step-icon {
     width: 76px;
@@ -1733,32 +1743,29 @@ button {
 
 
 /* =========================================================
-   POSICIONES — Coinciden con los círculos blancos
+   POSICIONES — Coinciden con los círculos blancos de la referencia
    ========================================================= */
 
-/* Paso 1 — Hablamos (arriba izquierda) */
 .process-step-1 {
-    top: 38%;
-    left: 22%;
+    top: 55%;
+    left: 33%;
 }
 
-/* Paso 2 — Diseñamos (abajo centro-izquierda) */
 .process-step-2 {
-    top: 75%;
-    left: 38%;
+    top: 88%;
+    left: 44%;
 }
 
-/* Paso 3 — Desarrollamos (abajo centro-derecha) */
 .process-step-3 {
-    top: 75%;
-    left: 65%;
+    top: 65%;
+    left: 60%;
 }
 
-/* Paso 4 — Publicamos (arriba derecha) */
 .process-step-4 {
-    top: 38%;
-    left: 78%;
+    top: 45%;
+    left: 86%;
 }
+
 
 /* =========================================================
    WHY GURI
@@ -2296,7 +2303,6 @@ button {
     transition: color var(--transition);
 }
 
-/* Label naranja cuando el campo tiene foco */
 .form-field:focus-within label {
     color: var(--orange);
 }
