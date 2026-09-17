@@ -917,7 +917,7 @@ button {
         inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Barra de estado del iPhone */
+/* Barra de estado del iPhone — San Francisco */
 
 .device-status-bar {
     position: absolute;
@@ -937,11 +937,13 @@ button {
 
     color: #fff;
 
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Bunken", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Bunken", sans-serif;
 
     font-size: 13px;
 
-    font-weight: 500;
+    font-weight: 600;
+
+    letter-spacing: -0.02em;
 
     pointer-events: none;
 }
@@ -1005,6 +1007,30 @@ button {
     }
 }
 
+/* Barra de gestos (home indicator) */
+
+.iphone-home-bar {
+    position: absolute;
+
+    bottom: 8px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 130px;
+    height: 5px;
+
+    border-radius: 3px;
+
+    background: #fff;
+
+    opacity: 0.9;
+
+    z-index: 6;
+
+    pointer-events: none;
+}
+
 .work-frame-iphone::before {
     content: "";
 
@@ -1057,7 +1083,7 @@ button {
 
 
 /* =========================================================
-   iMAC — Metalizado oscuro + barra macOS
+   iMAC — Metalizado oscuro
    ========================================================= */
 
 .work-frame-imac {
@@ -1087,7 +1113,6 @@ button {
 
     padding: 18px 18px 44px 18px;
 
-    /* Marco oscuro metalizado (como los otros dispositivos) */
     background:
         linear-gradient(
             180deg,
@@ -1147,88 +1172,10 @@ button {
         inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Barra superior de macOS */
-
-.mac-os-bar {
+.mac-content {
     position: absolute;
 
     top: 0;
-    left: 0;
-    right: 0;
-
-    height: 22px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 12px;
-
-    background: rgba(0, 0, 0, 0.55);
-
-    backdrop-filter: blur(8px);
-
-    color: #fff;
-
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Bunken", sans-serif;
-
-    font-size: 10px;
-
-    font-weight: 500;
-
-    z-index: 3;
-}
-
-.mac-os-left,
-.mac-os-right {
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-}
-
-.mac-os-apple {
-    width: 11px;
-    height: 11px;
-
-    fill: currentColor;
-
-    flex: 0 0 11px;
-}
-
-.mac-os-menu-item {
-    font-size: 10px;
-
-    opacity: 0.95;
-}
-
-.mac-os-icon {
-    width: 12px;
-    height: 12px;
-
-    fill: currentColor;
-
-    flex: 0 0 12px;
-
-    opacity: 0.95;
-}
-
-.mac-os-date {
-    font-size: 10px;
-
-    opacity: 0.95;
-
-    white-space: nowrap;
-}
-
-/* Contenido debajo de la barra */
-
-.imac-screen .mac-content {
-    position: absolute;
-
-    top: 22px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -1238,15 +1185,13 @@ button {
     background: #000;
 }
 
-.imac-screen .mac-content img {
+.mac-content img {
     width: 100%;
     height: 100%;
 
     object-fit: cover;
     object-position: center top;
 }
-
-/* Cuello del iMac */
 
 .imac-neck {
     position: relative;
@@ -1266,8 +1211,6 @@ button {
         inset 1px 0 1px rgba(255, 255, 255, 0.08),
         inset -1px 0 1px rgba(0, 0, 0, 0.5);
 }
-
-/* Base del iMac */
 
 .imac-base {
     position: relative;
@@ -1316,7 +1259,7 @@ button {
 
 
 /* =========================================================
-   iPAD — Metalizado negro + barra de estado
+   iPAD — Metalizado negro
    ========================================================= */
 
 .work-frame-ipad {
@@ -1395,34 +1338,10 @@ button {
         inset 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-/* Barra de estado del iPad */
-
-.device-status-ipad {
-    padding: 10px 20px 0 20px;
-
-    font-size: 12px;
-}
-
-.device-status-ipad .device-time {
-    font-size: 12px;
-}
-
-.device-status-ipad .device-status-icons {
-    gap: 6px;
-}
-
-.ipad-battery-percent {
-    font-size: 11px;
-
-    font-weight: 500;
-
-    margin-left: 2px;
-}
-
 .ipad-content {
     position: absolute;
 
-    top: 26px;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
@@ -1471,7 +1390,7 @@ button {
 
 
 /* =========================================================
-   PROCESS
+   PROCESS — Estilo n8n
    ========================================================= */
 
 .process {
@@ -3024,6 +2943,12 @@ button {
         height: 9px;
     }
 
+    .iphone-home-bar {
+        width: 100px;
+        height: 4px;
+        bottom: 6px;
+    }
+
     .work-frame-imac {
         max-width: 100%;
     }
@@ -3036,38 +2961,6 @@ button {
         top: 5px;
         width: 4px;
         height: 4px;
-    }
-
-    .mac-os-bar {
-        height: 18px;
-        padding: 0 8px;
-        font-size: 8px;
-    }
-
-    .mac-os-left,
-    .mac-os-right {
-        gap: 8px;
-    }
-
-    .mac-os-apple {
-        width: 9px;
-        height: 9px;
-        flex: 0 0 9px;
-    }
-
-    .mac-os-menu-item,
-    .mac-os-date {
-        font-size: 8px;
-    }
-
-    .mac-os-icon {
-        width: 10px;
-        height: 10px;
-        flex: 0 0 10px;
-    }
-
-    .imac-screen .mac-content {
-        top: 18px;
     }
 
     .imac-neck {
@@ -3088,23 +2981,6 @@ button {
 
     .ipad-screen {
         border-radius: 14px;
-    }
-
-    .device-status-ipad {
-        padding: 8px 14px 0 14px;
-        font-size: 10px;
-    }
-
-    .device-status-ipad .device-time {
-        font-size: 10px;
-    }
-
-    .ipad-battery-percent {
-        font-size: 9px;
-    }
-
-    .ipad-content {
-        top: 20px;
     }
 
     .brainstorm-item {
