@@ -10,37 +10,84 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const menuToggle = document.querySelector(".menu-toggle");
     const mainNav = document.querySelector(".main-nav");
+    const header = document.querySelector(".site-header");
 
-    if (menuToggle && mainNav) {
+    if (menuToggle && mainNav && header) {
 
-        menuToggle.addEventListener("click", () => {
+        const closeMenu = () => {
 
-            const isOpen = mainNav.classList.toggle("mobile-open");
+            header.classList.remove("menu-open");
+            document.body.classList.remove("menu-open");
 
-            menuToggle.classList.toggle("active", isOpen);
+            menuToggle.classList.remove("active");
 
             menuToggle.setAttribute(
                 "aria-expanded",
-                isOpen ? "true" : "false"
+                "false"
             );
 
+        };
+
+        const openMenu = () => {
+
+            header.classList.add("menu-open");
+            document.body.classList.add("menu-open");
+
+            menuToggle.classList.add("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+        };
+
+        menuToggle.addEventListener("click", () => {
+
+            const isOpen =
+                header.classList.contains("menu-open");
+
+            if (isOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+
         });
+
 
         /* Cerrar menú al seleccionar una opción */
 
         mainNav.querySelectorAll("a").forEach(link => {
 
             link.addEventListener("click", () => {
-
-                mainNav.classList.remove("mobile-open");
-                menuToggle.classList.remove("active");
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
+                closeMenu();
             });
+
+        });
+
+
+        /* Cerrar menú con ESC */
+
+        document.addEventListener("keydown", event => {
+
+            if (
+                event.key === "Escape" &&
+                header.classList.contains("menu-open")
+            ) {
+                closeMenu();
+            }
+
+        });
+
+
+        /* Cerrar menú al pasar de mobile a desktop */
+
+        window.addEventListener("resize", () => {
+
+            if (window.innerWidth > 900) {
+                closeMenu();
+            }
 
         });
 
@@ -50,8 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
     /* =====================================================
        HEADER AL HACER SCROLL
        ===================================================== */
-
-    const header = document.querySelector(".site-header");
 
     if (header) {
 
@@ -78,7 +123,13 @@ document.addEventListener("DOMContentLoaded", () => {
        ===================================================== */
 
     const animatedElements = document.querySelectorAll(
-        ".service-card, .work-card, .process-item, .plan-card"
+        [
+            ".service-node",
+            ".work-card",
+            ".process-node",
+            ".plan-card",
+            ".marketing-tool"
+        ].join(", ")
     );
 
     if (
@@ -113,8 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } else {
 
-        /* Fallback */
-
         animatedElements.forEach(element => {
             element.classList.add("visible");
         });
@@ -123,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       AÑO AUTOMÁTICO DEL FOOTER
+       AÑO DEL FOOTER
        ===================================================== */
 
     const currentYear = document.querySelector(
@@ -132,6 +181,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (currentYear) {
         currentYear.textContent = new Date().getFullYear();
+    }
+
+
+    /* =====================================================
+       FORMULARIO DE PRESUPUESTO
+       ===================================================== */
+
+    const quoteForm = document.querySelector(".quote-form");
+
+    if (quoteForm) {
+
+        quoteForm.addEventListener("submit", event => {
+
+            /*
+             * El formulario queda preparado para conectar
+             * posteriormente con el servicio de envío.
+             */
+
+            if (quoteForm.getAttribute("action") === "#") {
+                event.preventDefault();
+            }
+
+        });
+
     }
 
 
@@ -148,9 +221,6 @@ document.addEventListener("DOMContentLoaded", () => {
      * Proyecto 1 → 3000 ms
      * Proyecto 2 → 4500 ms
      * Proyecto 3 → 6200 ms
-     *
-     * Cada slider comienza con un retraso diferente
-     * para evitar que las transiciones coincidan.
      */
 
     const sliderSettings = [
@@ -195,6 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
             slides[currentSlide].classList.add("active");
 
         };
+
 
         /*
          * Primer cambio con retraso independiente.
