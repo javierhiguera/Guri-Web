@@ -643,14 +643,14 @@ button {
         20px 20px;
 
     background-position:
-        center center,
-        center center,
-        center center,
-        center center,
-        center center,
-        center center,
-        center center,
-        center center;
+        center top,
+        center top,
+        center top,
+        center top,
+        center top,
+        center top,
+        center top,
+        center top;
 }
 
 
@@ -664,13 +664,13 @@ button {
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.1fr 0.9fr;
 
     align-items: center;
 
     gap: 60px;
 
-    min-height: 640px;
+    min-height: 700px;
 }
 
 
@@ -682,7 +682,7 @@ button {
     position: relative;
 
     width: 100%;
-    max-width: 620px;
+    max-width: 780px;
 
     aspect-ratio: 1 / 1;
 
@@ -726,13 +726,13 @@ button {
 
 
 /* =========================================================
-   MUNDO
+   MUNDO — grande + sensación de movimiento
    ========================================================= */
 
 .services-globe {
     position: relative;
 
-    width: 72%;
+    width: 100%;
     height: auto;
 
     display: block;
@@ -740,18 +740,58 @@ button {
     z-index: 1;
 
     filter:
-        drop-shadow(0 0 50px rgba(255, 90, 31, 0.30))
-        drop-shadow(0 0 100px rgba(255, 90, 31, 0.12));
+        drop-shadow(0 0 70px rgba(255, 90, 31, 0.35))
+        drop-shadow(0 0 140px rgba(255, 90, 31, 0.15));
 
-    animation: globe-spin 60s linear infinite;
+    animation: globe-breathe 8s ease-in-out infinite;
 }
 
-@keyframes globe-spin {
+/* Sensación de movimiento: respiración suave + rotación mínima */
+@keyframes globe-breathe {
     0% {
-        transform: rotate(0deg);
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.03) rotate(3deg);
     }
     100% {
-        transform: rotate(360deg);
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+
+/* Anillo orbital decorativo alrededor del mundo */
+
+.services-orbit::before {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    transform: translate(-50%, -50%) rotate(-20deg);
+
+    border: 1px dashed rgba(255, 90, 31, 0.25);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    animation: orbit-rotate 60s linear infinite;
+
+    z-index: 0;
+}
+
+@keyframes orbit-rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(-20deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(340deg);
     }
 }
 
@@ -773,7 +813,7 @@ button {
 
     color: var(--white);
 
-    max-width: 170px;
+    max-width: 150px;
 
     z-index: 3;
 
@@ -784,7 +824,7 @@ button {
 
 .orbit-item:hover {
     color: var(--orange);
-    transform: scale(1.06);
+    transform: scale(1.08);
 }
 
 
@@ -878,31 +918,62 @@ button {
 
 
 /* =========================================================
-   POSICIONES DE LOS 4 ICONOS (esquinas del cuadrado)
+   POSICIONES DISPERSAS ALREDEDOR DEL MUNDO
    ========================================================= */
 
-/* 1 — Arriba izquierda */
+/* 1 — Arriba izquierda (no en la esquina exacta) */
 .orbit-item-1 {
-    top: 0;
-    left: 0;
+    top: 4%;
+    left: 6%;
+
+    animation: float-1 6s ease-in-out infinite;
 }
 
 /* 2 — Arriba derecha */
 .orbit-item-2 {
-    top: 0;
-    right: 0;
+    top: 8%;
+    right: 2%;
+
+    animation: float-2 7s ease-in-out infinite;
 }
 
 /* 3 — Abajo izquierda */
 .orbit-item-3 {
-    bottom: 0;
+    bottom: 10%;
     left: 0;
+
+    animation: float-3 8s ease-in-out infinite;
 }
 
-/* 4 — Abajo derecha */
+/* 4 — Abajo derecha (más pegado abajo) */
 .orbit-item-4 {
-    bottom: 0;
-    right: 0;
+    bottom: 4%;
+    right: 8%;
+
+    animation: float-4 6.5s ease-in-out infinite;
+}
+
+
+/* Flotación suave de cada icono */
+
+@keyframes float-1 {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+}
+
+@keyframes float-2 {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(8px); }
+}
+
+@keyframes float-3 {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+}
+
+@keyframes float-4 {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(10px); }
 }
 
 
@@ -2629,8 +2700,7 @@ button {
 .plan-card,
 .process-step,
 .brainstorm-item,
-.digital-management-item,
-.orbit-item {
+.digital-management-item {
     opacity: 0;
 
     transform: translateY(25px);
@@ -2647,19 +2717,21 @@ button {
 .plan-card.visible,
 .process-step.visible,
 .brainstorm-item.visible,
-.digital-management-item.visible,
-.orbit-item.visible {
+.digital-management-item.visible {
     opacity: 1;
 
     transform: translateY(0);
 }
 
-
-/* Services orbit: mantiene posición aunque esté oculto */
+/* Iconos de la órbita: solo fade-in, sin desplazar */
 
 .orbit-item {
     opacity: 0;
-    transition: opacity 0.7s ease, transform 0.7s ease, color var(--transition);
+
+    transition:
+        opacity 0.7s ease,
+        color var(--transition),
+        transform var(--transition);
 }
 
 .orbit-item.visible {
