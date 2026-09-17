@@ -264,8 +264,8 @@
 
   .iphone-notch {
     width: 90px;
-    height: 22px;
-    top: 18px;
+    height: 24px;
+    top: 20px;
   }
 
   .iphone-notch::before {
