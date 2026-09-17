@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
             header.classList.remove("menu-open");
             document.body.classList.remove("menu-open");
 
+            mainNav.classList.remove("is-open");
+
             menuToggle.classList.remove("active");
 
             menuToggle.setAttribute(
@@ -33,6 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
             header.classList.add("menu-open");
             document.body.classList.add("menu-open");
 
+            mainNav.classList.add("is-open");
+
             menuToggle.classList.add("active");
 
             menuToggle.setAttribute(
@@ -45,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         menuToggle.addEventListener("click", () => {
 
             const isOpen =
-                header.classList.contains("menu-open");
+                mainNav.classList.contains("is-open");
 
             if (isOpen) {
                 closeMenu();
@@ -73,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (
                 event.key === "Escape" &&
-                header.classList.contains("menu-open")
+                mainNav.classList.contains("is-open")
             ) {
                 closeMenu();
             }
