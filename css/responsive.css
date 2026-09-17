@@ -176,10 +176,6 @@
   }
 
 
-  /* -------------------------------------------------------
-     HERO
-     ------------------------------------------------------- */
-
   .hero {
     min-height: auto;
     padding-top: 80px;
@@ -214,11 +210,6 @@
     max-width: 560px;
   }
 
-
-  /* -------------------------------------------------------
-     SERVICES
-     ------------------------------------------------------- */
-
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -247,11 +238,6 @@
     font-size: 11px;
   }
 
-
-  /* -------------------------------------------------------
-     WORK
-     ------------------------------------------------------- */
-
   .work-grid {
     grid-template-columns: 1fr 1fr;
     gap: 16px;
@@ -277,21 +263,21 @@
     top: 20px;
   }
 
-  .iphone-status-bar {
+  .device-status-bar {
     padding: 12px 18px 0 18px;
     font-size: 12px;
   }
 
-  .iphone-time {
+  .device-time {
     font-size: 12px;
   }
 
-  .iphone-icon {
+  .device-icon {
     width: 14px;
     height: 10px;
   }
 
-  .iphone-battery {
+  .device-battery {
     width: 22px;
     height: 10px;
   }
@@ -309,11 +295,6 @@
   .ipad-screen {
     border-radius: 16px;
   }
-
-
-  /* -------------------------------------------------------
-     PROCESS
-     ------------------------------------------------------- */
 
   .process-map {
     display: flex;
@@ -345,11 +326,6 @@
     margin-top: 0;
   }
 
-
-  /* -------------------------------------------------------
-     WHY
-     ------------------------------------------------------- */
-
   .why-inner {
     grid-template-columns: 1fr;
     gap: 50px;
@@ -359,19 +335,9 @@
     max-width: 700px;
   }
 
-
-  /* -------------------------------------------------------
-     DIGITAL MANAGEMENT
-     ------------------------------------------------------- */
-
   .digital-management-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-
-  /* -------------------------------------------------------
-     PLANS
-     ------------------------------------------------------- */
 
   .plans-integrated-grid {
     grid-template-columns: 1fr;
@@ -401,11 +367,6 @@
     font-size: 28px;
   }
 
-
-  /* -------------------------------------------------------
-     FINAL CTA
-     ------------------------------------------------------- */
-
   .final-cta {
     padding-top: 90px;
     padding-bottom: 90px;
@@ -419,11 +380,6 @@
       14px 14px,
       14px 14px;
   }
-
-
-  /* -------------------------------------------------------
-     FOOTER
-     ------------------------------------------------------- */
 
   .footer-inner {
     grid-template-columns: 1fr 1fr;
@@ -452,9 +408,6 @@
     width: calc(100% - 32px);
   }
 
-
-  /* HEADER */
-
   .header-inner {
     min-height: 68px;
   }
@@ -479,9 +432,6 @@
     padding-left: 16px;
     padding-right: 16px;
   }
-
-
-  /* HERO */
 
   .hero {
     padding-top: 62px;
@@ -524,9 +474,6 @@
     text-align: center;
   }
 
-
-  /* SECTION HEADINGS */
-
   .section-title {
     font-size: clamp(34px, 10vw, 48px);
     line-height: 1;
@@ -536,11 +483,6 @@
     font-size: 14px;
     line-height: 1.65;
   }
-
-
-  /* -------------------------------------------------------
-     SERVICES
-     ------------------------------------------------------- */
 
   .services-grid {
     grid-template-columns: 1fr;
@@ -571,11 +513,6 @@
     font-size: 11px;
   }
 
-
-  /* -------------------------------------------------------
-     WORK
-     ------------------------------------------------------- */
-
   .work-grid {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -601,21 +538,21 @@
     top: 16px;
   }
 
-  .iphone-status-bar {
+  .device-status-bar {
     padding: 10px 16px 0 16px;
     font-size: 11px;
   }
 
-  .iphone-time {
+  .device-time {
     font-size: 11px;
   }
 
-  .iphone-icon {
+  .device-icon {
     width: 12px;
     height: 8px;
   }
 
-  .iphone-battery {
+  .device-battery {
     width: 18px;
     height: 8px;
   }
@@ -625,22 +562,54 @@
   }
 
   .imac-display {
-    padding: 16px 16px 32px 16px;
+    padding: 12px 12px 30px 12px;
   }
 
   .imac-camera {
-    top: 6px;
+    top: 5px;
     width: 4px;
     height: 4px;
   }
 
+  .mac-os-bar {
+    height: 16px;
+    padding: 0 8px;
+    font-size: 8px;
+  }
+
+  .mac-os-left,
+  .mac-os-right {
+    gap: 7px;
+  }
+
+  .mac-os-apple {
+    width: 8px;
+    height: 8px;
+    flex: 0 0 8px;
+  }
+
+  .mac-os-menu-item,
+  .mac-os-date {
+    font-size: 7px;
+  }
+
+  .mac-os-icon {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 9px;
+  }
+
+  .imac-screen .mac-content {
+    top: 16px;
+  }
+
   .imac-neck {
-    width: 70px;
-    height: 30px;
+    width: 80px;
+    height: 32px;
   }
 
   .imac-base {
-    width: 150px;
+    width: 170px;
     height: 10px;
   }
 
@@ -654,6 +623,23 @@
     border-radius: 14px;
   }
 
+  .device-status-ipad {
+    padding: 8px 14px 0 14px;
+    font-size: 10px;
+  }
+
+  .device-status-ipad .device-time {
+    font-size: 10px;
+  }
+
+  .ipad-battery-percent {
+    font-size: 9px;
+  }
+
+  .ipad-content {
+    top: 20px;
+  }
+
   .work-info h3 {
     font-size: 18px;
   }
@@ -661,11 +647,6 @@
   .work-info p {
     font-size: 13px;
   }
-
-
-  /* -------------------------------------------------------
-     PROCESS
-     ------------------------------------------------------- */
 
   .process-step-icon {
     width: 56px;
@@ -685,11 +666,6 @@
     font-size: 12px;
   }
 
-
-  /* -------------------------------------------------------
-     WHY
-     ------------------------------------------------------- */
-
   .brainstorm-item {
     gap: 12px;
     padding: 10px 0;
@@ -704,11 +680,6 @@
   .brainstorm-item span {
     font-size: 14px;
   }
-
-
-  /* -------------------------------------------------------
-     DIGITAL MANAGEMENT
-     ------------------------------------------------------- */
 
   .digital-management-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -733,11 +704,6 @@
   .digital-management-item p {
     font-size: 11px;
   }
-
-
-  /* -------------------------------------------------------
-     PLANS
-     ------------------------------------------------------- */
 
   .plans-integrated-grid {
     gap: 18px;
@@ -801,11 +767,6 @@
     height: 11px;
   }
 
-
-  /* -------------------------------------------------------
-     CUSTOM + CONTACT FORM
-     ------------------------------------------------------- */
-
   .plans-contact {
     gap: 42px;
     margin-top: 60px;
@@ -856,11 +817,6 @@
     width: 100%;
   }
 
-
-  /* -------------------------------------------------------
-     FINAL CTA
-     ------------------------------------------------------- */
-
   .final-cta {
     padding-top: 76px;
     padding-bottom: 76px;
@@ -879,11 +835,6 @@
     font-size: clamp(38px, 12vw, 56px);
     line-height: 0.98;
   }
-
-
-  /* -------------------------------------------------------
-     FOOTER
-     ------------------------------------------------------- */
 
   .footer-inner {
     grid-template-columns: 1fr 1fr;
@@ -960,25 +911,6 @@
     width: 64px;
     height: 18px;
     top: 14px;
-  }
-
-  .iphone-status-bar {
-    padding: 8px 14px 0 14px;
-    font-size: 10px;
-  }
-
-  .iphone-time {
-    font-size: 10px;
-  }
-
-  .iphone-icon {
-    width: 11px;
-    height: 7px;
-  }
-
-  .iphone-battery {
-    width: 16px;
-    height: 7px;
   }
 
   .services-grid {
