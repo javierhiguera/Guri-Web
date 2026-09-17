@@ -35,6 +35,9 @@
     --black-soft: #111111;
     --black-card: #151515;
 
+    /* Nuevo gris oscuro para la "tabla de corte" */
+    --board: #0d0d0d;
+
     --white: #f5f5f5;
 
     --gray: #999999;
@@ -45,6 +48,16 @@
 
     --orange: #ff5a1f;
     --orange-bright: #ff6b00;
+
+    /* Naranja ligeramente más oscuro para el CTA */
+    --orange-dark: #e64a15;
+
+    /* Grises metalizados para los dispositivos */
+    --metal-1: #3a3a3a;
+    --metal-2: #2a2a2a;
+    --metal-3: #1a1a1a;
+    --metal-4: #0d0d0d;
+    --metal-highlight: #4a4a4a;
 
     --container: 1240px;
 
@@ -224,7 +237,7 @@ button {
 
 
 /* =========================================================
-   LOGO — [isotipo] GURI WEB
+   LOGO
    ========================================================= */
 
 .logo {
@@ -431,7 +444,7 @@ button {
 
 
 /* =========================================================
-   HERO — Con cuadrícula naranja + glow radial
+   HERO — Tabla de corte (gris oscuro + cuadrícula grabada)
    ========================================================= */
 
 .hero {
@@ -444,24 +457,30 @@ button {
 
     padding-top: 110px;
 
-    background-color: var(--black);
+    background-color: var(--board);
 
     background-image:
         /* Glow radial naranja (mantenido) */
         radial-gradient(
             circle at 80% 45%,
-            rgba(255, 90, 31, 0.10),
-            transparent 32%
+            rgba(255, 90, 31, 0.12),
+            transparent 35%
         ),
-        /* Líneas principales cada 100px */
-        linear-gradient(rgba(255, 90, 31, 0.15) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 90, 31, 0.15) 1px, transparent 1px),
-        /* Líneas secundarias cada 20px */
-        linear-gradient(rgba(255, 90, 31, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 90, 31, 0.05) 1px, transparent 1px);
+
+        /* Líneas principales "grabadas" — con desplazamiento 1px para simular profundidad */
+        linear-gradient(rgba(255, 90, 31, 0.28) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 90, 31, 0.28) 1px, transparent 1px),
+        linear-gradient(rgba(0, 0, 0, 0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.5) 1px, transparent 1px),
+
+        /* Líneas secundarias */
+        linear-gradient(rgba(255, 90, 31, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 90, 31, 0.10) 1px, transparent 1px);
 
     background-size:
         100% 100%,
+        100px 100px,
+        100px 100px,
         100px 100px,
         100px 100px,
         20px 20px,
@@ -471,6 +490,8 @@ button {
         center center,
         center center,
         center center,
+        center calc(center + 1px),
+        calc(center + 1px) center,
         center center,
         center center;
 }
@@ -781,7 +802,7 @@ button {
 
 
 /* =========================================================
-   WORK FRAMES — iPhone 17 Pro, Mac, iPad (realistas)
+   WORK FRAMES — Metalizados realistas
    ========================================================= */
 
 .work-frame {
@@ -800,7 +821,7 @@ button {
 
 
 /* =========================================================
-   iPHONE 17 PRO — realista
+   iPHONE 17 PRO — Metalizado realista
    ========================================================= */
 
 .work-frame-iphone {
@@ -816,21 +837,32 @@ button {
 
     border-radius: 52px;
 
+    /* Marco metálico tipo titanio pulido */
     background:
         linear-gradient(
             145deg,
-            #2a2a2a 0%,
-            #1a1a1a 25%,
-            #0d0d0d 50%,
-            #1a1a1a 75%,
-            #2a2a2a 100%
+            #4a4a4a 0%,
+            #3a3a3a 15%,
+            #2a2a2a 30%,
+            #3a3a3a 45%,
+            #4a4a4a 55%,
+            #2a2a2a 70%,
+            #1a1a1a 85%,
+            #3a3a3a 100%
         );
 
     box-shadow:
-        0 30px 60px rgba(0, 0, 0, 0.8),
-        0 15px 30px rgba(0, 0, 0, 0.6),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+        /* Sombra exterior profunda */
+        0 30px 60px rgba(0, 0, 0, 0.9),
+        0 15px 30px rgba(0, 0, 0, 0.7),
+        /* Reflejo superior (highlight del metal) */
+        inset 0 2px 1px rgba(255, 255, 255, 0.15),
+        /* Sombra inferior interna */
+        inset 0 -2px 1px rgba(0, 0, 0, 0.6),
+        /* Reflejo lateral izquierdo */
+        inset 2px 0 1px rgba(255, 255, 255, 0.08),
+        /* Sombra lateral derecha */
+        inset -2px 0 1px rgba(0, 0, 0, 0.4);
 }
 
 .iphone-notch {
@@ -851,7 +883,8 @@ button {
     z-index: 10;
 
     box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+        inset 0 1px 2px rgba(255, 255, 255, 0.05);
 }
 
 .iphone-notch::before {
@@ -872,12 +905,12 @@ button {
     background:
         radial-gradient(
             circle at 30% 30%,
-            #1a1a2e,
+            #2a2a3e,
             #000
         );
 
     box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .iphone-screen {
@@ -894,7 +927,8 @@ button {
     overflow: hidden;
 
     box-shadow:
-        inset 0 0 0 2px #000;
+        inset 0 0 0 2px #000,
+        inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .iphone-scroll {
@@ -928,6 +962,8 @@ button {
     }
 }
 
+/* Botones laterales del iPhone (metalizados) */
+
 .work-frame-iphone::before {
     content: "";
 
@@ -944,9 +980,13 @@ button {
     background:
         linear-gradient(
             180deg,
-            #2a2a2a,
-            #0d0d0d
+            #4a4a4a,
+            #2a2a2a
         );
+
+    box-shadow:
+        inset 1px 0 1px rgba(255, 255, 255, 0.2),
+        0 0 3px rgba(0, 0, 0, 0.6);
 }
 
 .work-frame-iphone::after {
@@ -965,14 +1005,18 @@ button {
     background:
         linear-gradient(
             180deg,
-            #2a2a2a,
-            #0d0d0d
+            #4a4a4a,
+            #2a2a2a
         );
+
+    box-shadow:
+        inset 1px 0 1px rgba(255, 255, 255, 0.2),
+        0 0 3px rgba(0, 0, 0, 0.6);
 }
 
 
 /* =========================================================
-   MAC — realista
+   MAC — Metalizado realista
    ========================================================= */
 
 .work-frame-mac {
@@ -992,20 +1036,25 @@ button {
 
     aspect-ratio: 16 / 10;
 
-    border-radius: 12px 12px 0 0;
+    border-radius: 14px 14px 0 0;
 
-    padding: 12px 12px 0 12px;
+    padding: 14px 14px 0 14px;
 
+    /* Marco metálico tipo aluminio Apple */
     background:
         linear-gradient(
             180deg,
-            #2a2a2a 0%,
-            #1a1a1a 100%
+            #4a4a4a 0%,
+            #3a3a3a 20%,
+            #2a2a2a 50%,
+            #3a3a3a 80%,
+            #2a2a2a 100%
         );
 
     box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.7),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        0 25px 50px rgba(0, 0, 0, 0.85),
+        inset 0 2px 1px rgba(255, 255, 255, 0.15),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .mac-bar {
@@ -1015,15 +1064,23 @@ button {
 
     gap: 8px;
 
-    height: 26px;
+    height: 28px;
 
-    padding: 0 12px;
+    padding: 0 14px;
 
-    border-radius: 8px 8px 0 0;
+    border-radius: 10px 10px 0 0;
 
-    background: #1a1a1a;
+    background:
+        linear-gradient(
+            180deg,
+            #2a2a2a 0%,
+            #1a1a1a 100%
+        );
 
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom: 1px solid #0d0d0d;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .mac-dot {
@@ -1033,6 +1090,10 @@ button {
     border-radius: 50%;
 
     display: inline-block;
+
+    box-shadow:
+        inset 0 -1px 1px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.3);
 }
 
 .mac-dot-red {
@@ -1059,6 +1120,9 @@ button {
     overflow: hidden;
 
     background: #000;
+
+    box-shadow:
+        inset 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 .mac-content img {
@@ -1068,24 +1132,28 @@ button {
     object-fit: cover;
 }
 
+/* Base del Mac con efecto aluminio */
+
 .mac-base {
     position: relative;
 
     width: 100%;
 
-    height: 18px;
+    height: 22px;
 
     background:
         linear-gradient(
             180deg,
-            #2a2a2a 0%,
+            #3a3a3a 0%,
+            #2a2a2a 40%,
             #1a1a1a 100%
         );
 
-    border-radius: 0 0 12px 12px;
+    border-radius: 0 0 14px 14px;
 
     box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.5);
 
     display: flex;
 
@@ -1097,17 +1165,25 @@ button {
 .mac-base::after {
     content: "";
 
-    width: 60px;
-    height: 4px;
+    width: 70px;
+    height: 5px;
 
-    border-radius: 2px;
+    border-radius: 3px;
 
-    background: #0d0d0d;
+    background:
+        linear-gradient(
+            180deg,
+            #1a1a1a,
+            #0d0d0d
+        );
+
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.08);
 }
 
 
 /* =========================================================
-   iPAD — realista
+   iPAD — Metalizado realista
    ========================================================= */
 
 .work-frame-ipad {
@@ -1123,18 +1199,23 @@ button {
 
     border-radius: 28px;
 
+    /* Marco metálico tipo aluminio */
     background:
         linear-gradient(
             145deg,
-            #2a2a2a 0%,
-            #1a1a1a 50%,
-            #0d0d0d 100%
+            #4a4a4a 0%,
+            #3a3a3a 25%,
+            #2a2a2a 50%,
+            #3a3a3a 75%,
+            #4a4a4a 100%
         );
 
     box-shadow:
-        0 25px 50px rgba(0, 0, 0, 0.75),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+        0 25px 50px rgba(0, 0, 0, 0.85),
+        inset 0 2px 1px rgba(255, 255, 255, 0.15),
+        inset 0 -2px 1px rgba(0, 0, 0, 0.5),
+        inset 2px 0 1px rgba(255, 255, 255, 0.06),
+        inset -2px 0 1px rgba(0, 0, 0, 0.4);
 }
 
 .ipad-camera {
@@ -1145,20 +1226,21 @@ button {
 
     transform: translateY(-50%);
 
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle at 30% 30%,
-            #1a1a2e,
+            #2a2a3e,
             #000
         );
 
     box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+        0 0 2px rgba(0, 0, 0, 0.8);
 
     z-index: 5;
 }
@@ -1177,7 +1259,8 @@ button {
     background: #000;
 
     box-shadow:
-        inset 0 0 0 2px #000;
+        inset 0 0 0 2px #000,
+        inset 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 .ipad-screen img {
@@ -2106,33 +2189,44 @@ button {
 
 
 /* =========================================================
-   FINAL CTA — Con cuadrícula blanca sobre naranja
+   FINAL CTA — Tabla de corte sobre naranja
    ========================================================= */
 
 .final-cta {
     padding: 140px 0;
 
-    background-color: var(--orange);
+    background-color: var(--orange-dark);
 
     color: var(--black);
 
     text-align: center;
 
     background-image:
-        /* Líneas principales cada 100px */
-        linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px),
-        /* Líneas secundarias cada 20px */
-        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+        /* Líneas principales blancas */
+        linear-gradient(rgba(255, 255, 255, 0.22) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px),
+        /* Líneas de "grabado" oscuro */
+        linear-gradient(rgba(0, 0, 0, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.15) 1px, transparent 1px),
+        /* Líneas secundarias */
+        linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
 
     background-size:
+        100px 100px,
+        100px 100px,
         100px 100px,
         100px 100px,
         20px 20px,
         20px 20px;
 
-    background-position: center center;
+    background-position:
+        center center,
+        center center,
+        center calc(center + 1px),
+        calc(center + 1px) center,
+        center center,
+        center center;
 }
 
 .final-cta .container {
@@ -2628,9 +2722,10 @@ button {
     .hero {
         padding-top: 105px;
 
-        /* Cuadrícula más chica en móvil */
         background-size:
             100% 100%,
+            60px 60px,
+            60px 60px,
             60px 60px,
             60px 60px,
             12px 12px,
@@ -2876,8 +2971,9 @@ button {
     .final-cta {
         padding: 85px 0;
 
-        /* Cuadrícula más chica en móvil */
         background-size:
+            60px 60px,
+            60px 60px,
             60px 60px,
             60px 60px,
             12px 12px,
