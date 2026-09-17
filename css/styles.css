@@ -1366,51 +1366,11 @@ button {
 
 
 /* =========================================================
-   WORK INFO — Título al costado, vertical (rotado 90°)
+   WORK INFO — OCULTO (solo dispositivos)
    ========================================================= */
 
 .work-info {
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    writing-mode: vertical-rl;
-
-    text-orientation: mixed;
-}
-
-.work-info h3 {
-    font-family: "Xenois", serif;
-
-    font-size: 25px;
-
-    line-height: 1.05;
-
-    letter-spacing: -0.03em;
-
-    color: #ffffff;
-
-    margin: 0;
-
-    white-space: nowrap;
-}
-
-.work-info span {
-    display: block;
-
-    margin-top: 10px;
-
-    color: var(--gray);
-
-    font-size: 12px;
-
-    line-height: 1.5;
-
-    white-space: nowrap;
+    display: none;
 }
 
 
@@ -3013,15 +2973,6 @@ button {
         border-radius: 14px;
     }
 
-    .work-info h3 {
-        font-size: 18px;
-    }
-
-    .work-info span {
-        font-size: 11px;
-        margin-top: 6px;
-    }
-
     .brainstorm-item {
         gap: 12px;
         padding: 10px 0;
@@ -3263,13 +3214,5 @@ button {
         width: 70px;
         height: 3px;
         bottom: 5px;
-    }
-
-    .work-info h3 {
-        font-size: 15px;
-    }
-
-    .work-info span {
-        font-size: 10px;
     }
 }
