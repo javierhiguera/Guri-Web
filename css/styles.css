@@ -712,11 +712,41 @@ button {
 
 
 /* =========================================================
-   WORK
+   WORK — Cuadrícula con números/letras en lateral izquierdo
    ========================================================= */
 
 .work {
-    background: var(--black);
+    position: relative;
+
+    background-color: var(--black);
+
+    background-image:
+        /* SVG con números y letras solo en el lateral izquierdo */
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='500' viewBox='0 0 120 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:10px;font-weight:bold;fill:rgba(255,90,31,0.4);}.let{font-family:Arial,sans-serif;font-size:10px;font-weight:bold;fill:rgba(255,90,31,0.4);}.tick-left{stroke:rgba(255,90,31,0.35);stroke-width:1.2;}</style></defs><g><line x1='30' y1='0' x2='30' y2='500' class='tick-left'/><text x='18' y='70' class='let' text-anchor='middle'>A</text><text x='18' y='170' class='let' text-anchor='middle'>B</text><text x='18' y='270' class='let' text-anchor='middle'>C</text><text x='18' y='370' class='let' text-anchor='middle'>D</text><text x='18' y='470' class='let' text-anchor='middle'>E</text><text x='55' y='30' class='num' text-anchor='start'>1</text><text x='55' y='130' class='num' text-anchor='start'>2</text><text x='55' y='230' class='num' text-anchor='start'>3</text><text x='55' y='330' class='num' text-anchor='start'>4</text><text x='55' y='430' class='num' text-anchor='start'>5</text></g></svg>"),
+
+        /* Líneas principales de la cuadrícula */
+        linear-gradient(rgba(255, 90, 31, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 90, 31, 0.10) 1px, transparent 1px),
+
+        /* Líneas secundarias */
+        linear-gradient(rgba(255, 90, 31, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 90, 31, 0.04) 1px, transparent 1px);
+
+    background-size:
+        120px 500px,
+        100px 100px,
+        100px 100px,
+        20px 20px,
+        20px 20px;
+
+    background-position:
+        left top,
+        left top,
+        left top,
+        left top,
+        left top;
+
+    background-repeat: repeat;
 }
 
 .work-heading {
