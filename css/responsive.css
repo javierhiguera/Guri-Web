@@ -247,8 +247,13 @@
     grid-column: span 2;
   }
 
+  .work-card {
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+  }
+
   .work-frame-iphone {
-    max-width: 280px;
+    max-width: 260px;
     padding: 9px;
     border-radius: 48px;
   }
@@ -528,8 +533,13 @@
     grid-column: auto;
   }
 
+  .work-card {
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+  }
+
   .work-frame-iphone {
-    max-width: 240px;
+    max-width: 220px;
     padding: 7px;
     border-radius: 40px;
   }
@@ -603,12 +613,17 @@
     border-radius: 14px;
   }
 
+  .work-info {
+    padding-left: 8px;
+  }
+
   .work-info h3 {
     font-size: 18px;
   }
 
-  .work-info p {
-    font-size: 13px;
+  .work-info span {
+    font-size: 11px;
+    margin-top: 6px;
   }
 
   .process-step-icon {
@@ -860,26 +875,39 @@
     font-size: 40px;
   }
 
+  .work-card {
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+  }
+
   .work-frame-iphone {
-    max-width: 200px;
+    max-width: 180px;
     padding: 6px;
-    border-radius: 34px;
+    border-radius: 32px;
   }
 
   .iphone-screen {
-    border-radius: 28px;
+    border-radius: 26px;
   }
 
   .iphone-notch {
-    width: 64px;
-    height: 18px;
-    top: 14px;
+    width: 62px;
+    height: 16px;
+    top: 12px;
   }
 
   .iphone-home-bar {
-    width: 80px;
+    width: 70px;
     height: 3px;
     bottom: 5px;
+  }
+
+  .work-info h3 {
+    font-size: 15px;
+  }
+
+  .work-info span {
+    font-size: 10px;
   }
 
   .services-grid {
