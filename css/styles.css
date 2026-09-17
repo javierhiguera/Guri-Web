@@ -224,19 +224,54 @@ button {
 
 
 /* =========================================================
-   LOGO
+   LOGO — [isotipo] GURI WEB
    ========================================================= */
 
 .logo {
     display: flex;
     align-items: center;
 
+    gap: 10px;
+
     flex-shrink: 0;
 }
 
-.logo img {
-    width: 96px;
-    height: auto;
+.logo-icon {
+    width: 38px;
+    height: 38px;
+
+    flex: 0 0 38px;
+}
+
+.logo-text {
+    display: flex;
+    align-items: baseline;
+
+    gap: 6px;
+}
+
+.logo-guri {
+    color: var(--white);
+
+    font-family: "Bunken", sans-serif;
+
+    font-size: 22px;
+
+    font-weight: 300;
+
+    letter-spacing: -0.02em;
+}
+
+.logo-web {
+    color: var(--orange);
+
+    font-family: "Xenois", serif;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.03em;
 }
 
 
@@ -396,7 +431,7 @@ button {
 
 
 /* =========================================================
-   HERO
+   HERO — Sin bloque visual derecho
    ========================================================= */
 
 .hero {
@@ -416,15 +451,7 @@ button {
 }
 
 .hero-inner {
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(320px, 0.7fr);
-
-    align-items: center;
-
-    gap: 80px;
+    display: block;
 }
 
 .hero-content {
@@ -474,81 +501,12 @@ button {
 
 
 /* =========================================================
-   HERO VISUAL — Invertido (texto + isotipo)
-   ========================================================= */
-
-.hero-visual {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    min-height: 300px;
-}
-
-.hero-brand-horizontal {
-    display: flex;
-    align-items: center;
-
-    gap: 15px;
-}
-
-.hero-brand-icon {
-    width: 48px;
-    height: 48px;
-
-    flex: 0 0 auto;
-}
-
-.hero-brand-name {
-    display: flex;
-    align-items: baseline;
-
-    gap: 7px;
-}
-
-.hero-brand-name span {
-    color: var(--white);
-
-    font-family: "Bunken", sans-serif;
-
-    font-size: clamp(
-        38px,
-        4.5vw,
-        66px
-    );
-
-    font-weight: 300;
-
-    line-height: 0.9;
-
-    letter-spacing: -0.035em;
-}
-
-.hero-brand-name strong {
-    margin: 0;
-
-    font-family: "Xenois", serif;
-
-    color: var(--orange);
-
-    font-size: clamp(
-        38px,
-        4.5vw,
-        66px
-    );
-
-    line-height: 0.85;
-
-    letter-spacing: -0.05em;
-}
-
-
-/* =========================================================
-   BUTTONS
+   BUTTONS — Difuminados a los lados
    ========================================================= */
 
 .button {
+    position: relative;
+
     display: inline-flex;
 
     align-items: center;
@@ -556,16 +514,32 @@ button {
 
     min-height: 50px;
 
-    padding: 0 25px;
+    padding: 0 35px;
 
-    border: 1px solid transparent;
+    border: none;
+
+    border-radius: 0;
+
+    background: transparent;
 
     font-size: 12px;
 
     transition:
-        background var(--transition),
         color var(--transition),
-        border-color var(--transition),
+        transform var(--transition);
+}
+
+.button::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -1;
+
+    transition:
+        opacity var(--transition),
         transform var(--transition);
 }
 
@@ -573,32 +547,73 @@ button {
     transform: translateY(-2px);
 }
 
+.button span,
+.button {
+    position: relative;
+}
+
+
+/* Botón primario (naranja difuminado) */
+
 .button-primary {
-    border-color: var(--orange);
-
-    background: var(--orange);
-
     color: #080808;
 }
 
-.button-primary:hover {
-    background: var(--orange-bright);
+.button-primary::before {
+    background:
+        radial-gradient(
+            ellipse at center,
+            var(--orange) 0%,
+            var(--orange) 40%,
+            rgba(255, 90, 31, 0.7) 70%,
+            rgba(255, 90, 31, 0) 100%
+        );
 
-    border-color: var(--orange-bright);
+    opacity: 1;
 }
 
+.button-primary:hover::before {
+    background:
+        radial-gradient(
+            ellipse at center,
+            var(--orange-bright) 0%,
+            var(--orange-bright) 40%,
+            rgba(255, 107, 0, 0.7) 70%,
+            rgba(255, 107, 0, 0) 100%
+        );
+}
+
+
+/* Botón secundario (transparente con borde difuminado) */
+
 .button-secondary {
-    border-color: var(--border);
-
-    background: transparent;
-
     color: var(--white);
 }
 
-.button-secondary:hover {
-    border-color: var(--orange);
+.button-secondary::before {
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(255, 90, 31, 0.15) 0%,
+            rgba(255, 90, 31, 0.08) 50%,
+            rgba(255, 90, 31, 0) 100%
+        );
 
+    border: none;
+}
+
+.button-secondary:hover {
     color: var(--orange);
+}
+
+.button-secondary:hover::before {
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(255, 90, 31, 0.3) 0%,
+            rgba(255, 90, 31, 0.15) 50%,
+            rgba(255, 90, 31, 0) 100%
+        );
 }
 
 
@@ -773,7 +788,7 @@ button {
 .work-card {
     display: block;
 
-    overflow: hidden;
+    overflow: visible;
 
     transition:
         transform var(--transition);
@@ -800,6 +815,158 @@ button {
 
 
 /* =========================================================
+   WORK FRAMES — iPhone, Mac, iPad
+   ========================================================= */
+
+.work-frame {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    background: #121212;
+}
+
+/* iPhone 17 Pro */
+.work-frame-iphone {
+    border: 8px solid #1a1a1a;
+
+    border-radius: 38px;
+
+    background: #0a0a0a;
+
+    padding: 4px;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+        0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.work-frame-iphone .work-placeholder {
+    border: none;
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    min-height: 620px;
+}
+
+.work-frame-notch {
+    position: absolute;
+
+    top: 12px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90px;
+    height: 22px;
+
+    border-radius: 20px;
+
+    background: #000;
+
+    z-index: 3;
+}
+
+/* Mac */
+.work-frame-mac {
+    border: 6px solid #1a1a1a;
+
+    border-radius: 12px;
+
+    background: #0a0a0a;
+
+    padding: 0;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+        0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.work-frame-mac .work-placeholder {
+    border: none;
+    border-radius: 6px;
+
+    overflow: hidden;
+
+    min-height: 420px;
+}
+
+.work-frame-bar {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    height: 22px;
+
+    padding: 0 10px;
+
+    background: #1a1a1a;
+
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.work-frame-bar span {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #333;
+}
+
+.work-frame-bar span:nth-child(1) { background: #ff5f56; }
+.work-frame-bar span:nth-child(2) { background: #ffbd2e; }
+.work-frame-bar span:nth-child(3) { background: #27c93f; }
+
+/* iPad */
+.work-frame-ipad {
+    border: 10px solid #1a1a1a;
+
+    border-radius: 22px;
+
+    background: #0a0a0a;
+
+    padding: 4px;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+        0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.work-frame-ipad .work-placeholder {
+    border: none;
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    min-height: 250px;
+}
+
+.work-frame-camera {
+    position: absolute;
+
+    top: 6px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #1a1a1a;
+
+    z-index: 3;
+}
+
+
+/* =========================================================
    WORK PLACEHOLDERS
    ========================================================= */
 
@@ -813,18 +980,6 @@ button {
     background: #121212;
 
     border: 1px solid var(--border);
-}
-
-.work-card:nth-child(1) .work-placeholder {
-    min-height: 620px;
-}
-
-.work-card:nth-child(2) .work-placeholder {
-    min-height: 420px;
-}
-
-.work-card:nth-child(3) .work-placeholder {
-    min-height: 250px;
 }
 
 
@@ -894,7 +1049,7 @@ button {
 
 
 /* =========================================================
-   PROCESS — Zigzag con curvas
+   PROCESS — Estilo n8n (nodos con fondo + líneas punteadas)
    ========================================================= */
 
 .process {
@@ -914,7 +1069,7 @@ button {
 
     padding: 40px 0;
 
-    min-height: 450px;
+    min-height: 480px;
 }
 
 .process-map-line {
@@ -929,6 +1084,45 @@ button {
     z-index: 1;
 
     pointer-events: none;
+}
+
+/* Puertos de conexión estilo n8n */
+
+.process-port {
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: var(--orange);
+
+    box-shadow: 0 0 12px rgba(255, 90, 31, 0.8);
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+.process-port-1 {
+    top: 18%;
+    left: 12%;
+}
+
+.process-port-2 {
+    top: 60%;
+    left: 38%;
+}
+
+.process-port-3 {
+    top: 60%;
+    left: 62%;
+}
+
+.process-port-4 {
+    top: 18%;
+    left: 88%;
 }
 
 .process-step {
@@ -959,7 +1153,7 @@ button {
     grid-column: 2;
     grid-row: 2;
     align-self: end;
-    margin-top: 60px;
+    margin-top: 80px;
 }
 
 /* PASO 03: Abajo centro-derecha */
@@ -967,7 +1161,7 @@ button {
     grid-column: 3;
     grid-row: 2;
     align-self: end;
-    margin-top: 60px;
+    margin-top: 80px;
 }
 
 /* PASO 04: Arriba derecha */
@@ -988,7 +1182,7 @@ button {
 
     margin-bottom: 20px;
 
-    border: 1px solid var(--orange);
+    border: 1.5px solid var(--orange);
 
     border-radius: 50%;
 
@@ -996,10 +1190,15 @@ button {
 
     color: var(--orange);
 
+    box-shadow:
+        0 0 0 6px rgba(255, 90, 31, 0.08),
+        0 0 20px rgba(255, 90, 31, 0.15);
+
     transition:
         background var(--transition),
         color var(--transition),
-        transform var(--transition);
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
 .process-step:hover .process-step-icon {
@@ -1007,7 +1206,11 @@ button {
 
     color: var(--black);
 
-    transform: scale(1.05);
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 0 8px rgba(255, 90, 31, 0.15),
+        0 0 30px rgba(255, 90, 31, 0.4);
 }
 
 .process-step-icon svg {
@@ -1729,6 +1932,11 @@ button {
     color: var(--black);
 }
 
+.form-field select option:hover {
+    background: rgba(255, 90, 31, 0.2);
+    color: var(--orange);
+}
+
 .quote-form-submit {
     margin-top: 20px;
 }
@@ -1877,7 +2085,7 @@ button {
 
     align-items: center;
 
-    gap: 10px;
+    gap: 12px;
 
     color: var(--gray);
 
@@ -2054,10 +2262,6 @@ button {
         gap: 60px;
     }
 
-    .hero-visual {
-        justify-content: center;
-    }
-
     .hero-brand-horizontal {
         gap: 12px;
     }
@@ -2112,7 +2316,8 @@ button {
         min-height: auto;
     }
 
-    .process-map-line {
+    .process-map-line,
+    .process-port {
         display: none;
     }
 
@@ -2174,13 +2379,16 @@ button {
         grid-row: 2;
     }
 
-    .work-card:nth-child(1) .work-placeholder {
+    .work-frame-iphone .work-placeholder {
         min-height: 500px;
     }
 
-    .work-card:nth-child(2) .work-placeholder,
-    .work-card:nth-child(3) .work-placeholder {
+    .work-frame-mac .work-placeholder {
         min-height: 300px;
+    }
+
+    .work-frame-ipad .work-placeholder {
+        min-height: 220px;
     }
 
     .why-inner {
@@ -2245,8 +2453,15 @@ button {
         min-height: 76px;
     }
 
-    .logo img {
-        width: 72px;
+    .logo-icon {
+        width: 30px;
+        height: 30px;
+        flex: 0 0 30px;
+    }
+
+    .logo-guri,
+    .logo-web {
+        font-size: 17px;
     }
 
     .main-nav.active,
@@ -2277,20 +2492,6 @@ button {
 
     .hero-actions .button {
         width: 100%;
-    }
-
-    .hero-brand-horizontal {
-        gap: 10px;
-    }
-
-    .hero-brand-icon {
-        width: 35px;
-        height: 35px;
-    }
-
-    .hero-brand-name span,
-    .hero-brand-name strong {
-        font-size: 31px;
     }
 
     .services-grid {
@@ -2357,10 +2558,10 @@ button {
         grid-row: auto;
     }
 
-    .work-card:nth-child(1) .work-placeholder,
-    .work-card:nth-child(2) .work-placeholder,
-    .work-card:nth-child(3) .work-placeholder {
-        min-height: 300px;
+    .work-frame-iphone .work-placeholder,
+    .work-frame-mac .work-placeholder,
+    .work-frame-ipad .work-placeholder {
+        min-height: 280px;
     }
 
     .brainstorm-item {
@@ -2536,22 +2737,19 @@ button {
         width: calc(100% - 28px);
     }
 
-    .logo img {
-        width: 60px;
+    .logo-icon {
+        width: 26px;
+        height: 26px;
+        flex: 0 0 26px;
+    }
+
+    .logo-guri,
+    .logo-web {
+        font-size: 15px;
     }
 
     .hero h1 {
         font-size: 56px;
-    }
-
-    .hero-brand-name span,
-    .hero-brand-name strong {
-        font-size: 26px;
-    }
-
-    .hero-brand-icon {
-        width: 30px;
-        height: 30px;
     }
 
     .digital-management-item {
