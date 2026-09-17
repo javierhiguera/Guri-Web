@@ -265,20 +265,34 @@
     grid-column: span 2;
   }
 
-  .work-placeholder {
-    min-height: 300px;
+  .work-frame-iphone {
+    max-width: 280px;
+    padding: 9px;
+    border-radius: 48px;
   }
 
-  .work-frame-iphone .work-placeholder {
-    min-height: 500px;
+  .iphone-screen {
+    border-radius: 40px;
   }
 
-  .work-frame-mac .work-placeholder {
-    min-height: 300px;
+  .iphone-notch {
+    width: 90px;
+    height: 24px;
+    top: 20px;
   }
 
-  .work-frame-ipad .work-placeholder {
-    min-height: 220px;
+  .work-frame-mac {
+    max-width: 100%;
+  }
+
+  .work-frame-ipad {
+    max-width: 100%;
+    padding: 12px;
+    border-radius: 24px;
+  }
+
+  .ipad-screen {
+    border-radius: 16px;
   }
 
 
@@ -537,14 +551,34 @@
     grid-column: auto;
   }
 
-  .work-placeholder {
-    min-height: 230px;
+  .work-frame-iphone {
+    max-width: 240px;
+    padding: 7px;
+    border-radius: 40px;
   }
 
-  .work-frame-iphone .work-placeholder,
-  .work-frame-mac .work-placeholder,
-  .work-frame-ipad .work-placeholder {
-    min-height: 280px;
+  .iphone-screen {
+    border-radius: 34px;
+  }
+
+  .iphone-notch {
+    width: 76px;
+    height: 20px;
+    top: 16px;
+  }
+
+  .work-frame-mac {
+    max-width: 100%;
+  }
+
+  .work-frame-ipad {
+    max-width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  .ipad-screen {
+    border-radius: 14px;
   }
 
   .work-info h3 {
@@ -828,6 +862,22 @@
 
   .hero-title {
     font-size: 40px;
+  }
+
+  .work-frame-iphone {
+    max-width: 200px;
+    padding: 6px;
+    border-radius: 34px;
+  }
+
+  .iphone-screen {
+    border-radius: 28px;
+  }
+
+  .iphone-notch {
+    width: 64px;
+    height: 18px;
+    top: 14px;
   }
 
   .services-grid {
