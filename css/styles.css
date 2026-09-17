@@ -2194,7 +2194,7 @@ button {
 
     background-color: #0d0d0d;
 
-    color: var(--white);
+    color: var(--orange);
 
     box-shadow: 0 0 0 2px rgba(255, 90, 31, 0.15);
 }
