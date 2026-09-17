@@ -795,9 +795,14 @@ button {
 }
 
 .work-card {
-    display: block;
+    display: grid;
 
-    overflow: visible;
+    grid-template-columns:
+        1fr auto;
+
+    gap: 20px;
+
+    align-items: center;
 
     transition:
         transform var(--transition);
@@ -1395,7 +1400,15 @@ button {
    ========================================================= */
 
 .work-info {
-    padding-top: 18px;
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 0;
+
+    padding-left: 10px;
 }
 
 .work-info h3 {
@@ -1403,21 +1416,25 @@ button {
 
     font-size: 25px;
 
-    line-height: 1;
+    line-height: 1.05;
 
     letter-spacing: -0.03em;
 
     color: #ffffff;
+
+    margin: 0;
 }
 
 .work-info span {
     display: block;
 
-    margin-top: 8px;
+    margin-top: 10px;
 
     color: var(--gray);
 
     font-size: 12px;
+
+    line-height: 1.5;
 }
 
 
@@ -2940,20 +2957,25 @@ button {
         grid-row: auto;
     }
 
+    .work-card {
+        grid-template-columns: 1fr auto;
+        gap: 14px;
+    }
+
     .work-frame-iphone {
-        max-width: 260px;
-        padding: 8px;
-        border-radius: 44px;
+        max-width: 220px;
+        padding: 7px;
+        border-radius: 40px;
     }
 
     .iphone-screen {
-        border-radius: 36px;
+        border-radius: 34px;
     }
 
     .iphone-notch {
-        width: 80px;
-        height: 22px;
-        top: 18px;
+        width: 76px;
+        height: 20px;
+        top: 16px;
     }
 
     .device-status-bar {
@@ -3013,6 +3035,19 @@ button {
 
     .ipad-screen {
         border-radius: 14px;
+    }
+
+    .work-info {
+        padding-left: 8px;
+    }
+
+    .work-info h3 {
+        font-size: 18px;
+    }
+
+    .work-info span {
+        font-size: 11px;
+        margin-top: 6px;
     }
 
     .brainstorm-item {
@@ -3229,5 +3264,40 @@ button {
         width: 22px;
         height: 22px;
         flex: 0 0 22px;
+    }
+
+    .work-card {
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+    }
+
+    .work-frame-iphone {
+        max-width: 180px;
+        padding: 6px;
+        border-radius: 32px;
+    }
+
+    .iphone-screen {
+        border-radius: 26px;
+    }
+
+    .iphone-notch {
+        width: 62px;
+        height: 16px;
+        top: 12px;
+    }
+
+    .iphone-home-bar {
+        width: 70px;
+        height: 3px;
+        bottom: 5px;
+    }
+
+    .work-info h3 {
+        font-size: 15px;
+    }
+
+    .work-info span {
+        font-size: 10px;
     }
 }
