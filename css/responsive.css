@@ -16,8 +16,6 @@
     width: min(100% - 48px, var(--container));
   }
 
-  /* HEADER */
-
   .header-inner {
     gap: 24px;
   }
@@ -30,8 +28,6 @@
     font-size: 13px;
   }
 
-  /* HERO */
-
   .hero-inner {
     grid-template-columns: 1fr;
     gap: 48px;
@@ -41,13 +37,9 @@
     font-size: clamp(48px, 6vw, 76px);
   }
 
-  /* SERVICES */
-
   .services-grid {
     gap: 20px;
   }
-
-  /* WORK */
 
   .work-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -57,8 +49,6 @@
     grid-column: span 2;
   }
 
-  /* PROCESS */
-
   .process-map {
     gap: 30px 15px;
   }
@@ -67,13 +57,9 @@
     padding: 15px;
   }
 
-  /* PLANS */
-
   .plans-integrated-grid {
     gap: 24px;
   }
-
-  /* DIGITAL MANAGEMENT */
 
   .digital-management-grid {
     gap: 20px;
@@ -201,6 +187,7 @@
 
     background-size:
       100% 100%,
+      400px 400px,
       70px 70px,
       70px 70px,
       70px 70px,
@@ -290,7 +277,26 @@
     top: 20px;
   }
 
-  .work-frame-mac {
+  .iphone-status-bar {
+    padding: 12px 18px 0 18px;
+    font-size: 12px;
+  }
+
+  .iphone-time {
+    font-size: 12px;
+  }
+
+  .iphone-icon {
+    width: 14px;
+    height: 10px;
+  }
+
+  .iphone-battery {
+    width: 22px;
+    height: 10px;
+  }
+
+  .work-frame-imac {
     max-width: 100%;
   }
 
@@ -405,6 +411,7 @@
     padding-bottom: 90px;
 
     background-size:
+      400px 400px,
       70px 70px,
       70px 70px,
       70px 70px,
@@ -482,6 +489,7 @@
 
     background-size:
       100% 100%,
+      250px 250px,
       50px 50px,
       50px 50px,
       50px 50px,
@@ -593,8 +601,47 @@
     top: 16px;
   }
 
-  .work-frame-mac {
+  .iphone-status-bar {
+    padding: 10px 16px 0 16px;
+    font-size: 11px;
+  }
+
+  .iphone-time {
+    font-size: 11px;
+  }
+
+  .iphone-icon {
+    width: 12px;
+    height: 8px;
+  }
+
+  .iphone-battery {
+    width: 18px;
+    height: 8px;
+  }
+
+  .work-frame-imac {
     max-width: 100%;
+  }
+
+  .imac-display {
+    padding: 16px 16px 32px 16px;
+  }
+
+  .imac-camera {
+    top: 6px;
+    width: 4px;
+    height: 4px;
+  }
+
+  .imac-neck {
+    width: 70px;
+    height: 30px;
+  }
+
+  .imac-base {
+    width: 150px;
+    height: 10px;
   }
 
   .work-frame-ipad {
@@ -819,6 +866,7 @@
     padding-bottom: 76px;
 
     background-size:
+      250px 250px,
       50px 50px,
       50px 50px,
       50px 50px,
@@ -912,6 +960,25 @@
     width: 64px;
     height: 18px;
     top: 14px;
+  }
+
+  .iphone-status-bar {
+    padding: 8px 14px 0 14px;
+    font-size: 10px;
+  }
+
+  .iphone-time {
+    font-size: 10px;
+  }
+
+  .iphone-icon {
+    width: 11px;
+    height: 7px;
+  }
+
+  .iphone-battery {
+    width: 16px;
+    height: 7px;
   }
 
   .services-grid {
