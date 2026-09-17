@@ -2,999 +2,1071 @@
    GURI — RESPONSIVE
    ========================================================= */
 
+
 /* ---------------------------------------------------------
-   TABLET / LAPTOP
+   TABLET / LAPTOP  (hasta 1100px)
    --------------------------------------------------------- */
 
 @media (max-width: 1100px) {
 
-  :root {
-    --section-padding: 100px;
-  }
+    :root {
+        --section-padding: 100px;
+    }
 
-  .container {
-    width: min(100% - 48px, var(--container));
-  }
+    .container {
+        width: min(100% - 48px, var(--container));
+    }
 
-  .header-inner {
-    gap: 24px;
-  }
+    .header-inner {
+        gap: 24px;
+    }
 
-  .main-nav {
-    gap: 22px;
-  }
+    .main-nav {
+        gap: 22px;
+    }
 
-  .main-nav a {
-    font-size: 13px;
-  }
+    .main-nav a {
+        font-size: 13px;
+    }
 
-  .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
 
-  .hero-title {
-    font-size: clamp(48px, 6vw, 76px);
-  }
+    .hero h1 {
+        font-size: clamp(48px, 6vw, 76px);
+    }
 
-  .services-grid {
-    gap: 20px;
-  }
+    .services-grid {
+        gap: 20px;
+    }
 
-  .work-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .work-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-  .work-large {
-    grid-column: span 2;
-  }
+    .work-large {
+        grid-column: span 2;
+    }
 
-  .process-map {
-    gap: 30px 15px;
-  }
+    .process-map {
+        gap: 30px 15px;
+    }
 
-  .process-step {
-    padding: 15px;
-  }
+    .process-step {
+        padding: 15px;
+    }
 
-  .plans-integrated-grid {
-    gap: 24px;
-  }
+    .plans-integrated-grid {
+        gap: 24px;
+    }
 
-  .digital-management-grid {
-    gap: 20px;
-  }
+    .digital-management-grid {
+        gap: 20px;
+    }
 }
 
 
 /* ---------------------------------------------------------
-   MOBILE MENU
+   MENU MÓVIL / TABLET VERTICAL  (hasta 900px)
    --------------------------------------------------------- */
 
 @media (max-width: 900px) {
 
-  .container {
-    width: min(100% - 40px, var(--container));
-  }
-
-  .site-header {
-    position: relative;
-    z-index: 1000;
-  }
-
-  .header-inner {
-    min-height: 76px;
-  }
-
-  .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    width: 42px;
-    height: 42px;
-    padding: 0;
-    border: 1px solid var(--border);
-    background: transparent;
-    cursor: pointer;
-    position: relative;
-    z-index: 1002;
-  }
-
-  .menu-toggle span {
-    display: block;
-    width: 18px;
-    height: 1px;
-    background: var(--white);
-    transition:
-      transform 0.25s ease,
-      opacity 0.25s ease;
-  }
-
-  .menu-toggle[aria-expanded="true"] span:first-child {
-    transform: translateY(3px) rotate(45deg);
-  }
-
-  .menu-toggle[aria-expanded="true"] span:last-child {
-    transform: translateY(-3px) rotate(-45deg);
-  }
-
-  .main-nav {
-    position: absolute;
-    top: calc(100% + 1px);
-    left: 0;
-    right: 0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-
-    padding: 10px 20px 20px;
-
-    background: var(--black);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    pointer-events: none;
-
-    transition:
-      opacity 0.25s ease,
-      visibility 0.25s ease,
-      transform 0.25s ease;
-
-    z-index: 1001;
-  }
-
-  .main-nav.active,
-  .main-nav.is-open {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-
-  .main-nav a {
-    display: flex;
-    align-items: center;
-    min-height: 48px;
-    padding: 8px 0;
-    font-size: 14px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-  }
-
-  .main-nav a:last-child {
-    border-bottom: 0;
-  }
-
-  .header-button {
-    display: none;
-  }
-
-
-  .hero {
-    min-height: auto;
-    padding-top: 80px;
-    padding-bottom: 90px;
-
-    background-size:
-      100% 100%,
-      400px 400px,
-      70px 70px,
-      70px 70px,
-      70px 70px,
-      70px 70px,
-      14px 14px,
-      14px 14px;
-  }
-
-  .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-
-  .hero-content {
-    max-width: 680px;
-  }
-
-  .hero-title {
-    font-size: clamp(46px, 10vw, 72px);
-    line-height: 0.98;
-  }
-
-  .hero-text {
-    max-width: 560px;
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .service-item {
-    padding: 25px 20px;
-  }
-
-  .service-item-icon {
-    width: 54px;
-    height: 54px;
-    flex: 0 0 54px;
-  }
-
-  .service-item-icon svg {
-    width: 36px;
-    height: 36px;
-  }
-
-  .service-item-content h3 {
-    font-size: 18px;
-  }
-
-  .service-item-content p {
-    font-size: 11px;
-  }
-
-  .work-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  .work-large {
-    grid-column: span 2;
-  }
-
-  .work-card {
-    grid-template-columns: 1fr auto;
-    gap: 14px;
-  }
-
-  .work-frame-iphone {
-    max-width: 280px;
-    padding: 9px;
-    border-radius: 48px;
-  }
-
-  .iphone-screen {
-    border-radius: 40px;
-  }
-
-  .iphone-notch {
-    width: 90px;
-    height: 24px;
-    top: 20px;
-  }
-
-  .iphone-notch::before {
-    width: 7px;
-    height: 7px;
-    right: 10px;
-  }
-
-  .device-status-bar {
-    padding: 12px 18px 0 18px;
-    font-size: 12px;
-  }
-
-  .device-time {
-    font-size: 12px;
-  }
-
-  .device-icon {
-    width: 14px;
-    height: 10px;
-  }
-
-  .device-battery {
-    width: 22px;
-    height: 10px;
-  }
-
-  .iphone-home-bar {
-    width: 110px;
-    height: 5px;
-    bottom: 7px;
-  }
-
-  .work-frame-imac {
-    max-width: 100%;
-  }
-
-  .work-frame-ipad {
-    max-width: 100%;
-    padding: 12px;
-    border-radius: 24px;
-  }
-
-  .ipad-screen {
-    border-radius: 16px;
-  }
-
-  .work-info h3 {
-    font-size: 20px;
-  }
-
-  .work-info span {
-    font-size: 10px;
-  }
-
-  .process-map {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding: 20px 0;
-    min-height: auto;
-  }
-
-  .process-map-line,
-  .process-port {
-    display: none;
-  }
-
-  .process-step {
-    max-width: 100%;
-    width: 100%;
-    margin-top: 0 !important;
-    align-self: auto;
-  }
-
-  .process-step-1,
-  .process-step-2,
-  .process-step-3,
-  .process-step-4 {
-    grid-column: auto;
-    grid-row: auto;
-    align-self: auto;
-    margin-top: 0;
-  }
-
-  .why-inner {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .why-content {
-    max-width: 700px;
-  }
-
-  .digital-management-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .plans-integrated-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .plans-contact {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .plans-custom,
-  .plans-contact-copy {
-    max-width: 700px;
-  }
-
-  .quote-form-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .plans-coming-soon {
-    margin-top: 40px;
-    padding: 25px;
-  }
-
-  .plans-coming-soon h3 {
-    font-size: 28px;
-  }
-
-  .final-cta {
-    padding-top: 90px;
-    padding-bottom: 90px;
-
-    background-size:
-      400px 400px,
-      70px 70px,
-      70px 70px,
-      70px 70px,
-      70px 70px,
-      14px 14px,
-      14px 14px;
-  }
-
-  .footer-inner {
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
+    .container {
+        width: min(100% - 40px, var(--container));
+    }
+
+    .site-header {
+        position: fixed;
+        z-index: 1000;
+    }
+
+    .header-inner {
+        min-height: 76px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        border: 1px solid var(--border);
+        background: transparent;
+        cursor: pointer;
+        position: relative;
+        z-index: 1101;
+    }
+
+    .menu-toggle span {
+        position: static;
+        display: block;
+        width: 18px;
+        height: 1px;
+        background: var(--white);
+        transform: none;
+        transition:
+            transform 0.25s ease,
+            opacity 0.25s ease;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:first-child {
+        transform: translateY(3px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:last-child {
+        transform: translateY(-3px) rotate(-45deg);
+    }
+
+    .main-nav {
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        right: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 10px 20px 20px;
+
+        background: var(--black);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        pointer-events: none;
+
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease,
+            transform 0.25s ease;
+
+        z-index: 1100;
+    }
+
+    .main-nav.is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .main-nav a {
+        display: flex;
+        align-items: center;
+        min-height: 48px;
+        padding: 8px 0;
+        font-size: 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .main-nav a::after {
+        display: none;
+    }
+
+    .main-nav a:last-child {
+        border-bottom: 0;
+    }
+
+    .header-button {
+        display: none;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: auto;
+        padding-top: 80px;
+        padding-bottom: 90px;
+
+        background-size:
+            100% 100%,
+            400px 400px,
+            70px 70px,
+            70px 70px,
+            70px 70px,
+            70px 70px,
+            14px 14px,
+            14px 14px;
+    }
+
+    .hero-inner {
+        gap: 60px;
+    }
+
+    .hero-content {
+        max-width: 680px;
+    }
+
+    .hero h1 {
+        font-size: clamp(46px, 10vw, 72px);
+        line-height: 0.98;
+    }
+
+    .hero-content > p {
+        max-width: 560px;
+    }
+
+
+    /* SERVICIOS */
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .service-item {
+        padding: 25px 20px;
+    }
+
+    .service-item-icon {
+        width: 54px;
+        height: 54px;
+        flex: 0 0 54px;
+    }
+
+    .service-item-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    .service-item-content h3 {
+        font-size: 18px;
+    }
+
+    .service-item-content p {
+        font-size: 11px;
+    }
+
+
+    /* TRABAJOS */
+
+    .work-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .work-large {
+        grid-column: span 2;
+    }
+
+    .work-card {
+        grid-template-columns: 1fr auto;
+        gap: 14px;
+    }
+
+    .work-frame-iphone {
+        max-width: 280px;
+        padding: 9px;
+        border-radius: 48px;
+    }
+
+    .iphone-screen {
+        border-radius: 40px;
+    }
+
+    .iphone-notch {
+        width: 90px;
+        height: 24px;
+        top: 20px;
+    }
+
+    .iphone-notch::before {
+        width: 7px;
+        height: 7px;
+        right: 10px;
+    }
+
+    .device-status-bar {
+        padding: 12px 18px 0 18px;
+        font-size: 12px;
+    }
+
+    .device-time {
+        font-size: 12px;
+    }
+
+    .device-icon {
+        width: 14px;
+        height: 10px;
+    }
+
+    .device-battery {
+        width: 22px;
+        height: 10px;
+    }
+
+    .iphone-home-bar {
+        width: 110px;
+        height: 5px;
+        bottom: 7px;
+    }
+
+    .work-frame-imac {
+        max-width: 100%;
+    }
+
+    .work-frame-ipad {
+        max-width: 100%;
+        padding: 12px;
+        border-radius: 24px;
+    }
+
+    .ipad-screen {
+        border-radius: 16px;
+    }
+
+    .work-info h3 {
+        font-size: 20px;
+    }
+
+    .work-info span {
+        font-size: 10px;
+    }
+
+
+    /* PROCESO */
+
+    .process-map {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px 0;
+        min-height: auto;
+    }
+
+    .process-map-line,
+    .process-port {
+        display: none;
+    }
+
+    .process-step {
+        max-width: 100%;
+        width: 100%;
+        margin-top: 0 !important;
+        align-self: auto;
+    }
+
+    .process-step-1,
+    .process-step-2,
+    .process-step-3,
+    .process-step-4 {
+        grid-column: auto;
+        grid-row: auto;
+        align-self: auto;
+        margin-top: 0;
+    }
+
+
+    /* WHY */
+
+    .why-inner {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .why-content {
+        max-width: 700px;
+    }
+
+
+    /* GESTIÓN DIGITAL */
+
+    .digital-management-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* PLANES */
+
+    .plans-integrated-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .plans-contact {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .plans-custom,
+    .plans-contact-copy {
+        max-width: 700px;
+    }
+
+    .quote-form-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .plans-coming-soon {
+        margin-top: 40px;
+        padding: 25px;
+    }
+
+    .plans-coming-soon h3 {
+        font-size: 28px;
+    }
+
+
+    /* FINAL CTA */
+
+    .final-cta {
+        padding-top: 90px;
+        padding-bottom: 90px;
+
+        background-size:
+            400px 400px,
+            70px 70px,
+            70px 70px,
+            70px 70px,
+            70px 70px,
+            14px 14px,
+            14px 14px;
+    }
+
+    .final-cta h2 span {
+        display: inline;
+    }
+
+
+    /* FOOTER */
+
+    .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
 }
 
 
 /* ---------------------------------------------------------
-   MOBILE
+   MOBILE  (hasta 640px)
    --------------------------------------------------------- */
 
 @media (max-width: 640px) {
 
-  :root {
-    --section-padding: 76px;
-  }
-
-  .container {
-    width: calc(100% - 32px);
-  }
-
-  .header-inner {
-    min-height: 68px;
-  }
-
-  .logo-icon {
-    width: 30px;
-    height: 30px;
-    flex: 0 0 30px;
-  }
-
-  .logo-guri,
-  .logo-web {
-    font-size: 17px;
-  }
-
-  .menu-toggle {
-    width: 40px;
-    height: 40px;
-  }
-
-  .main-nav {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .hero {
-    padding-top: 62px;
-    padding-bottom: 70px;
-
-    background-size:
-      100% 100%,
-      250px 250px,
-      50px 50px,
-      50px 50px,
-      50px 50px,
-      50px 50px,
-      10px 10px,
-      10px 10px;
-  }
-
-  .hero-inner {
-    gap: 48px;
-  }
-
-  .hero-title {
-    font-size: clamp(42px, 13vw, 62px);
-    line-height: 0.96;
-  }
-
-  .hero-text {
-    font-size: 15px;
-    line-height: 1.65;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-  }
-
-  .hero-actions .button,
-  .hero-actions a {
-    width: 100%;
-    text-align: center;
-  }
-
-  .section-title {
-    font-size: clamp(34px, 10vw, 48px);
-    line-height: 1;
-  }
-
-  .section-intro {
-    font-size: 14px;
-    line-height: 1.65;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .service-item {
-    padding: 20px 18px;
-    gap: 15px;
-  }
-
-  .service-item-icon {
-    width: 48px;
-    height: 48px;
-    flex: 0 0 48px;
-  }
-
-  .service-item-icon svg {
-    width: 32px;
-    height: 32px;
-  }
-
-  .service-item-content h3 {
-    font-size: 17px;
-  }
-
-  .service-item-content p {
-    font-size: 11px;
-  }
-
-  .work-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .work-large {
-    grid-column: auto;
-  }
-
-  .work-card {
-    grid-template-columns: 1fr auto;
-    gap: 12px;
-  }
-
-  .work-frame-iphone {
-    max-width: 200px;
-    padding: 7px;
-    border-radius: 38px;
-  }
-
-  .iphone-screen {
-    border-radius: 32px;
-  }
-
-  .iphone-notch {
-    width: 70px;
-    height: 18px;
-    top: 14px;
-  }
-
-  .iphone-notch::before {
-    width: 6px;
-    height: 6px;
-    right: 8px;
-  }
-
-  .device-status-bar {
-    padding: 9px 14px 0 14px;
-    font-size: 10px;
-  }
-
-  .device-time {
-    font-size: 10px;
-  }
-
-  .device-icon {
-    width: 11px;
-    height: 7px;
-  }
-
-  .device-battery {
-    width: 16px;
-    height: 7px;
-  }
-
-  .iphone-home-bar {
-    width: 80px;
-    height: 4px;
-    bottom: 5px;
-  }
-
-  .work-frame-imac {
-    max-width: 100%;
-  }
-
-  .imac-display {
-    padding: 12px 12px 30px 12px;
-  }
-
-  .imac-camera {
-    top: 5px;
-    width: 4px;
-    height: 4px;
-  }
-
-  .imac-neck {
-    width: 80px;
-    height: 32px;
-  }
-
-  .imac-base {
-    width: 170px;
-    height: 10px;
-  }
-
-  .work-frame-ipad {
-    max-width: 100%;
-    padding: 10px;
-    border-radius: 20px;
-  }
-
-  .ipad-screen {
-    border-radius: 14px;
-  }
-
-  .work-info h3 {
-    font-size: 16px;
-  }
-
-  .work-info span {
-    font-size: 9px;
-    margin-top: 8px;
-  }
-
-  .process-step-icon {
-    width: 56px;
-    height: 56px;
-  }
-
-  .process-step-icon svg {
-    width: 28px;
-    height: 28px;
-  }
-
-  .process-step h3 {
-    font-size: 17px;
-  }
-
-  .process-step p {
-    font-size: 12px;
-  }
-
-  .brainstorm-item {
-    gap: 12px;
-    padding: 10px 0;
-  }
-
-  .brainstorm-check {
-    width: 20px;
-    height: 20px;
-    flex: 0 0 20px;
-  }
-
-  .brainstorm-item span {
-    font-size: 14px;
-  }
-
-  .digital-management-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .digital-logo {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 15px;
-  }
-
-  .digital-logo img {
-    width: 30px;
-    height: 30px;
-  }
-
-  .digital-management-item h3 {
-    font-size: 18px;
-  }
-
-  .digital-management-item p {
-    font-size: 11px;
-  }
-
-  .plans-integrated-grid {
-    gap: 18px;
-  }
-
-  .plan-card.plan-integrated {
-    padding: 24px 20px;
-  }
-
-  .plan-label {
-    font-size: 11px;
-    letter-spacing: 0.12em;
-  }
-
-  .plan-integrated-description {
-    font-size: 14px;
-    line-height: 1.55;
-  }
-
-  .plan-service {
-    padding: 18px 0;
-  }
-
-  .plan-service h4 {
-    font-size: 17px;
-  }
-
-  .plan-service p {
-    font-size: 12px;
-    line-height: 1.5;
-  }
-
-  .plan-features {
-    gap: 8px;
-  }
-
-  .plan-features li {
-    font-size: 12px;
-    line-height: 1.45;
-  }
-
-  .plans-coming-soon {
-    margin-top: 35px;
-    padding: 20px;
-  }
-
-  .plans-coming-soon h3 {
-    font-size: 24px;
-  }
-
-  .plans-coming-soon p {
-    font-size: 13px;
-  }
-
-  .coming-soon-label {
-    font-size: 11px;
-  }
-
-  .coming-soon-spinner {
-    width: 11px;
-    height: 11px;
-  }
-
-  .plans-contact {
-    gap: 42px;
-    margin-top: 60px;
-  }
-
-  .plans-custom h3,
-  .plans-contact-copy h3 {
-    font-size: 27px;
-    line-height: 1.05;
-  }
-
-  .plans-custom p,
-  .plans-contact-copy p {
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .quote-form {
-    padding: 22px 18px;
-  }
-
-  .quote-form-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .form-field-full {
-    grid-column: auto;
-  }
-
-  .form-field label {
-    font-size: 11px;
-  }
-
-  .form-field input,
-  .form-field select,
-  .form-field textarea {
-    min-height: 46px;
-    padding: 12px;
-    font-size: 13px;
-  }
-
-  .form-field textarea {
-    min-height: 130px;
-  }
-
-  .quote-form-submit {
-    width: 100%;
-  }
-
-  .final-cta {
-    padding-top: 76px;
-    padding-bottom: 76px;
-
-    background-size:
-      250px 250px,
-      50px 50px,
-      50px 50px,
-      50px 50px,
-      50px 50px,
-      10px 10px,
-      10px 10px;
-  }
-
-  .final-cta h2 {
-    font-size: clamp(38px, 12vw, 56px);
-    line-height: 0.98;
-  }
-
-  .footer-inner {
-    grid-template-columns: 1fr 1fr;
-    gap: 38px 24px;
-  }
-
-  .footer-links h4 {
-    font-size: 11px;
-  }
-
-  .footer-links a {
-    font-size: 12px;
-  }
-
-  .footer-bottom {
-    gap: 10px;
-  }
-
-  .footer-copyright {
-    font-size: 10px;
-  }
-
-  .footer-credit {
-    font-size: 10px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .footer-credit img {
-    width: 24px;
-    height: 24px;
-    flex: 0 0 24px;
-  }
+    :root {
+        --section-padding: 76px;
+    }
+
+    .container {
+        width: calc(100% - 32px);
+    }
+
+    .header-inner {
+        min-height: 68px;
+    }
+
+    .logo-icon {
+        width: 30px;
+        height: 30px;
+        flex: 0 0 30px;
+    }
+
+    .logo-guri,
+    .logo-web {
+        font-size: 17px;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .main-nav {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    /* HERO */
+
+    .hero {
+        padding-top: 62px;
+        padding-bottom: 70px;
+
+        background-size:
+            100% 100%,
+            250px 250px,
+            50px 50px,
+            50px 50px,
+            50px 50px,
+            50px 50px,
+            10px 10px,
+            10px 10px;
+    }
+
+    .hero-inner {
+        gap: 48px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 13vw, 62px);
+        line-height: 0.96;
+    }
+
+    .hero-content > p {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .hero-actions .button,
+    .hero-actions a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section-heading {
+        margin-bottom: 50px;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(34px, 10vw, 48px);
+        line-height: 1;
+    }
+
+    .section-intro {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    /* SERVICIOS */
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .service-item {
+        padding: 20px 18px;
+        gap: 15px;
+    }
+
+    .service-item-icon {
+        width: 48px;
+        height: 48px;
+        flex: 0 0 48px;
+    }
+
+    .service-item-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .service-item-content h3 {
+        font-size: 17px;
+    }
+
+    .service-item-content p {
+        font-size: 11px;
+    }
+
+    /* TRABAJOS */
+
+    .work-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .work-large {
+        grid-column: auto;
+    }
+
+    .work-card {
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+    }
+
+    .work-frame-iphone {
+        max-width: 200px;
+        padding: 7px;
+        border-radius: 38px;
+    }
+
+    .iphone-screen {
+        border-radius: 32px;
+    }
+
+    .iphone-notch {
+        width: 70px;
+        height: 18px;
+        top: 14px;
+    }
+
+    .iphone-notch::before {
+        width: 6px;
+        height: 6px;
+        right: 8px;
+    }
+
+    .device-status-bar {
+        padding: 9px 14px 0 14px;
+        font-size: 10px;
+    }
+
+    .device-time {
+        font-size: 10px;
+    }
+
+    .device-icon {
+        width: 11px;
+        height: 7px;
+    }
+
+    .device-battery {
+        width: 16px;
+        height: 7px;
+    }
+
+    .iphone-home-bar {
+        width: 80px;
+        height: 4px;
+        bottom: 5px;
+    }
+
+    .work-frame-imac {
+        max-width: 100%;
+    }
+
+    .imac-display {
+        padding: 12px 12px 30px 12px;
+    }
+
+    .imac-camera {
+        top: 5px;
+        width: 4px;
+        height: 4px;
+    }
+
+    .imac-neck {
+        width: 80px;
+        height: 32px;
+    }
+
+    .imac-base {
+        width: 170px;
+        height: 10px;
+    }
+
+    .work-frame-ipad {
+        max-width: 100%;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .ipad-screen {
+        border-radius: 14px;
+    }
+
+    .work-info h3 {
+        font-size: 16px;
+    }
+
+    .work-info span {
+        font-size: 9px;
+        margin-top: 8px;
+    }
+
+    /* PROCESO */
+
+    .process-step-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .process-step-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .process-step h3 {
+        font-size: 17px;
+    }
+
+    .process-step p {
+        font-size: 12px;
+    }
+
+    /* BRAINSTORM */
+
+    .brainstorm-item {
+        gap: 12px;
+        padding: 10px 0;
+    }
+
+    .brainstorm-check {
+        width: 20px;
+        height: 20px;
+        flex: 0 0 20px;
+    }
+
+    .brainstorm-item span {
+        font-size: 14px;
+    }
+
+    /* GESTIÓN DIGITAL */
+
+    .digital-management-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .digital-logo {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 15px;
+    }
+
+    .digital-logo img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .digital-management-item h3 {
+        font-size: 18px;
+    }
+
+    .digital-management-item p {
+        font-size: 11px;
+    }
+
+    /* PLANES */
+
+    .plans-integrated-grid {
+        gap: 18px;
+    }
+
+    .plan-card.plan-integrated {
+        padding: 24px 20px;
+    }
+
+    .plan-label {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+    }
+
+    .plan-integrated-description {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .plan-service {
+        padding: 18px 0;
+    }
+
+    .plan-integrated .plan-service h4 {
+        font-size: 17px;
+    }
+
+    .plan-integrated .plan-service p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .plan-integrated .plan-features {
+        gap: 8px;
+    }
+
+    .plan-integrated .plan-features li {
+        font-size: 12px;
+        line-height: 1.45;
+    }
+
+    .plans-coming-soon {
+        margin-top: 35px;
+        padding: 20px;
+    }
+
+    .plans-coming-soon h3 {
+        font-size: 24px;
+    }
+
+    .plans-coming-soon p {
+        font-size: 13px;
+    }
+
+    .coming-soon-label {
+        font-size: 11px;
+    }
+
+    .coming-soon-spinner {
+        width: 11px;
+        height: 11px;
+    }
+
+    .plans-contact {
+        gap: 42px;
+        margin-top: 60px;
+        padding-top: 50px;
+    }
+
+    .plans-custom h3,
+    .plans-contact-copy h3 {
+        font-size: 27px;
+        line-height: 1.05;
+    }
+
+    .plans-custom p,
+    .plans-contact-copy p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* FORM */
+
+    .quote-form {
+        padding: 22px 18px;
+    }
+
+    .quote-form-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .form-field-full {
+        grid-column: auto;
+    }
+
+    .form-field label {
+        font-size: 11px;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+        min-height: 46px;
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .form-field textarea {
+        min-height: 130px;
+    }
+
+    .quote-form-submit {
+        width: 100%;
+    }
+
+    /* FINAL CTA */
+
+    .final-cta {
+        padding-top: 76px;
+        padding-bottom: 76px;
+
+        background-size:
+            250px 250px,
+            50px 50px,
+            50px 50px,
+            50px 50px,
+            50px 50px,
+            10px 10px,
+            10px 10px;
+    }
+
+    .final-cta h2 {
+        font-size: clamp(38px, 12vw, 56px);
+        line-height: 0.98;
+    }
+
+    .final-cta h2 span {
+        display: block;
+    }
+
+    /* FOOTER */
+
+    .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 38px 24px;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-links h4,
+    .footer-links strong {
+        font-size: 11px;
+    }
+
+    .footer-links a {
+        font-size: 12px;
+    }
+
+    .footer-bottom {
+        gap: 10px;
+        min-height: auto;
+        padding: 25px 0;
+    }
+
+    .footer-copyright {
+        font-size: 10px;
+    }
+
+    .footer-credit {
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .footer-credit img {
+        width: 24px;
+        height: 24px;
+        flex: 0 0 24px;
+    }
 }
 
 
 /* ---------------------------------------------------------
-   SMALL MOBILE
+   SMALL MOBILE  (hasta 400px)
    --------------------------------------------------------- */
 
 @media (max-width: 400px) {
 
-  .container {
-    width: calc(100% - 28px);
-  }
+    .container {
+        width: calc(100% - 28px);
+    }
 
-  .logo-icon {
-    width: 26px;
-    height: 26px;
-    flex: 0 0 26px;
-  }
+    .logo-icon {
+        width: 26px;
+        height: 26px;
+        flex: 0 0 26px;
+    }
 
-  .logo-guri,
-  .logo-web {
-    font-size: 15px;
-  }
+    .logo-guri,
+    .logo-web {
+        font-size: 15px;
+    }
 
-  .hero-title {
-    font-size: 40px;
-  }
+    .hero h1 {
+        font-size: 40px;
+    }
 
-  .work-card {
-    grid-template-columns: 1fr auto;
-    gap: 10px;
-  }
+    .work-card {
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+    }
 
-  .work-frame-iphone {
-    max-width: 160px;
-    padding: 5px;
-    border-radius: 28px;
-  }
+    .work-frame-iphone {
+        max-width: 160px;
+        padding: 5px;
+        border-radius: 28px;
+    }
 
-  .iphone-screen {
-    border-radius: 24px;
-  }
+    .iphone-screen {
+        border-radius: 24px;
+    }
 
-  .iphone-notch {
-    width: 52px;
-    height: 14px;
-    top: 10px;
-  }
+    .iphone-notch {
+        width: 52px;
+        height: 14px;
+        top: 10px;
+    }
 
-  .iphone-notch::before {
-    width: 4px;
-    height: 4px;
-    right: 6px;
-  }
+    .iphone-notch::before {
+        width: 4px;
+        height: 4px;
+        right: 6px;
+    }
 
-  .device-status-bar {
-    padding: 7px 10px 0 10px;
-    font-size: 8px;
-  }
+    .device-status-bar {
+        padding: 7px 10px 0 10px;
+        font-size: 8px;
+    }
 
-  .device-time {
-    font-size: 8px;
-  }
+    .device-time {
+        font-size: 8px;
+    }
 
-  .device-icon {
-    width: 8px;
-    height: 5px;
-  }
+    .device-icon {
+        width: 8px;
+        height: 5px;
+    }
 
-  .device-battery {
-    width: 12px;
-    height: 5px;
-  }
+    .device-battery {
+        width: 12px;
+        height: 5px;
+    }
 
-  .iphone-home-bar {
-    width: 60px;
-    height: 3px;
-    bottom: 4px;
-  }
+    .iphone-home-bar {
+        width: 60px;
+        height: 3px;
+        bottom: 4px;
+    }
 
-  .work-info h3 {
-    font-size: 13px;
-  }
+    .work-info h3 {
+        font-size: 13px;
+    }
 
-  .work-info span {
-    font-size: 8px;
-    margin-top: 6px;
-  }
+    .work-info span {
+        font-size: 8px;
+        margin-top: 6px;
+    }
 
-  .services-grid {
-    gap: 12px;
-  }
+    .services-grid {
+        gap: 12px;
+    }
 
-  .service-item {
-    padding: 18px 15px;
-  }
+    .service-item {
+        padding: 18px 15px;
+    }
 
-  .service-item-icon {
-    width: 42px;
-    height: 42px;
-    flex: 0 0 42px;
-  }
+    .service-item-icon {
+        width: 42px;
+        height: 42px;
+        flex: 0 0 42px;
+    }
 
-  .service-item-icon svg {
-    width: 28px;
-    height: 28px;
-  }
+    .service-item-icon svg {
+        width: 28px;
+        height: 28px;
+    }
 
-  .service-item-content h3 {
-    font-size: 16px;
-  }
+    .service-item-content h3 {
+        font-size: 16px;
+    }
 
-  .digital-management-item {
-    min-height: 115px;
-    padding: 15px 10px;
-  }
+    .digital-management-item {
+        min-height: 115px;
+        padding: 15px 10px;
+    }
 
-  .digital-management-item h3 {
-    font-size: 13px;
-  }
+    .digital-management-item h3 {
+        font-size: 13px;
+    }
 
-  .plan-card.plan-integrated {
-    padding: 20px 16px;
-  }
+    .plan-card.plan-integrated {
+        padding: 20px 16px;
+    }
 
-  .footer-inner {
-    grid-template-columns: 1fr;
-  }
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
 
-  .footer-credit img {
-    width: 22px;
-    height: 22px;
-    flex: 0 0 22px;
-  }
+    .footer-credit img {
+        width: 22px;
+        height: 22px;
+        flex: 0 0 22px;
+    }
 }
