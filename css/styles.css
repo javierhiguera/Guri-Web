@@ -224,7 +224,7 @@ button {
 
 
 /* =========================================================
-   LOGO (Punto 9: Más grande)
+   LOGO
    ========================================================= */
 
 .logo {
@@ -235,7 +235,7 @@ button {
 }
 
 .logo img {
-    width: 96px; /* Aumentado de 48px a 96px */
+    width: 96px;
     height: auto;
 }
 
@@ -291,7 +291,7 @@ button {
 
 
 /* =========================================================
-   HEADER BUTTON (Punto 2: Icono WhatsApp naranja)
+   HEADER BUTTON
    ========================================================= */
 
 .header-button {
@@ -474,7 +474,7 @@ button {
 
 
 /* =========================================================
-   HERO VISUAL — Punto 1: Sin cuadro, horizontal
+   HERO VISUAL — Invertido (texto + isotipo)
    ========================================================= */
 
 .hero-visual {
@@ -545,7 +545,7 @@ button {
 
 
 /* =========================================================
-   BUTTONS (Punto 10: Hover naranja)
+   BUTTONS
    ========================================================= */
 
 .button {
@@ -603,7 +603,7 @@ button {
 
 
 /* =========================================================
-   SERVICES — Punto 3: Grid de 4 iconos grandes
+   SERVICES — Iconos izquierda, texto derecha
    ========================================================= */
 
 .services {
@@ -626,13 +626,15 @@ button {
 .service-item {
     display: flex;
 
-    flex-direction: column;
+    flex-direction: row;
 
     align-items: center;
 
-    text-align: center;
+    text-align: left;
 
-    padding: 40px 20px;
+    gap: 18px;
+
+    padding: 30px 25px;
 
     border: 1px solid var(--border);
 
@@ -653,15 +655,15 @@ button {
 }
 
 .service-item-icon {
-    width: 72px;
-    height: 72px;
+    width: 64px;
+    height: 64px;
+
+    flex: 0 0 64px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
-
-    margin-bottom: 24px;
 
     color: var(--orange);
 
@@ -674,8 +676,8 @@ button {
 }
 
 .service-item-icon svg {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
 
     stroke: currentColor;
 
@@ -684,24 +686,32 @@ button {
     fill: none;
 }
 
-.service-item h3 {
-    margin: 0 0 10px;
+.service-item-content {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.service-item-content h3 {
+    margin: 0;
 
     font-family: "Xenois", serif;
 
-    font-size: 22px;
+    font-size: 20px;
 
     line-height: 1.05;
 
     letter-spacing: -0.025em;
 }
 
-.service-item p {
+.service-item-content p {
     margin: 0;
 
     color: var(--gray);
 
-    font-size: 13px;
+    font-size: 12px;
 
     line-height: 1.5;
 }
@@ -884,31 +894,47 @@ button {
 
 
 /* =========================================================
-   PROCESS — Punto 4: Flujo de trabajo con iconos
+   PROCESS — Zigzag con curvas
    ========================================================= */
 
 .process {
     background: var(--black-soft);
 }
 
-.process-flow {
-    display: flex;
+.process-map {
+    position: relative;
 
-    align-items: flex-start;
+    display: grid;
 
-    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
 
-    gap: 20px;
+    grid-template-rows: auto auto;
 
-    flex-wrap: wrap;
+    gap: 40px 20px;
+
+    padding: 40px 0;
+
+    min-height: 450px;
+}
+
+.process-map-line {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    pointer-events: none;
 }
 
 .process-step {
-    flex: 1;
+    position: relative;
 
-    min-width: 200px;
-
-    max-width: 240px;
+    z-index: 2;
 
     display: flex;
 
@@ -917,6 +943,38 @@ button {
     align-items: center;
 
     text-align: center;
+
+    padding: 20px;
+}
+
+/* PASO 01: Arriba izquierda */
+.process-step-1 {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+}
+
+/* PASO 02: Abajo centro-izquierda */
+.process-step-2 {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: end;
+    margin-top: 60px;
+}
+
+/* PASO 03: Abajo centro-derecha */
+.process-step-3 {
+    grid-column: 3;
+    grid-row: 2;
+    align-self: end;
+    margin-top: 60px;
+}
+
+/* PASO 04: Arriba derecha */
+.process-step-4 {
+    grid-column: 4;
+    grid-row: 1;
+    align-self: start;
 }
 
 .process-step-icon {
@@ -933,6 +991,8 @@ button {
     border: 1px solid var(--orange);
 
     border-radius: 50%;
+
+    background: var(--black-soft);
 
     color: var(--orange);
 
@@ -981,37 +1041,13 @@ button {
     font-size: 13px;
 
     line-height: 1.5;
-}
 
-.process-arrow {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    width: 40px;
-    height: 72px;
-
-    color: var(--orange);
-
-    opacity: 0.5;
-}
-
-.process-arrow svg {
-    width: 24px;
-    height: 24px;
-
-    stroke: currentColor;
-
-    stroke-width: 1.5;
-
-    fill: none;
+    max-width: 220px;
 }
 
 
 /* =========================================================
-   WHY GURI — Punto 5: Lluvia de ideas con checks
+   WHY GURI
    ========================================================= */
 
 .why {
@@ -1103,7 +1139,7 @@ button {
 
 
 /* =========================================================
-   GESTIÓN DIGITAL — Punto 6: Sin recuadros ni botones
+   GESTIÓN DIGITAL — Sin recuadros
    ========================================================= */
 
 .digital-management {
@@ -1298,7 +1334,7 @@ button {
     margin-top: 28px;
 }
 
-.plan-integrated .plan-service h3 {
+.plan-integrated .plan-service h4 {
     margin-bottom: 9px;
 
     font-family: "Xenois", serif;
@@ -1367,7 +1403,7 @@ button {
 
 
 /* =========================================================
-   COMING SOON (Punto 8: Se mantiene)
+   COMING SOON
    ========================================================= */
 
 .plans-coming-soon {
@@ -1453,7 +1489,7 @@ button {
 
 
 /* =========================================================
-   CONTACTO / PROYECTO PERSONALIZADO (Punto 7: Formulario con interacciones naranjas)
+   CONTACTO / FORMULARIO
    ========================================================= */
 
 .plans-contact {
@@ -1507,7 +1543,7 @@ button {
 
 
 /* =========================================================
-   FORMULARIO (Punto 10: Hover naranja)
+   FORMULARIO
    ========================================================= */
 
 .quote-form {
@@ -1620,14 +1656,12 @@ button {
         color var(--transition);
 }
 
-/* Efecto hover en los campos */
 .form-field input:hover,
 .form-field select:hover,
 .form-field textarea:hover {
     border-color: rgba(255, 90, 31, 0.4);
 }
 
-/* Efecto focus: borde naranja, texto naranja, fondo oscuro */
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus {
@@ -1640,7 +1674,6 @@ button {
     box-shadow: 0 0 0 2px rgba(255, 90, 31, 0.15);
 }
 
-/* Cuando el usuario escribe, el texto se vuelve naranja */
 .form-field input:not(:placeholder-shown),
 .form-field textarea:not(:placeholder-shown) {
     color: var(--orange);
@@ -1691,13 +1724,18 @@ button {
     color: var(--white);
 }
 
+.form-field select option:checked {
+    background: var(--orange) linear-gradient(0deg, var(--orange) 0%, var(--orange) 100%);
+    color: var(--black);
+}
+
 .quote-form-submit {
     margin-top: 20px;
 }
 
 
 /* =========================================================
-   FINAL CTA
+   FINAL CTA — Sin botón
    ========================================================= */
 
 .final-cta {
@@ -1728,33 +1766,9 @@ button {
     letter-spacing: -0.06em;
 }
 
-.final-cta p {
-    max-width: 600px;
-
-    margin: 25px auto 30px;
-
-    font-size: 16px;
-
-    line-height: 1.6;
-}
-
-.final-cta .button {
-    border-color: var(--black);
-
-    background: var(--black);
-
-    color: var(--white);
-}
-
-.final-cta .button:hover {
-    background: transparent;
-
-    color: var(--black);
-}
-
 
 /* =========================================================
-   FOOTER
+   FOOTER — Sin texto grande GURI
    ========================================================= */
 
 .site-footer {
@@ -1775,27 +1789,6 @@ button {
     gap: 50px;
 
     align-items: start;
-}
-
-.footer-brand-name {
-    display: inline-block;
-
-    color: var(--white);
-
-    font-family: "Xenois", serif;
-
-    font-size: 64px;
-
-    line-height: 0.9;
-
-    letter-spacing: -0.055em;
-
-    transition:
-        color var(--transition);
-}
-
-.footer-brand-name:hover {
-    color: var(--orange);
 }
 
 
@@ -1884,7 +1877,7 @@ button {
 
     align-items: center;
 
-    gap: 7px;
+    gap: 10px;
 
     color: var(--gray);
 
@@ -1894,10 +1887,10 @@ button {
 }
 
 .footer-credit img {
-    width: 14px;
-    height: 14px;
+    width: 28px;
+    height: 28px;
 
-    flex: 0 0 14px;
+    flex: 0 0 28px;
 
     object-fit: contain;
 }
@@ -1959,16 +1952,22 @@ button {
         gap: 20px;
     }
 
-    .process-flow {
-        gap: 15px;
+    .process-map {
+        gap: 30px 15px;
     }
 
     .process-step {
-        min-width: 180px;
+        padding: 15px;
     }
 
-    .process-arrow {
+    .process-step-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .process-step-icon svg {
         width: 30px;
+        height: 30px;
     }
 
     .digital-management-grid {
@@ -2077,20 +2076,82 @@ button {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .process-flow {
+    .service-item {
+        padding: 25px 20px;
+    }
+
+    .service-item-icon {
+        width: 54px;
+        height: 54px;
+        flex: 0 0 54px;
+    }
+
+    .service-item-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    .service-item-content h3 {
+        font-size: 18px;
+    }
+
+    .service-item-content p {
+        font-size: 11px;
+    }
+
+    /* Proceso en móvil: columna vertical */
+    .process-map {
+        display: flex;
+
         flex-direction: column;
-        align-items: center;
+
+        gap: 30px;
+
+        padding: 20px 0;
+
+        min-height: auto;
+    }
+
+    .process-map-line {
+        display: none;
     }
 
     .process-step {
         max-width: 100%;
         width: 100%;
+
+        margin-top: 0 !important;
+
+        align-self: auto;
     }
 
-    .process-arrow {
-        width: 100%;
+    .process-step-1,
+    .process-step-2,
+    .process-step-3,
+    .process-step-4 {
+        grid-column: auto;
+        grid-row: auto;
+        align-self: auto;
+        margin-top: 0;
+    }
+
+    .process-step-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .process-step-icon svg {
+        width: 30px;
         height: 30px;
-        transform: rotate(90deg);
+    }
+
+    .process-step h3 {
+        font-size: 18px;
+    }
+
+    .process-step p {
+        font-size: 12px;
+        max-width: 100%;
     }
 
     .work-grid {
@@ -2238,48 +2299,45 @@ button {
     }
 
     .service-item {
-        padding: 30px 20px;
+        padding: 20px 18px;
+        gap: 15px;
     }
 
     .service-item-icon {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 18px;
+        width: 48px;
+        height: 48px;
+        flex: 0 0 48px;
     }
 
     .service-item-icon svg {
-        width: 40px;
-        height: 40px;
+        width: 32px;
+        height: 32px;
     }
 
-    .service-item h3 {
-        font-size: 20px;
+    .service-item-content h3 {
+        font-size: 17px;
     }
 
-    .service-item p {
-        font-size: 12px;
+    .service-item-content p {
+        font-size: 11px;
     }
 
     .process-step-icon {
-        width: 60px;
-        height: 60px;
+        width: 56px;
+        height: 56px;
     }
 
     .process-step-icon svg {
-        width: 30px;
-        height: 30px;
+        width: 28px;
+        height: 28px;
     }
 
     .process-step h3 {
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .process-step p {
         font-size: 12px;
-    }
-
-    .process-arrow {
-        height: 24px;
     }
 
     .work-heading {
@@ -2303,10 +2361,6 @@ button {
     .work-card:nth-child(2) .work-placeholder,
     .work-card:nth-child(3) .work-placeholder {
         min-height: 300px;
-    }
-
-    .why-list {
-        margin-top: 35px;
     }
 
     .brainstorm-item {
@@ -2368,7 +2422,7 @@ button {
         padding: 20px 0;
     }
 
-    .plan-integrated .plan-service h3 {
+    .plan-integrated .plan-service h4 {
         font-size: 20px;
     }
 
@@ -2442,16 +2496,8 @@ button {
         font-size: 52px;
     }
 
-    .final-cta p {
-        font-size: 14px;
-    }
-
     .site-footer {
         padding-top: 55px;
-    }
-
-    .footer-brand-name {
-        font-size: 48px;
     }
 
     .footer-links {
@@ -2473,8 +2519,9 @@ button {
     }
 
     .footer-credit img {
-        width: 13px;
-        height: 13px;
+        width: 24px;
+        height: 24px;
+        flex: 0 0 24px;
     }
 }
 
@@ -2520,7 +2567,9 @@ button {
         padding: 23px 16px;
     }
 
-    .footer-brand-name {
-        font-size: 42px;
+    .footer-credit img {
+        width: 22px;
+        height: 22px;
+        flex: 0 0 22px;
     }
 }
