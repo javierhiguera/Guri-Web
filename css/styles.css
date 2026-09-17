@@ -2231,15 +2231,13 @@ button {
 .form-field select option {
     background: var(--black-soft);
     color: var(--white);
+    padding: 10px;
 }
 
-.form-field select option:checked {
-    background: var(--orange) linear-gradient(0deg, var(--orange) 0%, var(--orange) 100%);
-    color: var(--black);
-}
-
+.form-field select option:checked,
+.form-field select option:active,
 .form-field select option:hover {
-    background: rgba(255, 90, 31, 0.2);
+    background: var(--black-soft);
     color: var(--orange);
 }
 
