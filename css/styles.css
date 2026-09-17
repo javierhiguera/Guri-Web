@@ -687,7 +687,7 @@ button {
 
 
 /* =========================================================
-   MUNDO — grande + sensación de movimiento
+   MUNDO
    ========================================================= */
 
 .services-globe {
@@ -1572,7 +1572,7 @@ button {
 
 
 /* =========================================================
-   PROCESS — Línea naranja como fondo + iconos
+   PROCESS — Línea naranja de fondo + iconos
    ========================================================= */
 
 .process {
@@ -1676,24 +1676,6 @@ button {
     box-shadow:
         0 0 0 6px rgba(255, 90, 31, 0.08),
         0 0 20px rgba(255, 90, 31, 0.2);
-
-    transition:
-        background var(--transition),
-        color var(--transition),
-        transform var(--transition),
-        box-shadow var(--transition);
-}
-
-.process-step:hover .process-step-icon {
-    background: var(--orange);
-
-    color: var(--black);
-
-    transform: scale(1.08);
-
-    box-shadow:
-        0 0 0 8px rgba(255, 90, 31, 0.15),
-        0 0 30px rgba(255, 90, 31, 0.5);
 }
 
 .process-step-icon svg {
@@ -1732,7 +1714,53 @@ button {
 }
 
 
-/* Posiciones */
+/* =========================================================
+   ANIMACIÓN EN BUCLE — latido desfasado
+   ========================================================= */
+
+@keyframes process-pulse {
+    0%,
+    60%,
+    100% {
+        background: var(--black);
+        color: var(--orange);
+        box-shadow:
+            0 0 0 6px rgba(255, 90, 31, 0.08),
+            0 0 20px rgba(255, 90, 31, 0.2);
+    }
+
+    15%,
+    30% {
+        background: var(--orange);
+        color: var(--black);
+        box-shadow:
+            0 0 0 10px rgba(255, 90, 31, 0.18),
+            0 0 35px rgba(255, 90, 31, 0.6);
+    }
+}
+
+.process-step-1 .process-step-icon {
+    animation: process-pulse 8s ease-in-out infinite;
+    animation-delay: 0s;
+}
+
+.process-step-2 .process-step-icon {
+    animation: process-pulse 8s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+.process-step-3 .process-step-icon {
+    animation: process-pulse 8s ease-in-out infinite;
+    animation-delay: 4s;
+}
+
+.process-step-4 .process-step-icon {
+    animation: process-pulse 8s ease-in-out infinite;
+    animation-delay: 6s;
+}
+
+
+/* Posiciones de los 4 iconos (sobre la curva) */
 
 .process-step-1 {
     top: 40%;
@@ -2611,7 +2639,6 @@ button {
 
 .work-card,
 .plan-card,
-.process-step,
 .brainstorm-item,
 .digital-management-item {
     opacity: 0;
@@ -2628,7 +2655,6 @@ button {
 
 .work-card.visible,
 .plan-card.visible,
-.process-step.visible,
 .brainstorm-item.visible,
 .digital-management-item.visible {
     opacity: 1;
