@@ -451,10 +451,6 @@
         min-height: auto;
     }
 
-    .process-line {
-        display: none;
-    }
-
     .process-step,
     .process-step-1,
     .process-step-2,
@@ -475,6 +471,12 @@
         align-self: auto;
 
         margin-top: 0;
+    }
+
+    /* La línea de fondo se oculta en mobile */
+
+    .process {
+        background-image: none;
     }
 
 
