@@ -282,6 +282,12 @@
     height: 10px;
   }
 
+  .iphone-home-bar {
+    width: 120px;
+    height: 5px;
+    bottom: 8px;
+  }
+
   .work-frame-imac {
     max-width: 100%;
   }
@@ -557,6 +563,12 @@
     height: 8px;
   }
 
+  .iphone-home-bar {
+    width: 100px;
+    height: 4px;
+    bottom: 6px;
+  }
+
   .work-frame-imac {
     max-width: 100%;
   }
@@ -569,38 +581,6 @@
     top: 5px;
     width: 4px;
     height: 4px;
-  }
-
-  .mac-os-bar {
-    height: 16px;
-    padding: 0 8px;
-    font-size: 8px;
-  }
-
-  .mac-os-left,
-  .mac-os-right {
-    gap: 7px;
-  }
-
-  .mac-os-apple {
-    width: 8px;
-    height: 8px;
-    flex: 0 0 8px;
-  }
-
-  .mac-os-menu-item,
-  .mac-os-date {
-    font-size: 7px;
-  }
-
-  .mac-os-icon {
-    width: 9px;
-    height: 9px;
-    flex: 0 0 9px;
-  }
-
-  .imac-screen .mac-content {
-    top: 16px;
   }
 
   .imac-neck {
@@ -621,23 +601,6 @@
 
   .ipad-screen {
     border-radius: 14px;
-  }
-
-  .device-status-ipad {
-    padding: 8px 14px 0 14px;
-    font-size: 10px;
-  }
-
-  .device-status-ipad .device-time {
-    font-size: 10px;
-  }
-
-  .ipad-battery-percent {
-    font-size: 9px;
-  }
-
-  .ipad-content {
-    top: 20px;
   }
 
   .work-info h3 {
@@ -911,6 +874,12 @@
     width: 64px;
     height: 18px;
     top: 14px;
+  }
+
+  .iphone-home-bar {
+    width: 80px;
+    height: 3px;
+    bottom: 5px;
   }
 
   .services-grid {
