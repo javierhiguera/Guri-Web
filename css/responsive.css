@@ -29,11 +29,6 @@
         font-size: 13px;
     }
 
-    .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 48px;
-    }
-
     .hero h1 {
         font-size: clamp(48px, 6vw, 76px);
     }
@@ -71,7 +66,6 @@
 
         margin: 0 auto;
 
-        order: 0;
         justify-self: center;
     }
 
@@ -81,8 +75,6 @@
 
     .services-orbit {
         max-width: 620px;
-
-        order: 0;
     }
 
     .services-globe {
@@ -154,9 +146,12 @@
         width: min(100% - 40px, var(--container));
     }
 
+    /* Header por encima del nav desplegable para que
+       el botón de cerrar siga siendo clickeable */
+
     .site-header {
         position: fixed;
-        z-index: 1000;
+        z-index: 1102;
     }
 
     .header-inner {
@@ -274,10 +269,6 @@
             70px 70px,
             14px 14px,
             14px 14px;
-    }
-
-    .hero-inner {
-        gap: 60px;
     }
 
     .hero-content {
@@ -621,10 +612,6 @@
             50px 50px,
             10px 10px,
             10px 10px;
-    }
-
-    .hero-inner {
-        gap: 48px;
     }
 
     .hero h1 {
