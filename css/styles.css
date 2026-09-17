@@ -431,10 +431,12 @@ button {
 
 
 /* =========================================================
-   HERO — Sin bloque visual derecho
+   HERO — Con cuadrícula naranja + glow radial
    ========================================================= */
 
 .hero {
+    position: relative;
+
     min-height: 100vh;
 
     display: flex;
@@ -442,12 +444,35 @@ button {
 
     padding-top: 110px;
 
-    background:
+    background-color: var(--black);
+
+    background-image:
+        /* Glow radial naranja (mantenido) */
         radial-gradient(
             circle at 80% 45%,
             rgba(255, 90, 31, 0.10),
             transparent 32%
-        );
+        ),
+        /* Líneas principales cada 100px */
+        linear-gradient(rgba(255, 90, 31, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 90, 31, 0.15) 1px, transparent 1px),
+        /* Líneas secundarias cada 20px */
+        linear-gradient(rgba(255, 90, 31, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 90, 31, 0.05) 1px, transparent 1px);
+
+    background-size:
+        100% 100%,
+        100px 100px,
+        100px 100px,
+        20px 20px,
+        20px 20px;
+
+    background-position:
+        center center,
+        center center,
+        center center,
+        center center,
+        center center;
 }
 
 .hero-inner {
@@ -787,7 +812,6 @@ button {
 
     margin: 0 auto;
 
-    /* Marco metálico del iPhone */
     padding: 10px;
 
     border-radius: 52px;
@@ -803,16 +827,11 @@ button {
         );
 
     box-shadow:
-        /* Sombra exterior */
         0 30px 60px rgba(0, 0, 0, 0.8),
         0 15px 30px rgba(0, 0, 0, 0.6),
-        /* Brillo del marco */
         inset 0 1px 0 rgba(255, 255, 255, 0.1),
         inset 0 -1px 0 rgba(0, 0, 0, 0.5);
 }
-
-
-/* Isla dinámica (notch) */
 
 .iphone-notch {
     position: absolute;
@@ -861,9 +880,6 @@ button {
         inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
-
-/* Pantalla del iPhone */
-
 .iphone-screen {
     position: relative;
 
@@ -880,9 +896,6 @@ button {
     box-shadow:
         inset 0 0 0 2px #000;
 }
-
-
-/* Contenedor con scroll automático */
 
 .iphone-scroll {
     position: absolute;
@@ -914,9 +927,6 @@ button {
         transform: translateY(calc(-100% + 100vh));
     }
 }
-
-
-/* Botones laterales del iPhone (volumen y encendido) */
 
 .work-frame-iphone::before {
     content: "";
@@ -975,9 +985,6 @@ button {
     margin: 0 auto;
 }
 
-
-/* Pantalla del Mac */
-
 .mac-screen {
     position: relative;
 
@@ -987,7 +994,6 @@ button {
 
     border-radius: 12px 12px 0 0;
 
-    /* Marco metálico */
     padding: 12px 12px 0 12px;
 
     background:
@@ -1001,9 +1007,6 @@ button {
         0 20px 40px rgba(0, 0, 0, 0.7),
         inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
-
-
-/* Barra superior del Mac (los 3 botones) */
 
 .mac-bar {
     display: flex;
@@ -1044,9 +1047,6 @@ button {
     background: #27c93f;
 }
 
-
-/* Contenido (pantalla propiamente dicha) */
-
 .mac-content {
     position: relative;
 
@@ -1067,9 +1067,6 @@ button {
 
     object-fit: cover;
 }
-
-
-/* Base del Mac (parte inferior metálica) */
 
 .mac-base {
     position: relative;
@@ -1122,7 +1119,6 @@ button {
 
     margin: 0 auto;
 
-    /* Marco del iPad */
     padding: 14px;
 
     border-radius: 28px;
@@ -1140,9 +1136,6 @@ button {
         inset 0 1px 0 rgba(255, 255, 255, 0.08),
         inset 0 -1px 0 rgba(0, 0, 0, 0.5);
 }
-
-
-/* Cámara frontal del iPad */
 
 .ipad-camera {
     position: absolute;
@@ -1169,9 +1162,6 @@ button {
 
     z-index: 5;
 }
-
-
-/* Pantalla del iPad */
 
 .ipad-screen {
     position: relative;
@@ -2116,17 +2106,33 @@ button {
 
 
 /* =========================================================
-   FINAL CTA — Sin botón
+   FINAL CTA — Con cuadrícula blanca sobre naranja
    ========================================================= */
 
 .final-cta {
     padding: 140px 0;
 
-    background: var(--orange);
+    background-color: var(--orange);
 
     color: var(--black);
 
     text-align: center;
+
+    background-image:
+        /* Líneas principales cada 100px */
+        linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+        /* Líneas secundarias cada 20px */
+        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+
+    background-size:
+        100px 100px,
+        100px 100px,
+        20px 20px,
+        20px 20px;
+
+    background-position: center center;
 }
 
 .final-cta .container {
@@ -2621,6 +2627,14 @@ button {
 
     .hero {
         padding-top: 105px;
+
+        /* Cuadrícula más chica en móvil */
+        background-size:
+            100% 100%,
+            60px 60px,
+            60px 60px,
+            12px 12px,
+            12px 12px;
     }
 
     .hero h1 {
@@ -2861,6 +2875,13 @@ button {
 
     .final-cta {
         padding: 85px 0;
+
+        /* Cuadrícula más chica en móvil */
+        background-size:
+            60px 60px,
+            60px 60px,
+            12px 12px,
+            12px 12px;
     }
 
     .final-cta h2 {
