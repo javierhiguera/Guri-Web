@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const animatedElements = document.querySelectorAll(
         [
-            ".service-item",
+            ".orbit-item",
             ".work-card",
             ".process-step",
             ".plan-card",
