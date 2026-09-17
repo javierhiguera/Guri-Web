@@ -1583,7 +1583,7 @@ button {
 
 
 /* =========================================================
-   PROCESS
+   PROCESS — Línea naranja continua
    ========================================================= */
 
 .process {
@@ -1593,20 +1593,19 @@ button {
 .process-map {
     position: relative;
 
-    display: grid;
+    width: 100%;
 
-    grid-template-columns: repeat(4, 1fr);
+    aspect-ratio: 2000 / 600;
 
-    grid-template-rows: auto auto;
+    min-height: 560px;
 
-    gap: 40px 20px;
-
-    padding: 40px 0;
-
-    min-height: 480px;
+    margin-top: 40px;
 }
 
-.process-map-line {
+
+/* Línea SVG que recorre toda la sección */
+
+.process-line {
     position: absolute;
 
     top: 0;
@@ -1615,93 +1614,85 @@ button {
     width: 100%;
     height: 100%;
 
+    color: var(--orange);
+
     z-index: 1;
 
     pointer-events: none;
 }
 
-.process-port {
+.process-line-solid {
+    filter:
+        drop-shadow(0 0 6px rgba(255, 90, 31, 0.5))
+        drop-shadow(0 0 20px rgba(255, 90, 31, 0.25));
+}
+
+.process-line-dash {
+    opacity: 0.35;
+}
+
+.process-dot {
+    fill: var(--orange);
+
+    filter:
+        drop-shadow(0 0 8px rgba(255, 90, 31, 0.8));
+
+    animation: dot-pulse 2.4s ease-in-out infinite;
+}
+
+.process-dot:nth-of-type(2) {
+    animation-delay: 0.6s;
+}
+
+.process-dot:nth-of-type(3) {
+    animation-delay: 1.2s;
+}
+
+.process-dot:nth-of-type(4) {
+    animation-delay: 1.8s;
+}
+
+@keyframes dot-pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.3);
+    }
+}
+
+
+/* =========================================================
+   PASOS — Posicionados sobre la línea
+   ========================================================= */
+
+.process-step {
     position: absolute;
-
-    width: 10px;
-    height: 10px;
-
-    border-radius: 50%;
-
-    background: var(--orange);
-
-    box-shadow: 0 0 12px rgba(255, 90, 31, 0.8);
 
     z-index: 3;
 
-    pointer-events: none;
-}
-
-.process-port-1 {
-    top: 18%;
-    left: 12%;
-}
-
-.process-port-2 {
-    top: 60%;
-    left: 38%;
-}
-
-.process-port-3 {
-    top: 60%;
-    left: 62%;
-}
-
-.process-port-4 {
-    top: 18%;
-    left: 88%;
-}
-
-.process-step {
-    position: relative;
-
-    z-index: 2;
-
     display: flex;
-
     flex-direction: column;
 
     align-items: center;
 
     text-align: center;
 
-    padding: 20px;
+    padding: 0;
+
+    max-width: 260px;
+
+    transform: translate(-50%, -50%);
 }
 
-.process-step-1 {
-    grid-column: 1;
-    grid-row: 1;
-    align-self: start;
-}
 
-.process-step-2 {
-    grid-column: 2;
-    grid-row: 2;
-    align-self: end;
-    margin-top: 80px;
-}
-
-.process-step-3 {
-    grid-column: 3;
-    grid-row: 2;
-    align-self: end;
-    margin-top: 80px;
-}
-
-.process-step-4 {
-    grid-column: 4;
-    grid-row: 1;
-    align-self: start;
-}
+/* Los iconos quedan centrados sobre la línea */
 
 .process-step-icon {
-    width: 72px;
-    height: 72px;
+    width: 76px;
+    height: 76px;
 
     display: flex;
 
@@ -1720,7 +1711,7 @@ button {
 
     box-shadow:
         0 0 0 6px rgba(255, 90, 31, 0.08),
-        0 0 20px rgba(255, 90, 31, 0.15);
+        0 0 20px rgba(255, 90, 31, 0.2);
 
     transition:
         background var(--transition),
@@ -1738,16 +1729,16 @@ button {
 
     box-shadow:
         0 0 0 8px rgba(255, 90, 31, 0.15),
-        0 0 30px rgba(255, 90, 31, 0.4);
+        0 0 30px rgba(255, 90, 31, 0.5);
 }
 
 .process-step-icon svg {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
 
     stroke: currentColor;
 
-    stroke-width: 1.2;
+    stroke-width: 1.4;
 
     fill: none;
 }
@@ -1757,7 +1748,7 @@ button {
 
     font-family: "Xenois", serif;
 
-    font-size: 20px;
+    font-size: 22px;
 
     line-height: 1;
 
@@ -1771,11 +1762,39 @@ button {
 
     font-size: 13px;
 
-    line-height: 1.5;
+    line-height: 1.55;
 
-    max-width: 220px;
+    max-width: 240px;
 }
 
+
+/* =========================================================
+   POSICIONES DE LOS PASOS (alineadas con los puntos del SVG)
+   ========================================================= */
+
+/* Paso 1 — Hablamos (arriba izquierda) — coincide con cx=380 cy=160 */
+.process-step-1 {
+    top: 26.7%;
+    left: 19%;
+}
+
+/* Paso 2 — Diseñamos (abajo izquierda) — coincide con cx=820 cy=250 */
+.process-step-2 {
+    top: 66.7%;
+    left: 41%;
+}
+
+/* Paso 3 — Desarrollamos (abajo derecha) — coincide con cx=1300 cy=420 */
+.process-step-3 {
+    top: 66.7%;
+    left: 65%;
+}
+
+/* Paso 4 — Publicamos (arriba derecha) — coincide con cx=1560 cy=240 */
+.process-step-4 {
+    top: 40%;
+    left: 78%;
+}
 
 /* =========================================================
    WHY GURI
