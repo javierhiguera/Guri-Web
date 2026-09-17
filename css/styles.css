@@ -9,8 +9,7 @@
 
 @font-face {
     font-family: "Bunken";
-    src: url("../assets/fonts/Bunken-Tech-Sans-W01-Light.ttf")
-        format("truetype");
+    src: url("../assets/fonts/Bunken-Tech-Sans-W01-Light.ttf") format("truetype");
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -18,8 +17,7 @@
 
 @font-face {
     font-family: "Xenois";
-    src: url("../assets/fonts/Xenois-Serif-W01-Bold.ttf")
-        format("truetype");
+    src: url("../assets/fonts/Xenois-Serif-W01-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -51,6 +49,8 @@
 
     --container: 1240px;
 
+    --section-padding: 140px;
+
     --radius: 18px;
 
     --transition: 0.25s ease;
@@ -81,6 +81,10 @@ body {
     line-height: 1.5;
 
     overflow-x: hidden;
+}
+
+body.menu-open {
+    overflow: hidden;
 }
 
 img {
@@ -128,7 +132,7 @@ button {
    ========================================================= */
 
 .section {
-    padding: 140px 0;
+    padding: var(--section-padding) 0;
 }
 
 
@@ -144,11 +148,7 @@ button {
 .section-heading h2 {
     font-family: "Xenois", serif;
 
-    font-size: clamp(
-        48px,
-        6vw,
-        82px
-    );
+    font-size: clamp(48px, 6vw, 82px);
 
     line-height: 0.95;
 
@@ -229,6 +229,7 @@ button {
 /* =========================================================
    LOGO
    ========================================================= */
+
 .logo-separator {
     color: var(--gray-dark);
     font-size: 22px;
@@ -335,7 +336,7 @@ button {
 
 
 /* =========================================================
-   HEADER BUTTON
+   HEADER BUTTON (WhatsApp)
    ========================================================= */
 
 .header-button {
@@ -381,7 +382,7 @@ button {
 
 
 /* =========================================================
-   MOBILE MENU
+   MOBILE MENU TOGGLE
    ========================================================= */
 
 .menu-toggle {
@@ -389,6 +390,8 @@ button {
 
     width: 42px;
     height: 42px;
+
+    padding: 0;
 
     border: 1px solid var(--border);
 
@@ -404,16 +407,19 @@ button {
 .menu-toggle span {
     position: absolute;
 
-    left: 10px;
+    left: 50%;
 
     width: 20px;
     height: 1px;
 
     background: var(--white);
 
+    transform: translateX(-50%);
+
     transition:
         transform var(--transition),
-        top var(--transition);
+        top var(--transition),
+        opacity var(--transition);
 }
 
 .menu-toggle span:first-child {
@@ -427,20 +433,18 @@ button {
 .menu-toggle.active span:first-child,
 .menu-toggle[aria-expanded="true"] span:first-child {
     top: 19.5px;
-
-    transform: rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
 }
 
 .menu-toggle.active span:last-child,
 .menu-toggle[aria-expanded="true"] span:last-child {
     top: 19.5px;
-
-    transform: rotate(-45deg);
+    transform: translateX(-50%) rotate(-45deg);
 }
 
 
 /* =========================================================
-   HERO — Tabla de corte con números/letras
+   HERO
    ========================================================= */
 
 .hero {
@@ -505,11 +509,7 @@ button {
 .hero h1 {
     font-family: "Xenois", serif;
 
-    font-size: clamp(
-        70px,
-        9vw,
-        140px
-    );
+    font-size: clamp(70px, 9vw, 140px);
 
     line-height: 0.86;
 
@@ -613,8 +613,7 @@ button {
 .services-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
     gap: 30px;
 
@@ -667,8 +666,7 @@ button {
 
     color: var(--orange);
 
-    transition:
-        transform var(--transition);
+    transition: transform var(--transition);
 }
 
 .service-item:hover .service-item-icon {
@@ -718,7 +716,7 @@ button {
 
 
 /* =========================================================
-   WORK — Cuadrícula con números/letras en lateral izquierdo
+   WORK
    ========================================================= */
 
 .work {
@@ -727,14 +725,11 @@ button {
     background-color: var(--black);
 
     background-image:
-        /* SVG con números y letras solo en el lateral izquierdo */
         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='500' viewBox='0 0 120 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:10px;font-weight:bold;fill:rgba(255,90,31,0.4);}.let{font-family:Arial,sans-serif;font-size:10px;font-weight:bold;fill:rgba(255,90,31,0.4);}.tick-left{stroke:rgba(255,90,31,0.35);stroke-width:1.2;}</style></defs><g><line x1='30' y1='0' x2='30' y2='500' class='tick-left'/><text x='18' y='70' class='let' text-anchor='middle'>A</text><text x='18' y='170' class='let' text-anchor='middle'>B</text><text x='18' y='270' class='let' text-anchor='middle'>C</text><text x='18' y='370' class='let' text-anchor='middle'>D</text><text x='18' y='470' class='let' text-anchor='middle'>E</text><text x='55' y='30' class='num' text-anchor='start'>1</text><text x='55' y='130' class='num' text-anchor='start'>2</text><text x='55' y='230' class='num' text-anchor='start'>3</text><text x='55' y='330' class='num' text-anchor='start'>4</text><text x='55' y='430' class='num' text-anchor='start'>5</text></g></svg>"),
 
-        /* Líneas principales de la cuadrícula */
         linear-gradient(rgba(255, 90, 31, 0.10) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 90, 31, 0.10) 1px, transparent 1px),
 
-        /* Líneas secundarias */
         linear-gradient(rgba(255, 90, 31, 0.04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 90, 31, 0.04) 1px, transparent 1px);
 
@@ -771,8 +766,7 @@ button {
 
     border-bottom: 1px solid transparent;
 
-    transition:
-        border-color var(--transition);
+    transition: border-color var(--transition);
 }
 
 .text-link:hover {
@@ -787,13 +781,9 @@ button {
 .work-grid {
     display: grid;
 
-    grid-template-columns:
-        0.85fr
-        1.4fr;
+    grid-template-columns: 0.85fr 1.4fr;
 
-    grid-template-rows:
-        auto
-        auto;
+    grid-template-rows: auto auto;
 
     gap: 24px;
 
@@ -803,15 +793,13 @@ button {
 .work-card {
     display: grid;
 
-    grid-template-columns:
-        1fr auto;
+    grid-template-columns: 1fr auto;
 
     gap: 24px;
 
     align-items: center;
 
-    transition:
-        transform var(--transition);
+    transition: transform var(--transition);
 }
 
 .work-card:hover {
@@ -854,7 +842,7 @@ button {
 
 
 /* =========================================================
-   iPHONE 17 PRO — Metalizado realista
+   iPHONE 17 PRO
    ========================================================= */
 
 .work-frame-iphone {
@@ -936,8 +924,7 @@ button {
             #000
         );
 
-    box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .iphone-screen {
@@ -957,8 +944,6 @@ button {
         inset 0 0 0 2px #000,
         inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
-
-/* Barra de estado del iPhone — San Francisco */
 
 .device-status-bar {
     position: absolute;
@@ -1035,8 +1020,7 @@ button {
 
     display: block;
 
-    animation:
-        iphone-scroll-anim 80s linear infinite;
+    animation: iphone-scroll-anim 80s linear infinite;
 }
 
 @keyframes iphone-scroll-anim {
@@ -1047,8 +1031,6 @@ button {
         transform: translateY(calc(-100% + 100vh));
     }
 }
-
-/* Barra de gestos (home indicator) */
 
 .iphone-home-bar {
     position: absolute;
@@ -1086,11 +1068,7 @@ button {
     border-radius: 2px 0 0 2px;
 
     background:
-        linear-gradient(
-            180deg,
-            #4a4a4a,
-            #2a2a2a
-        );
+        linear-gradient(180deg, #4a4a4a, #2a2a2a);
 
     box-shadow:
         inset 1px 0 1px rgba(255, 255, 255, 0.2),
@@ -1111,11 +1089,7 @@ button {
     border-radius: 2px 0 0 2px;
 
     background:
-        linear-gradient(
-            180deg,
-            #4a4a4a,
-            #2a2a2a
-        );
+        linear-gradient(180deg, #4a4a4a, #2a2a2a);
 
     box-shadow:
         inset 1px 0 1px rgba(255, 255, 255, 0.2),
@@ -1124,7 +1098,7 @@ button {
 
 
 /* =========================================================
-   iMAC — Metalizado oscuro
+   iMAC
    ========================================================= */
 
 .work-frame-imac {
@@ -1300,7 +1274,7 @@ button {
 
 
 /* =========================================================
-   iPAD — Metalizado negro
+   iPAD
    ========================================================= */
 
 .work-frame-ipad {
@@ -1402,7 +1376,7 @@ button {
 
 
 /* =========================================================
-   WORK INFO — OCULTO (solo dispositivos)
+   WORK INFO — OCULTO
    ========================================================= */
 
 .work-info {
@@ -1411,7 +1385,7 @@ button {
 
 
 /* =========================================================
-   PROCESS — Estilo n8n
+   PROCESS
    ========================================================= */
 
 .process {
@@ -1616,9 +1590,7 @@ button {
 .why-inner {
     display: grid;
 
-    grid-template-columns:
-        1fr
-        1fr;
+    grid-template-columns: 1fr 1fr;
 
     gap: 100px;
 
@@ -1658,8 +1630,7 @@ button {
 
     padding: 12px 0;
 
-    transition:
-        transform var(--transition);
+    transition: transform var(--transition);
 }
 
 .brainstorm-item:hover {
@@ -1674,8 +1645,7 @@ button {
 
     color: var(--orange);
 
-    transition:
-        transform var(--transition);
+    transition: transform var(--transition);
 }
 
 .brainstorm-item:hover .brainstorm-check {
@@ -1724,8 +1694,7 @@ button {
 .digital-management-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
     gap: 30px;
 }
@@ -1741,8 +1710,7 @@ button {
 
     padding: 20px;
 
-    transition:
-        transform var(--transition);
+    transition: transform var(--transition);
 }
 
 .digital-management-item:hover {
@@ -1762,8 +1730,7 @@ button {
 
     color: var(--orange);
 
-    transition:
-        transform var(--transition);
+    transition: transform var(--transition);
 }
 
 .digital-management-item:hover .digital-logo {
@@ -1811,8 +1778,7 @@ button {
 .plans-integrated-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 24px;
 }
@@ -2036,8 +2002,7 @@ button {
 
     border-radius: 50%;
 
-    animation:
-        guri-spin 0.8s linear infinite;
+    animation: guri-spin 0.8s linear infinite;
 }
 
 @keyframes guri-spin {
@@ -2054,9 +2019,7 @@ button {
 .plans-contact {
     display: grid;
 
-    grid-template-columns:
-        0.8fr
-        1.2fr;
+    grid-template-columns: 0.8fr 1.2fr;
 
     align-items: start;
 
@@ -2080,11 +2043,7 @@ button {
 
     font-family: "Xenois", serif;
 
-    font-size: clamp(
-        34px,
-        4vw,
-        52px
-    );
+    font-size: clamp(34px, 4vw, 52px);
 
     line-height: 0.98;
 
@@ -2129,8 +2088,7 @@ button {
 .quote-form-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 20px;
 }
@@ -2154,8 +2112,7 @@ button {
 
     letter-spacing: 0.04em;
 
-    transition:
-        color var(--transition);
+    transition: color var(--transition);
 }
 
 .form-field input:focus + label,
@@ -2211,8 +2168,7 @@ button {
 .form-field textarea::placeholder {
     color: var(--gray-dark);
 
-    transition:
-        color var(--transition);
+    transition: color var(--transition);
 }
 
 .form-field input:hover,
@@ -2242,16 +2198,8 @@ button {
     appearance: none;
 
     background-image:
-        linear-gradient(
-            45deg,
-            transparent 50%,
-            var(--gray) 50%
-        ),
-        linear-gradient(
-            135deg,
-            var(--gray) 50%,
-            transparent 50%
-        );
+        linear-gradient(45deg, transparent 50%, var(--gray) 50%),
+        linear-gradient(135deg, var(--gray) 50%, transparent 50%);
 
     background-position:
         calc(100% - 17px) 20px,
@@ -2266,16 +2214,8 @@ button {
 
 .form-field select:focus {
     background-image:
-        linear-gradient(
-            45deg,
-            transparent 50%,
-            var(--orange) 50%
-        ),
-        linear-gradient(
-            135deg,
-            var(--orange) 50%,
-            transparent 50%
-        );
+        linear-gradient(45deg, transparent 50%, var(--orange) 50%),
+        linear-gradient(135deg, var(--orange) 50%, transparent 50%);
 }
 
 .form-field select option {
@@ -2299,7 +2239,7 @@ button {
 
 
 /* =========================================================
-   FINAL CTA — Tabla de corte blanca sobre naranja
+   FINAL CTA
    ========================================================= */
 
 .final-cta {
@@ -2351,15 +2291,15 @@ button {
 .final-cta h2 {
     font-family: "Xenois", serif;
 
-    font-size: clamp(
-        52px,
-        7vw,
-        94px
-    );
+    font-size: clamp(52px, 7vw, 94px);
 
     line-height: 0.9;
 
     letter-spacing: -0.06em;
+}
+
+.final-cta h2 span {
+    display: block;
 }
 
 
@@ -2387,16 +2327,10 @@ button {
     align-items: start;
 }
 
-
-/* =========================================================
-   FOOTER LINKS
-   ========================================================= */
-
 .footer-links {
     display: grid;
 
-    grid-template-columns:
-        repeat(2, minmax(150px, 220px));
+    grid-template-columns: repeat(2, minmax(150px, 220px));
 
     gap: 70px;
 }
@@ -2439,11 +2373,6 @@ button {
 
     transform: translateX(3px);
 }
-
-
-/* =========================================================
-   FOOTER BOTTOM
-   ========================================================= */
 
 .footer-bottom {
     min-height: 70px;
@@ -2522,733 +2451,4 @@ button {
     opacity: 1;
 
     transform: translateY(0);
-}
-
-
-/* =========================================================
-   RESPONSIVE — TABLET
-   ========================================================= */
-
-@media (max-width: 1100px) {
-
-    .main-nav {
-        gap: 18px;
-    }
-
-    .main-nav a {
-        font-size: 12px;
-    }
-
-    .hero-inner {
-        gap: 50px;
-    }
-
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    .process-map {
-        gap: 30px 15px;
-    }
-
-    .process-step {
-        padding: 15px;
-    }
-
-    .process-step-icon {
-        width: 60px;
-        height: 60px;
-    }
-
-    .process-step-icon svg {
-        width: 30px;
-        height: 30px;
-    }
-
-    .digital-management-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .plans-integrated-grid {
-        gap: 20px;
-    }
-
-    .plan-integrated {
-        padding: 35px;
-    }
-
-    .footer-inner {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-
-/* =========================================================
-   RESPONSIVE — 900PX
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-    .section {
-        padding: 100px 0;
-    }
-
-    .main-nav,
-    .header-button {
-        display: none;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .main-nav.active,
-    .main-nav.is-open {
-        display: flex;
-
-        position: absolute;
-
-        top: 86px;
-        left: 0;
-        right: 0;
-
-        z-index: 1100;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 0;
-
-        margin: 0;
-
-        padding: 12px 24px 20px;
-
-        border-top: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
-
-        background: rgba(8, 8, 8, 0.98);
-
-        backdrop-filter: blur(14px);
-    }
-
-    .main-nav.active a,
-    .main-nav.is-open a {
-        display: flex;
-
-        align-items: center;
-
-        min-height: 48px;
-
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .hero-inner {
-        grid-template-columns: 1fr;
-
-        gap: 60px;
-    }
-
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .service-item {
-        padding: 25px 20px;
-    }
-
-    .service-item-icon {
-        width: 54px;
-        height: 54px;
-        flex: 0 0 54px;
-    }
-
-    .service-item-icon svg {
-        width: 36px;
-        height: 36px;
-    }
-
-    .service-item-content h3 {
-        font-size: 18px;
-    }
-
-    .service-item-content p {
-        font-size: 11px;
-    }
-
-    .process-map {
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 30px;
-
-        padding: 20px 0;
-
-        min-height: auto;
-    }
-
-    .process-map-line,
-    .process-port {
-        display: none;
-    }
-
-    .process-step {
-        max-width: 100%;
-        width: 100%;
-
-        margin-top: 0 !important;
-
-        align-self: auto;
-    }
-
-    .process-step-1,
-    .process-step-2,
-    .process-step-3,
-    .process-step-4 {
-        grid-column: auto;
-        grid-row: auto;
-        align-self: auto;
-        margin-top: 0;
-    }
-
-    .process-step-icon {
-        width: 60px;
-        height: 60px;
-    }
-
-    .process-step-icon svg {
-        width: 30px;
-        height: 30px;
-    }
-
-    .process-step h3 {
-        font-size: 18px;
-    }
-
-    .process-step p {
-        font-size: 12px;
-        max-width: 100%;
-    }
-
-    .work-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto auto;
-    }
-
-    .work-card:nth-child(1) {
-        grid-column: 1 / span 2;
-        grid-row: 1;
-    }
-
-    .work-card:nth-child(2) {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .work-card:nth-child(3) {
-        grid-column: 2;
-        grid-row: 2;
-    }
-
-    .why-inner {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
-
-    .digital-management-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .plans-integrated-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .plans-contact {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    .plans-coming-soon {
-        margin-top: 40px;
-        padding: 25px;
-    }
-
-    .plans-coming-soon h3 {
-        font-size: 28px;
-    }
-
-    .footer-links {
-        grid-template-columns: repeat(2, minmax(150px, 220px));
-    }
-}
-
-
-/* =========================================================
-   RESPONSIVE — 600PX
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    .container {
-        width: min(
-            calc(100% - 32px),
-            var(--container)
-        );
-    }
-
-    .section {
-        padding: 80px 0;
-    }
-
-    .section-heading {
-        margin-bottom: 50px;
-    }
-
-    .section-heading h2 {
-        font-size: 48px;
-    }
-
-    .header-inner {
-        min-height: 76px;
-    }
-
-    .logo-icon {
-        width: 30px;
-        height: 30px;
-        flex: 0 0 30px;
-    }
-
-    .logo-guri,
-    .logo-web {
-        font-size: 17px;
-    }
-
-    .main-nav.active,
-    .main-nav.is-open {
-        top: 76px;
-
-        padding:
-            10px 16px
-            20px;
-    }
-
-    .hero {
-        padding-top: 105px;
-
-        background-size:
-            100% 100%,
-            300px 300px,
-            60px 60px,
-            60px 60px,
-            60px 60px,
-            60px 60px,
-            12px 12px,
-            12px 12px;
-    }
-
-    .hero h1 {
-        font-size: 68px;
-    }
-
-    .hero-content > p {
-        font-size: 15px;
-    }
-
-    .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .hero-actions .button {
-        width: 100%;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .service-item {
-        padding: 20px 18px;
-        gap: 15px;
-    }
-
-    .service-item-icon {
-        width: 48px;
-        height: 48px;
-        flex: 0 0 48px;
-    }
-
-    .service-item-icon svg {
-        width: 32px;
-        height: 32px;
-    }
-
-    .service-item-content h3 {
-        font-size: 17px;
-    }
-
-    .service-item-content p {
-        font-size: 11px;
-    }
-
-    .process-step-icon {
-        width: 56px;
-        height: 56px;
-    }
-
-    .process-step-icon svg {
-        width: 28px;
-        height: 28px;
-    }
-
-    .process-step h3 {
-        font-size: 17px;
-    }
-
-    .process-step p {
-        font-size: 12px;
-    }
-
-    .work-heading {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .work-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .work-card:nth-child(1),
-    .work-card:nth-child(2),
-    .work-card:nth-child(3) {
-        grid-column: 1;
-        grid-row: auto;
-    }
-
-    .work-card {
-        grid-template-columns: 1fr auto;
-        gap: 14px;
-    }
-
-    .work-frame-iphone {
-        max-width: 220px;
-        padding: 7px;
-        border-radius: 40px;
-    }
-
-    .iphone-screen {
-        border-radius: 34px;
-    }
-
-    .iphone-notch {
-        width: 76px;
-        height: 20px;
-        top: 16px;
-    }
-
-    .device-status-bar {
-        padding: 10px 16px 0 16px;
-        font-size: 11px;
-    }
-
-    .device-time {
-        font-size: 11px;
-    }
-
-    .device-icon {
-        width: 13px;
-        height: 9px;
-    }
-
-    .device-battery {
-        width: 20px;
-        height: 9px;
-    }
-
-    .iphone-home-bar {
-        width: 100px;
-        height: 4px;
-        bottom: 6px;
-    }
-
-    .work-frame-imac {
-        max-width: 100%;
-    }
-
-    .imac-display {
-        padding: 12px 12px 30px 12px;
-    }
-
-    .imac-camera {
-        top: 5px;
-        width: 4px;
-        height: 4px;
-    }
-
-    .imac-neck {
-        width: 80px;
-        height: 32px;
-    }
-
-    .imac-base {
-        width: 170px;
-        height: 10px;
-    }
-
-    .work-frame-ipad {
-        max-width: 100%;
-        padding: 10px;
-        border-radius: 22px;
-    }
-
-    .ipad-screen {
-        border-radius: 14px;
-    }
-
-    .brainstorm-item {
-        gap: 12px;
-        padding: 10px 0;
-    }
-
-    .brainstorm-check {
-        width: 20px;
-        height: 20px;
-        flex: 0 0 20px;
-    }
-
-    .brainstorm-item span {
-        font-size: 14px;
-    }
-
-    .digital-management-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    .digital-logo {
-        width: 48px;
-        height: 48px;
-        margin-bottom: 15px;
-    }
-
-    .digital-logo img {
-        width: 30px;
-        height: 30px;
-    }
-
-    .digital-management-item h3 {
-        font-size: 18px;
-    }
-
-    .digital-management-item p {
-        font-size: 11px;
-    }
-
-    .plans-integrated-grid {
-        gap: 16px;
-    }
-
-    .plan-integrated {
-        padding: 27px 20px;
-    }
-
-    .plan-label {
-        font-size: 10px;
-    }
-
-    .plan-integrated-description {
-        font-size: 13px;
-    }
-
-    .plan-integrated .plan-service {
-        padding: 20px 0;
-    }
-
-    .plan-integrated .plan-service h4 {
-        font-size: 20px;
-    }
-
-    .plan-integrated .plan-service p {
-        font-size: 12px;
-    }
-
-    .plan-integrated .plan-features li {
-        font-size: 11px;
-    }
-
-    .plans-coming-soon {
-        margin-top: 35px;
-        padding: 20px;
-    }
-
-    .plans-coming-soon h3 {
-        font-size: 24px;
-    }
-
-    .plans-coming-soon p {
-        font-size: 13px;
-    }
-
-    .plans-contact {
-        margin-top: 50px;
-        padding-top: 50px;
-    }
-
-    .plans-custom h3,
-    .plans-contact-copy h3 {
-        font-size: 34px;
-    }
-
-    .plans-custom p,
-    .plans-contact-copy p {
-        font-size: 13px;
-    }
-
-    .quote-form {
-        padding: 22px 17px;
-    }
-
-    .quote-form-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    .form-field-full {
-        grid-column: auto;
-    }
-
-    .form-field input,
-    .form-field select {
-        min-height: 46px;
-    }
-
-    .form-field textarea {
-        min-height: 125px;
-    }
-
-    .quote-form-submit {
-        width: 100%;
-    }
-
-    .final-cta {
-        padding: 85px 0;
-
-        background-size:
-            300px 300px,
-            60px 60px,
-            60px 60px,
-            60px 60px,
-            60px 60px,
-            12px 12px,
-            12px 12px;
-    }
-
-    .final-cta h2 {
-        font-size: 52px;
-    }
-
-    .site-footer {
-        padding-top: 55px;
-    }
-
-    .footer-links {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .footer-bottom {
-        min-height: auto;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 25px 0;
-        gap: 10px;
-    }
-
-    .footer-copyright,
-    .footer-credit {
-        font-size: 10px;
-    }
-
-    .footer-credit img {
-        width: 24px;
-        height: 24px;
-        flex: 0 0 24px;
-    }
-}
-
-
-/* =========================================================
-   RESPONSIVE — 400PX
-   ========================================================= */
-
-@media (max-width: 400px) {
-
-    .container {
-        width: calc(100% - 28px);
-    }
-
-    .logo-icon {
-        width: 26px;
-        height: 26px;
-        flex: 0 0 26px;
-    }
-
-    .logo-guri,
-    .logo-web {
-        font-size: 15px;
-    }
-
-    .hero h1 {
-        font-size: 56px;
-    }
-
-    .digital-management-item {
-        min-height: 115px;
-        padding: 14px 10px;
-    }
-
-    .digital-management-item h3 {
-        font-size: 14px;
-    }
-
-    .plan-integrated {
-        padding: 23px 16px;
-    }
-
-    .footer-credit img {
-        width: 22px;
-        height: 22px;
-        flex: 0 0 22px;
-    }
-
-    .work-card {
-        grid-template-columns: 1fr auto;
-        gap: 10px;
-    }
-
-    .work-frame-iphone {
-        max-width: 180px;
-        padding: 6px;
-        border-radius: 32px;
-    }
-
-    .iphone-screen {
-        border-radius: 26px;
-    }
-
-    .iphone-notch {
-        width: 62px;
-        height: 16px;
-        top: 12px;
-    }
-
-    .iphone-home-bar {
-        width: 70px;
-        height: 3px;
-        bottom: 5px;
-    }
 }
