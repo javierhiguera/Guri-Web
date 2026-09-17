@@ -1572,30 +1572,13 @@ button {
 
 
 /* =========================================================
-   PROCESS — Línea naranja + iconos alineados
+   PROCESS — Línea + iconos con foreignObject
    ========================================================= */
 
 .process {
     position: relative;
 
     background-color: var(--black);
-
-    /*
-       SVG con viewBox 1000x500.
-       La curva pasa EXACTAMENTE por estos 4 puntos:
-         P1: x=250  y=250   →  25% H, 50% V
-         P2: x=450  y=400   →  45% H, 80% V
-         P3: x=650  y=150   →  65% H, 30% V
-         P4: x=850  y=350   →  85% H, 70% V
-    */
-    background-image:
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 500' preserveAspectRatio='none'><path d='M 0 400 C 100 300, 180 250, 250 250 C 330 250, 400 350, 450 400 C 510 460, 600 200, 650 150 C 700 100, 800 300, 850 350 C 910 410, 960 280, 1000 220' fill='none' stroke='rgba(255,90,31,0.9)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-
-    background-repeat: no-repeat;
-
-    background-size: 100% 100%;
-
-    background-position: center center;
 }
 
 
@@ -1608,7 +1591,7 @@ button {
 
     max-width: 100%;
 
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 
     text-align: left;
 }
@@ -1628,43 +1611,66 @@ button {
 }
 
 
-/* Mapa: mismo aspect-ratio que el viewBox del SVG (1000:500 = 2:1) */
+/* Mapa: 2000x700 = aspect ratio 20:7 */
 
 .process-map {
     position: relative;
 
     width: 100%;
 
-    aspect-ratio: 1000 / 500;
+    aspect-ratio: 2000 / 700;
 
-    min-height: 500px;
+    min-height: 560px;
 }
 
 
-/* Pasos */
+/* SVG: ocupa todo el contenedor, alineado 1:1 */
 
-.process-step {
+.process-svg {
     position: absolute;
 
-    z-index: 3;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    color: var(--orange);
+
+    overflow: visible;
+}
+
+.process-line {
+    filter:
+        drop-shadow(0 0 6px rgba(255, 90, 31, 0.6))
+        drop-shadow(0 0 20px rgba(255, 90, 31, 0.3));
+}
+
+
+/* =========================================================
+   PASOS — dentro de foreignObject, centrados en su punto
+   ========================================================= */
+
+.process-step {
+    width: 100%;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
 
     align-items: center;
+    justify-content: flex-start;
 
     text-align: center;
 
-    padding: 0;
-
-    max-width: 260px;
-
-    transform: translate(-50%, -50%);
+    padding-top: 0;
 }
 
 .process-step-icon {
     width: 76px;
     height: 76px;
+
+    flex: 0 0 76px;
 
     display: flex;
 
@@ -1707,6 +1713,8 @@ button {
     line-height: 1;
 
     letter-spacing: -0.03em;
+
+    color: var(--white);
 }
 
 .process-step p {
@@ -1766,36 +1774,6 @@ button {
     animation: process-pulse 8s ease-in-out infinite;
     animation-delay: 6s;
 }
-
-
-/* =========================================================
-   POSICIONES — 100% sincronizadas con los puntos del SVG
-   ========================================================= */
-
-/* 1 — Hablamos: x=250, y=250 → 25% H, 50% V */
-.process-step-1 {
-    top: 50%;
-    left: 25%;
-}
-
-/* 2 — Diseñamos: x=450, y=400 → 45% H, 80% V */
-.process-step-2 {
-    top: 80%;
-    left: 45%;
-}
-
-/* 3 — Desarrollamos: x=650, y=150 → 65% H, 30% V */
-.process-step-3 {
-    top: 30%;
-    left: 65%;
-}
-
-/* 4 — Publicamos: x=850, y=350 → 85% H, 70% V */
-.process-step-4 {
-    top: 70%;
-    left: 85%;
-}
-
 /* =========================================================
    WHY GURI
    ========================================================= */
