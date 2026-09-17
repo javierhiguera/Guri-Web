@@ -611,46 +611,7 @@ button {
 
     overflow: hidden;
 
-    background-color: var(--board);
-
-    /* Mismo fondo que el hero */
-    background-image:
-        radial-gradient(
-            circle at 30% 50%,
-            rgba(255, 90, 31, 0.12),
-            transparent 40%
-        ),
-
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,90,31,0.5);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,90,31,0.5);}.tick-major{stroke:rgba(255,90,31,0.55);stroke-width:1.5;}.angle{stroke:rgba(255,90,31,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(255,90,31,0.45)' stroke-width='1' fill='none'/></g></svg>"),
-
-        linear-gradient(rgba(255, 90, 31, 0.28) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 90, 31, 0.28) 1px, transparent 1px),
-
-        linear-gradient(rgba(0, 0, 0, 0.5) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.5) 1px, transparent 1px),
-
-        linear-gradient(rgba(255, 90, 31, 0.10) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 90, 31, 0.10) 1px, transparent 1px);
-
-    background-size:
-        100% 100%,
-        500px 500px,
-        100px 100px,
-        100px 100px,
-        100px 100px,
-        100px 100px,
-        20px 20px,
-        20px 20px;
-
-    background-position:
-        center top,
-        center top,
-        center top,
-        center top,
-        center top,
-        center top,
-        center top,
-        center top;
+    background-color: var(--black);
 }
 
 
@@ -921,7 +882,7 @@ button {
    POSICIONES DISPERSAS ALREDEDOR DEL MUNDO
    ========================================================= */
 
-/* 1 — Arriba izquierda (no en la esquina exacta) */
+/* 1 — Arriba izquierda */
 .orbit-item-1 {
     top: 4%;
     left: 6%;
@@ -945,7 +906,7 @@ button {
     animation: float-3 8s ease-in-out infinite;
 }
 
-/* 4 — Abajo derecha (más pegado abajo) */
+/* 4 — Abajo derecha */
 .orbit-item-4 {
     bottom: 4%;
     right: 8%;
@@ -985,31 +946,6 @@ button {
     position: relative;
 
     background-color: var(--black);
-
-    background-image:
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='500' viewBox='0 0 120 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:10px;font-weight:bold;fill:rgba(255,90,31,0.4);}.let{font-family:Arial,sans-serif;font-size:10px;font-weight:bold;fill:rgba(255,90,31,0.4);}.tick-left{stroke:rgba(255,90,31,0.35);stroke-width:1.2;}</style></defs><g><line x1='30' y1='0' x2='30' y2='500' class='tick-left'/><text x='18' y='70' class='let' text-anchor='middle'>A</text><text x='18' y='170' class='let' text-anchor='middle'>B</text><text x='18' y='270' class='let' text-anchor='middle'>C</text><text x='18' y='370' class='let' text-anchor='middle'>D</text><text x='18' y='470' class='let' text-anchor='middle'>E</text><text x='55' y='30' class='num' text-anchor='start'>1</text><text x='55' y='130' class='num' text-anchor='start'>2</text><text x='55' y='230' class='num' text-anchor='start'>3</text><text x='55' y='330' class='num' text-anchor='start'>4</text><text x='55' y='430' class='num' text-anchor='start'>5</text></g></svg>"),
-
-        linear-gradient(rgba(255, 90, 31, 0.10) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 90, 31, 0.10) 1px, transparent 1px),
-
-        linear-gradient(rgba(255, 90, 31, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 90, 31, 0.04) 1px, transparent 1px);
-
-    background-size:
-        120px 500px,
-        100px 100px,
-        100px 100px,
-        20px 20px,
-        20px 20px;
-
-    background-position:
-        left top,
-        left top,
-        left top,
-        left top,
-        left top;
-
-    background-repeat: repeat;
 }
 
 .work-heading {
@@ -1651,7 +1587,7 @@ button {
    ========================================================= */
 
 .process {
-    background: var(--black-soft);
+    background: var(--black);
 }
 
 .process-map {
@@ -1778,7 +1714,7 @@ button {
 
     border-radius: 50%;
 
-    background: var(--black-soft);
+    background: var(--black);
 
     color: var(--orange);
 
