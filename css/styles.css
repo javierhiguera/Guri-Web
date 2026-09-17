@@ -603,7 +603,7 @@ button {
 
 
 /* =========================================================
-   SERVICES — Blueprint con mundo e iconos
+   SERVICES — Mundo + iconos flotantes
    ========================================================= */
 
 .services {
@@ -611,28 +611,40 @@ button {
 
     overflow: hidden;
 
-    background-color: var(--black);
+    background-color: var(--board);
 
-    /* Grilla tipo blueprint: 3 niveles */
+    /* ===== MISMO FONDO QUE EL HERO ===== */
     background-image:
-        linear-gradient(rgba(255, 90, 31, 0.18) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 90, 31, 0.18) 1px, transparent 1px),
+        radial-gradient(
+            circle at 30% 50%,
+            rgba(255, 90, 31, 0.10),
+            transparent 40%
+        ),
 
-        linear-gradient(rgba(255, 90, 31, 0.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 90, 31, 0.07) 1px, transparent 1px),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,90,31,0.5);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,90,31,0.5);}.tick-major{stroke:rgba(255,90,31,0.55);stroke-width:1.5;}.angle{stroke:rgba(255,90,31,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(255,90,31,0.45)' stroke-width='1' fill='none'/></g></svg>"),
 
-        linear-gradient(rgba(255, 90, 31, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 90, 31, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(255, 90, 31, 0.28) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 90, 31, 0.28) 1px, transparent 1px),
+
+        linear-gradient(rgba(0, 0, 0, 0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.5) 1px, transparent 1px),
+
+        linear-gradient(rgba(255, 90, 31, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 90, 31, 0.10) 1px, transparent 1px);
 
     background-size:
-        120px 120px,
-        120px 120px,
-        40px 40px,
-        40px 40px,
-        8px 8px,
-        8px 8px;
+        100% 100%,
+        500px 500px,
+        100px 100px,
+        100px 100px,
+        100px 100px,
+        100px 100px,
+        20px 20px,
+        20px 20px;
 
     background-position:
+        center center,
+        center center,
         center center,
         center center,
         center center,
@@ -646,6 +658,217 @@ button {
     z-index: 2;
 }
 
+.services-heading {
+    max-width: 760px;
+}
+
+
+/* =========================================================
+   ORBIT — Mundo + iconos alrededor
+   ========================================================= */
+
+.services-orbit {
+    position: relative;
+
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 40px auto 0;
+
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   MUNDO
+   ========================================================= */
+
+.services-globe-wrap {
+    position: relative;
+
+    width: 62%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1;
+
+    filter:
+        drop-shadow(0 0 60px rgba(255, 90, 31, 0.25))
+        drop-shadow(0 0 100px rgba(255, 90, 31, 0.10));
+}
+
+.services-globe {
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+
+/* =========================================================
+   ICONOS ALREDEDOR DEL MUNDO
+   ========================================================= */
+
+.orbit-item {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    color: var(--white);
+
+    max-width: 300px;
+
+    transition:
+        color var(--transition),
+        transform var(--transition);
+}
+
+.orbit-item:hover {
+    color: var(--orange);
+    transform: scale(1.05);
+}
+
+
+/* Icono circular */
+.orbit-icon {
+    width: 64px;
+    height: 64px;
+
+    flex: 0 0 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1.5px solid var(--orange);
+
+    border-radius: 50%;
+
+    background: rgba(8, 8, 8, 0.85);
+
+    color: var(--orange);
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.orbit-icon svg {
+    width: 30px;
+    height: 30px;
+
+    stroke: currentColor;
+    stroke-width: 1.4;
+    fill: none;
+}
+
+.orbit-item:hover .orbit-icon {
+    background: var(--orange);
+    color: var(--black);
+    border-color: var(--orange);
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 0 6px rgba(255, 90, 31, 0.15),
+        0 0 30px rgba(255, 90, 31, 0.5);
+}
+
+
+/* Texto al lado del icono */
+.orbit-text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.orbit-text h3 {
+    margin: 0;
+
+    font-family: "Xenois", serif;
+
+    font-size: 18px;
+    line-height: 1.1;
+
+    letter-spacing: -0.025em;
+
+    transition: color var(--transition);
+}
+
+.orbit-text p {
+    margin: 0;
+
+    color: var(--gray);
+
+    font-size: 12px;
+    line-height: 1.5;
+
+    transition: color var(--transition);
+}
+
+.orbit-item:hover .orbit-text p {
+    color: var(--orange);
+}
+
+
+/* =========================================================
+   POSICIONES DE LOS 4 ICONOS
+   ========================================================= */
+
+/* 1 — Páginas web (arriba izquierda) */
+.orbit-item-1 {
+    top: 10%;
+    left: 0;
+
+    flex-direction: row;
+}
+
+/* 2 — Landing pages (arriba derecha) */
+.orbit-item-2 {
+    top: 10%;
+    right: 0;
+
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.orbit-item-2 .orbit-text {
+    align-items: flex-end;
+}
+
+/* 3 — Tiendas online (abajo izquierda) */
+.orbit-item-3 {
+    bottom: 10%;
+    left: 0;
+
+    flex-direction: row;
+}
+
+/* 4 — Mantenimiento web (abajo derecha) */
+.orbit-item-4 {
+    bottom: 10%;
+    right: 0;
+
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.orbit-item-4 .orbit-text {
+    align-items: flex-end;
+}
 
 /* =========================================================
    DECORACIÓN — Mundo + iconos + líneas
