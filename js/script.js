@@ -56,6 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
+        /* Cerrar menú al seleccionar una opción */
+
         mainNav.querySelectorAll("a").forEach(link => {
 
             link.addEventListener("click", () => {
@@ -64,6 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
+
+        /* Cerrar menú con ESC */
 
         document.addEventListener("keydown", event => {
 
@@ -76,6 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
+
+        /* Cerrar menú al pasar de mobile a desktop */
 
         window.addEventListener("resize", () => {
 
