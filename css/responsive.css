@@ -38,10 +38,6 @@
         font-size: clamp(48px, 6vw, 76px);
     }
 
-    .services-grid {
-        gap: 20px;
-    }
-
     .work-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -64,6 +60,60 @@
 
     .digital-management-grid {
         gap: 20px;
+    }
+
+
+    /* SERVICES — se apila: título arriba, mundo abajo */
+
+    .services-inner {
+        grid-template-columns: 1fr;
+        gap: 50px;
+
+        min-height: auto;
+    }
+
+    .services-heading {
+        max-width: 100%;
+
+        text-align: center;
+
+        margin: 0 auto;
+
+        order: 0;
+        justify-self: center;
+    }
+
+    .services-orbit {
+        max-width: 620px;
+
+        order: 0;
+    }
+
+    .services-globe {
+        width: 72%;
+    }
+
+    .orbit-icon {
+        width: 56px;
+        height: 56px;
+        flex: 0 0 56px;
+    }
+
+    .orbit-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .orbit-text h3 {
+        font-size: 15px;
+    }
+
+    .orbit-text p {
+        font-size: 11px;
+    }
+
+    .orbit-item {
+        max-width: 150px;
     }
 }
 
@@ -218,34 +268,53 @@
     }
 
 
-    /* SERVICIOS */
+    /* SERVICIOS — mundo arriba, iconos en lista abajo */
 
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+    .services-orbit {
+        aspect-ratio: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 30px;
+
+        padding: 20px 0;
+
+        max-width: 560px;
     }
 
-    .service-item {
-        padding: 25px 20px;
+    .services-globe {
+        width: 55%;
+        max-width: 280px;
+
+        order: -1;
     }
 
-    .service-item-icon {
-        width: 54px;
-        height: 54px;
-        flex: 0 0 54px;
+    .orbit-item,
+    .orbit-item-1,
+    .orbit-item-2,
+    .orbit-item-3,
+    .orbit-item-4 {
+        position: relative;
+
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+
+        max-width: 100%;
+        width: 100%;
+
+        flex-direction: row;
+
+        align-items: center;
+        text-align: left;
+
+        gap: 16px;
     }
 
-    .service-item-icon svg {
-        width: 36px;
-        height: 36px;
-    }
-
-    .service-item-content h3 {
-        font-size: 18px;
-    }
-
-    .service-item-content p {
-        font-size: 11px;
+    .orbit-text {
+        align-items: flex-start;
     }
 
 
@@ -493,6 +562,7 @@
         padding-right: 16px;
     }
 
+
     /* HERO */
 
     .hero {
@@ -550,36 +620,37 @@
         line-height: 1.65;
     }
 
+
     /* SERVICIOS */
 
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
+    .services-heading h2 {
+        font-size: clamp(34px, 10vw, 48px);
     }
 
-    .service-item {
-        padding: 20px 18px;
-        gap: 15px;
+    .services-globe {
+        width: 70%;
+        max-width: 240px;
     }
 
-    .service-item-icon {
-        width: 48px;
-        height: 48px;
-        flex: 0 0 48px;
+    .orbit-icon {
+        width: 50px;
+        height: 50px;
+        flex: 0 0 50px;
     }
 
-    .service-item-icon svg {
-        width: 32px;
-        height: 32px;
+    .orbit-icon svg {
+        width: 22px;
+        height: 22px;
     }
 
-    .service-item-content h3 {
-        font-size: 17px;
+    .orbit-text h3 {
+        font-size: 15px;
     }
 
-    .service-item-content p {
+    .orbit-text p {
         font-size: 11px;
     }
+
 
     /* TRABAJOS */
 
@@ -687,6 +758,7 @@
         margin-top: 8px;
     }
 
+
     /* PROCESO */
 
     .process-step-icon {
@@ -707,6 +779,7 @@
         font-size: 12px;
     }
 
+
     /* BRAINSTORM */
 
     .brainstorm-item {
@@ -723,6 +796,7 @@
     .brainstorm-item span {
         font-size: 14px;
     }
+
 
     /* GESTIÓN DIGITAL */
 
@@ -749,6 +823,7 @@
     .digital-management-item p {
         font-size: 11px;
     }
+
 
     /* PLANES */
 
@@ -832,6 +907,7 @@
         line-height: 1.6;
     }
 
+
     /* FORM */
 
     .quote-form {
@@ -867,6 +943,7 @@
         width: 100%;
     }
 
+
     /* FINAL CTA */
 
     .final-cta {
@@ -891,6 +968,7 @@
     .final-cta h2 span {
         display: block;
     }
+
 
     /* FOOTER */
 
@@ -963,6 +1041,36 @@
         font-size: 40px;
     }
 
+
+    /* SERVICIOS */
+
+    .services-globe {
+        width: 75%;
+        max-width: 200px;
+    }
+
+    .orbit-icon {
+        width: 46px;
+        height: 46px;
+        flex: 0 0 46px;
+    }
+
+    .orbit-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .orbit-text h3 {
+        font-size: 14px;
+    }
+
+    .orbit-text p {
+        font-size: 10px;
+    }
+
+
+    /* TRABAJOS */
+
     .work-card {
         grid-template-columns: 1fr auto;
         gap: 10px;
@@ -1024,28 +1132,8 @@
         margin-top: 6px;
     }
 
-    .services-grid {
-        gap: 12px;
-    }
 
-    .service-item {
-        padding: 18px 15px;
-    }
-
-    .service-item-icon {
-        width: 42px;
-        height: 42px;
-        flex: 0 0 42px;
-    }
-
-    .service-item-icon svg {
-        width: 28px;
-        height: 28px;
-    }
-
-    .service-item-content h3 {
-        font-size: 16px;
-    }
+    /* GESTIÓN DIGITAL */
 
     .digital-management-item {
         min-height: 115px;
@@ -1056,9 +1144,15 @@
         font-size: 13px;
     }
 
+
+    /* PLANES */
+
     .plan-card.plan-integrated {
         padding: 20px 16px;
     }
+
+
+    /* FOOTER */
 
     .footer-inner {
         grid-template-columns: 1fr;
@@ -1068,124 +1162,5 @@
         width: 22px;
         height: 22px;
         flex: 0 0 22px;
-    }
-}
-/* =========================================================
-   SERVICES — Mundo + iconos responsive
-   ========================================================= */
-
-@media (max-width: 1100px) {
-
-    .services-inner {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    .services-heading {
-        max-width: 100%;
-        text-align: center;
-        margin: 0 auto;
-    }
-
-    .services-orbit {
-        max-width: 560px;
-    }
-
-    .orbit-icon {
-        width: 54px;
-        height: 54px;
-        flex: 0 0 54px;
-    }
-
-    .orbit-icon svg {
-        width: 24px;
-        height: 24px;
-    }
-
-    .orbit-text h3 {
-        font-size: 16px;
-    }
-
-    .orbit-text p {
-        font-size: 11px;
-    }
-}
-
-
-@media (max-width: 900px) {
-
-    .services-orbit {
-        aspect-ratio: auto;
-
-        display: flex;
-        flex-direction: column;
-
-        gap: 26px;
-
-        padding: 20px 0;
-
-        max-width: 520px;
-    }
-
-    .services-globe {
-        width: 50%;
-        max-width: 260px;
-
-        order: -1;
-    }
-
-    .orbit-item,
-    .orbit-item-1,
-    .orbit-item-2,
-    .orbit-item-3,
-    .orbit-item-4 {
-        position: relative;
-
-        top: auto;
-        right: auto;
-        bottom: auto;
-        left: auto;
-
-        max-width: 100%;
-        width: 100%;
-
-        flex-direction: row;
-        text-align: left;
-    }
-
-    .orbit-item .orbit-text {
-        align-items: flex-start;
-    }
-}
-
-
-@media (max-width: 640px) {
-
-    .services-heading h2 {
-        font-size: clamp(34px, 10vw, 48px);
-    }
-
-    .services-globe {
-        width: 65%;
-        max-width: 220px;
-    }
-
-    .orbit-icon {
-        width: 50px;
-        height: 50px;
-        flex: 0 0 50px;
-    }
-
-    .orbit-icon svg {
-        width: 22px;
-        height: 22px;
-    }
-
-    .orbit-text h3 {
-        font-size: 16px;
-    }
-
-    .orbit-text p {
-        font-size: 11px;
     }
 }
