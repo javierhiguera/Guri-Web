@@ -1366,7 +1366,7 @@ button {
 
 
 /* =========================================================
-   WORK INFO — Título al costado, centrado verticalmente
+   WORK INFO — Título al costado, vertical (rotado 90°)
    ========================================================= */
 
 .work-info {
@@ -1376,7 +1376,11 @@ button {
 
     justify-content: center;
 
-    padding-left: 10px;
+    align-items: center;
+
+    writing-mode: vertical-rl;
+
+    text-orientation: mixed;
 }
 
 .work-info h3 {
@@ -1391,6 +1395,8 @@ button {
     color: #ffffff;
 
     margin: 0;
+
+    white-space: nowrap;
 }
 
 .work-info span {
@@ -1403,6 +1409,8 @@ button {
     font-size: 12px;
 
     line-height: 1.5;
+
+    white-space: nowrap;
 }
 
 
@@ -3003,10 +3011,6 @@ button {
 
     .ipad-screen {
         border-radius: 14px;
-    }
-
-    .work-info {
-        padding-left: 8px;
     }
 
     .work-info h3 {
