@@ -603,21 +603,175 @@ button {
 
 
 /* =========================================================
-   SERVICES
+   SERVICES — Blueprint con mundo e iconos
    ========================================================= */
 
 .services {
-    background: var(--black-soft);
+    position: relative;
+
+    overflow: hidden;
+
+    background-color: var(--black);
+
+    /* Grilla tipo blueprint: 3 niveles */
+    background-image:
+        linear-gradient(rgba(255, 90, 31, 0.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 90, 31, 0.18) 1px, transparent 1px),
+
+        linear-gradient(rgba(255, 90, 31, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 90, 31, 0.07) 1px, transparent 1px),
+
+        linear-gradient(rgba(255, 90, 31, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 90, 31, 0.03) 1px, transparent 1px);
+
+    background-size:
+        120px 120px,
+        120px 120px,
+        40px 40px,
+        40px 40px,
+        8px 8px,
+        8px 8px;
+
+    background-position:
+        center center,
+        center center,
+        center center,
+        center center,
+        center center,
+        center center;
 }
 
+.services-inner {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   DECORACIÓN — Mundo + iconos + líneas
+   ========================================================= */
+
+.services-decor {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 55%;
+    height: 100%;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    color: var(--orange);
+}
+
+.services-globe {
+    position: absolute;
+
+    top: 8%;
+    right: 6%;
+
+    width: 320px;
+    height: 320px;
+
+    opacity: 0.85;
+}
+
+.services-decor-icon {
+    position: absolute;
+
+    width: 60px;
+    height: 60px;
+
+    color: var(--orange);
+
+    opacity: 0.9;
+}
+
+.decor-mail {
+    top: 4%;
+    right: 38%;
+}
+
+.decor-doc {
+    top: 2%;
+    right: 2%;
+    width: 70px;
+    height: 70px;
+}
+
+.decor-lock {
+    top: 48%;
+    right: 30%;
+    width: 55px;
+    height: 55px;
+}
+
+.decor-dollar {
+    top: 52%;
+    right: 44%;
+    width: 50px;
+    height: 50px;
+}
+
+.services-lines {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    color: var(--orange);
+
+    opacity: 0.55;
+}
+
+.services-arrow {
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    color: var(--orange);
+}
+
+.arrow-1 {
+    top: 44%;
+    right: 34%;
+    transform: rotate(200deg);
+}
+
+.arrow-2 {
+    top: 40%;
+    right: 20%;
+    transform: rotate(210deg);
+}
+
+.arrow-3 {
+    top: 38%;
+    right: 6%;
+    transform: rotate(220deg);
+}
+
+
+/* =========================================================
+   GRID DE SERVICIOS
+   ========================================================= */
+
 .services-grid {
+    position: relative;
+
     display: grid;
 
     grid-template-columns: repeat(4, 1fr);
 
-    gap: 30px;
+    gap: 24px;
 
-    max-width: 1080px;
+    max-width: 1120px;
 
     margin: 0 auto;
 }
@@ -631,33 +785,42 @@ button {
 
     text-align: left;
 
-    gap: 18px;
+    gap: 16px;
 
-    padding: 30px 25px;
+    padding: 26px 22px;
 
     border: 1px solid var(--border);
 
-    background: rgba(8, 8, 8, 0.94);
+    background: rgba(8, 8, 8, 0.92);
+
+    color: var(--white);
 
     transition:
-        transform var(--transition),
+        background var(--transition),
         border-color var(--transition),
-        background var(--transition);
+        color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
+/* Hover tipo botón: fondo naranja, texto negro */
 .service-item:hover {
+    background: var(--orange);
+
+    border-color: var(--orange);
+
+    color: var(--black);
+
     transform: translateY(-5px);
 
-    border-color: rgba(255, 90, 31, 0.55);
-
-    background: #0d0d0d;
+    box-shadow: 0 12px 30px rgba(255, 90, 31, 0.25);
 }
 
 .service-item-icon {
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
 
-    flex: 0 0 64px;
+    flex: 0 0 56px;
 
     display: flex;
 
@@ -666,16 +829,19 @@ button {
 
     color: var(--orange);
 
-    transition: transform var(--transition);
+    transition:
+        color var(--transition),
+        transform var(--transition);
 }
 
 .service-item:hover .service-item-icon {
+    color: var(--black);
     transform: scale(1.1);
 }
 
 .service-item-icon svg {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
 
     stroke: currentColor;
 
@@ -690,6 +856,8 @@ button {
     flex-direction: column;
 
     gap: 6px;
+
+    min-width: 0;
 }
 
 .service-item-content h3 {
@@ -697,11 +865,13 @@ button {
 
     font-family: "Xenois", serif;
 
-    font-size: 20px;
+    font-size: 19px;
 
     line-height: 1.05;
 
     letter-spacing: -0.025em;
+
+    transition: color var(--transition);
 }
 
 .service-item-content p {
@@ -712,6 +882,12 @@ button {
     font-size: 12px;
 
     line-height: 1.5;
+
+    transition: color var(--transition);
+}
+
+.service-item:hover .service-item-content p {
+    color: rgba(8, 8, 8, 0.75);
 }
 
 
