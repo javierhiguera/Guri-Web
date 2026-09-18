@@ -1137,6 +1137,7 @@ button {
         transform: translateY(0);
     }
 }
+
 .iphone-home-bar {
     position: absolute;
     bottom: 8px;
@@ -1377,6 +1378,9 @@ button {
     background: var(--black);
 }
 
+
+/* ---------- Layout: dos columnas centradas ---------- */
+
 .why-inner {
     display: grid;
 
@@ -1384,11 +1388,11 @@ button {
 
     gap: 100px;
 
-    align-items: center;   /* centra verticalmente ambas columnas */
+    align-items: center;
 }
 
 
-/* Columna izquierda: título + párrafo */
+/* ---------- Columna izquierda: título + párrafo ---------- */
 
 .why-heading {
     max-width: 530px;
@@ -1401,7 +1405,7 @@ button {
 .why-heading > p {
     max-width: 530px;
 
-    margin-top: 30px;   /* separa del título */
+    margin-top: 30px;
 
     color: var(--gray);
 
@@ -1411,7 +1415,7 @@ button {
 }
 
 
-/* Columna derecha: lista de iconos */
+/* ---------- Columna derecha: lista de iconos ---------- */
 
 .why-brainstorm {
     display: flex;
@@ -1422,7 +1426,7 @@ button {
 }
 
 
-/* Item con barrita naranja */
+/* ---------- Item con barrita naranja ---------- */
 
 .brainstorm-item {
     display: flex;
@@ -1461,7 +1465,7 @@ button {
 }
 
 
-/* Icono con glow naranja */
+/* ---------- Icono con glow naranja ---------- */
 
 .brainstorm-check {
     width: 65px;
@@ -1491,7 +1495,7 @@ button {
 }
 
 
-/* Trazos de los íconos */
+/* ---------- Trazos de los íconos ---------- */
 
 .brainstorm-check path,
 .brainstorm-check circle,
@@ -1507,7 +1511,7 @@ button {
 }
 
 
-/* Texto */
+/* ---------- Texto ---------- */
 
 .brainstorm-item span {
     color: #d2d2d2;
@@ -1515,6 +1519,83 @@ button {
     font-size: 15px;
 }
 
+
+/* =========================================================
+   EFECTO DIBUJADO AL HOVER
+   Cada ícono tiene su propio stroke-dasharray porque
+   cada uno tiene un largo de trazo distinto.
+   ========================================================= */
+
+
+/* ---------- Ícono 1 — Paleta (Diseño personalizado) ---------- */
+
+.brainstorm-item:nth-child(1) .brainstorm-check path,
+.brainstorm-item:nth-child(1) .brainstorm-check circle {
+    stroke-dasharray: 130;
+    stroke-dashoffset: 130;
+    transition: stroke-dashoffset 0.9s ease;
+}
+
+.brainstorm-item:nth-child(1):hover .brainstorm-check path,
+.brainstorm-item:nth-child(1):hover .brainstorm-check circle {
+    stroke-dashoffset: 0;
+}
+
+
+/* ---------- Ícono 2 — Monitor + mobile (Responsive) ---------- */
+
+.brainstorm-item:nth-child(2) .brainstorm-check path,
+.brainstorm-item:nth-child(2) .brainstorm-check rect {
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    transition: stroke-dashoffset 0.9s ease;
+}
+
+.brainstorm-item:nth-child(2):hover .brainstorm-check path,
+.brainstorm-item:nth-child(2):hover .brainstorm-check rect {
+    stroke-dashoffset: 0;
+}
+
+
+/* ---------- Ícono 3 — Rayo (Optimización y velocidad) ---------- */
+
+.brainstorm-item:nth-child(3) .brainstorm-check path {
+    stroke-dasharray: 90;
+    stroke-dashoffset: 90;
+    transition: stroke-dashoffset 0.9s ease;
+}
+
+.brainstorm-item:nth-child(3):hover .brainstorm-check path {
+    stroke-dashoffset: 0;
+}
+
+
+/* ---------- Ícono 4 — Lupa (SEO desde la base) ---------- */
+
+.brainstorm-item:nth-child(4) .brainstorm-check path,
+.brainstorm-item:nth-child(4) .brainstorm-check circle {
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    transition: stroke-dashoffset 0.9s ease;
+}
+
+.brainstorm-item:nth-child(4):hover .brainstorm-check path,
+.brainstorm-item:nth-child(4):hover .brainstorm-check circle {
+    stroke-dashoffset: 0;
+}
+
+
+/* ---------- Ícono 5 — Chat (Acompañamiento) ---------- */
+
+.brainstorm-item:nth-child(5) .brainstorm-check path {
+    stroke-dasharray: 110;
+    stroke-dashoffset: 110;
+    transition: stroke-dashoffset 0.9s ease;
+}
+
+.brainstorm-item:nth-child(5):hover .brainstorm-check path {
+    stroke-dashoffset: 0;
+}
 /* =========================================================
    GESTIÓN DIGITAL
    ========================================================= */
@@ -2084,6 +2165,7 @@ button {
 .quote-form-submit {
     margin-top: 20px;
 }
+
 
 /* =========================================================
    FINAL CTA
