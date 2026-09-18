@@ -1123,14 +1123,20 @@ button {
     width: 100%;
     height: auto;
     display: block;
-    animation: iphone-scroll-anim 60s linear infinite;
+    animation: iphone-scroll-anim 80s linear infinite;
 }
 
 @keyframes iphone-scroll-anim {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-100%); }
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
-
 .iphone-home-bar {
     position: absolute;
     bottom: 8px;
