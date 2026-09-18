@@ -1401,6 +1401,22 @@ button {
     line-height: 1.8;
 }
 
+
+/* Contenedor de la lista */
+
+.why-brainstorm {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    margin-top: 40px;
+}
+
+
+/* Item con barrita naranja */
+
 .brainstorm-item {
     display: flex;
 
@@ -1412,10 +1428,21 @@ button {
 
     border-left: 2px solid transparent;
 
+    opacity: 0;
+
+    transform: translateY(25px);
+
     transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
         border-color var(--transition),
-        transform var(--transition),
         background var(--transition);
+}
+
+.brainstorm-item.visible {
+    opacity: 1;
+
+    transform: translateY(0);
 }
 
 .brainstorm-item:hover {
@@ -1485,7 +1512,6 @@ button {
 
     font-size: 15px;
 }
-
 /* =========================================================
    GESTIÓN DIGITAL
    ========================================================= */
