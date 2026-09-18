@@ -1384,15 +1384,24 @@ button {
 
     gap: 100px;
 
-    align-items: start;
+    align-items: center;   /* centra verticalmente ambas columnas */
 }
 
-.why-inner .section-heading {
+
+/* Columna izquierda: título + párrafo */
+
+.why-heading {
+    max-width: 530px;
+}
+
+.why-heading .section-heading {
     margin-bottom: 0;
 }
 
-.why-content > p {
+.why-heading > p {
     max-width: 530px;
+
+    margin-top: 30px;   /* separa del título */
 
     color: var(--gray);
 
@@ -1402,7 +1411,7 @@ button {
 }
 
 
-/* Contenedor de la lista */
+/* Columna derecha: lista de iconos */
 
 .why-brainstorm {
     display: flex;
@@ -1410,8 +1419,6 @@ button {
     flex-direction: column;
 
     gap: 4px;
-
-    margin-top: 40px;
 }
 
 
@@ -1457,10 +1464,10 @@ button {
 /* Icono con glow naranja */
 
 .brainstorm-check {
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
 
-    flex: 0 0 60px;
+    flex: 0 0 30px;
 
     color: var(--orange);
 
@@ -1482,27 +1489,15 @@ button {
 }
 
 
-/* Tilde que se "dibuja" al hacer hover */
+/* Trazos de los íconos */
 
-.brainstorm-check path {
-    stroke: currentColor;
-
-    stroke-dasharray: 20;
-    stroke-dashoffset: 20;
-
-    transition: stroke-dashoffset 0.4s ease;
-}
-
-.brainstorm-item:hover .brainstorm-check path {
-    stroke-dashoffset: 0;
-}
-
-
-/* Color de los trazos del círculo */
-
-.brainstorm-check circle {
+.brainstorm-check path,
+.brainstorm-check circle,
+.brainstorm-check rect,
+.brainstorm-check line {
     stroke: currentColor;
 }
+
 
 /* Texto */
 
@@ -1511,7 +1506,6 @@ button {
 
     font-size: 15px;
 }
-
 
 /* =========================================================
    GESTIÓN DIGITAL
