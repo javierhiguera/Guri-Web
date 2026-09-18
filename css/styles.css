@@ -1464,10 +1464,10 @@ button {
 /* Icono con glow naranja */
 
 .brainstorm-check {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
 
-    flex: 0 0 60px;
+    flex: 0 0 65px;
 
     color: var(--orange);
 
@@ -1490,54 +1490,6 @@ button {
         drop-shadow(0 0 14px rgba(255, 90, 31, 0.5));
 }
 
-
-/* Trazos de los íconos — efecto dibujado al hover */
-
-.brainstorm-check path,
-.brainstorm-check circle,
-.brainstorm-check rect,
-.brainstorm-check line,
-.brainstorm-check polyline,
-.brainstorm-check polygon {
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-
-    stroke-dasharray: 200;
-    stroke-dashoffset: 0;
-
-    transition: stroke-dashoffset 0.8s ease;
-}
-
-.brainstorm-item:hover .brainstorm-check path,
-.brainstorm-item:hover .brainstorm-check circle,
-.brainstorm-item:hover .brainstorm-check rect,
-.brainstorm-item:hover .brainstorm-check line,
-.brainstorm-item:hover .brainstorm-check polyline,
-.brainstorm-item:hover .brainstorm-check polygon {
-    stroke-dashoffset: 200;
-    animation: draw-icon 0.8s ease forwards;
-}
-
-@keyframes draw-icon {
-    0% {
-        stroke-dashoffset: 200;
-    }
-    100% {
-        stroke-dashoffset: 0;
-    }
-}
-
-
-/* Texto */
-
-.brainstorm-item span {
-    color: #d2d2d2;
-
-    font-size: 15px;
-}
 
 /* Trazos de los íconos */
 
@@ -1562,6 +1514,7 @@ button {
 
     font-size: 15px;
 }
+
 /* =========================================================
    GESTIÓN DIGITAL
    ========================================================= */
