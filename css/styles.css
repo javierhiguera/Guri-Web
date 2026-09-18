@@ -1191,26 +1191,14 @@ button {
 
 
 /* =========================================================
-   PROCESS — Línea naranja como fondo + iconos
+   PROCESS
    ========================================================= */
 
 .process {
     position: relative;
 
     background-color: var(--black);
-
-    background-image:
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 700' preserveAspectRatio='none'><path d='M 0 550 C 200 500, 350 380, 550 320 C 700 275, 800 320, 900 450 C 980 560, 1080 560, 1140 420 C 1180 320, 1220 320, 1260 420 C 1300 540, 1360 560, 1440 490 C 1560 390, 1660 260, 1800 200 C 1900 160, 1960 160, 2000 170' fill='none' stroke='rgba(255,90,31,0.9)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-
-    background-repeat: no-repeat;
-
-    background-size: 100% 100%;
-
-    background-position: center center;
 }
-
-
-/* Título */
 
 .process-heading {
     position: relative;
@@ -1238,21 +1226,31 @@ button {
     color: var(--orange);
 }
 
-
-/* Mapa */
-
 .process-map {
     position: relative;
 
     width: 100%;
 
-    aspect-ratio: 2000 / 700;
+    aspect-ratio: 2000 / 1000;
 
     min-height: 520px;
 }
 
+.process-map-bg {
+    position: absolute;
 
-/* Pasos */
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
 
 .process-step {
     position: absolute;
@@ -1268,8 +1266,6 @@ button {
 
     padding: 0;
 
-    max-width: 260px;
-
     transform: translate(-50%, -50%);
 }
 
@@ -1282,7 +1278,7 @@ button {
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 
     border: 1.5px solid var(--orange);
 
@@ -1326,51 +1322,84 @@ button {
     fill: none;
 }
 
-.process-step h3 {
-    margin-bottom: 8px;
+.process-step-capsule {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 6px;
+
+    max-width: 220px;
+
+    padding: 12px 16px;
+
+    border: 1.5px solid var(--orange);
+
+    background: rgba(8, 8, 8, 0.88);
+
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+
+    transition:
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+.process-step:hover .process-step-capsule {
+    background: rgba(8, 8, 8, 0.96);
+
+    box-shadow:
+        0 0 0 4px rgba(255, 90, 31, 0.15),
+        0 0 20px rgba(255, 90, 31, 0.4);
+}
+
+.process-step-capsule h3 {
+    margin: 0;
 
     font-family: "Xenois", serif;
 
-    font-size: 22px;
+    font-size: 20px;
 
     line-height: 1;
 
     letter-spacing: -0.03em;
+
+    color: var(--white);
 }
 
-.process-step p {
+.process-step-capsule p {
     margin: 0;
 
-    color: var(--gray);
+    color: var(--gray-light);
 
-    font-size: 13px;
+    font-size: 12px;
 
-    line-height: 1.55;
-
-    max-width: 240px;
+    line-height: 1.5;
 }
 
 
 /* Posiciones */
 
 .process-step-1 {
-    top: 40%;
-    left: 27%;
+    top: 43%;
+    left: 11%;
 }
 
 .process-step-2 {
-    top: 78%;
-    left: 44%;
+    top: 42%;
+    left: 27%;
 }
 
 .process-step-3 {
-    top: 65%;
-    left: 62%;
+    top: 51%;
+    left: 40%;
 }
 
 .process-step-4 {
-    top: 35%;
-    left: 85%;
+    top: 47%;
+    left: 58%;
 }
 
 
