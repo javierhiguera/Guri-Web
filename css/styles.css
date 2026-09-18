@@ -1890,7 +1890,7 @@ button {
 }
 
 .form-field label {
-    color: #cfcfcf;
+    color: var(--orange);
 
     font-size: 11px;
 
