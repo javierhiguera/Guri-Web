@@ -1464,10 +1464,10 @@ button {
 /* Icono con glow naranja */
 
 .brainstorm-check {
-    width: 30px;
-    height: 30px;
+    width: 80px;
+    height: 80px;
 
-    flex: 0 0 30px;
+    flex: 0 0 80px;
 
     color: var(--orange);
 
