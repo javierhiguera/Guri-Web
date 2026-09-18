@@ -1508,6 +1508,9 @@ button {
     stroke-width: 1.5;
     stroke-linecap: round;
     stroke-linejoin: round;
+
+    stroke-dasharray: 200;
+    stroke-dashoffset: 0;
 }
 
 
@@ -1522,79 +1525,25 @@ button {
 
 /* =========================================================
    EFECTO DIBUJADO AL HOVER
-   Cada ícono tiene su propio stroke-dasharray porque
-   cada uno tiene un largo de trazo distinto.
+   Los íconos arrancan VISIBLES. Al hover se re-dibujan.
    ========================================================= */
 
-
-/* ---------- Ícono 1 — Paleta (Diseño personalizado) ---------- */
-
-.brainstorm-item:nth-child(1) .brainstorm-check path,
-.brainstorm-item:nth-child(1) .brainstorm-check circle {
-    stroke-dasharray: 130;
-    stroke-dashoffset: 130;
-    transition: stroke-dashoffset 0.9s ease;
+.brainstorm-item:hover .brainstorm-check path,
+.brainstorm-item:hover .brainstorm-check circle,
+.brainstorm-item:hover .brainstorm-check rect,
+.brainstorm-item:hover .brainstorm-check line,
+.brainstorm-item:hover .brainstorm-check polyline,
+.brainstorm-item:hover .brainstorm-check polygon {
+    animation: draw-icon 0.9s ease forwards;
 }
 
-.brainstorm-item:nth-child(1):hover .brainstorm-check path,
-.brainstorm-item:nth-child(1):hover .brainstorm-check circle {
-    stroke-dashoffset: 0;
-}
-
-
-/* ---------- Ícono 2 — Monitor + mobile (Responsive) ---------- */
-
-.brainstorm-item:nth-child(2) .brainstorm-check path,
-.brainstorm-item:nth-child(2) .brainstorm-check rect {
-    stroke-dasharray: 120;
-    stroke-dashoffset: 120;
-    transition: stroke-dashoffset 0.9s ease;
-}
-
-.brainstorm-item:nth-child(2):hover .brainstorm-check path,
-.brainstorm-item:nth-child(2):hover .brainstorm-check rect {
-    stroke-dashoffset: 0;
-}
-
-
-/* ---------- Ícono 3 — Rayo (Optimización y velocidad) ---------- */
-
-.brainstorm-item:nth-child(3) .brainstorm-check path {
-    stroke-dasharray: 90;
-    stroke-dashoffset: 90;
-    transition: stroke-dashoffset 0.9s ease;
-}
-
-.brainstorm-item:nth-child(3):hover .brainstorm-check path {
-    stroke-dashoffset: 0;
-}
-
-
-/* ---------- Ícono 4 — Lupa (SEO desde la base) ---------- */
-
-.brainstorm-item:nth-child(4) .brainstorm-check path,
-.brainstorm-item:nth-child(4) .brainstorm-check circle {
-    stroke-dasharray: 120;
-    stroke-dashoffset: 120;
-    transition: stroke-dashoffset 0.9s ease;
-}
-
-.brainstorm-item:nth-child(4):hover .brainstorm-check path,
-.brainstorm-item:nth-child(4):hover .brainstorm-check circle {
-    stroke-dashoffset: 0;
-}
-
-
-/* ---------- Ícono 5 — Chat (Acompañamiento) ---------- */
-
-.brainstorm-item:nth-child(5) .brainstorm-check path {
-    stroke-dasharray: 110;
-    stroke-dashoffset: 110;
-    transition: stroke-dashoffset 0.9s ease;
-}
-
-.brainstorm-item:nth-child(5):hover .brainstorm-check path {
-    stroke-dashoffset: 0;
+@keyframes draw-icon {
+    0% {
+        stroke-dashoffset: 200;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
 }
 /* =========================================================
    GESTIÓN DIGITAL
