@@ -925,103 +925,76 @@ button {
 
 
 /* =========================================================
-   WORK
+   WORK — Título izquierda + iPhone derecha
    ========================================================= */
 
 .work {
     position: relative;
-
     background-color: var(--black);
 }
 
-.work-heading {
+.work-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.work-heading-left {
     display: flex;
-
-    align-items: flex-end;
-    justify-content: space-between;
-
-    gap: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.text-link {
+.work-heading-left h2 {
+    font-family: "Xenois", serif;
+    font-size: clamp(48px, 6vw, 82px);
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+}
+
+.work-heading-left h2 span {
+    display: block;
     color: var(--orange);
-
-    font-size: 12px;
-
-    border-bottom: 1px solid transparent;
-
-    transition: border-color var(--transition);
 }
 
-.text-link:hover {
+.work-heading-left .text-link {
+    display: inline-block;
+    margin-top: 30px;
+    color: var(--orange);
+    font-size: 12px;
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition);
+    white-space: nowrap;
+}
+
+.work-heading-left .text-link:hover {
     border-color: var(--orange);
 }
 
-
-/* =========================================================
-   WORK GRID
-   ========================================================= */
-
-.work-grid {
-    display: grid;
-
-    grid-template-columns: 0.85fr 1.4fr;
-
-    grid-template-rows: auto auto;
-
-    gap: 24px;
-
+.work-content-right {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.work-iphone-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .work-card {
-    display: grid;
-
-    grid-template-columns: 1fr auto;
-
-    gap: 24px;
-
-    align-items: center;
-
+    display: block;
+    width: 100%;
     transition: transform var(--transition);
 }
 
 .work-card:hover {
     transform: translateY(-5px);
-}
-
-.work-card:nth-child(1) {
-    grid-column: 1;
-    grid-row: 1 / span 2;
-}
-
-.work-card:nth-child(2) {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.work-card:nth-child(3) {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-
-/* =========================================================
-   WORK FRAMES
-   ========================================================= */
-
-.work-frame {
-    position: relative;
-
-    width: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
 }
 
 
@@ -1031,30 +1004,22 @@ button {
 
 .work-frame-iphone {
     position: relative;
-
     width: 100%;
-
     max-width: 320px;
-
     margin: 0 auto;
-
     padding: 10px;
-
     border-radius: 52px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #4a4a4a 0%,
-            #3a3a3a 15%,
-            #2a2a2a 30%,
-            #3a3a3a 45%,
-            #4a4a4a 55%,
-            #2a2a2a 70%,
-            #1a1a1a 85%,
-            #3a3a3a 100%
-        );
-
+    background: linear-gradient(
+        145deg,
+        #4a4a4a 0%,
+        #3a3a3a 15%,
+        #2a2a2a 30%,
+        #3a3a3a 45%,
+        #4a4a4a 55%,
+        #2a2a2a 70%,
+        #1a1a1a 85%,
+        #3a3a3a 100%
+    );
     box-shadow:
         0 30px 60px rgba(0, 0, 0, 0.9),
         0 15px 30px rgba(0, 0, 0, 0.7),
@@ -1066,21 +1031,14 @@ button {
 
 .iphone-notch {
     position: absolute;
-
     top: 22px;
     left: 50%;
-
     transform: translateX(-50%);
-
     width: 100px;
     height: 26px;
-
     border-radius: 20px;
-
     background: #000;
-
     z-index: 10;
-
     box-shadow:
         inset 0 0 0 1px rgba(255, 255, 255, 0.08),
         inset 0 1px 2px rgba(255, 255, 255, 0.05);
@@ -1088,42 +1046,24 @@ button {
 
 .iphone-notch::before {
     content: "";
-
     position: absolute;
-
     top: 50%;
     right: 12px;
-
     transform: translateY(-50%);
-
     width: 8px;
     height: 8px;
-
     border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 30% 30%,
-            #2a2a3e,
-            #000
-        );
-
+    background: radial-gradient(circle at 30% 30%, #2a2a3e, #000);
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .iphone-screen {
     position: relative;
-
     width: 100%;
-
     aspect-ratio: 9 / 19.5;
-
     border-radius: 44px;
-
     background: #000;
-
     overflow: hidden;
-
     box-shadow:
         inset 0 0 0 2px #000,
         inset 0 0 20px rgba(0, 0, 0, 0.5);
@@ -1131,53 +1071,37 @@ button {
 
 .device-status-bar {
     position: absolute;
-
     top: 0;
     left: 0;
     right: 0;
-
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
     padding: 14px 22px 0 22px;
-
     z-index: 5;
-
     color: #fff;
-
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Bunken", sans-serif;
-
     font-size: 13px;
-
     font-weight: 600;
-
     letter-spacing: -0.02em;
-
     pointer-events: none;
 }
 
 .device-time {
     font-size: 13px;
-
     font-weight: 600;
-
     letter-spacing: -0.02em;
 }
 
 .device-status-icons {
     display: flex;
-
     align-items: center;
-
     gap: 5px;
 }
 
 .device-icon {
     width: 16px;
     height: 11px;
-
     fill: currentColor;
 }
 
@@ -1188,374 +1112,61 @@ button {
 
 .iphone-scroll {
     position: absolute;
-
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
-
     overflow: hidden;
 }
 
 .iphone-scroll-img {
     width: 100%;
     height: auto;
-
     display: block;
-
     animation: iphone-scroll-anim 60s linear infinite;
 }
 
 @keyframes iphone-scroll-anim {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-100%);
-    }
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
 }
 
 .iphone-home-bar {
     position: absolute;
-
     bottom: 8px;
     left: 50%;
-
     transform: translateX(-50%);
-
     width: 130px;
     height: 5px;
-
     border-radius: 3px;
-
     background: #fff;
-
     opacity: 0.9;
-
     z-index: 6;
-
     pointer-events: none;
 }
 
 .work-frame-iphone::before {
     content: "";
-
     position: absolute;
-
     top: 120px;
     left: -3px;
-
     width: 3px;
     height: 30px;
-
     border-radius: 2px 0 0 2px;
-
-    background:
-        linear-gradient(180deg, #4a4a4a, #2a2a2a);
-
-    box-shadow:
-        inset 1px 0 1px rgba(255, 255, 255, 0.2),
-        0 0 3px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(180deg, #4a4a4a, #2a2a2a);
+    box-shadow: inset 1px 0 1px rgba(255, 255, 255, 0.2), 0 0 3px rgba(0, 0, 0, 0.6);
 }
 
 .work-frame-iphone::after {
     content: "";
-
     position: absolute;
-
     top: 170px;
     left: -3px;
-
     width: 3px;
     height: 55px;
-
     border-radius: 2px 0 0 2px;
-
-    background:
-        linear-gradient(180deg, #4a4a4a, #2a2a2a);
-
-    box-shadow:
-        inset 1px 0 1px rgba(255, 255, 255, 0.2),
-        0 0 3px rgba(0, 0, 0, 0.6);
-}
-
-
-/* =========================================================
-   iMAC
-   ========================================================= */
-
-.work-frame-imac {
-    position: relative;
-
-    width: 100%;
-
-    max-width: 700px;
-
-    margin: 0 auto;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-}
-
-.imac-display {
-    position: relative;
-
-    width: 100%;
-
-    aspect-ratio: 16 / 10;
-
-    border-radius: 14px 14px 0 0;
-
-    padding: 18px 18px 44px 18px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #2a2a2a 0%,
-            #1a1a1a 50%,
-            #0d0d0d 100%
-        );
-
-    box-shadow:
-        0 25px 50px rgba(0, 0, 0, 0.85),
-        inset 0 2px 1px rgba(255, 255, 255, 0.1),
-        inset 0 -2px 2px rgba(0, 0, 0, 0.6);
-}
-
-.imac-camera {
-    position: absolute;
-
-    top: 7px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 5px;
-    height: 5px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 30% 30%,
-            #1a1a2e,
-            #000
-        );
-
-    box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.15),
-        0 0 2px rgba(0, 0, 0, 0.6);
-
-    z-index: 5;
-}
-
-.imac-screen {
-    position: relative;
-
-    width: 100%;
-
-    aspect-ratio: 16 / 9;
-
-    border-radius: 4px;
-
-    overflow: hidden;
-
-    background: #000;
-
-    box-shadow:
-        inset 0 0 0 1px rgba(0, 0, 0, 0.8),
-        inset 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.mac-content {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    overflow: hidden;
-
-    background: #000;
-}
-
-.mac-content img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center top;
-}
-
-.imac-neck {
-    position: relative;
-
-    width: 110px;
-    height: 45px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #1a1a1a 0%,
-            #2a2a2a 50%,
-            #1a1a1a 100%
-        );
-
-    box-shadow:
-        inset 1px 0 1px rgba(255, 255, 255, 0.08),
-        inset -1px 0 1px rgba(0, 0, 0, 0.5);
-}
-
-.imac-base {
-    position: relative;
-
-    width: 240px;
-    height: 12px;
-
-    border-radius: 0 0 8px 8px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #2a2a2a 0%,
-            #1a1a1a 50%,
-            #0d0d0d 100%
-        );
-
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        inset 0 -1px 2px rgba(0, 0, 0, 0.5),
-        0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.imac-base::after {
-    content: "";
-
-    position: absolute;
-
-    bottom: -4px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 280px;
-    height: 4px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(0, 0, 0, 0.6) 0%,
-            transparent 70%
-        );
-}
-
-
-/* =========================================================
-   iPAD
-   ========================================================= */
-
-.work-frame-ipad {
-    position: relative;
-
-    width: 100%;
-
-    max-width: 520px;
-
-    margin: 0 auto;
-
-    padding: 14px;
-
-    border-radius: 28px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #2a2a2a 0%,
-            #1a1a1a 25%,
-            #0d0d0d 50%,
-            #1a1a1a 75%,
-            #2a2a2a 100%
-        );
-
-    box-shadow:
-        0 25px 50px rgba(0, 0, 0, 0.85),
-        inset 0 2px 1px rgba(255, 255, 255, 0.1),
-        inset 0 -2px 1px rgba(0, 0, 0, 0.6),
-        inset 2px 0 1px rgba(255, 255, 255, 0.04),
-        inset -2px 0 1px rgba(0, 0, 0, 0.5);
-}
-
-.ipad-camera {
-    position: absolute;
-
-    top: 50%;
-    left: 5px;
-
-    transform: translateY(-50%);
-
-    width: 5px;
-    height: 5px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 30% 30%,
-            #2a2a3e,
-            #000
-        );
-
-    box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.1),
-        0 0 2px rgba(0, 0, 0, 0.8);
-
-    z-index: 5;
-}
-
-.ipad-screen {
-    position: relative;
-
-    width: 100%;
-
-    aspect-ratio: 4 / 3;
-
-    border-radius: 18px;
-
-    overflow: hidden;
-
-    background: #000;
-
-    box-shadow:
-        inset 0 0 0 2px #000,
-        inset 0 0 15px rgba(0, 0, 0, 0.5);
-}
-
-.ipad-content {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    overflow: hidden;
-
-    background: #000;
-}
-
-.ipad-content img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center top;
+    background: linear-gradient(180deg, #4a4a4a, #2a2a2a);
+    box-shadow: inset 1px 0 1px rgba(255, 255, 255, 0.2), 0 0 3px rgba(0, 0, 0, 0.6);
 }
 
 
