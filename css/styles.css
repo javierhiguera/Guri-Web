@@ -1072,16 +1072,16 @@ button {
 }
 
 /* =========================================================
-   iPHONE 17 PRO (Asegurado)
+   iPHONE 17 PRO — FORZADO CON !IMPORTANT
    ========================================================= */
 
 .work-frame-iphone {
-    position: relative;
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
-    padding: 10px;
-    border-radius: 52px;
+    position: relative !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    padding: 10px !important;
+    border-radius: 52px !important;
     background: linear-gradient(
         145deg,
         #4a4a4a 0%,
@@ -1092,14 +1092,14 @@ button {
         #2a2a2a 70%,
         #1a1a1a 85%,
         #3a3a3a 100%
-    );
+    ) !important;
     box-shadow:
         0 30px 60px rgba(0, 0, 0, 0.9),
         0 15px 30px rgba(0, 0, 0, 0.7),
         inset 0 2px 1px rgba(255, 255, 255, 0.15),
         inset 0 -2px 1px rgba(0, 0, 0, 0.6),
         inset 2px 0 1px rgba(255, 255, 255, 0.08),
-        inset -2px 0 1px rgba(0, 0, 0, 0.4);
+        inset -2px 0 1px rgba(0, 0, 0, 0.4) !important;
 }
 
 .iphone-notch {
