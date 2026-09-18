@@ -1488,20 +1488,62 @@ button {
     stroke-width: 1.5;
     stroke-linecap: round;
     stroke-linejoin: round;
+}
 
-    stroke-dasharray: 60 200;
-    stroke-dashoffset: 0;
-
+.brainstorm-item:nth-child(1) .brainstorm-check path,
+.brainstorm-item:nth-child(1) .brainstorm-check circle {
+    stroke-dasharray: 130;
+    stroke-dashoffset: 130;
     transition: stroke-dashoffset 0.9s ease;
 }
 
-.brainstorm-item:hover .brainstorm-check path,
-.brainstorm-item:hover .brainstorm-check circle,
-.brainstorm-item:hover .brainstorm-check rect,
-.brainstorm-item:hover .brainstorm-check line,
-.brainstorm-item:hover .brainstorm-check polyline,
-.brainstorm-item:hover .brainstorm-check polygon {
-    stroke-dashoffset: -60;
+.brainstorm-item:nth-child(1):hover .brainstorm-check path,
+.brainstorm-item:nth-child(1):hover .brainstorm-check circle {
+    stroke-dashoffset: 65;
+}
+
+.brainstorm-item:nth-child(2) .brainstorm-check path,
+.brainstorm-item:nth-child(2) .brainstorm-check rect {
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    transition: stroke-dashoffset 0.9s ease;
+}
+
+.brainstorm-item:nth-child(2):hover .brainstorm-check path,
+.brainstorm-item:nth-child(2):hover .brainstorm-check rect {
+    stroke-dashoffset: 60;
+}
+
+.brainstorm-item:nth-child(3) .brainstorm-check path {
+    stroke-dasharray: 90;
+    stroke-dashoffset: 90;
+    transition: stroke-dashoffset 0.9s ease;
+}
+
+.brainstorm-item:nth-child(3):hover .brainstorm-check path {
+    stroke-dashoffset: 45;
+}
+
+.brainstorm-item:nth-child(4) .brainstorm-check path,
+.brainstorm-item:nth-child(4) .brainstorm-check circle {
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    transition: stroke-dashoffset 0.9s ease;
+}
+
+.brainstorm-item:nth-child(4):hover .brainstorm-check path,
+.brainstorm-item:nth-child(4):hover .brainstorm-check circle {
+    stroke-dashoffset: 60;
+}
+
+.brainstorm-item:nth-child(5) .brainstorm-check path {
+    stroke-dasharray: 110;
+    stroke-dashoffset: 110;
+    transition: stroke-dashoffset 0.9s ease;
+}
+
+.brainstorm-item:nth-child(5):hover .brainstorm-check path {
+    stroke-dashoffset: 55;
 }
 
 .brainstorm-item span {
