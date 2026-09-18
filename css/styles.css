@@ -1491,6 +1491,45 @@ button {
 }
 
 
+/* Trazos de los íconos — efecto dibujado al hover */
+
+.brainstorm-check path,
+.brainstorm-check circle,
+.brainstorm-check rect,
+.brainstorm-check line,
+.brainstorm-check polyline,
+.brainstorm-check polygon {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    stroke-dasharray: 200;
+    stroke-dashoffset: 0;
+
+    transition: stroke-dashoffset 0.8s ease;
+}
+
+.brainstorm-item:hover .brainstorm-check path,
+.brainstorm-item:hover .brainstorm-check circle,
+.brainstorm-item:hover .brainstorm-check rect,
+.brainstorm-item:hover .brainstorm-check line,
+.brainstorm-item:hover .brainstorm-check polyline,
+.brainstorm-item:hover .brainstorm-check polygon {
+    animation: draw-icon 0.8s ease forwards;
+}
+
+@keyframes draw-icon {
+    0% {
+        stroke-dashoffset: 200;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+
 /* Trazos de los íconos */
 
 .brainstorm-check path,
