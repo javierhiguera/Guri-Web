@@ -1464,10 +1464,10 @@ button {
 /* Icono con glow naranja */
 
 .brainstorm-check {
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
 
-    flex: 0 0 65px;
+    flex: 0 0 60px;
 
     color: var(--orange);
 
@@ -1517,6 +1517,7 @@ button {
 .brainstorm-item:hover .brainstorm-check line,
 .brainstorm-item:hover .brainstorm-check polyline,
 .brainstorm-item:hover .brainstorm-check polygon {
+    stroke-dashoffset: 200;
     animation: draw-icon 0.8s ease forwards;
 }
 
@@ -1529,6 +1530,14 @@ button {
     }
 }
 
+
+/* Texto */
+
+.brainstorm-item span {
+    color: #d2d2d2;
+
+    font-size: 15px;
+}
 
 /* Trazos de los íconos */
 
