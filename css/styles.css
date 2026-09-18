@@ -1197,7 +1197,7 @@ button {
 .process {
     position: relative;
 
-    background-image: url("../assets/seleccion/mapa.svg");
+    background-image: url("../assets/seleccion/mapa.jpg");
 
     background-color: var(--black);
 
