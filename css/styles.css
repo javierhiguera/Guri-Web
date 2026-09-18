@@ -1633,12 +1633,197 @@ button {
     background: var(--black-soft);
 }
 
-.digital-management .section-heading {
-    max-width: 760px;
+.digital-management-inner {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+    min-height: 600px;
 }
 
-.digital-management .section-heading p {
+
+/* Columna izquierda — íconos + emojis flotando */
+
+.digital-management-icons {
+    position: relative;
+
+    width: 100%;
     max-width: 600px;
+
+    aspect-ratio: 1 / 1;
+
+    margin: 0 auto;
+}
+
+
+/* Los 4 íconos reales */
+
+.digital-icon {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 90px;
+    height: 90px;
+
+    color: var(--orange);
+}
+
+.digital-icon img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 0 8px rgba(255, 90, 31, 0.5))
+        drop-shadow(0 0 20px rgba(255, 90, 31, 0.2));
+}
+
+
+/* Posiciones de los 4 íconos reales */
+
+.digital-icon-1 {
+    top: 6%;
+    left: 10%;
+
+    animation: float-1 6s ease-in-out infinite;
+}
+
+.digital-icon-2 {
+    top: 10%;
+    right: 8%;
+
+    animation: float-2 7s ease-in-out infinite;
+}
+
+.digital-icon-3 {
+    bottom: 14%;
+    left: 14%;
+
+    animation: float-3 8s ease-in-out infinite;
+}
+
+.digital-icon-4 {
+    bottom: 8%;
+    right: 12%;
+
+    animation: float-4 6.5s ease-in-out infinite;
+}
+
+
+/* Los 7 emojis */
+
+.digital-emoji {
+    position: absolute;
+
+    font-size: 44px;
+
+    line-height: 1;
+
+    filter:
+        grayscale(1)
+        brightness(0.85)
+        sepia(1)
+        hue-rotate(-25deg)
+        saturate(12)
+        brightness(1.05)
+        drop-shadow(0 0 8px rgba(255, 90, 31, 0.6))
+        drop-shadow(0 0 16px rgba(255, 90, 31, 0.3));
+
+    user-select: none;
+
+    pointer-events: none;
+}
+
+
+/* Posiciones dispersas y desordenadas de los emojis */
+
+.digital-emoji-1 {
+    top: 32%;
+    left: 4%;
+
+    font-size: 40px;
+
+    animation: float-2 7s ease-in-out infinite;
+}
+
+.digital-emoji-2 {
+    top: 2%;
+    left: 42%;
+
+    font-size: 52px;
+
+    animation: float-3 8s ease-in-out infinite;
+}
+
+.digital-emoji-3 {
+    top: 44%;
+    left: 46%;
+
+    font-size: 48px;
+
+    animation: float-1 6s ease-in-out infinite;
+}
+
+.digital-emoji-4 {
+    top: 28%;
+    right: 4%;
+
+    font-size: 44px;
+
+    animation: float-4 6.5s ease-in-out infinite;
+}
+
+.digital-emoji-5 {
+    bottom: 4%;
+    left: 42%;
+
+    font-size: 46px;
+
+    animation: float-2 7s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
+.digital-emoji-6 {
+    top: 58%;
+    left: 8%;
+
+    font-size: 38px;
+
+    animation: float-3 8s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.digital-emoji-7 {
+    bottom: 28%;
+    right: 4%;
+
+    font-size: 42px;
+
+    animation: float-1 6s ease-in-out infinite;
+    animation-delay: 1.5s;
+}
+
+
+/* Columna derecha — título + párrafo */
+
+.digital-management-heading {
+    max-width: 560px;
+}
+
+.digital-management-heading .section-heading {
+    margin-bottom: 0;
+}
+
+.digital-management-heading .section-heading p {
+    max-width: 500px;
 
     margin-top: 22px;
 
@@ -1648,82 +1833,6 @@ button {
 
     line-height: 1.7;
 }
-
-.digital-management-grid {
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 30px;
-}
-
-.digital-management-item {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    text-align: center;
-
-    padding: 20px;
-
-    transition: transform var(--transition);
-}
-
-.digital-management-item:hover {
-    transform: translateY(-5px);
-}
-
-.digital-logo {
-    width: 64px;
-    height: 64px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 20px;
-
-    color: var(--orange);
-
-    transition: transform var(--transition);
-}
-
-.digital-management-item:hover .digital-logo {
-    transform: scale(1.1);
-}
-
-.digital-logo img {
-    width: 40px;
-    height: 40px;
-
-    object-fit: contain;
-}
-
-.digital-management-item h3 {
-    font-family: "Xenois", serif;
-
-    font-size: 25px;
-
-    line-height: 1;
-
-    letter-spacing: -0.03em;
-}
-
-.digital-management-item p {
-    max-width: 260px;
-
-    margin-top: 14px;
-
-    color: var(--gray);
-
-    font-size: 13px;
-
-    line-height: 1.6;
-}
-
 
 /* =========================================================
    PLANES
