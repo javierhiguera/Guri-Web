@@ -2006,7 +2006,7 @@ button {
 
 .form-field select option {
     background: var(--black-soft);
-    color: var(--white);
+    color: var(--orange);
     padding: 10px;
 }
 
