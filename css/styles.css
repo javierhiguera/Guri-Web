@@ -1485,7 +1485,7 @@ button {
 .brainstorm-check polygon {
     fill: #000000 !important;
     stroke: var(--orange) !important;
-    stroke-width: 1.5;
+    stroke-width: 1.4;
     stroke-linecap: round;
     stroke-linejoin: round;
 
