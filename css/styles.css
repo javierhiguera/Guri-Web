@@ -1215,9 +1215,11 @@ button {
 
     z-index: 2;
 
-    max-width: 760px;
+    max-width: 100%;
 
     margin-bottom: 40px;
+
+    text-align: center;
 }
 
 .process-map {
@@ -1290,9 +1292,6 @@ button {
     fill: none;
 }
 
-
-/* Aura de iluminación en loop */
-
 .process-step-icon::before {
     content: "";
 
@@ -1353,7 +1352,7 @@ button {
 
     gap: 6px;
 
-    max-width: 220px;
+    max-width: 200px;
 
     margin-top: 12px;
 
@@ -1392,7 +1391,7 @@ button {
 }
 
 
-/* Pasos con cápsula arriba (invertido) */
+/* Pasos 2 y 4 — cápsula arriba (invertido) */
 
 .process-step-2,
 .process-step-4 {
@@ -1407,28 +1406,27 @@ button {
 }
 
 
-/* Posiciones — sobre cada pin del mapa */
+/* Posiciones — distribución en zigzag (camino) */
 
 .process-step-1 {
-    top: 43%;
-    left: 11%;
+    top: 30%;
+    left: 12%;
 }
 
 .process-step-2 {
-    top: 42%;
-    left: 27%;
+    top: 55%;
+    left: 35%;
 }
 
 .process-step-3 {
-    top: 51%;
-    left: 40%;
-}
-
-.process-step-4 {
-    top: 47%;
+    top: 30%;
     left: 58%;
 }
 
+.process-step-4 {
+    top: 55%;
+    left: 82%;
+}
 
 /* =========================================================
    WHY GURI
