@@ -1493,7 +1493,7 @@ button {
 .brainstorm-item:nth-child(1) .brainstorm-check path,
 .brainstorm-item:nth-child(1) .brainstorm-check circle {
     stroke-dasharray: 130;
-    stroke-dashoffset: 130;
+    stroke-dashoffset: 65;
     transition: stroke-dashoffset 0.9s ease;
 }
 
@@ -1505,7 +1505,7 @@ button {
 .brainstorm-item:nth-child(2) .brainstorm-check path,
 .brainstorm-item:nth-child(2) .brainstorm-check rect {
     stroke-dasharray: 120;
-    stroke-dashoffset: 120;
+    stroke-dashoffset: 60;
     transition: stroke-dashoffset 0.9s ease;
 }
 
@@ -1516,7 +1516,7 @@ button {
 
 .brainstorm-item:nth-child(3) .brainstorm-check path {
     stroke-dasharray: 90;
-    stroke-dashoffset: 90;
+    stroke-dashoffset: 45;
     transition: stroke-dashoffset 0.9s ease;
 }
 
@@ -1527,7 +1527,7 @@ button {
 .brainstorm-item:nth-child(4) .brainstorm-check path,
 .brainstorm-item:nth-child(4) .brainstorm-check circle {
     stroke-dasharray: 120;
-    stroke-dashoffset: 120;
+    stroke-dashoffset: 60;
     transition: stroke-dashoffset 0.9s ease;
 }
 
@@ -1538,7 +1538,7 @@ button {
 
 .brainstorm-item:nth-child(5) .brainstorm-check path {
     stroke-dasharray: 110;
-    stroke-dashoffset: 110;
+    stroke-dashoffset: 55;
     transition: stroke-dashoffset 0.9s ease;
 }
 
@@ -1551,6 +1551,7 @@ button {
 
     font-size: 15px;
 }
+
 /* =========================================================
    GESTIÓN DIGITAL
    ========================================================= */
