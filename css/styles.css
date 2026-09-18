@@ -1197,9 +1197,9 @@ button {
 .process {
     position: relative;
 
-    background-color: var(--black);
-
     background-image: url("../assets/seleccion/mapa.svg");
+
+    background-color: var(--black);
 
     background-size: cover;
 
@@ -1246,6 +1246,8 @@ button {
 }
 
 .process-step-icon {
+    position: relative;
+
     width: 76px;
     height: 76px;
 
@@ -1274,6 +1276,10 @@ button {
 }
 
 .process-step-icon svg {
+    position: relative;
+
+    z-index: 2;
+
     width: 34px;
     height: 34px;
 
@@ -1282,6 +1288,60 @@ button {
     stroke-width: 1.4;
 
     fill: none;
+}
+
+
+/* Aura de iluminación en loop */
+
+.process-step-icon::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+    background: var(--orange);
+
+    opacity: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    animation: process-glow 4s ease-in-out infinite;
+}
+
+.process-step-1 .process-step-icon::before {
+    animation-delay: 0s;
+}
+
+.process-step-2 .process-step-icon::before {
+    animation-delay: 1s;
+}
+
+.process-step-3 .process-step-icon::before {
+    animation-delay: 2s;
+}
+
+.process-step-4 .process-step-icon::before {
+    animation-delay: 3s;
+}
+
+@keyframes process-glow {
+    0%,
+    100% {
+        opacity: 0;
+
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.35;
+
+        transform: scale(1.6);
+    }
 }
 
 .process-step-capsule {
@@ -1305,10 +1365,6 @@ button {
 
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
-
-    transition:
-        background var(--transition),
-        box-shadow var(--transition);
 }
 
 .process-step-capsule h3 {
@@ -1371,71 +1427,6 @@ button {
 .process-step-4 {
     top: 47%;
     left: 58%;
-}
-
-
-/* Loop de iluminación — los íconos se prenden en cascada */
-
-.process-step-1 .process-step-icon {
-    animation: process-pulse 4s ease-in-out infinite;
-    animation-delay: 0s;
-}
-
-.process-step-2 .process-step-icon {
-    animation: process-pulse 4s ease-in-out infinite;
-    animation-delay: 1s;
-}
-
-.process-step-3 .process-step-icon {
-    animation: process-pulse 4s ease-in-out infinite;
-    animation-delay: 2s;
-}
-
-.process-step-4 .process-step-icon {
-    animation: process-pulse 4s ease-in-out infinite;
-    animation-delay: 3s;
-}
-
-@keyframes process-pulse {
-    0% {
-        background: var(--black);
-
-        color: var(--orange);
-
-        box-shadow:
-            0 0 0 6px rgba(255, 90, 31, 0.08),
-            0 0 20px rgba(255, 90, 31, 0.2);
-    }
-
-    25% {
-        background: var(--orange);
-
-        color: var(--black);
-
-        box-shadow:
-            0 0 0 10px rgba(255, 90, 31, 0.18),
-            0 0 40px rgba(255, 90, 31, 0.6);
-    }
-
-    50% {
-        background: var(--black);
-
-        color: var(--orange);
-
-        box-shadow:
-            0 0 0 6px rgba(255, 90, 31, 0.08),
-            0 0 20px rgba(255, 90, 31, 0.2);
-    }
-
-    100% {
-        background: var(--black);
-
-        color: var(--orange);
-
-        box-shadow:
-            0 0 0 6px rgba(255, 90, 31, 0.08),
-            0 0 20px rgba(255, 90, 31, 0.2);
-    }
 }
 
 
