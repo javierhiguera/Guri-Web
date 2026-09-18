@@ -1370,7 +1370,7 @@ button {
 }
 
 
-//* =========================================================
+/* =========================================================
    WHY GURI
    ========================================================= */
 
@@ -1501,11 +1501,16 @@ button {
 .brainstorm-check line,
 .brainstorm-check polyline,
 .brainstorm-check polygon {
-    fill: var(--black);
-    stroke: currentColor;
+    fill: #000000 !important;
+    stroke: var(--orange) !important;
     stroke-width: 1.5;
     stroke-linecap: round;
     stroke-linejoin: round;
+
+    stroke-dasharray: 200;
+    stroke-dashoffset: 70;
+
+    transition: stroke-dashoffset 0.9s ease;
 }
 
 
@@ -1516,6 +1521,23 @@ button {
 
     font-size: 15px;
 }
+
+
+/* =========================================================
+   EFECTO DIBUJADO AL HOVER
+   Los íconos arrancan a medio dibujar (dashoffset 70).
+   Al hover se completan (dashoffset 0).
+   ========================================================= */
+
+.brainstorm-item:hover .brainstorm-check path,
+.brainstorm-item:hover .brainstorm-check circle,
+.brainstorm-item:hover .brainstorm-check rect,
+.brainstorm-item:hover .brainstorm-check line,
+.brainstorm-item:hover .brainstorm-check polyline,
+.brainstorm-item:hover .brainstorm-check polygon {
+    stroke-dashoffset: 0;
+}
+
 /* =========================================================
    GESTIÓN DIGITAL
    ========================================================= */
