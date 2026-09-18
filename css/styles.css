@@ -1895,12 +1895,6 @@ button {
     font-size: 11px;
 
     letter-spacing: 0.04em;
-
-    transition: color var(--transition);
-}
-
-.form-field:focus-within label {
-    color: var(--orange);
 }
 
 .form-field input,
@@ -1949,8 +1943,6 @@ button {
 .form-field input::placeholder,
 .form-field textarea::placeholder {
     color: var(--gray-dark);
-
-    transition: color var(--transition);
 }
 
 .form-field input:hover,
@@ -2028,7 +2020,6 @@ button {
 .quote-form-submit {
     margin-top: 20px;
 }
-
 
 /* =========================================================
    FINAL CTA
