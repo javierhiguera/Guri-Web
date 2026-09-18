@@ -1471,13 +1471,15 @@ button {
 
     color: var(--orange);
 
+    fill: none;
+
     filter:
         drop-shadow(0 0 4px rgba(255, 90, 31, 0.6))
         drop-shadow(0 0 10px rgba(255, 90, 31, 0.3));
 
     transition:
-        transform var(--transition),
-        filter var(--transition);
+        transform 0.35s ease,
+        filter 0.35s ease;
 }
 
 .brainstorm-item:hover .brainstorm-check {
@@ -1494,8 +1496,14 @@ button {
 .brainstorm-check path,
 .brainstorm-check circle,
 .brainstorm-check rect,
-.brainstorm-check line {
+.brainstorm-check line,
+.brainstorm-check polyline,
+.brainstorm-check polygon {
+    fill: none;
     stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 
@@ -1506,7 +1514,6 @@ button {
 
     font-size: 15px;
 }
-
 /* =========================================================
    GESTIÓN DIGITAL
    ========================================================= */
