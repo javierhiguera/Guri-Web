@@ -925,7 +925,7 @@ button {
 
 
 /* =========================================================
-   WORK — NUEVO DISEÑO CORREGIDO
+   WORK — Título izquierda + iPhone derecha + Fotos
    ========================================================= */
 
 .work {
@@ -934,34 +934,23 @@ button {
     background-color: var(--black);
 }
 
-/* Layout principal: Título izquierda + Contenido derecha */
 .work-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 50% y 50% para equilibrar */
+    grid-template-columns: 1fr 1fr;
     gap: 60px;
-    align-items: center; /* Centra verticalmente el título con el iPhone */
+    align-items: center;
 }
 
-/* Columna Izquierda: Título */
 .work-heading-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; /* Asegura que el texto se alinee a la izquierda */
-}
-
-.work-heading-left .work-heading {
-    display: flex;
-    flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
-    margin-bottom: 0;
-    width: 100%;
 }
 
 .work-heading-left .section-heading {
     margin-bottom: 0;
-    max-width: 100%; /* Permite que el título ocupe el ancho necesario */
+    max-width: 100%;
 }
 
 .work-heading-left .section-heading h2 {
@@ -969,10 +958,10 @@ button {
 }
 
 .work-heading-left .text-link {
-    margin-top: 10px;
+    margin-top: 20px;
+    display: inline-block;
 }
 
-/* Columna Derecha: iPhone + Fotos */
 .work-content-right {
     display: flex;
     flex-direction: column;
@@ -981,16 +970,11 @@ button {
     width: 100%;
 }
 
-/* iPhone wrapper */
 .work-iphone-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-
-/* =========================================================
-   FOTOS INSTANTÁNEAS CON PIN
-   ========================================================= */
 
 .work-instant-photos {
     display: flex;
@@ -1005,14 +989,13 @@ button {
     position: relative;
     width: 140px;
     background: #fff;
-    padding: 8px 8px 30px 8px; /* Espacio para el pie de foto estilo Polaroid */
+    padding: 8px 8px 30px 8px;
     border-radius: 4px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
     transform: rotate(-3deg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Rotaciones alternas para efecto desordenado */
 .instant-photo:nth-child(2) {
     transform: rotate(2deg) translateY(-5px);
 }
@@ -1027,7 +1010,6 @@ button {
     z-index: 10;
 }
 
-/* Pin naranja */
 .instant-pin {
     position: absolute;
     top: -10px;
@@ -1037,13 +1019,10 @@ button {
     height: 22px;
     background: var(--orange);
     border-radius: 50%;
-    box-shadow: 
-        0 4px 8px rgba(0, 0, 0, 0.4),
-        inset 0 -3px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), inset 0 -3px 5px rgba(0, 0, 0, 0.2);
     z-index: 5;
 }
 
-/* Efecto de brillo del pin */
 .instant-pin::after {
     content: "";
     position: absolute;
@@ -1055,7 +1034,6 @@ button {
     border-radius: 50%;
 }
 
-/* Contenedor de la imagen */
 .instant-img-wrapper {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -1072,16 +1050,16 @@ button {
 }
 
 /* =========================================================
-   iPHONE 17 PRO — FORZADO CON !IMPORTANT
+   iPHONE 17 PRO
    ========================================================= */
 
 .work-frame-iphone {
-    position: relative !important;
-    width: 100% !important;
-    max-width: 320px !important;
-    margin: 0 auto !important;
-    padding: 10px !important;
-    border-radius: 52px !important;
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 52px;
     background: linear-gradient(
         145deg,
         #4a4a4a 0%,
@@ -1092,33 +1070,26 @@ button {
         #2a2a2a 70%,
         #1a1a1a 85%,
         #3a3a3a 100%
-    ) !important;
+    );
     box-shadow:
         0 30px 60px rgba(0, 0, 0, 0.9),
         0 15px 30px rgba(0, 0, 0, 0.7),
         inset 0 2px 1px rgba(255, 255, 255, 0.15),
         inset 0 -2px 1px rgba(0, 0, 0, 0.6),
         inset 2px 0 1px rgba(255, 255, 255, 0.08),
-        inset -2px 0 1px rgba(0, 0, 0, 0.4) !important;
+        inset -2px 0 1px rgba(0, 0, 0, 0.4);
 }
 
 .iphone-notch {
     position: absolute;
-
     top: 22px;
     left: 50%;
-
     transform: translateX(-50%);
-
     width: 100px;
     height: 26px;
-
     border-radius: 20px;
-
     background: #000;
-
     z-index: 10;
-
     box-shadow:
         inset 0 0 0 1px rgba(255, 255, 255, 0.08),
         inset 0 1px 2px rgba(255, 255, 255, 0.05);
@@ -1126,42 +1097,24 @@ button {
 
 .iphone-notch::before {
     content: "";
-
     position: absolute;
-
     top: 50%;
     right: 12px;
-
     transform: translateY(-50%);
-
     width: 8px;
     height: 8px;
-
     border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 30% 30%,
-            #2a2a3e,
-            #000
-        );
-
+    background: radial-gradient(circle at 30% 30%, #2a2a3e, #000);
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .iphone-screen {
     position: relative;
-
     width: 100%;
-
     aspect-ratio: 9 / 19.5;
-
     border-radius: 44px;
-
     background: #000;
-
     overflow: hidden;
-
     box-shadow:
         inset 0 0 0 2px #000,
         inset 0 0 20px rgba(0, 0, 0, 0.5);
@@ -1169,53 +1122,37 @@ button {
 
 .device-status-bar {
     position: absolute;
-
     top: 0;
     left: 0;
     right: 0;
-
     display: flex;
-
     align-items: center;
     justify-content: space-between;
-
     padding: 14px 22px 0 22px;
-
     z-index: 5;
-
     color: #fff;
-
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Bunken", sans-serif;
-
     font-size: 13px;
-
     font-weight: 600;
-
     letter-spacing: -0.02em;
-
     pointer-events: none;
 }
 
 .device-time {
     font-size: 13px;
-
     font-weight: 600;
-
     letter-spacing: -0.02em;
 }
 
 .device-status-icons {
     display: flex;
-
     align-items: center;
-
     gap: 5px;
 }
 
 .device-icon {
     width: 16px;
     height: 11px;
-
     fill: currentColor;
 }
 
@@ -1226,376 +1163,62 @@ button {
 
 .iphone-scroll {
     position: absolute;
-
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
-
     overflow: hidden;
 }
 
 .iphone-scroll-img {
     width: 100%;
     height: auto;
-
     display: block;
-
     animation: iphone-scroll-anim 60s linear infinite;
 }
 
 @keyframes iphone-scroll-anim {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-100%);
-    }
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
 }
 
 .iphone-home-bar {
     position: absolute;
-
     bottom: 8px;
     left: 50%;
-
     transform: translateX(-50%);
-
     width: 130px;
     height: 5px;
-
     border-radius: 3px;
-
     background: #fff;
-
     opacity: 0.9;
-
     z-index: 6;
-
     pointer-events: none;
 }
 
 .work-frame-iphone::before {
     content: "";
-
     position: absolute;
-
     top: 120px;
     left: -3px;
-
     width: 3px;
     height: 30px;
-
     border-radius: 2px 0 0 2px;
-
-    background:
-        linear-gradient(180deg, #4a4a4a, #2a2a2a);
-
-    box-shadow:
-        inset 1px 0 1px rgba(255, 255, 255, 0.2),
-        0 0 3px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(180deg, #4a4a4a, #2a2a2a);
+    box-shadow: inset 1px 0 1px rgba(255, 255, 255, 0.2), 0 0 3px rgba(0, 0, 0, 0.6);
 }
 
 .work-frame-iphone::after {
     content: "";
-
     position: absolute;
-
     top: 170px;
     left: -3px;
-
     width: 3px;
     height: 55px;
-
     border-radius: 2px 0 0 2px;
-
-    background:
-        linear-gradient(180deg, #4a4a4a, #2a2a2a);
-
-    box-shadow:
-        inset 1px 0 1px rgba(255, 255, 255, 0.2),
-        0 0 3px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(180deg, #4a4a4a, #2a2a2a);
+    box-shadow: inset 1px 0 1px rgba(255, 255, 255, 0.2), 0 0 3px rgba(0, 0, 0, 0.6);
 }
-
-
-/* =========================================================
-   iMAC (Mantenido por si acaso, aunque ya no se usa)
-   ========================================================= */
-
-.work-frame-imac {
-    position: relative;
-
-    width: 100%;
-
-    max-width: 700px;
-
-    margin: 0 auto;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-}
-
-.imac-display {
-    position: relative;
-
-    width: 100%;
-
-    aspect-ratio: 16 / 10;
-
-    border-radius: 14px 14px 0 0;
-
-    padding: 18px 18px 44px 18px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #2a2a2a 0%,
-            #1a1a1a 50%,
-            #0d0d0d 100%
-        );
-
-    box-shadow:
-        0 25px 50px rgba(0, 0, 0, 0.85),
-        inset 0 2px 1px rgba(255, 255, 255, 0.1),
-        inset 0 -2px 2px rgba(0, 0, 0, 0.6);
-}
-
-.imac-camera {
-    position: absolute;
-
-    top: 7px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 5px;
-    height: 5px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 30% 30%,
-            #1a1a2e,
-            #000
-        );
-
-    box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.15),
-        0 0 2px rgba(0, 0, 0, 0.6);
-
-    z-index: 5;
-}
-
-.imac-screen {
-    position: relative;
-
-    width: 100%;
-
-    aspect-ratio: 16 / 9;
-
-    border-radius: 4px;
-
-    overflow: hidden;
-
-    background: #000;
-
-    box-shadow:
-        inset 0 0 0 1px rgba(0, 0, 0, 0.8),
-        inset 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.mac-content {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    overflow: hidden;
-
-    background: #000;
-}
-
-.mac-content img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center top;
-}
-
-.imac-neck {
-    position: relative;
-
-    width: 110px;
-    height: 45px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #1a1a1a 0%,
-            #2a2a2a 50%,
-            #1a1a1a 100%
-        );
-
-    box-shadow:
-        inset 1px 0 1px rgba(255, 255, 255, 0.08),
-        inset -1px 0 1px rgba(0, 0, 0, 0.5);
-}
-
-.imac-base {
-    position: relative;
-
-    width: 240px;
-    height: 12px;
-
-    border-radius: 0 0 8px 8px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #2a2a2a 0%,
-            #1a1a1a 50%,
-            #0d0d0d 100%
-        );
-
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        inset 0 -1px 2px rgba(0, 0, 0, 0.5),
-        0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.imac-base::after {
-    content: "";
-
-    position: absolute;
-
-    bottom: -4px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 280px;
-    height: 4px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(0, 0, 0, 0.6) 0%,
-            transparent 70%
-        );
-}
-
-
-/* =========================================================
-   iPAD (Mantenido por si acaso, aunque ya no se usa)
-   ========================================================= */
-
-.work-frame-ipad {
-    position: relative;
-
-    width: 100%;
-
-    max-width: 520px;
-
-    margin: 0 auto;
-
-    padding: 14px;
-
-    border-radius: 28px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #2a2a2a 0%,
-            #1a1a1a 25%,
-            #0d0d0d 50%,
-            #1a1a1a 75%,
-            #2a2a2a 100%
-        );
-
-    box-shadow:
-        0 25px 50px rgba(0, 0, 0, 0.85),
-        inset 0 2px 1px rgba(255, 255, 255, 0.1),
-        inset 0 -2px 1px rgba(0, 0, 0, 0.6),
-        inset 2px 0 1px rgba(255, 255, 255, 0.04),
-        inset -2px 0 1px rgba(0, 0, 0, 0.5);
-}
-
-.ipad-camera {
-    position: absolute;
-
-    top: 50%;
-    left: 5px;
-
-    transform: translateY(-50%);
-
-    width: 5px;
-    height: 5px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 30% 30%,
-            #2a2a3e,
-            #000
-        );
-
-    box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.1),
-        0 0 2px rgba(0, 0, 0, 0.8);
-
-    z-index: 5;
-}
-
-.ipad-screen {
-    position: relative;
-
-    width: 100%;
-
-    aspect-ratio: 4 / 3;
-
-    border-radius: 18px;
-
-    overflow: hidden;
-
-    background: #000;
-
-    box-shadow:
-        inset 0 0 0 2px #000,
-        inset 0 0 15px rgba(0, 0, 0, 0.5);
-}
-
-.ipad-content {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    overflow: hidden;
-
-    background: #000;
-}
-
-.ipad-content img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center top;
-}
-
 
 /* =========================================================
    WORK INFO — OCULTO
