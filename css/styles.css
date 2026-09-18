@@ -1378,9 +1378,6 @@ button {
     background: var(--black);
 }
 
-
-/* ---------- Layout: dos columnas centradas ---------- */
-
 .why-inner {
     display: grid;
 
@@ -1390,9 +1387,6 @@ button {
 
     align-items: center;
 }
-
-
-/* ---------- Columna izquierda: título + párrafo ---------- */
 
 .why-heading {
     max-width: 530px;
@@ -1414,9 +1408,6 @@ button {
     line-height: 1.8;
 }
 
-
-/* ---------- Columna derecha: lista de iconos ---------- */
-
 .why-brainstorm {
     display: flex;
 
@@ -1424,9 +1415,6 @@ button {
 
     gap: 4px;
 }
-
-
-/* ---------- Item con barrita naranja ---------- */
 
 .brainstorm-item {
     display: flex;
@@ -1464,9 +1452,6 @@ button {
     background: rgba(255, 90, 31, 0.04);
 }
 
-
-/* ---------- Icono con glow naranja ---------- */
-
 .brainstorm-check {
     width: 65px;
     height: 65px;
@@ -1492,9 +1477,6 @@ button {
         drop-shadow(0 0 14px rgba(255, 90, 31, 0.5));
 }
 
-
-/* ---------- Trazos de los íconos ---------- */
-
 .brainstorm-check path,
 .brainstorm-check circle,
 .brainstorm-check rect,
@@ -1506,38 +1488,69 @@ button {
     stroke-width: 1.5;
     stroke-linecap: round;
     stroke-linejoin: round;
+}
 
-    stroke-dasharray: 200;
-    stroke-dashoffset: 70;
-
+.brainstorm-item:nth-child(1) .brainstorm-check path,
+.brainstorm-item:nth-child(1) .brainstorm-check circle {
+    stroke-dasharray: 130;
+    stroke-dashoffset: 130;
     transition: stroke-dashoffset 0.9s ease;
 }
 
+.brainstorm-item:nth-child(1):hover .brainstorm-check path,
+.brainstorm-item:nth-child(1):hover .brainstorm-check circle {
+    stroke-dashoffset: 0;
+}
 
-/* ---------- Texto ---------- */
+.brainstorm-item:nth-child(2) .brainstorm-check path,
+.brainstorm-item:nth-child(2) .brainstorm-check rect {
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    transition: stroke-dashoffset 0.9s ease;
+}
+
+.brainstorm-item:nth-child(2):hover .brainstorm-check path,
+.brainstorm-item:nth-child(2):hover .brainstorm-check rect {
+    stroke-dashoffset: 0;
+}
+
+.brainstorm-item:nth-child(3) .brainstorm-check path {
+    stroke-dasharray: 90;
+    stroke-dashoffset: 90;
+    transition: stroke-dashoffset 0.9s ease;
+}
+
+.brainstorm-item:nth-child(3):hover .brainstorm-check path {
+    stroke-dashoffset: 0;
+}
+
+.brainstorm-item:nth-child(4) .brainstorm-check path,
+.brainstorm-item:nth-child(4) .brainstorm-check circle {
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    transition: stroke-dashoffset 0.9s ease;
+}
+
+.brainstorm-item:nth-child(4):hover .brainstorm-check path,
+.brainstorm-item:nth-child(4):hover .brainstorm-check circle {
+    stroke-dashoffset: 0;
+}
+
+.brainstorm-item:nth-child(5) .brainstorm-check path {
+    stroke-dasharray: 110;
+    stroke-dashoffset: 110;
+    transition: stroke-dashoffset 0.9s ease;
+}
+
+.brainstorm-item:nth-child(5):hover .brainstorm-check path {
+    stroke-dashoffset: 0;
+}
 
 .brainstorm-item span {
     color: #d2d2d2;
 
     font-size: 15px;
 }
-
-
-/* =========================================================
-   EFECTO DIBUJADO AL HOVER
-   Los íconos arrancan a medio dibujar (dashoffset 70).
-   Al hover se completan (dashoffset 0).
-   ========================================================= */
-
-.brainstorm-item:hover .brainstorm-check path,
-.brainstorm-item:hover .brainstorm-check circle,
-.brainstorm-item:hover .brainstorm-check rect,
-.brainstorm-item:hover .brainstorm-check line,
-.brainstorm-item:hover .brainstorm-check polyline,
-.brainstorm-item:hover .brainstorm-check polygon {
-    stroke-dashoffset: 0;
-}
-
 /* =========================================================
    GESTIÓN DIGITAL
    ========================================================= */
