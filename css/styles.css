@@ -510,16 +510,16 @@ button {
 }
 
 .hero-content {
-    max-width: 760px;
-
     flex: 1;
+
+    max-width: 900px;
 }
 
 .hero-logo {
     flex: 0 0 auto;
 
     width: 100%;
-    max-width: 480px;
+    max-width: 320px;
 
     aspect-ratio: 1 / 1;
 
@@ -545,6 +545,8 @@ button {
     line-height: 0.86;
 
     letter-spacing: -0.065em;
+
+    white-space: nowrap;
 }
 
 .hero h1 span {
