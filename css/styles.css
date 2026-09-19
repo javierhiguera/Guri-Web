@@ -2600,3 +2600,17 @@ button {
 .orbit-item.visible {
     opacity: 1;
 }
+
+
+/* =========================================================
+   ANCLAS — offset por header fijo
+   Evita que el header tape el título al hacer clic
+   en los links del menú (#planes, #trabajos, #contacto…)
+   ========================================================= */
+
+#planes,
+#trabajos,
+#contacto,
+#tiendas-online-coming-soon {
+    scroll-margin-top: 100px;
+}
