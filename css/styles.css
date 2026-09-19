@@ -1788,6 +1788,12 @@ button {
     animation-delay: 0.5s;
 }
 
+/* Ajuste de tamaño para que el SVG de WhatsApp se vea igual que las imágenes */
+.digital-icon-5 svg {
+    width: 100%;
+    height: 100%;
+}
+
 
 /* Los 7 íconos SVG (antes emojis) */
 
@@ -1915,7 +1921,6 @@ button {
 
     line-height: 1.7;
 }
-
 /* =========================================================
    PLANES
    ========================================================= */
