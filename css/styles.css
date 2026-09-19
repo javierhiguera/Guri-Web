@@ -1179,15 +1179,20 @@ button {
     pointer-events: none;
 }
 
-/* --- 4. BOTÓN DE DESBLOQUEO (Derecha) --- */
+/* --- 4. BOTÓN DE DESBLOQUEO (Derecha) --- 
+   Centrado verticalmente entre los dos volúmenes.
+   Volumen arriba: 155px a 205px (centro 180px).
+   Volumen abajo: 215px a 265px (centro 240px).
+   Punto medio: (180+240)/2 = 210px.
+   Altura 56px, entonces top = 210 - 28 = 182px. */
 .work-frame-iphone::before {
     content: "";
     position: absolute;
-    top: 178px; /* Centrado verticalmente entre los volúmenes */
+    top: 182px;
     right: -2px;
     width: 2px;
-    height: 56px; /* Un poco más largo que los volúmenes */
-    border-radius: 0 2px 2px 0; /* Redondeado hacia la derecha */
+    height: 56px; /* Un poco más largo que los volúmenes (50px) */
+    border-radius: 0 2px 2px 0;
     background: linear-gradient(180deg, #ff8a5c 0%, #e64a15 50%, #cc3d0a 100%);
     box-shadow: 
         inset -1px 0 1px rgba(255, 255, 255, 0.3), 
@@ -1195,22 +1200,33 @@ button {
         0 0 3px rgba(0, 0, 0, 0.8);
 }
 
-/* --- 1. BOTÓN DE ACCIÓN + 2. VOLUMEN ARRIBA + 3. VOLUMEN ABAJO (Izquierda) --- */
+/* --- 1. BOTÓN DE ACCIÓN + 2. VOLUMEN ARRIBA + 3. VOLUMEN ABAJO (Izquierda) ---
+   Se dibujan los 3 botones con 3 gradientes independientes.
+   
+   - Botón de Acción: 25px de alto (mitad de 50px), en top: 105px.
+   - Volumen Arriba: 50px de alto, en top: 155px.
+   - Volumen Abajo: 50px de alto (idéntico al de arriba), en top: 215px. */
 .work-frame-iphone::after {
     content: "";
     position: absolute;
-    top: 155px; /* Posición del Volumen Arriba */
+    top: 100px;
     left: -2px;
     width: 2px;
-    height: 50px; /* Altura base para los volúmenes */
-    border-radius: 2px 0 0 2px;
-    background: linear-gradient(180deg, #ff8a5c 0%, #e64a15 50%, #cc3d0a 100%);
-    box-shadow: 
-        inset 1px 0 1px rgba(255, 255, 255, 0.3), 
-        inset -1px 0 1px rgba(0, 0, 0, 0.5),
-        0 0 3px rgba(0, 0, 0, 0.8),
-        0 60px 0 0 #e64a15, /* 3. Volumen Abajo (idéntico al de arriba, desplazado 60px) */
-        0 -45px 0 -25px #e64a15; /* 1. Botón de Acción (mitad de grande: 50px - 25px = 25px) */
+    height: 170px;
+    background-image:
+        linear-gradient(180deg, #ff8a5c 0%, #e64a15 50%, #cc3d0a 100%),
+        linear-gradient(180deg, #ff8a5c 0%, #e64a15 50%, #cc3d0a 100%),
+        linear-gradient(180deg, #ff8a5c 0%, #e64a15 50%, #cc3d0a 100%);
+    background-size:
+        2px 25px,   /* 1. Botón de Acción (mitad de tamaño) */
+        2px 50px,   /* 2. Volumen Arriba */
+        2px 50px;   /* 3. Volumen Abajo */
+    background-position:
+        0 5px,      /* Botón de Acción: top global 105px */
+        0 55px,     /* Volumen Arriba: top global 155px */
+        0 115px;    /* Volumen Abajo: top global 215px */
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.8));
 }
 
 /* =========================================================
