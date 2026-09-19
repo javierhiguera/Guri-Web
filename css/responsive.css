@@ -10,7 +10,7 @@
 @media (max-width: 1100px) {
 
     :root {
-        --section-padding: 100px;
+        --section-padding: 70px;
     }
 
     .container {
@@ -26,146 +26,101 @@
     }
 
     .main-nav a {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .hero h1 {
         font-size: clamp(48px, 6vw, 76px);
     }
 
-    /* WORK LAYOUT - Ajuste para tablet */
-    .work-layout {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    .work-heading-left {
-        text-align: center;
-        align-items: center;
-    }
-
-    .work-heading-left .work-heading {
-        align-items: center;
-    }
-
-    .work-heading-left .section-heading h2 {
-        text-align: center;
-    }
-
-    .work-content-right {
-        width: 100%;
-    }
-
-    .plans-integrated-grid {
-        gap: 24px;
-    }
-
-    .digital-management-grid {
-        gap: 20px;
-    }
-
-
-    /* SERVICES — se apila */
-
     .services-inner {
-        grid-template-columns: 1fr;
-        gap: 50px;
-
-        min-height: auto;
-    }
-
-    .services-heading {
-        max-width: 100%;
-
-        text-align: center;
-
-        margin: 0 auto;
-
-        justify-self: center;
+        gap: 40px;
     }
 
     .services-heading h2 {
-        font-size: clamp(38px, 6vw, 56px);
+        font-size: clamp(36px, 5vw, 60px);
     }
 
     .services-orbit {
         max-width: 620px;
     }
 
-    .services-globe {
-        width: 100%;
+    .work-heading-left h2 {
+        font-size: clamp(40px, 5.5vw, 68px);
     }
 
-    .orbit-icon {
-        width: 56px;
-        height: 56px;
-        flex: 0 0 56px;
+    .work-frame-iphone {
+        max-width: 280px;
     }
 
-    .orbit-icon svg {
-        width: 24px;
-        height: 24px;
+    .process-map {
+        gap: 20px;
     }
 
-    .orbit-text h3 {
-        font-size: 15px;
+    .process-step-capsule {
+        max-width: 180px;
+        padding: 10px 12px;
     }
 
-    .orbit-text p {
+    .process-step-capsule h3 {
+        font-size: 18px;
+    }
+
+    .process-step-capsule p {
         font-size: 11px;
     }
 
-    .orbit-item {
-        max-width: 140px;
+    .why-inner {
+        gap: 60px;
     }
 
-
-    /* PROCESO — mantiene línea, ajusta tamaños */
-
-    .process-map {
-        min-height: 460px;
-    }
-
-    .process-step {
-        max-width: 220px;
-    }
-
-    .process-step-icon {
+    .brainstorm-icon {
         width: 64px;
         height: 64px;
+        flex: 0 0 64px;
     }
 
-    .process-step-icon svg {
+    .brainstorm-check {
         width: 28px;
         height: 28px;
     }
 
-    .process-step h3 {
-        font-size: 19px;
+    .digital-management-inner {
+        gap: 40px;
     }
 
-    .process-step p {
-        font-size: 12px;
-        max-width: 200px;
+    .digital-icon {
+        width: 72px;
+        height: 72px;
+    }
+
+    .plan-integrated {
+        padding: 32px;
+    }
+
+    .plans-contact {
+        gap: 50px;
     }
 }
 
 
 /* ---------------------------------------------------------
-   MENU MÓVIL / TABLET VERTICAL  (hasta 900px)
+   MENÚ MÓVIL / TABLET VERTICAL  (hasta 900px)
    --------------------------------------------------------- */
 
 @media (max-width: 900px) {
+
+    :root {
+        --section-padding: 60px;
+    }
 
     .container {
         width: min(100% - 40px, var(--container));
     }
 
-    /* Header por encima del nav desplegable para que
-       el botón de cerrar siga siendo clickeable */
+    /* HEADER */
 
     .site-header {
-        position: fixed;
         z-index: 1102;
     }
 
@@ -267,13 +222,11 @@
         display: none;
     }
 
-
     /* HERO */
 
     .hero {
-        min-height: auto;
-        padding-top: 80px;
-        padding-bottom: 90px;
+        padding-top: 100px;
+        padding-bottom: 60px;
 
         background-size:
             100% 100%,
@@ -286,21 +239,27 @@
             14px 14px;
     }
 
-    .hero-content {
-        max-width: 680px;
-    }
-
     .hero h1 {
         font-size: clamp(46px, 10vw, 72px);
-        line-height: 0.98;
+        line-height: 0.95;
+        white-space: normal;
     }
 
     .hero-content > p {
-        max-width: 560px;
+        font-size: 15px;
+        margin-top: 25px;
     }
 
+    .hero-actions {
+        margin-top: 30px;
+    }
 
-    /* SERVICIOS — mundo arriba, iconos en lista abajo */
+    /* SERVICES — se apila */
+
+    .services-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
 
     .services-orbit {
         aspect-ratio: auto;
@@ -308,11 +267,11 @@
         display: flex;
         flex-direction: column;
 
-        gap: 30px;
+        gap: 25px;
 
-        padding: 20px 0;
+        padding: 0;
 
-        max-width: 560px;
+        max-width: 100%;
     }
 
     .services-orbit::before {
@@ -321,9 +280,11 @@
 
     .services-globe {
         width: 55%;
-        max-width: 280px;
+        max-width: 260px;
 
         order: -1;
+
+        margin: 0 auto;
     }
 
     .orbit-item,
@@ -355,8 +316,44 @@
         align-items: flex-start;
     }
 
+    .orbit-icon {
+        width: 56px;
+        height: 56px;
+        flex: 0 0 56px;
+    }
 
-    /* TRABAJOS */
+    .orbit-icon svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .services-heading {
+        max-width: 100%;
+        text-align: center;
+        justify-self: center;
+        margin: 0 auto;
+    }
+
+    .services-heading h2 {
+        font-size: clamp(34px, 8vw, 52px);
+    }
+
+    /* WHY — se apila */
+
+    .why-inner {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .why-heading {
+        max-width: 100%;
+    }
+
+    .why-heading > p {
+        max-width: 100%;
+    }
+
+    /* WORK — se apila */
 
     .work-layout {
         grid-template-columns: 1fr;
@@ -364,47 +361,38 @@
     }
 
     .work-heading-left {
-        text-align: center;
         align-items: center;
+        text-align: center;
     }
 
-    .work-heading-left .work-heading {
-        align-items: center;
+    .work-heading-left h2 {
+        text-align: center;
     }
 
-    .work-heading-left .section-heading h2 {
-        text-align: center;
+    .work-heading-left .text-link {
+        margin-top: 20px;
     }
 
     .work-iphone-wrapper {
-        max-width: 280px;
+        max-width: 260px;
         margin: 0 auto;
     }
 
-    .work-instant-photos {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
+    /* PROCESS — se apila vertical, sin fondo de grilla */
+
+    .process {
+        background-image: none;
+        padding: 60px 0;
     }
-
-    .instant-photo {
-        width: 120px;
-    }
-
-
-    /* PROCESO — se apila vertical, sin línea */
 
     .process-map {
-        display: flex;
         flex-direction: column;
-
-        aspect-ratio: auto;
 
         gap: 50px;
 
-        padding: 20px 0;
+        padding: 0;
 
-        min-height: auto;
+        align-items: center;
     }
 
     .process-step,
@@ -414,48 +402,43 @@
     .process-step-4 {
         position: relative;
 
-        top: auto;
-        left: auto;
-        right: auto;
-        bottom: auto;
+        flex-direction: column;
 
-        transform: none;
-
-        max-width: 100%;
+        max-width: 320px;
         width: 100%;
-
-        align-self: auto;
-
-        margin-top: 0;
     }
 
-    /* La línea de fondo se oculta en mobile */
-
-    .process {
-        background-image: none;
+    .process-step-2 .process-step-capsule,
+    .process-step-4 .process-step-capsule {
+        margin-top: 35px;
+        margin-bottom: 0;
     }
 
+    .process-step-capsule {
+        max-width: 100%;
+    }
 
-    /* WHY */
+    /* GESTIÓN DIGITAL — se apila */
 
-    .why-inner {
+    .digital-management-inner {
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 40px;
     }
 
-    .why-content {
-        max-width: 700px;
+    .digital-management-icons {
+        max-width: 420px;
     }
 
-
-    /* GESTIÓN DIGITAL */
-
-    .digital-management-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .digital-management-heading {
+        max-width: 100%;
+        text-align: center;
     }
 
+    .digital-management-heading .section-heading {
+        text-align: center;
+    }
 
-    /* PLANES */
+    /* PLANES — una columna */
 
     .plans-integrated-grid {
         grid-template-columns: 1fr;
@@ -465,34 +448,25 @@
     .plans-contact {
         grid-template-columns: 1fr;
         gap: 50px;
+        margin-top: 60px;
+        padding-top: 60px;
     }
 
-    .plans-custom,
     .plans-contact-copy {
-        max-width: 700px;
+        max-width: 100%;
     }
 
     .quote-form-grid {
         grid-template-columns: 1fr 1fr;
     }
 
-    .plans-coming-soon {
-        margin-top: 40px;
-        padding: 25px;
-    }
-
-    .plans-coming-soon h3 {
-        font-size: 28px;
-    }
-
-
     /* FINAL CTA */
 
     .final-cta {
-        padding-top: 90px;
-        padding-bottom: 90px;
+        padding: 70px 0;
 
         background-size:
+            100% 100%,
             400px 400px,
             70px 70px,
             70px 70px,
@@ -506,18 +480,18 @@
         display: inline;
     }
 
-
     /* FOOTER */
 
     .footer-inner {
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
+        gap: 40px;
     }
 
     .footer-bottom {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
+        padding: 25px 0;
+        min-height: auto;
     }
 }
 
@@ -529,7 +503,7 @@
 @media (max-width: 640px) {
 
     :root {
-        --section-padding: 76px;
+        --section-padding: 55px;
     }
 
     .container {
@@ -561,12 +535,11 @@
         padding-right: 16px;
     }
 
-
     /* HERO */
 
     .hero {
-        padding-top: 62px;
-        padding-bottom: 70px;
+        padding-top: 90px;
+        padding-bottom: 50px;
 
         background-size:
             100% 100%,
@@ -581,18 +554,20 @@
 
     .hero h1 {
         font-size: clamp(42px, 13vw, 62px);
-        line-height: 0.96;
+        line-height: 0.95;
     }
 
     .hero-content > p {
-        font-size: 15px;
-        line-height: 1.65;
+        font-size: 14px;
+        line-height: 1.6;
+        margin-top: 20px;
     }
 
     .hero-actions {
         flex-direction: column;
         align-items: stretch;
         gap: 10px;
+        margin-top: 28px;
     }
 
     .hero-actions .button,
@@ -602,29 +577,19 @@
     }
 
     .section-heading {
-        margin-bottom: 50px;
+        margin-bottom: 35px;
     }
 
     .section-heading h2 {
-        font-size: clamp(34px, 10vw, 48px);
+        font-size: clamp(32px, 9vw, 44px);
         line-height: 1;
     }
 
-    .section-intro {
-        font-size: 14px;
-        line-height: 1.65;
-    }
-
-
-    /* SERVICIOS */
-
-    .services-heading h2 {
-        font-size: clamp(34px, 10vw, 48px);
-    }
+    /* SERVICES */
 
     .services-globe {
-        width: 70%;
-        max-width: 240px;
+        width: 65%;
+        max-width: 220px;
     }
 
     .orbit-icon {
@@ -646,54 +611,63 @@
         font-size: 11px;
     }
 
-
-    /* TRABAJOS */
-
-    .work-layout {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    .services-heading h2 {
+        font-size: clamp(30px, 8vw, 42px);
     }
 
-    .work-heading-left .section-heading h2 {
-        font-size: clamp(30px, 9vw, 40px);
+    /* WHY */
+
+    .why-inner {
+        gap: 40px;
+    }
+
+    .brainstorm-item {
+        gap: 14px;
+        padding: 12px 16px 12px 0;
+    }
+
+    .brainstorm-icon {
+        width: 56px;
+        height: 56px;
+        flex: 0 0 56px;
+    }
+
+    .brainstorm-check {
+        width: 24px;
+        height: 24px;
+    }
+
+    .brainstorm-item span {
+        font-size: 14px;
+    }
+
+    /* WORK */
+
+    .work-heading-left h2 {
+        font-size: clamp(30px, 9vw, 42px);
     }
 
     .work-iphone-wrapper {
         max-width: 220px;
     }
 
-    .work-instant-photos {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+    /* PROCESS */
+
+    .process {
+        padding: 55px 0;
     }
-
-    .instant-photo {
-        width: 100px;
-        padding: 6px 6px 20px 6px;
-    }
-
-    .instant-pin {
-        width: 18px;
-        height: 18px;
-        top: -8px;
-    }
-
-    .instant-pin::after {
-        width: 5px;
-        height: 5px;
-    }
-
-
-    /* PROCESO */
 
     .process-map {
         gap: 40px;
     }
 
+    .process-step {
+        max-width: 100%;
+    }
+
     .process-step-icon {
-        width: 56px;
-        height: 56px;
+        width: 64px;
+        height: 64px;
     }
 
     .process-step-icon svg {
@@ -701,147 +675,90 @@
         height: 28px;
     }
 
-    .process-step h3 {
-        font-size: 17px;
+    .process-step-capsule {
+        max-width: 100%;
     }
 
-    .process-step p {
-        font-size: 12px;
-    }
-
-
-    /* BRAINSTORM */
-
-    .brainstorm-item {
-        gap: 12px;
-        padding: 10px 0;
-    }
-
-    .brainstorm-check {
-        width: 20px;
-        height: 20px;
-        flex: 0 0 20px;
-    }
-
-    .brainstorm-item span {
-        font-size: 14px;
-    }
-
-
-    /* GESTIÓN DIGITAL */
-
-    .digital-management-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    .digital-logo {
-        width: 48px;
-        height: 48px;
-        margin-bottom: 15px;
-    }
-
-    .digital-logo img {
-        width: 30px;
-        height: 30px;
-    }
-
-    .digital-management-item h3 {
+    .process-step-capsule h3 {
         font-size: 18px;
     }
 
-    .digital-management-item p {
-        font-size: 11px;
+    .process-step-capsule p {
+        font-size: 12px;
     }
 
+    /* GESTIÓN DIGITAL */
+
+    .digital-management-icons {
+        max-width: 340px;
+    }
+
+    .digital-icon {
+        width: 58px;
+        height: 58px;
+    }
+
+    .digital-emoji {
+        width: 34px;
+        height: 34px;
+    }
+
+    .digital-emoji-2 {
+        width: 40px;
+        height: 40px;
+    }
+
+    .digital-emoji-3 {
+        width: 38px;
+        height: 38px;
+    }
 
     /* PLANES */
 
-    .plans-integrated-grid {
-        gap: 18px;
-    }
-
-    .plan-card.plan-integrated {
-        padding: 24px 20px;
-    }
-
-    .plan-label {
-        font-size: 11px;
-        letter-spacing: 0.12em;
-    }
-
-    .plan-integrated-description {
-        font-size: 14px;
-        line-height: 1.55;
-    }
-
-    .plan-service {
-        padding: 18px 0;
+    .plan-integrated {
+        padding: 26px 22px;
     }
 
     .plan-integrated .plan-service h4 {
-        font-size: 17px;
+        font-size: 20px;
     }
 
     .plan-integrated .plan-service p {
-        font-size: 12px;
-        line-height: 1.5;
-    }
-
-    .plan-integrated .plan-features {
-        gap: 8px;
+        font-size: 13px;
     }
 
     .plan-integrated .plan-features li {
         font-size: 12px;
-        line-height: 1.45;
     }
 
     .plans-coming-soon {
-        margin-top: 35px;
-        padding: 20px;
+        margin-top: 40px;
+        padding: 24px;
     }
 
     .plans-coming-soon h3 {
-        font-size: 24px;
+        font-size: 26px;
     }
 
     .plans-coming-soon p {
         font-size: 13px;
     }
 
-    .coming-soon-label {
-        font-size: 11px;
-    }
-
-    .coming-soon-spinner {
-        width: 11px;
-        height: 11px;
-    }
+    /* FORM */
 
     .plans-contact {
-        gap: 42px;
-        margin-top: 60px;
+        gap: 40px;
+        margin-top: 50px;
         padding-top: 50px;
     }
 
-    .plans-custom h3,
     .plans-contact-copy h3 {
-        font-size: 27px;
-        line-height: 1.05;
+        font-size: 30px;
     }
-
-    .plans-custom p,
-    .plans-contact-copy p {
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
-
-    /* FORM */
 
     .quote-form {
         padding: 22px 18px;
+        margin-top: 20px;
     }
 
     .quote-form-grid {
@@ -853,34 +770,28 @@
         grid-column: auto;
     }
 
-    .form-field label {
-        font-size: 11px;
-    }
-
     .form-field input,
     .form-field select,
     .form-field textarea {
         min-height: 46px;
-        padding: 12px;
         font-size: 13px;
     }
 
     .form-field textarea {
-        min-height: 130px;
+        min-height: 120px;
     }
 
     .quote-form-submit {
         width: 100%;
     }
 
-
     /* FINAL CTA */
 
     .final-cta {
-        padding-top: 76px;
-        padding-bottom: 76px;
+        padding: 60px 0;
 
         background-size:
+            100% 100%,
             250px 250px,
             50px 50px,
             50px 50px,
@@ -891,29 +802,28 @@
     }
 
     .final-cta h2 {
-        font-size: clamp(38px, 12vw, 56px);
-        line-height: 0.98;
+        font-size: clamp(38px, 11vw, 52px);
     }
 
     .final-cta h2 span {
         display: block;
     }
 
-
     /* FOOTER */
 
     .footer-inner {
         grid-template-columns: 1fr 1fr;
-        gap: 38px 24px;
+        gap: 35px 20px;
+        padding-bottom: 40px;
     }
 
     .footer-links {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 25px;
     }
 
-    .footer-links h4,
-    .footer-links strong {
+    .footer-links strong,
+    .footer-links h4 {
         font-size: 11px;
     }
 
@@ -921,21 +831,8 @@
         font-size: 12px;
     }
 
-    .footer-bottom {
-        gap: 10px;
-        min-height: auto;
-        padding: 25px 0;
-    }
-
-    .footer-copyright {
-        font-size: 10px;
-    }
-
-    .footer-credit {
-        font-size: 10px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
+    .site-footer {
+        padding-top: 50px;
     }
 
     .footer-credit img {
@@ -971,11 +868,8 @@
         font-size: 40px;
     }
 
-
-    /* SERVICIOS */
-
     .services-globe {
-        width: 75%;
+        width: 70%;
         max-width: 200px;
     }
 
@@ -998,54 +892,37 @@
         font-size: 10px;
     }
 
-
-    /* TRABAJOS */
-
     .work-iphone-wrapper {
-        max-width: 180px;
+        max-width: 200px;
     }
 
-    .work-instant-photos {
-        gap: 10px;
+    .digital-management-icons {
+        max-width: 280px;
     }
 
-    .instant-photo {
-        width: 80px;
-        padding: 5px 5px 16px 5px;
+    .digital-icon {
+        width: 48px;
+        height: 48px;
     }
 
-    .instant-pin {
-        width: 14px;
-        height: 14px;
-        top: -6px;
+    .digital-emoji {
+        width: 28px;
+        height: 28px;
     }
 
-    .instant-pin::after {
-        width: 4px;
-        height: 4px;
+    .digital-emoji-2 {
+        width: 34px;
+        height: 34px;
     }
 
-
-    /* GESTIÓN DIGITAL */
-
-    .digital-management-item {
-        min-height: 115px;
-        padding: 15px 10px;
+    .digital-emoji-3 {
+        width: 30px;
+        height: 30px;
     }
 
-    .digital-management-item h3 {
-        font-size: 13px;
+    .plan-integrated {
+        padding: 22px 18px;
     }
-
-
-    /* PLANES */
-
-    .plan-card.plan-integrated {
-        padding: 20px 16px;
-    }
-
-
-    /* FOOTER */
 
     .footer-inner {
         grid-template-columns: 1fr;
