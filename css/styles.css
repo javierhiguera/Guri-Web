@@ -1676,7 +1676,7 @@ button {
    ========================================================= */
 
 .digital-management {
-    background: var(--black); 
+    background: var(--black);
 }
 
 .digital-management-inner {
@@ -1734,7 +1734,7 @@ button {
 }
 
 
-/* Posiciones de los íconos reales — Distribuidos para no chocar */
+/* Posiciones de los íconos reales */
 
 .digital-icon-1 {
     top: 5%;
@@ -1764,7 +1764,6 @@ button {
     animation: float-4 6.5s ease-in-out infinite;
 }
 
-/* NUEVO: Posición del ícono de WhatsApp Business */
 .digital-icon-5 {
     top: 45%;
     right: 20%;
@@ -1774,7 +1773,7 @@ button {
 }
 
 
-/* Los 7 íconos SVG (antes emojis) */
+/* Los 7 íconos SVG */
 
 .digital-emoji {
     position: absolute;
@@ -1802,7 +1801,7 @@ button {
 }
 
 
-/* Posiciones dispersas y desordenadas de los 7 íconos — Ajustadas para no pisarse */
+/* Posiciones dispersas y desordenadas de los 7 íconos */
 
 .digital-emoji-1 {
     top: 25%;
