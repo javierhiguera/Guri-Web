@@ -1065,16 +1065,16 @@ button {
     margin: 0 auto;
     padding: 10px;
     border-radius: 52px;
-    background: linear-gradient(
+   background: linear-gradient(
         145deg,
-        #4a4a4a 0%,
-        #3a3a3a 15%,
-        #2a2a2a 30%,
-        #3a3a3a 45%,
-        #4a4a4a 55%,
-        #2a2a2a 70%,
-        #1a1a1a 85%,
-        #3a3a3a 100%
+        #ff8a5c 0%,
+        #e64a15 15%,
+        #cc3d0a 30%,
+        #e64a15 45%,
+        #ff5a1f 55%,
+        #cc3d0a 70%,
+        #802200 85%,
+        #e64a15 100%
     );
     box-shadow:
         0 30px 60px rgba(0, 0, 0, 0.9),
@@ -1228,7 +1228,7 @@ button {
     width: 3px;
     height: 55px;
     border-radius: 2px 0 0 2px;
-    background: linear-gradient(180deg, #4a4a4a, #2a2a2a);
+    background: linear-gradient(180deg, #ff5a1f, #cc3d0a);
     box-shadow: inset 1px 0 1px rgba(255, 255, 255, 0.2), 0 0 3px rgba(0, 0, 0, 0.6);
 }
 
