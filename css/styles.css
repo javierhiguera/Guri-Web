@@ -698,7 +698,8 @@ button {
 .services-heading h2 {
     font-family: "Xenois", serif;
 
-    font-size: clamp(42px, 5vw, 76px);
+    /* Aumentado 15%: 42px -> 48px, 5vw -> 5.75vw, 76px -> 87px */
+    font-size: clamp(48px, 5.75vw, 87px);
 
     line-height: 0.96;
 
@@ -743,41 +744,7 @@ button {
     }
 }
 
-
-/* Anillo orbital decorativo alrededor del mundo */
-
-.services-orbit::before {
-    content: "";
-
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    width: 100%;
-    height: 100%;
-
-    transform: translate(-50%, -50%) rotate(-20deg);
-
-    border: 1px dashed rgba(255, 90, 31, 0.25);
-
-    border-radius: 50%;
-
-    pointer-events: none;
-
-    animation: orbit-rotate 50s linear infinite;
-
-    z-index: 0;
-}
-
-@keyframes orbit-rotate {
-    0% {
-        transform: translate(-50%, -50%) rotate(-20deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(340deg);
-    }
-}
+/* NOTA: Se eliminó .services-orbit::before y @keyframes orbit-rotate para quitar la línea de la órbita */
 
 
 /* =========================================================
@@ -797,7 +764,7 @@ button {
 
     color: var(--white);
 
-    max-width: 180px; /* Aumentado ligeramente para que el texto respire mejor */
+    max-width: 180px;
 
     z-index: 3;
 
@@ -878,7 +845,8 @@ button {
 
     font-family: "Xenois", serif;
 
-    font-size: 16px;
+    /* Aumentado 15%: 16px -> 18px */
+    font-size: 18px;
     line-height: 1.15;
 
     letter-spacing: -0.025em;
@@ -891,7 +859,8 @@ button {
 
     color: var(--gray);
 
-    font-size: 11px;
+    /* Aumentado 15%: 11px -> 13px */
+    font-size: 13px;
     line-height: 1.45;
 
     transition: color var(--transition);
@@ -904,13 +873,14 @@ button {
 
 /* =========================================================
    POSICIONES DISPERSAS ALREDEDOR DEL MUNDO
+   (Modificadas para ser más orgánicas y menos alineadas)
    ========================================================= */
 
 /* 1. Arriba (ligeramente a la izquierda) 
    - El texto va arriba, el icono abajo tocando la línea. */
 .orbit-item-1 {
-    top: 2%;
-    left: 45%;
+    top: 10%;
+    left: 35%;
     --x: -50%;
     --y: -50%;
     transform: translate(var(--x), var(--y));
@@ -921,8 +891,8 @@ button {
 /* 2. Derecha (ligeramente arriba)
    - El icono a la izquierda tocando la línea, el texto a la derecha. */
 .orbit-item-2 {
-    top: 45%;
-    right: 2%;
+    top: 25%;
+    right: 8%;
     --x: 50%;
     --y: -50%;
     transform: translate(var(--x), var(--y));
@@ -933,8 +903,8 @@ button {
 /* 3. Abajo (ligeramente a la derecha)
    - El icono arriba tocando la línea, el texto abajo. */
 .orbit-item-3 {
-    bottom: 2%;
-    left: 55%;
+    bottom: 10%;
+    left: 60%;
     --x: -50%;
     --y: 50%;
     transform: translate(var(--x), var(--y));
@@ -945,8 +915,8 @@ button {
 /* 4. Izquierda (ligeramente abajo)
    - El texto a la izquierda, el icono a la derecha tocando la línea. */
 .orbit-item-4 {
-    top: 55%;
-    left: 2%;
+    top: 60%;
+    left: 8%;
     --x: -50%;
     --y: -50%;
     transform: translate(var(--x), var(--y));
