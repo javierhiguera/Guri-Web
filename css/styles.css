@@ -1193,7 +1193,7 @@ button {
         inset -1px 0 1px rgba(255, 255, 255, 0.3), 
         inset 1px 0 1px rgba(0, 0, 0, 0.5),
         0 0 3px rgba(0, 0, 0, 0.8),
-        -322px -78px 0 0 #e64a15; /* 1. Botón de Acción (Izquierda Arriba) */
+        -324px -88px 0 0 #e64a15; /* 1. Botón de Acción (Izquierda Arriba) */
 }
 
 /* --- 2. VOLUMEN ARRIBA + 3. VOLUMEN ABAJO (Izquierda) --- */
