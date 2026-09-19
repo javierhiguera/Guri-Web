@@ -1197,7 +1197,7 @@ button {
 .process {
     position: relative;
 
-    background-color: var(--board);
+    background-color: var(--black);
 
     background-image:
         radial-gradient(
@@ -1237,6 +1237,8 @@ button {
         center center,
         center center;
 
+    padding: 80px 0;
+
     overflow: hidden;
 }
 
@@ -1247,7 +1249,7 @@ button {
 
     max-width: 100%;
 
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 
     text-align: center;
 }
@@ -1257,13 +1259,21 @@ button {
 
     width: 100%;
 
-    min-height: 700px;
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 30px;
 }
 
 .process-step {
-    position: absolute;
+    position: relative;
 
     z-index: 3;
+
+    flex: 1;
 
     display: flex;
     flex-direction: column;
@@ -1273,8 +1283,6 @@ button {
     text-align: center;
 
     padding: 0;
-
-    transform: translate(-50%, -50%);
 }
 
 .process-step-icon {
@@ -1421,7 +1429,7 @@ button {
 }
 
 
-/* Pasos 2 y 4 — cápsula arriba (invertido) */
+/* Pasos 2 y 4 — invertir orden visual para que todos queden con ícono arriba */
 
 .process-step-2,
 .process-step-4 {
@@ -1433,29 +1441,6 @@ button {
     margin-top: 0;
 
     margin-bottom: 12px;
-}
-
-
-/* Posiciones — distribución en zigzag (camino) */
-
-.process-step-1 {
-    top: 30%;
-    left: 12%;
-}
-
-.process-step-2 {
-    top: 55%;
-    left: 35%;
-}
-
-.process-step-3 {
-    top: 30%;
-    left: 58%;
-}
-
-.process-step-4 {
-    top: 55%;
-    left: 82%;
 }
 
 /* =========================================================
