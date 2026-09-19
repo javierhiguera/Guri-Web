@@ -157,7 +157,8 @@ document.addEventListener("DOMContentLoaded", () => {
             ".process-step",
             ".plan-card",
             ".brainstorm-item",
-            ".digital-management-item"
+            ".digital-icon",
+            ".digital-emoji"
         ].join(", ")
     );
 
