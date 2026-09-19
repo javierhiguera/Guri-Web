@@ -499,11 +499,41 @@ button {
 }
 
 .hero-inner {
-    display: block;
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 60px;
 }
 
 .hero-content {
+    flex: 1;
+
     max-width: 900px;
+}
+
+.hero-logo {
+    flex: 0 0 auto;
+
+    width: 100%;
+    max-width: 450px;
+
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-logo img {
+    width: 100%;
+    height: auto;
+
+    filter:
+        drop-shadow(0 0 30px rgba(255, 90, 31, 0.4))
+        drop-shadow(0 0 60px rgba(255, 90, 31, 0.2));
 }
 
 .hero h1 {
