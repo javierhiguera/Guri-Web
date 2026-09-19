@@ -1676,18 +1676,14 @@ button {
    ========================================================= */
 
 .digital-management {
-    background: var(--black); /* 👈 Fondo negro */
+    background: var(--black); 
 }
 
 .digital-management-inner {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 60px;
-
     align-items: center;
-
     min-height: 600px;
 }
 
@@ -1696,12 +1692,9 @@ button {
 
 .digital-management-icons {
     position: relative;
-
     width: 100%;
     max-width: 600px;
-
     aspect-ratio: 1 / 1;
-
     margin: 0 auto;
 }
 
@@ -1710,23 +1703,18 @@ button {
 
 .digital-icon {
     position: absolute;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 90px;
     height: 90px;
-
     color: var(--orange);
 }
 
 .digital-icon img {
     width: 100%;
     height: 100%;
-
     object-fit: contain;
-
     filter:
         drop-shadow(0 0 8px rgba(255, 90, 31, 0.5))
         drop-shadow(0 0 20px rgba(255, 90, 31, 0.2));
@@ -1735,45 +1723,42 @@ button {
 .digital-icon svg {
     width: 70%;
     height: 70%;
-
     stroke: currentColor;
     fill: none;
-
     stroke-width: 1.5;
     stroke-linecap: round;
     stroke-linejoin: round;
-
     filter:
         drop-shadow(0 0 8px rgba(255, 90, 31, 0.5))
         drop-shadow(0 0 20px rgba(255, 90, 31, 0.2));
 }
 
 
-/* Posiciones de los íconos reales — MÁS DESORDENADOS + ROTACIÓN */
+/* Posiciones de los íconos reales — Distribuidos para no chocar */
 
 .digital-icon-1 {
-    top: 2%;
-    left: 15%;
+    top: 5%;
+    left: 10%;
     rotate: -15deg;
     animation: float-1 6s ease-in-out infinite;
 }
 
 .digital-icon-2 {
-    top: 22%;
-    right: 0%;
+    top: 15%;
+    right: 5%;
     rotate: 25deg;
     animation: float-2 7s ease-in-out infinite;
 }
 
 .digital-icon-3 {
-    bottom: 8%;
+    bottom: 10%;
     left: 5%;
     rotate: 10deg;
     animation: float-3 8s ease-in-out infinite;
 }
 
 .digital-icon-4 {
-    bottom: 2%;
+    bottom: 5%;
     right: 15%;
     rotate: -20deg;
     animation: float-4 6.5s ease-in-out infinite;
@@ -1781,17 +1766,11 @@ button {
 
 /* NUEVO: Posición del ícono de WhatsApp Business */
 .digital-icon-5 {
-    top: 48%;
-    right: 25%;
+    top: 45%;
+    right: 20%;
     rotate: -8deg;
     animation: float-2 9s ease-in-out infinite;
     animation-delay: 0.5s;
-}
-
-/* Ajuste de tamaño para que el SVG de WhatsApp se vea igual que las imágenes */
-.digital-icon-5 svg {
-    width: 100%;
-    height: 100%;
 }
 
 
@@ -1799,20 +1778,14 @@ button {
 
 .digital-emoji {
     position: absolute;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 44px;
     height: 44px;
-
     color: var(--orange);
-
     user-select: none;
-
     pointer-events: none;
-
     filter:
         drop-shadow(0 0 8px rgba(255, 90, 31, 0.6))
         drop-shadow(0 0 16px rgba(255, 90, 31, 0.3));
@@ -1821,21 +1794,19 @@ button {
 .digital-emoji svg {
     width: 100%;
     height: 100%;
-
     stroke: currentColor;
     fill: none;
-
     stroke-width: 1.5;
     stroke-linecap: round;
     stroke-linejoin: round;
 }
 
 
-/* Posiciones dispersas y desordenadas de los 7 íconos */
+/* Posiciones dispersas y desordenadas de los 7 íconos — Ajustadas para no pisarse */
 
 .digital-emoji-1 {
-    top: 35%;
-    left: 2%;
+    top: 25%;
+    left: 0%;
     width: 40px;
     height: 40px;
     rotate: 15deg;
@@ -1861,8 +1832,8 @@ button {
 }
 
 .digital-emoji-4 {
-    top: 15%;
-    right: 5%;
+    top: 5%;
+    right: 30%;
     width: 44px;
     height: 44px;
     rotate: -10deg;
@@ -1870,7 +1841,7 @@ button {
 }
 
 .digital-emoji-5 {
-    bottom: 2%;
+    bottom: 5%;
     left: 40%;
     width: 46px;
     height: 46px;
@@ -1881,7 +1852,7 @@ button {
 
 .digital-emoji-6 {
     top: 65%;
-    left: 15%;
+    left: 10%;
     width: 38px;
     height: 38px;
     rotate: -40deg;
@@ -1891,7 +1862,7 @@ button {
 
 .digital-emoji-7 {
     bottom: 35%;
-    right: 2%;
+    right: 0%;
     width: 42px;
     height: 42px;
     rotate: 12deg;
@@ -1912,15 +1883,12 @@ button {
 
 .digital-management-heading .section-heading p {
     max-width: 500px;
-
     margin-top: 22px;
-
     color: var(--gray);
-
     font-size: 15px;
-
     line-height: 1.7;
 }
+
 /* =========================================================
    PLANES
    ========================================================= */
