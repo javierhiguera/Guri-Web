@@ -905,37 +905,43 @@ button {
    POSICIONES DISPERSAS ALREDEDOR DEL MUNDO
    ========================================================= */
 
+/* 1. Arriba (ligeramente a la izquierda) 
+   - El texto va arriba, el icono abajo tocando la línea. */
 .orbit-item-1 {
-    top: 12%;
-    left: 12%;
-
+    top: 5%;
+    left: 45%;
+    margin-left: -75px; /* Centra horizontalmente el bloque de 150px */
+    flex-direction: column-reverse; 
     animation: float-1 6s ease-in-out infinite;
 }
 
+/* 2. Derecha (ligeramente arriba)
+   - El icono a la izquierda tocando la línea, el texto a la derecha. */
 .orbit-item-2 {
-    top: 12%;
-    right: 12%;
-
+    top: 45%;
+    right: 5%;
+    margin-top: -38px; /* Centra verticalmente el icono de 76px */
+    flex-direction: row-reverse; 
     animation: float-2 7s ease-in-out infinite;
 }
 
+/* 3. Abajo (ligeramente a la derecha)
+   - El icono arriba tocando la línea, el texto abajo. */
 .orbit-item-3 {
-    bottom: 12%;
-    left: 12%;
-
-    /* Invierte el orden para que el texto quede hacia afuera y no tape el globo */
-    flex-direction: column-reverse;
-
+    bottom: 5%;
+    left: 55%;
+    margin-left: -75px; /* Centra horizontalmente el bloque de 150px */
+    flex-direction: column; 
     animation: float-3 8s ease-in-out infinite;
 }
 
+/* 4. Izquierda (ligeramente abajo)
+   - El texto a la izquierda, el icono a la derecha tocando la línea. */
 .orbit-item-4 {
-    bottom: 12%;
-    right: 12%;
-
-    /* Invierte el orden para que el texto quede hacia afuera y no tape el globo */
-    flex-direction: column-reverse;
-
+    top: 55%;
+    left: 5%;
+    margin-top: -38px; /* Centra verticalmente el icono de 76px */
+    flex-direction: row; 
     animation: float-4 6.5s ease-in-out infinite;
 }
 
