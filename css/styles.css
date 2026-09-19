@@ -797,7 +797,7 @@ button {
 
     color: var(--white);
 
-    max-width: 150px;
+    max-width: 180px; /* Aumentado ligeramente para que el texto respire mejor */
 
     z-index: 3;
 
@@ -806,9 +806,10 @@ button {
         transform var(--transition);
 }
 
+/* El hover ahora respeta las variables de posición para no romper el layout */
 .orbit-item:hover {
     color: var(--orange);
-    transform: scale(1.08);
+    transform: translate(var(--x), var(--y)) scale(1.08);
 }
 
 
@@ -908,10 +909,12 @@ button {
 /* 1. Arriba (ligeramente a la izquierda) 
    - El texto va arriba, el icono abajo tocando la línea. */
 .orbit-item-1 {
-    top: 5%;
+    top: 2%;
     left: 45%;
-    margin-left: -75px; /* Centra horizontalmente el bloque de 150px */
-    flex-direction: column-reverse; 
+    --x: -50%;
+    --y: -50%;
+    transform: translate(var(--x), var(--y));
+    flex-direction: column-reverse;
     animation: float-1 6s ease-in-out infinite;
 }
 
@@ -919,19 +922,23 @@ button {
    - El icono a la izquierda tocando la línea, el texto a la derecha. */
 .orbit-item-2 {
     top: 45%;
-    right: 5%;
-    margin-top: -38px; /* Centra verticalmente el icono de 76px */
-    flex-direction: row-reverse; 
+    right: 2%;
+    --x: 50%;
+    --y: -50%;
+    transform: translate(var(--x), var(--y));
+    flex-direction: row;
     animation: float-2 7s ease-in-out infinite;
 }
 
 /* 3. Abajo (ligeramente a la derecha)
    - El icono arriba tocando la línea, el texto abajo. */
 .orbit-item-3 {
-    bottom: 5%;
+    bottom: 2%;
     left: 55%;
-    margin-left: -75px; /* Centra horizontalmente el bloque de 150px */
-    flex-direction: column; 
+    --x: -50%;
+    --y: 50%;
+    transform: translate(var(--x), var(--y));
+    flex-direction: column;
     animation: float-3 8s ease-in-out infinite;
 }
 
@@ -939,31 +946,38 @@ button {
    - El texto a la izquierda, el icono a la derecha tocando la línea. */
 .orbit-item-4 {
     top: 55%;
-    left: 5%;
-    margin-top: -38px; /* Centra verticalmente el icono de 76px */
-    flex-direction: row; 
+    left: 2%;
+    --x: -50%;
+    --y: -50%;
+    transform: translate(var(--x), var(--y));
+    flex-direction: row-reverse;
     animation: float-4 6.5s ease-in-out infinite;
 }
 
 
+/* =========================================================
+   ANIMACIONES DE FLOTACIÓN
+   (Usamos 'translate' en lugar de 'transform' para no chocar con el posicionamiento)
+   ========================================================= */
+
 @keyframes float-1 {
-    0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(-10px); }
+    0%, 100% { translate: 0 0; }
+    50%      { translate: 0 -10px; }
 }
 
 @keyframes float-2 {
-    0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(8px); }
+    0%, 100% { translate: 0 0; }
+    50%      { translate: 0 8px; }
 }
 
 @keyframes float-3 {
-    0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(-8px); }
+    0%, 100% { translate: 0 0; }
+    50%      { translate: 0 -8px; }
 }
 
 @keyframes float-4 {
-    0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(10px); }
+    0%, 100% { translate: 0 0; }
+    50%      { translate: 0 10px; }
 }
 
 /* =========================================================
