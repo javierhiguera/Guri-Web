@@ -2,7 +2,6 @@
    GURI — RESPONSIVE
    ========================================================= */
 
-
 /* ---------------------------------------------------------
    TABLET / LAPTOP  (hasta 1100px)
    --------------------------------------------------------- */
@@ -17,99 +16,39 @@
         width: min(100% - 48px, var(--container));
     }
 
-    .header-inner {
-        gap: 24px;
-    }
+    .header-inner { gap: 24px; }
 
-    .main-nav {
-        gap: 22px;
-    }
+    .main-nav { gap: 22px; }
+    .main-nav a { font-size: 12px; }
 
-    .main-nav a {
-        font-size: 12px;
-    }
+    .hero h1 { font-size: clamp(48px, 6vw, 76px); }
+    .hero-logo { max-width: 360px; }
 
-    .hero h1 {
-        font-size: clamp(48px, 6vw, 76px);
-    }
+    .services-inner { gap: 40px; }
+    .services-heading h2 { font-size: clamp(36px, 5vw, 60px); }
+    .services-orbit { max-width: 620px; }
 
-    .hero-logo {
-        max-width: 360px;
-    }
+    .work-heading-left h2 { font-size: clamp(40px, 5.5vw, 68px); }
+    .work-frame-iphone { max-width: 280px; }
 
-    .services-inner {
-        gap: 40px;
-    }
+    .process-map { gap: 20px; }
+    .process-step-capsule { max-width: 180px; padding: 10px 12px; }
+    .process-step-capsule h3 { font-size: 18px; }
+    .process-step-capsule p { font-size: 11px; }
 
-    .services-heading h2 {
-        font-size: clamp(36px, 5vw, 60px);
-    }
+    .why-inner { gap: 60px; }
+    .brainstorm-icon { width: 64px; height: 64px; flex: 0 0 64px; }
+    .brainstorm-check { width: 28px; height: 28px; }
 
-    .services-orbit {
-        max-width: 620px;
-    }
+    .digital-management-inner { gap: 40px; }
+    .digital-icon { width: 72px; height: 72px; }
 
-    .work-heading-left h2 {
-        font-size: clamp(40px, 5.5vw, 68px);
-    }
-
-    .work-frame-iphone {
-        max-width: 280px;
-    }
-
-    .process-map {
-        gap: 20px;
-    }
-
-    .process-step-capsule {
-        max-width: 180px;
-        padding: 10px 12px;
-    }
-
-    .process-step-capsule h3 {
-        font-size: 18px;
-    }
-
-    .process-step-capsule p {
-        font-size: 11px;
-    }
-
-    .why-inner {
-        gap: 60px;
-    }
-
-    .brainstorm-icon {
-        width: 64px;
-        height: 64px;
-        flex: 0 0 64px;
-    }
-
-    .brainstorm-check {
-        width: 28px;
-        height: 28px;
-    }
-
-    .digital-management-inner {
-        gap: 40px;
-    }
-
-    .digital-icon {
-        width: 72px;
-        height: 72px;
-    }
-
-    .plan-integrated {
-        padding: 32px;
-    }
-
-    .plans-contact {
-        gap: 50px;
-    }
+    .plan-integrated { padding: 32px; }
+    .plans-contact { gap: 50px; }
 }
 
-
 /* ---------------------------------------------------------
-   MENÚ MÓVIL / TABLET VERTICAL  (hasta 900px)
+   TABLET VERTICAL / MENÚ MÓVIL  (hasta 900px)
    --------------------------------------------------------- */
 
 @media (max-width: 900px) {
@@ -122,14 +61,15 @@
         width: min(100% - 40px, var(--container));
     }
 
-    /* HEADER */
+    /* ---------------------------------------------------
+       HEADER + NAV MÓVIL
+       --------------------------------------------------- */
 
-    .site-header {
-        z-index: 1102;
-    }
+    .site-header { z-index: 1102; }
 
     .header-inner {
         min-height: 76px;
+        justify-content: space-between;
     }
 
     .menu-toggle {
@@ -155,15 +95,12 @@
         height: 1px;
         background: var(--white);
         transform: none;
-        transition:
-            transform 0.25s ease,
-            opacity 0.25s ease;
+        transition: transform 0.25s ease, opacity 0.25s ease;
     }
 
     .menu-toggle[aria-expanded="true"] span:first-child {
         transform: translateY(3px) rotate(45deg);
     }
-
     .menu-toggle[aria-expanded="true"] span:last-child {
         transform: translateY(-3px) rotate(-45deg);
     }
@@ -213,25 +150,18 @@
         font-size: 14px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     }
+    .main-nav a::after { display: none; }
+    .main-nav a:last-child { border-bottom: 0; }
 
-    .main-nav a::after {
-        display: none;
-    }
+    .header-button { display: none; }
 
-    .main-nav a:last-child {
-        border-bottom: 0;
-    }
-
-    .header-button {
-        display: none;
-    }
-
-    /* HERO */
+    /* ---------------------------------------------------
+       HERO
+       --------------------------------------------------- */
 
     .hero {
         padding-top: 100px;
         padding-bottom: 60px;
-
         background-size:
             100% 100%,
             400px 400px,
@@ -251,58 +181,78 @@
 
     .hero-content {
         max-width: 100%;
+        width: 100%;
+        text-align: center;
     }
 
     .hero-logo {
         max-width: 260px;
         margin: 0 auto;
+        display: block;
     }
 
     .hero h1 {
         font-size: clamp(46px, 10vw, 72px);
         line-height: 0.95;
+        text-align: center;
     }
 
     .hero-content > p {
         font-size: 15px;
-        margin-top: 25px;
+        margin: 25px auto 0;
+        max-width: 480px;
+        text-align: center;
     }
 
     .hero-actions {
         margin-top: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
-    /* SERVICES — se apila */
+    /* ---------------------------------------------------
+       SERVICES — apilado, orbes en lista
+       --------------------------------------------------- */
 
     .services-inner {
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
+    .services-heading {
+        max-width: 100%;
+        text-align: center;
+        justify-self: center;
+        margin: 0 auto;
+        order: -1;
+    }
+
+    .services-heading h2 {
+        font-size: clamp(34px, 8vw, 52px);
+    }
+
     .services-orbit {
+        position: relative;
         aspect-ratio: auto;
+        max-width: 100%;
+        width: 100%;
 
         display: flex;
         flex-direction: column;
-
-        gap: 25px;
+        gap: 22px;
 
         padding: 0;
-
-        max-width: 100%;
+        transform: none;
     }
 
-    .services-orbit::before {
-        display: none;
-    }
+    .services-orbit::before { display: none; }
 
     .services-globe {
         width: 55%;
         max-width: 260px;
-
         order: -1;
-
-        margin: 0 auto;
+        margin: 0 auto 10px;
+        position: relative;
     }
 
     .orbit-item,
@@ -310,28 +260,33 @@
     .orbit-item-2,
     .orbit-item-3,
     .orbit-item-4 {
-        position: relative;
-
-        top: auto;
-        right: auto;
-        bottom: auto;
-        left: auto;
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
 
         max-width: 100%;
         width: 100%;
 
         flex-direction: row;
-
         align-items: center;
+        justify-content: flex-start;
         text-align: left;
 
         gap: 16px;
 
-        animation: none;
+        padding: 14px 16px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.02);
+
+        animation: none !important;
+        transform: none !important;
     }
 
     .orbit-text {
         align-items: flex-start;
+        text-align: left;
     }
 
     .orbit-icon {
@@ -340,23 +295,11 @@
         flex: 0 0 56px;
     }
 
-    .orbit-icon svg {
-        width: 26px;
-        height: 26px;
-    }
+    .orbit-icon svg { width: 26px; height: 26px; }
 
-    .services-heading {
-        max-width: 100%;
-        text-align: center;
-        justify-self: center;
-        margin: 0 auto;
-    }
-
-    .services-heading h2 {
-        font-size: clamp(34px, 8vw, 52px);
-    }
-
-    /* WHY — se apila */
+    /* ---------------------------------------------------
+       WHY / BRAINSTORM — apilado
+       --------------------------------------------------- */
 
     .why-inner {
         grid-template-columns: 1fr;
@@ -365,13 +308,29 @@
 
     .why-heading {
         max-width: 100%;
+        text-align: center;
+        margin: 0 auto;
     }
 
     .why-heading > p {
         max-width: 100%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    /* WORK — se apila */
+    .brainstorm-list {
+        width: 100%;
+    }
+
+    .brainstorm-item {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    /* ---------------------------------------------------
+       WORK — apilado
+       --------------------------------------------------- */
 
     .work-layout {
         grid-template-columns: 1fr;
@@ -381,6 +340,7 @@
     .work-heading-left {
         align-items: center;
         text-align: center;
+        margin: 0 auto;
     }
 
     .work-heading-left h2 {
@@ -396,20 +356,22 @@
         margin: 0 auto;
     }
 
-    /* PROCESS — se apila vertical, sin fondo de grilla */
+    /* ---------------------------------------------------
+       PROCESS — vertical, sin grilla, con conectores
+       --------------------------------------------------- */
 
     .process {
         background-image: none;
         padding: 60px 0;
     }
 
+    .process-heading { text-align: center; margin: 0 auto; }
+
     .process-map {
+        position: relative;
         flex-direction: column;
-
-        gap: 50px;
-
+        gap: 40px;
         padding: 0;
-
         align-items: center;
     }
 
@@ -418,25 +380,41 @@
     .process-step-2,
     .process-step-3,
     .process-step-4 {
-        position: relative;
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
 
         flex-direction: column;
+        align-items: center;
 
-        max-width: 320px;
+        max-width: 360px;
         width: 100%;
+
+        margin: 0 auto;
+        transform: none !important;
+    }
+
+    .process-step-icon {
+        margin: 0 auto;
     }
 
     .process-step-2 .process-step-capsule,
     .process-step-4 .process-step-capsule {
-        margin-top: 35px;
+        margin-top: 18px;
         margin-bottom: 0;
     }
 
     .process-step-capsule {
         max-width: 100%;
+        width: 100%;
+        text-align: center;
     }
 
-    /* GESTIÓN DIGITAL — se apila */
+    /* ---------------------------------------------------
+       GESTIÓN DIGITAL — apilado
+       --------------------------------------------------- */
 
     .digital-management-inner {
         grid-template-columns: 1fr;
@@ -445,22 +423,40 @@
 
     .digital-management-icons {
         max-width: 420px;
+        margin: 0 auto;
     }
 
     .digital-management-heading {
         max-width: 100%;
         text-align: center;
+        margin: 0 auto;
     }
 
     .digital-management-heading .section-heading {
         text-align: center;
     }
 
-    /* PLANES — una columna */
+    /* ---------------------------------------------------
+       PLANES — una columna
+       --------------------------------------------------- */
 
     .plans-integrated-grid {
         grid-template-columns: 1fr;
         gap: 24px;
+    }
+
+    .plan-column,
+    .plan-group {
+        width: 100%;
+    }
+
+    .plan-group-title,
+    .plan-column-title {
+        text-align: left;
+    }
+
+    .plan-integrated {
+        width: 100%;
     }
 
     .plans-contact {
@@ -470,19 +466,18 @@
         padding-top: 60px;
     }
 
-    .plans-contact-copy {
-        max-width: 100%;
-    }
+    .plans-contact-copy { max-width: 100%; text-align: center; }
+    .plans-contact-copy h3 { text-align: center; }
 
-    .quote-form-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+    .quote-form-grid { grid-template-columns: 1fr 1fr; }
 
-    /* FINAL CTA */
+    /* ---------------------------------------------------
+       FINAL CTA
+       --------------------------------------------------- */
 
     .final-cta {
         padding: 70px 0;
-
+        text-align: center;
         background-size:
             100% 100%,
             400px 400px,
@@ -494,14 +489,15 @@
             14px 14px;
     }
 
-    .final-cta h2 span {
-        display: inline;
-    }
+    .final-cta h2 span { display: inline; }
 
-    /* FOOTER */
+    /* ---------------------------------------------------
+       FOOTER
+       --------------------------------------------------- */
 
     .footer-inner {
         gap: 40px;
+        grid-template-columns: 1fr 1fr;
     }
 
     .footer-bottom {
@@ -512,7 +508,6 @@
         min-height: auto;
     }
 }
-
 
 /* ---------------------------------------------------------
    MOBILE  (hasta 640px)
@@ -528,25 +523,13 @@
         width: calc(100% - 32px);
     }
 
-    .header-inner {
-        min-height: 68px;
-    }
+    .header-inner { min-height: 68px; }
 
-    .logo-icon {
-        width: 30px;
-        height: 30px;
-        flex: 0 0 30px;
-    }
-
+    .logo-icon { width: 30px; height: 30px; flex: 0 0 30px; }
     .logo-guri,
-    .logo-web {
-        font-size: 17px;
-    }
+    .logo-web { font-size: 17px; }
 
-    .menu-toggle {
-        width: 40px;
-        height: 40px;
-    }
+    .menu-toggle { width: 40px; height: 40px; }
 
     .main-nav {
         padding-left: 16px;
@@ -558,7 +541,6 @@
     .hero {
         padding-top: 90px;
         padding-bottom: 50px;
-
         background-size:
             100% 100%,
             250px 250px,
@@ -570,9 +552,7 @@
             10px 10px;
     }
 
-    .hero-logo {
-        max-width: 200px;
-    }
+    .hero-logo { max-width: 200px; }
 
     .hero h1 {
         font-size: clamp(42px, 13vw, 62px);
@@ -598,10 +578,7 @@
         text-align: center;
     }
 
-    .section-heading {
-        margin-bottom: 35px;
-    }
-
+    .section-heading { margin-bottom: 35px; }
     .section-heading h2 {
         font-size: clamp(32px, 9vw, 44px);
         line-height: 1;
@@ -614,24 +591,10 @@
         max-width: 220px;
     }
 
-    .orbit-icon {
-        width: 50px;
-        height: 50px;
-        flex: 0 0 50px;
-    }
-
-    .orbit-icon svg {
-        width: 22px;
-        height: 22px;
-    }
-
-    .orbit-text h3 {
-        font-size: 15px;
-    }
-
-    .orbit-text p {
-        font-size: 11px;
-    }
+    .orbit-icon { width: 50px; height: 50px; flex: 0 0 50px; }
+    .orbit-icon svg { width: 22px; height: 22px; }
+    .orbit-text h3 { font-size: 15px; }
+    .orbit-text p { font-size: 11px; }
 
     .services-heading h2 {
         font-size: clamp(30px, 8vw, 42px);
@@ -639,9 +602,7 @@
 
     /* WHY */
 
-    .why-inner {
-        gap: 40px;
-    }
+    .why-inner { gap: 40px; }
 
     .brainstorm-item {
         gap: 14px;
@@ -654,14 +615,8 @@
         flex: 0 0 56px;
     }
 
-    .brainstorm-check {
-        width: 24px;
-        height: 24px;
-    }
-
-    .brainstorm-item span {
-        font-size: 14px;
-    }
+    .brainstorm-check { width: 24px; height: 24px; }
+    .brainstorm-item span { font-size: 14px; }
 
     /* WORK */
 
@@ -669,102 +624,43 @@
         font-size: clamp(30px, 9vw, 42px);
     }
 
-    .work-iphone-wrapper {
-        max-width: 220px;
-    }
+    .work-iphone-wrapper { max-width: 220px; }
 
     /* PROCESS */
 
-    .process {
-        padding: 55px 0;
-    }
+    .process { padding: 55px 0; }
+    .process-map { gap: 32px; }
+    .process-step { max-width: 100%; }
 
-    .process-map {
-        gap: 40px;
-    }
+    .process-step-icon { width: 64px; height: 64px; }
+    .process-step-icon svg { width: 28px; height: 28px; }
 
-    .process-step {
-        max-width: 100%;
-    }
-
-    .process-step-icon {
-        width: 64px;
-        height: 64px;
-    }
-
-    .process-step-icon svg {
-        width: 28px;
-        height: 28px;
-    }
-
-    .process-step-capsule {
-        max-width: 100%;
-    }
-
-    .process-step-capsule h3 {
-        font-size: 18px;
-    }
-
-    .process-step-capsule p {
-        font-size: 12px;
-    }
+    .process-step-capsule { max-width: 100%; }
+    .process-step-capsule h3 { font-size: 18px; }
+    .process-step-capsule p { font-size: 12px; }
 
     /* GESTIÓN DIGITAL */
 
-    .digital-management-icons {
-        max-width: 340px;
-    }
+    .digital-management-icons { max-width: 340px; }
 
-    .digital-icon {
-        width: 58px;
-        height: 58px;
-    }
-
-    .digital-emoji {
-        width: 34px;
-        height: 34px;
-    }
-
-    .digital-emoji-2 {
-        width: 40px;
-        height: 40px;
-    }
-
-    .digital-emoji-3 {
-        width: 38px;
-        height: 38px;
-    }
+    .digital-icon { width: 58px; height: 58px; }
+    .digital-emoji { width: 34px; height: 34px; }
+    .digital-emoji-2 { width: 40px; height: 40px; }
+    .digital-emoji-3 { width: 38px; height: 38px; }
 
     /* PLANES */
 
-    .plan-integrated {
-        padding: 26px 22px;
-    }
-
-    .plan-integrated .plan-service h4 {
-        font-size: 20px;
-    }
-
-    .plan-integrated .plan-service p {
-        font-size: 13px;
-    }
-
-    .plan-integrated .plan-features li {
-        font-size: 12px;
-    }
+    .plan-integrated { padding: 26px 22px; }
+    .plan-integrated .plan-service h4 { font-size: 20px; }
+    .plan-integrated .plan-service p { font-size: 13px; }
+    .plan-integrated .plan-features li { font-size: 12px; }
 
     .plans-coming-soon {
         margin-top: 40px;
         padding: 24px;
     }
-
-    .plans-coming-soon h3 {
-        font-size: 26px;
-    }
-
-    .plans-coming-soon p {
-        font-size: 13px;
-    }
+    .plans-coming-soon h3 { font-size: 26px; }
+    .plans-coming-soon p { font-size: 13px; }
 
     /* FORM */
 
@@ -774,9 +670,7 @@
         padding-top: 50px;
     }
 
-    .plans-contact-copy h3 {
-        font-size: 30px;
-    }
+    .plans-contact-copy h3 { font-size: 30px; }
 
     .quote-form {
         padding: 22px 18px;
@@ -788,9 +682,7 @@
         gap: 16px;
     }
 
-    .form-field-full {
-        grid-column: auto;
-    }
+    .form-field-full { grid-column: auto; }
 
     .form-field input,
     .form-field select,
@@ -799,19 +691,14 @@
         font-size: 13px;
     }
 
-    .form-field textarea {
-        min-height: 120px;
-    }
+    .form-field textarea { min-height: 120px; }
 
-    .quote-form-submit {
-        width: 100%;
-    }
+    .quote-form-submit { width: 100%; }
 
     /* FINAL CTA */
 
     .final-cta {
         padding: 60px 0;
-
         background-size:
             100% 100%,
             250px 250px,
@@ -823,13 +710,8 @@
             10px 10px;
     }
 
-    .final-cta h2 {
-        font-size: clamp(38px, 11vw, 52px);
-    }
-
-    .final-cta h2 span {
-        display: block;
-    }
+    .final-cta h2 { font-size: clamp(38px, 11vw, 52px); }
+    .final-cta h2 span { display: block; }
 
     /* FOOTER */
 
@@ -845,17 +727,10 @@
     }
 
     .footer-links strong,
-    .footer-links h4 {
-        font-size: 11px;
-    }
+    .footer-links h4 { font-size: 11px; }
+    .footer-links a { font-size: 12px; }
 
-    .footer-links a {
-        font-size: 12px;
-    }
-
-    .site-footer {
-        padding-top: 50px;
-    }
+    .site-footer { padding-top: 50px; }
 
     .footer-credit img {
         width: 24px;
@@ -864,99 +739,39 @@
     }
 }
 
-
 /* ---------------------------------------------------------
    SMALL MOBILE  (hasta 400px)
    --------------------------------------------------------- */
 
 @media (max-width: 400px) {
 
-    .container {
-        width: calc(100% - 28px);
-    }
+    .container { width: calc(100% - 28px); }
 
-    .logo-icon {
-        width: 26px;
-        height: 26px;
-        flex: 0 0 26px;
-    }
-
+    .logo-icon { width: 26px; height: 26px; flex: 0 0 26px; }
     .logo-guri,
-    .logo-web {
-        font-size: 15px;
-    }
+    .logo-web { font-size: 15px; }
 
-    .hero h1 {
-        font-size: 40px;
-    }
+    .hero h1 { font-size: 40px; }
+    .hero-logo { max-width: 170px; }
 
-    .hero-logo {
-        max-width: 170px;
-    }
+    .services-globe { width: 70%; max-width: 200px; }
 
-    .services-globe {
-        width: 70%;
-        max-width: 200px;
-    }
+    .orbit-icon { width: 46px; height: 46px; flex: 0 0 46px; }
+    .orbit-icon svg { width: 20px; height: 20px; }
+    .orbit-text h3 { font-size: 14px; }
+    .orbit-text p { font-size: 10px; }
 
-    .orbit-icon {
-        width: 46px;
-        height: 46px;
-        flex: 0 0 46px;
-    }
+    .work-iphone-wrapper { max-width: 200px; }
 
-    .orbit-icon svg {
-        width: 20px;
-        height: 20px;
-    }
+    .digital-management-icons { max-width: 280px; }
+    .digital-icon { width: 48px; height: 48px; }
+    .digital-emoji { width: 28px; height: 28px; }
+    .digital-emoji-2 { width: 34px; height: 34px; }
+    .digital-emoji-3 { width: 30px; height: 30px; }
 
-    .orbit-text h3 {
-        font-size: 14px;
-    }
+    .plan-integrated { padding: 22px 18px; }
 
-    .orbit-text p {
-        font-size: 10px;
-    }
+    .footer-inner { grid-template-columns: 1fr; }
 
-    .work-iphone-wrapper {
-        max-width: 200px;
-    }
-
-    .digital-management-icons {
-        max-width: 280px;
-    }
-
-    .digital-icon {
-        width: 48px;
-        height: 48px;
-    }
-
-    .digital-emoji {
-        width: 28px;
-        height: 28px;
-    }
-
-    .digital-emoji-2 {
-        width: 34px;
-        height: 34px;
-    }
-
-    .digital-emoji-3 {
-        width: 30px;
-        height: 30px;
-    }
-
-    .plan-integrated {
-        padding: 22px 18px;
-    }
-
-    .footer-inner {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-credit img {
-        width: 22px;
-        height: 22px;
-        flex: 0 0 22px;
-    }
+    .footer-credit img { width: 22px; height: 22px; flex: 0 0 22px; }
 }
