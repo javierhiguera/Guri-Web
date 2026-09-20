@@ -1023,74 +1023,53 @@ button {
     transform: translateY(-5px);
 }
 
-
 /* =========================================================
-   iPHONE 16 PRO — MOCKUP REAL
+   iPHONE 16 PRO — MOCKUP PNG
    ========================================================= */
 
-/* Contenedor: ahora es el mockup.jpg */
 .work-frame-iphone {
     position: relative;
     width: 100%;
     max-width: 320px;
     margin: 0 auto;
 
-    /* El mockup como fondo. Ajustá la ruta según dónde esté tu CSS */
-    background-image: url("../assets/seleccion/mockup.jpg");
+    background-image: url("../assets/seleccion/mockup.png");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 100% 100%;
+    background-size: contain;
 
-    /* Relación de aspecto del mockup (iPhone 16 Pro frontal ~9:19.5) */
     aspect-ratio: 9 / 19.5;
 
-    /* El mockup ya trae sus sombras. Solo le agregamos un glow suave */
     filter:
         drop-shadow(0 40px 60px rgba(0, 0, 0, 0.9))
         drop-shadow(0 0 80px rgba(255, 90, 31, 0.22));
 }
 
-/* Ocultamos todo lo que dibujábamos antes: ya está en el JPG */
 .work-frame-iphone::before,
 .work-frame-iphone::after,
-.iphone-notch {
+.iphone-notch,
+.device-status-bar,
+.iphone-home-bar {
     display: none;
 }
 
-/* Pantalla: capa transparente encima del mockup.
-   Solo recorta el scroll. Los % hay que calibrarlos al JPG. */
 .iphone-screen {
     position: absolute;
-
-    /* 👇 Calibrar según tu mockup.jpg */
     top: 1.8%;
     left: 6%;
     width: 88%;
     height: 96.4%;
 
-    /* Esquinas redondeadas del cristal del 16 Pro */
     border-radius: 11% / 5.1%;
 
-    background: transparent;   /* el fondo lo aporta el JPG */
-    border: 0;                 /* sin bordes, el JPG ya los tiene */
+    background: transparent;
+    border: 0;
     box-shadow: none;
 
     overflow: hidden;
     z-index: 2;
 }
 
-/* La barra de estado (hora, wifi, batería) ya está en el mockup.
-   La ocultamos para no duplicar. */
-.device-status-bar {
-    display: none;
-}
-
-/* El home indicator también viene en el mockup */
-.iphone-home-bar {
-    display: none;
-}
-
-/* Zona del scroll (misma que antes, solo limpiamos) */
 .iphone-scroll {
     position: absolute;
     inset: 0;
