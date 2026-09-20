@@ -1202,6 +1202,27 @@ button {
     font-weight: 600;
 
     pointer-events: none;
+    z-index: 10;
+}
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 2.75em;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 2em;
+
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+        "SF Pro Text", "Helvetica Neue", sans-serif;
+    font-weight: 600;
+
+    pointer-events: none;
     z-index: 6;
 }
 
