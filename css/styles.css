@@ -1038,7 +1038,7 @@ button {
     background-position: center center;
     background-size: 100% 100%;
 
-    aspect-ratio: 9 / 19.5;
+    aspect-ratio: 389 / 800;
 
     filter:
         drop-shadow(0 40px 60px rgba(0, 0, 0, 0.9))
@@ -1055,12 +1055,12 @@ button {
 
 .iphone-screen {
     position: absolute;
-    top: 2.2%;
-    left: 4.5%;
-    width: 91%;
-    height: 95.6%;
+    top: 1.6%;
+    left: 5%;
+    width: 90%;
+    height: 96.8%;
 
-    border-radius: 11% / 5.1%;
+    border-radius: 11% / 5.4%;
 
     background: transparent;
     border: 0;
@@ -1080,12 +1080,12 @@ button {
     width: 100%;
     height: auto;
     display: block;
-    animation: iphone-scroll-anim 14s ease-in-out infinite;
+    animation: iphone-scroll-anim 12s ease-in-out infinite;
 }
 
 @keyframes iphone-scroll-anim {
     0%   { transform: translateY(0); }
-    50%  { transform: translateY(-18%); }
+    50%  { transform: translateY(-15%); }
     100% { transform: translateY(0); }
 }
 
