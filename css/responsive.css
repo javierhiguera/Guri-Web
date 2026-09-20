@@ -24,7 +24,10 @@
     .services-orbit { max-width: 620px; }
 
     .work-heading-left h2 { font-size: clamp(40px, 5.5vw, 68px); }
-    .work-frame-iphone { max-width: 280px; }
+    .work-frame-iphone {
+        max-width: 280px;
+        font-size: 14px;
+    }
 
     .process-map { gap: 20px; }
     .process-step-capsule { max-width: 180px; padding: 10px 12px; }
@@ -98,7 +101,7 @@
     .main-nav a:last-child { border-bottom: 0; }
     .header-button { display: none; }
 
-    /* HERO — mantener composición: logo izq, título abajo, CTA abajo */
+    /* HERO */
 
     .hero {
         padding-top: 110px;
@@ -149,7 +152,7 @@
         gap: 12px;
     }
 
-    /* SERVICES — mantener globo arriba, orbes como lista lateral */
+    /* SERVICES */
 
     .services-inner {
         grid-template-columns: 1fr;
@@ -212,7 +215,7 @@
     .orbit-icon { width: 52px; height: 52px; flex: 0 0 52px; }
     .orbit-icon svg { width: 24px; height: 24px; }
 
-    /* WHY — mantener columna izquierda y lista derecha apiladas */
+    /* WHY */
 
     .why-inner {
         grid-template-columns: 1fr;
@@ -239,7 +242,7 @@
     }
     .brainstorm-item:last-child { border-bottom: 0; }
 
-    /* WORK — título izq, mockup centrado abajo */
+    /* WORK */
 
     .work { padding: var(--section-padding) 0; }
 
@@ -268,7 +271,7 @@
     }
 
     .work-iphone-wrapper {
-        max-width: 280px;
+        max-width: 260px;
         width: 100%;
         margin: 0 auto;
         display: flex;
@@ -279,11 +282,10 @@
     .work-frame-iphone {
         width: 100%;
         max-width: 100%;
-        height: auto;
-        display: block;
+        font-size: 13px;
     }
 
-    /* PROCESS — pasos verticales con línea central, mantener iconos grandes */
+    /* PROCESS */
 
     .process {
         background-image: none;
@@ -332,7 +334,7 @@
         text-align: center;
     }
 
-    /* DIGITAL — iconos arriba, texto abajo */
+    /* DIGITAL */
 
     .digital-management-inner {
         grid-template-columns: 1fr;
@@ -352,7 +354,7 @@
     }
     .digital-management-heading .section-heading { text-align: left; }
 
-    /* PLANES — 1 columna, mantener jerarquía de títulos */
+    /* PLANES */
 
     .plans-integrated-grid {
         grid-template-columns: 1fr;
@@ -480,8 +482,14 @@
     .work-layout { gap: 32px; }
 
     .work-heading-left h2 { font-size: clamp(36px, 11vw, 50px); }
-    .work-iphone-wrapper { max-width: 240px; }
-    .work-frame-iphone { width: 100%; }
+
+    .work-iphone-wrapper { max-width: 230px; }
+
+    .work-frame-iphone {
+        width: 100%;
+        max-width: 100%;
+        font-size: 11.5px;
+    }
 
     /* PROCESS */
 
@@ -595,6 +603,11 @@
     .orbit-text p { font-size: 10px; }
 
     .work-iphone-wrapper { max-width: 210px; }
+
+    .work-frame-iphone {
+        max-width: 100%;
+        font-size: 10.5px;
+    }
 
     .digital-management-icons { max-width: 280px; }
     .digital-icon { width: 48px; height: 48px; }
