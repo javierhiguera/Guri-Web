@@ -1024,7 +1024,7 @@ button {
 }
 
 /* =========================================================
-   iPHONE 16 PRO — MOCKUP PNG + UI
+   iPHONE 16 PRO — MOCKUP OVERLAY
    ========================================================= */
 
 .work-frame-iphone {
@@ -1032,11 +1032,6 @@ button {
     width: 100%;
     max-width: 320px;
     margin: 0 auto;
-
-    background-image: url("../assets/seleccion/mockup.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100% 100%;
 
     aspect-ratio: 389 / 800;
 
@@ -1047,12 +1042,20 @@ button {
         drop-shadow(0 0 80px rgba(255, 90, 31, 0.22));
 }
 
-.work-frame-iphone::before,
-.work-frame-iphone::after {
-    display: none;
-}
+/* Overlay: marco + isla + cámara. Va ENCIMA del scroll */
+.work-frame-iphone::before {
+    content: "";
+    position: absolute;
+    inset: 0;
 
-/* ---------- Pantalla ---------- */
+    background-image: url("../assets/seleccion/mockup-frame.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+
+    z-index: 10;
+    pointer-events: none;
+}
 
 .iphone-screen {
     position: absolute;
@@ -1063,64 +1066,16 @@ button {
 
     border-radius: 11% / 5.4%;
 
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-
+    background: #000;
     overflow: hidden;
     z-index: 2;
 }
 
-/* ---------- Dynamic Island (idéntica al PNG) ---------- */
-
-.iphone-screen::before {
-    content: "";
-    position: absolute;
-    top: 0.55em;
-    left: 50%;
-    transform: translateX(-50%);
-
-    width: 5.9em;
-    height: 1.85em;
-    border-radius: 1em;
-
-    background: #000;
-
-    z-index: 10;
-
-    box-shadow:
-        inset 0 0 0 0.5px rgba(255, 255, 255, 0.04),
-        inset 0 1px 1px rgba(255, 255, 255, 0.03);
-}
-
-/* ---------- Gradiente superior (sutil) ---------- */
-
-.iphone-screen::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 10%;
-
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.3) 0%,
-        rgba(0, 0, 0, 0.08) 60%,
-        transparent 100%
-    );
-
-    pointer-events: none;
-    z-index: 5;
-}
-
-/* ---------- Scroll interno ---------- */
-
+/* Scroll */
 .iphone-scroll {
     position: absolute;
     inset: 0;
     overflow: hidden;
-    z-index: 1;
 }
 
 .iphone-scroll-img {
@@ -1145,8 +1100,7 @@ button {
     100% { transform: translateY(0); }
 }
 
-/* ---------- Status bar (hora + iconos + cámara) ---------- */
-
+/* Status bar: hora + iconos */
 .device-status-bar {
     display: flex;
     position: absolute;
@@ -1167,69 +1121,25 @@ button {
     font-weight: 600;
 
     pointer-events: none;
-    z-index: 11;
+    z-index: 6;
 }
-
-/* ---------- Cámara frontal (dentro de la isla) ---------- */
-
-.device-status-bar::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    margin-left: 2em;
-
-    width: 0.8em;
-    height: 0.8em;
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 32% 30%,
-            #7a8aff 0%,
-            #3a3aaa 22%,
-            #15153a 48%,
-            #050508 75%,
-            #000 100%
-        );
-
-    box-shadow:
-        inset 0 0 0 0.5px rgba(160, 160, 255, 0.25),
-        inset 1px 1px 1px rgba(200, 200, 255, 0.2),
-        0 0 0 0.5px rgba(0, 0, 0, 0.9);
-
-    z-index: 12;
-    pointer-events: none;
-}
-
-/* ---------- Hora ---------- */
 
 .device-time {
     font-size: 0.75em;
-    font-weight: 600;
     letter-spacing: -0.02em;
-
     line-height: 1;
-    display: flex;
-    align-items: center;
 }
-
-/* ---------- Iconos (señal + wifi + batería) ---------- */
 
 .device-status-icons {
     display: flex;
     align-items: center;
     gap: 0.3125em;
-
     line-height: 1;
 }
 
 .device-icon {
     width: 0.9375em;
     height: 0.625em;
-
     display: block;
     fill: currentColor;
 }
@@ -1239,8 +1149,7 @@ button {
     height: 0.625em;
 }
 
-/* ---------- Home indicator ---------- */
-
+/* Home indicator */
 .iphone-home-bar {
     display: block;
     position: absolute;
