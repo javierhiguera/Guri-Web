@@ -24,10 +24,10 @@
     .services-orbit { max-width: 620px; }
 
     .work-heading-left h2 { font-size: clamp(40px, 5.5vw, 68px); }
-    .work-frame-iphone {
-        max-width: 280px;
-        font-size: 14px;
-    }
+
+    /* WORK — iPhone escalado */
+    .work-iphone-wrapper { max-width: 300px; }
+    .work-frame-iphone { font-size: 15px; }
 
     .process-map { gap: 20px; }
     .process-step-capsule { max-width: 180px; padding: 10px 12px; }
@@ -51,25 +51,45 @@
 
 @media (max-width: 900px) {
 
-    :root { --section-padding: 70px; }
+    :root { --section-padding: 65px; }
 
     .container { width: min(100% - 40px, var(--container)); }
 
-    /* HEADER */
+    /* ---------------------------------------------------
+       HEADER + NAV MÓVIL
+       --------------------------------------------------- */
 
     .site-header { z-index: 1102; }
-    .header-inner { min-height: 76px; justify-content: space-between; }
+
+    .header-inner {
+        min-height: 76px;
+        justify-content: space-between;
+    }
 
     .menu-toggle {
-        display: flex; flex-direction: column; justify-content: center;
-        align-items: center; gap: 5px; width: 42px; height: 42px;
-        padding: 0; border: 1px solid var(--border); background: transparent;
-        cursor: pointer; position: relative; z-index: 1101;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        border: 1px solid var(--border);
+        background: transparent;
+        cursor: pointer;
+        position: relative;
+        z-index: 1101;
     }
+
     .menu-toggle span {
-        display: block; width: 18px; height: 1px; background: var(--white);
+        display: block;
+        width: 18px;
+        height: 1px;
+        background: var(--white);
         transition: transform 0.25s ease;
     }
+
     .menu-toggle[aria-expanded="true"] span:first-child {
         transform: translateY(3px) rotate(45deg);
     }
@@ -78,30 +98,48 @@
     }
 
     .main-nav {
-        position: absolute; top: calc(100% + 1px); left: 0; right: 0;
-        display: flex; flex-direction: column; gap: 0;
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
         padding: 10px 20px 20px;
         background: var(--black);
         border-top: 1px solid var(--border);
         border-bottom: 1px solid var(--border);
-        opacity: 0; visibility: hidden; transform: translateY(-10px);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
         pointer-events: none;
         transition: opacity .25s ease, visibility .25s ease, transform .25s ease;
         z-index: 1100;
     }
+
     .main-nav.is-open {
-        opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
     }
+
     .main-nav a {
-        min-height: 48px; padding: 8px 0; font-size: 14px;
+        display: flex;
+        align-items: center;
+        min-height: 48px;
+        padding: 8px 0;
+        font-size: 14px;
         border-bottom: 1px solid rgba(255,255,255,.07);
-        display: flex; align-items: center;
     }
     .main-nav a::after { display: none; }
     .main-nav a:last-child { border-bottom: 0; }
+
     .header-button { display: none; }
 
-    /* HERO */
+    /* ---------------------------------------------------
+       HERO — fiel al desktop: título izq, CTA izq
+       --------------------------------------------------- */
 
     .hero {
         padding-top: 110px;
@@ -152,7 +190,9 @@
         gap: 12px;
     }
 
-    /* SERVICES */
+    /* ---------------------------------------------------
+       SERVICES — heading izq, orbes como lista
+       --------------------------------------------------- */
 
     .services-inner {
         grid-template-columns: 1fr;
@@ -175,7 +215,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 0;
         padding: 0;
         transform: none;
     }
@@ -185,7 +225,7 @@
         width: 50%;
         max-width: 240px;
         order: -1;
-        margin: 0 auto 15px;
+        margin: 0 auto 25px;
     }
 
     .orbit-item,
@@ -194,14 +234,20 @@
     .orbit-item-3,
     .orbit-item-4 {
         position: relative !important;
-        top: auto !important; right: auto !important;
-        bottom: auto !important; left: auto !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
 
-        max-width: 100%; width: 100%;
+        max-width: 100%;
+        width: 100%;
 
-        flex-direction: row; align-items: center; text-align: left;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
         gap: 16px;
-        padding: 12px 0;
+
+        padding: 16px 0;
         border: 0;
         border-bottom: 1px solid var(--border);
         background: transparent;
@@ -215,7 +261,9 @@
     .orbit-icon { width: 52px; height: 52px; flex: 0 0 52px; }
     .orbit-icon svg { width: 24px; height: 24px; }
 
-    /* WHY */
+    /* ---------------------------------------------------
+       WHY — heading izq, lista con separadores
+       --------------------------------------------------- */
 
     .why-inner {
         grid-template-columns: 1fr;
@@ -234,6 +282,7 @@
     }
 
     .brainstorm-list { width: 100%; }
+
     .brainstorm-item {
         width: 100%;
         justify-content: flex-start;
@@ -242,18 +291,22 @@
     }
     .brainstorm-item:last-child { border-bottom: 0; }
 
-    /* WORK */
+    /* ---------------------------------------------------
+       WORK — título izq, iPhone centrado debajo
+       NO tocamos aspect-ratio ni background del frame.
+       Solo escalamos font-size para que Dynamic Island,
+       status bar y home bar escalen con el teléfono.
+       --------------------------------------------------- */
 
     .work { padding: var(--section-padding) 0; }
 
     .work-layout {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 45px;
     }
 
     .work-heading-left {
-        display: block;
         text-align: left;
         margin: 0;
         align-items: flex-start;
@@ -261,7 +314,7 @@
 
     .work-heading-left h2 {
         text-align: left;
-        font-size: clamp(40px, 10vw, 62px);
+        font-size: clamp(40px, 9vw, 60px);
         line-height: 1;
     }
 
@@ -271,7 +324,7 @@
     }
 
     .work-iphone-wrapper {
-        max-width: 260px;
+        max-width: 280px;
         width: 100%;
         margin: 0 auto;
         display: flex;
@@ -280,12 +333,16 @@
     }
 
     .work-frame-iphone {
-        width: 100%;
         max-width: 100%;
-        font-size: 13px;
+        font-size: 14px;
+        filter:
+            drop-shadow(0 25px 40px rgba(0, 0, 0, 0.85))
+            drop-shadow(0 0 50px rgba(255, 90, 31, 0.2));
     }
 
-    /* PROCESS */
+    /* ---------------------------------------------------
+       PROCESS — vertical, centrado
+       --------------------------------------------------- */
 
     .process {
         background-image: none;
@@ -308,8 +365,10 @@
     .process-step-3,
     .process-step-4 {
         position: relative !important;
-        top: auto !important; right: auto !important;
-        bottom: auto !important; left: auto !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
 
         flex-direction: column;
         align-items: center;
@@ -334,7 +393,9 @@
         text-align: center;
     }
 
-    /* DIGITAL */
+    /* ---------------------------------------------------
+       DIGITAL — iconos arriba, texto izq
+       --------------------------------------------------- */
 
     .digital-management-inner {
         grid-template-columns: 1fr;
@@ -354,7 +415,9 @@
     }
     .digital-management-heading .section-heading { text-align: left; }
 
-    /* PLANES */
+    /* ---------------------------------------------------
+       PLANES — 1 columna
+       --------------------------------------------------- */
 
     .plans-integrated-grid {
         grid-template-columns: 1fr;
@@ -375,7 +438,9 @@
 
     .quote-form-grid { grid-template-columns: 1fr 1fr; }
 
-    /* FINAL CTA */
+    /* ---------------------------------------------------
+       FINAL CTA
+       --------------------------------------------------- */
 
     .final-cta {
         padding: 80px 0;
@@ -387,9 +452,12 @@
     }
     .final-cta h2 span { display: inline; }
 
-    /* FOOTER */
+    /* ---------------------------------------------------
+       FOOTER
+       --------------------------------------------------- */
 
     .footer-inner { gap: 40px; grid-template-columns: 1fr 1fr; }
+
     .footer-bottom {
         flex-direction: column;
         align-items: flex-start;
@@ -477,18 +545,19 @@
     .brainstorm-check { width: 24px; height: 24px; }
     .brainstorm-item span { font-size: 14px; }
 
-    /* WORK */
+    /* WORK — iPhone más chico, sombra reducida */
 
     .work-layout { gap: 32px; }
 
     .work-heading-left h2 { font-size: clamp(36px, 11vw, 50px); }
 
-    .work-iphone-wrapper { max-width: 230px; }
+    .work-iphone-wrapper { max-width: 240px; }
 
     .work-frame-iphone {
-        width: 100%;
-        max-width: 100%;
-        font-size: 11.5px;
+        font-size: 12px;
+        filter:
+            drop-shadow(0 18px 30px rgba(0, 0, 0, 0.85))
+            drop-shadow(0 0 35px rgba(255, 90, 31, 0.18));
     }
 
     /* PROCESS */
@@ -602,11 +671,14 @@
     .orbit-text h3 { font-size: 14px; }
     .orbit-text p { font-size: 10px; }
 
+    /* WORK — iPhone aún más chico */
     .work-iphone-wrapper { max-width: 210px; }
 
     .work-frame-iphone {
-        max-width: 100%;
-        font-size: 10.5px;
+        font-size: 11px;
+        filter:
+            drop-shadow(0 15px 25px rgba(0, 0, 0, 0.85))
+            drop-shadow(0 0 30px rgba(255, 90, 31, 0.15));
     }
 
     .digital-management-icons { max-width: 280px; }
