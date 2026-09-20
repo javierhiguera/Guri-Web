@@ -8,16 +8,11 @@
 
 @media (max-width: 1100px) {
 
-    :root {
-        --section-padding: 70px;
-    }
+    :root { --section-padding: 70px; }
 
-    .container {
-        width: min(100% - 48px, var(--container));
-    }
+    .container { width: min(100% - 48px, var(--container)); }
 
     .header-inner { gap: 24px; }
-
     .main-nav { gap: 22px; }
     .main-nav a { font-size: 12px; }
 
@@ -48,56 +43,30 @@
 }
 
 /* ---------------------------------------------------------
-   TABLET VERTICAL / MENÚ MÓVIL  (hasta 900px)
+   TABLET VERTICAL / NAV MÓVIL  (hasta 900px)
    --------------------------------------------------------- */
 
 @media (max-width: 900px) {
 
-    :root {
-        --section-padding: 60px;
-    }
+    :root { --section-padding: 70px; }
 
-    .container {
-        width: min(100% - 40px, var(--container));
-    }
+    .container { width: min(100% - 40px, var(--container)); }
 
-    /* ---------------------------------------------------
-       HEADER + NAV MÓVIL
-       --------------------------------------------------- */
+    /* HEADER */
 
     .site-header { z-index: 1102; }
-
-    .header-inner {
-        min-height: 76px;
-        justify-content: space-between;
-    }
+    .header-inner { min-height: 76px; justify-content: space-between; }
 
     .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-        width: 42px;
-        height: 42px;
-        padding: 0;
-        border: 1px solid var(--border);
-        background: transparent;
-        cursor: pointer;
-        position: relative;
-        z-index: 1101;
+        display: flex; flex-direction: column; justify-content: center;
+        align-items: center; gap: 5px; width: 42px; height: 42px;
+        padding: 0; border: 1px solid var(--border); background: transparent;
+        cursor: pointer; position: relative; z-index: 1101;
     }
-
     .menu-toggle span {
-        position: static;
-        display: block;
-        width: 18px;
-        height: 1px;
-        background: var(--white);
-        transform: none;
-        transition: transform 0.25s ease, opacity 0.25s ease;
+        display: block; width: 18px; height: 1px; background: var(--white);
+        transition: transform 0.25s ease;
     }
-
     .menu-toggle[aria-expanded="true"] span:first-child {
         transform: translateY(3px) rotate(45deg);
     }
@@ -106,113 +75,81 @@
     }
 
     .main-nav {
-        position: absolute;
-        top: calc(100% + 1px);
-        left: 0;
-        right: 0;
-
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-
+        position: absolute; top: calc(100% + 1px); left: 0; right: 0;
+        display: flex; flex-direction: column; gap: 0;
         padding: 10px 20px 20px;
-
         background: var(--black);
         border-top: 1px solid var(--border);
         border-bottom: 1px solid var(--border);
-
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
+        opacity: 0; visibility: hidden; transform: translateY(-10px);
         pointer-events: none;
-
-        transition:
-            opacity 0.25s ease,
-            visibility 0.25s ease,
-            transform 0.25s ease;
-
+        transition: opacity .25s ease, visibility .25s ease, transform .25s ease;
         z-index: 1100;
     }
-
     .main-nav.is-open {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-        pointer-events: auto;
+        opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto;
     }
-
     .main-nav a {
-        display: flex;
-        align-items: center;
-        min-height: 48px;
-        padding: 8px 0;
-        font-size: 14px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        min-height: 48px; padding: 8px 0; font-size: 14px;
+        border-bottom: 1px solid rgba(255,255,255,.07);
+        display: flex; align-items: center;
     }
     .main-nav a::after { display: none; }
     .main-nav a:last-child { border-bottom: 0; }
-
     .header-button { display: none; }
 
-    /* ---------------------------------------------------
-       HERO
-       --------------------------------------------------- */
+    /* HERO — mantener composición: logo izq, título abajo, CTA abajo */
 
     .hero {
-        padding-top: 100px;
-        padding-bottom: 60px;
+        padding-top: 110px;
+        padding-bottom: 70px;
         background-size:
-            100% 100%,
-            400px 400px,
-            70px 70px,
-            70px 70px,
-            70px 70px,
-            70px 70px,
-            14px 14px,
-            14px 14px;
+            100% 100%, 400px 400px,
+            70px 70px, 70px 70px, 70px 70px, 70px 70px,
+            14px 14px, 14px 14px;
     }
 
     .hero-inner {
+        display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 40px;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .hero-logo {
+        order: -1;
+        max-width: 220px;
+        margin: 0;
+        align-self: flex-start;
     }
 
     .hero-content {
         max-width: 100%;
         width: 100%;
-        text-align: center;
-    }
-
-    .hero-logo {
-        max-width: 260px;
-        margin: 0 auto;
-        display: block;
+        text-align: left;
     }
 
     .hero h1 {
-        font-size: clamp(46px, 10vw, 72px);
+        font-size: clamp(48px, 11vw, 78px);
         line-height: 0.95;
-        text-align: center;
+        text-align: left;
     }
 
     .hero-content > p {
         font-size: 15px;
-        margin: 25px auto 0;
-        max-width: 480px;
-        text-align: center;
+        margin-top: 22px;
+        max-width: 520px;
+        text-align: left;
     }
 
     .hero-actions {
-        margin-top: 30px;
-        justify-content: center;
+        margin-top: 28px;
+        justify-content: flex-start;
         flex-wrap: wrap;
+        gap: 12px;
     }
 
-    /* ---------------------------------------------------
-       SERVICES — apilado, orbes en lista
-       --------------------------------------------------- */
+    /* SERVICES — mantener globo arriba, orbes como lista lateral */
 
     .services-inner {
         grid-template-columns: 1fr;
@@ -221,38 +158,31 @@
 
     .services-heading {
         max-width: 100%;
-        text-align: center;
-        justify-self: center;
-        margin: 0 auto;
+        text-align: left;
+        margin: 0;
         order: -1;
     }
 
-    .services-heading h2 {
-        font-size: clamp(34px, 8vw, 52px);
-    }
+    .services-heading h2 { font-size: clamp(36px, 9vw, 58px); }
 
     .services-orbit {
         position: relative;
         aspect-ratio: auto;
         max-width: 100%;
         width: 100%;
-
         display: flex;
         flex-direction: column;
-        gap: 22px;
-
+        gap: 20px;
         padding: 0;
         transform: none;
     }
-
     .services-orbit::before { display: none; }
 
     .services-globe {
-        width: 55%;
-        max-width: 260px;
+        width: 50%;
+        max-width: 240px;
         order: -1;
-        margin: 0 auto 10px;
-        position: relative;
+        margin: 0 auto 15px;
     }
 
     .orbit-item,
@@ -261,111 +191,83 @@
     .orbit-item-3,
     .orbit-item-4 {
         position: relative !important;
-        top: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        left: auto !important;
+        top: auto !important; right: auto !important;
+        bottom: auto !important; left: auto !important;
 
-        max-width: 100%;
-        width: 100%;
+        max-width: 100%; width: 100%;
 
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        text-align: left;
-
+        flex-direction: row; align-items: center; text-align: left;
         gap: 16px;
-
-        padding: 14px 16px;
-        border: 1px solid var(--border);
-        background: rgba(255, 255, 255, 0.02);
+        padding: 12px 0;
+        border: 0;
+        border-bottom: 1px solid var(--border);
+        background: transparent;
 
         animation: none !important;
         transform: none !important;
     }
+    .orbit-item:last-child { border-bottom: 0; }
 
-    .orbit-text {
-        align-items: flex-start;
-        text-align: left;
-    }
+    .orbit-text { align-items: flex-start; text-align: left; }
+    .orbit-icon { width: 52px; height: 52px; flex: 0 0 52px; }
+    .orbit-icon svg { width: 24px; height: 24px; }
 
-    .orbit-icon {
-        width: 56px;
-        height: 56px;
-        flex: 0 0 56px;
-    }
-
-    .orbit-icon svg { width: 26px; height: 26px; }
-
-    /* ---------------------------------------------------
-       WHY / BRAINSTORM — apilado
-       --------------------------------------------------- */
+    /* WHY — mantener columna izquierda y lista derecha apiladas */
 
     .why-inner {
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 45px;
     }
 
     .why-heading {
         max-width: 100%;
-        text-align: center;
-        margin: 0 auto;
+        text-align: left;
+        margin: 0;
     }
-
     .why-heading > p {
         max-width: 100%;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
+        text-align: left;
+        margin-left: 0;
     }
 
-    .brainstorm-list {
-        width: 100%;
-    }
-
+    .brainstorm-list { width: 100%; }
     .brainstorm-item {
         width: 100%;
         justify-content: flex-start;
+        border-bottom: 1px solid var(--border);
+        padding: 16px 0;
     }
+    .brainstorm-item:last-child { border-bottom: 0; }
 
-    /* ---------------------------------------------------
-       WORK — título centrado y mockup debajo
-       --------------------------------------------------- */
+    /* WORK — título izq, mockup centrado abajo */
 
-    .work {
-        padding: var(--section-padding) 0;
-    }
+    .work { padding: var(--section-padding) 0; }
 
     .work-layout {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 45px;
-        align-items: center;
+        gap: 40px;
     }
 
     .work-heading-left {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        max-width: 100%;
-        margin: 0 auto;
+        display: block;
+        text-align: left;
+        margin: 0;
+        align-items: flex-start;
     }
 
     .work-heading-left h2 {
-        text-align: center;
-        font-size: clamp(36px, 8vw, 54px);
+        text-align: left;
+        font-size: clamp(40px, 10vw, 62px);
         line-height: 1;
     }
 
     .work-heading-left .text-link {
-        margin-top: 22px;
-        align-self: center;
+        margin-top: 18px;
+        display: inline-block;
     }
 
     .work-iphone-wrapper {
-        position: relative;
         max-width: 280px;
         width: 100%;
         margin: 0 auto;
@@ -375,28 +277,25 @@
     }
 
     .work-frame-iphone {
-        max-width: 100%;
         width: 100%;
+        max-width: 100%;
         height: auto;
         display: block;
-        margin: 0 auto;
     }
 
-    /* ---------------------------------------------------
-       PROCESS — vertical, sin grilla
-       --------------------------------------------------- */
+    /* PROCESS — pasos verticales con línea central, mantener iconos grandes */
 
     .process {
         background-image: none;
-        padding: 60px 0;
+        padding: 70px 0;
     }
 
-    .process-heading { text-align: center; margin: 0 auto; }
+    .process-heading { text-align: center; margin: 0 auto 40px; }
 
     .process-map {
         position: relative;
         flex-direction: column;
-        gap: 40px;
+        gap: 55px;
         padding: 0;
         align-items: center;
     }
@@ -407,28 +306,23 @@
     .process-step-3,
     .process-step-4 {
         position: relative !important;
-        top: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        left: auto !important;
+        top: auto !important; right: auto !important;
+        bottom: auto !important; left: auto !important;
 
         flex-direction: column;
         align-items: center;
 
-        max-width: 360px;
+        max-width: 340px;
         width: 100%;
-
         margin: 0 auto;
         transform: none !important;
     }
 
-    .process-step-icon {
-        margin: 0 auto;
-    }
+    .process-step-icon { margin: 0 auto; }
 
     .process-step-2 .process-step-capsule,
     .process-step-4 .process-step-capsule {
-        margin-top: 18px;
+        margin-top: 20px;
         margin-bottom: 0;
     }
 
@@ -438,52 +332,34 @@
         text-align: center;
     }
 
-    /* ---------------------------------------------------
-       GESTIÓN DIGITAL — apilado
-       --------------------------------------------------- */
+    /* DIGITAL — iconos arriba, texto abajo */
 
     .digital-management-inner {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 45px;
     }
 
     .digital-management-icons {
         max-width: 420px;
         margin: 0 auto;
+        order: -1;
     }
 
     .digital-management-heading {
         max-width: 100%;
-        text-align: center;
-        margin: 0 auto;
+        text-align: left;
+        margin: 0;
     }
+    .digital-management-heading .section-heading { text-align: left; }
 
-    .digital-management-heading .section-heading {
-        text-align: center;
-    }
-
-    /* ---------------------------------------------------
-       PLANES — una columna
-       --------------------------------------------------- */
+    /* PLANES — 1 columna, mantener jerarquía de títulos */
 
     .plans-integrated-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 26px;
     }
-
-    .plan-column,
-    .plan-group {
-        width: 100%;
-    }
-
-    .plan-group-title,
-    .plan-column-title {
-        text-align: left;
-    }
-
-    .plan-integrated {
-        width: 100%;
-    }
+    .plan-column, .plan-group { width: 100%; }
+    .plan-integrated { width: 100%; }
 
     .plans-contact {
         grid-template-columns: 1fr;
@@ -492,40 +368,26 @@
         padding-top: 60px;
     }
 
-    .plans-contact-copy { max-width: 100%; text-align: center; }
-    .plans-contact-copy h3 { text-align: center; }
+    .plans-contact-copy { max-width: 100%; text-align: left; }
+    .plans-contact-copy h3 { text-align: left; }
 
     .quote-form-grid { grid-template-columns: 1fr 1fr; }
 
-    /* ---------------------------------------------------
-       FINAL CTA
-       --------------------------------------------------- */
+    /* FINAL CTA */
 
     .final-cta {
-        padding: 70px 0;
+        padding: 80px 0;
         text-align: center;
         background-size:
-            100% 100%,
-            400px 400px,
-            70px 70px,
-            70px 70px,
-            70px 70px,
-            70px 70px,
-            14px 14px,
-            14px 14px;
+            100% 100%, 400px 400px,
+            70px 70px, 70px 70px, 70px 70px, 70px 70px,
+            14px 14px, 14px 14px;
     }
-
     .final-cta h2 span { display: inline; }
 
-    /* ---------------------------------------------------
-       FOOTER
-       --------------------------------------------------- */
+    /* FOOTER */
 
-    .footer-inner {
-        gap: 40px;
-        grid-template-columns: 1fr 1fr;
-    }
-
+    .footer-inner { gap: 40px; grid-template-columns: 1fr 1fr; }
     .footer-bottom {
         flex-direction: column;
         align-items: flex-start;
@@ -541,141 +403,100 @@
 
 @media (max-width: 640px) {
 
-    :root {
-        --section-padding: 55px;
-    }
+    :root { --section-padding: 60px; }
 
-    .container {
-        width: calc(100% - 32px);
-    }
+    .container { width: calc(100% - 32px); }
 
     .header-inner { min-height: 68px; }
 
     .logo-icon { width: 30px; height: 30px; flex: 0 0 30px; }
-    .logo-guri,
-    .logo-web { font-size: 17px; }
+    .logo-guri, .logo-web { font-size: 17px; }
 
     .menu-toggle { width: 40px; height: 40px; }
 
-    .main-nav {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
+    .main-nav { padding-left: 16px; padding-right: 16px; }
 
     /* HERO */
 
     .hero {
-        padding-top: 90px;
-        padding-bottom: 50px;
+        padding-top: 95px;
+        padding-bottom: 55px;
         background-size:
-            100% 100%,
-            250px 250px,
-            50px 50px,
-            50px 50px,
-            50px 50px,
-            50px 50px,
-            10px 10px,
-            10px 10px;
+            100% 100%, 250px 250px,
+            50px 50px, 50px 50px, 50px 50px, 50px 50px,
+            10px 10px, 10px 10px;
     }
 
-    .hero-logo { max-width: 200px; }
+    .hero-logo { max-width: 180px; }
 
     .hero h1 {
-        font-size: clamp(42px, 13vw, 62px);
+        font-size: clamp(44px, 14vw, 66px);
         line-height: 0.95;
     }
 
     .hero-content > p {
         font-size: 14px;
         line-height: 1.6;
-        margin-top: 20px;
+        margin-top: 18px;
     }
 
     .hero-actions {
         flex-direction: column;
         align-items: stretch;
         gap: 10px;
-        margin-top: 28px;
+        margin-top: 26px;
     }
-
     .hero-actions .button,
-    .hero-actions a {
-        width: 100%;
-        text-align: center;
-    }
+    .hero-actions a { width: 100%; text-align: center; }
 
-    .section-heading { margin-bottom: 35px; }
+    .section-heading { margin-bottom: 30px; }
     .section-heading h2 {
-        font-size: clamp(32px, 9vw, 44px);
+        font-size: clamp(34px, 10vw, 46px);
         line-height: 1;
     }
 
     /* SERVICES */
 
-    .services-globe {
-        width: 65%;
-        max-width: 220px;
-    }
+    .services-globe { width: 60%; max-width: 200px; }
 
-    .orbit-icon { width: 50px; height: 50px; flex: 0 0 50px; }
+    .orbit-icon { width: 48px; height: 48px; flex: 0 0 48px; }
     .orbit-icon svg { width: 22px; height: 22px; }
     .orbit-text h3 { font-size: 15px; }
     .orbit-text p { font-size: 11px; }
 
-    .services-heading h2 {
-        font-size: clamp(30px, 8vw, 42px);
-    }
+    .services-heading h2 { font-size: clamp(32px, 9vw, 44px); }
 
     /* WHY */
 
-    .why-inner { gap: 40px; }
+    .why-inner { gap: 35px; }
 
-    .brainstorm-item {
-        gap: 14px;
-        padding: 12px 16px 12px 0;
-    }
-
-    .brainstorm-icon {
-        width: 56px;
-        height: 56px;
-        flex: 0 0 56px;
-    }
-
+    .brainstorm-item { gap: 14px; padding: 14px 0; }
+    .brainstorm-icon { width: 54px; height: 54px; flex: 0 0 54px; }
     .brainstorm-check { width: 24px; height: 24px; }
     .brainstorm-item span { font-size: 14px; }
 
     /* WORK */
 
-    .work-layout {
-        gap: 35px;
-    }
+    .work-layout { gap: 32px; }
 
-    .work-heading-left h2 {
-        font-size: clamp(32px, 10vw, 44px);
-    }
-
-    .work-iphone-wrapper {
-        max-width: 240px;
-    }
-
-    .work-frame-iphone {
-        width: 100%;
-    }
+    .work-heading-left h2 { font-size: clamp(36px, 11vw, 50px); }
+    .work-iphone-wrapper { max-width: 240px; }
+    .work-frame-iphone { width: 100%; }
 
     /* PROCESS */
 
-    .process { padding: 55px 0; }
-    .process-map { gap: 32px; }
+    .process { padding: 60px 0; }
+    .process-map { gap: 42px; }
     .process-step { max-width: 100%; }
 
-    .process-step-icon { width: 64px; height: 64px; }
+    .process-step-icon { width: 66px; height: 66px; }
     .process-step-icon svg { width: 28px; height: 28px; }
 
     .process-step-capsule { max-width: 100%; }
     .process-step-capsule h3 { font-size: 18px; }
     .process-step-capsule p { font-size: 12px; }
 
-    /* GESTIÓN DIGITAL */
+    /* DIGITAL */
 
     .digital-management-icons { max-width: 340px; }
 
@@ -691,10 +512,7 @@
     .plan-integrated .plan-service p { font-size: 13px; }
     .plan-integrated .plan-features li { font-size: 12px; }
 
-    .plans-coming-soon {
-        margin-top: 40px;
-        padding: 24px;
-    }
+    .plans-coming-soon { margin-top: 40px; padding: 24px; }
     .plans-coming-soon h3 { font-size: 26px; }
     .plans-coming-soon p { font-size: 13px; }
 
@@ -708,16 +526,12 @@
 
     .plans-contact-copy h3 { font-size: 30px; }
 
-    .quote-form {
-        padding: 22px 18px;
-        margin-top: 20px;
-    }
+    .quote-form { padding: 22px 18px; margin-top: 20px; }
 
     .quote-form-grid {
         grid-template-columns: 1fr;
         gap: 16px;
     }
-
     .form-field-full { grid-column: auto; }
 
     .form-field input,
@@ -726,27 +540,20 @@
         min-height: 46px;
         font-size: 13px;
     }
-
     .form-field textarea { min-height: 120px; }
-
     .quote-form-submit { width: 100%; }
 
     /* FINAL CTA */
 
     .final-cta {
-        padding: 60px 0;
+        padding: 70px 0;
         background-size:
-            100% 100%,
-            250px 250px,
-            50px 50px,
-            50px 50px,
-            50px 50px,
-            50px 50px,
-            10px 10px,
-            10px 10px;
+            100% 100%, 250px 250px,
+            50px 50px, 50px 50px, 50px 50px, 50px 50px,
+            10px 10px, 10px 10px;
     }
 
-    .final-cta h2 { font-size: clamp(38px, 11vw, 52px); }
+    .final-cta h2 { font-size: clamp(40px, 12vw, 56px); }
     .final-cta h2 span { display: block; }
 
     /* FOOTER */
@@ -757,22 +564,13 @@
         padding-bottom: 40px;
     }
 
-    .footer-links {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .footer-links strong,
-    .footer-links h4 { font-size: 11px; }
+    .footer-links { grid-template-columns: 1fr; gap: 25px; }
+    .footer-links strong, .footer-links h4 { font-size: 11px; }
     .footer-links a { font-size: 12px; }
 
     .site-footer { padding-top: 50px; }
 
-    .footer-credit img {
-        width: 24px;
-        height: 24px;
-        flex: 0 0 24px;
-    }
+    .footer-credit img { width: 24px; height: 24px; flex: 0 0 24px; }
 }
 
 /* ---------------------------------------------------------
@@ -784,15 +582,14 @@
     .container { width: calc(100% - 28px); }
 
     .logo-icon { width: 26px; height: 26px; flex: 0 0 26px; }
-    .logo-guri,
-    .logo-web { font-size: 15px; }
+    .logo-guri, .logo-web { font-size: 15px; }
 
-    .hero h1 { font-size: 40px; }
-    .hero-logo { max-width: 170px; }
+    .hero h1 { font-size: 42px; }
+    .hero-logo { max-width: 160px; }
 
-    .services-globe { width: 70%; max-width: 200px; }
+    .services-globe { width: 65%; max-width: 190px; }
 
-    .orbit-icon { width: 46px; height: 46px; flex: 0 0 46px; }
+    .orbit-icon { width: 44px; height: 44px; flex: 0 0 44px; }
     .orbit-icon svg { width: 20px; height: 20px; }
     .orbit-text h3 { font-size: 14px; }
     .orbit-text p { font-size: 10px; }
