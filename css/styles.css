@@ -1036,7 +1036,7 @@ button {
     background-image: url("../assets/seleccion/mockup.png");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: contain;
+    background-size: 100% 100%;
 
     aspect-ratio: 9 / 19.5;
 
@@ -1055,10 +1055,10 @@ button {
 
 .iphone-screen {
     position: absolute;
-    top: 1.8%;
-    left: 6%;
-    width: 88%;
-    height: 96.4%;
+    top: 2.2%;
+    left: 4.5%;
+    width: 91%;
+    height: 95.6%;
 
     border-radius: 11% / 5.1%;
 
@@ -1080,12 +1080,12 @@ button {
     width: 100%;
     height: auto;
     display: block;
-    animation: iphone-scroll-anim 200s linear infinite;
+    animation: iphone-scroll-anim 14s ease-in-out infinite;
 }
 
 @keyframes iphone-scroll-anim {
     0%   { transform: translateY(0); }
-    50%  { transform: translateY(-100%); }
+    50%  { transform: translateY(-18%); }
     100% { transform: translateY(0); }
 }
 
