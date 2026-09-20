@@ -1042,13 +1042,13 @@ button {
         drop-shadow(0 0 80px rgba(255, 90, 31, 0.22));
 }
 
-/* Overlay: marco + isla + cámara. Va ENCIMA del scroll */
-.work-frame-iphone::before {
+/* EL MOCKUP VA ENCIMA DE TODO (z-index alto) */
+.work-frame-iphone::after {
     content: "";
     position: absolute;
     inset: 0;
 
-    background-image: url("../assets/seleccion/mockup-frame.png");
+    background-image: url("../assets/seleccion/mockup.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100% 100%;
@@ -1056,6 +1056,8 @@ button {
     z-index: 10;
     pointer-events: none;
 }
+
+/* ---------- Pantalla: solo recorta el scroll ---------- */
 
 .iphone-screen {
     position: absolute;
@@ -1071,7 +1073,8 @@ button {
     z-index: 2;
 }
 
-/* Scroll */
+/* ---------- Scroll ---------- */
+
 .iphone-scroll {
     position: absolute;
     inset: 0;
@@ -1100,7 +1103,8 @@ button {
     100% { transform: translateY(0); }
 }
 
-/* Status bar: hora + iconos */
+/* ---------- Status bar: SOLO hora e iconos. Sin isla. ---------- */
+
 .device-status-bar {
     display: flex;
     position: absolute;
@@ -1147,25 +1151,6 @@ button {
 .device-battery {
     width: 1.375em;
     height: 0.625em;
-}
-
-/* Home indicator */
-.iphone-home-bar {
-    display: block;
-    position: absolute;
-    bottom: 0.375em;
-    left: 50%;
-    transform: translateX(-50%);
-
-    width: 6.875em;
-    height: 0.25em;
-    border-radius: 0.125em;
-
-    background: #fff;
-    opacity: 0.85;
-
-    z-index: 6;
-    pointer-events: none;
 }
 
 /* =========================================================
