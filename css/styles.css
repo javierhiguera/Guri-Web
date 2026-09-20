@@ -1025,77 +1025,167 @@ button {
 
 
 /* =========================================================
-   iPHONE 18 PRO
+   iPHONE
    ========================================================= */
 
+/* Marco exterior — estilo titanio naranja con reflejos */
 .work-frame-iphone {
     position: relative;
     width: 100%;
-    max-width: 320px;
+    max-width: 310px;
     margin: 0 auto;
     padding: 4px;
-    border-radius: 48px;
-   background: linear-gradient(
+    border-radius: 52px;
+
+    background: linear-gradient(
         145deg,
-        #ff8a5c 0%,
-        #e64a15 15%,
-        #cc3d0a 30%,
-        #e64a15 45%,
-        #ff5a1f 55%,
-        #cc3d0a 70%,
-        #802200 85%,
-        #e64a15 100%
+        #ffc9a3 0%,
+        #ff7a3d 10%,
+        #b03607 25%,
+        #ff5a1f 40%,
+        #6b1f04 55%,
+        #ff6b2b 70%,
+        #a8320a 85%,
+        #ff8a5c 100%
     );
+
     box-shadow:
-        0 30px 60px rgba(0, 0, 0, 0.9),
-        0 15px 30px rgba(0, 0, 0, 0.7),
-        inset 0 2px 1px rgba(255, 255, 255, 0.15),
-        inset 0 -2px 1px rgba(0, 0, 0, 0.6),
-        inset 2px 0 1px rgba(255, 255, 255, 0.08),
-        inset -2px 0 1px rgba(0, 0, 0, 0.4);
+        0 50px 80px -25px rgba(0, 0, 0, 0.95),
+        0 25px 50px -15px rgba(0, 0, 0, 0.7),
+        0 0 100px rgba(255, 90, 31, 0.25),
+        inset 0 1px 1px rgba(255, 255, 255, 0.45),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.75),
+        inset 1px 0 1px rgba(255, 255, 255, 0.2),
+        inset -1px 0 1px rgba(0, 0, 0, 0.55);
 }
 
+/* Botón lateral derecho (encendido) */
+.work-frame-iphone::before {
+    content: "";
+    position: absolute;
+    top: 188px;
+    right: -2.5px;
+    width: 3px;
+    height: 82px;
+    border-radius: 0 3px 3px 0;
+
+    background: linear-gradient(
+        180deg,
+        #ffb890 0%,
+        #ff5a1f 35%,
+        #b03607 70%,
+        #6b1f04 100%
+    );
+
+    box-shadow:
+        inset -1px 0 1px rgba(255, 255, 255, 0.3),
+        2px 0 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Botones laterales izquierdos:
+   [1] Botón de Acción (30px)
+   [2] Volumen Arriba  (55px)
+   [3] Volumen Abajo   (55px) */
+.work-frame-iphone::after {
+    content: "";
+    position: absolute;
+    top: 108px;
+    left: -2.5px;
+    width: 3px;
+    height: 172px;
+
+    background-image:
+        linear-gradient(180deg, #ffb890 0%, #ff5a1f 40%, #8b2a06 100%),
+        linear-gradient(180deg, #ffb890 0%, #ff5a1f 40%, #8b2a06 100%),
+        linear-gradient(180deg, #ffb890 0%, #ff5a1f 40%, #8b2a06 100%);
+
+    background-size:
+        3px 30px,
+        3px 55px,
+        3px 55px;
+
+    background-position:
+        0 0,
+        0 55px,
+        0 117px;
+
+    background-repeat: no-repeat;
+    filter: drop-shadow(-2px 0 4px rgba(0, 0, 0, 0.6));
+}
+
+/* Dynamic Island (reemplaza el notch ancho) */
 .iphone-notch {
     position: absolute;
-    top: 18px;
+    top: 14px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
-    height: 26px;
-    border-radius: 20px;
+    width: 94px;
+    height: 28px;
+    border-radius: 16px;
     background: #000;
-    z-index: 10;
+    z-index: 15;
+
     box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.08),
-        inset 0 1px 2px rgba(255, 255, 255, 0.05);
+        inset 0 0 0 0.5px rgba(255, 255, 255, 0.06),
+        inset 0 1px 1px rgba(255, 255, 255, 0.04);
 }
 
 .iphone-notch::before {
     content: "";
     position: absolute;
     top: 50%;
-    right: 12px;
+    right: 13px;
     transform: translateY(-50%);
-    width: 8px;
-    height: 8px;
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, #2a2a3e, #000);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+    background: radial-gradient(
+        circle at 30% 30%,
+        #2a2a3e 0%,
+        #0d0d18 60%,
+        #000 100%
+    );
+
+    box-shadow: inset 0 0 0 0.5px rgba(255, 255, 255, 0.1);
 }
 
+/* Pantalla — negros profundos + viñeta */
 .iphone-screen {
     position: relative;
     width: 100%;
     aspect-ratio: 9 / 19.5;
-    border-radius: 44px;
+    border-radius: 48px;
     background: #000;
     overflow: hidden;
-    border: 3px solid #080808; /* Línea interna negra */
+
     box-shadow:
-        inset 0 0 0 2px #000,
-        inset 0 0 20px rgba(0, 0, 0, 0.5);
+        inset 0 0 0 1.5px #000,
+        inset 0 0 0 3px rgba(0, 0, 0, 0.95),
+        inset 0 0 40px rgba(0, 0, 0, 0.9);
 }
 
+/* Reflejo de cristal sobre la pantalla */
+.iphone-screen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 48px;
+    pointer-events: none;
+    z-index: 20;
+
+    background: linear-gradient(
+        115deg,
+        rgba(255, 255, 255, 0.14) 0%,
+        rgba(255, 255, 255, 0.04) 12%,
+        transparent 25%,
+        transparent 75%,
+        rgba(255, 255, 255, 0.05) 92%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+}
+
+/* Barra de estado (sin cambios estructurales) */
 .device-status-bar {
     position: absolute;
     top: 0;
@@ -1104,10 +1194,11 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 22px 0 22px;
+    padding: 14px 24px 0 24px;
     z-index: 5;
     color: #fff;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Bunken", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+        "SF Pro Text", "Helvetica Neue", "Bunken", sans-serif;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -1137,12 +1228,10 @@ button {
     height: 11px;
 }
 
+/* Scroll interno */
 .iphone-scroll {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     overflow: hidden;
 }
 
@@ -1154,17 +1243,12 @@ button {
 }
 
 @keyframes iphone-scroll-anim {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-100%);
-    }
-    100% {
-        transform: translateY(0);
-    }
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
 }
 
+/* Home indicator */
 .iphone-home-bar {
     position: absolute;
     bottom: 8px;
@@ -1178,57 +1262,6 @@ button {
     z-index: 6;
     pointer-events: none;
 }
-
-/* --- 4. BOTÓN DE DESBLOQUEO (Derecha) --- 
-   Centrado verticalmente entre los dos volúmenes.
-   Volumen arriba: 155px a 205px (centro 180px).
-   Volumen abajo: 215px a 265px (centro 240px).
-   Punto medio: (180+240)/2 = 210px.
-   Altura 56px, entonces top = 210 - 28 = 182px. */
-.work-frame-iphone::before {
-    content: "";
-    position: absolute;
-    top: 182px;
-    right: -2px;
-    width: 2px;
-    height: 56px; /* Un poco más largo que los volúmenes (50px) */
-    border-radius: 0 2px 2px 0;
-    background: linear-gradient(180deg, #ff8a5c 0%, #e64a15 50%, #cc3d0a 100%);
-    box-shadow: 
-        inset -1px 0 1px rgba(255, 255, 255, 0.3), 
-        inset 1px 0 1px rgba(0, 0, 0, 0.5),
-        0 0 3px rgba(0, 0, 0, 0.8);
-}
-
-/* --- 1. BOTÓN DE ACCIÓN + 2. VOLUMEN ARRIBA + 3. VOLUMEN ABAJO (Izquierda) ---
-   Se dibujan los 3 botones con 3 gradientes independientes.
-   
-   - Botón de Acción: 25px de alto (mitad de 50px), en top: 105px.
-   - Volumen Arriba: 50px de alto, en top: 155px.
-   - Volumen Abajo: 50px de alto (idéntico al de arriba), en top: 215px. */
-.work-frame-iphone::after {
-    content: "";
-    position: absolute;
-    top: 100px;
-    left: -2px;
-    width: 2px;
-    height: 170px;
-    background-image:
-        linear-gradient(180deg, #ff8a5c 0%, #e64a15 50%, #cc3d0a 100%),
-        linear-gradient(180deg, #ff8a5c 0%, #e64a15 50%, #cc3d0a 100%),
-        linear-gradient(180deg, #ff8a5c 0%, #e64a15 50%, #cc3d0a 100%);
-    background-size:
-        2px 25px,   /* 1. Botón de Acción (mitad de tamaño) */
-        2px 50px,   /* 2. Volumen Arriba */
-        2px 50px;   /* 3. Volumen Abajo */
-    background-position:
-        0 5px,      /* Botón de Acción: top global 105px */
-        0 55px,     /* Volumen Arriba: top global 155px */
-        0 115px;    /* Volumen Abajo: top global 215px */
-    background-repeat: no-repeat;
-    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.8));
-}
-
 /* =========================================================
    WORK INFO — OCULTO
    ========================================================= */
