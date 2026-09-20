@@ -1071,7 +1071,29 @@ button {
     z-index: 2;
 }
 
-/* ---------- Gradiente superior (sutil, para legibilidad) ---------- */
+/* ---------- Dynamic Island (idéntica al PNG) ---------- */
+
+.iphone-screen::before {
+    content: "";
+    position: absolute;
+    top: 0.55em;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 5.9em;
+    height: 1.85em;
+    border-radius: 1em;
+
+    background: #000;
+
+    z-index: 10;
+
+    box-shadow:
+        inset 0 0 0 0.5px rgba(255, 255, 255, 0.04),
+        inset 0 1px 1px rgba(255, 255, 255, 0.03);
+}
+
+/* ---------- Gradiente superior (sutil) ---------- */
 
 .iphone-screen::after {
     content: "";
@@ -1083,8 +1105,8 @@ button {
 
     background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.35) 0%,
-        rgba(0, 0, 0, 0.1) 60%,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.08) 60%,
         transparent 100%
     );
 
@@ -1123,7 +1145,7 @@ button {
     100% { transform: translateY(0); }
 }
 
-/* ---------- Status bar (hora + iconos) ---------- */
+/* ---------- Status bar (hora + iconos + cámara) ---------- */
 
 .device-status-bar {
     display: flex;
@@ -1132,7 +1154,7 @@ button {
     left: 0;
     right: 0;
 
-    height: 2.75em;
+    height: 2.9em;
 
     align-items: center;
     justify-content: space-between;
@@ -1145,8 +1167,44 @@ button {
     font-weight: 600;
 
     pointer-events: none;
-    z-index: 6;
+    z-index: 11;
 }
+
+/* ---------- Cámara frontal (dentro de la isla) ---------- */
+
+.device-status-bar::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    margin-left: 2em;
+
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 32% 30%,
+            #7a8aff 0%,
+            #3a3aaa 22%,
+            #15153a 48%,
+            #050508 75%,
+            #000 100%
+        );
+
+    box-shadow:
+        inset 0 0 0 0.5px rgba(160, 160, 255, 0.25),
+        inset 1px 1px 1px rgba(200, 200, 255, 0.2),
+        0 0 0 0.5px rgba(0, 0, 0, 0.9);
+
+    z-index: 12;
+    pointer-events: none;
+}
+
+/* ---------- Hora ---------- */
 
 .device-time {
     font-size: 0.75em;
@@ -1157,6 +1215,8 @@ button {
     display: flex;
     align-items: center;
 }
+
+/* ---------- Iconos (señal + wifi + batería) ---------- */
 
 .device-status-icons {
     display: flex;
