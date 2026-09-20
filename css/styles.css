@@ -1040,6 +1040,8 @@ button {
 
     aspect-ratio: 389 / 800;
 
+    font-size: 16px;
+
     filter:
         drop-shadow(0 40px 60px rgba(0, 0, 0, 0.9))
         drop-shadow(0 0 80px rgba(255, 90, 31, 0.22));
@@ -1061,7 +1063,7 @@ button {
 
     border-radius: 11% / 5.4%;
 
-    background: transparent;
+    background: #000;
     border: 0;
     box-shadow: none;
 
@@ -1069,18 +1071,18 @@ button {
     z-index: 2;
 }
 
-/* ---------- Dynamic Island (píldora negra) ---------- */
+/* ---------- Dynamic Island ---------- */
 
 .iphone-screen::before {
     content: "";
     position: absolute;
-    top: 10px;
+    top: 0.625em;
     left: 50%;
     transform: translateX(-50%);
 
-    width: 90px;
-    height: 26px;
-    border-radius: 14px;
+    width: 5.625em;
+    height: 1.625em;
+    border-radius: 0.875em;
 
     background: #000;
 
@@ -1091,7 +1093,7 @@ button {
         inset 0 1px 1px rgba(255, 255, 255, 0.04);
 }
 
-/* ---------- Gradiente sutil arriba (para legibilidad) ---------- */
+/* ---------- Gradiente superior ---------- */
 
 .iphone-screen::after {
     content: "";
@@ -1122,8 +1124,16 @@ button {
 }
 
 .iphone-scroll-img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: auto;
+    min-height: 100%;
+
+    object-fit: cover;
+    object-position: top center;
+
     display: block;
     animation: iphone-scroll-anim 12s ease-in-out infinite;
 }
@@ -1134,7 +1144,7 @@ button {
     100% { transform: translateY(0); }
 }
 
-/* ---------- Status bar (hora + señal + wifi + batería) ---------- */
+/* ---------- Status bar ---------- */
 
 .device-status-bar {
     display: flex;
@@ -1146,21 +1156,19 @@ button {
     align-items: center;
     justify-content: space-between;
 
-    padding: 13px 26px 0 26px;
+    padding: 0.8125em 1.625em 0 1.625em;
 
     color: #fff;
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
         "SF Pro Text", "Helvetica Neue", sans-serif;
-    font-size: 12px;
     font-weight: 600;
-    letter-spacing: -0.02em;
 
     pointer-events: none;
     z-index: 6;
 }
 
 .device-time {
-    font-size: 12px;
+    font-size: 0.75em;
     font-weight: 600;
     letter-spacing: -0.02em;
 }
@@ -1168,32 +1176,32 @@ button {
 .device-status-icons {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 0.25em;
 }
 
 .device-icon {
-    width: 14px;
-    height: 10px;
+    width: 0.875em;
+    height: 0.625em;
     fill: currentColor;
 }
 
 .device-battery {
-    width: 22px;
-    height: 10px;
+    width: 1.375em;
+    height: 0.625em;
 }
 
-/* ---------- Home indicator (barrita blanca) ---------- */
+/* ---------- Home indicator ---------- */
 
 .iphone-home-bar {
     display: block;
     position: absolute;
-    bottom: 6px;
+    bottom: 0.375em;
     left: 50%;
     transform: translateX(-50%);
 
-    width: 110px;
-    height: 4px;
-    border-radius: 2px;
+    width: 6.875em;
+    height: 0.25em;
+    border-radius: 0.125em;
 
     background: #fff;
     opacity: 0.85;
