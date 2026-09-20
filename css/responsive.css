@@ -175,7 +175,7 @@
 
     .hero-inner {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 40px;
     }
 
@@ -329,35 +329,61 @@
     }
 
     /* ---------------------------------------------------
-       WORK — apilado
+       WORK — título centrado y mockup debajo
        --------------------------------------------------- */
 
+    .work {
+        padding: var(--section-padding) 0;
+    }
+
     .work-layout {
+        display: grid;
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 45px;
+        align-items: center;
     }
 
     .work-heading-left {
+        display: flex;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
         text-align: center;
+        max-width: 100%;
         margin: 0 auto;
     }
 
     .work-heading-left h2 {
         text-align: center;
+        font-size: clamp(36px, 8vw, 54px);
+        line-height: 1;
     }
 
     .work-heading-left .text-link {
-        margin-top: 20px;
+        margin-top: 22px;
+        align-self: center;
     }
 
     .work-iphone-wrapper {
-        max-width: 260px;
+        position: relative;
+        max-width: 280px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .work-frame-iphone {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        display: block;
         margin: 0 auto;
     }
 
     /* ---------------------------------------------------
-       PROCESS — vertical, sin grilla, con conectores
+       PROCESS — vertical, sin grilla
        --------------------------------------------------- */
 
     .process {
@@ -620,11 +646,21 @@
 
     /* WORK */
 
-    .work-heading-left h2 {
-        font-size: clamp(30px, 9vw, 42px);
+    .work-layout {
+        gap: 35px;
     }
 
-    .work-iphone-wrapper { max-width: 220px; }
+    .work-heading-left h2 {
+        font-size: clamp(32px, 10vw, 44px);
+    }
+
+    .work-iphone-wrapper {
+        max-width: 240px;
+    }
+
+    .work-frame-iphone {
+        width: 100%;
+    }
 
     /* PROCESS */
 
@@ -761,7 +797,7 @@
     .orbit-text h3 { font-size: 14px; }
     .orbit-text p { font-size: 10px; }
 
-    .work-iphone-wrapper { max-width: 200px; }
+    .work-iphone-wrapper { max-width: 210px; }
 
     .digital-management-icons { max-width: 280px; }
     .digital-icon { width: 48px; height: 48px; }
