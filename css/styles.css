@@ -1,5 +1,5 @@
 /* =========================================================
-   GURI — STYLES
+   GURI — STYLES  (FONDO BLANCO + ACENTO #00633b)
    ========================================================= */
 
 
@@ -29,19 +29,19 @@
    ========================================================= */
 
 :root {
-    --black: #080808;
-    --black-soft: #111111;
-    --black-card: #151515;
+    --black: #ffffff;
+    --black-soft: #ffffff;
+    --black-card: #ffffff;
 
-    --board: #0d0d0d;
+    --board: #ffffff;
 
-    --white: #f5f5f5;
+    --white: #111111;
 
-    --gray: #999999;
-    --gray-light: #cfcfcf;
-    --gray-dark: #666666;
+    --gray: #666666;
+    --gray-light: #333333;
+    --gray-dark: #999999;
 
-    --border: #262626;
+    --border: #eeeeee;
 
     --orange: #00633b;
     --orange-bright: #008a52;
@@ -208,7 +208,7 @@ button {
 }
 
 .site-header.scrolled {
-    background: rgba(8, 8, 8, 0.94);
+    background: rgba(255, 255, 255, 0.94);
 
     border-color: var(--border);
 
@@ -302,7 +302,7 @@ button {
 .main-nav a {
     position: relative;
 
-    color: #cfcfcf;
+    color: #666666;
 
     font-size: 13px;
 
@@ -369,7 +369,7 @@ button {
 .header-button:hover {
     background: var(--orange);
 
-    color: #080808;
+    color: #ffffff;
 
     transform: scale(1.05);
 }
@@ -468,11 +468,11 @@ button {
 
         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,99,59,0.5);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,99,59,0.5);}.tick{stroke:rgba(0,99,59,0.35);stroke-width:1;}.tick-major{stroke:rgba(0,99,59,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(0,99,59,0.15);stroke-width:0.5;}.angle{stroke:rgba(0,99,59,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(0,99,59,0.45)' stroke-width='1' fill='none'/></g></svg>"),
 
-        linear-gradient(rgba(0, 99, 59, 0.28) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 99, 59, 0.28) 1px, transparent 1px),
+        linear-gradient(rgba(0, 99, 59, 0.35) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 99, 59, 0.35) 1px, transparent 1px),
 
-        linear-gradient(rgba(0, 0, 0, 0.5) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.5) 1px, transparent 1px),
+        linear-gradient(rgba(0, 99, 59, 0.35) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 99, 59, 0.35) 1px, transparent 1px),
 
         linear-gradient(rgba(0, 99, 59, 0.10) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 99, 59, 0.10) 1px, transparent 1px);
@@ -608,7 +608,7 @@ button {
 
     background: var(--orange);
 
-    color: #080808;
+    color: #ffffff;
 }
 
 .button-primary:hover {
@@ -698,7 +698,6 @@ button {
 .services-heading h2 {
     font-family: "Xenois", serif;
 
-    /* Aumentado 15%: 42px -> 48px, 5vw -> 5.75vw, 76px -> 87px */
     font-size: clamp(48px, 5.75vw, 87px);
 
     line-height: 0.96;
@@ -773,7 +772,6 @@ button {
         transform var(--transition);
 }
 
-/* El hover ahora respeta las variables de posición para no romper el layout */
 .orbit-item:hover {
     color: var(--orange);
     transform: translate(var(--x), var(--y)) scale(1.08);
@@ -794,7 +792,7 @@ button {
 
     border-radius: 50%;
 
-    background: rgba(8, 8, 8, 0.9);
+    background: #ffffff;
 
     color: var(--orange);
 
@@ -821,7 +819,7 @@ button {
 
 .orbit-item:hover .orbit-icon {
     background: var(--orange);
-    color: var(--black);
+    color: #ffffff;
 
     transform: scale(1.08);
 
@@ -845,7 +843,6 @@ button {
 
     font-family: "Xenois", serif;
 
-    /* Aumentado 15%: 16px -> 18px */
     font-size: 18px;
     line-height: 1.15;
 
@@ -859,7 +856,6 @@ button {
 
     color: var(--gray);
 
-    /* Aumentado 15%: 11px -> 13px */
     font-size: 13px;
     line-height: 1.45;
 
@@ -873,11 +869,8 @@ button {
 
 /* =========================================================
    POSICIONES DISPERSAS ALREDEDOR DEL MUNDO
-   (Modificadas para ser más orgánicas y menos alineadas)
    ========================================================= */
 
-/* 1. Arriba (ligeramente a la izquierda) 
-   - El texto va arriba, el icono abajo tocando la línea. */
 .orbit-item-1 {
     top: 10%;
     left: 35%;
@@ -888,8 +881,6 @@ button {
     animation: float-1 6s ease-in-out infinite;
 }
 
-/* 2. Derecha (ligeramente arriba)
-   - El icono a la izquierda tocando la línea, el texto a la derecha. */
 .orbit-item-2 {
     top: 25%;
     right: 8%;
@@ -900,8 +891,6 @@ button {
     animation: float-2 7s ease-in-out infinite;
 }
 
-/* 3. Abajo (ligeramente a la derecha)
-   - El icono arriba tocando la línea, el texto abajo. */
 .orbit-item-3 {
     bottom: 10%;
     left: 60%;
@@ -912,8 +901,6 @@ button {
     animation: float-3 8s ease-in-out infinite;
 }
 
-/* 4. Izquierda (ligeramente abajo)
-   - El texto a la izquierda, el icono a la derecha tocando la línea. */
 .orbit-item-4 {
     top: 60%;
     left: 8%;
@@ -927,7 +914,6 @@ button {
 
 /* =========================================================
    ANIMACIONES DE FLOTACIÓN
-   (Usamos 'translate' en lugar de 'transform' para no chocar con el posicionamiento)
    ========================================================= */
 
 @keyframes float-1 {
@@ -1094,7 +1080,7 @@ button {
         0 0 0 0.5px rgba(0, 0, 0, 0.8);
 }
 
-/* ---------- Cámara frontal (dentro del status bar) ---------- */
+/* ---------- Cámara frontal ---------- */
 
 .device-status-bar::after {
     content: "";
@@ -1283,11 +1269,11 @@ button {
 
         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,99,59,0.5);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,99,59,0.5);}.tick{stroke:rgba(0,99,59,0.35);stroke-width:1;}.tick-major{stroke:rgba(0,99,59,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(0,99,59,0.15);stroke-width:0.5;}.angle{stroke:rgba(0,99,59,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(0,99,59,0.45)' stroke-width='1' fill='none'/></g></svg>"),
 
-        linear-gradient(rgba(0, 99, 59, 0.28) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 99, 59, 0.28) 1px, transparent 1px),
+        linear-gradient(rgba(0, 99, 59, 0.35) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 99, 59, 0.35) 1px, transparent 1px),
 
-        linear-gradient(rgba(0, 0, 0, 0.5) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.5) 1px, transparent 1px),
+        linear-gradient(rgba(0, 99, 59, 0.35) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 99, 59, 0.35) 1px, transparent 1px),
 
         linear-gradient(rgba(0, 99, 59, 0.10) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 99, 59, 0.10) 1px, transparent 1px);
@@ -1351,7 +1337,7 @@ button {
     flex: 1;
 
     display: flex;
-    flex-direction: column; /* icono arriba, cuadro abajo SIEMPRE */
+    flex-direction: column;
 
     align-items: center;
 
@@ -1361,7 +1347,7 @@ button {
 }
 
 .process-step-icon {
-    order: 1; /* siempre primero (arriba) */
+    order: 1;
 
     position: relative;
 
@@ -1379,7 +1365,7 @@ button {
 
     border-radius: 50%;
 
-    background: var(--black);
+    background: #ffffff;
 
     color: var(--orange);
 
@@ -1461,27 +1447,27 @@ button {
 }
 
 .process-step-capsule {
-    order: 2; /* siempre segundo (abajo) */
+    order: 2;
 
     display: flex;
 
     flex-direction: column;
 
     align-items: center;
-    justify-content: center; /* centra el contenido vertical y horizontal */
+    justify-content: center;
 
     gap: 6px;
 
-    width: 220px;      /* ancho fijo igual para todos */
-    min-height: 140px; /* alto mínimo igual para todos */
+    width: 220px;
+    min-height: 140px;
 
-    margin-top: 35px; /* separación fija entre icono y cuadro */
+    margin-top: 35px;
 
     padding: 16px;
 
     border: 1.5px solid var(--orange);
 
-    background: rgba(8, 8, 8, 0.88);
+    background: rgba(255, 255, 255, 0.92);
 
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
@@ -1506,7 +1492,7 @@ button {
 .process-step-capsule p {
     margin: 0;
 
-    color: var(--gray-light);
+    color: var(--gray);
 
     font-size: 12px;
 
@@ -1613,7 +1599,7 @@ button {
 
     border-radius: 50%;
 
-    background: var(--black);
+    background: #ffffff;
 
     color: var(--orange);
 
@@ -1631,7 +1617,7 @@ button {
 .brainstorm-item:hover .brainstorm-icon {
     background: var(--orange);
 
-    color: var(--black);
+    color: #ffffff;
 
     transform: scale(1.08);
 
@@ -1705,7 +1691,7 @@ button {
 }
 
 .brainstorm-item span {
-    color: #d2d2d2;
+    color: #666666;
 
     font-size: 15px;
 }
@@ -2061,7 +2047,7 @@ button {
 
     padding-left: 18px;
 
-    color: #c5c5c5;
+    color: #666666;
 
     font-size: 12px;
 
@@ -2112,7 +2098,7 @@ button {
 
 .plans-coming-soon:hover {
     border-color: var(--orange);
-    background: #0d0d0d;
+    background: #f5f5f5;
 }
 
 .plans-coming-soon .plans-category-heading {
@@ -2241,7 +2227,7 @@ button {
 
 .quote-form:hover {
     border-color: var(--orange);
-    background: #0d0d0d;
+    background: #f5f5f5;
 }
 
 .quote-form-grid {
@@ -2330,7 +2316,7 @@ button {
 .form-field textarea:focus {
     border-color: var(--orange);
 
-    background: #0d0d0d;
+    background: #f5f5f5;
 
     color: var(--orange);
 
@@ -2340,7 +2326,7 @@ button {
 .form-field select:focus {
     border-color: var(--orange);
 
-    background-color: #0d0d0d;
+    background-color: #f5f5f5;
 
     box-shadow: 0 0 0 2px rgba(0, 99, 59, 0.15);
 }
@@ -2380,7 +2366,7 @@ button {
 }
 
 .form-field select option {
-    background: var(--black-soft);
+    background: #ffffff;
     color: var(--orange);
     padding: 10px;
 }
@@ -2388,7 +2374,7 @@ button {
 .form-field select option:checked,
 .form-field select option:active,
 .form-field select option:hover {
-    background: var(--black-soft);
+    background: #ffffff;
     color: var(--orange);
 }
 
@@ -2406,7 +2392,7 @@ button {
 
     background-color: var(--orange-dark);
 
-    color: var(--black);
+    color: #ffffff;
 
     text-align: center;
 
@@ -2631,8 +2617,6 @@ button {
 
 /* =========================================================
    ANCLAS — offset por header fijo
-   Evita que el header tape el título al hacer clic
-   en los links del menú (#planes, #trabajos, #contacto…)
    ========================================================= */
 
 #planes,
