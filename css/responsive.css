@@ -1,5 +1,6 @@
 /* =========================================================
    GURI — RESPONSIVE
+   Identidad visual: fondo blanco, negro carbón y naranja GURI
    ========================================================= */
 
 /* ---------------------------------------------------------
@@ -86,7 +87,7 @@
         display: block;
         width: 18px;
         height: 1px;
-        background: var(--white);
+        background: var(--black);
         transition: transform 0.25s ease;
     }
 
@@ -106,7 +107,7 @@
         flex-direction: column;
         gap: 0;
         padding: 10px 20px 20px;
-        background: var(--black);
+        background: var(--white);
         border-top: 1px solid var(--border);
         border-bottom: 1px solid var(--border);
         opacity: 0;
@@ -130,24 +131,26 @@
         min-height: 48px;
         padding: 8px 0;
         font-size: 14px;
-        border-bottom: 1px solid rgba(255,255,255,.07);
+        color: var(--black);
+        border-bottom: 1px solid var(--border);
     }
     .main-nav a::after { display: none; }
     .main-nav a:last-child { border-bottom: 0; }
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+        color: var(--orange);
+    }
 
     .header-button { display: none; }
 
     /* ---------------------------------------------------
-       HERO — fiel al desktop: título izq, CTA izq
+       HERO — título izq, CTA izq
        --------------------------------------------------- */
 
     .hero {
         padding-top: 110px;
         padding-bottom: 70px;
-        background-size:
-            100% 100%, 400px 400px,
-            70px 70px, 70px 70px, 70px 70px, 70px 70px,
-            14px 14px, 14px 14px;
+        background-size: 60px 60px, 60px 60px;
     }
 
     .hero-inner {
@@ -226,6 +229,7 @@
         max-width: 240px;
         order: -1;
         margin: 0 auto 25px;
+        filter: drop-shadow(0 12px 30px rgba(17, 17, 17, 0.1));
     }
 
     .orbit-item,
@@ -257,6 +261,10 @@
     }
     .orbit-item:last-child { border-bottom: 0; }
 
+    .orbit-item:hover {
+        transform: none !important;
+    }
+
     .orbit-text { align-items: flex-start; text-align: left; }
     .orbit-icon { width: 52px; height: 52px; flex: 0 0 52px; }
     .orbit-icon svg { width: 24px; height: 24px; }
@@ -286,16 +294,18 @@
     .brainstorm-item {
         width: 100%;
         justify-content: flex-start;
+        border-right: 0;
         border-bottom: 1px solid var(--border);
         padding: 16px 0;
     }
     .brainstorm-item:last-child { border-bottom: 0; }
+    .brainstorm-item:hover {
+        transform: none;
+        background: transparent;
+    }
 
     /* ---------------------------------------------------
        WORK — título izq, iPhone centrado debajo
-       NO tocamos aspect-ratio ni background del frame.
-       Solo escalamos font-size para que Dynamic Island,
-       status bar y home bar escalen con el teléfono.
        --------------------------------------------------- */
 
     .work { padding: var(--section-padding) 0; }
@@ -335,9 +345,7 @@
     .work-frame-iphone {
         max-width: 100%;
         font-size: 14px;
-        filter:
-            drop-shadow(0 25px 40px rgba(0, 0, 0, 0.85))
-            drop-shadow(0 0 50px rgba(255, 90, 31, 0.2));
+        filter: drop-shadow(0 20px 35px rgba(17, 17, 17, 0.15));
     }
 
     /* ---------------------------------------------------
@@ -345,7 +353,10 @@
        --------------------------------------------------- */
 
     .process {
-        background-image: none;
+        background-image:
+            linear-gradient(rgba(17, 17, 17, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(17, 17, 17, 0.03) 1px, transparent 1px);
+        background-size: 60px 60px;
         padding: 70px 0;
     }
 
@@ -445,10 +456,6 @@
     .final-cta {
         padding: 80px 0;
         text-align: center;
-        background-size:
-            100% 100%, 400px 400px,
-            70px 70px, 70px 70px, 70px 70px, 70px 70px,
-            14px 14px, 14px 14px;
     }
     .final-cta h2 span { display: inline; }
 
@@ -491,10 +498,7 @@
     .hero {
         padding-top: 95px;
         padding-bottom: 55px;
-        background-size:
-            100% 100%, 250px 250px,
-            50px 50px, 50px 50px, 50px 50px, 50px 50px,
-            10px 10px, 10px 10px;
+        background-size: 40px 40px, 40px 40px;
     }
 
     .hero-logo { max-width: 180px; }
@@ -545,7 +549,7 @@
     .brainstorm-check { width: 24px; height: 24px; }
     .brainstorm-item span { font-size: 14px; }
 
-    /* WORK — iPhone más chico, sombra reducida */
+    /* WORK — iPhone más chico, sombra suave */
 
     .work-layout { gap: 32px; }
 
@@ -555,9 +559,7 @@
 
     .work-frame-iphone {
         font-size: 12px;
-        filter:
-            drop-shadow(0 18px 30px rgba(0, 0, 0, 0.85))
-            drop-shadow(0 0 35px rgba(255, 90, 31, 0.18));
+        filter: drop-shadow(0 14px 24px rgba(17, 17, 17, 0.14));
     }
 
     /* PROCESS */
@@ -619,15 +621,12 @@
     }
     .form-field textarea { min-height: 120px; }
     .quote-form-submit { width: 100%; }
+    .quote-form-submit .button { width: 100%; }
 
     /* FINAL CTA */
 
     .final-cta {
         padding: 70px 0;
-        background-size:
-            100% 100%, 250px 250px,
-            50px 50px, 50px 50px, 50px 50px, 50px 50px,
-            10px 10px, 10px 10px;
     }
 
     .final-cta h2 { font-size: clamp(40px, 12vw, 56px); }
@@ -676,9 +675,7 @@
 
     .work-frame-iphone {
         font-size: 11px;
-        filter:
-            drop-shadow(0 15px 25px rgba(0, 0, 0, 0.85))
-            drop-shadow(0 0 30px rgba(255, 90, 31, 0.15));
+        filter: drop-shadow(0 12px 20px rgba(17, 17, 17, 0.14));
     }
 
     .digital-management-icons { max-width: 280px; }
