@@ -1,6 +1,6 @@
 /* =========================================================
    GURI — STYLES
-   Fondo negro carbón + escala de azules
+   Tema Claro (Light Theme) + Acentos Azules
    ========================================================= */
 
 
@@ -26,37 +26,37 @@
 
 
 /* =========================================================
-   VARIABLES — PALETA
+   VARIABLES — PALETA CLARA
    =========================================================
-   fondo        #0a0a0b  (negro carbón)
-   surface      #141416  (cards)
-   surface-2    #1c1c1f  (hover/elevación)
-   border       #2a2a2e
-   accent       #009dff  (azul brillante)
-   accent-mid   #0267a5  (azul medio, hover)
-   accent-deep  #033655  (navy profundo, CTA bg)
-   texto        #f5f5f7
-   texto-sub    #8699a5  (gris azulado)
+   fondo        #F8F9FA  (blanco humo)
+   surface      #FFFFFF  (blanco puro para cards)
+   surface-2    #F0F4F8  (gris azulado para hover)
+   border       #E2E8F0  (borde suave)
+   accent       #0066FF  (azul vibrante)
+   accent-mid   #3385FF  (azul hover)
+   accent-deep  #E6F0FF  (azul muy claro para CTA)
+   texto        #1A1A1A  (gris muy oscuro)
+   texto-sub    #5A6672  (gris azulado)
    ========================================================= */
 
 :root {
-    --black: #0a0a0b;
-    --black-soft: #141416;
-    --black-card: #1c1c1f;
+    --black: #F8F9FA;          /* Fondo principal */
+    --black-soft: #FFFFFF;     /* Fondo de tarjetas */
+    --black-card: #F0F4F8;     /* Fondo hover/elevación */
 
-    --board: #0a0a0b;
+    --board: #F8F9FA;          /* Fondo Hero */
 
-    --white: #f5f5f7;
+    --white: #1A1A1A;          /* Texto principal (antes blanco) */
 
-    --gray: #8699a5;
-    --gray-light: #b8c5d0;
-    --gray-dark: #5a6672;
+    --gray: #5A6672;           /* Texto secundario */
+    --gray-light: #8699A5;     /* Texto terciario */
+    --gray-dark: #B8C5D0;      /* Texto muy claro / detalles */
 
-    --border: #2a2a2e;
+    --border: #E2E8F0;         /* Bordes */
 
-    --orange: #009dff;
-    --orange-bright: #33b1ff;
-    --orange-dark: #033655;
+    --orange: #0066FF;         /* Azul principal (acento) */
+    --orange-bright: #3385FF;  /* Azul hover */
+    --orange-dark: #E6F0FF;    /* Fondo CTA final (azul muy claro) */
 
     --container: 1240px;
 
@@ -219,7 +219,7 @@ button {
 }
 
 .site-header.scrolled {
-    background: rgba(10, 10, 11, 0.94);
+    background: rgba(255, 255, 255, 0.94); /* Fondo blanco translúcido */
 
     border-color: var(--border);
 
@@ -313,7 +313,7 @@ button {
 .main-nav a {
     position: relative;
 
-    color: var(--gray-light);
+    color: var(--gray);
 
     font-size: 13px;
 
@@ -380,7 +380,7 @@ button {
 .header-button:hover {
     background: var(--orange);
 
-    color: #0a0a0b;
+    color: #FFFFFF; /* Texto blanco al hacer hover */
 
     transform: scale(1.05);
 }
@@ -473,20 +473,20 @@ button {
     background-image:
         radial-gradient(
             circle at 80% 45%,
-            rgba(0, 157, 255, 0.12),
+            rgba(0, 102, 255, 0.08), /* Brillo azul sutil */
             transparent 35%
         ),
 
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,157,255,0.5);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,157,255,0.5);}.tick{stroke:rgba(0,157,255,0.35);stroke-width:1;}.tick-major{stroke:rgba(0,157,255,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(0,157,255,0.15);stroke-width:0.5;}.angle{stroke:rgba(0,157,255,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(0,157,255,0.45)' stroke-width='1' fill='none'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,102,255,0.4);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,102,255,0.4);}.tick{stroke:rgba(0,102,255,0.35);stroke-width:1;}.tick-major{stroke:rgba(0,102,255,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(0,102,255,0.15);stroke-width:0.5;}.angle{stroke:rgba(0,102,255,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(0,102,255,0.45)' stroke-width='1' fill='none'/></g></svg>"),
 
-        linear-gradient(rgba(0, 157, 255, 0.28) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 157, 255, 0.28) 1px, transparent 1px),
+        linear-gradient(rgba(0, 102, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.15) 1px, transparent 1px),
 
-        linear-gradient(rgba(3, 54, 85, 0.7) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(3, 54, 85, 0.7) 1px, transparent 1px),
+        linear-gradient(rgba(0, 102, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.08) 1px, transparent 1px),
 
-        linear-gradient(rgba(0, 157, 255, 0.10) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 157, 255, 0.10) 1px, transparent 1px);
+        linear-gradient(rgba(0, 102, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.04) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -543,8 +543,8 @@ button {
     height: auto;
 
     filter:
-        drop-shadow(0 0 30px rgba(0, 157, 255, 0.4))
-        drop-shadow(0 0 60px rgba(0, 157, 255, 0.2));
+        drop-shadow(0 0 30px rgba(0, 102, 255, 0.3))
+        drop-shadow(0 0 60px rgba(0, 102, 255, 0.15));
 }
 
 .hero h1 {
@@ -619,7 +619,7 @@ button {
 
     background: var(--orange);
 
-    color: #0a0a0b;
+    color: #FFFFFF; /* Texto blanco para contrastar con el azul */
 }
 
 .button-primary:hover {
@@ -736,8 +736,8 @@ button {
     z-index: 1;
 
     filter:
-        drop-shadow(0 0 70px rgba(0, 157, 255, 0.35))
-        drop-shadow(0 0 140px rgba(0, 157, 255, 0.15));
+        drop-shadow(0 0 70px rgba(0, 102, 255, 0.25))
+        drop-shadow(0 0 140px rgba(0, 102, 255, 0.1));
 
     animation: globe-breathe 8s ease-in-out infinite;
 }
@@ -803,13 +803,13 @@ button {
 
     border-radius: 50%;
 
-    background: rgba(10, 10, 11, 0.9);
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido */
 
     color: var(--orange);
 
     box-shadow:
-        0 0 0 6px rgba(0, 157, 255, 0.08),
-        0 0 20px rgba(0, 157, 255, 0.2);
+        0 0 0 6px rgba(0, 102, 255, 0.08),
+        0 0 20px rgba(0, 102, 255, 0.2);
 
     transition:
         background var(--transition),
@@ -830,13 +830,13 @@ button {
 
 .orbit-item:hover .orbit-icon {
     background: var(--orange);
-    color: var(--black);
+    color: #FFFFFF; /* Texto blanco al hacer hover */
 
     transform: scale(1.08);
 
     box-shadow:
-        0 0 0 8px rgba(0, 157, 255, 0.15),
-        0 0 30px rgba(0, 157, 255, 0.5);
+        0 0 0 8px rgba(0, 102, 255, 0.15),
+        0 0 30px rgba(0, 102, 255, 0.5);
 }
 
 
@@ -1035,8 +1035,8 @@ button {
     font-size: 16px;
 
     filter:
-        drop-shadow(0 40px 60px rgba(0, 0, 0, 0.9))
-        drop-shadow(0 0 80px rgba(0, 157, 255, 0.22));
+        drop-shadow(0 40px 60px rgba(0, 0, 0, 0.15)) /* Sombra suave para fondo claro */
+        drop-shadow(0 0 80px rgba(0, 102, 255, 0.15));
 }
 
 .work-frame-iphone::after {
@@ -1064,7 +1064,7 @@ button {
 
     border-radius: 11% / 5.4%;
 
-    background: #000;
+    background: #000; /* La pantalla del celu debe quedar oscura */
     overflow: hidden;
     z-index: 2;
 }
@@ -1115,7 +1115,7 @@ button {
 
     padding: 0 1.85em;
 
-    color: #fff;
+    color: #fff; /* Texto blanco dentro de la pantalla oscura */
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
         "SF Pro Text", "Helvetica Neue", sans-serif;
     font-weight: 600;
@@ -1170,20 +1170,20 @@ button {
     background-image:
         radial-gradient(
             circle at 80% 45%,
-            rgba(0, 157, 255, 0.12),
+            rgba(0, 102, 255, 0.08),
             transparent 35%
         ),
 
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,157,255,0.5);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,157,255,0.5);}.tick{stroke:rgba(0,157,255,0.35);stroke-width:1;}.tick-major{stroke:rgba(0,157,255,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(0,157,255,0.15);stroke-width:0.5;}.angle{stroke:rgba(0,157,255,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(0,157,255,0.45)' stroke-width='1' fill='none'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,102,255,0.4);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,102,255,0.4);}.tick{stroke:rgba(0,102,255,0.35);stroke-width:1;}.tick-major{stroke:rgba(0,102,255,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(0,102,255,0.15);stroke-width:0.5;}.angle{stroke:rgba(0,102,255,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(0,102,255,0.45)' stroke-width='1' fill='none'/></g></svg>"),
 
-        linear-gradient(rgba(0, 157, 255, 0.28) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 157, 255, 0.28) 1px, transparent 1px),
+        linear-gradient(rgba(0, 102, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.15) 1px, transparent 1px),
 
-        linear-gradient(rgba(3, 54, 85, 0.7) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(3, 54, 85, 0.7) 1px, transparent 1px),
+        linear-gradient(rgba(0, 102, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.08) 1px, transparent 1px),
 
-        linear-gradient(rgba(0, 157, 255, 0.10) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 157, 255, 0.10) 1px, transparent 1px);
+        linear-gradient(rgba(0, 102, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.04) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -1277,8 +1277,8 @@ button {
     color: var(--orange);
 
     box-shadow:
-        0 0 0 6px rgba(0, 157, 255, 0.08),
-        0 0 20px rgba(0, 157, 255, 0.2);
+        0 0 0 6px rgba(0, 102, 255, 0.08),
+        0 0 20px rgba(0, 102, 255, 0.2);
 
     transition:
         background var(--transition),
@@ -1374,7 +1374,7 @@ button {
 
     border: 1.5px solid var(--orange);
 
-    background: rgba(10, 10, 11, 0.88);
+    background: rgba(255, 255, 255, 0.88); /* Fondo claro translúcido */
 
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
@@ -1399,7 +1399,7 @@ button {
 .process-step-capsule p {
     margin: 0;
 
-    color: var(--gray-light);
+    color: var(--gray);
 
     font-size: 12px;
 
@@ -1489,7 +1489,7 @@ button {
 
     transform: translateX(-5px);
 
-    background: rgba(0, 157, 255, 0.04);
+    background: rgba(0, 102, 255, 0.04);
 }
 
 .brainstorm-icon {
@@ -1511,8 +1511,8 @@ button {
     color: var(--orange);
 
     box-shadow:
-        0 0 0 6px rgba(0, 157, 255, 0.08),
-        0 0 20px rgba(0, 157, 255, 0.2);
+        0 0 0 6px rgba(0, 102, 255, 0.08),
+        0 0 20px rgba(0, 102, 255, 0.2);
 
     transition:
         background var(--transition),
@@ -1524,13 +1524,13 @@ button {
 .brainstorm-item:hover .brainstorm-icon {
     background: var(--orange);
 
-    color: var(--black);
+    color: #FFFFFF; /* Texto blanco al hacer hover */
 
     transform: scale(1.08);
 
     box-shadow:
-        0 0 0 8px rgba(0, 157, 255, 0.15),
-        0 0 30px rgba(0, 157, 255, 0.5);
+        0 0 0 8px rgba(0, 102, 255, 0.15),
+        0 0 30px rgba(0, 102, 255, 0.5);
 }
 
 .brainstorm-check {
@@ -1598,7 +1598,7 @@ button {
 }
 
 .brainstorm-item span {
-    color: var(--gray-light);
+    color: var(--gray);
 
     font-size: 15px;
 }
@@ -1647,8 +1647,8 @@ button {
     height: 100%;
     object-fit: contain;
     filter:
-        drop-shadow(0 0 8px rgba(0, 157, 255, 0.5))
-        drop-shadow(0 0 20px rgba(0, 157, 255, 0.2));
+        drop-shadow(0 0 8px rgba(0, 102, 255, 0.4))
+        drop-shadow(0 0 20px rgba(0, 102, 255, 0.15));
 }
 
 .digital-icon svg {
@@ -1660,8 +1660,8 @@ button {
     stroke-linecap: round;
     stroke-linejoin: round;
     filter:
-        drop-shadow(0 0 8px rgba(0, 157, 255, 0.5))
-        drop-shadow(0 0 20px rgba(0, 157, 255, 0.2));
+        drop-shadow(0 0 8px rgba(0, 102, 255, 0.4))
+        drop-shadow(0 0 20px rgba(0, 102, 255, 0.15));
 }
 
 
@@ -1717,8 +1717,8 @@ button {
     user-select: none;
     pointer-events: none;
     filter:
-        drop-shadow(0 0 8px rgba(0, 157, 255, 0.6))
-        drop-shadow(0 0 16px rgba(0, 157, 255, 0.3));
+        drop-shadow(0 0 8px rgba(0, 102, 255, 0.5))
+        drop-shadow(0 0 16px rgba(0, 102, 255, 0.2));
 }
 
 .digital-emoji svg {
@@ -1863,7 +1863,7 @@ button {
     background:
         linear-gradient(
             145deg,
-            rgba(0, 157, 255, 0.08),
+            rgba(0, 102, 255, 0.05),
             var(--black-soft)
         );
 }
@@ -1954,7 +1954,7 @@ button {
 
     padding-left: 18px;
 
-    color: var(--gray-light);
+    color: var(--gray);
 
     font-size: 12px;
 
@@ -2048,7 +2048,7 @@ button {
 
     display: inline-block;
 
-    border: 1px solid rgba(0, 157, 255, 0.25);
+    border: 1px solid rgba(0, 102, 255, 0.25);
 
     border-top-color: var(--orange);
 
@@ -2210,13 +2210,13 @@ button {
 
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-    color: var(--gray-dark);
+    color: var(--gray-light);
 }
 
 .form-field input:hover,
 .form-field select:hover,
 .form-field textarea:hover {
-    border-color: rgba(0, 157, 255, 0.5);
+    border-color: rgba(0, 102, 255, 0.5);
 }
 
 .form-field input:focus,
@@ -2227,7 +2227,7 @@ button {
 
     color: var(--orange);
 
-    box-shadow: 0 0 0 2px rgba(0, 157, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.2);
 }
 
 .form-field select:focus {
@@ -2235,7 +2235,7 @@ button {
 
     background-color: var(--black-card);
 
-    box-shadow: 0 0 0 2px rgba(0, 157, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.2);
 }
 
 .form-field select:required:valid,
@@ -2297,23 +2297,23 @@ button {
 .final-cta {
     padding: 80px 0;
 
-    background-color: var(--orange-dark);
+    background-color: var(--orange-dark); /* Ahora es un azul muy claro */
 
-    color: var(--white);
+    color: var(--white); /* Texto oscuro para contrastar */
 
     text-align: center;
 
     background-image:
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(245,245,247,0.5);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(245,245,247,0.5);}.tick-major{stroke:rgba(245,245,247,0.4);stroke-width:1.5;}.angle{stroke:rgba(245,245,247,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(26,26,26,0.5);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(26,26,26,0.5);}.tick-major{stroke:rgba(26,26,26,0.4);stroke-width:1.5;}.angle{stroke:rgba(26,26,26,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/></g></svg>"),
 
-        linear-gradient(rgba(0, 157, 255, 0.3) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 157, 255, 0.3) 1px, transparent 1px),
+        linear-gradient(rgba(0, 102, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.15) 1px, transparent 1px),
 
-        linear-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.2) 1px, transparent 1px),
+        linear-gradient(rgba(0, 102, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.08) 1px, transparent 1px),
 
-        linear-gradient(rgba(0, 157, 255, 0.12) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 157, 255, 0.12) 1px, transparent 1px);
+        linear-gradient(rgba(0, 102, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.04) 1px, transparent 1px);
 
     background-size:
         100% 100%,
