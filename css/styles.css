@@ -750,12 +750,12 @@ button {
     z-index: 1;
 }
 
-/* El contenedor de las fotos (¡Esto es clave!) */
+/* El contenedor de las fotos (¡ESTO ES LO QUE FALTABA!) */
 .polaroids-container {
     position: relative;
     z-index: 2;
     width: 100%;
-    min-height: 700px; /* <--- ESTA ALTURA ES LA QUE FALTABA */
+    min-height: 700px; /* <--- ESTA ALTURA EVITA QUE COLAPSE */
 }
 
 /* Estilo base de cada Polaroid */
@@ -881,6 +881,7 @@ button {
         transform: translateY(-5px) !important;
     }
 }
+
 /* =========================================================
    PROCESS
    ========================================================= */
