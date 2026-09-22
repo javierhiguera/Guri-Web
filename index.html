@@ -27,11 +27,6 @@
         href="./css/styles.css"
     >
 
-    <link
-        rel="stylesheet"
-        href="./css/responsive.css"
-    >
-
 </head>
 
 
@@ -67,20 +62,20 @@
 
         <nav class="main-nav" id="main-navigation">
 
-            <a href="#planes">
-                Páginas web
-            </a>
-
-            <a href="#planes">
-                Landing pages
-            </a>
-
-            <a href="#tiendas-online-coming-soon">
-                Tiendas online
+            <a href="#servicios">
+                Servicios
             </a>
 
             <a href="#trabajos">
                 Trabajos
+            </a>
+
+            <a href="#planes">
+                Planes
+            </a>
+
+            <a href="#faq">
+                Preguntas
             </a>
 
             <a href="#contacto">
@@ -176,7 +171,7 @@
      SERVICIOS — Mundo a la izquierda + iconos alrededor
      ===================================================== -->
 
-<section class="services section">
+<section class="services section" id="servicios">
 
     <div class="container services-inner">
 
@@ -573,90 +568,52 @@
 
 
 <!-- =====================================================
-     TRABAJOS
+     TRABAJOS — Con polaroids y mapa de fondo
      ===================================================== -->
 
 <section class="work section" id="trabajos">
 
     <div class="container">
 
-        <div class="work-layout">
+        <div class="section-heading">
+            <h2>
+                Algunos proyectos
+                <span>que hicimos.</span>
+            </h2>
+        </div>
 
-            <div class="work-heading-left">
+        <div class="portfolio-mapa">
 
-                <h2>
-                    Algunos proyectos
-                    <span>que hicimos.</span>
-                </h2>
+            <div class="mapa-fondo"></div>
 
-                <a href="#trabajos" class="text-link">
-                    Ver todos →
-                </a>
+            <div class="polaroids-container">
 
-            </div>
+                <!-- Polaroid 1 -->
+                <div class="polaroid" style="top: 10%; left: 12%; rotate: -4deg;">
+                    <div class="pin-azul"></div>
+                    <img src="./assets/proyectos/1/NP_1.jpeg" alt="Nivel Pulidos">
+                    <p>Nivel Pulidos</p>
+                </div>
 
-            <div class="work-content-right">
+                <!-- Polaroid 2 -->
+                <div class="polaroid" style="top: 55%; left: 65%; rotate: 3deg;">
+                    <div class="pin-azul"></div>
+                    <img src="./assets/proyectos/2/proyecto2.jpg" alt="Proyecto 2">
+                    <p>Estudio Jurídico</p>
+                </div>
 
-                <div class="work-iphone-wrapper">
+                <!-- Polaroid 3 -->
+                <div class="polaroid" style="top: 20%; left: 55%; rotate: 5deg;">
+                    <div class="pin-azul"></div>
+                    <img src="./assets/proyectos/3/proyecto3.jpg" alt="Proyecto 3">
+                    <p>Café Central</p>
+                </div>
 
-                    <a
-                        href="https://www.nivelpulidos.com.ar/"
-                        class="work-card"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <div class="work-frame work-frame-iphone">
-
-                            <div class="iphone-screen">
-
-                                <div class="iphone-scroll">
-
-                                    <img
-                                        src="./assets/proyectos/1/NP_1.jpeg"
-                                        alt="Nivel Pulidos - Página web"
-                                        class="iphone-scroll-img"
-                                    >
-
-                                </div>
-
-                                <div class="device-status-bar">
-
-                                    <span class="device-time">9:41</span>
-
-                                    <div class="device-status-icons">
-
-                                        <svg class="device-icon" viewBox="0 0 18 12" fill="none" aria-hidden="true">
-                                            <rect x="0" y="8" width="3" height="4" rx="0.5" fill="currentColor"/>
-                                            <rect x="4.5" y="6" width="3" height="6" rx="0.5" fill="currentColor"/>
-                                            <rect x="9" y="3" width="3" height="9" rx="0.5" fill="currentColor"/>
-                                            <rect x="13.5" y="0" width="3" height="12" rx="0.5" fill="currentColor"/>
-                                        </svg>
-
-                                        <svg class="device-icon" viewBox="0 0 16 12" fill="none" aria-hidden="true">
-                                            <path d="M8 11a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" fill="currentColor"/>
-                                            <path d="M4.5 8.5a5 5 0 0 1 7 0" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/>
-                                            <path d="M2 6a8.5 8.5 0 0 1 12 0" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/>
-                                        </svg>
-
-                                        <svg class="device-icon device-battery" viewBox="0 0 27 12" fill="none" aria-hidden="true">
-                                            <rect x="0.5" y="0.5" width="22" height="11" rx="3" stroke="currentColor" stroke-width="1" fill="none" opacity="0.4"/>
-                                            <rect x="2" y="2" width="18" height="8" rx="1.5" fill="currentColor"/>
-                                            <rect x="24" y="4" width="2" height="4" rx="1" fill="currentColor" opacity="0.4"/>
-                                        </svg>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="iphone-home-bar"></div>
-
-                            </div>
-
-                        </div>
-
-                    </a>
-
+                <!-- Polaroid 4 -->
+                <div class="polaroid" style="top: 65%; left: 20%; rotate: -2deg;">
+                    <div class="pin-azul"></div>
+                    <img src="./assets/proyectos/4/proyecto4.jpg" alt="Proyecto 4">
+                    <p>Ropa de Bebé</p>
                 </div>
 
             </div>
@@ -666,6 +623,7 @@
     </div>
 
 </section>
+
 
 
 <!-- =====================================================
@@ -689,59 +647,32 @@
 
             <article class="plan-card plan-integrated">
 
-                <span class="plan-label">BÁSICO</span>
+                <span class="plan-label">PROFESIONAL</span>
 
-                <h3>Para empezar</h3>
+                <h3>Sitio web corporativo</h3>
 
                 <p class="plan-integrated-description">
-                    Una combinación de servicios esenciales para
-                    tener una presencia digital clara y funcional.
+                    Página web con varias secciones pensada para empresas consolidadas que necesitan mostrar la operación completa: servicios, casos, equipo, novedades y canales de contacto.
                 </p>
 
 
                 <div class="plan-service">
-                    <h4>Web básica</h4>
-                    <p>Para negocios que necesitan una presencia profesional, clara y completa.</p>
+                    <h4>Incluye</h4>
                     <ul class="plan-features">
-                        <li>Hasta 5 secciones</li>
-                        <li>Hasta 10 imágenes</li>
-                        <li>1 formulario de contacto</li>
-                        <li>Botón de WhatsApp</li>
-                        <li>Diseño responsive</li>
-                        <li>SEO básico</li>
+                        <li>Gestión de contenido propio para que tu equipo actualice sin depender del desarrollador</li>
+                        <li>Sección de novedades o blog integrada</li>
+                        <li>Conexión con redes sociales y herramientas de marketing</li>
+                        <li>Métricas integradas para entender qué funciona y qué no</li>
                     </ul>
                 </div>
 
-
-                <div class="plan-service">
-                    <h4>Landing básica</h4>
-                    <p>Una página profesional para presentar un servicio, promoción o emprendimiento.</p>
-                    <ul class="plan-features">
-                        <li>1 página</li>
-                        <li>Hasta 6 secciones</li>
-                        <li>Hasta 8 imágenes</li>
-                        <li>1 formulario</li>
-                        <li>Botón principal de acción</li>
-                        <li>WhatsApp</li>
-                        <li>Diseño responsive</li>
-                        <li>SEO básico</li>
-                    </ul>
+                <div class="plan-recommended">
+                    <p><strong>Ideal para:</strong></p>
+                    <p>Empresas industriales o de servicios que necesitan mostrar capacidad operativa, cartera y casos.</p>
+                    <p>Empresas en expansión que necesitan un diseño web profesional para apuntar a nuevos mercados.</p>
                 </div>
 
-
-                <div class="plan-service">
-                    <h4>Mantenimiento básico</h4>
-                    <p>Para mantener tu sitio actualizado con cambios y correcciones habituales.</p>
-                    <ul class="plan-features">
-                        <li>Hasta 4 cambios mensuales</li>
-                        <li>Actualización de textos</li>
-                        <li>Reemplazo de imágenes</li>
-                        <li>Cambios de botones y enlaces</li>
-                        <li>Cambios menores de secciones</li>
-                        <li>Correcciones menores</li>
-                        <li>Revisión general</li>
-                    </ul>
-                </div>
+                <a href="#contacto" class="button button-primary plan-button">Consultar por este plan</a>
 
             </article>
 
@@ -751,67 +682,30 @@
 
                 <span class="plan-label">PROFESIONAL</span>
 
-                <h3>Para crecer</h3>
+                <h3>Landing page</h3>
 
                 <p class="plan-integrated-description">
-                    Servicios más completos y personalizados para
-                    proyectos que necesitan crecer y evolucionar.
+                    Una sola página construida para convertir, ideal para campañas puntuales, lanzamientos, eventos, productos específicos o profesionales que necesitan un punto de contacto digital directo.
                 </p>
 
 
                 <div class="plan-service">
-                    <h4>Web profesional</h4>
-                    <p>Para negocios que necesitan una web más completa, personalizada y preparada para crecer.</p>
+                    <h4>Incluye</h4>
                     <ul class="plan-features">
-                        <li>Hasta 10 secciones</li>
-                        <li>Hasta 25 imágenes</li>
-                        <li>Hasta 3 formularios</li>
-                        <li>Botón de WhatsApp</li>
-                        <li>Galería y portfolio</li>
-                        <li>Animaciones y efectos</li>
-                        <li>Secciones personalizadas</li>
-                        <li>Integración con redes sociales</li>
-                        <li>SEO desde la base</li>
-                        <li>Diseño responsive</li>
+                        <li>Foco en una sola acción del visitante</li>
+                        <li>Carga liviana y rápida en móvil</li>
+                        <li>Formulario integrado a tu CRM o correo</li>
+                        <li>Configuración lista para campañas de Ads</li>
                     </ul>
                 </div>
 
-
-                <div class="plan-service">
-                    <h4>Landing profesional</h4>
-                    <p>Para campañas, lanzamientos y servicios que necesitan una presentación más completa y personalizada.</p>
-                    <ul class="plan-features">
-                        <li>1 página</li>
-                        <li>Hasta 10 secciones</li>
-                        <li>Hasta 20 imágenes</li>
-                        <li>Hasta 3 formularios</li>
-                        <li>Botones personalizados</li>
-                        <li>WhatsApp</li>
-                        <li>Galería</li>
-                        <li>Animaciones avanzadas</li>
-                        <li>Secciones personalizadas</li>
-                        <li>Integración con redes sociales</li>
-                        <li>SEO desde la base</li>
-                    </ul>
+                <div class="plan-recommended">
+                    <p><strong>Ideal para:</strong></p>
+                    <p>Empresas que necesitan capturar leads de una campaña antes de tener una página web completa.</p>
+                    <p>Profesionales independientes que quieren un punto de contacto digital sin mantener un sitio web extenso.</p>
                 </div>
 
-
-                <div class="plan-service">
-                    <h4>Mantenimiento profesional</h4>
-                    <p>Para negocios que necesitan soporte continuo, mejoras y evolución de su sitio.</p>
-                    <ul class="plan-features">
-                        <li>Hasta 10 cambios mensuales</li>
-                        <li>Actualización de contenido</li>
-                        <li>Modificaciones de secciones</li>
-                        <li>Cambios de diseño</li>
-                        <li>Correcciones técnicas</li>
-                        <li>Optimización técnica</li>
-                        <li>Revisión de rendimiento</li>
-                        <li>Actualizaciones generales</li>
-                        <li>Modificaciones personalizadas</li>
-                        <li>Prioridad en solicitudes</li>
-                    </ul>
-                </div>
+                <a href="#contacto" class="button button-primary plan-button">Consultar por este plan</a>
 
             </article>
 
@@ -841,6 +735,85 @@
         </div>
 
 
+
+        <!-- =====================================================
+             PREGUNTAS FRECUENTES
+             ===================================================== -->
+
+        <div class="faq section" id="faq">
+
+            <div class="section-heading">
+                <h2>
+                    Preguntas
+                    <span>frecuentes.</span>
+                </h2>
+            </div>
+
+            <div class="faq-list">
+
+                <details class="faq-item">
+                    <summary>
+                        ¿Qué necesito para empezar mi proyecto?
+                    </summary>
+                    <p>
+                        Lo primero es una charla para entender tu negocio, tus objetivos y lo que necesitás. No importa si no tenés todo definido; nosotros te guiamos en el proceso.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>
+                        ¿Cuánto tiempo tarda en estar lista mi web?
+                    </summary>
+                    <p>
+                        Depende de la complejidad del proyecto. Una landing page puede estar lista en 1-2 semanas, mientras que un sitio web corporativo puede tomar de 3 a 6 semanas.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>
+                        ¿Puedo actualizar el contenido yo mismo?
+                    </summary>
+                    <p>
+                        Sí. Todos nuestros planes incluyen gestión de contenido para que puedas actualizar textos e imágenes sin depender de nosotros. Además, ofrecemos planes de mantenimiento si preferís que nos encarguemos.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>
+                        ¿La web va a funcionar bien en celulares?
+                    </summary>
+                    <p>
+                        Absolutamente. Diseñamos "mobile-first", lo que significa que cada página se construye pensando primero en cómo se verá y funcionará en dispositivos móviles.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>
+                        ¿Qué pasa después de que la web está online?
+                    </summary>
+                    <p>
+                        Te acompañamos después del lanzamiento. Podemos encargarnos del mantenimiento, actualizaciones y mejoras continuas para que tu sitio siga funcionando perfectamente.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>
+                        ¿Ofrecen servicios de marketing digital?
+                    </summary>
+                    <p>
+                        Sí, podemos acompañar tu web con campañas de Google Ads, redes sociales y otras herramientas para ayudarte a llegar a más personas.
+                    </p>
+                </details>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             CONTACTO
+             ===================================================== -->
 
         <div class="plans-contact" id="contacto">
 
@@ -887,13 +860,10 @@
                         <label for="quote-project">Tipo de proyecto</label>
                         <select id="quote-project" name="project_type" required>
                             <option value="" selected disabled>Seleccioná una opción</option>
-                            <option value="web-basica">Web básica</option>
-                            <option value="web-profesional">Web profesional</option>
-                            <option value="landing-basica">Landing básica</option>
-                            <option value="landing-profesional">Landing profesional</option>
-                            <option value="mantenimiento-basico">Mantenimiento básico</option>
-                            <option value="mantenimiento-profesional">Mantenimiento profesional</option>
+                            <option value="sitio-corporativo">Sitio web corporativo</option>
+                            <option value="landing-page">Landing page</option>
                             <option value="tienda-online">Tienda online</option>
+                            <option value="mantenimiento">Mantenimiento</option>
                             <option value="proyecto-personalizado">Proyecto personalizado</option>
                         </select>
                     </div>
@@ -919,8 +889,9 @@
 
                 <div class="quote-form-submit">
                     <button type="submit" class="button button-primary">
-                        Solicitar presupuesto
+                        Enviar consulta ahora
                     </button>
+                    <p class="form-note">🔒 Respuesta garantizada en menos de 24 horas. Tus datos están seguros.</p>
                 </div>
 
             </form>
@@ -968,18 +939,48 @@
 
             <div>
                 <strong>Servicios</strong>
-                <a href="#planes">Páginas web</a>
-                <a href="#planes">Landing pages</a>
+                <a href="#servicios">Páginas web</a>
+                <a href="#servicios">Landing pages</a>
                 <a href="#tiendas-online-coming-soon">Tiendas online</a>
-                <a href="#planes">Mantenimiento</a>
+                <a href="#servicios">Mantenimiento</a>
             </div>
 
             <div>
                 <strong>GURI</strong>
                 <a href="#trabajos">Trabajos</a>
+                <a href="#faq">Preguntas</a>
                 <a href="#contacto">Contacto</a>
             </div>
 
+        </div>
+
+
+        <div class="footer-social">
+            <strong>Redes</strong>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="2" width="20" height="20" rx="5"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="2" width="20" height="20" rx="3"/>
+                        <path d="M7 10v7M7 7v.01M12 10v7M12 13c0-1.5 1-3 3-3s3 1.5 3 3v4"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Behance">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M3 6h5a3 3 0 0 1 0 6H3z"/>
+                        <path d="M3 12h5a3 3 0 0 1 0 6H3z"/>
+                        <path d="M14 8h5"/>
+                        <path d="M14 13h6a3 3 0 0 0-6-1z"/>
+                        <path d="M14 18h6a3 3 0 0 0-6-1z"/>
+                    </svg>
+                </a>
+            </div>
         </div>
 
     </div>
@@ -1000,6 +1001,24 @@
     </div>
 
 </footer>
+
+
+
+<!-- =====================================================
+     BOTÓN FLOTANTE DE WHATSAPP
+     ===================================================== -->
+
+<a
+    href="https://wa.me/TUNUMERO"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+</a>
 
 
 
