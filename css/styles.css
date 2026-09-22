@@ -731,7 +731,6 @@ button {
     overflow: hidden;
 }
 
-/* Contenedor del mapa de lado a lado */
 .portfolio-mapa {
     position: relative;
     width: 100%;
@@ -739,7 +738,6 @@ button {
     padding: 60px 0;
 }
 
-/* El fondo del mapa */
 .mapa-fondo {
     position: absolute;
     inset: 0;
@@ -750,7 +748,6 @@ button {
     z-index: 1;
 }
 
-/* El contenedor de las fotos */
 .polaroids-container {
     position: relative;
     z-index: 2;
@@ -758,7 +755,6 @@ button {
     min-height: 700px;
 }
 
-/* Estilo base de cada Polaroid */
 .polaroid {
     position: absolute;
     width: 280px;
@@ -768,8 +764,6 @@ button {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     z-index: 3;
 }
-
-/* --- POSICIONES ORGÁNICAS (Desktop) --- */
 
 .polaroid-1 {
     top: 5%;
@@ -798,8 +792,6 @@ button {
     rotate: -5deg;
     z-index: 3;
 }
-
-/* --- ESTILOS INTERNOS --- */
 
 .polaroid img {
     width: 100%;
@@ -853,12 +845,11 @@ button {
     z-index: 10;
 }
 
-/* --- RESPONSIVE (Celulares) --- */
 @media (max-width: 768px) {
     .portfolio-mapa {
         padding: 40px 0;
     }
-    
+
     .polaroids-container {
         min-height: auto;
         display: flex;
@@ -882,6 +873,7 @@ button {
         transform: translateY(-5px) !important;
     }
 }
+
 
 /* =========================================================
    PROCESS
@@ -1754,6 +1746,77 @@ button {
     color: var(--gray-light);
     font-size: 11px;
     line-height: 1.5;
+}
+
+
+/* =========================================================
+   PILLS — Radios seleccionables (formulario)
+   ========================================================= */
+
+.pill-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.pill {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.pill input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+}
+
+.pill span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    border: 1.5px solid var(--border);
+    border-radius: 999px;
+
+    background: var(--black-soft);
+    color: var(--gray);
+
+    font-family: "Bunken", sans-serif;
+    font-size: 13px;
+    line-height: 1;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
+}
+
+.pill span svg {
+    flex-shrink: 0;
+    stroke: currentColor;
+}
+
+.pill:hover span {
+    border-color: var(--orange);
+    color: var(--orange);
+    transform: translateY(-1px);
+}
+
+.pill input[type="radio"]:checked + span {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: #FFFFFF;
+}
+
+.pill input[type="radio"]:focus-visible + span {
+    box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.35);
 }
 
 
