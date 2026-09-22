@@ -811,12 +811,13 @@ button {
 }
 
 .polaroid p {
-    margin-top: 12px;
+    margin-top: 14px;
     text-align: center;
-    font-family: "Xenois", serif;
-    font-size: 15px;
+    font-family: "Bunken", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
     color: var(--white);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
 }
 
 .pin-azul {
@@ -1593,8 +1594,9 @@ button {
 
 .plans-custom h3,
 .plans-contact-copy h3 {
-    /* CAMBIO: Mismo tamaño que los títulos principales */
-    font-size: clamp(48px, 6vw, 82px); 
+    font-family: "Xenois", serif;
+    font-weight: 700;
+    font-size: clamp(48px, 6vw, 82px);
     line-height: 0.95;
     letter-spacing: -0.055em;
     margin-bottom: 17px;
