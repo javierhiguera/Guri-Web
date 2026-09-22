@@ -43,6 +43,10 @@
 
     .plan-integrated { padding: 32px; }
     .plans-contact { gap: 50px; }
+
+    /* FINAL CTA — tamaño intermedio */
+    .final-cta { padding: 90px 24px; }
+    .final-cta h2 { font-size: 80px; }
 }
 
 /* ---------------------------------------------------------
@@ -138,7 +142,7 @@
     .header-button { display: none; }
 
     /* ---------------------------------------------------
-       HERO — fiel al desktop: título izq, CTA izq
+       HERO
        --------------------------------------------------- */
 
     .hero {
@@ -191,7 +195,7 @@
     }
 
     /* ---------------------------------------------------
-       SERVICES — heading izq, orbes como lista
+       SERVICES
        --------------------------------------------------- */
 
     .services-inner {
@@ -262,7 +266,7 @@
     .orbit-icon svg { width: 24px; height: 24px; }
 
     /* ---------------------------------------------------
-       WHY — heading izq, lista con separadores
+       WHY
        --------------------------------------------------- */
 
     .why-inner {
@@ -292,10 +296,7 @@
     .brainstorm-item:last-child { border-bottom: 0; }
 
     /* ---------------------------------------------------
-       WORK — título izq, iPhone centrado debajo
-       NO tocamos aspect-ratio ni background del frame.
-       Solo escalamos font-size para que Dynamic Island,
-       status bar y home bar escalen con el teléfono.
+       WORK
        --------------------------------------------------- */
 
     .work { padding: var(--section-padding) 0; }
@@ -394,7 +395,7 @@
     }
 
     /* ---------------------------------------------------
-       DIGITAL — iconos arriba, texto izq
+       DIGITAL
        --------------------------------------------------- */
 
     .digital-management-inner {
@@ -416,7 +417,7 @@
     .digital-management-heading .section-heading { text-align: left; }
 
     /* ---------------------------------------------------
-       PLANES — 1 columna
+       PLANES
        --------------------------------------------------- */
 
     .plans-integrated-grid {
@@ -443,14 +444,20 @@
        --------------------------------------------------- */
 
     .final-cta {
-        padding: 80px 0;
+        padding: 80px 24px;
         text-align: center;
         background-size:
             100% 100%, 400px 400px,
             70px 70px, 70px 70px, 70px 70px, 70px 70px,
             14px 14px, 14px 14px;
     }
-    .final-cta h2 span { display: inline; }
+
+    .final-cta h2 {
+        font-size: 56px;
+        line-height: 0.95;
+    }
+
+    .final-cta h2 span { display: block; }
 
     /* ---------------------------------------------------
        FOOTER
@@ -545,7 +552,7 @@
     .brainstorm-check { width: 24px; height: 24px; }
     .brainstorm-item span { font-size: 14px; }
 
-    /* WORK — iPhone más chico, sombra reducida */
+    /* WORK */
 
     .work-layout { gap: 32px; }
 
@@ -623,14 +630,18 @@
     /* FINAL CTA */
 
     .final-cta {
-        padding: 70px 0;
+        padding: 70px 20px;
         background-size:
             100% 100%, 250px 250px,
             50px 50px, 50px 50px, 50px 50px, 50px 50px,
             10px 10px, 10px 10px;
     }
 
-    .final-cta h2 { font-size: clamp(40px, 12vw, 56px); }
+    .final-cta h2 {
+        font-size: 40px;
+        line-height: 0.95;
+    }
+
     .final-cta h2 span { display: block; }
 
     /* FOOTER */
@@ -671,7 +682,7 @@
     .orbit-text h3 { font-size: 14px; }
     .orbit-text p { font-size: 10px; }
 
-    /* WORK — iPhone aún más chico */
+    /* WORK */
     .work-iphone-wrapper { max-width: 210px; }
 
     .work-frame-iphone {
@@ -688,6 +699,18 @@
     .digital-emoji-3 { width: 30px; height: 30px; }
 
     .plan-integrated { padding: 22px 18px; }
+
+    /* FINAL CTA */
+    .final-cta {
+        padding: 60px 18px;
+    }
+
+    .final-cta h2 {
+        font-size: 32px;
+        line-height: 0.95;
+    }
+
+    .final-cta h2 span { display: block; }
 
     .footer-inner { grid-template-columns: 1fr; }
 
