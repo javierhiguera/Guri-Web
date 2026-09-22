@@ -1,6 +1,5 @@
 /* =========================================================
    GURI — STYLES
-   Paleta: beige oscuro + azules (#009dff → #0267a5 → #033655)
    ========================================================= */
 
 
@@ -26,39 +25,27 @@
 
 
 /* =========================================================
-   VARIABLES — PALETA
-   =========================================================
-   fondo        #c4b8a0   (beige oscuro, con presencia)
-   surface      #d4cbb8   (cards, más claras → flotan)
-   input bg     #dcd4c2   (inputs en reposo, aún más claros)
-   input focus  #ebe5d6   (inputs al enfocar, casi blanco)
-   hover        #b8ab90   (estado hover, más oscuro)
-   border       #a89b82   (borde visible sobre beige)
-   accent       #009dff   (azul brillante)
-   accent-mid   #0267a5   (azul medio, hover)
-   accent-deep  #033655   (navy profundo, CTA bg)
-   texto        #033655   (navy principal)
-   texto-sub    #5f6d7a   (azul grisáceo oscuro, AA sobre beige)
+   VARIABLES
    ========================================================= */
 
 :root {
-    --black: #c4b8a0;         /* background — beige oscuro */
-    --black-soft: #d4cbb8;    /* surface — más claro (cards flotan) */
-    --black-card: #d4cbb8;
+    --black: #080808;
+    --black-soft: #111111;
+    --black-card: #151515;
 
-    --board: #c4b8a0;
+    --board: #0d0d0d;
 
-    --white: #033655;         /* texto principal (navy profundo) */
+    --white: #f5f5f5;
 
-    --gray: #5f6d7a;          /* texto secundario (AA sobre beige) */
-    --gray-light: #0267a5;    /* texto fuerte secundario */
-    --gray-dark: #5f6d7a;     /* texto sutil */
+    --gray: #999999;
+    --gray-light: #cfcfcf;
+    --gray-dark: #666666;
 
-    --border: #a89b82;        /* bordes visibles */
+    --border: #262626;
 
-    --orange: #009dff;        /* accent principal */
-    --orange-bright: #0267a5; /* hover (azul medio) */
-    --orange-dark: #033655;   /* CTA bg (navy profundo) */
+    --orange: #ff5a1f;
+    --orange-bright: #ff6b00;
+    --orange-dark: #e64a15;
 
     --container: 1240px;
 
@@ -221,7 +208,7 @@ button {
 }
 
 .site-header.scrolled {
-    background: rgba(196, 184, 160, 0.94);
+    background: rgba(8, 8, 8, 0.94);
 
     border-color: var(--border);
 
@@ -315,7 +302,7 @@ button {
 .main-nav a {
     position: relative;
 
-    color: var(--gray);
+    color: #cfcfcf;
 
     font-size: 13px;
 
@@ -382,7 +369,7 @@ button {
 .header-button:hover {
     background: var(--orange);
 
-    color: #ebe5d6;
+    color: #080808;
 
     transform: scale(1.05);
 }
@@ -475,20 +462,20 @@ button {
     background-image:
         radial-gradient(
             circle at 80% 45%,
-            rgba(0, 157, 255, 0.14),
+            rgba(255, 90, 31, 0.12),
             transparent 35%
         ),
 
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,157,255,0.6);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,157,255,0.6);}.tick{stroke:rgba(2,103,165,0.4);stroke-width:1;}.tick-major{stroke:rgba(2,103,165,0.6);stroke-width:1.5;}.tick-minor{stroke:rgba(2,103,165,0.18);stroke-width:0.5;}.angle{stroke:rgba(2,103,165,0.5);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(2,103,165,0.5)' stroke-width='1' fill='none'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,90,31,0.5);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,90,31,0.5);}.tick{stroke:rgba(255,90,31,0.35);stroke-width:1;}.tick-major{stroke:rgba(255,90,31,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(255,90,31,0.15);stroke-width:0.5;}.angle{stroke:rgba(255,90,31,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(255,90,31,0.45)' stroke-width='1' fill='none'/></g></svg>"),
 
-        linear-gradient(rgba(0, 157, 255, 0.28) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 157, 255, 0.28) 1px, transparent 1px),
+        linear-gradient(rgba(255, 90, 31, 0.28) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 90, 31, 0.28) 1px, transparent 1px),
 
-        linear-gradient(rgba(2, 103, 165, 0.22) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(2, 103, 165, 0.22) 1px, transparent 1px),
+        linear-gradient(rgba(0, 0, 0, 0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.5) 1px, transparent 1px),
 
-        linear-gradient(rgba(2, 103, 165, 0.10) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(2, 103, 165, 0.10) 1px, transparent 1px);
+        linear-gradient(rgba(255, 90, 31, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 90, 31, 0.10) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -545,8 +532,8 @@ button {
     height: auto;
 
     filter:
-        drop-shadow(0 0 30px rgba(0, 157, 255, 0.45))
-        drop-shadow(0 0 60px rgba(2, 103, 165, 0.25));
+        drop-shadow(0 0 30px rgba(255, 90, 31, 0.4))
+        drop-shadow(0 0 60px rgba(255, 90, 31, 0.2));
 }
 
 .hero h1 {
@@ -621,15 +608,13 @@ button {
 
     background: var(--orange);
 
-    color: #ebe5d6;
+    color: #080808;
 }
 
 .button-primary:hover {
     background: var(--orange-bright);
 
     border-color: var(--orange-bright);
-
-    color: #ebe5d6;
 }
 
 .button-secondary {
@@ -713,6 +698,7 @@ button {
 .services-heading h2 {
     font-family: "Xenois", serif;
 
+    /* Aumentado 15%: 42px -> 48px, 5vw -> 5.75vw, 76px -> 87px */
     font-size: clamp(48px, 5.75vw, 87px);
 
     line-height: 0.96;
@@ -740,8 +726,8 @@ button {
     z-index: 1;
 
     filter:
-        drop-shadow(0 0 70px rgba(0, 157, 255, 0.4))
-        drop-shadow(0 0 140px rgba(2, 103, 165, 0.2));
+        drop-shadow(0 0 70px rgba(255, 90, 31, 0.35))
+        drop-shadow(0 0 140px rgba(255, 90, 31, 0.15));
 
     animation: globe-breathe 8s ease-in-out infinite;
 }
@@ -757,6 +743,8 @@ button {
         transform: scale(1) rotate(0deg);
     }
 }
+
+/* NOTA: Se eliminó .services-orbit::before y @keyframes orbit-rotate para quitar la línea de la órbita */
 
 
 /* =========================================================
@@ -785,6 +773,7 @@ button {
         transform var(--transition);
 }
 
+/* El hover ahora respeta las variables de posición para no romper el layout */
 .orbit-item:hover {
     color: var(--orange);
     transform: translate(var(--x), var(--y)) scale(1.08);
@@ -805,13 +794,13 @@ button {
 
     border-radius: 50%;
 
-    background: #d4cbb8;
+    background: rgba(8, 8, 8, 0.9);
 
     color: var(--orange);
 
     box-shadow:
-        0 0 0 6px rgba(0, 157, 255, 0.1),
-        0 0 20px rgba(0, 157, 255, 0.2);
+        0 0 0 6px rgba(255, 90, 31, 0.08),
+        0 0 20px rgba(255, 90, 31, 0.2);
 
     transition:
         background var(--transition),
@@ -832,13 +821,13 @@ button {
 
 .orbit-item:hover .orbit-icon {
     background: var(--orange);
-    color: #ebe5d6;
+    color: var(--black);
 
     transform: scale(1.08);
 
     box-shadow:
-        0 0 0 8px rgba(0, 157, 255, 0.2),
-        0 0 30px rgba(0, 157, 255, 0.5);
+        0 0 0 8px rgba(255, 90, 31, 0.15),
+        0 0 30px rgba(255, 90, 31, 0.5);
 }
 
 
@@ -856,6 +845,7 @@ button {
 
     font-family: "Xenois", serif;
 
+    /* Aumentado 15%: 16px -> 18px */
     font-size: 18px;
     line-height: 1.15;
 
@@ -869,6 +859,7 @@ button {
 
     color: var(--gray);
 
+    /* Aumentado 15%: 11px -> 13px */
     font-size: 13px;
     line-height: 1.45;
 
@@ -882,8 +873,11 @@ button {
 
 /* =========================================================
    POSICIONES DISPERSAS ALREDEDOR DEL MUNDO
+   (Modificadas para ser más orgánicas y menos alineadas)
    ========================================================= */
 
+/* 1. Arriba (ligeramente a la izquierda) 
+   - El texto va arriba, el icono abajo tocando la línea. */
 .orbit-item-1 {
     top: 10%;
     left: 35%;
@@ -894,6 +888,8 @@ button {
     animation: float-1 6s ease-in-out infinite;
 }
 
+/* 2. Derecha (ligeramente arriba)
+   - El icono a la izquierda tocando la línea, el texto a la derecha. */
 .orbit-item-2 {
     top: 25%;
     right: 8%;
@@ -904,6 +900,8 @@ button {
     animation: float-2 7s ease-in-out infinite;
 }
 
+/* 3. Abajo (ligeramente a la derecha)
+   - El icono arriba tocando la línea, el texto abajo. */
 .orbit-item-3 {
     bottom: 10%;
     left: 60%;
@@ -914,6 +912,8 @@ button {
     animation: float-3 8s ease-in-out infinite;
 }
 
+/* 4. Izquierda (ligeramente abajo)
+   - El texto a la izquierda, el icono a la derecha tocando la línea. */
 .orbit-item-4 {
     top: 60%;
     left: 8%;
@@ -927,6 +927,7 @@ button {
 
 /* =========================================================
    ANIMACIONES DE FLOTACIÓN
+   (Usamos 'translate' en lugar de 'transform' para no chocar con el posicionamiento)
    ========================================================= */
 
 @keyframes float-1 {
@@ -1037,10 +1038,11 @@ button {
     font-size: 16px;
 
     filter:
-        drop-shadow(0 40px 60px rgba(3, 54, 85, 0.4))
-        drop-shadow(0 0 80px rgba(0, 157, 255, 0.25));
+        drop-shadow(0 40px 60px rgba(0, 0, 0, 0.9))
+        drop-shadow(0 0 80px rgba(255, 90, 31, 0.22));
 }
 
+/* EL MOCKUP VA ENCIMA DE TODO (z-index alto) */
 .work-frame-iphone::after {
     content: "";
     position: absolute;
@@ -1172,20 +1174,20 @@ button {
     background-image:
         radial-gradient(
             circle at 80% 45%,
-            rgba(0, 157, 255, 0.14),
+            rgba(255, 90, 31, 0.12),
             transparent 35%
         ),
 
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,157,255,0.6);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,157,255,0.6);}.tick{stroke:rgba(2,103,165,0.4);stroke-width:1;}.tick-major{stroke:rgba(2,103,165,0.6);stroke-width:1.5;}.tick-minor{stroke:rgba(2,103,165,0.18);stroke-width:0.5;}.angle{stroke:rgba(2,103,165,0.5);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(2,103,165,0.5)' stroke-width='1' fill='none'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,90,31,0.5);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,90,31,0.5);}.tick{stroke:rgba(255,90,31,0.35);stroke-width:1;}.tick-major{stroke:rgba(255,90,31,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(255,90,31,0.15);stroke-width:0.5;}.angle{stroke:rgba(255,90,31,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(255,90,31,0.45)' stroke-width='1' fill='none'/></g></svg>"),
 
-        linear-gradient(rgba(0, 157, 255, 0.28) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 157, 255, 0.28) 1px, transparent 1px),
+        linear-gradient(rgba(255, 90, 31, 0.28) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 90, 31, 0.28) 1px, transparent 1px),
 
-        linear-gradient(rgba(2, 103, 165, 0.22) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(2, 103, 165, 0.22) 1px, transparent 1px),
+        linear-gradient(rgba(0, 0, 0, 0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.5) 1px, transparent 1px),
 
-        linear-gradient(rgba(2, 103, 165, 0.10) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(2, 103, 165, 0.10) 1px, transparent 1px);
+        linear-gradient(rgba(255, 90, 31, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 90, 31, 0.10) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -1246,7 +1248,7 @@ button {
     flex: 1;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* icono arriba, cuadro abajo SIEMPRE */
 
     align-items: center;
 
@@ -1256,7 +1258,7 @@ button {
 }
 
 .process-step-icon {
-    order: 1;
+    order: 1; /* siempre primero (arriba) */
 
     position: relative;
 
@@ -1274,13 +1276,13 @@ button {
 
     border-radius: 50%;
 
-    background: #d4cbb8;
+    background: var(--black);
 
     color: var(--orange);
 
     box-shadow:
-        0 0 0 6px rgba(0, 157, 255, 0.1),
-        0 0 20px rgba(0, 157, 255, 0.2);
+        0 0 0 6px rgba(255, 90, 31, 0.08),
+        0 0 20px rgba(255, 90, 31, 0.2);
 
     transition:
         background var(--transition),
@@ -1356,27 +1358,27 @@ button {
 }
 
 .process-step-capsule {
-    order: 2;
+    order: 2; /* siempre segundo (abajo) */
 
     display: flex;
 
     flex-direction: column;
 
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* centra el contenido vertical y horizontal */
 
     gap: 6px;
 
-    width: 220px;
-    min-height: 140px;
+    width: 220px;      /* ancho fijo igual para todos */
+    min-height: 140px; /* alto mínimo igual para todos */
 
-    margin-top: 35px;
+    margin-top: 35px; /* separación fija entre icono y cuadro */
 
     padding: 16px;
 
     border: 1.5px solid var(--orange);
 
-    background: rgba(212, 203, 184, 0.94);
+    background: rgba(8, 8, 8, 0.88);
 
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
@@ -1401,7 +1403,7 @@ button {
 .process-step-capsule p {
     margin: 0;
 
-    color: var(--gray);
+    color: var(--gray-light);
 
     font-size: 12px;
 
@@ -1491,7 +1493,7 @@ button {
 
     transform: translateX(-5px);
 
-    background: rgba(0, 157, 255, 0.08);
+    background: rgba(255, 90, 31, 0.04);
 }
 
 .brainstorm-icon {
@@ -1508,13 +1510,13 @@ button {
 
     border-radius: 50%;
 
-    background: #d4cbb8;
+    background: var(--black);
 
     color: var(--orange);
 
     box-shadow:
-        0 0 0 6px rgba(0, 157, 255, 0.1),
-        0 0 20px rgba(0, 157, 255, 0.2);
+        0 0 0 6px rgba(255, 90, 31, 0.08),
+        0 0 20px rgba(255, 90, 31, 0.2);
 
     transition:
         background var(--transition),
@@ -1526,13 +1528,13 @@ button {
 .brainstorm-item:hover .brainstorm-icon {
     background: var(--orange);
 
-    color: #ebe5d6;
+    color: var(--black);
 
     transform: scale(1.08);
 
     box-shadow:
-        0 0 0 8px rgba(0, 157, 255, 0.2),
-        0 0 30px rgba(0, 157, 255, 0.5);
+        0 0 0 8px rgba(255, 90, 31, 0.15),
+        0 0 30px rgba(255, 90, 31, 0.5);
 }
 
 .brainstorm-check {
@@ -1600,7 +1602,7 @@ button {
 }
 
 .brainstorm-item span {
-    color: #5f6d7a;
+    color: #d2d2d2;
 
     font-size: 15px;
 }
@@ -1649,8 +1651,8 @@ button {
     height: 100%;
     object-fit: contain;
     filter:
-        drop-shadow(0 0 8px rgba(0, 157, 255, 0.6))
-        drop-shadow(0 0 20px rgba(2, 103, 165, 0.3));
+        drop-shadow(0 0 8px rgba(255, 90, 31, 0.5))
+        drop-shadow(0 0 20px rgba(255, 90, 31, 0.2));
 }
 
 .digital-icon svg {
@@ -1662,8 +1664,8 @@ button {
     stroke-linecap: round;
     stroke-linejoin: round;
     filter:
-        drop-shadow(0 0 8px rgba(0, 157, 255, 0.6))
-        drop-shadow(0 0 20px rgba(2, 103, 165, 0.3));
+        drop-shadow(0 0 8px rgba(255, 90, 31, 0.5))
+        drop-shadow(0 0 20px rgba(255, 90, 31, 0.2));
 }
 
 
@@ -1719,8 +1721,8 @@ button {
     user-select: none;
     pointer-events: none;
     filter:
-        drop-shadow(0 0 8px rgba(0, 157, 255, 0.65))
-        drop-shadow(0 0 16px rgba(2, 103, 165, 0.35));
+        drop-shadow(0 0 8px rgba(255, 90, 31, 0.6))
+        drop-shadow(0 0 16px rgba(255, 90, 31, 0.3));
 }
 
 .digital-emoji svg {
@@ -1865,7 +1867,7 @@ button {
     background:
         linear-gradient(
             145deg,
-            rgba(0, 157, 255, 0.12),
+            rgba(255, 90, 31, 0.08),
             var(--black-soft)
         );
 }
@@ -1956,7 +1958,7 @@ button {
 
     padding-left: 18px;
 
-    color: #5f6d7a;
+    color: #c5c5c5;
 
     font-size: 12px;
 
@@ -2007,7 +2009,7 @@ button {
 
 .plans-coming-soon:hover {
     border-color: var(--orange);
-    background: #b8ab90;
+    background: #0d0d0d;
 }
 
 .plans-coming-soon .plans-category-heading {
@@ -2050,7 +2052,7 @@ button {
 
     display: inline-block;
 
-    border: 1px solid rgba(0, 157, 255, 0.4);
+    border: 1px solid rgba(255, 90, 31, 0.25);
 
     border-top-color: var(--orange);
 
@@ -2127,7 +2129,7 @@ button {
 
     border: 1px solid var(--border);
 
-    background: var(--black-soft);
+    background: var(--black);
 
     transition:
         border-color var(--transition),
@@ -2136,7 +2138,7 @@ button {
 
 .quote-form:hover {
     border-color: var(--orange);
-    background: #dcd4c2;
+    background: #0d0d0d;
 }
 
 .quote-form-grid {
@@ -2178,7 +2180,7 @@ button {
 
     outline: none;
 
-    background: #dcd4c2;
+    background: var(--black-soft);
 
     color: var(--orange);
 
@@ -2212,32 +2214,32 @@ button {
 
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-    color: var(--gray);
+    color: var(--gray-dark);
 }
 
 .form-field input:hover,
 .form-field select:hover,
 .form-field textarea:hover {
-    border-color: rgba(0, 157, 255, 0.6);
+    border-color: rgba(255, 90, 31, 0.4);
 }
 
 .form-field input:focus,
 .form-field textarea:focus {
     border-color: var(--orange);
 
-    background: #ebe5d6;
+    background: #0d0d0d;
 
     color: var(--orange);
 
-    box-shadow: 0 0 0 2px rgba(0, 157, 255, 0.22);
+    box-shadow: 0 0 0 2px rgba(255, 90, 31, 0.15);
 }
 
 .form-field select:focus {
     border-color: var(--orange);
 
-    background-color: #ebe5d6;
+    background-color: #0d0d0d;
 
-    box-shadow: 0 0 0 2px rgba(0, 157, 255, 0.22);
+    box-shadow: 0 0 0 2px rgba(255, 90, 31, 0.15);
 }
 
 .form-field select:required:valid,
@@ -2275,7 +2277,7 @@ button {
 }
 
 .form-field select option {
-    background: #ebe5d6;
+    background: var(--black-soft);
     color: var(--orange);
     padding: 10px;
 }
@@ -2283,7 +2285,7 @@ button {
 .form-field select option:checked,
 .form-field select option:active,
 .form-field select option:hover {
-    background: #ebe5d6;
+    background: var(--black-soft);
     color: var(--orange);
 }
 
@@ -2301,21 +2303,21 @@ button {
 
     background-color: var(--orange-dark);
 
-    color: #ebe5d6;
+    color: var(--black);
 
     text-align: center;
 
     background-image:
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(235,229,214,0.55);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(235,229,214,0.55);}.tick-major{stroke:rgba(235,229,214,0.45);stroke-width:1.5;}.angle{stroke:rgba(235,229,214,0.5);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,255,255,0.55);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,255,255,0.55);}.tick-major{stroke:rgba(255,255,255,0.45);stroke-width:1.5;}.angle{stroke:rgba(255,255,255,0.5);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/></g></svg>"),
 
-        linear-gradient(rgba(235, 229, 214, 0.22) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(235, 229, 214, 0.22) 1px, transparent 1px),
+        linear-gradient(rgba(255, 255, 255, 0.22) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px),
 
         linear-gradient(rgba(0, 0, 0, 0.15) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 0, 0, 0.15) 1px, transparent 1px),
 
-        linear-gradient(rgba(235, 229, 214, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(235, 229, 214, 0.08) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -2440,13 +2442,13 @@ button {
 
     border-top: 1px solid var(--border);
 
-    color: var(--gray);
+    color: var(--gray-dark);
 
     font-size: 10px;
 }
 
 .footer-copyright {
-    color: var(--gray);
+    color: var(--gray-dark);
 
     font-size: 10px;
 }
@@ -2526,6 +2528,8 @@ button {
 
 /* =========================================================
    ANCLAS — offset por header fijo
+   Evita que el header tape el título al hacer clic
+   en los links del menú (#planes, #trabajos, #contacto…)
    ========================================================= */
 
 #planes,
