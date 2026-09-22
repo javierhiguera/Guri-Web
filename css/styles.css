@@ -1,5 +1,6 @@
 /* =========================================================
    GURI — STYLES
+   Paleta: azules (#009dff → #0267a5 → #033655) + gris azulado
    ========================================================= */
 
 
@@ -25,27 +26,37 @@
 
 
 /* =========================================================
-   VARIABLES
+   VARIABLES — PALETA
+   =========================================================
+   fondo        #e5f3fc
+   surface      #d6e9f8
+   border       #b8d5e8
+   accent       #009dff  (azul brillante)
+   accent-mid   #0267a5  (azul medio, hover/énfasis)
+   accent-deep  #033655  (navy profundo, CTA bg)
+   texto        #033655  (navy principal)
+   texto-mid    #0267a5
+   texto-sub    #8699a5  (gris azulado)
    ========================================================= */
 
 :root {
-    --black: #080808;
-    --black-soft: #111111;
-    --black-card: #151515;
+    --black: #e5f3fc;         /* background */
+    --black-soft: #d6e9f8;    /* surface */
+    --black-card: #d6e9f8;
 
-    --board: #0d0d0d;
+    --board: #e5f3fc;
 
-    --white: #f5f5f5;
+    --white: #033655;         /* texto principal (navy profundo) */
 
-    --gray: #999999;
-    --gray-light: #cfcfcf;
-    --gray-dark: #666666;
+    --gray: #8699a5;          /* texto secundario (gris azulado) */
+    --gray-light: #0267a5;    /* texto fuerte secundario (azul medio) */
+    --gray-dark: #8699a5;     /* texto sutil (gris azulado) */
 
-    --border: #262626;
+    --border: #b8d5e8;        /* bordes */
 
-    --orange: #ff5a1f;
-    --orange-bright: #ff6b00;
-    --orange-dark: #e64a15;
+    --orange: #009dff;        /* accent principal */
+    --orange-bright: #0267a5; /* hover (azul medio) */
+    --orange-dark: #033655;   /* CTA bg (navy profundo) */
 
     --container: 1240px;
 
@@ -208,7 +219,7 @@ button {
 }
 
 .site-header.scrolled {
-    background: rgba(8, 8, 8, 0.94);
+    background: rgba(229, 243, 252, 0.94);
 
     border-color: var(--border);
 
@@ -302,7 +313,7 @@ button {
 .main-nav a {
     position: relative;
 
-    color: #cfcfcf;
+    color: var(--gray);
 
     font-size: 13px;
 
@@ -369,7 +380,7 @@ button {
 .header-button:hover {
     background: var(--orange);
 
-    color: #080808;
+    color: #e5f3fc;
 
     transform: scale(1.05);
 }
@@ -462,20 +473,20 @@ button {
     background-image:
         radial-gradient(
             circle at 80% 45%,
-            rgba(255, 90, 31, 0.12),
+            rgba(0, 157, 255, 0.10),
             transparent 35%
         ),
 
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,90,31,0.5);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,90,31,0.5);}.tick{stroke:rgba(255,90,31,0.35);stroke-width:1;}.tick-major{stroke:rgba(255,90,31,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(255,90,31,0.15);stroke-width:0.5;}.angle{stroke:rgba(255,90,31,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(255,90,31,0.45)' stroke-width='1' fill='none'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,157,255,0.5);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,157,255,0.5);}.tick{stroke:rgba(2,103,165,0.35);stroke-width:1;}.tick-major{stroke:rgba(2,103,165,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(2,103,165,0.15);stroke-width:0.5;}.angle{stroke:rgba(2,103,165,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(2,103,165,0.45)' stroke-width='1' fill='none'/></g></svg>"),
 
-        linear-gradient(rgba(255, 90, 31, 0.28) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 90, 31, 0.28) 1px, transparent 1px),
+        linear-gradient(rgba(0, 157, 255, 0.22) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 157, 255, 0.22) 1px, transparent 1px),
 
-        linear-gradient(rgba(0, 0, 0, 0.5) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.5) 1px, transparent 1px),
+        linear-gradient(rgba(2, 103, 165, 0.20) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(2, 103, 165, 0.20) 1px, transparent 1px),
 
-        linear-gradient(rgba(255, 90, 31, 0.10) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 90, 31, 0.10) 1px, transparent 1px);
+        linear-gradient(rgba(2, 103, 165, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(2, 103, 165, 0.07) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -532,8 +543,8 @@ button {
     height: auto;
 
     filter:
-        drop-shadow(0 0 30px rgba(255, 90, 31, 0.4))
-        drop-shadow(0 0 60px rgba(255, 90, 31, 0.2));
+        drop-shadow(0 0 30px rgba(0, 157, 255, 0.35))
+        drop-shadow(0 0 60px rgba(2, 103, 165, 0.18));
 }
 
 .hero h1 {
@@ -608,13 +619,15 @@ button {
 
     background: var(--orange);
 
-    color: #080808;
+    color: #e5f3fc;
 }
 
 .button-primary:hover {
     background: var(--orange-bright);
 
     border-color: var(--orange-bright);
+
+    color: #e5f3fc;
 }
 
 .button-secondary {
@@ -698,7 +711,6 @@ button {
 .services-heading h2 {
     font-family: "Xenois", serif;
 
-    /* Aumentado 15%: 42px -> 48px, 5vw -> 5.75vw, 76px -> 87px */
     font-size: clamp(48px, 5.75vw, 87px);
 
     line-height: 0.96;
@@ -726,8 +738,8 @@ button {
     z-index: 1;
 
     filter:
-        drop-shadow(0 0 70px rgba(255, 90, 31, 0.35))
-        drop-shadow(0 0 140px rgba(255, 90, 31, 0.15));
+        drop-shadow(0 0 70px rgba(0, 157, 255, 0.35))
+        drop-shadow(0 0 140px rgba(2, 103, 165, 0.15));
 
     animation: globe-breathe 8s ease-in-out infinite;
 }
@@ -743,8 +755,6 @@ button {
         transform: scale(1) rotate(0deg);
     }
 }
-
-/* NOTA: Se eliminó .services-orbit::before y @keyframes orbit-rotate para quitar la línea de la órbita */
 
 
 /* =========================================================
@@ -773,7 +783,6 @@ button {
         transform var(--transition);
 }
 
-/* El hover ahora respeta las variables de posición para no romper el layout */
 .orbit-item:hover {
     color: var(--orange);
     transform: translate(var(--x), var(--y)) scale(1.08);
@@ -794,13 +803,13 @@ button {
 
     border-radius: 50%;
 
-    background: rgba(8, 8, 8, 0.9);
+    background: #e5f3fc;
 
     color: var(--orange);
 
     box-shadow:
-        0 0 0 6px rgba(255, 90, 31, 0.08),
-        0 0 20px rgba(255, 90, 31, 0.2);
+        0 0 0 6px rgba(0, 157, 255, 0.08),
+        0 0 20px rgba(0, 157, 255, 0.18);
 
     transition:
         background var(--transition),
@@ -821,13 +830,13 @@ button {
 
 .orbit-item:hover .orbit-icon {
     background: var(--orange);
-    color: var(--black);
+    color: #e5f3fc;
 
     transform: scale(1.08);
 
     box-shadow:
-        0 0 0 8px rgba(255, 90, 31, 0.15),
-        0 0 30px rgba(255, 90, 31, 0.5);
+        0 0 0 8px rgba(0, 157, 255, 0.15),
+        0 0 30px rgba(0, 157, 255, 0.45);
 }
 
 
@@ -845,7 +854,6 @@ button {
 
     font-family: "Xenois", serif;
 
-    /* Aumentado 15%: 16px -> 18px */
     font-size: 18px;
     line-height: 1.15;
 
@@ -859,7 +867,6 @@ button {
 
     color: var(--gray);
 
-    /* Aumentado 15%: 11px -> 13px */
     font-size: 13px;
     line-height: 1.45;
 
@@ -873,11 +880,8 @@ button {
 
 /* =========================================================
    POSICIONES DISPERSAS ALREDEDOR DEL MUNDO
-   (Modificadas para ser más orgánicas y menos alineadas)
    ========================================================= */
 
-/* 1. Arriba (ligeramente a la izquierda) 
-   - El texto va arriba, el icono abajo tocando la línea. */
 .orbit-item-1 {
     top: 10%;
     left: 35%;
@@ -888,8 +892,6 @@ button {
     animation: float-1 6s ease-in-out infinite;
 }
 
-/* 2. Derecha (ligeramente arriba)
-   - El icono a la izquierda tocando la línea, el texto a la derecha. */
 .orbit-item-2 {
     top: 25%;
     right: 8%;
@@ -900,8 +902,6 @@ button {
     animation: float-2 7s ease-in-out infinite;
 }
 
-/* 3. Abajo (ligeramente a la derecha)
-   - El icono arriba tocando la línea, el texto abajo. */
 .orbit-item-3 {
     bottom: 10%;
     left: 60%;
@@ -912,8 +912,6 @@ button {
     animation: float-3 8s ease-in-out infinite;
 }
 
-/* 4. Izquierda (ligeramente abajo)
-   - El texto a la izquierda, el icono a la derecha tocando la línea. */
 .orbit-item-4 {
     top: 60%;
     left: 8%;
@@ -927,7 +925,6 @@ button {
 
 /* =========================================================
    ANIMACIONES DE FLOTACIÓN
-   (Usamos 'translate' en lugar de 'transform' para no chocar con el posicionamiento)
    ========================================================= */
 
 @keyframes float-1 {
@@ -1038,11 +1035,10 @@ button {
     font-size: 16px;
 
     filter:
-        drop-shadow(0 40px 60px rgba(0, 0, 0, 0.9))
-        drop-shadow(0 0 80px rgba(255, 90, 31, 0.22));
+        drop-shadow(0 40px 60px rgba(3, 54, 85, 0.35))
+        drop-shadow(0 0 80px rgba(0, 157, 255, 0.22));
 }
 
-/* EL MOCKUP VA ENCIMA DE TODO (z-index alto) */
 .work-frame-iphone::after {
     content: "";
     position: absolute;
@@ -1174,20 +1170,20 @@ button {
     background-image:
         radial-gradient(
             circle at 80% 45%,
-            rgba(255, 90, 31, 0.12),
+            rgba(0, 157, 255, 0.10),
             transparent 35%
         ),
 
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,90,31,0.5);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,90,31,0.5);}.tick{stroke:rgba(255,90,31,0.35);stroke-width:1;}.tick-major{stroke:rgba(255,90,31,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(255,90,31,0.15);stroke-width:0.5;}.angle{stroke:rgba(255,90,31,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(255,90,31,0.45)' stroke-width='1' fill='none'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,157,255,0.5);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,157,255,0.5);}.tick{stroke:rgba(2,103,165,0.35);stroke-width:1;}.tick-major{stroke:rgba(2,103,165,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(2,103,165,0.15);stroke-width:0.5;}.angle{stroke:rgba(2,103,165,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(2,103,165,0.45)' stroke-width='1' fill='none'/></g></svg>"),
 
-        linear-gradient(rgba(255, 90, 31, 0.28) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 90, 31, 0.28) 1px, transparent 1px),
+        linear-gradient(rgba(0, 157, 255, 0.22) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 157, 255, 0.22) 1px, transparent 1px),
 
-        linear-gradient(rgba(0, 0, 0, 0.5) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.5) 1px, transparent 1px),
+        linear-gradient(rgba(2, 103, 165, 0.20) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(2, 103, 165, 0.20) 1px, transparent 1px),
 
-        linear-gradient(rgba(255, 90, 31, 0.10) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 90, 31, 0.10) 1px, transparent 1px);
+        linear-gradient(rgba(2, 103, 165, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(2, 103, 165, 0.07) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -1248,7 +1244,7 @@ button {
     flex: 1;
 
     display: flex;
-    flex-direction: column; /* icono arriba, cuadro abajo SIEMPRE */
+    flex-direction: column;
 
     align-items: center;
 
@@ -1258,7 +1254,7 @@ button {
 }
 
 .process-step-icon {
-    order: 1; /* siempre primero (arriba) */
+    order: 1;
 
     position: relative;
 
@@ -1276,13 +1272,13 @@ button {
 
     border-radius: 50%;
 
-    background: var(--black);
+    background: #e5f3fc;
 
     color: var(--orange);
 
     box-shadow:
-        0 0 0 6px rgba(255, 90, 31, 0.08),
-        0 0 20px rgba(255, 90, 31, 0.2);
+        0 0 0 6px rgba(0, 157, 255, 0.08),
+        0 0 20px rgba(0, 157, 255, 0.18);
 
     transition:
         background var(--transition),
@@ -1358,27 +1354,27 @@ button {
 }
 
 .process-step-capsule {
-    order: 2; /* siempre segundo (abajo) */
+    order: 2;
 
     display: flex;
 
     flex-direction: column;
 
     align-items: center;
-    justify-content: center; /* centra el contenido vertical y horizontal */
+    justify-content: center;
 
     gap: 6px;
 
-    width: 220px;      /* ancho fijo igual para todos */
-    min-height: 140px; /* alto mínimo igual para todos */
+    width: 220px;
+    min-height: 140px;
 
-    margin-top: 35px; /* separación fija entre icono y cuadro */
+    margin-top: 35px;
 
     padding: 16px;
 
     border: 1.5px solid var(--orange);
 
-    background: rgba(8, 8, 8, 0.88);
+    background: rgba(229, 243, 252, 0.92);
 
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
@@ -1403,7 +1399,7 @@ button {
 .process-step-capsule p {
     margin: 0;
 
-    color: var(--gray-light);
+    color: var(--gray);
 
     font-size: 12px;
 
@@ -1493,7 +1489,7 @@ button {
 
     transform: translateX(-5px);
 
-    background: rgba(255, 90, 31, 0.04);
+    background: rgba(0, 157, 255, 0.05);
 }
 
 .brainstorm-icon {
@@ -1510,13 +1506,13 @@ button {
 
     border-radius: 50%;
 
-    background: var(--black);
+    background: #e5f3fc;
 
     color: var(--orange);
 
     box-shadow:
-        0 0 0 6px rgba(255, 90, 31, 0.08),
-        0 0 20px rgba(255, 90, 31, 0.2);
+        0 0 0 6px rgba(0, 157, 255, 0.08),
+        0 0 20px rgba(0, 157, 255, 0.18);
 
     transition:
         background var(--transition),
@@ -1528,13 +1524,13 @@ button {
 .brainstorm-item:hover .brainstorm-icon {
     background: var(--orange);
 
-    color: var(--black);
+    color: #e5f3fc;
 
     transform: scale(1.08);
 
     box-shadow:
-        0 0 0 8px rgba(255, 90, 31, 0.15),
-        0 0 30px rgba(255, 90, 31, 0.5);
+        0 0 0 8px rgba(0, 157, 255, 0.15),
+        0 0 30px rgba(0, 157, 255, 0.45);
 }
 
 .brainstorm-check {
@@ -1602,7 +1598,7 @@ button {
 }
 
 .brainstorm-item span {
-    color: #d2d2d2;
+    color: #8699a5;
 
     font-size: 15px;
 }
@@ -1651,8 +1647,8 @@ button {
     height: 100%;
     object-fit: contain;
     filter:
-        drop-shadow(0 0 8px rgba(255, 90, 31, 0.5))
-        drop-shadow(0 0 20px rgba(255, 90, 31, 0.2));
+        drop-shadow(0 0 8px rgba(0, 157, 255, 0.5))
+        drop-shadow(0 0 20px rgba(2, 103, 165, 0.2));
 }
 
 .digital-icon svg {
@@ -1664,8 +1660,8 @@ button {
     stroke-linecap: round;
     stroke-linejoin: round;
     filter:
-        drop-shadow(0 0 8px rgba(255, 90, 31, 0.5))
-        drop-shadow(0 0 20px rgba(255, 90, 31, 0.2));
+        drop-shadow(0 0 8px rgba(0, 157, 255, 0.5))
+        drop-shadow(0 0 20px rgba(2, 103, 165, 0.2));
 }
 
 
@@ -1721,8 +1717,8 @@ button {
     user-select: none;
     pointer-events: none;
     filter:
-        drop-shadow(0 0 8px rgba(255, 90, 31, 0.6))
-        drop-shadow(0 0 16px rgba(255, 90, 31, 0.3));
+        drop-shadow(0 0 8px rgba(0, 157, 255, 0.55))
+        drop-shadow(0 0 16px rgba(2, 103, 165, 0.25));
 }
 
 .digital-emoji svg {
@@ -1867,7 +1863,7 @@ button {
     background:
         linear-gradient(
             145deg,
-            rgba(255, 90, 31, 0.08),
+            rgba(0, 157, 255, 0.08),
             var(--black-soft)
         );
 }
@@ -1958,7 +1954,7 @@ button {
 
     padding-left: 18px;
 
-    color: #c5c5c5;
+    color: #8699a5;
 
     font-size: 12px;
 
@@ -2009,7 +2005,7 @@ button {
 
 .plans-coming-soon:hover {
     border-color: var(--orange);
-    background: #0d0d0d;
+    background: #cfe4f5;
 }
 
 .plans-coming-soon .plans-category-heading {
@@ -2052,7 +2048,7 @@ button {
 
     display: inline-block;
 
-    border: 1px solid rgba(255, 90, 31, 0.25);
+    border: 1px solid rgba(0, 157, 255, 0.3);
 
     border-top-color: var(--orange);
 
@@ -2138,7 +2134,7 @@ button {
 
 .quote-form:hover {
     border-color: var(--orange);
-    background: #0d0d0d;
+    background: #cfe4f5;
 }
 
 .quote-form-grid {
@@ -2220,26 +2216,26 @@ button {
 .form-field input:hover,
 .form-field select:hover,
 .form-field textarea:hover {
-    border-color: rgba(255, 90, 31, 0.4);
+    border-color: rgba(0, 157, 255, 0.5);
 }
 
 .form-field input:focus,
 .form-field textarea:focus {
     border-color: var(--orange);
 
-    background: #0d0d0d;
+    background: #cfe4f5;
 
     color: var(--orange);
 
-    box-shadow: 0 0 0 2px rgba(255, 90, 31, 0.15);
+    box-shadow: 0 0 0 2px rgba(0, 157, 255, 0.18);
 }
 
 .form-field select:focus {
     border-color: var(--orange);
 
-    background-color: #0d0d0d;
+    background-color: #cfe4f5;
 
-    box-shadow: 0 0 0 2px rgba(255, 90, 31, 0.15);
+    box-shadow: 0 0 0 2px rgba(0, 157, 255, 0.18);
 }
 
 .form-field select:required:valid,
@@ -2277,7 +2273,7 @@ button {
 }
 
 .form-field select option {
-    background: var(--black-soft);
+    background: #e5f3fc;
     color: var(--orange);
     padding: 10px;
 }
@@ -2285,7 +2281,7 @@ button {
 .form-field select option:checked,
 .form-field select option:active,
 .form-field select option:hover {
-    background: var(--black-soft);
+    background: #e5f3fc;
     color: var(--orange);
 }
 
@@ -2303,21 +2299,21 @@ button {
 
     background-color: var(--orange-dark);
 
-    color: var(--black);
+    color: #e5f3fc;
 
     text-align: center;
 
     background-image:
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,255,255,0.55);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,255,255,0.55);}.tick-major{stroke:rgba(255,255,255,0.45);stroke-width:1.5;}.angle{stroke:rgba(255,255,255,0.5);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(229,243,252,0.55);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(229,243,252,0.55);}.tick-major{stroke:rgba(229,243,252,0.45);stroke-width:1.5;}.angle{stroke:rgba(229,243,252,0.5);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/></g></svg>"),
 
-        linear-gradient(rgba(255, 255, 255, 0.22) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px),
+        linear-gradient(rgba(229, 243, 252, 0.22) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(229, 243, 252, 0.22) 1px, transparent 1px),
 
         linear-gradient(rgba(0, 0, 0, 0.15) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 0, 0, 0.15) 1px, transparent 1px),
 
-        linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+        linear-gradient(rgba(229, 243, 252, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(229, 243, 252, 0.08) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -2528,8 +2524,6 @@ button {
 
 /* =========================================================
    ANCLAS — offset por header fijo
-   Evita que el header tape el título al hacer clic
-   en los links del menú (#planes, #trabajos, #contacto…)
    ========================================================= */
 
 #planes,
