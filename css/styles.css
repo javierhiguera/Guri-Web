@@ -741,10 +741,11 @@ button {
 .mapa-fondo {
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 1000'><rect width='1000' height='1000' fill='%23F8F9FA'/><g stroke='%23E2E8F0' stroke-width='2' fill='none'><path d='M0,200 Q200,180 400,250 T800,300 T1000,280'/><path d='M0,400 Q150,380 300,450 T600,500 T1000,520'/><path d='M0,600 Q250,580 500,650 T1000,680'/><path d='M0,800 Q300,780 600,850 T1000,900'/><path d='M200,0 Q180,200 250,400 T300,800 T280,1000'/><path d='M400,0 Q380,150 450,300 T500,600 T520,1000'/><path d='M600,0 Q580,250 650,500 T680,1000'/><path d='M800,0 Q780,300 850,600 T900,1000'/></g><g fill='%23E6F0FF' opacity='0.6'><circle cx='300' cy='350' r='80'/><circle cx='700' cy='700' r='120'/><circle cx='150' cy='800' r='60'/><circle cx='850' cy='200' r='90'/></g></svg>");
+    /* CAMBIO: Usamos la imagen real que subiste */
+    background-image: url("../assets/seleccion/mapa.png");
     background-size: cover;
     background-position: center;
-    opacity: 0.5;
+    opacity: 0.6; /* Ajusta esto si quieres que el mapa se vea más fuerte o más suave */
     z-index: 1;
 }
 
@@ -1527,11 +1528,11 @@ button {
 
 .plans-custom h3,
 .plans-contact-copy h3 {
+    /* CAMBIO: Mismo tamaño que los títulos principales */
+    font-size: clamp(48px, 6vw, 82px); 
+    line-height: 0.95;
+    letter-spacing: -0.055em;
     margin-bottom: 17px;
-    font-family: "Xenois", serif;
-    font-size: clamp(34px, 4vw, 52px);
-    line-height: 0.98;
-    letter-spacing: -0.045em;
 }
 
 .plans-custom p,
@@ -1758,7 +1759,8 @@ button {
 .footer-inner {
     padding-bottom: 60px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    /* CAMBIO: Grid a 2 columnas porque quitamos las redes */
+    grid-template-columns: 1fr 1fr; 
     gap: 50px;
     align-items: start;
 }
@@ -1796,49 +1798,6 @@ button {
     transform: translateX(3px);
 }
 
-.footer-social {
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
-}
-
-.footer-social strong {
-    margin-bottom: 8px;
-    color: var(--white);
-    font-size: 12px;
-    font-weight: 300;
-    letter-spacing: 0.08em;
-}
-
-.social-links {
-    display: flex;
-    gap: 16px;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    color: var(--gray);
-    transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
-}
-
-.social-links a:hover {
-    background: var(--orange);
-    color: #FFFFFF;
-    border-color: var(--orange);
-    transform: translateY(-3px);
-}
-
-.social-links a svg {
-    width: 20px;
-    height: 20px;
-}
-
 .footer-bottom {
     min-height: 70px;
     display: flex;
@@ -1873,7 +1832,7 @@ button {
 
 
 /* =========================================================
-   BOTÓN FLOTANTE DE WHATSAPP
+   BOTÓN FLOTANTE DE WHATSAPP (Igual al Header)
    ========================================================= */
 
 .whatsapp-float {
@@ -1884,30 +1843,27 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
-    background: #25D366;
-    color: #FFFFFF;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid var(--orange);
     border-radius: 50%;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-    transition: transform var(--transition), box-shadow var(--transition);
-    animation: whatsapp-pulse 2s ease-in-out infinite;
+    background: transparent;
+    color: var(--orange);
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.15); /* Sombra sutil */
+    transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
 }
 
 .whatsapp-float:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
-    animation: none;
+    background: var(--orange);
+    color: #FFFFFF;
+    transform: scale(1.05);
 }
 
 .whatsapp-float svg {
-    width: 30px;
-    height: 30px;
-}
-
-@keyframes whatsapp-pulse {
-    0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
-    50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.7); }
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
 }
 
 
