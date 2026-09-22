@@ -721,67 +721,166 @@ button {
 }
 
 
-<!-- =====================================================
-     TRABAJOS — Con polaroids y mapa de fondo
-     ===================================================== -->
+/* =========================================================
+   WORK — Sección de trabajos con polaroids y mapa
+   ========================================================= */
 
-<section class="work section" id="trabajos">
+.work {
+    position: relative;
+    background-color: var(--black);
+    overflow: hidden;
+}
 
-    <!-- Título dentro del contenedor normal -->
-    <div class="container">
-        <div class="section-heading">
-            <h2>
-                Algunos proyectos
-                <span>que hicimos.</span>
-            </h2>
-        </div>
-    </div>
+/* Contenedor del mapa de lado a lado */
+.portfolio-mapa {
+    position: relative;
+    width: 100%;
+    background-color: var(--black);
+    padding: 60px 0;
+}
 
-    <!-- Contenedor del mapa de lado a lado -->
-    <div class="portfolio-mapa">
-        
-        <!-- Fondo del mapa (ocupa todo el ancho) -->
-        <div class="mapa-fondo"></div>
+/* El fondo del mapa */
+.mapa-fondo {
+    position: absolute;
+    inset: 0;
+    background-image: url("../assets/seleccion/mapa.png");
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.6;
+    z-index: 1;
+}
 
-        <!-- Contenedor para centrar las polaroids -->
-        <div class="container">
-            <div class="polaroids-container">
+/* El contenedor de las fotos (¡Esto es clave!) */
+.polaroids-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 700px; /* <--- ESTA ALTURA ES LA QUE FALTABA */
+}
 
-                <!-- Polaroid 1 -->
-                <div class="polaroid polaroid-1">
-                    <div class="pin-azul"></div>
-                    <img src="./assets/proyectos/1/NP_1.jpeg" alt="Nivel Pulidos">
-                    <p>Nivel Pulidos</p>
-                </div>
+/* Estilo base de cada Polaroid */
+.polaroid {
+    position: absolute;
+    width: 280px;
+    padding: 12px 12px 50px 12px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    z-index: 3;
+}
 
-                <!-- Polaroid 2 -->
-                <div class="polaroid polaroid-2">
-                    <div class="pin-azul"></div>
-                    <img src="./assets/proyectos/2/proyecto2.jpg" alt="Proyecto 2">
-                    <p>Estudio Jurídico</p>
-                </div>
+/* --- POSICIONES ORGÁNICAS (Desktop) --- */
 
-                <!-- Polaroid 3 -->
-                <div class="polaroid polaroid-3">
-                    <div class="pin-azul"></div>
-                    <img src="./assets/proyectos/3/proyecto3.jpg" alt="Proyecto 3">
-                    <p>Café Central</p>
-                </div>
+.polaroid-1 {
+    top: 5%;
+    left: 5%;
+    rotate: -8deg;
+    z-index: 4;
+}
 
-                <!-- Polaroid 4 -->
-                <div class="polaroid polaroid-4">
-                    <div class="pin-azul"></div>
-                    <img src="./assets/proyectos/4/proyecto4.jpg" alt="Proyecto 4">
-                    <p>Ropa de Bebé</p>
-                </div>
+.polaroid-2 {
+    top: 45%;
+    left: 65%;
+    rotate: 6deg;
+    z-index: 2;
+}
 
-            </div>
-        </div>
+.polaroid-3 {
+    top: 15%;
+    left: 45%;
+    rotate: 10deg;
+    z-index: 5; /* Esta se superpone a las demás */
+}
 
-    </div>
+.polaroid-4 {
+    top: 60%;
+    left: 15%;
+    rotate: -5deg;
+    z-index: 3;
+}
 
-</section>
+/* --- ESTILOS INTERNOS --- */
 
+.polaroid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-radius: 2px;
+    background-color: #f0f0f0; /* Fondo gris por si la imagen tarda en cargar */
+}
+
+.polaroid p {
+    margin-top: 12px;
+    text-align: center;
+    font-family: "Xenois", serif;
+    font-size: 15px;
+    color: var(--white);
+    letter-spacing: -0.02em;
+}
+
+.pin-azul {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    background: var(--orange);
+    border-radius: 50%;
+    border: 3px solid #FFFFFF;
+    box-shadow: 0 2px 8px rgba(0, 102, 255, 0.4);
+    z-index: 5;
+}
+
+.pin-azul::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.05) !important;
+    box-shadow: 0 15px 40px rgba(0, 102, 255, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+/* --- RESPONSIVE (Celulares) --- */
+@media (max-width: 768px) {
+    .portfolio-mapa {
+        padding: 40px 0;
+    }
+    
+    .polaroids-container {
+        min-height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        padding: 20px 0;
+    }
+
+    .polaroid {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 280px;
+        rotate: 0deg !important;
+        transform: rotate(0deg) !important;
+        z-index: auto !important;
+    }
+
+    .polaroid:hover {
+        transform: translateY(-5px) !important;
+    }
+}
 /* =========================================================
    PROCESS
    ========================================================= */
