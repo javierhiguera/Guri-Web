@@ -1829,6 +1829,8 @@ button {
     background-color: var(--orange-dark);
     color: var(--white);
     text-align: center;
+    width: 100%;
+    overflow: hidden;
 
     background-image:
         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(26,26,26,0.5);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(26,26,26,0.5);}.tick-major{stroke:rgba(26,26,26,0.4);stroke-width:1.5;}.angle{stroke:rgba(26,26,26,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/></g></svg>"),
@@ -1862,13 +1864,21 @@ button {
 
 .final-cta .container {
     max-width: 1000px;
+    width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
 }
 
 .final-cta h2 {
     font-family: "Xenois", serif;
-    font-size: clamp(52px, 7vw, 94px);
+    font-size: clamp(36px, 7vw, 94px);
     line-height: 0.9;
     letter-spacing: -0.06em;
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
+    max-width: 100%;
 }
 
 .final-cta h2 span {
@@ -2148,6 +2158,14 @@ button {
     .plan-integrated {
         padding: 28px;
     }
+
+    .final-cta {
+        padding: 60px 0;
+    }
+
+    .final-cta h2 {
+        font-size: clamp(32px, 9vw, 52px);
+    }
 }
 
 @media (max-width: 480px) {
@@ -2170,5 +2188,9 @@ button {
 
     .polaroid img {
         height: 150px;
+    }
+
+    .final-cta h2 {
+        font-size: clamp(26px, 10vw, 38px);
     }
 }
