@@ -1,7 +1,6 @@
-css
 /* =========================================================
    GURI — STYLES
-   Tema Claro (Light Theme) + Paleta Azul / Rojo / Verde
+   Tema Claro (Light Theme) + Acentos Azules
    ========================================================= */
 
 
@@ -27,7 +26,7 @@ css
 
 
 /* =========================================================
-   VARIABLES — PALETA
+   VARIABLES — PALETA CLARA
    ========================================================= */
 
 :root {
@@ -45,15 +44,9 @@ css
 
     --border: #E2E8F0;
 
-    /* PALETA PRINCIPAL */
-    --blue: #2323FF;
-    --red: #FF2323;
-    --green: #23FF23;
-
-    /* COMPATIBILIDAD CON ESTILOS EXISTENTES */
-    --orange: #2323FF;
-    --orange-bright: #FF2323;
-    --orange-dark: #23FF23;
+    --orange: #0066FF;
+    --orange-bright: #3385FF;
+    --orange-dark: #E6F0FF;
 
     --container: 1240px;
     --section-padding: 80px;
@@ -151,13 +144,13 @@ button {
 }
 
 .section-heading h2 span {
-    color: var(--blue);
+    color: var(--orange);
 }
 
 .section-eyebrow {
     display: block;
     margin-bottom: 14px;
-    color: var(--blue);
+    color: var(--orange);
     font-size: 11px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -241,7 +234,7 @@ button {
 }
 
 .logo-web {
-    color: var(--blue);
+    color: var(--orange);
     font-family: "Xenois", serif;
     font-size: 22px;
     font-weight: 700;
@@ -274,7 +267,7 @@ button {
     bottom: -7px;
     width: 0;
     height: 1px;
-    background: var(--blue);
+    background: var(--orange);
     transition: width var(--transition);
 }
 
@@ -288,7 +281,7 @@ button {
 
 
 /* =========================================================
-   HEADER BUTTON
+   HEADER BUTTON (WhatsApp)
    ========================================================= */
 
 .header-button {
@@ -298,19 +291,15 @@ button {
     width: 42px;
     height: 42px;
     padding: 0;
-    border: 1px solid var(--blue);
+    border: 1px solid var(--orange);
     border-radius: 50%;
     background: transparent;
-    color: var(--blue);
-    transition:
-        background var(--transition),
-        color var(--transition),
-        border-color var(--transition),
-        transform var(--transition);
+    color: var(--orange);
+    transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
 }
 
 .header-button:hover {
-    background: var(--blue);
+    background: var(--orange);
     color: #FFFFFF;
     transform: scale(1.05);
 }
@@ -345,10 +334,7 @@ button {
     height: 1px;
     background: var(--white);
     transform: translateX(-50%);
-    transition:
-        transform var(--transition),
-        top var(--transition),
-        opacity var(--transition);
+    transition: transform var(--transition), top var(--transition), opacity var(--transition);
 }
 
 .menu-toggle span:first-child {
@@ -385,14 +371,14 @@ button {
     background-color: var(--board);
 
     background-image:
-        radial-gradient(circle at 80% 45%, rgba(35, 35, 255, 0.08), transparent 35%),
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(35,35,255,0.4);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(35,35,255,0.4);}.tick{stroke:rgba(35,35,255,0.35);stroke-width:1;}.tick-major{stroke:rgba(35,35,255,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(35,35,255,0.15);stroke-width:0.5;}.angle{stroke:rgba(35,35,255,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(35,35,255,0.45)' stroke-width='1' fill='none'/></g></svg>"),
-        linear-gradient(rgba(35, 35, 255, 0.15) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(35, 35, 255, 0.15) 1px, transparent 1px),
-        linear-gradient(rgba(35, 35, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(35, 35, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(rgba(35, 35, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(35, 35, 255, 0.04) 1px, transparent 1px);
+        radial-gradient(circle at 80% 45%, rgba(0, 102, 255, 0.08), transparent 35%),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,102,255,0.4);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,102,255,0.4);}.tick{stroke:rgba(0,102,255,0.35);stroke-width:1;}.tick-major{stroke:rgba(0,102,255,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(0,102,255,0.15);stroke-width:0.5;}.angle{stroke:rgba(0,102,255,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(0,102,255,0.45)' stroke-width='1' fill='none'/></g></svg>"),
+        linear-gradient(rgba(0, 102, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(rgba(0, 102, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(rgba(0, 102, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.04) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -440,9 +426,7 @@ button {
 .hero-logo img {
     width: 100%;
     height: auto;
-    filter:
-        drop-shadow(0 0 30px rgba(35, 35, 255, 0.3))
-        drop-shadow(0 0 60px rgba(35, 35, 255, 0.15));
+    filter: drop-shadow(0 0 30px rgba(0, 102, 255, 0.3)) drop-shadow(0 0 60px rgba(0, 102, 255, 0.15));
 }
 
 .hero h1 {
@@ -454,7 +438,7 @@ button {
 
 .hero h1 span {
     display: block;
-    color: var(--blue);
+    color: var(--orange);
 }
 
 .hero-content > p {
@@ -485,11 +469,7 @@ button {
     padding: 0 25px;
     border: 1px solid transparent;
     font-size: 12px;
-    transition:
-        background var(--transition),
-        color var(--transition),
-        border-color var(--transition),
-        transform var(--transition);
+    transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
 }
 
 .button:hover {
@@ -497,14 +477,14 @@ button {
 }
 
 .button-primary {
-    border-color: var(--blue);
-    background: var(--blue);
+    border-color: var(--orange);
+    background: var(--orange);
     color: #FFFFFF;
 }
 
 .button-primary:hover {
-    background: var(--red);
-    border-color: var(--red);
+    background: var(--orange-bright);
+    border-color: var(--orange-bright);
 }
 
 .button-secondary {
@@ -514,13 +494,13 @@ button {
 }
 
 .button-secondary:hover {
-    border-color: var(--red);
-    color: var(--red);
+    border-color: var(--orange);
+    color: var(--orange);
 }
 
 
 /* =========================================================
-   SERVICES
+   SERVICES — Mundo izquierda + título derecha
    ========================================================= */
 
 .services {
@@ -565,12 +545,12 @@ button {
 }
 
 .services-heading h2 span {
-    color: var(--blue);
+    color: var(--orange);
 }
 
 
 /* =========================================================
-   MUNDO
+   MUNDO — grande + sensación de movimiento
    ========================================================= */
 
 .services-globe {
@@ -579,24 +559,14 @@ button {
     height: auto;
     display: block;
     z-index: 1;
-    filter:
-        drop-shadow(0 0 70px rgba(35, 35, 255, 0.25))
-        drop-shadow(0 0 140px rgba(35, 35, 255, 0.1));
+    filter: drop-shadow(0 0 70px rgba(0, 102, 255, 0.25)) drop-shadow(0 0 140px rgba(0, 102, 255, 0.1));
     animation: globe-breathe 8s ease-in-out infinite;
 }
 
 @keyframes globe-breathe {
-    0% {
-        transform: scale(1) rotate(0deg);
-    }
-
-    50% {
-        transform: scale(1.03) rotate(3deg);
-    }
-
-    100% {
-        transform: scale(1) rotate(0deg);
-    }
+    0% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.03) rotate(3deg); }
+    100% { transform: scale(1) rotate(0deg); }
 }
 
 
@@ -614,13 +584,11 @@ button {
     color: var(--white);
     max-width: 180px;
     z-index: 3;
-    transition:
-        color var(--transition),
-        transform var(--transition);
+    transition: color var(--transition), transform var(--transition);
 }
 
 .orbit-item:hover {
-    color: var(--red);
+    color: var(--orange);
     transform: translate(var(--x), var(--y)) scale(1.08);
 }
 
@@ -631,19 +599,12 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid var(--blue);
+    border: 1.5px solid var(--orange);
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.9);
-    color: var(--blue);
-    box-shadow:
-        0 0 0 6px rgba(35, 35, 255, 0.08),
-        0 0 20px rgba(35, 35, 255, 0.2);
-    transition:
-        background var(--transition),
-        color var(--transition),
-        border-color var(--transition),
-        transform var(--transition),
-        box-shadow var(--transition);
+    color: var(--orange);
+    box-shadow: 0 0 0 6px rgba(0, 102, 255, 0.08), 0 0 20px rgba(0, 102, 255, 0.2);
+    transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
 .orbit-icon svg {
@@ -655,12 +616,10 @@ button {
 }
 
 .orbit-item:hover .orbit-icon {
-    background: var(--red);
+    background: var(--orange);
     color: #FFFFFF;
     transform: scale(1.08);
-    box-shadow:
-        0 0 0 8px rgba(255, 35, 35, 0.15),
-        0 0 30px rgba(255, 35, 35, 0.5);
+    box-shadow: 0 0 0 8px rgba(0, 102, 255, 0.15), 0 0 30px rgba(0, 102, 255, 0.5);
 }
 
 .orbit-text {
@@ -688,12 +647,12 @@ button {
 }
 
 .orbit-item:hover .orbit-text p {
-    color: var(--red);
+    color: var(--orange);
 }
 
 
 /* =========================================================
-   POSICIONES
+   POSICIONES DISPERSAS ALREDEDOR DEL MUNDO
    ========================================================= */
 
 .orbit-item-1 {
@@ -738,52 +697,32 @@ button {
 
 
 /* =========================================================
-   ANIMACIONES
+   ANIMACIONES DE FLOTACIÓN
    ========================================================= */
 
 @keyframes float-1 {
-    0%, 100% {
-        translate: 0 0;
-    }
-
-    50% {
-        translate: 0 -10px;
-    }
+    0%, 100% { translate: 0 0; }
+    50%      { translate: 0 -10px; }
 }
 
 @keyframes float-2 {
-    0%, 100% {
-        translate: 0 0;
-    }
-
-    50% {
-        translate: 0 8px;
-    }
+    0%, 100% { translate: 0 0; }
+    50%      { translate: 0 8px; }
 }
 
 @keyframes float-3 {
-    0%, 100% {
-        translate: 0 0;
-    }
-
-    50% {
-        translate: 0 -8px;
-    }
+    0%, 100% { translate: 0 0; }
+    50%      { translate: 0 -8px; }
 }
 
 @keyframes float-4 {
-    0%, 100% {
-        translate: 0 0;
-    }
-
-    50% {
-        translate: 0 10px;
-    }
+    0%, 100% { translate: 0 0; }
+    50%      { translate: 0 10px; }
 }
 
 
 /* =========================================================
-   WORK
+   WORK — Sección de trabajos con polaroids y mapa
    ========================================================= */
 
 .work {
@@ -821,12 +760,8 @@ button {
     width: 280px;
     padding: 12px 12px 50px 12px;
     background: #FFFFFF;
-    box-shadow:
-        0 4px 20px rgba(0, 0, 0, 0.08),
-        0 1px 3px rgba(0, 0, 0, 0.05);
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     z-index: 3;
 }
 
@@ -884,10 +819,10 @@ button {
     transform: translateX(-50%);
     width: 24px;
     height: 24px;
-    background: var(--blue);
+    background: var(--orange);
     border-radius: 50%;
     border: 3px solid #FFFFFF;
-    box-shadow: 0 2px 8px rgba(35, 35, 255, 0.4);
+    box-shadow: 0 2px 8px rgba(0, 102, 255, 0.4);
     z-index: 5;
 }
 
@@ -906,9 +841,7 @@ button {
 
 .polaroid:hover {
     transform: rotate(0deg) scale(1.05) !important;
-    box-shadow:
-        0 15px 40px rgba(35, 35, 255, 0.15),
-        0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 40px rgba(0, 102, 255, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 10;
 }
 
@@ -951,14 +884,14 @@ button {
     background-color: var(--black);
 
     background-image:
-        radial-gradient(circle at 80% 45%, rgba(35, 35, 255, 0.08), transparent 35%),
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(35,35,255,0.4);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(35,35,255,0.4);}.tick{stroke:rgba(35,35,255,0.35);stroke-width:1;}.tick-major{stroke:rgba(35,35,255,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(35,35,255,0.15);stroke-width:0.5;}.angle{stroke:rgba(35,35,255,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(35,35,255,0.45)' stroke-width='1' fill='none'/></g></svg>"),
-        linear-gradient(rgba(35, 35, 255, 0.15) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(35, 35, 255, 0.15) 1px, transparent 1px),
-        linear-gradient(rgba(35, 35, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(35, 35, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(rgba(35, 35, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(35, 35, 255, 0.04) 1px, transparent 1px);
+        radial-gradient(circle at 80% 45%, rgba(0, 102, 255, 0.08), transparent 35%),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,102,255,0.4);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,102,255,0.4);}.tick{stroke:rgba(0,102,255,0.35);stroke-width:1;}.tick-major{stroke:rgba(0,102,255,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(0,102,255,0.15);stroke-width:0.5;}.angle{stroke:rgba(0,102,255,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(0,102,255,0.45)' stroke-width='1' fill='none'/></g></svg>"),
+        linear-gradient(rgba(0, 102, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(rgba(0, 102, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(rgba(0, 102, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.04) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -1021,18 +954,12 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid var(--blue);
+    border: 1.5px solid var(--orange);
     border-radius: 50%;
     background: var(--black);
-    color: var(--blue);
-    box-shadow:
-        0 0 0 6px rgba(35, 35, 255, 0.08),
-        0 0 20px rgba(35, 35, 255, 0.2);
-    transition:
-        background var(--transition),
-        color var(--transition),
-        transform var(--transition),
-        box-shadow var(--transition);
+    color: var(--orange);
+    box-shadow: 0 0 0 6px rgba(0, 102, 255, 0.08), 0 0 20px rgba(0, 102, 255, 0.2);
+    transition: background var(--transition), color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
 .process-step-icon svg {
@@ -1050,39 +977,21 @@ button {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: var(--blue);
+    background: var(--orange);
     opacity: 0;
     z-index: 1;
     pointer-events: none;
     animation: process-glow 4s ease-in-out infinite;
 }
 
-.process-step-1 .process-step-icon::before {
-    animation-delay: 0s;
-}
-
-.process-step-2 .process-step-icon::before {
-    animation-delay: 1s;
-}
-
-.process-step-3 .process-step-icon::before {
-    animation-delay: 2s;
-}
-
-.process-step-4 .process-step-icon::before {
-    animation-delay: 3s;
-}
+.process-step-1 .process-step-icon::before { animation-delay: 0s; }
+.process-step-2 .process-step-icon::before { animation-delay: 1s; }
+.process-step-3 .process-step-icon::before { animation-delay: 2s; }
+.process-step-4 .process-step-icon::before { animation-delay: 3s; }
 
 @keyframes process-glow {
-    0%, 100% {
-        opacity: 0;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.35;
-        transform: scale(1.3);
-    }
+    0%, 100% { opacity: 0; transform: scale(1); }
+    50% { opacity: 0.35; transform: scale(1.3); }
 }
 
 .process-step-capsule {
@@ -1096,7 +1005,7 @@ button {
     min-height: 140px;
     margin-top: 35px;
     padding: 16px;
-    border: 1.5px solid var(--blue);
+    border: 1.5px solid var(--orange);
     background: rgba(255, 255, 255, 0.88);
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
@@ -1167,11 +1076,7 @@ button {
     border-right: 2px solid transparent;
     opacity: 0;
     transform: translateY(25px);
-    transition:
-        opacity 0.7s ease,
-        transform 0.7s ease,
-        border-color var(--transition),
-        background var(--transition);
+    transition: opacity 0.7s ease, transform 0.7s ease, border-color var(--transition), background var(--transition);
 }
 
 .brainstorm-item.visible {
@@ -1180,9 +1085,9 @@ button {
 }
 
 .brainstorm-item:hover {
-    border-right-color: var(--red);
+    border-right-color: var(--orange);
     transform: translateX(-5px);
-    background: rgba(255, 35, 35, 0.04);
+    background: rgba(0, 102, 255, 0.04);
 }
 
 .brainstorm-icon {
@@ -1192,27 +1097,19 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid var(--blue);
+    border: 1.5px solid var(--orange);
     border-radius: 50%;
     background: var(--black);
-    color: var(--blue);
-    box-shadow:
-        0 0 0 6px rgba(35, 35, 255, 0.08),
-        0 0 20px rgba(35, 35, 255, 0.2);
-    transition:
-        background var(--transition),
-        color var(--transition),
-        transform var(--transition),
-        box-shadow var(--transition);
+    color: var(--orange);
+    box-shadow: 0 0 0 6px rgba(0, 102, 255, 0.08), 0 0 20px rgba(0, 102, 255, 0.2);
+    transition: background var(--transition), color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
 .brainstorm-item:hover .brainstorm-icon {
-    background: var(--red);
+    background: var(--orange);
     color: #FFFFFF;
     transform: scale(1.08);
-    box-shadow:
-        0 0 0 8px rgba(255, 35, 35, 0.15),
-        0 0 30px rgba(255, 35, 35, 0.5);
+    box-shadow: 0 0 0 8px rgba(0, 102, 255, 0.15), 0 0 30px rgba(0, 102, 255, 0.5);
 }
 
 .brainstorm-check {
@@ -1264,17 +1161,9 @@ button {
 }
 
 @keyframes draw-icon {
-    0% {
-        stroke-dashoffset: 100;
-    }
-
-    50% {
-        stroke-dashoffset: 0;
-    }
-
-    100% {
-        stroke-dashoffset: 100;
-    }
+    0% { stroke-dashoffset: 100; }
+    50% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 100; }
 }
 
 .brainstorm-item span {
@@ -1313,16 +1202,14 @@ button {
     justify-content: center;
     width: 90px;
     height: 90px;
-    color: var(--blue);
+    color: var(--orange);
 }
 
 .digital-icon img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter:
-        drop-shadow(0 0 8px rgba(35, 35, 255, 0.4))
-        drop-shadow(0 0 20px rgba(35, 35, 255, 0.15));
+    filter: drop-shadow(0 0 8px rgba(0, 102, 255, 0.4)) drop-shadow(0 0 20px rgba(0, 102, 255, 0.15));
 }
 
 .digital-icon svg {
@@ -1333,46 +1220,14 @@ button {
     stroke-width: 1.5;
     stroke-linecap: round;
     stroke-linejoin: round;
-    filter:
-        drop-shadow(0 0 8px rgba(35, 35, 255, 0.4))
-        drop-shadow(0 0 20px rgba(35, 35, 255, 0.15));
+    filter: drop-shadow(0 0 8px rgba(0, 102, 255, 0.4)) drop-shadow(0 0 20px rgba(0, 102, 255, 0.15));
 }
 
-.digital-icon-1 {
-    top: 5%;
-    left: 10%;
-    rotate: -15deg;
-    animation: float-1 6s ease-in-out infinite;
-}
-
-.digital-icon-2 {
-    top: 15%;
-    right: 5%;
-    rotate: 25deg;
-    animation: float-2 7s ease-in-out infinite;
-}
-
-.digital-icon-3 {
-    bottom: 10%;
-    left: 5%;
-    rotate: 10deg;
-    animation: float-3 8s ease-in-out infinite;
-}
-
-.digital-icon-4 {
-    bottom: 5%;
-    right: 15%;
-    rotate: -20deg;
-    animation: float-4 6.5s ease-in-out infinite;
-}
-
-.digital-icon-5 {
-    top: 45%;
-    right: 20%;
-    rotate: -8deg;
-    animation: float-2 9s ease-in-out infinite;
-    animation-delay: 0.5s;
-}
+.digital-icon-1 { top: 5%; left: 10%; rotate: -15deg; animation: float-1 6s ease-in-out infinite; }
+.digital-icon-2 { top: 15%; right: 5%; rotate: 25deg; animation: float-2 7s ease-in-out infinite; }
+.digital-icon-3 { bottom: 10%; left: 5%; rotate: 10deg; animation: float-3 8s ease-in-out infinite; }
+.digital-icon-4 { bottom: 5%; right: 15%; rotate: -20deg; animation: float-4 6.5s ease-in-out infinite; }
+.digital-icon-5 { top: 45%; right: 20%; rotate: -8deg; animation: float-2 9s ease-in-out infinite; animation-delay: 0.5s; }
 
 .digital-emoji {
     position: absolute;
@@ -1381,12 +1236,10 @@ button {
     justify-content: center;
     width: 44px;
     height: 44px;
-    color: var(--red);
+    color: var(--orange);
     user-select: none;
     pointer-events: none;
-    filter:
-        drop-shadow(0 0 8px rgba(255, 35, 35, 0.5))
-        drop-shadow(0 0 16px rgba(255, 35, 35, 0.2));
+    filter: drop-shadow(0 0 8px rgba(0, 102, 255, 0.5)) drop-shadow(0 0 16px rgba(0, 102, 255, 0.2));
 }
 
 .digital-emoji svg {
@@ -1399,71 +1252,13 @@ button {
     stroke-linejoin: round;
 }
 
-.digital-emoji-1 {
-    top: 25%;
-    left: 0%;
-    width: 40px;
-    height: 40px;
-    rotate: 15deg;
-    animation: float-2 7s ease-in-out infinite;
-}
-
-.digital-emoji-2 {
-    top: 5%;
-    left: 45%;
-    width: 52px;
-    height: 52px;
-    rotate: -25deg;
-    animation: float-3 8s ease-in-out infinite;
-}
-
-.digital-emoji-3 {
-    top: 55%;
-    left: 35%;
-    width: 48px;
-    height: 48px;
-    rotate: 45deg;
-    animation: float-1 6s ease-in-out infinite;
-}
-
-.digital-emoji-4 {
-    top: 5%;
-    right: 30%;
-    width: 44px;
-    height: 44px;
-    rotate: -10deg;
-    animation: float-4 6.5s ease-in-out infinite;
-}
-
-.digital-emoji-5 {
-    bottom: 5%;
-    left: 40%;
-    width: 46px;
-    height: 46px;
-    rotate: 30deg;
-    animation: float-2 7s ease-in-out infinite;
-    animation-delay: 0.5s;
-}
-
-.digital-emoji-6 {
-    top: 65%;
-    left: 10%;
-    width: 38px;
-    height: 38px;
-    rotate: -40deg;
-    animation: float-3 8s ease-in-out infinite;
-    animation-delay: 1s;
-}
-
-.digital-emoji-7 {
-    bottom: 35%;
-    right: 0%;
-    width: 42px;
-    height: 42px;
-    rotate: 12deg;
-    animation: float-1 6s ease-in-out infinite;
-    animation-delay: 1.5s;
-}
+.digital-emoji-1 { top: 25%; left: 0%; width: 40px; height: 40px; rotate: 15deg; animation: float-2 7s ease-in-out infinite; }
+.digital-emoji-2 { top: 5%; left: 45%; width: 52px; height: 52px; rotate: -25deg; animation: float-3 8s ease-in-out infinite; }
+.digital-emoji-3 { top: 55%; left: 35%; width: 48px; height: 48px; rotate: 45deg; animation: float-1 6s ease-in-out infinite; }
+.digital-emoji-4 { top: 5%; right: 30%; width: 44px; height: 44px; rotate: -10deg; animation: float-4 6.5s ease-in-out infinite; }
+.digital-emoji-5 { bottom: 5%; left: 40%; width: 46px; height: 46px; rotate: 30deg; animation: float-2 7s ease-in-out infinite; animation-delay: 0.5s; }
+.digital-emoji-6 { top: 65%; left: 10%; width: 38px; height: 38px; rotate: -40deg; animation: float-3 8s ease-in-out infinite; animation-delay: 1s; }
+.digital-emoji-7 { bottom: 35%; right: 0%; width: 42px; height: 42px; rotate: 12deg; animation: float-1 6s ease-in-out infinite; animation-delay: 1.5s; }
 
 .digital-management-heading {
     max-width: 560px;
@@ -1501,9 +1296,7 @@ button {
     min-width: 0;
     border: 1px solid var(--border);
     background: var(--black-soft);
-    transition:
-        border-color var(--transition),
-        transform var(--transition);
+    transition: border-color var(--transition), transform var(--transition);
     display: flex;
     flex-direction: column;
 }
@@ -1517,12 +1310,8 @@ button {
 }
 
 .plan-featured {
-    border-color: var(--blue);
-    background: linear-gradient(
-        145deg,
-        rgba(35, 35, 255, 0.05),
-        var(--black-soft)
-    );
+    border-color: var(--orange);
+    background: linear-gradient(145deg, rgba(0, 102, 255, 0.05), var(--black-soft));
     position: relative;
 }
 
@@ -1531,7 +1320,7 @@ button {
     position: absolute;
     top: 0;
     right: 0;
-    background: var(--blue);
+    background: var(--orange);
     color: #FFFFFF;
     font-size: 10px;
     letter-spacing: 0.08em;
@@ -1542,7 +1331,7 @@ button {
 .plan-label {
     display: inline-block;
     margin-bottom: 15px;
-    color: var(--blue);
+    color: var(--orange);
     font-size: 11px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -1604,7 +1393,7 @@ button {
     position: absolute;
     left: 0;
     top: 0;
-    color: var(--green);
+    color: var(--orange);
     font-size: 13px;
     font-weight: bold;
 }
@@ -1614,7 +1403,7 @@ button {
     padding: 18px;
     background: var(--black-card);
     border-radius: 8px;
-    border-left: 3px solid var(--green);
+    border-left: 3px solid var(--orange);
 }
 
 .plan-recommended p {
@@ -1652,13 +1441,11 @@ button {
     padding: 30px;
     border: 1px solid var(--border);
     background: var(--black-soft);
-    transition:
-        border-color var(--transition),
-        background var(--transition);
+    transition: border-color var(--transition), background var(--transition);
 }
 
 .plans-coming-soon:hover {
-    border-color: var(--green);
+    border-color: var(--orange);
     background: var(--black-card);
 }
 
@@ -1686,7 +1473,7 @@ button {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: var(--green);
+    color: var(--orange);
     font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -1696,21 +1483,19 @@ button {
     width: 16px;
     height: 16px;
     display: inline-block;
-    border: 1px solid rgba(35, 255, 35, 0.25);
-    border-top-color: var(--green);
+    border: 1px solid rgba(0, 102, 255, 0.25);
+    border-top-color: var(--orange);
     border-radius: 50%;
     animation: guri-spin 0.8s linear infinite;
 }
 
 @keyframes guri-spin {
-    to {
-        transform: rotate(360deg);
-    }
+    to { transform: rotate(360deg); }
 }
 
 
 /* =========================================================
-   FAQ
+   FAQ — Preguntas Frecuentes
    ========================================================= */
 
 .faq {
@@ -1756,7 +1541,7 @@ button {
     font-family: "Bunken", sans-serif;
     font-size: 24px;
     font-weight: 300;
-    color: var(--blue);
+    color: var(--orange);
     transition: transform var(--transition);
     flex-shrink: 0;
     margin-left: 20px;
@@ -1768,7 +1553,7 @@ button {
 }
 
 .faq-item summary:hover {
-    color: var(--blue);
+    color: var(--orange);
 }
 
 .faq-item p {
@@ -1781,7 +1566,7 @@ button {
 
 
 /* =========================================================
-   CONTACTO
+   CONTACTO / FORMULARIO
    ========================================================= */
 
 .plans-contact {
@@ -1827,13 +1612,11 @@ button {
     padding: 32px;
     border: 1px solid var(--border);
     background: var(--black);
-    transition:
-        border-color var(--transition),
-        background var(--transition);
+    transition: border-color var(--transition), background var(--transition);
 }
 
 .quote-form:hover {
-    border-color: var(--blue);
+    border-color: var(--orange);
     background: var(--black-card);
 }
 
@@ -1854,7 +1637,7 @@ button {
 }
 
 .form-field label {
-    color: var(--blue);
+    color: var(--orange);
     font-size: 11px;
     letter-spacing: 0.04em;
 }
@@ -1867,14 +1650,10 @@ button {
     border-radius: 0;
     outline: none;
     background: var(--black-soft);
-    color: var(--blue);
+    color: var(--orange);
     font-family: "Bunken", sans-serif;
     font-size: 13px;
-    transition:
-        border-color var(--transition),
-        background var(--transition),
-        color var(--transition),
-        box-shadow var(--transition);
+    transition: border-color var(--transition), background var(--transition), color var(--transition), box-shadow var(--transition);
 }
 
 .form-field input,
@@ -1898,31 +1677,31 @@ button {
 .form-field input:hover,
 .form-field select:hover,
 .form-field textarea:hover {
-    border-color: rgba(35, 35, 255, 0.5);
+    border-color: rgba(0, 102, 255, 0.5);
 }
 
 .form-field input:focus,
 .form-field textarea:focus {
-    border-color: var(--blue);
+    border-color: var(--orange);
     background: var(--black-card);
-    color: var(--blue);
-    box-shadow: 0 0 0 2px rgba(35, 35, 255, 0.2);
+    color: var(--orange);
+    box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.2);
 }
 
 .form-field select:focus {
-    border-color: var(--blue);
+    border-color: var(--orange);
     background-color: var(--black-card);
-    box-shadow: 0 0 0 2px rgba(35, 35, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.2);
 }
 
 .form-field select:required:valid,
 .form-field select:focus {
-    color: var(--blue);
+    color: var(--orange);
 }
 
 .form-field input:not(:placeholder-shown),
 .form-field textarea:not(:placeholder-shown) {
-    color: var(--blue);
+    color: var(--orange);
 }
 
 .form-field select {
@@ -1941,13 +1720,13 @@ button {
 
 .form-field select:focus {
     background-image:
-        linear-gradient(45deg, transparent 50%, var(--blue) 50%),
-        linear-gradient(135deg, var(--blue) 50%, transparent 50%);
+        linear-gradient(45deg, transparent 50%, var(--orange) 50%),
+        linear-gradient(135deg, var(--orange) 50%, transparent 50%);
 }
 
 .form-field select option {
     background: var(--black-soft);
-    color: var(--blue);
+    color: var(--orange);
     padding: 10px;
 }
 
@@ -1955,7 +1734,7 @@ button {
 .form-field select option:active,
 .form-field select option:hover {
     background: var(--black-soft);
-    color: var(--blue);
+    color: var(--orange);
 }
 
 .quote-form-submit {
@@ -1971,7 +1750,7 @@ button {
 
 
 /* =========================================================
-   PILLS
+   PILLS — Radios seleccionables (formulario)
    ========================================================= */
 
 .pill-group {
@@ -1999,14 +1778,19 @@ button {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+
     padding: 10px 18px;
+
     border: 1.5px solid var(--border);
     border-radius: 999px;
+
     background: var(--black-soft);
     color: var(--gray);
+
     font-family: "Bunken", sans-serif;
     font-size: 13px;
     line-height: 1;
+
     transition:
         background var(--transition),
         color var(--transition),
@@ -2020,19 +1804,19 @@ button {
 }
 
 .pill:hover span {
-    border-color: var(--red);
-    color: var(--red);
+    border-color: var(--orange);
+    color: var(--orange);
     transform: translateY(-1px);
 }
 
 .pill input[type="radio"]:checked + span {
-    background: var(--blue);
-    border-color: var(--blue);
+    background: var(--orange);
+    border-color: var(--orange);
     color: #FFFFFF;
 }
 
 .pill input[type="radio"]:focus-visible + span {
-    box-shadow: 0 0 0 2px rgba(35, 35, 255, 0.35);
+    box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.35);
 }
 
 
@@ -2042,18 +1826,18 @@ button {
 
 .final-cta {
     padding: 80px 0;
-    background-color: var(--green);
+    background-color: var(--orange-dark);
     color: var(--white);
     text-align: center;
 
     background-image:
         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(26,26,26,0.5);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(26,26,26,0.5);}.tick-major{stroke:rgba(26,26,26,0.4);stroke-width:1.5;}.angle{stroke:rgba(26,26,26,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/></g></svg>"),
-        linear-gradient(rgba(35, 35, 255, 0.15) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(35, 35, 255, 0.15) 1px, transparent 1px),
-        linear-gradient(rgba(35, 35, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(35, 35, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(rgba(35, 35, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(35, 35, 255, 0.04) 1px, transparent 1px);
+        linear-gradient(rgba(0, 102, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(rgba(0, 102, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(rgba(0, 102, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.04) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -2097,7 +1881,7 @@ button {
 
 .final-cta h2 span {
     display: block;
-    color: var(--red);
+    color: var(--orange);
 }
 
 
@@ -2144,13 +1928,11 @@ button {
 .footer-links a {
     color: var(--gray);
     font-size: 12px;
-    transition:
-        color var(--transition),
-        transform var(--transition);
+    transition: color var(--transition), transform var(--transition);
 }
 
 .footer-links a:hover {
-    color: var(--blue);
+    color: var(--orange);
     transform: translateX(3px);
 }
 
@@ -2199,12 +1981,7 @@ button {
 .digital-emoji {
     opacity: 0;
     transform: translateY(25px);
-    transition:
-        opacity 0.7s ease,
-        transform 0.7s ease,
-        border-color var(--transition),
-        background var(--transition),
-        color var(--transition);
+    transition: opacity 0.7s ease, transform 0.7s ease, border-color var(--transition), background var(--transition), color var(--transition);
 }
 
 .work-card.visible,
@@ -2219,10 +1996,7 @@ button {
 
 .orbit-item {
     opacity: 0;
-    transition:
-        opacity 0.7s ease,
-        color var(--transition),
-        transform var(--transition);
+    transition: opacity 0.7s ease, color var(--transition), transform var(--transition);
 }
 
 .orbit-item.visible {
@@ -2231,7 +2005,7 @@ button {
 
 
 /* =========================================================
-   ANCLAS
+   ANCLAS — offset por header fijo
    ========================================================= */
 
 #planes,
@@ -2423,4 +2197,3 @@ button {
         font-size: 34px;
     }
 }
-
