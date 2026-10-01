@@ -1,6 +1,6 @@
 /* =========================================================
    GURI — STYLES
-   Tema oscuro — Paleta GURI
+   Tema Claro — Paleta Azul / Lima / Borgoña
    ========================================================= */
 
 
@@ -30,23 +30,23 @@
    ========================================================= */
 
 :root {
-    --black: #2C2836;
-    --black-soft: #5E2A37;
-    --black-card: #573F61;
+    --black: #EFF4F8;
+    --black-soft: #D3DEF1;
+    --black-card: #D3DEF1;
 
-    --board: #2C2836;
+    --board: #EFF4F8;
 
-    --white: #E5D4CA;
+    --white: #4C1138;
 
-    --gray: #C7B5AE;
-    --gray-light: #A99791;
-    --gray-dark: #806D69;
+    --gray: rgba(76, 17, 56, 0.72);
+    --gray-light: rgba(76, 17, 56, 0.48);
+    --gray-dark: rgba(76, 17, 56, 0.32);
 
-    --border: #573F61;
+    --border: #D3DEF1;
 
-    --orange: #916B2C;
-    --orange-bright: #A9823A;
-    --orange-dark: #5E2A37;
+    --orange: #0D68F3;
+    --orange-bright: #A0D112;
+    --orange-dark: #4C1138;
 
     --container: 1240px;
     --section-padding: 80px;
@@ -180,7 +180,7 @@ button {
 }
 
 .site-header.scrolled {
-    background: rgba(44, 40, 54, 0.94);
+    background: rgba(239, 244, 248, 0.94);
     border-color: var(--border);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
@@ -380,16 +380,16 @@ button {
     background-image:
         radial-gradient(
             circle at 80% 45%,
-            rgba(145, 107, 44, 0.12),
+            rgba(13, 104, 243, 0.10),
             transparent 35%
         ),
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(145,107,44,0.45);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(145,107,44,0.45);}.tick{stroke:rgba(145,107,44,0.35);stroke-width:1;}.tick-major{stroke:rgba(145,107,44,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(145,107,44,0.15);stroke-width:0.5;}.angle{stroke:rgba(145,107,44,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(145,107,44,0.45)' stroke-width='1' fill='none'/></g></svg>"),
-        linear-gradient(rgba(145, 107, 44, 0.15) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(145, 107, 44, 0.15) 1px, transparent 1px),
-        linear-gradient(rgba(145, 107, 44, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(145, 107, 44, 0.08) 1px, transparent 1px),
-        linear-gradient(rgba(145, 107, 44, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(145, 107, 44, 0.04) 1px, transparent 1px);
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(13,104,243,0.40);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(13,104,243,0.40);}.tick{stroke:rgba(13,104,243,0.35);stroke-width:1;}.tick-major{stroke:rgba(13,104,243,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(13,104,243,0.15);stroke-width:0.5;}.angle{stroke:rgba(13,104,243,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(13,104,243,0.45)' stroke-width='1' fill='none'/></g></svg>"),
+        linear-gradient(rgba(13, 104, 243, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13, 104, 243, 0.15) 1px, transparent 1px),
+        linear-gradient(rgba(13, 104, 243, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13, 104, 243, 0.08) 1px, transparent 1px),
+        linear-gradient(rgba(13, 104, 243, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13, 104, 243, 0.04) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -438,8 +438,8 @@ button {
     width: 100%;
     height: auto;
     filter:
-        drop-shadow(0 0 30px rgba(145, 107, 44, 0.35))
-        drop-shadow(0 0 60px rgba(145, 107, 44, 0.18));
+        drop-shadow(0 0 30px rgba(13, 104, 243, 0.30))
+        drop-shadow(0 0 60px rgba(160, 209, 18, 0.12));
 }
 
 .hero h1 {
@@ -496,12 +496,13 @@ button {
 .button-primary {
     border-color: var(--orange);
     background: var(--orange);
-    color: var(--black);
+    color: #EFF4F8;
 }
 
 .button-primary:hover {
     background: var(--orange-bright);
     border-color: var(--orange-bright);
+    color: var(--white);
 }
 
 .button-secondary {
@@ -577,8 +578,8 @@ button {
     display: block;
     z-index: 1;
     filter:
-        drop-shadow(0 0 70px rgba(145, 107, 44, 0.25))
-        drop-shadow(0 0 140px rgba(145, 107, 44, 0.10));
+        drop-shadow(0 0 70px rgba(13, 104, 243, 0.22))
+        drop-shadow(0 0 140px rgba(160, 209, 18, 0.10));
     animation: globe-breathe 8s ease-in-out infinite;
 }
 
@@ -628,11 +629,11 @@ button {
     justify-content: center;
     border: 1.5px solid var(--orange);
     border-radius: 50%;
-    background: rgba(229, 212, 202, 0.08);
+    background: rgba(211, 222, 241, 0.88);
     color: var(--orange);
     box-shadow:
-        0 0 0 6px rgba(145, 107, 44, 0.08),
-        0 0 20px rgba(145, 107, 44, 0.20);
+        0 0 0 6px rgba(13, 104, 243, 0.08),
+        0 0 20px rgba(13, 104, 243, 0.20);
     transition:
         background var(--transition),
         color var(--transition),
@@ -651,11 +652,11 @@ button {
 
 .orbit-item:hover .orbit-icon {
     background: var(--orange);
-    color: var(--black);
+    color: #EFF4F8;
     transform: scale(1.08);
     box-shadow:
-        0 0 0 8px rgba(145, 107, 44, 0.15),
-        0 0 30px rgba(145, 107, 44, 0.50);
+        0 0 0 8px rgba(160, 209, 18, 0.18),
+        0 0 30px rgba(13, 104, 243, 0.40);
 }
 
 .orbit-text {
@@ -683,7 +684,7 @@ button {
 }
 
 .orbit-item:hover .orbit-text p {
-    color: var(--orange);
+    color: var(--orange-bright);
 }
 
 
@@ -815,10 +816,10 @@ button {
     position: absolute;
     width: 280px;
     padding: 12px 12px 50px 12px;
-    background: var(--white);
+    background: #FFFFFF;
     box-shadow:
-        0 4px 20px rgba(0, 0, 0, 0.25),
-        0 1px 3px rgba(0, 0, 0, 0.20);
+        0 4px 20px rgba(76, 17, 56, 0.10),
+        0 1px 3px rgba(76, 17, 56, 0.08);
     transition:
         transform 0.4s ease,
         box-shadow 0.4s ease;
@@ -859,7 +860,7 @@ button {
     object-fit: cover;
     display: block;
     border-radius: 2px;
-    background-color: var(--gray-light);
+    background-color: var(--black-soft);
 }
 
 .polaroid p {
@@ -868,7 +869,7 @@ button {
     font-family: "Bunken", sans-serif;
     font-weight: 300;
     font-size: 20px;
-    color: var(--black);
+    color: var(--white);
     letter-spacing: -0.01em;
 }
 
@@ -881,8 +882,8 @@ button {
     height: 24px;
     background: var(--orange);
     border-radius: 50%;
-    border: 3px solid var(--white);
-    box-shadow: 0 2px 8px rgba(145, 107, 44, 0.40);
+    border: 3px solid #FFFFFF;
+    box-shadow: 0 2px 8px rgba(13, 104, 243, 0.40);
     z-index: 5;
 }
 
@@ -894,7 +895,7 @@ button {
     transform: translate(-50%, -50%);
     width: 8px;
     height: 8px;
-    background: var(--white);
+    background: #FFFFFF;
     border-radius: 50%;
     opacity: 0.6;
 }
@@ -902,9 +903,38 @@ button {
 .polaroid:hover {
     transform: rotate(0deg) scale(1.05) !important;
     box-shadow:
-        0 15px 40px rgba(145, 107, 44, 0.18),
-        0 5px 15px rgba(0, 0, 0, 0.25);
+        0 15px 40px rgba(13, 104, 243, 0.15),
+        0 5px 15px rgba(76, 17, 56, 0.10);
     z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .portfolio-mapa {
+        padding: 40px 0;
+    }
+
+    .polaroids-container {
+        min-height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        padding: 20px 0;
+    }
+
+    .polaroid {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 280px;
+        rotate: 0deg !important;
+        transform: rotate(0deg) !important;
+        z-index: auto !important;
+    }
+
+    .polaroid:hover {
+        transform: translateY(-5px) !important;
+    }
 }
 
 
@@ -919,16 +949,16 @@ button {
     background-image:
         radial-gradient(
             circle at 80% 45%,
-            rgba(145, 107, 44, 0.10),
+            rgba(13, 104, 243, 0.08),
             transparent 35%
         ),
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(145,107,44,0.4);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(145,107,44,0.4);}.tick{stroke:rgba(145,107,44,0.35);stroke-width:1;}.tick-major{stroke:rgba(145,107,44,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(145,107,44,0.15);stroke-width:0.5;}.angle{stroke:rgba(145,107,44,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(145,107,44,0.45)' stroke-width='1' fill='none'/></g></svg>"),
-        linear-gradient(rgba(145, 107, 44, 0.15) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(145, 107, 44, 0.15) 1px, transparent 1px),
-        linear-gradient(rgba(145, 107, 44, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(145, 107, 44, 0.08) 1px, transparent 1px),
-        linear-gradient(rgba(145, 107, 44, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(145, 107, 44, 0.04) 1px, transparent 1px);
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(13,104,243,0.40);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(13,104,243,0.40);}.tick{stroke:rgba(13,104,243,0.35);stroke-width:1;}.tick-major{stroke:rgba(13,104,243,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(13,104,243,0.15);stroke-width:0.5;}.angle{stroke:rgba(13,104,243,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(13,104,243,0.45)' stroke-width='1' fill='none'/></g></svg>"),
+        linear-gradient(rgba(13, 104, 243, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13, 104, 243, 0.15) 1px, transparent 1px),
+        linear-gradient(rgba(13, 104, 243, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13, 104, 243, 0.08) 1px, transparent 1px),
+        linear-gradient(rgba(13, 104, 243, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13, 104, 243, 0.04) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -996,8 +1026,8 @@ button {
     background: var(--black);
     color: var(--orange);
     box-shadow:
-        0 0 0 6px rgba(145, 107, 44, 0.08),
-        0 0 20px rgba(145, 107, 44, 0.20);
+        0 0 0 6px rgba(13, 104, 243, 0.08),
+        0 0 20px rgba(13, 104, 243, 0.20);
     transition:
         background var(--transition),
         color var(--transition),
@@ -1020,7 +1050,7 @@ button {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: var(--orange);
+    background: var(--orange-bright);
     opacity: 0;
     z-index: 1;
     pointer-events: none;
@@ -1067,7 +1097,7 @@ button {
     margin-top: 35px;
     padding: 16px;
     border: 1.5px solid var(--orange);
-    background: rgba(94, 42, 55, 0.88);
+    background: rgba(211, 222, 241, 0.88);
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     text-align: center;
@@ -1150,9 +1180,9 @@ button {
 }
 
 .brainstorm-item:hover {
-    border-right-color: var(--orange);
+    border-right-color: var(--orange-bright);
     transform: translateX(-5px);
-    background: rgba(145, 107, 44, 0.05);
+    background: rgba(13, 104, 243, 0.04);
 }
 
 .brainstorm-icon {
@@ -1167,8 +1197,8 @@ button {
     background: var(--black);
     color: var(--orange);
     box-shadow:
-        0 0 0 6px rgba(145, 107, 44, 0.08),
-        0 0 20px rgba(145, 107, 44, 0.20);
+        0 0 0 6px rgba(13, 104, 243, 0.08),
+        0 0 20px rgba(13, 104, 243, 0.20);
     transition:
         background var(--transition),
         color var(--transition),
@@ -1178,11 +1208,11 @@ button {
 
 .brainstorm-item:hover .brainstorm-icon {
     background: var(--orange);
-    color: var(--black);
+    color: #EFF4F8;
     transform: scale(1.08);
     box-shadow:
-        0 0 0 8px rgba(145, 107, 44, 0.15),
-        0 0 30px rgba(145, 107, 44, 0.50);
+        0 0 0 8px rgba(160, 209, 18, 0.15),
+        0 0 30px rgba(13, 104, 243, 0.45);
 }
 
 .brainstorm-check {
@@ -1291,8 +1321,8 @@ button {
     height: 100%;
     object-fit: contain;
     filter:
-        drop-shadow(0 0 8px rgba(145, 107, 44, 0.40))
-        drop-shadow(0 0 20px rgba(145, 107, 44, 0.15));
+        drop-shadow(0 0 8px rgba(13, 104, 243, 0.35))
+        drop-shadow(0 0 20px rgba(160, 209, 18, 0.15));
 }
 
 .digital-icon svg {
@@ -1304,8 +1334,8 @@ button {
     stroke-linecap: round;
     stroke-linejoin: round;
     filter:
-        drop-shadow(0 0 8px rgba(145, 107, 44, 0.40))
-        drop-shadow(0 0 20px rgba(145, 107, 44, 0.15));
+        drop-shadow(0 0 8px rgba(13, 104, 243, 0.35))
+        drop-shadow(0 0 20px rgba(160, 209, 18, 0.15));
 }
 
 .digital-icon-1 {
@@ -1355,8 +1385,8 @@ button {
     user-select: none;
     pointer-events: none;
     filter:
-        drop-shadow(0 0 8px rgba(145, 107, 44, 0.50))
-        drop-shadow(0 0 16px rgba(145, 107, 44, 0.20));
+        drop-shadow(0 0 8px rgba(13, 104, 243, 0.45))
+        drop-shadow(0 0 16px rgba(160, 209, 18, 0.18));
 }
 
 .digital-emoji svg {
@@ -1480,6 +1510,7 @@ button {
 
 .plan-card:hover {
     transform: translateY(-4px);
+    border-color: var(--orange);
 }
 
 .plan-integrated {
@@ -1490,7 +1521,7 @@ button {
     border-color: var(--orange);
     background: linear-gradient(
         145deg,
-        rgba(145, 107, 44, 0.10),
+        rgba(13, 104, 243, 0.07),
         var(--black-soft)
     );
     position: relative;
@@ -1501,8 +1532,8 @@ button {
     position: absolute;
     top: 0;
     right: 0;
-    background: var(--orange);
-    color: var(--black);
+    background: var(--orange-bright);
+    color: var(--white);
     font-size: 10px;
     letter-spacing: 0.08em;
     padding: 6px 14px;
@@ -1582,9 +1613,9 @@ button {
 .plan-recommended {
     margin-top: 20px;
     padding: 18px;
-    background: rgba(87, 63, 97, 0.45);
+    background: rgba(211, 222, 241, 0.70);
     border-radius: 8px;
-    border-left: 3px solid var(--orange);
+    border-left: 3px solid var(--orange-bright);
 }
 
 .plan-recommended p {
@@ -1666,8 +1697,8 @@ button {
     width: 16px;
     height: 16px;
     display: inline-block;
-    border: 1px solid rgba(145, 107, 44, 0.25);
-    border-top-color: var(--orange);
+    border: 1px solid rgba(13, 104, 243, 0.25);
+    border-top-color: var(--orange-bright);
     border-radius: 50%;
     animation: guri-spin 0.8s linear infinite;
 }
@@ -1804,7 +1835,7 @@ button {
 
 .quote-form:hover {
     border-color: var(--orange);
-    background: var(--black-card);
+    background: var(--black-soft);
 }
 
 .quote-form-grid {
@@ -1836,7 +1867,7 @@ button {
     border: 1px solid var(--border);
     border-radius: 0;
     outline: none;
-    background: var(--black-soft);
+    background: #FFFFFF;
     color: var(--white);
     font-family: "Bunken", sans-serif;
     font-size: 13px;
@@ -1868,21 +1899,21 @@ button {
 .form-field input:hover,
 .form-field select:hover,
 .form-field textarea:hover {
-    border-color: rgba(145, 107, 44, 0.50);
+    border-color: rgba(13, 104, 243, 0.50);
 }
 
 .form-field input:focus,
 .form-field textarea:focus {
     border-color: var(--orange);
-    background: var(--black-card);
+    background: var(--black);
     color: var(--white);
-    box-shadow: 0 0 0 2px rgba(145, 107, 44, 0.20);
+    box-shadow: 0 0 0 2px rgba(13, 104, 243, 0.18);
 }
 
 .form-field select:focus {
     border-color: var(--orange);
-    background-color: var(--black-card);
-    box-shadow: 0 0 0 2px rgba(145, 107, 44, 0.20);
+    background-color: var(--black);
+    box-shadow: 0 0 0 2px rgba(13, 104, 243, 0.18);
 }
 
 .form-field select:required:valid,
@@ -1916,7 +1947,7 @@ button {
 }
 
 .form-field select option {
-    background: var(--black-soft);
+    background: #FFFFFF;
     color: var(--white);
     padding: 10px;
 }
@@ -1924,7 +1955,7 @@ button {
 .form-field select option:checked,
 .form-field select option:active,
 .form-field select option:hover {
-    background: var(--black-card);
+    background: var(--black-soft);
     color: var(--white);
 }
 
@@ -1975,7 +2006,7 @@ button {
     border: 1.5px solid var(--border);
     border-radius: 999px;
 
-    background: var(--black-soft);
+    background: var(--black);
     color: var(--gray);
 
     font-family: "Bunken", sans-serif;
@@ -2003,11 +2034,11 @@ button {
 .pill input[type="radio"]:checked + span {
     background: var(--orange);
     border-color: var(--orange);
-    color: var(--black);
+    color: #EFF4F8;
 }
 
 .pill input[type="radio"]:focus-visible + span {
-    box-shadow: 0 0 0 2px rgba(145, 107, 44, 0.35);
+    box-shadow: 0 0 0 2px rgba(160, 209, 18, 0.35);
 }
 
 
@@ -2018,15 +2049,15 @@ button {
 .final-cta {
     padding: 80px 0;
     background-color: var(--orange-dark);
-    color: var(--white);
+    color: #EFF4F8;
     text-align: center;
 
     background-image:
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(229,212,202,0.45);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(229,212,202,0.45);}.tick-major{stroke:rgba(229,212,202,0.35);stroke-width:1.5;}.angle{stroke:rgba(229,212,202,0.4);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/></g></svg>"),
-        linear-gradient(rgba(229, 212, 202, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(229, 212, 202, 0.08) 1px, transparent 1px),
-        linear-gradient(rgba(229, 212, 202, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(229, 212, 202, 0.04) 1px, transparent 1px);
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(239,244,248,0.40);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(239,244,248,0.40);}.tick-major{stroke:rgba(239,244,248,0.35);stroke-width:1.5;}.angle{stroke:rgba(239,244,248,0.40);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/></g></svg>"),
+        linear-gradient(rgba(239, 244, 248, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(239, 244, 248, 0.10) 1px, transparent 1px),
+        linear-gradient(rgba(239, 244, 248, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(239, 244, 248, 0.05) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -2061,12 +2092,12 @@ button {
     word-break: keep-all;
     overflow-wrap: normal;
     hyphens: none;
-    color: var(--white);
+    color: #EFF4F8;
 }
 
 .final-cta h2 span {
     display: block;
-    color: var(--orange);
+    color: var(--orange-bright);
 }
 
 
