@@ -1,6 +1,6 @@
 /* =========================================================
    GURI — STYLES
-   Carbón medio · Grises claros · Naranja saturado · Blanco
+   Azul #0066FF · Fondo blanco opaco · Negros
    ========================================================= */
 
 
@@ -31,35 +31,30 @@
 
 :root {
     /* Colores base */
-    --carbon: #2A2A2A;
-    --carbon-soft: #333333;
-    --carbon-card: #3D3D3D;
-    --gray: #D0D0D0;
-    --gray-dark: #8A8A8A;
-    --orange: #FF6B1A;
-    --orange-bright: #FF8A3D;
-    --orange-dark: #CC4F00;
-    --white: #FFFFFF;
-    --white-soft: #F5F5F5;
+    --blue: #0066FF;
+    --blue-bright: #3385FF;
+    --blue-dark: #0052CC;
+    --bg: #F2F2F0;
+    --surface: #FFFFFF;
+    --black: #0F0F0F;
+    --black-soft: #1A1A1A;
+    --gray: #6E6E6E;
+    --gray-light: #D9D9D9;
 
-    /* Alias usados en el resto del CSS */
-    --bg: #2A2A2A;
-    --bg-soft: #333333;
-    --bg-card: #3D3D3D;
+    /* Alias */
+    --accent: #0066FF;
+    --accent-bright: #3385FF;
+    --accent-dark: #0052CC;
     --light: #FFFFFF;
-    --soft: #E5E5E5;
-    --accent: #FF6B1A;
-    --accent-bright: #FF8A3D;
-    --accent-dark: #CC4F00;
-    --muted: #D0D0D0;
+    --muted: #6E6E6E;
 
     /* Transparencias */
-    --muted-soft: rgba(208, 208, 208, 0.85);
-    --muted-light: rgba(208, 208, 208, 0.55);
-    --muted-dark: rgba(208, 208, 208, 0.35);
-    --border: rgba(255, 255, 255, 0.12);
-    --border-strong: rgba(255, 255, 255, 0.20);
-    --border-orange: rgba(255, 107, 26, 0.40);
+    --muted-soft: rgba(110, 110, 110, 0.85);
+    --muted-light: rgba(110, 110, 110, 0.55);
+    --muted-dark: rgba(110, 110, 110, 0.35);
+    --border: rgba(15, 15, 15, 0.10);
+    --border-strong: rgba(15, 15, 15, 0.18);
+    --border-blue: rgba(0, 102, 255, 0.35);
 
     /* Layout */
     --container: 1240px;
@@ -85,7 +80,7 @@ html {
 
 body {
     background: var(--bg);
-    color: var(--light);
+    color: var(--black);
     font-family: "Bunken", sans-serif;
     font-weight: 300;
     line-height: 1.5;
@@ -155,17 +150,17 @@ button {
     font-size: clamp(48px, 6vw, 82px);
     line-height: 0.95;
     letter-spacing: -0.055em;
-    color: var(--white);
+    color: var(--black);
 }
 
 .section-heading h2 span {
-    color: var(--orange);
+    color: var(--blue);
 }
 
 .section-eyebrow {
     display: block;
     margin-bottom: 14px;
-    color: var(--orange);
+    color: var(--blue);
     font-size: 11px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -196,7 +191,7 @@ button {
 }
 
 .site-header.scrolled {
-    background: rgba(42, 42, 42, 0.92);
+    background: rgba(242, 242, 240, 0.92);
     border-color: var(--border);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
@@ -216,7 +211,7 @@ button {
    ========================================================= */
 
 .logo-separator {
-    color: var(--gray-dark);
+    color: var(--gray);
     font-size: 22px;
     font-weight: 300;
     margin: 0 2px;
@@ -242,7 +237,7 @@ button {
 }
 
 .logo-guri {
-    color: var(--white);
+    color: var(--black);
     font-family: "Bunken", sans-serif;
     font-size: 22px;
     font-weight: 300;
@@ -250,7 +245,7 @@ button {
 }
 
 .logo-web {
-    color: var(--orange);
+    color: var(--blue);
     font-family: "Xenois", serif;
     font-size: 22px;
     font-weight: 700;
@@ -283,12 +278,12 @@ button {
     bottom: -7px;
     width: 0;
     height: 2px;
-    background: var(--orange);
+    background: var(--blue);
     transition: width var(--transition);
 }
 
 .main-nav a:hover {
-    color: var(--white);
+    color: var(--black);
 }
 
 .main-nav a:hover::after {
@@ -307,10 +302,10 @@ button {
     width: 42px;
     height: 42px;
     padding: 0;
-    border: 1.5px solid var(--orange);
+    border: 1.5px solid var(--blue);
     border-radius: 50%;
     background: transparent;
-    color: var(--orange);
+    color: var(--blue);
     transition:
         background var(--transition),
         color var(--transition),
@@ -320,10 +315,10 @@ button {
 }
 
 .header-button:hover {
-    background: var(--orange);
+    background: var(--blue);
     color: var(--white);
     transform: scale(1.08);
-    box-shadow: 0 0 25px rgba(255, 107, 26, 0.5);
+    box-shadow: 0 0 25px rgba(0, 102, 255, 0.45);
 }
 
 .header-button svg {
@@ -342,7 +337,7 @@ button {
     width: 42px;
     height: 42px;
     padding: 0;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-strong);
     background: transparent;
     position: relative;
     cursor: pointer;
@@ -353,8 +348,8 @@ button {
     position: absolute;
     left: 50%;
     width: 20px;
-    height: 1px;
-    background: var(--white);
+    height: 2px;
+    background: var(--black);
     transform: translateX(-50%);
     transition:
         transform var(--transition),
@@ -398,21 +393,21 @@ button {
     background-image:
         radial-gradient(
             circle at 80% 45%,
-            rgba(255, 107, 26, 0.20),
-            transparent 40%
+            rgba(0, 102, 255, 0.14),
+            transparent 42%
         ),
         radial-gradient(
             circle at 15% 20%,
-            rgba(255, 107, 26, 0.08),
+            rgba(0, 102, 255, 0.06),
             transparent 35%
         ),
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,107,26,0.55);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,107,26,0.55);}.tick-major{stroke:rgba(255,107,26,0.55);stroke-width:1.5;}.angle{stroke:rgba(255,107,26,0.55);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(255,107,26,0.55)' stroke-width='1' fill='none'/></g></svg>"),
-        linear-gradient(rgba(255, 107, 26, 0.15) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 107, 26, 0.15) 1px, transparent 1px),
-        linear-gradient(rgba(255, 107, 26, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 107, 26, 0.08) 1px, transparent 1px),
-        linear-gradient(rgba(255, 107, 26, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 107, 26, 0.04) 1px, transparent 1px);
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,102,255,0.35);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,102,255,0.35);}.tick-major{stroke:rgba(0,102,255,0.35);stroke-width:1.5;}.angle{stroke:rgba(0,102,255,0.35);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(0,102,255,0.35)' stroke-width='1' fill='none'/></g></svg>"),
+        linear-gradient(rgba(0, 102, 255, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.10) 1px, transparent 1px),
+        linear-gradient(rgba(0, 102, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(rgba(0, 102, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.025) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -463,8 +458,8 @@ button {
     width: 100%;
     height: auto;
     filter:
-        drop-shadow(0 0 30px rgba(255, 107, 26, 0.45))
-        drop-shadow(0 0 60px rgba(255, 107, 26, 0.20));
+        drop-shadow(0 0 30px rgba(0, 102, 255, 0.35))
+        drop-shadow(0 0 60px rgba(0, 102, 255, 0.15));
 }
 
 .hero h1 {
@@ -472,12 +467,12 @@ button {
     font-size: clamp(70px, 9vw, 140px);
     line-height: 0.86;
     letter-spacing: -0.065em;
-    color: var(--white);
+    color: var(--black);
 }
 
 .hero h1 span {
     display: block;
-    color: var(--orange);
+    color: var(--blue);
 }
 
 .hero-content > p {
@@ -523,40 +518,40 @@ button {
 }
 
 .button-primary {
-    border-color: var(--orange);
-    background: var(--orange);
+    border-color: var(--blue);
+    background: var(--blue);
     color: var(--white);
 }
 
 .button-primary:hover {
-    background: var(--orange-bright);
-    border-color: var(--orange-bright);
+    background: var(--blue-bright);
+    border-color: var(--blue-bright);
     color: var(--white);
-    box-shadow: 0 0 30px rgba(255, 107, 26, 0.5);
+    box-shadow: 0 0 30px rgba(0, 102, 255, 0.45);
 }
 
 .button-secondary {
     border-color: var(--border-strong);
     background: transparent;
-    color: var(--white);
+    color: var(--black);
 }
 
 .button-secondary:hover {
-    border-color: var(--orange);
-    color: var(--orange);
-    box-shadow: 0 0 20px rgba(255, 107, 26, 0.25);
+    border-color: var(--blue);
+    color: var(--blue);
+    box-shadow: 0 0 20px rgba(0, 102, 255, 0.25);
 }
 
 
 /* =========================================================
-   SERVICES — fondo claro
+   SERVICES — fondo blanco puro
    ========================================================= */
 
 .services {
     position: relative;
     overflow: hidden;
-    background-color: var(--light);
-    color: var(--bg);
+    background-color: var(--surface);
+    color: var(--black);
 }
 
 .services-inner {
@@ -592,11 +587,11 @@ button {
     font-size: clamp(48px, 5.75vw, 87px);
     line-height: 0.96;
     letter-spacing: -0.055em;
-    color: var(--bg);
+    color: var(--black);
 }
 
 .services-heading h2 span {
-    color: var(--orange);
+    color: var(--blue);
 }
 
 
@@ -611,8 +606,8 @@ button {
     display: block;
     z-index: 1;
     filter:
-        drop-shadow(0 0 70px rgba(255, 107, 26, 0.35))
-        drop-shadow(0 0 140px rgba(255, 107, 26, 0.15));
+        drop-shadow(0 0 70px rgba(0, 102, 255, 0.25))
+        drop-shadow(0 0 140px rgba(0, 102, 255, 0.10));
     animation: globe-breathe 8s ease-in-out infinite;
 }
 
@@ -632,7 +627,7 @@ button {
 
 
 /* =========================================================
-   ICONOS ALREDEDOR DEL MUNDO (sobre fondo claro)
+   ICONOS ALREDEDOR DEL MUNDO
    ========================================================= */
 
 .orbit-item {
@@ -642,14 +637,14 @@ button {
     align-items: center;
     text-align: center;
     gap: 10px;
-    color: var(--bg);
+    color: var(--black);
     max-width: 180px;
     z-index: 3;
     transition: color var(--transition), transform var(--transition);
 }
 
 .orbit-item:hover {
-    color: var(--orange);
+    color: var(--blue);
     transform: translate(var(--x), var(--y)) scale(1.08);
 }
 
@@ -660,13 +655,13 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid var(--orange);
+    border: 1.5px solid var(--blue);
     border-radius: 50%;
-    background: var(--bg-soft);
-    color: var(--orange);
+    background: var(--surface);
+    color: var(--blue);
     box-shadow:
-        0 0 0 6px rgba(255, 107, 26, 0.10),
-        0 0 20px rgba(255, 107, 26, 0.20);
+        0 0 0 6px rgba(0, 102, 255, 0.08),
+        0 0 20px rgba(0, 102, 255, 0.18);
     transition:
         background var(--transition),
         color var(--transition),
@@ -684,12 +679,12 @@ button {
 }
 
 .orbit-item:hover .orbit-icon {
-    background: var(--orange);
+    background: var(--blue);
     color: var(--white);
     transform: scale(1.08);
     box-shadow:
-        0 0 0 8px rgba(255, 107, 26, 0.20),
-        0 0 30px rgba(255, 107, 26, 0.5);
+        0 0 0 8px rgba(0, 102, 255, 0.18),
+        0 0 30px rgba(0, 102, 255, 0.45);
 }
 
 .orbit-text {
@@ -705,20 +700,20 @@ button {
     font-size: 18px;
     line-height: 1.15;
     letter-spacing: -0.025em;
-    color: var(--bg);
+    color: var(--black);
     transition: color var(--transition);
 }
 
 .orbit-text p {
     margin: 0;
-    color: var(--gray-dark);
+    color: var(--muted);
     font-size: 13px;
     line-height: 1.45;
     transition: color var(--transition);
 }
 
 .orbit-item:hover .orbit-text p {
-    color: var(--orange);
+    color: var(--blue);
 }
 
 
@@ -835,7 +830,7 @@ button {
     background-image: url("../assets/seleccion/mapa.png");
     background-size: cover;
     background-position: center center;
-    opacity: 0.30;
+    opacity: 0.20;
     z-index: 1;
 }
 
@@ -850,11 +845,11 @@ button {
     position: absolute;
     width: 280px;
     padding: 12px 12px 50px 12px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-orange);
+    background: var(--surface);
+    border: 1px solid var(--border-blue);
     box-shadow:
-        0 4px 20px rgba(0, 0, 0, 0.40),
-        0 1px 3px rgba(0, 0, 0, 0.30);
+        0 4px 20px rgba(15, 15, 15, 0.10),
+        0 1px 3px rgba(15, 15, 15, 0.06);
     transition:
         transform 0.4s ease,
         box-shadow 0.4s ease,
@@ -896,7 +891,7 @@ button {
     object-fit: cover;
     display: block;
     border-radius: 2px;
-    background-color: var(--bg-soft);
+    background-color: var(--gray-light);
 }
 
 .polaroid p {
@@ -905,7 +900,7 @@ button {
     font-family: "Bunken", sans-serif;
     font-weight: 300;
     font-size: 20px;
-    color: var(--white);
+    color: var(--black);
     letter-spacing: -0.01em;
 }
 
@@ -916,12 +911,12 @@ button {
     transform: translateX(-50%);
     width: 26px;
     height: 26px;
-    background: var(--orange);
+    background: var(--blue);
     border-radius: 50%;
     border: 3px solid var(--white);
     box-shadow:
-        0 2px 8px rgba(255, 107, 26, 0.6),
-        0 0 20px rgba(255, 107, 26, 0.4);
+        0 2px 8px rgba(0, 102, 255, 0.5),
+        0 0 20px rgba(0, 102, 255, 0.35);
     z-index: 5;
 }
 
@@ -935,15 +930,15 @@ button {
     height: 8px;
     background: var(--white);
     border-radius: 50%;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .polaroid:hover {
     transform: rotate(0deg) scale(1.05) !important;
-    border-color: var(--orange);
+    border-color: var(--blue);
     box-shadow:
-        0 15px 40px rgba(255, 107, 26, 0.35),
-        0 5px 15px rgba(0, 0, 0, 0.4);
+        0 15px 40px rgba(0, 102, 255, 0.30),
+        0 5px 15px rgba(15, 15, 15, 0.12);
     z-index: 10;
 }
 
@@ -988,16 +983,16 @@ button {
     background-image:
         radial-gradient(
             circle at 80% 45%,
-            rgba(255, 107, 26, 0.12),
+            rgba(0, 102, 255, 0.10),
             transparent 40%
         ),
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,107,26,0.55);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,107,26,0.55);}.tick-major{stroke:rgba(255,107,26,0.55);stroke-width:1.5;}.angle{stroke:rgba(255,107,26,0.55);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(255,107,26,0.55)' stroke-width='1' fill='none'/></g></svg>"),
-        linear-gradient(rgba(255, 107, 26, 0.15) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 107, 26, 0.15) 1px, transparent 1px),
-        linear-gradient(rgba(255, 107, 26, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 107, 26, 0.08) 1px, transparent 1px),
-        linear-gradient(rgba(255, 107, 26, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 107, 26, 0.04) 1px, transparent 1px);
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,102,255,0.35);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,102,255,0.35);}.tick-major{stroke:rgba(0,102,255,0.35);stroke-width:1.5;}.angle{stroke:rgba(0,102,255,0.35);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(0,102,255,0.35)' stroke-width='1' fill='none'/></g></svg>"),
+        linear-gradient(rgba(0, 102, 255, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.10) 1px, transparent 1px),
+        linear-gradient(rgba(0, 102, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(rgba(0, 102, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 255, 0.025) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -1060,13 +1055,13 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid var(--orange);
+    border: 1.5px solid var(--blue);
     border-radius: 50%;
-    background: var(--bg);
-    color: var(--orange);
+    background: var(--surface);
+    color: var(--blue);
     box-shadow:
-        0 0 0 6px rgba(255, 107, 26, 0.10),
-        0 0 20px rgba(255, 107, 26, 0.25);
+        0 0 0 6px rgba(0, 102, 255, 0.08),
+        0 0 20px rgba(0, 102, 255, 0.18);
     transition:
         background var(--transition),
         color var(--transition),
@@ -1089,7 +1084,7 @@ button {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: var(--orange-bright);
+    background: var(--blue-bright);
     opacity: 0;
     z-index: 1;
     pointer-events: none;
@@ -1119,7 +1114,7 @@ button {
     }
 
     50% {
-        opacity: 0.35;
+        opacity: 0.30;
         transform: scale(1.3);
     }
 }
@@ -1135,8 +1130,8 @@ button {
     min-height: 140px;
     margin-top: 35px;
     padding: 16px;
-    border: 1.5px solid var(--orange);
-    background: rgba(51, 51, 51, 0.92);
+    border: 1.5px solid var(--blue);
+    background: rgba(255, 255, 255, 0.92);
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     text-align: center;
@@ -1148,7 +1143,7 @@ button {
     font-size: 20px;
     line-height: 1;
     letter-spacing: -0.03em;
-    color: var(--white);
+    color: var(--black);
 }
 
 .process-step-capsule p {
@@ -1164,7 +1159,7 @@ button {
    ========================================================= */
 
 .why {
-    background: var(--bg);
+    background: var(--surface);
 }
 
 .why-inner {
@@ -1219,9 +1214,9 @@ button {
 }
 
 .brainstorm-item:hover {
-    border-right-color: var(--orange);
+    border-right-color: var(--blue);
     transform: translateX(-5px);
-    background: rgba(255, 107, 26, 0.08);
+    background: rgba(0, 102, 255, 0.06);
 }
 
 .brainstorm-icon {
@@ -1231,13 +1226,13 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid var(--orange);
+    border: 1.5px solid var(--blue);
     border-radius: 50%;
-    background: var(--bg);
-    color: var(--orange);
+    background: var(--surface);
+    color: var(--blue);
     box-shadow:
-        0 0 0 6px rgba(255, 107, 26, 0.10),
-        0 0 20px rgba(255, 107, 26, 0.25);
+        0 0 0 6px rgba(0, 102, 255, 0.08),
+        0 0 20px rgba(0, 102, 255, 0.18);
     transition:
         background var(--transition),
         color var(--transition),
@@ -1246,12 +1241,12 @@ button {
 }
 
 .brainstorm-item:hover .brainstorm-icon {
-    background: var(--orange);
+    background: var(--blue);
     color: var(--white);
     transform: scale(1.08);
     box-shadow:
-        0 0 0 8px rgba(255, 107, 26, 0.20),
-        0 0 30px rgba(255, 107, 26, 0.5);
+        0 0 0 8px rgba(0, 102, 255, 0.18),
+        0 0 30px rgba(0, 102, 255, 0.45);
 }
 
 .brainstorm-check {
@@ -1352,7 +1347,7 @@ button {
     justify-content: center;
     width: 90px;
     height: 90px;
-    color: var(--orange);
+    color: var(--blue);
 }
 
 .digital-icon img {
@@ -1360,8 +1355,8 @@ button {
     height: 100%;
     object-fit: contain;
     filter:
-        drop-shadow(0 0 8px rgba(255, 107, 26, 0.50))
-        drop-shadow(0 0 20px rgba(255, 107, 26, 0.25));
+        drop-shadow(0 0 8px rgba(0, 102, 255, 0.40))
+        drop-shadow(0 0 20px rgba(0, 102, 255, 0.20));
 }
 
 .digital-icon svg {
@@ -1373,8 +1368,8 @@ button {
     stroke-linecap: round;
     stroke-linejoin: round;
     filter:
-        drop-shadow(0 0 8px rgba(255, 107, 26, 0.50))
-        drop-shadow(0 0 20px rgba(255, 107, 26, 0.25));
+        drop-shadow(0 0 8px rgba(0, 102, 255, 0.40))
+        drop-shadow(0 0 20px rgba(0, 102, 255, 0.20));
 }
 
 .digital-icon-1 {
@@ -1420,12 +1415,12 @@ button {
     justify-content: center;
     width: 44px;
     height: 44px;
-    color: var(--orange);
+    color: var(--blue);
     user-select: none;
     pointer-events: none;
     filter:
-        drop-shadow(0 0 8px rgba(255, 107, 26, 0.55))
-        drop-shadow(0 0 16px rgba(255, 107, 26, 0.30));
+        drop-shadow(0 0 8px rgba(0, 102, 255, 0.45))
+        drop-shadow(0 0 16px rgba(0, 102, 255, 0.25));
 }
 
 .digital-emoji svg {
@@ -1526,7 +1521,7 @@ button {
    ========================================================= */
 
 .plans {
-    background: var(--bg);
+    background: var(--surface);
 }
 
 .plans-integrated-grid {
@@ -1539,7 +1534,7 @@ button {
     position: relative;
     min-width: 0;
     border: 1px solid var(--border);
-    background: var(--bg-soft);
+    background: var(--bg);
     transition:
         border-color var(--transition),
         transform var(--transition),
@@ -1550,8 +1545,8 @@ button {
 
 .plan-card:hover {
     transform: translateY(-4px);
-    border-color: var(--orange);
-    box-shadow: 0 0 30px rgba(255, 107, 26, 0.15);
+    border-color: var(--blue);
+    box-shadow: 0 0 30px rgba(0, 102, 255, 0.15);
 }
 
 .plan-integrated {
@@ -1559,16 +1554,16 @@ button {
 }
 
 .plan-featured {
-    border: 2px solid var(--orange);
+    border: 2px solid var(--blue);
     background: linear-gradient(
         145deg,
-        rgba(255, 107, 26, 0.12),
-        var(--bg-soft)
+        rgba(0, 102, 255, 0.06),
+        var(--surface)
     );
     position: relative;
     box-shadow:
-        0 0 0 4px rgba(255, 107, 26, 0.08),
-        0 0 40px rgba(255, 107, 26, 0.15);
+        0 0 0 4px rgba(0, 102, 255, 0.06),
+        0 0 40px rgba(0, 102, 255, 0.12);
 }
 
 .plan-featured::before {
@@ -1576,7 +1571,7 @@ button {
     position: absolute;
     top: 0;
     right: 0;
-    background: var(--orange);
+    background: var(--blue);
     color: var(--white);
     font-size: 11px;
     letter-spacing: 0.12em;
@@ -1588,7 +1583,7 @@ button {
 .plan-label {
     display: inline-block;
     margin-bottom: 15px;
-    color: var(--orange);
+    color: var(--blue);
     font-size: 11px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -1618,7 +1613,7 @@ button {
     font-size: 24px;
     line-height: 1;
     letter-spacing: -0.035em;
-    color: var(--white);
+    color: var(--black);
 }
 
 .plan-integrated .plan-service p {
@@ -1651,7 +1646,7 @@ button {
     position: absolute;
     left: 0;
     top: 0;
-    color: var(--orange);
+    color: var(--blue);
     font-size: 13px;
     font-weight: bold;
 }
@@ -1659,9 +1654,9 @@ button {
 .plan-recommended {
     margin-top: 20px;
     padding: 18px;
-    background: rgba(255, 107, 26, 0.10);
+    background: rgba(0, 102, 255, 0.06);
     border-radius: 8px;
-    border-left: 3px solid var(--orange);
+    border-left: 3px solid var(--blue);
 }
 
 .plan-recommended p {
@@ -1676,7 +1671,7 @@ button {
 }
 
 .plan-recommended strong {
-    color: var(--white);
+    color: var(--black);
     font-weight: 400;
 }
 
@@ -1698,7 +1693,7 @@ button {
     margin-top: 55px;
     padding: 30px;
     border: 1px solid var(--border);
-    background: var(--bg-soft);
+    background: var(--bg);
     transition:
         border-color var(--transition),
         background var(--transition),
@@ -1706,9 +1701,9 @@ button {
 }
 
 .plans-coming-soon:hover {
-    border-color: var(--orange);
-    background: var(--bg-soft);
-    box-shadow: 0 0 30px rgba(255, 107, 26, 0.12);
+    border-color: var(--blue);
+    background: var(--bg);
+    box-shadow: 0 0 30px rgba(0, 102, 255, 0.10);
 }
 
 .plans-coming-soon .plans-category-heading {
@@ -1721,7 +1716,7 @@ button {
     line-height: 1;
     letter-spacing: -0.04em;
     margin-bottom: 15px;
-    color: var(--white);
+    color: var(--black);
 }
 
 .plans-coming-soon p {
@@ -1736,7 +1731,7 @@ button {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: var(--orange);
+    color: var(--blue);
     font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -1747,8 +1742,8 @@ button {
     width: 16px;
     height: 16px;
     display: inline-block;
-    border: 2px solid rgba(255, 107, 26, 0.25);
-    border-top-color: var(--orange);
+    border: 2px solid rgba(0, 102, 255, 0.25);
+    border-top-color: var(--blue);
     border-radius: 50%;
     animation: guri-spin 0.8s linear infinite;
 }
@@ -1793,7 +1788,7 @@ button {
     font-size: 18px;
     line-height: 1.3;
     letter-spacing: -0.02em;
-    color: var(--white);
+    color: var(--black);
     transition: color var(--transition);
     position: relative;
 }
@@ -1807,7 +1802,7 @@ button {
     font-family: "Bunken", sans-serif;
     font-size: 24px;
     font-weight: 700;
-    color: var(--orange);
+    color: var(--blue);
     transition: transform var(--transition);
     flex-shrink: 0;
     margin-left: 20px;
@@ -1819,7 +1814,7 @@ button {
 }
 
 .faq-item summary:hover {
-    color: var(--orange);
+    color: var(--blue);
 }
 
 .faq-item p {
@@ -1858,7 +1853,7 @@ button {
     line-height: 0.95;
     letter-spacing: -0.055em;
     margin-bottom: 17px;
-    color: var(--white);
+    color: var(--black);
 }
 
 .plans-custom p,
@@ -1885,8 +1880,8 @@ button {
 }
 
 .quote-form:hover {
-    border-color: var(--orange);
-    background: var(--bg-soft);
+    border-color: var(--blue);
+    background: var(--surface);
 }
 
 .quote-form-grid {
@@ -1906,7 +1901,7 @@ button {
 }
 
 .form-field label {
-    color: var(--orange);
+    color: var(--blue);
     font-size: 11px;
     letter-spacing: 0.04em;
     font-weight: 600;
@@ -1919,8 +1914,8 @@ button {
     border: 1px solid var(--border);
     border-radius: 0;
     outline: none;
-    background: var(--bg-soft);
-    color: var(--white);
+    background: var(--surface);
+    color: var(--black);
     font-family: "Bunken", sans-serif;
     font-size: 13px;
     transition:
@@ -1951,31 +1946,31 @@ button {
 .form-field input:hover,
 .form-field select:hover,
 .form-field textarea:hover {
-    border-color: rgba(255, 107, 26, 0.55);
+    border-color: rgba(0, 102, 255, 0.55);
 }
 
 .form-field input:focus,
 .form-field textarea:focus {
-    border-color: var(--orange);
+    border-color: var(--blue);
     background: var(--bg);
-    color: var(--white);
-    box-shadow: 0 0 0 2px rgba(255, 107, 26, 0.30);
+    color: var(--black);
+    box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.20);
 }
 
 .form-field select:focus {
-    border-color: var(--orange);
+    border-color: var(--blue);
     background-color: var(--bg);
-    box-shadow: 0 0 0 2px rgba(255, 107, 26, 0.30);
+    box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.20);
 }
 
 .form-field select:required:valid,
 .form-field select:focus {
-    color: var(--white);
+    color: var(--black);
 }
 
 .form-field input:not(:placeholder-shown),
 .form-field textarea:not(:placeholder-shown) {
-    color: var(--white);
+    color: var(--black);
 }
 
 .form-field select {
@@ -1994,20 +1989,20 @@ button {
 
 .form-field select:focus {
     background-image:
-        linear-gradient(45deg, transparent 50%, var(--orange) 50%),
-        linear-gradient(135deg, var(--orange) 50%, transparent 50%);
+        linear-gradient(45deg, transparent 50%, var(--blue) 50%),
+        linear-gradient(135deg, var(--blue) 50%, transparent 50%);
 }
 
 .form-field select option {
-    background: var(--bg-soft);
-    color: var(--white);
+    background: var(--surface);
+    color: var(--black);
     padding: 10px;
 }
 
 .form-field select option:checked,
 .form-field select option:active,
 .form-field select option:hover {
-    background: var(--orange);
+    background: var(--blue);
     color: var(--white);
 }
 
@@ -2058,7 +2053,7 @@ button {
     border: 1.5px solid var(--border);
     border-radius: 999px;
 
-    background: var(--bg);
+    background: var(--surface);
     color: var(--muted);
 
     font-family: "Bunken", sans-serif;
@@ -2078,20 +2073,20 @@ button {
 }
 
 .pill:hover span {
-    border-color: var(--orange);
-    color: var(--orange);
+    border-color: var(--blue);
+    color: var(--blue);
     transform: translateY(-1px);
 }
 
 .pill input[type="radio"]:checked + span {
-    background: var(--orange);
-    border-color: var(--orange);
+    background: var(--blue);
+    border-color: var(--blue);
     color: var(--white);
     font-weight: 700;
 }
 
 .pill input[type="radio"]:focus-visible + span {
-    box-shadow: 0 0 0 2px rgba(255, 107, 26, 0.55);
+    box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.45);
 }
 
 
@@ -2101,7 +2096,7 @@ button {
 
 .final-cta {
     padding: 80px 0;
-    background-color: var(--orange);
+    background-color: var(--blue);
     color: var(--white);
     text-align: center;
 
@@ -2150,7 +2145,7 @@ button {
 
 .final-cta h2 span {
     display: block;
-    color: var(--bg);
+    color: var(--black);
 }
 
 
@@ -2188,7 +2183,7 @@ button {
 .footer-links strong,
 .footer-links h4 {
     margin-bottom: 8px;
-    color: var(--white);
+    color: var(--black);
     font-size: 12px;
     font-weight: 300;
     letter-spacing: 0.08em;
@@ -2203,7 +2198,7 @@ button {
 }
 
 .footer-links a:hover {
-    color: var(--orange);
+    color: var(--blue);
     transform: translateX(3px);
 }
 
