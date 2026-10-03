@@ -1,6 +1,6 @@
 /* =========================================================
    GURI — STYLES
-   Paleta: #0066FF · #FFD400 · #E53935 · #111111 · #F5F5F2
+   Carbón · Grises · Naranja saturado · Blanco
    ========================================================= */
 
 
@@ -30,32 +30,36 @@
    ========================================================= */
 
 :root {
-    /* Colores base de la paleta */
-    --blue: #0066FF;
-    --yellow: #FFD400;
-    --red: #E53935;
-    --black: #111111;
-    --white: #F5F5F2;
+    /* Colores base */
+    --carbon: #181818;
+    --carbon-soft: #212121;
+    --carbon-card: #2A2A2A;
+    --gray: #B8B8B8;
+    --gray-dark: #6E6E6E;
+    --orange: #FF6B1A;
+    --orange-bright: #FF8A3D;
+    --orange-dark: #CC4F00;
+    --white: #FFFFFF;
+    --white-soft: #F5F5F5;
 
     /* Alias usados en el resto del CSS */
-    --bg: #111111;
-    --light: #F5F5F2;
-    --soft: #E2E5E9;
-    --accent: #0066FF;
-    --muted: #707780;
-
-    /* Derivados */
-    --bg-soft: #171717;
-    --bg-card: #1C1C1C;
-    --accent-bright: #2E7FFF;
-    --accent-dark: #004FCC;
+    --bg: #181818;
+    --bg-soft: #212121;
+    --bg-card: #2A2A2A;
+    --light: #FFFFFF;
+    --soft: #E5E5E5;
+    --accent: #FF6B1A;
+    --accent-bright: #FF8A3D;
+    --accent-dark: #CC4F00;
+    --muted: #B8B8B8;
 
     /* Transparencias */
-    --muted-soft: rgba(112, 119, 128, 0.85);
-    --muted-light: rgba(112, 119, 128, 0.55);
-    --muted-dark: rgba(112, 119, 128, 0.30);
-    --border: rgba(245, 245, 242, 0.15);
-    --border-dark: rgba(17, 17, 17, 0.15);
+    --muted-soft: rgba(184, 184, 184, 0.85);
+    --muted-light: rgba(184, 184, 184, 0.55);
+    --muted-dark: rgba(184, 184, 184, 0.30);
+    --border: rgba(255, 255, 255, 0.10);
+    --border-strong: rgba(255, 255, 255, 0.18);
+    --border-orange: rgba(255, 107, 26, 0.35);
 
     /* Layout */
     --container: 1240px;
@@ -151,17 +155,17 @@ button {
     font-size: clamp(48px, 6vw, 82px);
     line-height: 0.95;
     letter-spacing: -0.055em;
-    color: var(--light);
+    color: var(--white);
 }
 
 .section-heading h2 span {
-    color: var(--yellow);
+    color: var(--orange);
 }
 
 .section-eyebrow {
     display: block;
     margin-bottom: 14px;
-    color: var(--yellow);
+    color: var(--orange);
     font-size: 11px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -192,7 +196,7 @@ button {
 }
 
 .site-header.scrolled {
-    background: rgba(17, 17, 17, 0.90);
+    background: rgba(24, 24, 24, 0.92);
     border-color: var(--border);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
@@ -212,7 +216,7 @@ button {
    ========================================================= */
 
 .logo-separator {
-    color: var(--muted-dark);
+    color: var(--gray-dark);
     font-size: 22px;
     font-weight: 300;
     margin: 0 2px;
@@ -238,7 +242,7 @@ button {
 }
 
 .logo-guri {
-    color: var(--light);
+    color: var(--white);
     font-family: "Bunken", sans-serif;
     font-size: 22px;
     font-weight: 300;
@@ -246,7 +250,7 @@ button {
 }
 
 .logo-web {
-    color: var(--yellow);
+    color: var(--orange);
     font-family: "Xenois", serif;
     font-size: 22px;
     font-weight: 700;
@@ -267,7 +271,7 @@ button {
 
 .main-nav a {
     position: relative;
-    color: var(--soft);
+    color: var(--gray);
     font-size: 13px;
     transition: color var(--transition);
 }
@@ -279,12 +283,12 @@ button {
     bottom: -7px;
     width: 0;
     height: 2px;
-    background: var(--yellow);
+    background: var(--orange);
     transition: width var(--transition);
 }
 
 .main-nav a:hover {
-    color: var(--light);
+    color: var(--white);
 }
 
 .main-nav a:hover::after {
@@ -303,10 +307,10 @@ button {
     width: 42px;
     height: 42px;
     padding: 0;
-    border: 1.5px solid var(--yellow);
+    border: 1.5px solid var(--orange);
     border-radius: 50%;
     background: transparent;
-    color: var(--yellow);
+    color: var(--orange);
     transition:
         background var(--transition),
         color var(--transition),
@@ -316,10 +320,10 @@ button {
 }
 
 .header-button:hover {
-    background: var(--yellow);
-    color: var(--black);
+    background: var(--orange);
+    color: var(--white);
     transform: scale(1.08);
-    box-shadow: 0 0 25px rgba(255, 212, 0, 0.5);
+    box-shadow: 0 0 25px rgba(255, 107, 26, 0.5);
 }
 
 .header-button svg {
@@ -350,7 +354,7 @@ button {
     left: 50%;
     width: 20px;
     height: 1px;
-    background: var(--light);
+    background: var(--white);
     transform: translateX(-50%);
     transition:
         transform var(--transition),
@@ -394,29 +398,23 @@ button {
     background-image:
         radial-gradient(
             circle at 80% 45%,
-            rgba(0, 102, 255, 0.22),
+            rgba(255, 107, 26, 0.20),
             transparent 40%
         ),
         radial-gradient(
             circle at 15% 20%,
-            rgba(255, 212, 0, 0.10),
+            rgba(255, 107, 26, 0.08),
             transparent 35%
         ),
-        radial-gradient(
-            circle at 90% 80%,
-            rgba(229, 57, 53, 0.10),
-            transparent 35%
-        ),
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,102,255,0.55);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,102,255,0.55);}.tick-major{stroke:rgba(0,102,255,0.55);stroke-width:1.5;}.angle{stroke:rgba(0,102,255,0.55);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(0,102,255,0.55)' stroke-width='1' fill='none'/></g></svg>"),
-        linear-gradient(rgba(0, 102, 255, 0.18) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 102, 255, 0.18) 1px, transparent 1px),
-        linear-gradient(rgba(0, 102, 255, 0.10) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 102, 255, 0.10) 1px, transparent 1px),
-        linear-gradient(rgba(0, 102, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 102, 255, 0.05) 1px, transparent 1px);
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,107,26,0.55);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,107,26,0.55);}.tick-major{stroke:rgba(255,107,26,0.55);stroke-width:1.5;}.angle{stroke:rgba(255,107,26,0.55);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(255,107,26,0.55)' stroke-width='1' fill='none'/></g></svg>"),
+        linear-gradient(rgba(255, 107, 26, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 107, 26, 0.15) 1px, transparent 1px),
+        linear-gradient(rgba(255, 107, 26, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 107, 26, 0.08) 1px, transparent 1px),
+        linear-gradient(rgba(255, 107, 26, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 107, 26, 0.04) 1px, transparent 1px);
 
     background-size:
-        100% 100%,
         100% 100%,
         100% 100%,
         500px 500px,
@@ -465,9 +463,8 @@ button {
     width: 100%;
     height: auto;
     filter:
-        drop-shadow(0 0 30px rgba(0, 102, 255, 0.45))
-        drop-shadow(0 0 60px rgba(255, 212, 0, 0.25))
-        drop-shadow(0 0 90px rgba(229, 57, 53, 0.15));
+        drop-shadow(0 0 30px rgba(255, 107, 26, 0.45))
+        drop-shadow(0 0 60px rgba(255, 107, 26, 0.20));
 }
 
 .hero h1 {
@@ -475,12 +472,12 @@ button {
     font-size: clamp(70px, 9vw, 140px);
     line-height: 0.86;
     letter-spacing: -0.065em;
-    color: var(--light);
+    color: var(--white);
 }
 
 .hero h1 span {
     display: block;
-    color: var(--yellow);
+    color: var(--orange);
 }
 
 .hero-content > p {
@@ -511,6 +508,8 @@ button {
     padding: 0 25px;
     border: 1px solid transparent;
     font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
     transition:
         background var(--transition),
         color var(--transition),
@@ -524,28 +523,28 @@ button {
 }
 
 .button-primary {
-    border-color: var(--accent);
-    background: var(--accent);
-    color: var(--light);
+    border-color: var(--orange);
+    background: var(--orange);
+    color: var(--white);
 }
 
 .button-primary:hover {
-    background: var(--accent-bright);
-    border-color: var(--accent-bright);
-    color: var(--light);
-    box-shadow: 0 0 25px rgba(0, 102, 255, 0.4);
+    background: var(--orange-bright);
+    border-color: var(--orange-bright);
+    color: var(--white);
+    box-shadow: 0 0 30px rgba(255, 107, 26, 0.5);
 }
 
 .button-secondary {
-    border-color: var(--soft);
+    border-color: var(--border-strong);
     background: transparent;
-    color: var(--soft);
+    color: var(--white);
 }
 
 .button-secondary:hover {
-    border-color: var(--red);
-    color: var(--red);
-    box-shadow: 0 0 20px rgba(229, 57, 53, 0.25);
+    border-color: var(--orange);
+    color: var(--orange);
+    box-shadow: 0 0 20px rgba(255, 107, 26, 0.25);
 }
 
 
@@ -597,7 +596,7 @@ button {
 }
 
 .services-heading h2 span {
-    color: var(--yellow);
+    color: var(--orange);
 }
 
 
@@ -612,8 +611,8 @@ button {
     display: block;
     z-index: 1;
     filter:
-        drop-shadow(0 0 70px rgba(0, 102, 255, 0.30))
-        drop-shadow(0 0 140px rgba(255, 212, 0, 0.12));
+        drop-shadow(0 0 70px rgba(255, 107, 26, 0.35))
+        drop-shadow(0 0 140px rgba(255, 107, 26, 0.15));
     animation: globe-breathe 8s ease-in-out infinite;
 }
 
@@ -650,7 +649,7 @@ button {
 }
 
 .orbit-item:hover {
-    color: var(--accent);
+    color: var(--orange);
     transform: translate(var(--x), var(--y)) scale(1.08);
 }
 
@@ -661,13 +660,13 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid var(--accent);
+    border: 1.5px solid var(--orange);
     border-radius: 50%;
-    background: var(--soft);
-    color: var(--accent);
+    background: var(--bg-soft);
+    color: var(--orange);
     box-shadow:
-        0 0 0 6px rgba(0, 102, 255, 0.10),
-        0 0 20px rgba(0, 102, 255, 0.20);
+        0 0 0 6px rgba(255, 107, 26, 0.10),
+        0 0 20px rgba(255, 107, 26, 0.20);
     transition:
         background var(--transition),
         color var(--transition),
@@ -685,12 +684,12 @@ button {
 }
 
 .orbit-item:hover .orbit-icon {
-    background: var(--accent);
-    color: var(--light);
+    background: var(--orange);
+    color: var(--white);
     transform: scale(1.08);
     box-shadow:
-        0 0 0 8px rgba(0, 102, 255, 0.18),
-        0 0 30px rgba(0, 102, 255, 0.40);
+        0 0 0 8px rgba(255, 107, 26, 0.20),
+        0 0 30px rgba(255, 107, 26, 0.5);
 }
 
 .orbit-text {
@@ -712,14 +711,14 @@ button {
 
 .orbit-text p {
     margin: 0;
-    color: var(--muted);
+    color: var(--gray-dark);
     font-size: 13px;
     line-height: 1.45;
     transition: color var(--transition);
 }
 
 .orbit-item:hover .orbit-text p {
-    color: var(--accent);
+    color: var(--orange);
 }
 
 
@@ -851,11 +850,11 @@ button {
     position: absolute;
     width: 280px;
     padding: 12px 12px 50px 12px;
-    background: var(--bg-soft);
-    border: 1px solid rgba(0, 102, 255, 0.35);
+    background: var(--bg-card);
+    border: 1px solid var(--border-orange);
     box-shadow:
-        0 4px 20px rgba(0, 0, 0, 0.50),
-        0 1px 3px rgba(0, 0, 0, 0.35);
+        0 4px 20px rgba(0, 0, 0, 0.55),
+        0 1px 3px rgba(0, 0, 0, 0.40);
     transition:
         transform 0.4s ease,
         box-shadow 0.4s ease,
@@ -906,7 +905,7 @@ button {
     font-family: "Bunken", sans-serif;
     font-weight: 300;
     font-size: 20px;
-    color: var(--light);
+    color: var(--white);
     letter-spacing: -0.01em;
 }
 
@@ -917,12 +916,12 @@ button {
     transform: translateX(-50%);
     width: 26px;
     height: 26px;
-    background: var(--red);
+    background: var(--orange);
     border-radius: 50%;
-    border: 3px solid var(--light);
+    border: 3px solid var(--white);
     box-shadow:
-        0 2px 8px rgba(229, 57, 53, 0.6),
-        0 0 20px rgba(229, 57, 53, 0.4);
+        0 2px 8px rgba(255, 107, 26, 0.6),
+        0 0 20px rgba(255, 107, 26, 0.4);
     z-index: 5;
 }
 
@@ -934,17 +933,17 @@ button {
     transform: translate(-50%, -50%);
     width: 8px;
     height: 8px;
-    background: var(--light);
+    background: var(--white);
     border-radius: 50%;
     opacity: 0.8;
 }
 
 .polaroid:hover {
     transform: rotate(0deg) scale(1.05) !important;
-    border-color: var(--yellow);
+    border-color: var(--orange);
     box-shadow:
-        0 15px 40px rgba(255, 212, 0, 0.35),
-        0 5px 15px rgba(0, 0, 0, 0.45);
+        0 15px 40px rgba(255, 107, 26, 0.35),
+        0 5px 15px rgba(0, 0, 0, 0.5);
     z-index: 10;
 }
 
@@ -989,16 +988,16 @@ button {
     background-image:
         radial-gradient(
             circle at 80% 45%,
-            rgba(0, 102, 255, 0.15),
+            rgba(255, 107, 26, 0.12),
             transparent 40%
         ),
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,102,255,0.55);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(0,102,255,0.55);}.tick-major{stroke:rgba(0,102,255,0.55);stroke-width:1.5;}.angle{stroke:rgba(0,102,255,0.55);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(0,102,255,0.55)' stroke-width='1' fill='none'/></g></svg>"),
-        linear-gradient(rgba(0, 102, 255, 0.18) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 102, 255, 0.18) 1px, transparent 1px),
-        linear-gradient(rgba(0, 102, 255, 0.10) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 102, 255, 0.10) 1px, transparent 1px),
-        linear-gradient(rgba(0, 102, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 102, 255, 0.05) 1px, transparent 1px);
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,107,26,0.55);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,107,26,0.55);}.tick-major{stroke:rgba(255,107,26,0.55);stroke-width:1.5;}.angle{stroke:rgba(255,107,26,0.55);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(255,107,26,0.55)' stroke-width='1' fill='none'/></g></svg>"),
+        linear-gradient(rgba(255, 107, 26, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 107, 26, 0.15) 1px, transparent 1px),
+        linear-gradient(rgba(255, 107, 26, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 107, 26, 0.08) 1px, transparent 1px),
+        linear-gradient(rgba(255, 107, 26, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 107, 26, 0.04) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -1061,13 +1060,13 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid var(--accent);
+    border: 1.5px solid var(--orange);
     border-radius: 50%;
     background: var(--bg);
-    color: var(--accent);
+    color: var(--orange);
     box-shadow:
-        0 0 0 6px rgba(0, 102, 255, 0.12),
-        0 0 20px rgba(0, 102, 255, 0.25);
+        0 0 0 6px rgba(255, 107, 26, 0.10),
+        0 0 20px rgba(255, 107, 26, 0.25);
     transition:
         background var(--transition),
         color var(--transition),
@@ -1090,7 +1089,7 @@ button {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: var(--accent-bright);
+    background: var(--orange-bright);
     opacity: 0;
     z-index: 1;
     pointer-events: none;
@@ -1136,8 +1135,8 @@ button {
     min-height: 140px;
     margin-top: 35px;
     padding: 16px;
-    border: 1.5px solid var(--accent);
-    background: rgba(23, 23, 23, 0.90);
+    border: 1.5px solid var(--orange);
+    background: rgba(33, 33, 33, 0.92);
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     text-align: center;
@@ -1149,7 +1148,7 @@ button {
     font-size: 20px;
     line-height: 1;
     letter-spacing: -0.03em;
-    color: var(--light);
+    color: var(--white);
 }
 
 .process-step-capsule p {
@@ -1220,9 +1219,9 @@ button {
 }
 
 .brainstorm-item:hover {
-    border-right-color: var(--red);
+    border-right-color: var(--orange);
     transform: translateX(-5px);
-    background: rgba(229, 57, 53, 0.08);
+    background: rgba(255, 107, 26, 0.08);
 }
 
 .brainstorm-icon {
@@ -1232,13 +1231,13 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid var(--accent);
+    border: 1.5px solid var(--orange);
     border-radius: 50%;
     background: var(--bg);
-    color: var(--accent);
+    color: var(--orange);
     box-shadow:
-        0 0 0 6px rgba(0, 102, 255, 0.12),
-        0 0 20px rgba(0, 102, 255, 0.25);
+        0 0 0 6px rgba(255, 107, 26, 0.10),
+        0 0 20px rgba(255, 107, 26, 0.25);
     transition:
         background var(--transition),
         color var(--transition),
@@ -1247,12 +1246,12 @@ button {
 }
 
 .brainstorm-item:hover .brainstorm-icon {
-    background: var(--red);
-    color: var(--light);
+    background: var(--orange);
+    color: var(--white);
     transform: scale(1.08);
     box-shadow:
-        0 0 0 8px rgba(229, 57, 53, 0.18),
-        0 0 30px rgba(229, 57, 53, 0.5);
+        0 0 0 8px rgba(255, 107, 26, 0.20),
+        0 0 30px rgba(255, 107, 26, 0.5);
 }
 
 .brainstorm-check {
@@ -1353,7 +1352,7 @@ button {
     justify-content: center;
     width: 90px;
     height: 90px;
-    color: var(--accent);
+    color: var(--orange);
 }
 
 .digital-icon img {
@@ -1361,8 +1360,8 @@ button {
     height: 100%;
     object-fit: contain;
     filter:
-        drop-shadow(0 0 8px rgba(0, 102, 255, 0.50))
-        drop-shadow(0 0 20px rgba(0, 102, 255, 0.25));
+        drop-shadow(0 0 8px rgba(255, 107, 26, 0.50))
+        drop-shadow(0 0 20px rgba(255, 107, 26, 0.25));
 }
 
 .digital-icon svg {
@@ -1374,8 +1373,8 @@ button {
     stroke-linecap: round;
     stroke-linejoin: round;
     filter:
-        drop-shadow(0 0 8px rgba(0, 102, 255, 0.50))
-        drop-shadow(0 0 20px rgba(0, 102, 255, 0.25));
+        drop-shadow(0 0 8px rgba(255, 107, 26, 0.50))
+        drop-shadow(0 0 20px rgba(255, 107, 26, 0.25));
 }
 
 .digital-icon-1 {
@@ -1421,12 +1420,12 @@ button {
     justify-content: center;
     width: 44px;
     height: 44px;
-    color: var(--accent);
+    color: var(--orange);
     user-select: none;
     pointer-events: none;
     filter:
-        drop-shadow(0 0 8px rgba(0, 102, 255, 0.55))
-        drop-shadow(0 0 16px rgba(0, 102, 255, 0.30));
+        drop-shadow(0 0 8px rgba(255, 107, 26, 0.55))
+        drop-shadow(0 0 16px rgba(255, 107, 26, 0.30));
 }
 
 .digital-emoji svg {
@@ -1551,8 +1550,8 @@ button {
 
 .plan-card:hover {
     transform: translateY(-4px);
-    border-color: var(--yellow);
-    box-shadow: 0 0 30px rgba(255, 212, 0, 0.15);
+    border-color: var(--orange);
+    box-shadow: 0 0 30px rgba(255, 107, 26, 0.15);
 }
 
 .plan-integrated {
@@ -1560,16 +1559,16 @@ button {
 }
 
 .plan-featured {
-    border: 2px solid var(--yellow);
+    border: 2px solid var(--orange);
     background: linear-gradient(
         145deg,
-        rgba(255, 212, 0, 0.10),
+        rgba(255, 107, 26, 0.12),
         var(--bg-soft)
     );
     position: relative;
     box-shadow:
-        0 0 0 4px rgba(255, 212, 0, 0.08),
-        0 0 40px rgba(255, 212, 0, 0.15);
+        0 0 0 4px rgba(255, 107, 26, 0.08),
+        0 0 40px rgba(255, 107, 26, 0.15);
 }
 
 .plan-featured::before {
@@ -1577,8 +1576,8 @@ button {
     position: absolute;
     top: 0;
     right: 0;
-    background: var(--yellow);
-    color: var(--black);
+    background: var(--orange);
+    color: var(--white);
     font-size: 11px;
     letter-spacing: 0.12em;
     padding: 8px 16px;
@@ -1589,7 +1588,7 @@ button {
 .plan-label {
     display: inline-block;
     margin-bottom: 15px;
-    color: var(--accent);
+    color: var(--orange);
     font-size: 11px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -1619,7 +1618,7 @@ button {
     font-size: 24px;
     line-height: 1;
     letter-spacing: -0.035em;
-    color: var(--light);
+    color: var(--white);
 }
 
 .plan-integrated .plan-service p {
@@ -1652,7 +1651,7 @@ button {
     position: absolute;
     left: 0;
     top: 0;
-    color: var(--yellow);
+    color: var(--orange);
     font-size: 13px;
     font-weight: bold;
 }
@@ -1660,9 +1659,9 @@ button {
 .plan-recommended {
     margin-top: 20px;
     padding: 18px;
-    background: rgba(0, 102, 255, 0.12);
+    background: rgba(255, 107, 26, 0.10);
     border-radius: 8px;
-    border-left: 3px solid var(--accent);
+    border-left: 3px solid var(--orange);
 }
 
 .plan-recommended p {
@@ -1677,7 +1676,7 @@ button {
 }
 
 .plan-recommended strong {
-    color: var(--light);
+    color: var(--white);
     font-weight: 400;
 }
 
@@ -1707,9 +1706,9 @@ button {
 }
 
 .plans-coming-soon:hover {
-    border-color: var(--yellow);
+    border-color: var(--orange);
     background: var(--bg-soft);
-    box-shadow: 0 0 30px rgba(255, 212, 0, 0.12);
+    box-shadow: 0 0 30px rgba(255, 107, 26, 0.12);
 }
 
 .plans-coming-soon .plans-category-heading {
@@ -1722,7 +1721,7 @@ button {
     line-height: 1;
     letter-spacing: -0.04em;
     margin-bottom: 15px;
-    color: var(--light);
+    color: var(--white);
 }
 
 .plans-coming-soon p {
@@ -1737,7 +1736,7 @@ button {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: var(--yellow);
+    color: var(--orange);
     font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -1748,8 +1747,8 @@ button {
     width: 16px;
     height: 16px;
     display: inline-block;
-    border: 2px solid rgba(255, 212, 0, 0.25);
-    border-top-color: var(--yellow);
+    border: 2px solid rgba(255, 107, 26, 0.25);
+    border-top-color: var(--orange);
     border-radius: 50%;
     animation: guri-spin 0.8s linear infinite;
 }
@@ -1794,7 +1793,7 @@ button {
     font-size: 18px;
     line-height: 1.3;
     letter-spacing: -0.02em;
-    color: var(--light);
+    color: var(--white);
     transition: color var(--transition);
     position: relative;
 }
@@ -1808,7 +1807,7 @@ button {
     font-family: "Bunken", sans-serif;
     font-size: 24px;
     font-weight: 700;
-    color: var(--yellow);
+    color: var(--orange);
     transition: transform var(--transition);
     flex-shrink: 0;
     margin-left: 20px;
@@ -1820,7 +1819,7 @@ button {
 }
 
 .faq-item summary:hover {
-    color: var(--red);
+    color: var(--orange);
 }
 
 .faq-item p {
@@ -1859,7 +1858,7 @@ button {
     line-height: 0.95;
     letter-spacing: -0.055em;
     margin-bottom: 17px;
-    color: var(--light);
+    color: var(--white);
 }
 
 .plans-custom p,
@@ -1886,7 +1885,7 @@ button {
 }
 
 .quote-form:hover {
-    border-color: var(--yellow);
+    border-color: var(--orange);
     background: var(--bg-soft);
 }
 
@@ -1907,9 +1906,10 @@ button {
 }
 
 .form-field label {
-    color: var(--yellow);
+    color: var(--orange);
     font-size: 11px;
     letter-spacing: 0.04em;
+    font-weight: 600;
 }
 
 .form-field input,
@@ -1920,7 +1920,7 @@ button {
     border-radius: 0;
     outline: none;
     background: var(--bg-soft);
-    color: var(--light);
+    color: var(--white);
     font-family: "Bunken", sans-serif;
     font-size: 13px;
     transition:
@@ -1951,31 +1951,31 @@ button {
 .form-field input:hover,
 .form-field select:hover,
 .form-field textarea:hover {
-    border-color: rgba(255, 212, 0, 0.55);
+    border-color: rgba(255, 107, 26, 0.55);
 }
 
 .form-field input:focus,
 .form-field textarea:focus {
-    border-color: var(--yellow);
+    border-color: var(--orange);
     background: var(--bg);
-    color: var(--light);
-    box-shadow: 0 0 0 2px rgba(255, 212, 0, 0.30);
+    color: var(--white);
+    box-shadow: 0 0 0 2px rgba(255, 107, 26, 0.30);
 }
 
 .form-field select:focus {
-    border-color: var(--yellow);
+    border-color: var(--orange);
     background-color: var(--bg);
-    box-shadow: 0 0 0 2px rgba(255, 212, 0, 0.30);
+    box-shadow: 0 0 0 2px rgba(255, 107, 26, 0.30);
 }
 
 .form-field select:required:valid,
 .form-field select:focus {
-    color: var(--light);
+    color: var(--white);
 }
 
 .form-field input:not(:placeholder-shown),
 .form-field textarea:not(:placeholder-shown) {
-    color: var(--light);
+    color: var(--white);
 }
 
 .form-field select {
@@ -1994,21 +1994,21 @@ button {
 
 .form-field select:focus {
     background-image:
-        linear-gradient(45deg, transparent 50%, var(--yellow) 50%),
-        linear-gradient(135deg, var(--yellow) 50%, transparent 50%);
+        linear-gradient(45deg, transparent 50%, var(--orange) 50%),
+        linear-gradient(135deg, var(--orange) 50%, transparent 50%);
 }
 
 .form-field select option {
     background: var(--bg-soft);
-    color: var(--light);
+    color: var(--white);
     padding: 10px;
 }
 
 .form-field select option:checked,
 .form-field select option:active,
 .form-field select option:hover {
-    background: var(--yellow);
-    color: var(--black);
+    background: var(--orange);
+    color: var(--white);
 }
 
 .quote-form-submit {
@@ -2020,10 +2020,6 @@ button {
     color: var(--muted-light);
     font-size: 11px;
     line-height: 1.5;
-}
-
-.form-note-error {
-    color: var(--red);
 }
 
 
@@ -2082,20 +2078,20 @@ button {
 }
 
 .pill:hover span {
-    border-color: var(--yellow);
-    color: var(--yellow);
+    border-color: var(--orange);
+    color: var(--orange);
     transform: translateY(-1px);
 }
 
 .pill input[type="radio"]:checked + span {
-    background: var(--yellow);
-    border-color: var(--yellow);
-    color: var(--black);
+    background: var(--orange);
+    border-color: var(--orange);
+    color: var(--white);
     font-weight: 700;
 }
 
 .pill input[type="radio"]:focus-visible + span {
-    box-shadow: 0 0 0 2px rgba(255, 212, 0, 0.55);
+    box-shadow: 0 0 0 2px rgba(255, 107, 26, 0.55);
 }
 
 
@@ -2105,16 +2101,16 @@ button {
 
 .final-cta {
     padding: 80px 0;
-    background-color: var(--accent);
-    color: var(--light);
+    background-color: var(--orange);
+    color: var(--white);
     text-align: center;
 
     background-image:
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(245,245,242,0.35);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(245,245,242,0.35);}.tick-major{stroke:rgba(245,245,242,0.30);stroke-width:1.5;}.angle{stroke:rgba(245,245,242,0.35);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/></g></svg>"),
-        linear-gradient(rgba(245, 245, 242, 0.10) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(245, 245, 242, 0.10) 1px, transparent 1px),
-        linear-gradient(rgba(245, 245, 242, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(245, 245, 242, 0.05) 1px, transparent 1px);
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,255,255,0.35);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(255,255,255,0.35);}.tick-major{stroke:rgba(255,255,255,0.30);stroke-width:1.5;}.angle{stroke:rgba(255,255,255,0.35);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/></g></svg>"),
+        linear-gradient(rgba(255, 255, 255, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.10) 1px, transparent 1px),
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -2149,12 +2145,12 @@ button {
     word-break: keep-all;
     overflow-wrap: normal;
     hyphens: none;
-    color: var(--light);
+    color: var(--white);
 }
 
 .final-cta h2 span {
     display: block;
-    color: var(--yellow);
+    color: var(--bg);
 }
 
 
@@ -2192,14 +2188,14 @@ button {
 .footer-links strong,
 .footer-links h4 {
     margin-bottom: 8px;
-    color: var(--light);
+    color: var(--white);
     font-size: 12px;
     font-weight: 300;
     letter-spacing: 0.08em;
 }
 
 .footer-links a {
-    color: var(--soft);
+    color: var(--gray);
     font-size: 12px;
     transition:
         color var(--transition),
@@ -2207,7 +2203,7 @@ button {
 }
 
 .footer-links a:hover {
-    color: var(--yellow);
+    color: var(--orange);
     transform: translateX(3px);
 }
 
