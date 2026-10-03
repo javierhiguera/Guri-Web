@@ -1,7 +1,6 @@
 /* =========================================================
    GURI — STYLES
-   Tema Oscuro — Paleta Azul / Violeta / Slate
-   #0B1020 · #111827 · #2563EB · #7C3AED · #F8FAFC · #94A3B8
+   Paleta: #0E1011 · #F1F2F0 · #D5D8D6 · #31515A · #8A9294
    ========================================================= */
 
 
@@ -31,35 +30,24 @@
    ========================================================= */
 
 :root {
-    /* Colores base de la nueva paleta */
-    --bg: #0B1020;              /* fondo general */
-    --bg-card: #111827;         /* cards/secciones */
-    --blue: #2563EB;            /* botones/CTA */
-    --violet: #7C3AED;          /* detalles/acento */
-    --title: #F8FAFC;           /* títulos */
-    --text-soft: #94A3B8;       /* textos secundarios */
+    /* Colores base */
+    --bg: #0E1011;         /* Fondo principal, navbar, footer */
+    --light: #F1F2F0;      /* Texto principal, fondos claros */
+    --soft: #D5D8D6;       /* Cards, secciones secundarias, bordes */
+    --accent: #31515A;     /* Botones, enlaces, destacados */
+    --muted: #8A9294;      /* Texto secundario, iconos, metadata */
 
-    /* Fondos (tema oscuro) */
-    --black: #0B1020;              /* fondo general */
-    --black-soft: #111827;         /* fondo suave — cards */
-    --black-card: #111827;
-    --board: #0B1020;
+    /* Derivados */
+    --bg-soft: #15191F;    /* Cards sobre fondo oscuro */
+    --accent-bright: #3D6570;
+    --accent-dark: #223A42;
 
-    /* Texto principal */
-    --white: #F8FAFC;              /* texto — títulos */
-
-    /* Textos secundarios */
-    --gray: rgba(148, 163, 184, 0.85);
-    --gray-light: rgba(148, 163, 184, 0.60);
-    --gray-dark: rgba(148, 163, 184, 0.38);
-
-    /* Bordes */
-    --border: rgba(148, 163, 184, 0.18);
-
-    /* Acentos */
-    --orange: #2563EB;             /* acento principal — Azul */
-    --orange-bright: #7C3AED;      /* acento secundario — Violeta */
-    --orange-dark: #7C3AED;        /* CTA final — Violeta */
+    /* Transparencias */
+    --muted-soft: rgba(138, 146, 148, 0.85);
+    --muted-light: rgba(138, 146, 148, 0.55);
+    --muted-dark: rgba(138, 146, 148, 0.30);
+    --border: rgba(213, 216, 214, 0.15);
+    --border-dark: rgba(14, 16, 17, 0.15);
 
     /* Layout */
     --container: 1240px;
@@ -84,8 +72,8 @@ html {
 }
 
 body {
-    background: var(--black);
-    color: var(--white);
+    background: var(--bg);
+    color: var(--light);
     font-family: "Bunken", sans-serif;
     font-weight: 300;
     line-height: 1.5;
@@ -155,16 +143,17 @@ button {
     font-size: clamp(48px, 6vw, 82px);
     line-height: 0.95;
     letter-spacing: -0.055em;
+    color: var(--light);
 }
 
 .section-heading h2 span {
-    color: var(--orange);
+    color: var(--accent);
 }
 
 .section-eyebrow {
     display: block;
     margin-bottom: 14px;
-    color: var(--orange);
+    color: var(--accent);
     font-size: 11px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -173,7 +162,7 @@ button {
 .section-intro {
     max-width: 620px;
     margin-top: 22px;
-    color: var(--gray);
+    color: var(--muted);
     font-size: 15px;
     line-height: 1.7;
 }
@@ -194,7 +183,7 @@ button {
 }
 
 .site-header.scrolled {
-    background: rgba(11, 16, 32, 0.85);
+    background: rgba(14, 16, 17, 0.90);
     border-color: var(--border);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
@@ -214,7 +203,7 @@ button {
    ========================================================= */
 
 .logo-separator {
-    color: var(--gray-dark);
+    color: var(--muted-dark);
     font-size: 22px;
     font-weight: 300;
     margin: 0 2px;
@@ -240,7 +229,7 @@ button {
 }
 
 .logo-guri {
-    color: var(--white);
+    color: var(--light);
     font-family: "Bunken", sans-serif;
     font-size: 22px;
     font-weight: 300;
@@ -248,7 +237,7 @@ button {
 }
 
 .logo-web {
-    color: var(--orange);
+    color: var(--accent);
     font-family: "Xenois", serif;
     font-size: 22px;
     font-weight: 700;
@@ -269,7 +258,7 @@ button {
 
 .main-nav a {
     position: relative;
-    color: var(--gray);
+    color: var(--soft);
     font-size: 13px;
     transition: color var(--transition);
 }
@@ -281,12 +270,12 @@ button {
     bottom: -7px;
     width: 0;
     height: 1px;
-    background: var(--orange);
+    background: var(--accent);
     transition: width var(--transition);
 }
 
 .main-nav a:hover {
-    color: var(--white);
+    color: var(--light);
 }
 
 .main-nav a:hover::after {
@@ -305,10 +294,10 @@ button {
     width: 42px;
     height: 42px;
     padding: 0;
-    border: 1px solid var(--orange);
+    border: 1px solid var(--accent);
     border-radius: 50%;
     background: transparent;
-    color: var(--orange);
+    color: var(--accent);
     transition:
         background var(--transition),
         color var(--transition),
@@ -317,8 +306,8 @@ button {
 }
 
 .header-button:hover {
-    background: var(--orange);
-    color: var(--black);
+    background: var(--accent);
+    color: var(--light);
     transform: scale(1.05);
 }
 
@@ -350,7 +339,7 @@ button {
     left: 50%;
     width: 20px;
     height: 1px;
-    background: var(--white);
+    background: var(--light);
     transform: translateX(-50%);
     transition:
         transform var(--transition),
@@ -389,26 +378,26 @@ button {
     align-items: center;
     padding-top: 140px;
     padding-bottom: 80px;
-    background-color: var(--board);
+    background-color: var(--bg);
 
     background-image:
         radial-gradient(
             circle at 80% 45%,
-            rgba(37, 99, 235, 0.18),
+            rgba(49, 81, 90, 0.22),
             transparent 40%
         ),
         radial-gradient(
             circle at 20% 80%,
-            rgba(124, 58, 237, 0.12),
+            rgba(49, 81, 90, 0.10),
             transparent 45%
         ),
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(37,99,235,0.40);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(37,99,235,0.40);}.tick{stroke:rgba(37,99,235,0.35);stroke-width:1;}.tick-major{stroke:rgba(37,99,235,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(37,99,235,0.15);stroke-width:0.5;}.angle{stroke:rgba(37,99,235,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(37,99,235,0.45)' stroke-width='1' fill='none'/></g></svg>"),
-        linear-gradient(rgba(37, 99, 235, 0.15) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(37, 99, 235, 0.15) 1px, transparent 1px),
-        linear-gradient(rgba(37, 99, 235, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(37, 99, 235, 0.08) 1px, transparent 1px),
-        linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(49,81,90,0.55);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(49,81,90,0.55);}.tick-major{stroke:rgba(49,81,90,0.55);stroke-width:1.5;}.angle{stroke:rgba(49,81,90,0.55);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(49,81,90,0.55)' stroke-width='1' fill='none'/></g></svg>"),
+        linear-gradient(rgba(49, 81, 90, 0.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(49, 81, 90, 0.18) 1px, transparent 1px),
+        linear-gradient(rgba(49, 81, 90, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(49, 81, 90, 0.10) 1px, transparent 1px),
+        linear-gradient(rgba(49, 81, 90, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(49, 81, 90, 0.05) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -459,8 +448,8 @@ button {
     width: 100%;
     height: auto;
     filter:
-        drop-shadow(0 0 30px rgba(37, 99, 235, 0.35))
-        drop-shadow(0 0 60px rgba(124, 58, 237, 0.18));
+        drop-shadow(0 0 30px rgba(49, 81, 90, 0.45))
+        drop-shadow(0 0 60px rgba(49, 81, 90, 0.20));
 }
 
 .hero h1 {
@@ -468,17 +457,18 @@ button {
     font-size: clamp(70px, 9vw, 140px);
     line-height: 0.86;
     letter-spacing: -0.065em;
+    color: var(--light);
 }
 
 .hero h1 span {
     display: block;
-    color: var(--orange);
+    color: var(--accent);
 }
 
 .hero-content > p {
     max-width: 570px;
     margin-top: 35px;
-    color: var(--gray);
+    color: var(--muted);
     font-size: 17px;
     line-height: 1.7;
 }
@@ -515,37 +505,38 @@ button {
 }
 
 .button-primary {
-    border-color: var(--orange);
-    background: var(--orange);
-    color: #F8FAFC;
+    border-color: var(--accent);
+    background: var(--accent);
+    color: var(--light);
 }
 
 .button-primary:hover {
-    background: var(--orange-bright);
-    border-color: var(--orange-bright);
-    color: #F8FAFC;
+    background: var(--accent-bright);
+    border-color: var(--accent-bright);
+    color: var(--light);
 }
 
 .button-secondary {
-    border-color: var(--border);
+    border-color: var(--soft);
     background: transparent;
-    color: var(--white);
+    color: var(--soft);
 }
 
 .button-secondary:hover {
-    border-color: var(--orange);
-    color: var(--orange);
+    border-color: var(--accent);
+    color: var(--accent);
 }
 
 
 /* =========================================================
-   SERVICES
+   SERVICES — fondo claro
    ========================================================= */
 
 .services {
     position: relative;
     overflow: hidden;
-    background-color: var(--black);
+    background-color: var(--light);
+    color: var(--bg);
 }
 
 .services-inner {
@@ -581,10 +572,11 @@ button {
     font-size: clamp(48px, 5.75vw, 87px);
     line-height: 0.96;
     letter-spacing: -0.055em;
+    color: var(--bg);
 }
 
 .services-heading h2 span {
-    color: var(--orange);
+    color: var(--accent);
 }
 
 
@@ -599,8 +591,8 @@ button {
     display: block;
     z-index: 1;
     filter:
-        drop-shadow(0 0 70px rgba(37, 99, 235, 0.28))
-        drop-shadow(0 0 140px rgba(124, 58, 237, 0.14));
+        drop-shadow(0 0 70px rgba(49, 81, 90, 0.30))
+        drop-shadow(0 0 140px rgba(49, 81, 90, 0.15));
     animation: globe-breathe 8s ease-in-out infinite;
 }
 
@@ -620,7 +612,7 @@ button {
 
 
 /* =========================================================
-   ICONOS ALREDEDOR DEL MUNDO
+   ICONOS ALREDEDOR DEL MUNDO (sobre fondo claro)
    ========================================================= */
 
 .orbit-item {
@@ -630,14 +622,14 @@ button {
     align-items: center;
     text-align: center;
     gap: 10px;
-    color: var(--white);
+    color: var(--bg);
     max-width: 180px;
     z-index: 3;
     transition: color var(--transition), transform var(--transition);
 }
 
 .orbit-item:hover {
-    color: var(--orange);
+    color: var(--accent);
     transform: translate(var(--x), var(--y)) scale(1.08);
 }
 
@@ -648,13 +640,13 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid var(--orange);
+    border: 1.5px solid var(--accent);
     border-radius: 50%;
-    background: rgba(17, 24, 39, 0.88);
-    color: var(--orange);
+    background: var(--soft);
+    color: var(--accent);
     box-shadow:
-        0 0 0 6px rgba(37, 99, 235, 0.10),
-        0 0 20px rgba(37, 99, 235, 0.25);
+        0 0 0 6px rgba(49, 81, 90, 0.10),
+        0 0 20px rgba(49, 81, 90, 0.20);
     transition:
         background var(--transition),
         color var(--transition),
@@ -672,12 +664,12 @@ button {
 }
 
 .orbit-item:hover .orbit-icon {
-    background: var(--orange);
-    color: #F8FAFC;
+    background: var(--accent);
+    color: var(--light);
     transform: scale(1.08);
     box-shadow:
-        0 0 0 8px rgba(124, 58, 237, 0.20),
-        0 0 30px rgba(37, 99, 235, 0.45);
+        0 0 0 8px rgba(49, 81, 90, 0.18),
+        0 0 30px rgba(49, 81, 90, 0.40);
 }
 
 .orbit-text {
@@ -693,19 +685,20 @@ button {
     font-size: 18px;
     line-height: 1.15;
     letter-spacing: -0.025em;
+    color: var(--bg);
     transition: color var(--transition);
 }
 
 .orbit-text p {
     margin: 0;
-    color: var(--gray);
+    color: var(--muted);
     font-size: 13px;
     line-height: 1.45;
     transition: color var(--transition);
 }
 
 .orbit-item:hover .orbit-text p {
-    color: var(--orange-bright);
+    color: var(--accent);
 }
 
 
@@ -805,14 +798,14 @@ button {
 
 .work {
     position: relative;
-    background-color: var(--black);
+    background-color: var(--bg);
     overflow: hidden;
 }
 
 .portfolio-mapa {
     position: relative;
     width: 100%;
-    background-color: var(--black);
+    background-color: var(--bg);
     padding: 60px 0;
 }
 
@@ -822,7 +815,7 @@ button {
     background-image: url("../assets/seleccion/mapa.png");
     background-size: cover;
     background-position: center center;
-    opacity: 0.35;
+    opacity: 0.30;
     z-index: 1;
 }
 
@@ -837,13 +830,15 @@ button {
     position: absolute;
     width: 280px;
     padding: 12px 12px 50px 12px;
-    background: #111827;
+    background: var(--bg-soft);
+    border: 1px solid rgba(49, 81, 90, 0.35);
     box-shadow:
-        0 4px 20px rgba(0, 0, 0, 0.35),
-        0 1px 3px rgba(0, 0, 0, 0.25);
+        0 4px 20px rgba(0, 0, 0, 0.50),
+        0 1px 3px rgba(0, 0, 0, 0.35);
     transition:
         transform 0.4s ease,
-        box-shadow 0.4s ease;
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
     z-index: 3;
 }
 
@@ -881,7 +876,7 @@ button {
     object-fit: cover;
     display: block;
     border-radius: 2px;
-    background-color: var(--black-soft);
+    background-color: var(--bg-soft);
 }
 
 .polaroid p {
@@ -890,7 +885,7 @@ button {
     font-family: "Bunken", sans-serif;
     font-weight: 300;
     font-size: 20px;
-    color: var(--white);
+    color: var(--light);
     letter-spacing: -0.01em;
 }
 
@@ -901,10 +896,10 @@ button {
     transform: translateX(-50%);
     width: 24px;
     height: 24px;
-    background: var(--orange);
+    background: var(--accent);
     border-radius: 50%;
-    border: 3px solid #F8FAFC;
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.50);
+    border: 3px solid var(--light);
+    box-shadow: 0 2px 8px rgba(49, 81, 90, 0.55);
     z-index: 5;
 }
 
@@ -916,16 +911,17 @@ button {
     transform: translate(-50%, -50%);
     width: 8px;
     height: 8px;
-    background: #F8FAFC;
+    background: var(--light);
     border-radius: 50%;
     opacity: 0.6;
 }
 
 .polaroid:hover {
     transform: rotate(0deg) scale(1.05) !important;
+    border-color: var(--accent);
     box-shadow:
-        0 15px 40px rgba(37, 99, 235, 0.25),
-        0 5px 15px rgba(0, 0, 0, 0.35);
+        0 15px 40px rgba(49, 81, 90, 0.35),
+        0 5px 15px rgba(0, 0, 0, 0.45);
     z-index: 10;
 }
 
@@ -965,21 +961,21 @@ button {
 
 .process {
     position: relative;
-    background-color: var(--black);
+    background-color: var(--bg);
 
     background-image:
         radial-gradient(
             circle at 80% 45%,
-            rgba(37, 99, 235, 0.12),
+            rgba(49, 81, 90, 0.15),
             transparent 40%
         ),
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(37,99,235,0.40);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(37,99,235,0.40);}.tick{stroke:rgba(37,99,235,0.35);stroke-width:1;}.tick-major{stroke:rgba(37,99,235,0.55);stroke-width:1.5;}.tick-minor{stroke:rgba(37,99,235,0.15);stroke-width:0.5;}.angle{stroke:rgba(37,99,235,0.45);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(37,99,235,0.45)' stroke-width='1' fill='none'/></g></svg>"),
-        linear-gradient(rgba(37, 99, 235, 0.15) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(37, 99, 235, 0.15) 1px, transparent 1px),
-        linear-gradient(rgba(37, 99, 235, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(37, 99, 235, 0.08) 1px, transparent 1px),
-        linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(49,81,90,0.55);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(49,81,90,0.55);}.tick-major{stroke:rgba(49,81,90,0.55);stroke-width:1.5;}.angle{stroke:rgba(49,81,90,0.55);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/><path d='M 20 470 Q 35 470 35 455' stroke='rgba(49,81,90,0.55)' stroke-width='1' fill='none'/></g></svg>"),
+        linear-gradient(rgba(49, 81, 90, 0.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(49, 81, 90, 0.18) 1px, transparent 1px),
+        linear-gradient(rgba(49, 81, 90, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(49, 81, 90, 0.10) 1px, transparent 1px),
+        linear-gradient(rgba(49, 81, 90, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(49, 81, 90, 0.05) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -1042,13 +1038,13 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid var(--orange);
+    border: 1.5px solid var(--accent);
     border-radius: 50%;
-    background: var(--black);
-    color: var(--orange);
+    background: var(--bg);
+    color: var(--accent);
     box-shadow:
-        0 0 0 6px rgba(37, 99, 235, 0.10),
-        0 0 20px rgba(37, 99, 235, 0.25);
+        0 0 0 6px rgba(49, 81, 90, 0.12),
+        0 0 20px rgba(49, 81, 90, 0.25);
     transition:
         background var(--transition),
         color var(--transition),
@@ -1071,7 +1067,7 @@ button {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: var(--orange-bright);
+    background: var(--accent-bright);
     opacity: 0;
     z-index: 1;
     pointer-events: none;
@@ -1117,8 +1113,8 @@ button {
     min-height: 140px;
     margin-top: 35px;
     padding: 16px;
-    border: 1.5px solid var(--orange);
-    background: rgba(17, 24, 39, 0.88);
+    border: 1.5px solid var(--accent);
+    background: rgba(21, 25, 31, 0.90);
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     text-align: center;
@@ -1130,12 +1126,12 @@ button {
     font-size: 20px;
     line-height: 1;
     letter-spacing: -0.03em;
-    color: var(--white);
+    color: var(--light);
 }
 
 .process-step-capsule p {
     margin: 0;
-    color: var(--gray);
+    color: var(--muted);
     font-size: 12px;
     line-height: 1.5;
 }
@@ -1146,7 +1142,7 @@ button {
    ========================================================= */
 
 .why {
-    background: var(--black);
+    background: var(--bg);
 }
 
 .why-inner {
@@ -1167,7 +1163,7 @@ button {
 .why-heading > p {
     max-width: 530px;
     margin-top: 30px;
-    color: var(--gray);
+    color: var(--muted);
     font-size: 16px;
     line-height: 1.8;
 }
@@ -1201,9 +1197,9 @@ button {
 }
 
 .brainstorm-item:hover {
-    border-right-color: var(--orange-bright);
+    border-right-color: var(--accent);
     transform: translateX(-5px);
-    background: rgba(37, 99, 235, 0.06);
+    background: rgba(49, 81, 90, 0.08);
 }
 
 .brainstorm-icon {
@@ -1213,13 +1209,13 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid var(--orange);
+    border: 1.5px solid var(--accent);
     border-radius: 50%;
-    background: var(--black);
-    color: var(--orange);
+    background: var(--bg);
+    color: var(--accent);
     box-shadow:
-        0 0 0 6px rgba(37, 99, 235, 0.10),
-        0 0 20px rgba(37, 99, 235, 0.25);
+        0 0 0 6px rgba(49, 81, 90, 0.12),
+        0 0 20px rgba(49, 81, 90, 0.25);
     transition:
         background var(--transition),
         color var(--transition),
@@ -1228,12 +1224,12 @@ button {
 }
 
 .brainstorm-item:hover .brainstorm-icon {
-    background: var(--orange);
-    color: #F8FAFC;
+    background: var(--accent);
+    color: var(--light);
     transform: scale(1.08);
     box-shadow:
-        0 0 0 8px rgba(124, 58, 237, 0.20),
-        0 0 30px rgba(37, 99, 235, 0.45);
+        0 0 0 8px rgba(49, 81, 90, 0.18),
+        0 0 30px rgba(49, 81, 90, 0.45);
 }
 
 .brainstorm-check {
@@ -1299,7 +1295,7 @@ button {
 }
 
 .brainstorm-item span {
-    color: var(--gray);
+    color: var(--muted);
     font-size: 15px;
 }
 
@@ -1309,7 +1305,7 @@ button {
    ========================================================= */
 
 .digital-management {
-    background: var(--black);
+    background: var(--bg);
 }
 
 .digital-management-inner {
@@ -1334,7 +1330,7 @@ button {
     justify-content: center;
     width: 90px;
     height: 90px;
-    color: var(--orange);
+    color: var(--accent);
 }
 
 .digital-icon img {
@@ -1342,8 +1338,8 @@ button {
     height: 100%;
     object-fit: contain;
     filter:
-        drop-shadow(0 0 8px rgba(37, 99, 235, 0.45))
-        drop-shadow(0 0 20px rgba(124, 58, 237, 0.20));
+        drop-shadow(0 0 8px rgba(49, 81, 90, 0.50))
+        drop-shadow(0 0 20px rgba(49, 81, 90, 0.25));
 }
 
 .digital-icon svg {
@@ -1355,8 +1351,8 @@ button {
     stroke-linecap: round;
     stroke-linejoin: round;
     filter:
-        drop-shadow(0 0 8px rgba(37, 99, 235, 0.45))
-        drop-shadow(0 0 20px rgba(124, 58, 237, 0.20));
+        drop-shadow(0 0 8px rgba(49, 81, 90, 0.50))
+        drop-shadow(0 0 20px rgba(49, 81, 90, 0.25));
 }
 
 .digital-icon-1 {
@@ -1402,12 +1398,12 @@ button {
     justify-content: center;
     width: 44px;
     height: 44px;
-    color: var(--orange);
+    color: var(--accent);
     user-select: none;
     pointer-events: none;
     filter:
-        drop-shadow(0 0 8px rgba(37, 99, 235, 0.55))
-        drop-shadow(0 0 16px rgba(124, 58, 237, 0.25));
+        drop-shadow(0 0 8px rgba(49, 81, 90, 0.55))
+        drop-shadow(0 0 16px rgba(49, 81, 90, 0.30));
 }
 
 .digital-emoji svg {
@@ -1497,7 +1493,7 @@ button {
 .digital-management-heading .section-heading p {
     max-width: 500px;
     margin-top: 22px;
-    color: var(--gray);
+    color: var(--muted);
     font-size: 15px;
     line-height: 1.7;
 }
@@ -1508,7 +1504,7 @@ button {
    ========================================================= */
 
 .plans {
-    background: var(--black);
+    background: var(--bg);
 }
 
 .plans-integrated-grid {
@@ -1521,7 +1517,7 @@ button {
     position: relative;
     min-width: 0;
     border: 1px solid var(--border);
-    background: var(--black-soft);
+    background: var(--bg-soft);
     transition:
         border-color var(--transition),
         transform var(--transition);
@@ -1531,7 +1527,7 @@ button {
 
 .plan-card:hover {
     transform: translateY(-4px);
-    border-color: var(--orange);
+    border-color: var(--accent);
 }
 
 .plan-integrated {
@@ -1539,11 +1535,11 @@ button {
 }
 
 .plan-featured {
-    border-color: var(--orange);
+    border-color: var(--accent);
     background: linear-gradient(
         145deg,
-        rgba(37, 99, 235, 0.12),
-        var(--black-soft)
+        rgba(49, 81, 90, 0.15),
+        var(--bg-soft)
     );
     position: relative;
 }
@@ -1553,8 +1549,8 @@ button {
     position: absolute;
     top: 0;
     right: 0;
-    background: var(--orange-bright);
-    color: #F8FAFC;
+    background: var(--accent);
+    color: var(--light);
     font-size: 10px;
     letter-spacing: 0.08em;
     padding: 6px 14px;
@@ -1564,7 +1560,7 @@ button {
 .plan-label {
     display: inline-block;
     margin-bottom: 15px;
-    color: var(--orange);
+    color: var(--accent);
     font-size: 11px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -1573,7 +1569,7 @@ button {
 .plan-integrated-description {
     max-width: 570px;
     margin-bottom: 8px;
-    color: var(--gray);
+    color: var(--muted);
     font-size: 14px;
     line-height: 1.7;
 }
@@ -1594,12 +1590,13 @@ button {
     font-size: 24px;
     line-height: 1;
     letter-spacing: -0.035em;
+    color: var(--light);
 }
 
 .plan-integrated .plan-service p {
     max-width: 570px;
     margin-bottom: 15px;
-    color: var(--gray);
+    color: var(--muted);
     font-size: 13px;
     line-height: 1.6;
 }
@@ -1616,7 +1613,7 @@ button {
 .plan-integrated .plan-features li {
     position: relative;
     padding-left: 24px;
-    color: var(--gray);
+    color: var(--muted);
     font-size: 12px;
     line-height: 1.5;
 }
@@ -1626,7 +1623,7 @@ button {
     position: absolute;
     left: 0;
     top: 0;
-    color: var(--orange);
+    color: var(--accent);
     font-size: 13px;
     font-weight: bold;
 }
@@ -1634,14 +1631,14 @@ button {
 .plan-recommended {
     margin-top: 20px;
     padding: 18px;
-    background: rgba(17, 24, 39, 0.70);
+    background: rgba(49, 81, 90, 0.15);
     border-radius: 8px;
-    border-left: 3px solid var(--orange-bright);
+    border-left: 3px solid var(--accent);
 }
 
 .plan-recommended p {
     margin-bottom: 8px;
-    color: var(--gray);
+    color: var(--muted);
     font-size: 12px;
     line-height: 1.6;
 }
@@ -1651,7 +1648,7 @@ button {
 }
 
 .plan-recommended strong {
-    color: var(--white);
+    color: var(--light);
     font-weight: 400;
 }
 
@@ -1673,15 +1670,15 @@ button {
     margin-top: 55px;
     padding: 30px;
     border: 1px solid var(--border);
-    background: var(--black-soft);
+    background: var(--bg-soft);
     transition:
         border-color var(--transition),
         background var(--transition);
 }
 
 .plans-coming-soon:hover {
-    border-color: var(--orange);
-    background: var(--black-card);
+    border-color: var(--accent);
+    background: var(--bg-soft);
 }
 
 .plans-coming-soon .plans-category-heading {
@@ -1694,10 +1691,11 @@ button {
     line-height: 1;
     letter-spacing: -0.04em;
     margin-bottom: 15px;
+    color: var(--light);
 }
 
 .plans-coming-soon p {
-    color: var(--gray);
+    color: var(--muted);
     font-size: 14px;
     line-height: 1.7;
     max-width: 600px;
@@ -1708,7 +1706,7 @@ button {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: var(--orange);
+    color: var(--accent);
     font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -1718,8 +1716,8 @@ button {
     width: 16px;
     height: 16px;
     display: inline-block;
-    border: 1px solid rgba(37, 99, 235, 0.30);
-    border-top-color: var(--orange-bright);
+    border: 1px solid rgba(49, 81, 90, 0.35);
+    border-top-color: var(--accent-bright);
     border-radius: 50%;
     animation: guri-spin 0.8s linear infinite;
 }
@@ -1764,7 +1762,7 @@ button {
     font-size: 18px;
     line-height: 1.3;
     letter-spacing: -0.02em;
-    color: var(--white);
+    color: var(--light);
     transition: color var(--transition);
     position: relative;
 }
@@ -1778,7 +1776,7 @@ button {
     font-family: "Bunken", sans-serif;
     font-size: 24px;
     font-weight: 300;
-    color: var(--orange);
+    color: var(--accent);
     transition: transform var(--transition);
     flex-shrink: 0;
     margin-left: 20px;
@@ -1790,12 +1788,12 @@ button {
 }
 
 .faq-item summary:hover {
-    color: var(--orange);
+    color: var(--accent);
 }
 
 .faq-item p {
     padding: 0 0 24px 0;
-    color: var(--gray);
+    color: var(--muted);
     font-size: 14px;
     line-height: 1.7;
     max-width: 700px;
@@ -1829,11 +1827,12 @@ button {
     line-height: 0.95;
     letter-spacing: -0.055em;
     margin-bottom: 17px;
+    color: var(--light);
 }
 
 .plans-custom p,
 .plans-contact-copy p {
-    color: var(--gray);
+    color: var(--muted);
     font-size: 14px;
     line-height: 1.7;
 }
@@ -1848,15 +1847,15 @@ button {
     margin-top: 30px;
     padding: 32px;
     border: 1px solid var(--border);
-    background: var(--black);
+    background: var(--bg);
     transition:
         border-color var(--transition),
         background var(--transition);
 }
 
 .quote-form:hover {
-    border-color: var(--orange);
-    background: var(--black-soft);
+    border-color: var(--accent);
+    background: var(--bg-soft);
 }
 
 .quote-form-grid {
@@ -1876,7 +1875,7 @@ button {
 }
 
 .form-field label {
-    color: var(--orange);
+    color: var(--accent);
     font-size: 11px;
     letter-spacing: 0.04em;
 }
@@ -1888,8 +1887,8 @@ button {
     border: 1px solid var(--border);
     border-radius: 0;
     outline: none;
-    background: #111827;
-    color: var(--white);
+    background: var(--bg-soft);
+    color: var(--light);
     font-family: "Bunken", sans-serif;
     font-size: 13px;
     transition:
@@ -1914,44 +1913,44 @@ button {
 
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-    color: var(--gray-light);
+    color: var(--muted-light);
 }
 
 .form-field input:hover,
 .form-field select:hover,
 .form-field textarea:hover {
-    border-color: rgba(37, 99, 235, 0.55);
+    border-color: rgba(49, 81, 90, 0.55);
 }
 
 .form-field input:focus,
 .form-field textarea:focus {
-    border-color: var(--orange);
-    background: var(--black);
-    color: var(--white);
-    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.22);
+    border-color: var(--accent);
+    background: var(--bg);
+    color: var(--light);
+    box-shadow: 0 0 0 2px rgba(49, 81, 90, 0.25);
 }
 
 .form-field select:focus {
-    border-color: var(--orange);
-    background-color: var(--black);
-    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.22);
+    border-color: var(--accent);
+    background-color: var(--bg);
+    box-shadow: 0 0 0 2px rgba(49, 81, 90, 0.25);
 }
 
 .form-field select:required:valid,
 .form-field select:focus {
-    color: var(--white);
+    color: var(--light);
 }
 
 .form-field input:not(:placeholder-shown),
 .form-field textarea:not(:placeholder-shown) {
-    color: var(--white);
+    color: var(--light);
 }
 
 .form-field select {
     appearance: none;
     background-image:
-        linear-gradient(45deg, transparent 50%, var(--gray) 50%),
-        linear-gradient(135deg, var(--gray) 50%, transparent 50%);
+        linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+        linear-gradient(135deg, var(--muted) 50%, transparent 50%);
     background-position:
         calc(100% - 17px) 20px,
         calc(100% - 12px) 20px;
@@ -1963,21 +1962,21 @@ button {
 
 .form-field select:focus {
     background-image:
-        linear-gradient(45deg, transparent 50%, var(--orange) 50%),
-        linear-gradient(135deg, var(--orange) 50%, transparent 50%);
+        linear-gradient(45deg, transparent 50%, var(--accent) 50%),
+        linear-gradient(135deg, var(--accent) 50%, transparent 50%);
 }
 
 .form-field select option {
-    background: #111827;
-    color: var(--white);
+    background: var(--bg-soft);
+    color: var(--light);
     padding: 10px;
 }
 
 .form-field select option:checked,
 .form-field select option:active,
 .form-field select option:hover {
-    background: var(--black-soft);
-    color: var(--white);
+    background: var(--accent);
+    color: var(--light);
 }
 
 .quote-form-submit {
@@ -1986,7 +1985,7 @@ button {
 
 .form-note {
     margin-top: 12px;
-    color: var(--gray-light);
+    color: var(--muted-light);
     font-size: 11px;
     line-height: 1.5;
 }
@@ -2027,8 +2026,8 @@ button {
     border: 1.5px solid var(--border);
     border-radius: 999px;
 
-    background: var(--black);
-    color: var(--gray);
+    background: var(--bg);
+    color: var(--muted);
 
     font-family: "Bunken", sans-serif;
     font-size: 13px;
@@ -2047,19 +2046,19 @@ button {
 }
 
 .pill:hover span {
-    border-color: var(--orange);
-    color: var(--orange);
+    border-color: var(--accent);
+    color: var(--accent);
     transform: translateY(-1px);
 }
 
 .pill input[type="radio"]:checked + span {
-    background: var(--orange);
-    border-color: var(--orange);
-    color: #F8FAFC;
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--light);
 }
 
 .pill input[type="radio"]:focus-visible + span {
-    box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.45);
+    box-shadow: 0 0 0 2px rgba(49, 81, 90, 0.45);
 }
 
 
@@ -2069,16 +2068,16 @@ button {
 
 .final-cta {
     padding: 80px 0;
-    background-color: var(--orange-dark);
-    color: #F8FAFC;
+    background-color: var(--accent);
+    color: var(--light);
     text-align: center;
 
     background-image:
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(248,250,252,0.35);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(248,250,252,0.35);}.tick-major{stroke:rgba(248,250,252,0.30);stroke-width:1.5;}.angle{stroke:rgba(248,250,252,0.35);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/></g></svg>"),
-        linear-gradient(rgba(248, 250, 252, 0.10) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(248, 250, 252, 0.10) 1px, transparent 1px),
-        linear-gradient(rgba(248, 250, 252, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(248, 250, 252, 0.05) 1px, transparent 1px);
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'><defs><style>.num{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(241,242,240,0.35);}.let{font-family:Arial,sans-serif;font-size:11px;font-weight:bold;fill:rgba(241,242,240,0.35);}.tick-major{stroke:rgba(241,242,240,0.30);stroke-width:1.5;}.angle{stroke:rgba(241,242,240,0.35);stroke-width:1;fill:none;}</style></defs><g><line x1='0' y1='20' x2='500' y2='20' class='tick-major'/><line x1='20' y1='0' x2='20' y2='500' class='tick-major'/><line x1='0' y1='480' x2='500' y2='480' class='tick-major'/><line x1='480' y1='0' x2='480' y2='500' class='tick-major'/><text x='95' y='15' class='num' text-anchor='middle'>1</text><text x='195' y='15' class='num' text-anchor='middle'>2</text><text x='295' y='15' class='num' text-anchor='middle'>3</text><text x='395' y='15' class='num' text-anchor='middle'>4</text><text x='495' y='15' class='num' text-anchor='middle'>5</text><text x='15' y='95' class='let' text-anchor='middle'>A</text><text x='15' y='195' class='let' text-anchor='middle'>B</text><text x='15' y='295' class='let' text-anchor='middle'>C</text><text x='15' y='395' class='let' text-anchor='middle'>D</text><text x='15' y='495' class='let' text-anchor='middle'>E</text><text x='485' y='95' class='let' text-anchor='middle'>A</text><text x='485' y='195' class='let' text-anchor='middle'>B</text><text x='485' y='295' class='let' text-anchor='middle'>C</text><text x='485' y='395' class='let' text-anchor='middle'>D</text><text x='485' y='495' class='let' text-anchor='middle'>E</text><line x1='95' y1='20' x2='95' y2='25' class='tick-major'/><line x1='195' y1='20' x2='195' y2='25' class='tick-major'/><line x1='295' y1='20' x2='295' y2='25' class='tick-major'/><line x1='395' y1='20' x2='395' y2='25' class='tick-major'/><line x1='20' y1='95' x2='25' y2='95' class='tick-major'/><line x1='20' y1='195' x2='25' y2='195' class='tick-major'/><line x1='20' y1='295' x2='25' y2='295' class='tick-major'/><line x1='20' y1='395' x2='25' y2='395' class='tick-major'/><text x='35' y='470' class='num'>45°</text><line x1='20' y1='450' x2='50' y2='480' class='angle'/></g></svg>"),
+        linear-gradient(rgba(241, 242, 240, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(241, 242, 240, 0.10) 1px, transparent 1px),
+        linear-gradient(rgba(241, 242, 240, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(241, 242, 240, 0.05) 1px, transparent 1px);
 
     background-size:
         100% 100%,
@@ -2113,12 +2112,12 @@ button {
     word-break: keep-all;
     overflow-wrap: normal;
     hyphens: none;
-    color: #F8FAFC;
+    color: var(--light);
 }
 
 .final-cta h2 span {
     display: block;
-    color: var(--orange);
+    color: var(--soft);
 }
 
 
@@ -2129,7 +2128,7 @@ button {
 .site-footer {
     padding-top: 70px;
     border-top: 1px solid var(--border);
-    background: var(--black);
+    background: var(--bg);
 }
 
 .footer-inner {
@@ -2156,14 +2155,14 @@ button {
 .footer-links strong,
 .footer-links h4 {
     margin-bottom: 8px;
-    color: var(--white);
+    color: var(--light);
     font-size: 12px;
     font-weight: 300;
     letter-spacing: 0.08em;
 }
 
 .footer-links a {
-    color: var(--gray);
+    color: var(--soft);
     font-size: 12px;
     transition:
         color var(--transition),
@@ -2171,7 +2170,7 @@ button {
 }
 
 .footer-links a:hover {
-    color: var(--orange);
+    color: var(--accent);
     transform: translateX(3px);
 }
 
@@ -2182,12 +2181,12 @@ button {
     justify-content: space-between;
     gap: 30px;
     border-top: 1px solid var(--border);
-    color: var(--gray-dark);
+    color: var(--muted-dark);
     font-size: 10px;
 }
 
 .footer-copyright {
-    color: var(--gray-dark);
+    color: var(--muted-dark);
     font-size: 10px;
 }
 
@@ -2195,7 +2194,7 @@ button {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    color: var(--gray);
+    color: var(--muted);
     font-size: 10px;
     white-space: nowrap;
 }
