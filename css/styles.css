@@ -1,6 +1,6 @@
 /* =========================================================
    GURI — STYLES
-   Carbón · Grises · Naranja saturado · Blanco
+   Carbón medio · Grises claros · Naranja saturado · Blanco
    ========================================================= */
 
 
@@ -31,11 +31,11 @@
 
 :root {
     /* Colores base */
-    --carbon: #181818;
-    --carbon-soft: #212121;
-    --carbon-card: #2A2A2A;
-    --gray: #B8B8B8;
-    --gray-dark: #6E6E6E;
+    --carbon: #2A2A2A;
+    --carbon-soft: #333333;
+    --carbon-card: #3D3D3D;
+    --gray: #D0D0D0;
+    --gray-dark: #8A8A8A;
     --orange: #FF6B1A;
     --orange-bright: #FF8A3D;
     --orange-dark: #CC4F00;
@@ -43,23 +43,23 @@
     --white-soft: #F5F5F5;
 
     /* Alias usados en el resto del CSS */
-    --bg: #181818;
-    --bg-soft: #212121;
-    --bg-card: #2A2A2A;
+    --bg: #2A2A2A;
+    --bg-soft: #333333;
+    --bg-card: #3D3D3D;
     --light: #FFFFFF;
     --soft: #E5E5E5;
     --accent: #FF6B1A;
     --accent-bright: #FF8A3D;
     --accent-dark: #CC4F00;
-    --muted: #B8B8B8;
+    --muted: #D0D0D0;
 
     /* Transparencias */
-    --muted-soft: rgba(184, 184, 184, 0.85);
-    --muted-light: rgba(184, 184, 184, 0.55);
-    --muted-dark: rgba(184, 184, 184, 0.30);
-    --border: rgba(255, 255, 255, 0.10);
-    --border-strong: rgba(255, 255, 255, 0.18);
-    --border-orange: rgba(255, 107, 26, 0.35);
+    --muted-soft: rgba(208, 208, 208, 0.85);
+    --muted-light: rgba(208, 208, 208, 0.55);
+    --muted-dark: rgba(208, 208, 208, 0.35);
+    --border: rgba(255, 255, 255, 0.12);
+    --border-strong: rgba(255, 255, 255, 0.20);
+    --border-orange: rgba(255, 107, 26, 0.40);
 
     /* Layout */
     --container: 1240px;
@@ -196,7 +196,7 @@ button {
 }
 
 .site-header.scrolled {
-    background: rgba(24, 24, 24, 0.92);
+    background: rgba(42, 42, 42, 0.92);
     border-color: var(--border);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
@@ -853,8 +853,8 @@ button {
     background: var(--bg-card);
     border: 1px solid var(--border-orange);
     box-shadow:
-        0 4px 20px rgba(0, 0, 0, 0.55),
-        0 1px 3px rgba(0, 0, 0, 0.40);
+        0 4px 20px rgba(0, 0, 0, 0.40),
+        0 1px 3px rgba(0, 0, 0, 0.30);
     transition:
         transform 0.4s ease,
         box-shadow 0.4s ease,
@@ -943,7 +943,7 @@ button {
     border-color: var(--orange);
     box-shadow:
         0 15px 40px rgba(255, 107, 26, 0.35),
-        0 5px 15px rgba(0, 0, 0, 0.5);
+        0 5px 15px rgba(0, 0, 0, 0.4);
     z-index: 10;
 }
 
@@ -1136,7 +1136,7 @@ button {
     margin-top: 35px;
     padding: 16px;
     border: 1.5px solid var(--orange);
-    background: rgba(33, 33, 33, 0.92);
+    background: rgba(51, 51, 51, 0.92);
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     text-align: center;
