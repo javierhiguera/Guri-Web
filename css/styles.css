@@ -1,5 +1,5 @@
 /* =========================================================
-   GURI — STYLES (estética ITSUA · fondo claro · acento azul)
+   TAGBACK — STYLES (estética ITSUA · fondo claro · acento azul)
    ========================================================= */
 
 :root {
@@ -460,22 +460,21 @@ button { cursor: pointer; }
 
 
 /* =========================================================
-   SERVICES
+   SERVICES — globo grande arriba, 4 tarjetas en fila abajo
    ========================================================= */
 
 .services { background: var(--bg); }
 
 .services-inner {
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 80px;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
 }
 
 .services-orbit {
     position: relative;
     width: 100%;
-    max-width: 620px;
+    max-width: 700px;
     aspect-ratio: 1 / 1;
     margin: 0 auto;
     display: flex;
@@ -498,39 +497,52 @@ button { cursor: pointer; }
     50% { transform: scale(1.03) rotate(3deg); }
 }
 
+.services-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
 
-/* =========================================================
-   ORBIT ITEMS
-   ========================================================= */
+/* Tarjeta flotante (usa la misma clase .orbit-item para que el JS la anime) */
 
 .orbit-item {
-    position: absolute;
     display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 20px 18px;
     background: var(--bg-white);
     border: 1px solid var(--line);
     border-radius: 6px;
     color: var(--ink);
-    max-width: 220px;
-    z-index: 3;
     box-shadow: 0 4px 12px rgba(11, 13, 14, 0.05);
-    transition: border-color var(--transition), box-shadow var(--transition);
+    transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
     opacity: 0;
+    animation: float-card 6s ease-in-out infinite;
 }
+
+.orbit-item:nth-child(2) { animation-delay: 0.6s; }
+.orbit-item:nth-child(3) { animation-delay: 1.2s; }
+.orbit-item:nth-child(4) { animation-delay: 1.8s; }
 
 .orbit-item.visible { opacity: 1; }
 
 .orbit-item:hover {
     border-color: var(--blue);
     box-shadow: 0 8px 24px rgba(0, 102, 255, 0.15);
+    transform: translateY(-4px);
+    animation-play-state: paused;
+}
+
+@keyframes float-card {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -6px; }
 }
 
 .orbit-icon {
-    width: 36px;
-    height: 36px;
-    flex: 0 0 36px;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -542,8 +554,8 @@ button { cursor: pointer; }
 }
 
 .orbit-icon svg {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     stroke: currentColor;
     stroke-width: 1.4;
     fill: none;
@@ -557,13 +569,13 @@ button { cursor: pointer; }
 .orbit-text {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
 }
 
 .orbit-text h3 {
     margin: 0;
     font-family: var(--mono);
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -573,50 +585,11 @@ button { cursor: pointer; }
 .orbit-text p {
     margin: 0;
     color: var(--gray);
-    font-size: 0.7rem;
-    line-height: 1.3;
+    font-size: 0.78rem;
+    line-height: 1.45;
 }
 
-
-/* POSICIONES */
-
-.orbit-item-1 {
-    top: 4%; left: 34%;
-    --x: -50%; --y: -50%;
-    transform: translate(var(--x), var(--y));
-    animation: float-1 6s ease-in-out infinite;
-}
-
-.orbit-item-2 {
-    top: 28%; right: 0%;
-    --x: 50%; --y: -50%;
-    transform: translate(var(--x), var(--y));
-    animation: float-2 7s ease-in-out infinite;
-}
-
-.orbit-item-3 {
-    bottom: 4%; left: 58%;
-    --x: -50%; --y: 50%;
-    transform: translate(var(--x), var(--y));
-    animation: float-3 8s ease-in-out infinite;
-}
-
-.orbit-item-4 {
-    top: 62%; left: 0%;
-    --x: -50%; --y: -50%;
-    transform: translate(var(--x), var(--y));
-    animation: float-4 6.5s ease-in-out infinite;
-}
-
-@keyframes float-1 { 0%,100% { translate: 0 0; } 50% { translate: 0 -8px; } }
-@keyframes float-2 { 0%,100% { translate: 0 0; } 50% { translate: 0 6px; } }
-@keyframes float-3 { 0%,100% { translate: 0 0; } 50% { translate: 0 -6px; } }
-@keyframes float-4 { 0%,100% { translate: 0 0; } 50% { translate: 0 8px; } }
-
-
-/* =========================================================
-   SERVICES LIST
-   ========================================================= */
+/* Lista de servicios a la derecha (debajo del globo, en desktop) */
 
 .services-list {
     display: flex;
@@ -723,7 +696,7 @@ button { cursor: pointer; }
 
 
 /* =========================================================
-   PROCESS
+   PROCESS — tarjeta con solo ícono, sin recuadro alrededor
    ========================================================= */
 
 .process { background: var(--bg); }
@@ -754,24 +727,20 @@ button { cursor: pointer; }
     box-shadow: 0 8px 24px rgba(0, 102, 255, 0.10);
 }
 
+/* Solo el ícono, sin caja */
+
 .process-card-icon {
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--blue);
-    border-radius: 4px;
-    background: var(--bg);
+    width: 32px;
+    height: 32px;
     color: var(--blue);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .process-card-icon svg {
-    width: 22px;
-    height: 22px;
+    width: 100%;
+    height: 100%;
     stroke: currentColor;
-    stroke-width: 1.4;
+    stroke-width: 1.5;
     fill: none;
 }
 
@@ -1600,8 +1569,7 @@ button { cursor: pointer; }
 @media (max-width: 1100px) {
     :root { --section-padding: 80px; }
 
-    .services-inner { grid-template-columns: 1fr; gap: 60px; }
-    .services-orbit { max-width: 480px; }
+    .services-cards { grid-template-columns: repeat(2, 1fr); }
     .process-grid { grid-template-columns: repeat(2, 1fr); }
     .plans-grid { grid-template-columns: 1fr; }
     .contact-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -1620,8 +1588,6 @@ button { cursor: pointer; }
     :root { --section-padding: 70px; }
 
     .container { width: min(calc(100% - 40px), var(--container)); }
-
-    /* HEADER + NAV MÓVIL */
 
     .site-header { z-index: 1102; }
 
@@ -1676,8 +1642,6 @@ button { cursor: pointer; }
 
     .header-button { display: none; }
 
-    /* HERO */
-
     .hero { padding-top: 110px; padding-bottom: 60px; }
 
     .hero-inner {
@@ -1699,11 +1663,7 @@ button { cursor: pointer; }
 
     .hero-content > p { font-size: 15px; }
 
-    /* SERVICES */
-
-    .services-inner { gap: 40px; }
-
-    /* WORK */
+    .services-orbit { max-width: 500px; }
 
     .work-row-wrap { overflow-x: auto; }
 
@@ -1715,19 +1675,11 @@ button { cursor: pointer; }
 
     .work-card { flex: 0 0 300px; width: 300px; }
 
-    /* PROCESS */
-
     .process-grid { grid-template-columns: repeat(2, 1fr); }
-
-    /* CONTACT */
 
     .contact-grid { gap: 40px; }
 
-    /* FORM */
-
     .quote-form-grid { grid-template-columns: 1fr 1fr; }
-
-    /* FOOTER */
 
     .footer-inner { grid-template-columns: 1fr; gap: 40px; }
 
@@ -1750,14 +1702,10 @@ button { cursor: pointer; }
 
     .container { width: calc(100% - 32px); }
 
-    /* HEADER */
-
     .header-inner { min-height: 64px; }
 
     .logo-icon { width: 28px; height: 28px; flex: 0 0 28px; }
     .logo-guri { font-size: 0.9rem; }
-
-    /* HERO */
 
     .hero { padding-top: 100px; padding-bottom: 50px; }
 
@@ -1798,8 +1746,6 @@ button { cursor: pointer; }
         margin-top: 24px;
     }
 
-    /* HERO STATS */
-
     .hero-stats {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px 0;
@@ -1812,8 +1758,6 @@ button { cursor: pointer; }
     .hero-stat-num { font-size: 1.3rem; }
     .hero-stat-label { font-size: 0.6rem; }
 
-    /* SECTION HEAD */
-
     .section-head {
         flex-direction: column;
         align-items: flex-start;
@@ -1824,26 +1768,22 @@ button { cursor: pointer; }
     .section-title { font-size: 3rem; }
     .section-desc { font-size: 0.9rem; }
 
-    /* SERVICES ORBIT */
-
     .services-orbit { max-width: 100%; }
 
-    .orbit-item {
-        padding: 8px 10px;
-        max-width: 160px;
-    }
-    .orbit-icon { width: 28px; height: 28px; flex: 0 0 28px; }
-    .orbit-icon svg { width: 14px; height: 14px; }
-    .orbit-text h3 { font-size: 0.65rem; }
-    .orbit-text p { display: none; }
+    .services-cards { grid-template-columns: 1fr; gap: 14px; }
 
-    /* SERVICE ROW */
+    .orbit-item {
+        padding: 16px 14px;
+        gap: 10px;
+    }
+    .orbit-icon { width: 34px; height: 34px; flex: 0 0 34px; }
+    .orbit-icon svg { width: 18px; height: 18px; }
+    .orbit-text h3 { font-size: 0.75rem; }
+    .orbit-text p { font-size: 0.78rem; }
 
     .service-row { grid-template-columns: 40px 1fr auto; gap: 14px; padding: 20px 0; }
     .service-row h4 { font-size: 1rem; }
     .service-row p { font-size: 0.8rem; }
-
-    /* WHY */
 
     .why-row {
         grid-template-columns: 50px 1fr;
@@ -1853,13 +1793,9 @@ button { cursor: pointer; }
     .why-row h3 { font-size: 1.1rem; }
     .why-row p { font-size: 0.85rem; }
 
-    /* PROCESS */
-
     .process-grid { grid-template-columns: 1fr; gap: 16px; }
 
     .process-card { padding: 24px 22px; }
-
-    /* WORK */
 
     .work { padding-bottom: 90px; }
 
@@ -1886,15 +1822,11 @@ button { cursor: pointer; }
         transform: translateY(-8px) scale(1.02);
     }
 
-    /* PLANES */
-
     .plan-card { padding: 30px 24px; }
     .plan-card h3 { font-size: 1.5rem; }
 
     .plans-coming-soon { padding: 28px 24px; }
     .plans-coming-soon h3 { font-size: 1.3rem; }
-
-    /* FAQ */
 
     .faq-item summary {
         font-size: 0.95rem;
@@ -1902,8 +1834,6 @@ button { cursor: pointer; }
     }
 
     .faq-item p { font-size: 0.85rem; }
-
-    /* CONTACT */
 
     .contact-info h3 { font-size: 2rem; }
 
@@ -1915,12 +1845,8 @@ button { cursor: pointer; }
     .form-field select { min-height: 44px; }
     .form-field textarea { min-height: 110px; }
 
-    /* FINAL CTA */
-
     .final-cta { padding: 70px 20px; }
     .final-cta h2 { font-size: 2.2rem; }
-
-    /* FOOTER */
 
     .footer-inner { grid-template-columns: 1fr; gap: 36px; padding-bottom: 40px; }
     .footer-links { grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -1929,7 +1855,7 @@ button { cursor: pointer; }
 
 
 /* =========================================================
-   RESPONSIVE — 480px (small mobile)
+   RESPONSIVE — 480px
    ========================================================= */
 
 @media (max-width: 480px) {
@@ -1950,10 +1876,11 @@ button { cursor: pointer; }
 
     .services-orbit { max-width: 100%; }
 
-    .orbit-item { padding: 6px 8px; max-width: 130px; }
-    .orbit-icon { width: 24px; height: 24px; flex: 0 0 24px; }
-    .orbit-icon svg { width: 12px; height: 12px; }
-    .orbit-text h3 { font-size: 0.6rem; }
+    .orbit-item { padding: 14px 12px; }
+    .orbit-icon { width: 30px; height: 30px; flex: 0 0 30px; }
+    .orbit-icon svg { width: 16px; height: 16px; }
+    .orbit-text h3 { font-size: 0.7rem; }
+    .orbit-text p { font-size: 0.72rem; }
 
     .process-card { padding: 20px 18px; }
     .process-card h3 { font-size: 1rem; }
