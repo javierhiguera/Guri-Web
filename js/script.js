@@ -148,12 +148,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
        ANIMACIONES AL ENTRAR EN PANTALLA
+       (las cards de /work ya arrancan visibles)
        ===================================================== */
 
     const animatedElements = document.querySelectorAll(
         [
             ".orbit-item",
-            ".work-card",
             ".process-step",
             ".plan-card",
             ".brainstorm-item",
