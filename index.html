@@ -22,6 +22,10 @@
         href="./favicon/favicon.ico"
     >
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <link
         rel="stylesheet"
         href="./css/styles.css"
@@ -62,25 +66,11 @@
 
         <nav class="main-nav" id="main-navigation">
 
-            <a href="#servicios">
-                Servicios
-            </a>
-
-            <a href="#trabajos">
-                Trabajos
-            </a>
-
-            <a href="#planes">
-                Planes
-            </a>
-
-            <a href="#faq">
-                Preguntas
-            </a>
-
-            <a href="#contacto">
-                Contacto
-            </a>
+            <a href="#servicios">Servicios</a>
+            <a href="#trabajos">Trabajos</a>
+            <a href="#planes">Planes</a>
+            <a href="#faq">Preguntas</a>
+            <a href="#contacto">Contacto</a>
 
         </nav>
 
@@ -122,42 +112,78 @@
 
 <section class="hero">
 
-    <div class="container hero-inner">
+    <div class="container">
 
-        <div class="hero-content">
+        <div class="hero-eyebrow">
+            <span>§ 01</span>
+            <span>FULL-STACK WEB STUDIO</span>
+            <span class="dot">●</span>
+            <span>SHIPPING SINCE 2020</span>
+        </div>
 
-            <h1>
-                Tu negocio.
-                <span>Tu web.</span>
-            </h1>
+        <div class="hero-inner">
 
-            <p>
-                Diseñamos y desarrollamos sitios web modernos,
-                rápidos y pensados para hacer crecer tu negocio.
-            </p>
+            <div class="hero-content">
 
-            <div class="hero-actions">
+                <h1>
+                    Tu negocio.<br>
+                    <span>Tu web.</span>
+                </h1>
 
-                <a href="#contacto" class="button button-primary">
-                    Solicitar proyecto
-                </a>
+                <p>
+                    Diseñamos y desarrollamos sitios web modernos,
+                    rápidos y pensados para hacer crecer tu negocio.
+                </p>
 
-                <a href="#trabajos" class="button button-secondary">
-                    Ver trabajos
-                </a>
+                <div class="hero-actions">
+
+                    <a href="#contacto" class="button button-primary">
+                        Solicitar proyecto →
+                    </a>
+
+                    <a href="#trabajos" class="button button-secondary">
+                        Ver trabajos
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-logo">
+
+                <img
+                    src="./assets/logo/guri_isotipo.svg"
+                    alt=""
+                    aria-hidden="true"
+                >
 
             </div>
 
         </div>
 
 
-        <div class="hero-logo">
+        <div class="hero-stats">
 
-            <img
-                src="./assets/logo/guri_isotipo.svg"
-                alt=""
-                aria-hidden="true"
-            >
+            <div class="hero-stat">
+                <span class="hero-stat-num">04</span>
+                <span class="hero-stat-label">proyectos entregados</span>
+            </div>
+
+            <div class="hero-stat">
+                <span class="hero-stat-num">100%</span>
+                <span class="hero-stat-label">clientes activos</span>
+            </div>
+
+            <div class="hero-stat">
+                <span class="hero-stat-num">02</span>
+                <span class="hero-stat-label">semanas mínimo</span>
+            </div>
+
+            <div class="hero-stat">
+                <span class="hero-stat-num">24h</span>
+                <span class="hero-stat-label">response SLA</span>
+            </div>
 
         </div>
 
@@ -168,98 +194,136 @@
 
 
 <!-- =====================================================
-     SERVICIOS — Mundo a la izquierda + iconos alrededor
+     SERVICIOS
      ===================================================== -->
 
 <section class="services section" id="servicios">
 
-    <div class="container services-inner">
+    <div class="container">
 
-        <div class="services-orbit">
+        <div class="section-head">
 
-            <img
-                src="./assets/seleccion/mundo.svg"
-                alt=""
-                class="services-globe"
-                aria-hidden="true"
-            >
+            <div>
+                <span class="section-eyebrow">§ 02 — SERVICES</span>
+                <h2 class="section-title">/services</h2>
+            </div>
 
-            <a href="#planes" class="orbit-item orbit-item-1">
-
-                <div class="orbit-icon">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <rect x="3" y="4" width="18" height="16" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                        <path d="M3 8h18" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                        <circle cx="6" cy="6" r=".7" fill="currentColor"/>
-                        <circle cx="8.5" cy="6" r=".7" fill="currentColor"/>
-                    </svg>
-                </div>
-
-                <div class="orbit-text">
-                    <h3>Páginas web</h3>
-                    <p>Sitios profesionales para tu negocio.</p>
-                </div>
-
-            </a>
-
-            <a href="#planes" class="orbit-item orbit-item-2">
-
-                <div class="orbit-icon">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M5 3h14v18H5z" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                        <path d="M8 7h8M8 11h5M8 15h8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    </svg>
-                </div>
-
-                <div class="orbit-text">
-                    <h3>Landing pages</h3>
-                    <p>Páginas enfocadas en convertir.</p>
-                </div>
-
-            </a>
-
-            <a href="#tiendas-online-coming-soon" class="orbit-item orbit-item-3">
-
-                <div class="orbit-icon">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M4 9h16l-1 11H5L4 9z" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                        <path d="M7 9V6a5 5 0 0 1 10 0v3" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                    </svg>
-                </div>
-
-                <div class="orbit-text">
-                    <h3>Tiendas online</h3>
-                    <p>Vendé tus productos por internet.</p>
-                </div>
-
-            </a>
-
-            <a href="#planes" class="orbit-item orbit-item-4">
-
-                <div class="orbit-icon">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12 3v3M12 18v3M3 12h3M18 12h3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                        <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                        <path d="M12 9v3l2 1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    </svg>
-                </div>
-
-                <div class="orbit-text">
-                    <h3>Mantenimiento web</h3>
-                    <p>Sitio actualizado, seguro y funcionando.</p>
-                </div>
-
-            </a>
+            <p class="section-desc">
+                Todo lo que necesitás para estar online.
+                Sin plantillas genéricas, sin complicaciones.
+            </p>
 
         </div>
 
 
-        <div class="services-heading">
+        <div class="services-inner">
 
-            <h2>
-                Todo lo que necesitás
-                <span>para estar online.</span>
-            </h2>
+            <div class="services-orbit">
+
+                <img
+                    src="./assets/seleccion/mundo.svg"
+                    alt=""
+                    class="services-globe"
+                    aria-hidden="true"
+                >
+
+                <a href="#planes" class="orbit-item orbit-item-1">
+                    <div class="orbit-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <rect x="3" y="4" width="18" height="16" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M3 8h18" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                            <circle cx="6" cy="6" r=".7" fill="currentColor"/>
+                            <circle cx="8.5" cy="6" r=".7" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="orbit-text">
+                        <h3>Páginas web</h3>
+                        <p>Sitios profesionales para tu negocio.</p>
+                    </div>
+                </a>
+
+                <a href="#planes" class="orbit-item orbit-item-2">
+                    <div class="orbit-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 3h14v18H5z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M8 7h8M8 11h5M8 15h8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="orbit-text">
+                        <h3>Landing pages</h3>
+                        <p>Páginas enfocadas en convertir.</p>
+                    </div>
+                </a>
+
+                <a href="#tiendas-online-coming-soon" class="orbit-item orbit-item-3">
+                    <div class="orbit-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 9h16l-1 11H5L4 9z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M7 9V6a5 5 0 0 1 10 0v3" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <div class="orbit-text">
+                        <h3>Tiendas online</h3>
+                        <p>Vendé tus productos por internet.</p>
+                    </div>
+                </a>
+
+                <a href="#planes" class="orbit-item orbit-item-4">
+                    <div class="orbit-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 3v3M12 18v3M3 12h3M18 12h3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M12 9v3l2 1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="orbit-text">
+                        <h3>Mantenimiento web</h3>
+                        <p>Sitio actualizado, seguro y funcionando.</p>
+                    </div>
+                </a>
+
+            </div>
+
+
+            <div class="services-list">
+
+                <div class="service-row">
+                    <span class="service-row-num">01</span>
+                    <div>
+                        <h4>Páginas web</h4>
+                        <p>Sitios profesionales con varias secciones, blog y CMS.</p>
+                    </div>
+                    <span class="service-row-arrow">›</span>
+                </div>
+
+                <div class="service-row">
+                    <span class="service-row-num">02</span>
+                    <div>
+                        <h4>Landing pages</h4>
+                        <p>Una sola página construida para convertir.</p>
+                    </div>
+                    <span class="service-row-arrow">›</span>
+                </div>
+
+                <div class="service-row">
+                    <span class="service-row-num">03</span>
+                    <div>
+                        <h4>Tiendas online</h4>
+                        <p>Vendé tus productos por internet, pronto.</p>
+                    </div>
+                    <span class="service-row-arrow">›</span>
+                </div>
+
+                <div class="service-row">
+                    <span class="service-row-num">04</span>
+                    <div>
+                        <h4>Mantenimiento</h4>
+                        <p>Sitio actualizado, seguro y funcionando.</p>
+                    </div>
+                    <span class="service-row-arrow">›</span>
+                </div>
+
+            </div>
 
         </div>
 
@@ -277,86 +341,49 @@
 
     <div class="container">
 
-        <div class="why-inner">
+        <div class="section-head">
+            <div>
+                <span class="section-eyebrow">§ 03 — WHY US</span>
+                <h2 class="section-title">/why</h2>
+            </div>
+            <p class="section-desc">
+                Diseñamos experiencias digitales simples, rápidas y
+                profesionales. Sin plantillas genéricas y sin
+                complicaciones innecesarias.
+            </p>
+        </div>
 
-            <div class="why-heading">
 
-                <div class="section-heading">
-                    <h2>
-                        Una web no tiene que
-                        <span>ser complicada.</span>
-                    </h2>
-                </div>
+        <div class="why-list">
 
-                <p>
-                    Diseñamos experiencias digitales simples,
-                    rápidas y profesionales. Sin plantillas
-                    genéricas y sin complicaciones innecesarias.
-                </p>
-
+            <div class="why-row">
+                <span class="why-row-num">01</span>
+                <h3>Diseño personalizado</h3>
+                <p>Cada sitio se piensa desde cero para tu marca.</p>
             </div>
 
+            <div class="why-row">
+                <span class="why-row-num">02</span>
+                <h3>Responsive en todos los dispositivos</h3>
+                <p>Mobile-first: se ve bien en celular, tablet y desktop.</p>
+            </div>
 
-            <div class="why-brainstorm">
+            <div class="why-row">
+                <span class="why-row-num">03</span>
+                <h3>Optimización y velocidad</h3>
+                <p>Carga rápida, sin librerías innecesarias.</p>
+            </div>
 
-                <div class="brainstorm-item">
-                    <div class="brainstorm-icon">
-                        <svg class="brainstorm-check" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M12 3a9 9 0 0 0 0 18c1.5 0 2-1 1.5-2s0-2 1.5-2h2a3 3 0 0 0 3-3 9 9 0 0 0-8-9z"/>
-                            <circle cx="7.5" cy="10.5" r="1"/>
-                            <circle cx="12" cy="7.5" r="1"/>
-                            <circle cx="16.5" cy="10.5" r="1"/>
-                            <circle cx="9" cy="15" r="1"/>
-                        </svg>
-                    </div>
-                    <span>Diseño personalizado</span>
-                </div>
+            <div class="why-row">
+                <span class="why-row-num">04</span>
+                <h3>SEO desde la base</h3>
+                <p>Estructura semántica y meta tags listos para Google.</p>
+            </div>
 
-                <div class="brainstorm-item">
-                    <div class="brainstorm-icon">
-                        <svg class="brainstorm-check" viewBox="0 0 24 24" aria-hidden="true">
-                            <rect x="2" y="4" width="14" height="11" rx="1"/>
-                            <path d="M6 19h7"/>
-                            <path d="M9.5 15v4"/>
-                            <rect x="17" y="9" width="5" height="11" rx="1"/>
-                            <path d="M19.5 18h0"/>
-                        </svg>
-                    </div>
-                    <span>Responsive en todos los dispositivos</span>
-                </div>
-
-                <div class="brainstorm-item">
-                    <div class="brainstorm-icon">
-                        <svg class="brainstorm-check" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/>
-                        </svg>
-                    </div>
-                    <span>Optimización y velocidad</span>
-                </div>
-
-                <div class="brainstorm-item">
-                    <div class="brainstorm-icon">
-                        <svg class="brainstorm-check" viewBox="0 0 24 24" aria-hidden="true">
-                            <circle cx="10.5" cy="10.5" r="6.5"/>
-                            <path d="M15.5 15.5L21 21"/>
-                            <path d="M8 11l2 2 3.5-4"/>
-                        </svg>
-                    </div>
-                    <span>SEO desde la base</span>
-                </div>
-
-                <div class="brainstorm-item">
-                    <div class="brainstorm-icon">
-                        <svg class="brainstorm-check" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5z"/>
-                            <path d="M8.5 12h.01"/>
-                            <path d="M12 12h.01"/>
-                            <path d="M15.5 12h.01"/>
-                        </svg>
-                    </div>
-                    <span>Acompañamiento</span>
-                </div>
-
+            <div class="why-row">
+                <span class="why-row-num">05</span>
+                <h3>Acompañamiento</h3>
+                <p>Te seguimos después del lanzamiento.</p>
             </div>
 
         </div>
@@ -375,188 +402,66 @@
 
     <div class="container">
 
-        <div class="section-heading">
-            <h2>
-                De la idea
-                <span>a tu web.</span>
-            </h2>
+        <div class="section-head">
+            <div>
+                <span class="section-eyebrow">§ 04 — PROCESS</span>
+                <h2 class="section-title">/process</h2>
+            </div>
+            <p class="section-desc">
+                De la idea a tu web en cuatro pasos claros.
+            </p>
         </div>
 
-    </div>
 
+        <div class="process-grid">
 
-    <div class="process-map">
-
-        <div class="process-step process-step-1">
-            <div class="process-step-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M8 12h8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-            </div>
-            <div class="process-step-capsule">
+            <div class="process-card">
+                <div class="process-card-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 12h8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span class="process-card-num">§ 001</span>
                 <h3>Hablamos</h3>
                 <p>Entendemos tu negocio, tus objetivos y lo que necesitás.</p>
             </div>
-        </div>
 
-        <div class="process-step process-step-2">
-            <div class="process-step-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                    <path d="M2 17l10 5 10-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                    <path d="M2 12l10 5 10-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <div class="process-step-capsule">
+            <div class="process-card">
+                <div class="process-card-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M2 17l10 5 10-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M2 12l10 5 10-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <span class="process-card-num">§ 002</span>
                 <h3>Diseñamos</h3>
                 <p>Creamos una propuesta visual pensada para tu marca.</p>
             </div>
-        </div>
 
-        <div class="process-step process-step-3">
-            <div class="process-step-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M15 5l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <div class="process-step-capsule">
+            <div class="process-card">
+                <div class="process-card-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M15 5l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <span class="process-card-num">§ 003</span>
                 <h3>Desarrollamos</h3>
                 <p>Convertimos el diseño en una web rápida, responsive y funcional.</p>
             </div>
-        </div>
 
-        <div class="process-step process-step-4">
-            <div class="process-step-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M4 4h16v16H4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                    <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <div class="process-step-capsule">
+            <div class="process-card">
+                <div class="process-card-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 4h16v16H4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <span class="process-card-num">§ 004</span>
                 <h3>Publicamos</h3>
                 <p>Ponemos tu sitio online y te acompañamos después del lanzamiento.</p>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     GESTIÓN DIGITAL
-     ===================================================== -->
-
-<section class="digital-management section">
-
-    <div class="container">
-
-        <div class="digital-management-inner">
-
-            <div class="digital-management-icons">
-
-                <div class="digital-icon digital-icon-1">
-                    <img src="https://cdn.simpleicons.org/googleads/0066FF" alt="Google Ads">
-                </div>
-
-                <div class="digital-icon digital-icon-2">
-                    <img src="https://cdn.simpleicons.org/instagram/0066FF" alt="Instagram">
-                </div>
-
-                <div class="digital-icon digital-icon-3">
-                    <img src="https://cdn.simpleicons.org/meta/0066FF" alt="Meta">
-                </div>
-
-                <div class="digital-icon digital-icon-4">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M17.5 3.5h-11a1 1 0 0 0-1 1v15a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-15a1 1 0 0 0-1-1z"/>
-                        <path d="M9 8h6"/>
-                        <path d="M9 12h6"/>
-                        <path d="M9 16h3"/>
-                    </svg>
-                </div>
-
-                <div class="digital-icon digital-icon-5">
-                    <img src="https://cdn.simpleicons.org/whatsapp/0066FF" alt="WhatsApp">
-                </div>
-
-                <span class="digital-emoji digital-emoji-1" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M3 3v18h18"/>
-                        <rect x="7" y="12" width="3" height="7"/>
-                        <rect x="12" y="8" width="3" height="11"/>
-                        <rect x="17" y="5" width="3" height="14"/>
-                    </svg>
-                </span>
-
-                <span class="digital-emoji digital-emoji-2" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                        <polyline points="3 17 9 11 13 15 21 7"/>
-                        <polyline points="14 7 21 7 21 14"/>
-                    </svg>
-                </span>
-
-                <span class="digital-emoji digital-emoji-3" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="10"/>
-                        <circle cx="12" cy="12" r="6"/>
-                        <circle cx="12" cy="12" r="2"/>
-                    </svg>
-                </span>
-
-                <span class="digital-emoji digital-emoji-4" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                        <line x1="12" y1="2" x2="12" y2="22"/>
-                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                    </svg>
-                </span>
-
-                <span class="digital-emoji digital-emoji-5" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                        <circle cx="9" cy="7" r="4"/>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                    </svg>
-                </span>
-
-                <span class="digital-emoji digital-emoji-6" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
-                    </svg>
-                </span>
-
-                <span class="digital-emoji digital-emoji-7" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
-                        <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
-                        <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
-                        <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
-                    </svg>
-                </span>
-
-            </div>
-
-
-            <div class="digital-management-heading">
-
-                <div class="section-heading">
-
-                    <h2>
-                        También gestionamos
-                        <span>tu presencia digital.</span>
-                    </h2>
-
-                    <p>
-                        Podemos acompañar tu web con campañas y canales
-                        digitales para ayudarte a llegar a más personas.
-                    </p>
-
-                </div>
-
             </div>
 
         </div>
@@ -573,16 +478,17 @@
 
 <section class="work section" id="trabajos">
 
-    <div class="container work-header">
+    <div class="container">
 
-        <div>
-            <span class="work-eyebrow">§ 02 — FEATURED PROJECTS</span>
-            <h2 class="work-title">/work</h2>
+        <div class="section-head">
+            <div>
+                <span class="section-eyebrow">§ 05 — FEATURED PROJECTS</span>
+                <h2 class="section-title">/work</h2>
+            </div>
+            <a href="#contacto" class="section-link">
+                SHOW ALL 03 →
+            </a>
         </div>
-
-        <a href="#contacto" class="work-show-all">
-            SHOW ALL 03 →
-        </a>
 
     </div>
 
@@ -681,203 +587,199 @@
 
     <div class="container">
 
-        <div class="section-heading">
-            <h2>
-                Elegí cómo
-                <span>empezar.</span>
-            </h2>
+        <div class="section-head">
+            <div>
+                <span class="section-eyebrow">§ 06 — PLANS</span>
+                <h2 class="section-title">/plans</h2>
+            </div>
+            <p class="section-desc">
+                Elegí cómo empezar. Sin sorpresas.
+            </p>
         </div>
 
 
+        <div class="plans-grid">
 
-        <div class="plans-grid plans-integrated-grid">
-
-            <article class="plan-card plan-integrated">
-
-                <span class="plan-label">PROFESIONAL</span>
-
+            <article class="plan-card">
+                <span class="plan-label">PROFESIONAL · 01</span>
                 <h3>Sitio web corporativo</h3>
-
-                <p class="plan-integrated-description">
-                    Página web con varias secciones pensada para empresas consolidadas que necesitan mostrar la operación completa: servicios, casos, equipo, novedades y canales de contacto.
+                <p class="plan-desc">
+                    Página web con varias secciones pensada para empresas
+                    consolidadas que necesitan mostrar la operación completa.
                 </p>
-
 
                 <div class="plan-service">
                     <h4>Incluye</h4>
                     <ul class="plan-features">
-                        <li>Gestión de contenido propio para que tu equipo actualice sin depender del desarrollador</li>
-                        <li>Sección de novedades o blog integrada</li>
-                        <li>Conexión con redes sociales y herramientas de marketing</li>
-                        <li>Métricas integradas para entender qué funciona y qué no</li>
+                        <li>Gestión de contenido propio</li>
+                        <li>Sección de novedades o blog</li>
+                        <li>Conexión con redes y marketing</li>
+                        <li>Métricas integradas</li>
                     </ul>
                 </div>
 
                 <div class="plan-recommended">
                     <p><strong>Ideal para:</strong></p>
-                    <p>Empresas industriales o de servicios que necesitan mostrar capacidad operativa, cartera y casos.</p>
-                    <p>Empresas en expansión que necesitan un diseño web profesional para apuntar a nuevos mercados.</p>
+                    <p>Empresas industriales o de servicios que necesitan mostrar capacidad operativa.</p>
                 </div>
 
-                <a href="#contacto" class="button button-primary plan-button">Consultar por este plan</a>
-
+                <a href="#contacto" class="button button-primary plan-button">Consultar →</a>
             </article>
 
 
-
-            <article class="plan-card plan-integrated plan-featured">
-
-                <span class="plan-label">PROFESIONAL</span>
-
+            <article class="plan-card plan-featured">
+                <span class="plan-label">PROFESIONAL · 02</span>
                 <h3>Landing page</h3>
-
-                <p class="plan-integrated-description">
-                    Una sola página construida para convertir, ideal para campañas puntuales, lanzamientos, eventos, productos específicos o profesionales que necesitan un punto de contacto digital directo.
+                <p class="plan-desc">
+                    Una sola página construida para convertir. Ideal para
+                    campañas puntuales, lanzamientos o eventos.
                 </p>
-
 
                 <div class="plan-service">
                     <h4>Incluye</h4>
                     <ul class="plan-features">
-                        <li>Foco en una sola acción del visitante</li>
-                        <li>Carga liviana y rápida en móvil</li>
-                        <li>Formulario integrado a tu CRM o correo</li>
-                        <li>Configuración lista para campañas de Ads</li>
+                        <li>Foco en una sola acción</li>
+                        <li>Carga liviana en móvil</li>
+                        <li>Formulario a tu CRM o correo</li>
+                        <li>Listo para campañas de Ads</li>
                     </ul>
                 </div>
 
                 <div class="plan-recommended">
                     <p><strong>Ideal para:</strong></p>
-                    <p>Empresas que necesitan capturar leads de una campaña antes de tener una página web completa.</p>
-                    <p>Profesionales independientes que quieren un punto de contacto digital sin mantener un sitio web extenso.</p>
+                    <p>Empresas que necesitan capturar leads antes de tener una web completa.</p>
                 </div>
 
-                <a href="#contacto" class="button button-primary plan-button">Consultar por este plan</a>
-
+                <a href="#contacto" class="button button-primary plan-button">Consultar →</a>
             </article>
 
         </div>
 
 
+        <div class="plans-coming-soon" id="tiendas-online-coming-soon">
 
-        <div class="plans-category plans-coming-soon" id="tiendas-online-coming-soon">
-
-            <div class="plans-category-heading">
-
+            <div>
+                <span class="plan-label">PRÓXIMAMENTE</span>
                 <h3>Tiendas Online</h3>
-
                 <p>
                     Estamos preparando nuestro servicio de tiendas online.
                     Próximamente vas a poder crear tu propia tienda y
                     vender tus productos desde Internet.
                 </p>
-
                 <div class="coming-soon-label">
                     <span class="coming-soon-spinner" aria-hidden="true"></span>
                     <span>Coming soon</span>
                 </div>
-
             </div>
 
         </div>
 
 
+    </div>
 
-        <!-- =====================================================
-             PREGUNTAS FRECUENTES
-             ===================================================== -->
+</section>
 
-        <div class="faq section" id="faq">
 
-            <div class="section-heading">
-                <h2>
-                    Preguntas
-                    <span>frecuentes.</span>
-                </h2>
+
+<!-- =====================================================
+     FAQ
+     ===================================================== -->
+
+<section class="faq section" id="faq">
+
+    <div class="container">
+
+        <div class="section-head">
+            <div>
+                <span class="section-eyebrow">§ 07 — FAQ</span>
+                <h2 class="section-title">/faq</h2>
             </div>
-
-            <div class="faq-list">
-
-                <details class="faq-item">
-                    <summary>
-                        ¿Qué necesito para empezar mi proyecto?
-                    </summary>
-                    <p>
-                        Lo primero es una charla para entender tu negocio, tus objetivos y lo que necesitás. No importa si no tenés todo definido; nosotros te guiamos en el proceso.
-                    </p>
-                </details>
-
-                <details class="faq-item">
-                    <summary>
-                        ¿Cuánto tiempo tarda en estar lista mi web?
-                    </summary>
-                    <p>
-                        Depende de la complejidad del proyecto. Una landing page puede estar lista en 1-2 semanas, mientras que un sitio web corporativo puede tomar de 3 a 6 semanas.
-                    </p>
-                </details>
-
-                <details class="faq-item">
-                    <summary>
-                        ¿Puedo actualizar el contenido yo mismo?
-                    </summary>
-                    <p>
-                        Sí. Todos nuestros planes incluyen gestión de contenido para que puedas actualizar textos e imágenes sin depender de nosotros. Además, ofrecemos planes de mantenimiento si preferís que nos encarguemos.
-                    </p>
-                </details>
-
-                <details class="faq-item">
-                    <summary>
-                        ¿La web va a funcionar bien en celulares?
-                    </summary>
-                    <p>
-                        Absolutamente. Diseñamos "mobile-first", lo que significa que cada página se construye pensando primero en cómo se verá y funcionará en dispositivos móviles.
-                    </p>
-                </details>
-
-                <details class="faq-item">
-                    <summary>
-                        ¿Qué pasa después de que la web está online?
-                    </summary>
-                    <p>
-                        Te acompañamos después del lanzamiento. Podemos encargarnos del mantenimiento, actualizaciones y mejoras continuas para que tu sitio siga funcionando perfectamente.
-                    </p>
-                </details>
-
-                <details class="faq-item">
-                    <summary>
-                        ¿Ofrecen servicios de marketing digital?
-                    </summary>
-                    <p>
-                        Sí, podemos acompañar tu web con campañas de Google Ads, redes sociales y otras herramientas para ayudarte a llegar a más personas.
-                    </p>
-                </details>
-
-            </div>
-
+            <p class="section-desc">
+                Las preguntas que nos hacen siempre.
+            </p>
         </div>
 
 
+        <div class="faq-list">
 
-        <!-- =====================================================
-             CONTACTO
-             ===================================================== -->
+            <details class="faq-item">
+                <summary>¿Qué necesito para empezar mi proyecto?</summary>
+                <p>Lo primero es una charla para entender tu negocio, tus objetivos y lo que necesitás. No importa si no tenés todo definido; nosotros te guiamos en el proceso.</p>
+            </details>
 
-        <div class="plans-contact" id="contacto">
+            <details class="faq-item">
+                <summary>¿Cuánto tiempo tarda en estar lista mi web?</summary>
+                <p>Depende de la complejidad del proyecto. Una landing page puede estar lista en 1-2 semanas, mientras que un sitio web corporativo puede tomar de 3 a 6 semanas.</p>
+            </details>
 
-            <div class="plans-contact-copy">
+            <details class="faq-item">
+                <summary>¿Puedo actualizar el contenido yo mismo?</summary>
+                <p>Sí. Todos nuestros planes incluyen gestión de contenido para que puedas actualizar textos e imágenes sin depender de nosotros.</p>
+            </details>
 
-                <h3>
-                    Hagamos que
-                    <span>pase.</span>
-                </h3>
+            <details class="faq-item">
+                <summary>¿La web va a funcionar bien en celulares?</summary>
+                <p>Absolutamente. Diseñamos "mobile-first", lo que significa que cada página se construye pensando primero en cómo se verá en dispositivos móviles.</p>
+            </details>
 
-                <p>
-                    Contanos qué necesitás y empezamos
-                    a construir tu próxima web.
-                </p>
+            <details class="faq-item">
+                <summary>¿Qué pasa después de que la web está online?</summary>
+                <p>Te acompañamos después del lanzamiento. Podemos encargarnos del mantenimiento, actualizaciones y mejoras continuas.</p>
+            </details>
 
+            <details class="faq-item">
+                <summary>¿Ofrecen servicios de marketing digital?</summary>
+                <p>Sí, podemos acompañar tu web con campañas de Google Ads, redes sociales y otras herramientas.</p>
+            </details>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACTO
+     ===================================================== -->
+
+<section class="contact section" id="contacto">
+
+    <div class="container">
+
+        <div class="section-head">
+            <div>
+                <span class="section-eyebrow">§ 08 — CONTACT</span>
+                <h2 class="section-title">/contact</h2>
             </div>
+            <p class="section-desc">
+                Contanos qué necesitás y empezamos a construir tu próxima web.
+            </p>
+        </div>
 
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+                <h3>Hagamos que <span>pase.</span></h3>
+                <p>Contanos qué necesitás y empezamos a construir tu próxima web.</p>
+
+                <div class="contact-meta">
+                    <div>
+                        <span class="contact-meta-label">EMAIL</span>
+                        <span class="contact-meta-value">hola@guri.com</span>
+                    </div>
+                    <div>
+                        <span class="contact-meta-label">RESPONSE SLA</span>
+                        <span class="contact-meta-value">&lt; 24h</span>
+                    </div>
+                    <div>
+                        <span class="contact-meta-label">TIMEZONE</span>
+                        <span class="contact-meta-value">GMT-3</span>
+                    </div>
+                </div>
+            </div>
 
 
             <form
@@ -895,7 +797,7 @@
 
                     <div class="form-field">
                         <label for="quote-company">Empresa</label>
-                        <input type="text" id="quote-company" name="company" autocomplete="organization" placeholder="Nombre de tu empresa (opcional)">
+                        <input type="text" id="quote-company" name="company" autocomplete="organization" placeholder="Opcional">
                     </div>
 
                     <div class="form-field">
@@ -904,7 +806,7 @@
                     </div>
 
                     <div class="form-field">
-                        <label for="quote-whatsapp">WhatsApp / Teléfono *</label>
+                        <label for="quote-whatsapp">WhatsApp *</label>
                         <input type="tel" id="quote-whatsapp" name="whatsapp" autocomplete="tel" placeholder="+54 11 5555 5555" required>
                     </div>
 
@@ -933,40 +835,24 @@
                     <div class="form-field form-field-full">
                         <label>¿Cómo te contactamos? *</label>
                         <div class="pill-group">
-                            <label class="pill pill-icon">
+                            <label class="pill">
                                 <input type="radio" name="contact_method" value="correo" required>
-                                <span>
-                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <rect x="3" y="5" width="18" height="14" rx="2"/>
-                                        <polyline points="3 7 12 13 21 7"/>
-                                    </svg>
-                                    Correo
-                                </span>
+                                <span>Correo</span>
                             </label>
-                            <label class="pill pill-icon">
+                            <label class="pill">
                                 <input type="radio" name="contact_method" value="whatsapp">
-                                <span>
-                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M21 11.5a8.5 8.5 0 0 1-12.7 7.4L3 21l2.1-5.3A8.5 8.5 0 1 1 21 11.5z"/>
-                                    </svg>
-                                    WhatsApp
-                                </span>
+                                <span>WhatsApp</span>
                             </label>
-                            <label class="pill pill-icon">
+                            <label class="pill">
                                 <input type="radio" name="contact_method" value="llamada">
-                                <span>
-                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/>
-                                    </svg>
-                                    Llamada
-                                </span>
+                                <span>Llamada</span>
                             </label>
                         </div>
                     </div>
 
                     <div class="form-field form-field-full">
                         <label for="quote-message">Mensaje</label>
-                        <textarea id="quote-message" name="message" rows="6" placeholder="Contanos un poco sobre tu proyecto (opcional)"></textarea>
+                        <textarea id="quote-message" name="message" rows="5" placeholder="Contanos un poco sobre tu proyecto (opcional)"></textarea>
                     </div>
 
                 </div>
@@ -988,17 +874,23 @@
 
 
 <!-- =====================================================
-     CTA FINAL
+     FINAL CTA
      ===================================================== -->
 
 <section class="final-cta">
 
     <div class="container">
 
+        <span class="final-cta-eyebrow">§ 09 — READY WHEN YOU ARE</span>
+
         <h2>
             Tu próxima web
             <span>empieza acá.</span>
         </h2>
+
+        <a href="#contacto" class="button button-cta">
+            Abrir formulario →
+        </a>
 
     </div>
 
@@ -1018,27 +910,36 @@
 
     <div class="container footer-inner">
 
-        <div class="footer-links">
+        <div class="footer-brand">
+            <div class="logo">
+                <img src="./assets/logo/guri_isotipo.svg" alt="" class="logo-icon">
+                <span class="logo-text">
+                    <span class="logo-guri">GURI</span>
+                </span>
+            </div>
+            <p>
+                Diseñamos y desarrollamos sitios web modernos,
+                rápidos y pensados para hacer crecer tu negocio.
+            </p>
+        </div>
 
+        <div class="footer-links">
             <div>
-                <strong>Servicios</strong>
+                <strong>SERVICIOS</strong>
                 <a href="#servicios">Páginas web</a>
                 <a href="#servicios">Landing pages</a>
                 <a href="#tiendas-online-coming-soon">Tiendas online</a>
                 <a href="#servicios">Mantenimiento</a>
             </div>
-
             <div>
                 <strong>GURI</strong>
                 <a href="#trabajos">Trabajos</a>
                 <a href="#faq">Preguntas</a>
                 <a href="#contacto">Contacto</a>
             </div>
-
         </div>
 
     </div>
-
 
 
     <div class="container footer-bottom">
@@ -1048,7 +949,6 @@
         </span>
 
         <span class="footer-credit">
-            <img src="./assets/logo/guri_isotipo.svg" alt="" aria-hidden="true">
             <span>Design &amp; development by GURI</span>
         </span>
 
