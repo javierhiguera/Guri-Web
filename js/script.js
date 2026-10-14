@@ -1,5 +1,5 @@
 /* =========================================================
-   GURI — JAVASCRIPT
+   TAGBACK — JAVASCRIPT
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
