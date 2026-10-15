@@ -1,5 +1,31 @@
 /* =========================================================
-   TAGBACK — STYLES v4 (estética limpia · fondo claro · azul)
+   TAGBACK — STYLES v5 (tipografías oficiales + animaciones premium)
+   ========================================================= */
+
+
+/* =========================================================
+   FUENTES OFICIALES
+   ========================================================= */
+
+@font-face {
+    font-family: "Xenois";
+    src: url("../assets/fonts/Xenois-Serif-W01-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Bunken";
+    src: url("../assets/fonts/Bunken-Tech-Sans-W01-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* =========================================================
+   VARIABLES
    ========================================================= */
 
 :root {
@@ -23,13 +49,17 @@
     --success: #10893e;
     --error: #c81e1e;
 
+    --title: "Xenois", Georgia, serif;
+    --body: "Bunken", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --mono: 'IBM Plex Mono', 'SF Mono', monospace;
-    --sans: 'Inter', -apple-system, sans-serif;
 
     --container: 1240px;
     --section-padding: 100px;
     --radius: 8px;
     --transition: 0.25s ease;
+
+    --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+    --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -48,9 +78,9 @@ html { scroll-behavior: smooth; }
 body {
     background: var(--bg);
     color: var(--ink);
-    font-family: var(--sans);
-    font-weight: 400;
-    line-height: 1.5;
+    font-family: var(--body);
+    font-weight: 300;
+    line-height: 1.55;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
@@ -64,6 +94,28 @@ a { color: inherit; text-decoration: none; }
 
 button, input, select, textarea { font: inherit; }
 button { cursor: pointer; }
+
+
+/* =========================================================
+   JERARQUÍA TIPOGRÁFICA — Xenois para títulos
+   ========================================================= */
+
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.work-card-name,
+.plan-card h3,
+.service-card h3,
+.process-card h3,
+.why-row h3,
+.contact-info h3,
+.quote-form-title,
+.final-cta h2,
+.promo-strip h2,
+.hero h1 {
+    font-family: var(--title);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
 
 
 /* =========================================================
@@ -123,11 +175,9 @@ button { cursor: pointer; }
 }
 
 .section-title {
-    font-family: var(--sans);
     font-size: clamp(2.4rem, 5.5vw, 4.5rem);
-    font-weight: 700;
-    line-height: 0.95;
-    letter-spacing: -0.045em;
+    line-height: 0.98;
+    letter-spacing: -0.03em;
     color: var(--ink);
     margin: 0;
     max-width: 820px;
@@ -138,7 +188,6 @@ button { cursor: pointer; }
     color: var(--gray);
     font-size: 0.95rem;
     line-height: 1.7;
-    font-family: var(--sans);
 }
 
 .section-link {
@@ -186,7 +235,7 @@ button { cursor: pointer; }
 
 
 /* =========================================================
-   LOGO — estático
+   LOGO — estático (sin hover, sin animación)
    ========================================================= */
 
 .logo {
@@ -201,8 +250,6 @@ button { cursor: pointer; }
     width: 32px;
     height: 32px;
     flex: 0 0 32px;
-    transform: none !important;
-    transition: none !important;
 }
 
 .logo-text { display: flex; align-items: baseline; gap: 6px; }
@@ -213,13 +260,11 @@ button { cursor: pointer; }
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.14em;
-    transform: none !important;
-    transition: none !important;
 }
 
 
 /* =========================================================
-   NAV
+   NAV — subrayado animado
    ========================================================= */
 
 .main-nav {
@@ -236,20 +281,26 @@ button { cursor: pointer; }
     font-size: 0.78rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    transition: color var(--transition);
+    transition: color 200ms var(--ease-soft);
 }
 
 .main-nav a::after {
     content: "";
     position: absolute;
     left: 0; bottom: -6px;
-    width: 0; height: 1px;
+    width: 100%;
+    height: 1px;
     background: var(--blue);
-    transition: width var(--transition);
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform 220ms var(--ease-out);
 }
 
 .main-nav a:hover { color: var(--ink); }
-.main-nav a:hover::after { width: 100%; }
+.main-nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+}
 
 
 /* =========================================================
@@ -271,7 +322,7 @@ button { cursor: pointer; }
     letter-spacing: 0.06em;
     text-transform: uppercase;
     font-weight: 500;
-    transition: background var(--transition), color var(--transition);
+    transition: background 250ms var(--ease-soft), color 250ms var(--ease-soft);
     white-space: nowrap;
 }
 
@@ -304,7 +355,7 @@ button { cursor: pointer; }
     height: 1.5px;
     background: var(--ink);
     transform: translateX(-50%);
-    transition: transform var(--transition), top var(--transition);
+    transition: transform 250ms var(--ease-soft), top 250ms var(--ease-soft);
 }
 
 .menu-toggle span:first-child { top: 14px; }
@@ -324,15 +375,45 @@ button { cursor: pointer; }
 
 
 /* =========================================================
-   HERO
+   HERO — entrada cinematográfica
    ========================================================= */
 
 .hero {
+    position: relative;
     padding-top: 160px;
     padding-bottom: 100px;
     background: var(--bg);
     border-bottom: 1px solid var(--line);
+    overflow: hidden;
+    isolation: isolate;
 }
+
+/* Gradiente ambiental azul sutil */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 60%;
+    height: 90%;
+    background: radial-gradient(
+        circle at 60% 40%,
+        rgba(0, 102, 255, 0.10),
+        rgba(0, 102, 255, 0.04) 40%,
+        transparent 70%
+    );
+    z-index: -1;
+    pointer-events: none;
+    animation: hero-ambient 24s ease-in-out infinite;
+    will-change: transform, opacity;
+}
+
+@keyframes hero-ambient {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
+    50% { transform: translate3d(-2%, 2%, 0) scale(1.05); opacity: 0.85; }
+}
+
+.hero .container { position: relative; z-index: 1; }
 
 .hero-eyebrow {
     display: flex;
@@ -345,22 +426,45 @@ button { cursor: pointer; }
     color: var(--gray-dark);
     margin-bottom: 40px;
     flex-wrap: wrap;
+    opacity: 0;
+    animation: hero-fade-up 500ms var(--ease-out) 80ms forwards;
 }
 
 .hero-eyebrow .dot { color: var(--blue); }
 
+/* Máscara vertical para el titular */
 .hero h1 {
-    font-family: var(--sans);
-    font-weight: 700;
     font-size: clamp(2.8rem, 6.5vw, 5.5rem);
-    line-height: 0.95;
-    letter-spacing: -0.055em;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
     color: var(--ink);
     margin-bottom: 28px;
     max-width: 900px;
+    overflow: hidden;
 }
 
 .hero h1 span { color: var(--blue); }
+
+/* Cada línea se revela con máscara */
+.hero h1 .reveal-line {
+    display: block;
+    overflow: hidden;
+}
+
+.hero h1 .reveal-line > span {
+    display: block;
+    transform: translate3d(0, 110%, 0);
+    animation: hero-mask 750ms var(--ease-out) forwards;
+    will-change: transform;
+}
+
+.hero h1 .reveal-line:nth-child(1) > span { animation-delay: 160ms; }
+.hero h1 .reveal-line:nth-child(2) > span { animation-delay: 260ms; }
+.hero h1 .reveal-line:nth-child(3) > span { animation-delay: 360ms; }
+
+@keyframes hero-mask {
+    to { transform: translate3d(0, 0, 0); }
+}
 
 .hero-lead {
     max-width: 620px;
@@ -368,6 +472,9 @@ button { cursor: pointer; }
     font-size: 1.05rem;
     line-height: 1.65;
     margin-bottom: 16px;
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+    animation: hero-fade-up 550ms var(--ease-out) 520ms forwards;
 }
 
 .hero-support {
@@ -376,6 +483,9 @@ button { cursor: pointer; }
     font-size: 0.95rem;
     line-height: 1.7;
     margin-bottom: 36px;
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+    animation: hero-fade-up 550ms var(--ease-out) 620ms forwards;
 }
 
 .hero-actions {
@@ -384,6 +494,9 @@ button { cursor: pointer; }
     gap: 12px;
     flex-wrap: wrap;
     margin-bottom: 32px;
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+    animation: hero-fade-up 450ms var(--ease-out) 740ms forwards;
 }
 
 .hero-trust {
@@ -397,6 +510,9 @@ button { cursor: pointer; }
     color: var(--gray-dark);
     padding-top: 24px;
     border-top: 1px solid var(--line);
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+    animation: hero-fade-up 450ms var(--ease-out) 860ms forwards;
 }
 
 .hero-trust span {
@@ -411,9 +527,16 @@ button { cursor: pointer; }
     font-size: 0.55rem;
 }
 
+@keyframes hero-fade-up {
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 
 /* =========================================================
-   BUTTONS
+   BUTTONS — microinteracciones
    ========================================================= */
 
 .button {
@@ -429,8 +552,16 @@ button { cursor: pointer; }
     font-weight: 500;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    transition: background var(--transition), color var(--transition), border-color var(--transition);
+    transition:
+        background 250ms var(--ease-soft),
+        color 250ms var(--ease-soft),
+        border-color 250ms var(--ease-soft),
+        transform 180ms var(--ease-out);
+    will-change: transform;
 }
+
+.button:hover { transform: translateY(-2px); }
+.button:active { transform: translateY(0); }
 
 .button-primary {
     border-color: var(--blue);
@@ -456,9 +587,10 @@ button { cursor: pointer; }
 
 .button:disabled,
 .button[disabled] {
-    opacity: 0.6;
+    opacity: 0.55;
     cursor: not-allowed;
     pointer-events: none;
+    transform: none;
 }
 
 
@@ -480,11 +612,9 @@ button { cursor: pointer; }
 }
 
 .promo-strip h2 {
-    font-family: var(--sans);
     font-size: clamp(1.4rem, 2.6vw, 2rem);
-    font-weight: 700;
     line-height: 1.2;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
     color: var(--ink);
     margin: 0 0 8px;
 }
@@ -519,20 +649,28 @@ button { cursor: pointer; }
     background: var(--bg-white);
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+    transition:
+        border-color 300ms var(--ease-soft),
+        box-shadow 300ms var(--ease-soft),
+        transform 350ms var(--ease-out);
     opacity: 0;
-    transform: translateY(20px);
+    transform: translate3d(0, 16px, 0);
 }
 
 .service-card.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
+    transition:
+        opacity 550ms var(--ease-out),
+        transform 550ms var(--ease-out),
+        border-color 300ms var(--ease-soft),
+        box-shadow 300ms var(--ease-soft);
 }
 
 .service-card:hover {
     border-color: var(--blue);
     box-shadow: 0 8px 24px rgba(0, 102, 255, 0.10);
-    transform: translateY(-4px);
+    transform: translate3d(0, -4px, 0);
 }
 
 .service-card-num {
@@ -557,10 +695,8 @@ button { cursor: pointer; }
 }
 
 .service-card h3 {
-    font-family: var(--sans);
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-size: 1.05rem;
+    line-height: 1.2;
     color: var(--ink);
     margin: 0;
 }
@@ -580,7 +716,7 @@ button { cursor: pointer; }
 
 
 /* =========================================================
-   WHY — beneficios
+   WHY
    ========================================================= */
 
 .why { background: var(--bg); }
@@ -599,13 +735,15 @@ button { cursor: pointer; }
     padding: 28px 0;
     border-bottom: 1px solid var(--line);
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translate3d(0, 14px, 0);
+    transition:
+        opacity 600ms var(--ease-out),
+        transform 600ms var(--ease-out);
 }
 
 .why-row.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
 }
 
 .why-row-num {
@@ -616,10 +754,8 @@ button { cursor: pointer; }
 }
 
 .why-row h3 {
-    font-family: var(--sans);
-    font-size: 1.25rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-size: 1.2rem;
+    line-height: 1.2;
     color: var(--ink);
     margin: 0;
 }
@@ -633,7 +769,7 @@ button { cursor: pointer; }
 
 
 /* =========================================================
-   WORK — proyectos
+   WORK — portfolio inmersivo
    ========================================================= */
 
 .work {
@@ -655,22 +791,26 @@ button { cursor: pointer; }
     background: var(--bg-white);
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+    transition:
+        border-color 400ms var(--ease-soft),
+        box-shadow 400ms var(--ease-soft),
+        transform 400ms var(--ease-out);
     opacity: 0;
-    transform: translateY(20px);
+    transform: translate3d(0, 20px, 0);
     display: flex;
     flex-direction: column;
+    will-change: transform;
 }
 
 .work-card.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
 }
 
 .work-card:hover {
     border-color: var(--blue);
     box-shadow: 0 12px 40px rgba(0, 102, 255, 0.10);
-    transform: translateY(-4px);
+    transform: translate3d(0, -4px, 0);
 }
 
 .work-card-header {
@@ -703,17 +843,20 @@ button { cursor: pointer; }
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.6s ease;
+    transition:
+        transform 500ms var(--ease-out),
+        filter 500ms var(--ease-soft);
+    will-change: transform;
 }
 
-.work-card:hover .work-card-image img { transform: scale(1.04); }
+.work-card:hover .work-card-image img {
+    transform: scale(1.035);
+    filter: contrast(1.03) brightness(1.02);
+}
 
 .work-card-name {
-    font-family: var(--sans);
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 1.35rem;
     line-height: 1.15;
-    letter-spacing: -0.02em;
     color: var(--ink);
     margin: 0 0 10px;
 }
@@ -730,7 +873,6 @@ button { cursor: pointer; }
 }
 
 .work-card-claim {
-    font-family: var(--sans);
     font-size: 0.85rem;
     color: var(--gray);
     margin: 0 0 20px;
@@ -770,14 +912,21 @@ button { cursor: pointer; }
     background: var(--bg-white);
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    transition: border-color var(--transition), box-shadow var(--transition);
+    transition:
+        border-color 300ms var(--ease-soft),
+        box-shadow 300ms var(--ease-soft);
     opacity: 0;
-    transform: translateY(20px);
+    transform: translate3d(0, 16px, 0);
 }
 
 .process-card.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
+    transition:
+        opacity 550ms var(--ease-out),
+        transform 550ms var(--ease-out),
+        border-color 300ms var(--ease-soft),
+        box-shadow 300ms var(--ease-soft);
 }
 
 .process-card:hover {
@@ -810,10 +959,8 @@ button { cursor: pointer; }
 }
 
 .process-card h3 {
-    font-family: var(--sans);
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-size: 1.05rem;
+    line-height: 1.2;
     color: var(--ink);
     margin: 0 0 10px;
 }
@@ -850,21 +997,29 @@ button { cursor: pointer; }
     background: var(--bg-white);
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+    transition:
+        border-color 350ms var(--ease-soft),
+        box-shadow 350ms var(--ease-soft),
+        transform 350ms var(--ease-out);
     display: flex;
     flex-direction: column;
     opacity: 0;
-    transform: translateY(20px);
+    transform: translate3d(0, 18px, 0);
 }
 
 .plan-card.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
+    transition:
+        opacity 550ms var(--ease-out),
+        transform 550ms var(--ease-out),
+        border-color 350ms var(--ease-soft),
+        box-shadow 350ms var(--ease-soft);
 }
 
 .plan-card:hover {
     border-color: var(--blue);
-    transform: translateY(-4px);
+    transform: translate3d(0, -4px, 0);
     box-shadow: 0 12px 40px rgba(0, 102, 255, 0.10);
 }
 
@@ -880,11 +1035,8 @@ button { cursor: pointer; }
 }
 
 .plan-card h3 {
-    font-family: var(--sans);
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
+    font-size: 1.25rem;
+    line-height: 1.15;
     color: var(--ink);
     margin: 0 0 16px;
 }
@@ -956,7 +1108,7 @@ button { cursor: pointer; }
 
 
 /* =========================================================
-   FAQ
+   FAQ — apertura animada
    ========================================================= */
 
 .faq { background: var(--bg); }
@@ -981,12 +1133,12 @@ button { cursor: pointer; }
     padding: 24px 0;
     cursor: pointer;
     list-style: none;
-    font-family: var(--sans);
-    font-size: 1.05rem;
-    font-weight: 500;
-    letter-spacing: -0.01em;
+    font-family: var(--body);
+    font-size: 1.02rem;
+    font-weight: 300;
+    letter-spacing: -0.005em;
     color: var(--ink);
-    transition: color var(--transition);
+    transition: color 200ms var(--ease-soft);
 }
 
 .faq-item summary::-webkit-details-marker { display: none; }
@@ -998,7 +1150,7 @@ button { cursor: pointer; }
     font-weight: 400;
     color: var(--blue);
     flex-shrink: 0;
-    transition: transform var(--transition);
+    transition: transform 250ms var(--ease-out);
 }
 
 .faq-item[open] summary::after { content: "−"; }
@@ -1012,6 +1164,18 @@ button { cursor: pointer; }
     line-height: 1.7;
     max-width: 760px;
     margin: 0;
+    animation: faq-open 320ms var(--ease-out) forwards;
+}
+
+@keyframes faq-open {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -6px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 .faq-cta {
@@ -1035,11 +1199,8 @@ button { cursor: pointer; }
 }
 
 .contact-info h3 {
-    font-family: var(--sans);
-    font-size: clamp(1.8rem, 3vw, 2.6rem);
-    font-weight: 700;
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
     line-height: 1.1;
-    letter-spacing: -0.035em;
     color: var(--ink);
     margin: 0 0 18px;
 }
@@ -1079,7 +1240,7 @@ button { cursor: pointer; }
     color: var(--ink);
     font-weight: 500;
     text-decoration: none;
-    transition: color var(--transition);
+    transition: color 200ms var(--ease-soft);
 }
 
 a.contact-meta-value:hover { color: var(--blue); }
@@ -1095,14 +1256,14 @@ a.contact-meta-value:hover { color: var(--blue); }
     background: var(--bg-white);
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    transition: border-color var(--transition);
+    transition: border-color 300ms var(--ease-soft);
 }
 
+.quote-form:hover { border-color: var(--line-strong); }
+
 .quote-form-title {
-    font-family: var(--sans);
-    font-size: 1.4rem;
-    font-weight: 700;
-    letter-spacing: -0.03em;
+    font-size: 1.35rem;
+    line-height: 1.2;
     color: var(--ink);
     margin: 0 0 8px;
 }
@@ -1163,9 +1324,12 @@ a.contact-meta-value:hover { color: var(--blue); }
     outline: none;
     background: var(--bg);
     color: var(--ink);
-    font-family: var(--sans);
+    font-family: var(--body);
     font-size: 0.9rem;
-    transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+    transition:
+        border-color 220ms var(--ease-soft),
+        box-shadow 220ms var(--ease-soft),
+        background 220ms var(--ease-soft);
 }
 
 .form-field input,
@@ -1239,6 +1403,12 @@ a.contact-meta-value:hover { color: var(--blue); }
     line-height: 1.5;
     letter-spacing: 0.02em;
     border-left: 3px solid transparent;
+    animation: feedback-in 300ms var(--ease-out) forwards;
+}
+
+@keyframes feedback-in {
+    from { opacity: 0; transform: translate3d(0, -4px, 0); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 .form-feedback--success {
@@ -1299,7 +1469,10 @@ a.contact-meta-value:hover { color: var(--blue); }
     letter-spacing: 0.04em;
     text-transform: uppercase;
     line-height: 1;
-    transition: background var(--transition), color var(--transition), border-color var(--transition);
+    transition:
+        background 220ms var(--ease-soft),
+        color 220ms var(--ease-soft),
+        border-color 220ms var(--ease-soft);
 }
 
 .pill:hover span {
@@ -1340,11 +1513,8 @@ a.contact-meta-value:hover { color: var(--blue); }
 }
 
 .final-cta h2 {
-    font-family: var(--sans);
-    font-weight: 700;
     font-size: clamp(1.8rem, 4vw, 3rem);
     line-height: 1.05;
-    letter-spacing: -0.04em;
     color: var(--ink);
     margin: 0 0 18px;
 }
@@ -1438,7 +1608,7 @@ a.contact-meta-value:hover { color: var(--blue); }
 .footer-links a {
     color: var(--gray);
     font-size: 0.85rem;
-    transition: color var(--transition);
+    transition: color 200ms var(--ease-soft);
     width: fit-content;
 }
 
@@ -1524,7 +1694,7 @@ summary:focus-visible {
    ========================================================= */
 
 #planes, #trabajos, #contacto, #faq, #servicios,
-#tiendas-online-coming-soon, #confianza, #proceso {
+#proceso, #confianza {
     scroll-margin-top: 90px;
 }
 
@@ -1543,12 +1713,37 @@ summary:focus-visible {
         scroll-behavior: auto !important;
     }
 
+    .hero::before {
+        animation: none !important;
+        opacity: 0.5;
+    }
+
+    .hero-eyebrow,
+    .hero-lead,
+    .hero-support,
+    .hero-actions,
+    .hero-trust {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+
+    .hero h1 .reveal-line > span {
+        transform: none !important;
+        animation: none !important;
+    }
+
     .work-card,
     .service-card,
     .process-card,
     .plan-card,
     .why-row {
         opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+
+    .button:hover {
         transform: none !important;
     }
 }
@@ -1737,8 +1932,8 @@ summary:focus-visible {
 
     .section-title { font-size: 1.7rem; }
 
-    .plan-card h3 { font-size: 1.2rem; }
-    .work-card-name { font-size: 1.25rem; }
+    .plan-card h3 { font-size: 1.15rem; }
+    .work-card-name { font-size: 1.2rem; }
 
     .final-cta h2 { font-size: 1.5rem; }
 
