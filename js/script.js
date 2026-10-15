@@ -1,5 +1,5 @@
 /* =========================================================
-   TAGBACK — JAVASCRIPT v3
+   TAGBACK — JAVASCRIPT v4
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -142,6 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const formSubmit = quoteForm.querySelector(".quote-form-submit");
         const submitBtn = quoteForm.querySelector('button[type="submit"]');
+        const submitBtnDefaultText = submitBtn ? submitBtn.textContent : "";
 
         const showFeedback = (type, message) => {
 
@@ -165,19 +166,66 @@ document.addEventListener("DOMContentLoaded", () => {
             if (feedback) feedback.remove();
         };
 
-        const validateField = (field) => {
+        /* --- Validación custom con mensajes en español --- */
 
-            if (field.checkValidity()) {
-                field.removeAttribute("aria-invalid");
-                return true;
+        const getFieldError = (field) => {
+
+            if (field.validity.valueMissing) {
+                return "Este campo es obligatorio.";
             }
 
-            field.setAttribute("aria-invalid", "true");
-            return false;
+            if (field.validity.typeMismatch && field.type === "email") {
+                return "Revisá este dato.";
+            }
+
+            if (field.validity.patternMismatch || field.validity.typeMismatch) {
+                return "Revisá este dato.";
+            }
+
+            if (field.name === "phone" && field.validity.patternMismatch) {
+                return "Ingresá un número de teléfono válido.";
+            }
+
+            if (!field.checkValidity()) {
+                return "Revisá este dato.";
+            }
+
+            return "";
 
         };
 
-        quoteForm.querySelectorAll("input, textarea").forEach(field => {
+        const setFieldError = (field, message) => {
+
+            const wrapper = field.closest(".form-field");
+            if (!wrapper) return;
+
+            let errorEl = wrapper.querySelector(".form-field-error");
+
+            if (!errorEl) {
+                errorEl = document.createElement("span");
+                errorEl.className = "form-field-error";
+                wrapper.appendChild(errorEl);
+            }
+
+            if (message) {
+                field.setAttribute("aria-invalid", "true");
+                errorEl.textContent = message;
+                errorEl.classList.add("is-visible");
+            } else {
+                field.removeAttribute("aria-invalid");
+                errorEl.textContent = "";
+                errorEl.classList.remove("is-visible");
+            }
+
+        };
+
+        const validateField = (field) => {
+            const message = getFieldError(field);
+            setFieldError(field, message);
+            return !message;
+        };
+
+        quoteForm.querySelectorAll("input, textarea, select").forEach(field => {
             field.addEventListener("blur", () => validateField(field));
             field.addEventListener("input", () => {
                 if (field.getAttribute("aria-invalid") === "true") {
@@ -186,18 +234,32 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
+        /* --- Envío --- */
+
         quoteForm.addEventListener("submit", event => {
 
             event.preventDefault();
             clearFeedback();
 
-            if (!quoteForm.checkValidity()) {
-                quoteForm.reportValidity();
+            /* Validar todos los campos */
+            const fields = quoteForm.querySelectorAll("input, textarea, select");
+            let allValid = true;
+
+            fields.forEach(field => {
+                if (!validateField(field)) {
+                    allValid = false;
+                }
+            });
+
+            if (!allValid) {
+                const firstInvalid = quoteForm.querySelector('[aria-invalid="true"]');
+                if (firstInvalid) firstInvalid.focus();
                 return;
             }
 
             const action = quoteForm.getAttribute("action");
 
+            /* Endpoint sin configurar */
             if (!action || action === "#" || action.includes("TU_ID")) {
 
                 console.warn(
@@ -207,16 +269,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 showFeedback(
                     "info",
-                    "Formulario en configuración. Mientras tanto, escribinos a hola@tagback.com"
+                    "Formulario en configuración. Mientras tanto, escribinos por email o WhatsApp."
                 );
 
                 return;
 
             }
 
-            const originalText = submitBtn.textContent;
+            /* Envío real */
             submitBtn.disabled = true;
-            submitBtn.textContent = "Enviando...";
+            submitBtn.textContent = "Enviando consulta…";
 
             const formData = new FormData(quoteForm);
 
@@ -228,8 +290,18 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(response => {
 
                 if (response.ok) {
-                    showFeedback("success", "¡Mensaje enviado! Te respondemos en menos de 24 horas.");
+                    showFeedback(
+                        "success",
+                        "Tu consulta fue enviada correctamente. Nos pondremos en contacto con vos."
+                    );
                     quoteForm.reset();
+                    quoteForm.querySelectorAll('[aria-invalid="true"]').forEach(f => {
+                        f.removeAttribute("aria-invalid");
+                    });
+                    quoteForm.querySelectorAll(".form-field-error").forEach(e => {
+                        e.textContent = "";
+                        e.classList.remove("is-visible");
+                    });
                 } else {
                     throw new Error("Error en la respuesta");
                 }
@@ -238,12 +310,12 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch(() => {
                 showFeedback(
                     "error",
-                    "No pudimos enviar el mensaje. Probá de nuevo o escribinos a hola@tagback.com"
+                    "No pudimos enviar tu consulta. Intentá nuevamente o contactanos por WhatsApp."
                 );
             })
             .finally(() => {
                 submitBtn.disabled = false;
-                submitBtn.textContent = originalText;
+                submitBtn.textContent = submitBtnDefaultText;
             });
 
         });
