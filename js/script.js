@@ -1,5 +1,5 @@
 /* =========================================================
-   TAGBACK — JAVASCRIPT v2
+   TAGBACK — JAVASCRIPT
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       FORMULARIO — validación + estados
+       FORMULARIO
        ===================================================== */
 
     const quoteForm = document.querySelector(".quote-form");
@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 showFeedback(
                     "info",
-                    "Formulario en configuración. Mientras tanto, escribinos a hola@tagback.com"
+                    "Formulario en configuración. Mientras tanto, escribinos a projects@tagback.com.ar"
                 );
 
                 return;
@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 showFeedback(
                     "error",
-                    "No pudimos enviar el mensaje. Probá de nuevo o escribinos a hola@tagback.com"
+                    "No pudimos enviar el mensaje. Probá de nuevo o escribinos a projects@tagback.com.ar"
                 );
 
             })
@@ -250,6 +250,128 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
+    }
+
+
+    /* =====================================================
+       COOKIES — Banner + Modal
+       ===================================================== */
+
+    const COOKIE_KEY = "tagback-cookie-consent";
+    const COOKIE_VERSION = "1.0";
+
+    const banner = document.getElementById("cookie-banner");
+    const modal = document.getElementById("cookie-modal");
+    const btnAccept = document.getElementById("cookie-accept");
+    const btnReject = document.getElementById("cookie-reject");
+    const btnConfig = document.getElementById("cookie-config");
+    const btnSaveConfig = document.getElementById("cookie-save");
+    const btnCloseModal = document.getElementById("cookie-close-modal");
+
+    const getStored = () => {
+        try {
+            const raw = localStorage.getItem(COOKIE_KEY);
+            if (!raw) return null;
+            const parsed = JSON.parse(raw);
+            if (parsed.version !== COOKIE_VERSION) return null;
+            return parsed;
+        } catch (e) {
+            return null;
+        }
+    };
+
+    const saveConsent = (consent) => {
+        try {
+            localStorage.setItem(COOKIE_KEY, JSON.stringify({
+                version: COOKIE_VERSION,
+                timestamp: new Date().toISOString(),
+                necessary: true,
+                analytics: consent.analytics ?? false,
+                marketing: consent.marketing ?? false
+            }));
+        } catch (e) {
+            console.warn("No se pudo guardar la preferencia de cookies.");
+        }
+    };
+
+    const hideBanner = () => {
+        if (banner) banner.classList.remove("is-visible");
+    };
+
+    const showBanner = () => {
+        if (banner) {
+            setTimeout(() => banner.classList.add("is-visible"), 600);
+        }
+    };
+
+    const openModal = () => {
+        if (!modal) return;
+        modal.classList.add("is-visible");
+        document.body.classList.add("modal-open");
+        const focusable = modal.querySelector("button, input, [tabindex]");
+        if (focusable) setTimeout(() => focusable.focus(), 100);
+    };
+
+    const closeModal = () => {
+        if (!modal) return;
+        modal.classList.remove("is-visible");
+        document.body.classList.remove("modal-open");
+    };
+
+    const stored = getStored();
+    if (stored) {
+        hideBanner();
+    } else {
+        showBanner();
+    }
+
+    if (btnAccept) {
+        btnAccept.addEventListener("click", () => {
+            saveConsent({ analytics: true, marketing: true });
+            hideBanner();
+            closeModal();
+        });
+    }
+
+    if (btnReject) {
+        btnReject.addEventListener("click", () => {
+            saveConsent({ analytics: false, marketing: false });
+            hideBanner();
+            closeModal();
+        });
+    }
+
+    if (btnConfig) {
+        btnConfig.addEventListener("click", openModal);
+    }
+
+    if (btnSaveConfig) {
+        btnSaveConfig.addEventListener("click", () => {
+            const analyticsCheck = document.getElementById("cookie-analytics");
+            const marketingCheck = document.getElementById("cookie-marketing");
+            saveConsent({
+                analytics: analyticsCheck ? analyticsCheck.checked : false,
+                marketing: marketingCheck ? marketingCheck.checked : false
+            });
+            hideBanner();
+            closeModal();
+        });
+    }
+
+    if (btnCloseModal) {
+        btnCloseModal.addEventListener("click", closeModal);
+    }
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && modal && modal.classList.contains("is-visible")) {
+            closeModal();
+        }
+    });
+
+    if (modal) {
+        modal.addEventListener("click", event => {
+            if (event.target === modal) closeModal();
+        });
     }
 
 
