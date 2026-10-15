@@ -1,5 +1,5 @@
 /* =========================================================
-   TAGBACK — JAVASCRIPT v4
+   TAGBACK — JAVASCRIPT v5 (animaciones premium)
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -84,7 +84,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
+       RESPETO A PREFERS-REDUCED-MOTION
+       ===================================================== */
+
+    const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+
+    /* =====================================================
        ANIMACIONES AL ENTRAR EN PANTALLA
+       (reveal-on-scroll premium)
        ===================================================== */
 
     const animatedElements = document.querySelectorAll(
@@ -97,14 +107,36 @@ document.addEventListener("DOMContentLoaded", () => {
         ].join(", ")
     );
 
-    if ("IntersectionObserver" in window && animatedElements.length) {
+    if (
+        !prefersReducedMotion &&
+        "IntersectionObserver" in window &&
+        animatedElements.length
+    ) {
 
+        /* Observador principal con stagger */
         const observer = new IntersectionObserver(
             entries => {
                 entries.forEach(entry => {
                     if (!entry.isIntersecting) return;
-                    entry.target.classList.add("visible");
-                    observer.unobserve(entry.target);
+
+                    const el = entry.target;
+
+                    /* Stagger suave: si hay varios elementos
+                       entrando juntos, se escalonan por índice
+                       dentro de su propia grilla */
+                    const parent = el.parentElement;
+                    const siblings = parent
+                        ? Array.from(parent.children)
+                        : [];
+
+                    const index = siblings.indexOf(el);
+                    const delay = Math.min(index, 4) * 90;
+
+                    setTimeout(() => {
+                        el.classList.add("visible");
+                    }, delay);
+
+                    observer.unobserve(el);
                 });
             },
             {
@@ -113,11 +145,13 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
 
-        animatedElements.forEach(element => observer.observe(element));
+        animatedElements.forEach(el => observer.observe(el));
 
     } else {
 
-        animatedElements.forEach(element => element.classList.add("visible"));
+        /* Fallback: si no hay IO o el usuario prefiere menos movimiento,
+           mostramos todo directamente */
+        animatedElements.forEach(el => el.classList.add("visible"));
 
     }
 
@@ -166,8 +200,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (feedback) feedback.remove();
         };
 
-        /* --- Validación custom con mensajes en español --- */
-
         const getFieldError = (field) => {
 
             if (field.validity.valueMissing) {
@@ -175,10 +207,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             if (field.validity.typeMismatch && field.type === "email") {
-                return "Revisá este dato.";
-            }
-
-            if (field.validity.patternMismatch || field.validity.typeMismatch) {
                 return "Revisá este dato.";
             }
 
@@ -234,14 +262,11 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        /* --- Envío --- */
-
         quoteForm.addEventListener("submit", event => {
 
             event.preventDefault();
             clearFeedback();
 
-            /* Validar todos los campos */
             const fields = quoteForm.querySelectorAll("input, textarea, select");
             let allValid = true;
 
@@ -259,7 +284,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const action = quoteForm.getAttribute("action");
 
-            /* Endpoint sin configurar */
             if (!action || action === "#" || action.includes("TU_ID")) {
 
                 console.warn(
@@ -276,7 +300,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
-            /* Envío real */
             submitBtn.disabled = true;
             submitBtn.textContent = "Enviando consulta…";
 
