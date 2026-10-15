@@ -1,11 +1,11 @@
 /* =========================================================
-   TAGBACK — JAVASCRIPT v8
+   TAGBACK — JAVASCRIPT v9
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
-       INTRO CINEMATOGRÁFICA — fade simple
+       INTRO — fade simple
        ===================================================== */
 
     const intro = document.getElementById("tb-intro");
@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 hideIntro();
             } else {
                 setTimeout(hideIntro, 2000);
-
                 try {
                     sessionStorage.setItem(INTRO_KEY, "1");
                 } catch (e) { /* ignorar */ }
