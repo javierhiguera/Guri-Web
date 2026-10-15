@@ -1,5 +1,5 @@
 /* =========================================================
-   TAGBACK — STYLES v6 (tipografías oficiales + animaciones premium + intro)
+   TAGBACK — STYLES v7 (intro split + tipografías + premium)
    ========================================================= */
 
 
@@ -237,7 +237,7 @@ h1, h2, h3, h4, h5, h6,
 
 
 /* =========================================================
-   LOGO — estático
+   LOGO
    ========================================================= */
 
 .logo {
@@ -1641,7 +1641,7 @@ a.contact-meta-value:hover { color: var(--blue); }
 
 
 /* =========================================================
-   INTRO CINEMATOGRÁFICA
+   INTRO CINEMATOGRÁFICA — apertura en dos
    ========================================================= */
 
 .tb-intro {
@@ -1662,18 +1662,69 @@ a.contact-meta-value:hover { color: var(--blue); }
 
 .tb-intro.is-hiding {
     opacity: 0;
-    filter: blur(14px);
+    filter: blur(6px);
     pointer-events: none;
     visibility: hidden;
 }
 
-.tb-intro-logo {
+.tb-intro-logo-wrap {
+    position: relative;
     width: 68%;
     max-width: 720px;
-    height: auto;
-    display: block;
-    animation: tb-intro-logo-in 800ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
-    will-change: opacity, transform;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: tb-intro-logo-in 900ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.tb-intro-logo-half {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    will-change: transform, opacity;
+}
+
+.tb-intro-logo-half.left {
+    clip-path: inset(0 50% 0 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.tb-intro-logo-half.right {
+    clip-path: inset(0 0 0 50%);
+    transform: translate3d(0, 0, 0);
+}
+
+.tb-intro.is-opening .tb-intro-logo-half.left {
+    animation: tb-intro-split-left 1200ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+.tb-intro.is-opening .tb-intro-logo-half.right {
+    animation: tb-intro-split-right 1200ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes tb-intro-split-left {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(-60%, 0, 0);
+        opacity: 0;
+    }
+}
+
+@keyframes tb-intro-split-right {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(60%, 0, 0);
+        opacity: 0;
+    }
 }
 
 @keyframes tb-intro-logo-in {
@@ -1688,7 +1739,7 @@ a.contact-meta-value:hover { color: var(--blue); }
 }
 
 .tb-intro.no-js {
-    animation: tb-intro-auto-close 0ms linear 2200ms forwards;
+    animation: tb-intro-auto-close 0ms linear 3200ms forwards;
 }
 
 @keyframes tb-intro-auto-close {
@@ -1700,14 +1751,14 @@ a.contact-meta-value:hover { color: var(--blue); }
 }
 
 @media (max-width: 768px) {
-    .tb-intro-logo {
+    .tb-intro-logo-wrap {
         width: 78%;
         max-width: 420px;
     }
 }
 
 @media (max-width: 480px) {
-    .tb-intro-logo {
+    .tb-intro-logo-wrap {
         width: 85%;
         max-width: 320px;
     }
@@ -1722,10 +1773,15 @@ a.contact-meta-value:hover { color: var(--blue); }
         filter: none;
     }
 
-    .tb-intro-logo {
+    .tb-intro-logo-wrap {
         animation: none;
         opacity: 1;
         transform: none;
+    }
+
+    .tb-intro.is-opening .tb-intro-logo-half {
+        animation: none;
+        opacity: 0;
     }
 
     .tb-intro.no-js {
