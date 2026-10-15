@@ -1,51 +1,113 @@
 /* =========================================================
-   TAGBACK — JAVASCRIPT
+   TAGBACK — JAVASCRIPT v8
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
-       CORTINA DE ENTRADA — se ejecuta una vez por sesión
+       INTRO CINEMATOGRÁFICA — fade simple
        ===================================================== */
 
-    const INTRO_KEY = "tagback-intro-shown";
-    const introCurtain = document.getElementById("intro-curtain");
+    const intro = document.getElementById("tb-intro");
 
-    const shouldShowIntro = () => {
-        try {
-            return sessionStorage.getItem(INTRO_KEY) !== "1";
-        } catch (e) {
-            return true;
+    if (intro) {
+
+        const prefersReducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        const INTRO_KEY = "tagback-intro-shown";
+
+        const hideIntro = () => {
+            intro.classList.add("is-hiding");
+            intro.setAttribute("aria-hidden", "true");
+
+            const cleanup = () => {
+                if (intro && intro.parentNode) {
+                    intro.parentNode.removeChild(intro);
+                }
+            };
+
+            intro.addEventListener("transitionend", cleanup, { once: true });
+            setTimeout(cleanup, 1500);
+        };
+
+        if (prefersReducedMotion) {
+            setTimeout(hideIntro, 200);
+        } else {
+
+            let alreadyShown = false;
+
+            try {
+                alreadyShown = sessionStorage.getItem(INTRO_KEY) === "1";
+            } catch (e) { /* ignorar */ }
+
+            if (alreadyShown) {
+                hideIntro();
+            } else {
+                setTimeout(hideIntro, 2000);
+
+                try {
+                    sessionStorage.setItem(INTRO_KEY, "1");
+                } catch (e) { /* ignorar */ }
+            }
+
         }
-    };
 
-    const markIntroDone = () => {
+        window.addEventListener("error", () => {
+            if (intro && intro.parentNode) {
+                intro.style.display = "none";
+            }
+        });
+
+    }
+
+
+    /* =====================================================
+       COOKIES
+       ===================================================== */
+
+    const COOKIE_KEY = "tagback-cookies-accepted";
+    const cookieBanner = document.getElementById("cookie-banner");
+
+    if (cookieBanner) {
+
+        let alreadyAccepted = false;
+
         try {
-            sessionStorage.setItem(INTRO_KEY, "1");
-        } catch (e) { /* nada */ }
-    };
+            alreadyAccepted = localStorage.getItem(COOKIE_KEY) === "1";
+        } catch (e) { /* ignorar */ }
 
-    const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    ).matches;
+        if (!alreadyAccepted) {
+            setTimeout(() => {
+                cookieBanner.classList.add("is-visible");
+            }, 500);
+        }
 
-    if (introCurtain && shouldShowIntro() && !prefersReducedMotion) {
+        const acceptBtn = cookieBanner.querySelector("[data-cookie-accept]");
+        const rejectBtn = cookieBanner.querySelector("[data-cookie-reject]");
 
-        document.body.classList.add("intro-locked");
+        const closeBanner = (value) => {
+            try {
+                localStorage.setItem(COOKIE_KEY, value);
+            } catch (e) { /* ignorar */ }
 
-        /* Después de que termina la animación de la cortina */
-        setTimeout(() => {
-            introCurtain.classList.add("is-hidden");
-            document.body.classList.remove("intro-locked");
-            document.body.classList.add("intro-done");
-            markIntroDone();
-        }, 1500);
+            cookieBanner.classList.remove("is-visible");
 
-    } else {
+            setTimeout(() => {
+                if (cookieBanner.parentNode) {
+                    cookieBanner.parentNode.removeChild(cookieBanner);
+                }
+            }, 400);
+        };
 
-        /* Sin intro: se muestra el hero directo */
-        if (introCurtain) introCurtain.classList.add("is-hidden");
-        document.body.classList.add("intro-done");
+        if (acceptBtn) {
+            acceptBtn.addEventListener("click", () => closeBanner("1"));
+        }
+
+        if (rejectBtn) {
+            rejectBtn.addEventListener("click", () => closeBanner("0"));
+        }
 
     }
 
@@ -130,6 +192,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
+       RESPETO A PREFERS-REDUCED-MOTION
+       ===================================================== */
+
+    const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+
+    /* =====================================================
        ANIMACIONES AL ENTRAR EN PANTALLA
        ===================================================== */
 
@@ -139,19 +210,32 @@ document.addEventListener("DOMContentLoaded", () => {
             ".why-row",
             ".process-card",
             ".plan-card",
-            ".work-card",
-            ".trust-note"
+            ".work-card"
         ].join(", ")
     );
 
-    if ("IntersectionObserver" in window && animatedElements.length) {
+    if (
+        !prefersReducedMotion &&
+        "IntersectionObserver" in window &&
+        animatedElements.length
+    ) {
 
         const observer = new IntersectionObserver(
             entries => {
                 entries.forEach(entry => {
                     if (!entry.isIntersecting) return;
-                    entry.target.classList.add("visible");
-                    observer.unobserve(entry.target);
+
+                    const el = entry.target;
+                    const parent = el.parentElement;
+                    const siblings = parent ? Array.from(parent.children) : [];
+                    const index = siblings.indexOf(el);
+                    const delay = Math.min(index, 4) * 90;
+
+                    setTimeout(() => {
+                        el.classList.add("visible");
+                    }, delay);
+
+                    observer.unobserve(el);
                 });
             },
             {
@@ -160,11 +244,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
 
-        animatedElements.forEach(element => observer.observe(element));
+        animatedElements.forEach(el => observer.observe(el));
 
     } else {
 
-        animatedElements.forEach(element => element.classList.add("visible"));
+        animatedElements.forEach(el => el.classList.add("visible"));
 
     }
 
@@ -189,6 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const formSubmit = quoteForm.querySelector(".quote-form-submit");
         const submitBtn = quoteForm.querySelector('button[type="submit"]');
+        const submitBtnDefaultText = submitBtn ? submitBtn.textContent : "";
 
         const showFeedback = (type, message) => {
 
@@ -212,16 +297,60 @@ document.addEventListener("DOMContentLoaded", () => {
             if (feedback) feedback.remove();
         };
 
-        const validateField = (field) => {
-            if (field.checkValidity()) {
-                field.removeAttribute("aria-invalid");
-                return true;
+        const getFieldError = (field) => {
+
+            if (field.validity.valueMissing) {
+                return "Este campo es obligatorio.";
             }
-            field.setAttribute("aria-invalid", "true");
-            return false;
+
+            if (field.validity.typeMismatch && field.type === "email") {
+                return "Revisá este dato.";
+            }
+
+            if (field.name === "phone" && field.validity.patternMismatch) {
+                return "Ingresá un número de teléfono válido.";
+            }
+
+            if (!field.checkValidity()) {
+                return "Revisá este dato.";
+            }
+
+            return "";
+
         };
 
-        quoteForm.querySelectorAll("input, textarea").forEach(field => {
+        const setFieldError = (field, message) => {
+
+            const wrapper = field.closest(".form-field");
+            if (!wrapper) return;
+
+            let errorEl = wrapper.querySelector(".form-field-error");
+
+            if (!errorEl) {
+                errorEl = document.createElement("span");
+                errorEl.className = "form-field-error";
+                wrapper.appendChild(errorEl);
+            }
+
+            if (message) {
+                field.setAttribute("aria-invalid", "true");
+                errorEl.textContent = message;
+                errorEl.classList.add("is-visible");
+            } else {
+                field.removeAttribute("aria-invalid");
+                errorEl.textContent = "";
+                errorEl.classList.remove("is-visible");
+            }
+
+        };
+
+        const validateField = (field) => {
+            const message = getFieldError(field);
+            setFieldError(field, message);
+            return !message;
+        };
+
+        quoteForm.querySelectorAll("input, textarea, select").forEach(field => {
             field.addEventListener("blur", () => validateField(field));
             field.addEventListener("input", () => {
                 if (field.getAttribute("aria-invalid") === "true") {
@@ -235,8 +364,18 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
             clearFeedback();
 
-            if (!quoteForm.checkValidity()) {
-                quoteForm.reportValidity();
+            const fields = quoteForm.querySelectorAll("input, textarea, select");
+            let allValid = true;
+
+            fields.forEach(field => {
+                if (!validateField(field)) {
+                    allValid = false;
+                }
+            });
+
+            if (!allValid) {
+                const firstInvalid = quoteForm.querySelector('[aria-invalid="true"]');
+                if (firstInvalid) firstInvalid.focus();
                 return;
             }
 
@@ -251,16 +390,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 showFeedback(
                     "info",
-                    "Formulario en configuración. Mientras tanto, escribinos a projects@tagback.com.ar"
+                    "Formulario en configuración. Mientras tanto, escribinos por email o WhatsApp."
                 );
 
                 return;
 
             }
 
-            const originalText = submitBtn.textContent;
             submitBtn.disabled = true;
-            submitBtn.textContent = "Enviando...";
+            submitBtn.textContent = "Enviando consulta…";
 
             const formData = new FormData(quoteForm);
 
@@ -272,152 +410,36 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(response => {
 
                 if (response.ok) {
-                    showFeedback("success", "¡Mensaje enviado! Te respondemos en menos de 24 horas.");
+                    showFeedback(
+                        "success",
+                        "Tu consulta fue enviada correctamente. Nos pondremos en contacto con vos."
+                    );
                     quoteForm.reset();
+                    quoteForm.querySelectorAll('[aria-invalid="true"]').forEach(f => {
+                        f.removeAttribute("aria-invalid");
+                    });
+                    quoteForm.querySelectorAll(".form-field-error").forEach(e => {
+                        e.textContent = "";
+                        e.classList.remove("is-visible");
+                    });
                 } else {
                     throw new Error("Error en la respuesta");
                 }
 
             })
             .catch(() => {
-
                 showFeedback(
                     "error",
-                    "No pudimos enviar el mensaje. Probá de nuevo o escribinos a projects@tagback.com.ar"
+                    "No pudimos enviar tu consulta. Intentá nuevamente o contactanos por WhatsApp."
                 );
-
             })
             .finally(() => {
-
                 submitBtn.disabled = false;
-                submitBtn.textContent = originalText;
-
+                submitBtn.textContent = submitBtnDefaultText;
             });
 
         });
 
-    }
-
-
-    /* =====================================================
-       COOKIES — Banner + Modal
-       ===================================================== */
-
-    const COOKIE_KEY = "tagback-cookie-consent";
-    const COOKIE_VERSION = "1.0";
-
-    const banner = document.getElementById("cookie-banner");
-    const modal = document.getElementById("cookie-modal");
-    const btnAccept = document.getElementById("cookie-accept");
-    const btnReject = document.getElementById("cookie-reject");
-    const btnConfig = document.getElementById("cookie-config");
-    const btnSaveConfig = document.getElementById("cookie-save");
-    const btnCloseModal = document.getElementById("cookie-close-modal");
-
-    const getStored = () => {
-        try {
-            const raw = localStorage.getItem(COOKIE_KEY);
-            if (!raw) return null;
-            const parsed = JSON.parse(raw);
-            if (parsed.version !== COOKIE_VERSION) return null;
-            return parsed;
-        } catch (e) {
-            return null;
-        }
-    };
-
-    const saveConsent = (consent) => {
-        try {
-            localStorage.setItem(COOKIE_KEY, JSON.stringify({
-                version: COOKIE_VERSION,
-                timestamp: new Date().toISOString(),
-                necessary: true,
-                analytics: consent.analytics ?? false,
-                marketing: consent.marketing ?? false
-            }));
-        } catch (e) {
-            console.warn("No se pudo guardar la preferencia de cookies.");
-        }
-    };
-
-    const hideBanner = () => {
-        if (banner) banner.classList.remove("is-visible");
-    };
-
-    const showBanner = () => {
-        if (banner) {
-            setTimeout(() => banner.classList.add("is-visible"), 600);
-        }
-    };
-
-    const openModal = () => {
-        if (!modal) return;
-        modal.classList.add("is-visible");
-        document.body.classList.add("modal-open");
-        const focusable = modal.querySelector("button, input, [tabindex]");
-        if (focusable) setTimeout(() => focusable.focus(), 100);
-    };
-
-    const closeModal = () => {
-        if (!modal) return;
-        modal.classList.remove("is-visible");
-        document.body.classList.remove("modal-open");
-    };
-
-    const stored = getStored();
-    if (stored) {
-        hideBanner();
-    } else {
-        showBanner();
-    }
-
-    if (btnAccept) {
-        btnAccept.addEventListener("click", () => {
-            saveConsent({ analytics: true, marketing: true });
-            hideBanner();
-            closeModal();
-        });
-    }
-
-    if (btnReject) {
-        btnReject.addEventListener("click", () => {
-            saveConsent({ analytics: false, marketing: false });
-            hideBanner();
-            closeModal();
-        });
-    }
-
-    if (btnConfig) {
-        btnConfig.addEventListener("click", openModal);
-    }
-
-    if (btnSaveConfig) {
-        btnSaveConfig.addEventListener("click", () => {
-            const analyticsCheck = document.getElementById("cookie-analytics");
-            const marketingCheck = document.getElementById("cookie-marketing");
-            saveConsent({
-                analytics: analyticsCheck ? analyticsCheck.checked : false,
-                marketing: marketingCheck ? marketingCheck.checked : false
-            });
-            hideBanner();
-            closeModal();
-        });
-    }
-
-    if (btnCloseModal) {
-        btnCloseModal.addEventListener("click", closeModal);
-    }
-
-    document.addEventListener("keydown", event => {
-        if (event.key === "Escape" && modal && modal.classList.contains("is-visible")) {
-            closeModal();
-        }
-    });
-
-    if (modal) {
-        modal.addEventListener("click", event => {
-            if (event.target === modal) closeModal();
-        });
     }
 
 
