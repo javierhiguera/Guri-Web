@@ -5,6 +5,52 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
+       CORTINA DE ENTRADA — se ejecuta una vez por sesión
+       ===================================================== */
+
+    const INTRO_KEY = "tagback-intro-shown";
+    const introCurtain = document.getElementById("intro-curtain");
+
+    const shouldShowIntro = () => {
+        try {
+            return sessionStorage.getItem(INTRO_KEY) !== "1";
+        } catch (e) {
+            return true;
+        }
+    };
+
+    const markIntroDone = () => {
+        try {
+            sessionStorage.setItem(INTRO_KEY, "1");
+        } catch (e) { /* nada */ }
+    };
+
+    const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (introCurtain && shouldShowIntro() && !prefersReducedMotion) {
+
+        document.body.classList.add("intro-locked");
+
+        /* Después de que termina la animación de la cortina */
+        setTimeout(() => {
+            introCurtain.classList.add("is-hidden");
+            document.body.classList.remove("intro-locked");
+            document.body.classList.add("intro-done");
+            markIntroDone();
+        }, 1500);
+
+    } else {
+
+        /* Sin intro: se muestra el hero directo */
+        if (introCurtain) introCurtain.classList.add("is-hidden");
+        document.body.classList.add("intro-done");
+
+    }
+
+
+    /* =====================================================
        MENÚ MÓVIL
        ===================================================== */
 
