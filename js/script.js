@@ -1,8 +1,69 @@
 /* =========================================================
-   TAGBACK — JAVASCRIPT v5 (animaciones premium)
+   TAGBACK — JAVASCRIPT v6 (intro cinematográfica + premium)
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    /* =====================================================
+       INTRO CINEMATOGRÁFICA
+       ===================================================== */
+
+    const intro = document.getElementById("tb-intro");
+
+    if (intro) {
+
+        const prefersReducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        const INTRO_KEY = "tagback-intro-shown";
+
+        const hideIntro = () => {
+            intro.classList.add("is-hiding");
+            intro.setAttribute("aria-hidden", "true");
+
+            const cleanup = () => {
+                if (intro && intro.parentNode) {
+                    intro.parentNode.removeChild(intro);
+                }
+            };
+
+            intro.addEventListener("transitionend", cleanup, { once: true });
+            setTimeout(cleanup, 1200);
+        };
+
+        if (prefersReducedMotion) {
+            setTimeout(hideIntro, 200);
+        } else {
+
+            const INTRO_HOLD_MS = 900;
+
+            let alreadyShown = false;
+
+            try {
+                alreadyShown = sessionStorage.getItem(INTRO_KEY) === "1";
+            } catch (e) { /* ignorar */ }
+
+            if (alreadyShown) {
+                hideIntro();
+            } else {
+                setTimeout(hideIntro, INTRO_HOLD_MS + 800);
+
+                try {
+                    sessionStorage.setItem(INTRO_KEY, "1");
+                } catch (e) { /* ignorar */ }
+            }
+
+        }
+
+        window.addEventListener("error", () => {
+            if (intro && intro.parentNode) {
+                intro.style.display = "none";
+            }
+        });
+
+    }
+
 
     /* =====================================================
        MENÚ MÓVIL
@@ -94,7 +155,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
        ANIMACIONES AL ENTRAR EN PANTALLA
-       (reveal-on-scroll premium)
        ===================================================== */
 
     const animatedElements = document.querySelectorAll(
@@ -113,22 +173,14 @@ document.addEventListener("DOMContentLoaded", () => {
         animatedElements.length
     ) {
 
-        /* Observador principal con stagger */
         const observer = new IntersectionObserver(
             entries => {
                 entries.forEach(entry => {
                     if (!entry.isIntersecting) return;
 
                     const el = entry.target;
-
-                    /* Stagger suave: si hay varios elementos
-                       entrando juntos, se escalonan por índice
-                       dentro de su propia grilla */
                     const parent = el.parentElement;
-                    const siblings = parent
-                        ? Array.from(parent.children)
-                        : [];
-
+                    const siblings = parent ? Array.from(parent.children) : [];
                     const index = siblings.indexOf(el);
                     const delay = Math.min(index, 4) * 90;
 
@@ -149,8 +201,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } else {
 
-        /* Fallback: si no hay IO o el usuario prefiere menos movimiento,
-           mostramos todo directamente */
         animatedElements.forEach(el => el.classList.add("visible"));
 
     }
