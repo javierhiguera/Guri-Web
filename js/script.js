@@ -1,5 +1,5 @@
 /* =========================================================
-   TAGBACK — JAVASCRIPT
+   TAGBACK — JAVASCRIPT v3
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
             mainNav.classList.remove("is-open");
             menuToggle.classList.remove("active");
             menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Abrir menú");
         };
 
         const openMenu = () => {
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
             mainNav.classList.add("is-open");
             menuToggle.classList.add("active");
             menuToggle.setAttribute("aria-expanded", "true");
+            menuToggle.setAttribute("aria-label", "Cerrar menú");
         };
 
         menuToggle.addEventListener("click", () => {
@@ -90,7 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
             ".service-card",
             ".why-row",
             ".process-card",
-            ".plan-card"
+            ".plan-card",
+            ".work-card"
         ].join(", ")
     );
 
@@ -104,7 +107,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     observer.unobserve(entry.target);
                 });
             },
-            { threshold: 0.12 }
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px"
+            }
         );
 
         animatedElements.forEach(element => observer.observe(element));
@@ -127,26 +133,149 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       FORMULARIO
+       FORMULARIO — validación + estados
        ===================================================== */
 
     const quoteForm = document.querySelector(".quote-form");
 
     if (quoteForm) {
 
+        const formSubmit = quoteForm.querySelector(".quote-form-submit");
+        const submitBtn = quoteForm.querySelector('button[type="submit"]');
+
+        const showFeedback = (type, message) => {
+
+            let feedback = quoteForm.querySelector(".form-feedback");
+
+            if (!feedback) {
+                feedback = document.createElement("p");
+                feedback.className = "form-feedback";
+                formSubmit.appendChild(feedback);
+            }
+
+            feedback.className = `form-feedback form-feedback--${type}`;
+            feedback.textContent = message;
+            feedback.setAttribute("role", "status");
+            feedback.setAttribute("aria-live", "polite");
+
+        };
+
+        const clearFeedback = () => {
+            const feedback = quoteForm.querySelector(".form-feedback");
+            if (feedback) feedback.remove();
+        };
+
+        const validateField = (field) => {
+
+            if (field.checkValidity()) {
+                field.removeAttribute("aria-invalid");
+                return true;
+            }
+
+            field.setAttribute("aria-invalid", "true");
+            return false;
+
+        };
+
+        quoteForm.querySelectorAll("input, textarea").forEach(field => {
+            field.addEventListener("blur", () => validateField(field));
+            field.addEventListener("input", () => {
+                if (field.getAttribute("aria-invalid") === "true") {
+                    validateField(field);
+                }
+            });
+        });
+
         quoteForm.addEventListener("submit", event => {
+
+            event.preventDefault();
+            clearFeedback();
+
+            if (!quoteForm.checkValidity()) {
+                quoteForm.reportValidity();
+                return;
+            }
 
             const action = quoteForm.getAttribute("action");
 
             if (!action || action === "#" || action.includes("TU_ID")) {
-                event.preventDefault();
+
                 console.warn(
-                    "Formulario no configurado: reemplazá TU_ID en el action del <form>."
+                    "TAGBACK: el formulario no está configurado. " +
+                    "Reemplazá TU_ID en el action del <form> por tu ID de Formspree."
                 );
+
+                showFeedback(
+                    "info",
+                    "Formulario en configuración. Mientras tanto, escribinos a hola@tagback.com"
+                );
+
+                return;
+
             }
+
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Enviando...";
+
+            const formData = new FormData(quoteForm);
+
+            fetch(action, {
+                method: "POST",
+                body: formData,
+                headers: { "Accept": "application/json" }
+            })
+            .then(response => {
+
+                if (response.ok) {
+                    showFeedback("success", "¡Mensaje enviado! Te respondemos en menos de 24 horas.");
+                    quoteForm.reset();
+                } else {
+                    throw new Error("Error en la respuesta");
+                }
+
+            })
+            .catch(() => {
+                showFeedback(
+                    "error",
+                    "No pudimos enviar el mensaje. Probá de nuevo o escribinos a hola@tagback.com"
+                );
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            });
 
         });
 
     }
+
+
+    /* =====================================================
+       NAVEGACIÓN SUAVE PARA ANCLAS
+       ===================================================== */
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+        link.addEventListener("click", event => {
+
+            const targetId = link.getAttribute("href");
+
+            if (targetId === "#" || targetId.length < 2) return;
+
+            const target = document.querySelector(targetId);
+
+            if (!target) return;
+
+            if (!("scrollBehavior" in document.documentElement.style)) {
+                event.preventDefault();
+                const headerOffset = 90;
+                const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+                window.scrollTo({ top: targetPosition, behavior: "smooth" });
+            }
+
+        });
+
+    });
 
 });
