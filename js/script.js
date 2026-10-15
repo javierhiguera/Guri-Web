@@ -1,11 +1,11 @@
 /* =========================================================
-   TAGBACK — JAVASCRIPT v6 (intro cinematográfica + premium)
+   TAGBACK — JAVASCRIPT v7 (intro split + premium)
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
-       INTRO CINEMATOGRÁFICA
+       INTRO CINEMATOGRÁFICA — apertura en dos
        ===================================================== */
 
     const intro = document.getElementById("tb-intro");
@@ -18,6 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const INTRO_KEY = "tagback-intro-shown";
 
+        /* Tiempos (ms) */
+        const INTRO_LOGO_APPEAR  = 900;
+        const INTRO_HOLD         = 1100;
+        const INTRO_SPLIT        = 1200;
+
         const hideIntro = () => {
             intro.classList.add("is-hiding");
             intro.setAttribute("aria-hidden", "true");
@@ -29,14 +34,17 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             intro.addEventListener("transitionend", cleanup, { once: true });
-            setTimeout(cleanup, 1200);
+            setTimeout(cleanup, 1500);
+        };
+
+        const splitIntro = () => {
+            intro.classList.add("is-opening");
+            setTimeout(hideIntro, INTRO_SPLIT - 200);
         };
 
         if (prefersReducedMotion) {
             setTimeout(hideIntro, 200);
         } else {
-
-            const INTRO_HOLD_MS = 900;
 
             let alreadyShown = false;
 
@@ -47,7 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (alreadyShown) {
                 hideIntro();
             } else {
-                setTimeout(hideIntro, INTRO_HOLD_MS + 800);
+
+                setTimeout(splitIntro, INTRO_LOGO_APPEAR + INTRO_HOLD);
 
                 try {
                     sessionStorage.setItem(INTRO_KEY, "1");
