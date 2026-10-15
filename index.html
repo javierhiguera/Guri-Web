@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="no-js">
 
 <head>
 
@@ -10,25 +10,32 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>TAGBACK — Diseño y desarrollo web para marcas que quieren crecer</title>
+    <title>TAGBACK — Diseño y desarrollo web para negocios que quieren crecer</title>
 
     <meta
         name="description"
-        content="TAGBACK es un estudio de diseño y desarrollo web. Creamos sitios, landing pages y soluciones digitales para negocios que quieren crecer online."
+        content="TAGBACK diseña y desarrolla sitios web: landing pages, sitios corporativos, tiendas online y mantenimiento. Presencia digital profesional para tu negocio."
     >
 
     <meta name="theme-color" content="#f4f2ed">
     <meta name="robots" content="index, follow">
     <meta name="author" content="TAGBACK">
 
-    <link rel="canonical" href="https://tagback.com.ar/">
-
     <meta property="og:title" content="TAGBACK — Estudio de diseño y desarrollo web">
-    <meta property="og:description" content="Diseño y desarrollo web para marcas que quieren crecer.">
+    <meta property="og:description" content="Diseñamos y desarrollamos sitios web rápidos, claros y pensados para convertir visitas en oportunidades de negocio.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_AR">
 
+    <link rel="canonical" href="https://tagback.com/">
     <link rel="icon" href="./favicon/favicon.ico">
+
+    <script>
+        document.documentElement.classList.remove('no-js');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/styles.css">
 
@@ -41,22 +48,8 @@
 
 
 <!-- =====================================================
-     CORTINA DE ENTRADA — isotipo gigante que se abre
+     HEADER
      ===================================================== -->
-
-<div class="intro-curtain" id="intro-curtain" aria-hidden="true">
-
-    <div class="intro-half intro-half-left">
-        <img src="./assets/logo/guri_isotipo.svg" alt="">
-    </div>
-
-    <div class="intro-half intro-half-right">
-        <img src="./assets/logo/guri_isotipo.svg" alt="">
-    </div>
-
-</div>
-
-
 
 <header class="site-header">
 
@@ -90,6 +83,11 @@
         </nav>
 
 
+        <a href="#contacto" class="header-button">
+            Hablemos
+        </a>
+
+
         <button
             class="menu-toggle"
             type="button"
@@ -106,6 +104,7 @@
 </header>
 
 
+
 <main id="main">
 
 
@@ -117,34 +116,47 @@
 
     <div class="container">
 
-        <div class="hero-isotipo">
-            <img src="./assets/logo/guri_isotipo.svg" alt="TAGBACK">
-        </div>
-
         <div class="hero-eyebrow">
-            <span>ESTUDIO WEB</span>
+            <span>DISEÑO WEB</span>
             <span class="dot" aria-hidden="true">●</span>
-            <span>DISEÑO + DESARROLLO</span>
+            <span>DESARROLLO</span>
+            <span class="dot" aria-hidden="true">●</span>
+            <span>PRESENCIA DIGITAL</span>
         </div>
 
         <h1>
-            Tu negocio merece una presencia digital <span>a la altura.</span>
+            <span class="reveal-line"><span>Tu negocio merece</span></span>
+            <span class="reveal-line"><span>una web <em>a la altura.</em></span></span>
         </h1>
 
         <p class="hero-lead">
-            Diseño y desarrollo web para marcas que quieren crecer.
+            Diseñamos y desarrollamos sitios web rápidos, claros
+            y pensados para convertir visitas en oportunidades de negocio.
+        </p>
+
+        <p class="hero-support">
+            Desde una landing page hasta una web corporativa,
+            construimos una presencia digital alineada con tu marca
+            y tus objetivos.
         </p>
 
         <div class="hero-actions">
 
             <a href="#contacto" class="button button-primary">
-                Hablemos de tu proyecto →
+                Hablemos de tu proyecto
             </a>
 
             <a href="#trabajos" class="button button-secondary">
-                Ver proyectos
+                Explorar proyectos
             </a>
 
+        </div>
+
+
+        <div class="hero-trust">
+            <span>Diseño personalizado</span>
+            <span>Desarrollo responsive</span>
+            <span>Comunicación directa</span>
         </div>
 
     </div>
@@ -154,7 +166,30 @@
 
 
 <!-- =====================================================
-     SERVICIOS
+     PROMO STRIP
+     ===================================================== -->
+
+<section class="promo-strip">
+
+    <div class="container promo-inner">
+
+        <div>
+            <h2>Tu próximo proyecto empieza con una conversación.</h2>
+            <p>Contanos qué necesitás y recibí una propuesta adaptada a tu negocio.</p>
+        </div>
+
+        <a href="#contacto" class="button button-primary">
+            Solicitar presupuesto
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICIOS — 4 servicios
      ===================================================== -->
 
 <section class="services section" id="servicios">
@@ -165,12 +200,13 @@
 
             <div>
                 <span class="section-eyebrow">01 — SERVICIOS</span>
-                <h2 class="section-title">/servicios</h2>
+                <h2 class="section-title">Soluciones digitales para negocios que quieren avanzar.</h2>
             </div>
 
             <p class="section-desc">
-                Diseño, desarrollo y soluciones digitales para
-                negocios que necesitan crecer online.
+                Cada proyecto tiene necesidades diferentes. Creamos soluciones
+                web enfocadas en comunicar mejor tu propuesta, presentar tus
+                servicios y facilitar el contacto con tus clientes.
             </p>
 
         </div>
@@ -188,25 +224,36 @@
                         <circle cx="8.5" cy="6" r=".7" fill="currentColor" stroke="none"/>
                     </svg>
                 </div>
-                <h3>Diseño web</h3>
-                <p>Interfaces claras, con identidad propia y foco en la experiencia del usuario.</p>
+                <h3>Landing pages</h3>
+                <p>Páginas diseñadas para presentar una oferta, comunicar una propuesta de valor y dirigir al visitante hacia una acción concreta.</p>
             </article>
 
             <article class="service-card">
                 <span class="service-card-num">02</span>
                 <div class="service-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M8 6l-5 6 5 6"/>
-                        <path d="M16 6l5 6-5 6"/>
-                        <path d="M13 4l-2 16"/>
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M3 9h18M9 21V9"/>
                     </svg>
                 </div>
-                <h3>Desarrollo web</h3>
-                <p>Sitios rápidos, responsive y mantenibles. Código limpio, sin librerías de más.</p>
+                <h3>Sitios web corporativos</h3>
+                <p>Una presencia digital profesional para comunicar quién sos, qué hacés y por qué deberían elegirte.</p>
             </article>
 
             <article class="service-card">
                 <span class="service-card-num">03</span>
+                <div class="service-card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M4 9h16l-1 11H5L4 9z"/>
+                        <path d="M7 9V6a5 5 0 0 1 10 0v3"/>
+                    </svg>
+                </div>
+                <h3>Tiendas online</h3>
+                <p>Experiencias de compra que organizan tus productos y facilitan el recorrido desde la exploración hasta el pedido.</p>
+            </article>
+
+            <article class="service-card">
+                <span class="service-card-num">04</span>
                 <div class="service-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <path d="M12 3v3M12 18v3M3 12h3M18 12h3"/>
@@ -214,9 +261,76 @@
                         <path d="M12 9v3l2 1"/>
                     </svg>
                 </div>
-                <h3>Soluciones digitales</h3>
-                <p>Landing pages, integraciones, automatizaciones y mantenimiento continuo.</p>
+                <h3>Mantenimiento web</h3>
+                <p>Actualizaciones, ajustes y soporte para mantener tu sitio alineado con las necesidades de tu negocio.</p>
             </article>
+
+        </div>
+
+
+        <div class="services-cta">
+            <a href="#contacto" class="button button-primary">
+                Encontrar la solución adecuada
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BENEFICIOS
+     ===================================================== -->
+
+<section class="why section">
+
+    <div class="container">
+
+        <div class="section-head">
+            <div>
+                <span class="section-eyebrow">02 — BENEFICIOS</span>
+                <h2 class="section-title">Una web con propósito, no solo apariencia.</h2>
+            </div>
+            <p class="section-desc">
+                Cada decisión de diseño y desarrollo está pensada
+                para que tu sitio funcione: comunique, convierta y crezca con tu negocio.
+            </p>
+        </div>
+
+
+        <div class="why-list">
+
+            <div class="why-row">
+                <span class="why-row-num">01</span>
+                <h3>Diseño</h3>
+                <p>Una identidad visual coherente con tu negocio, tus servicios y el público al que querés llegar.</p>
+            </div>
+
+            <div class="why-row">
+                <span class="why-row-num">02</span>
+                <h3>Responsive</h3>
+                <p>Sitios adaptados a celulares, tablets y computadoras para facilitar la navegación.</p>
+            </div>
+
+            <div class="why-row">
+                <span class="why-row-num">03</span>
+                <h3>Rendimiento</h3>
+                <p>Código y recursos optimizados para favorecer tiempos de carga y una navegación fluida.</p>
+            </div>
+
+            <div class="why-row">
+                <span class="why-row-num">04</span>
+                <h3>Experiencia de usuario</h3>
+                <p>Contenido organizado y llamadas a la acción que ayudan a encontrar información y contactar con tu negocio.</p>
+            </div>
+
+            <div class="why-row">
+                <span class="why-row-num">05</span>
+                <h3>Escalabilidad</h3>
+                <p>Una estructura preparada para incorporar nuevas secciones y funcionalidades según las necesidades del proyecto.</p>
+            </div>
 
         </div>
 
@@ -227,7 +341,7 @@
 
 
 <!-- =====================================================
-     PROYECTOS
+     PROYECTOS — cards inclinadas de colores
      ===================================================== -->
 
 <section class="work section" id="trabajos">
@@ -236,12 +350,13 @@
 
         <div class="section-head">
             <div>
-                <span class="section-eyebrow">02 — PROYECTOS</span>
-                <h2 class="section-title">/proyectos</h2>
+                <span class="section-eyebrow">03 — PROYECTOS</span>
+                <h2 class="section-title">Proyectos que llevan ideas a la web.</h2>
             </div>
-            <a href="#contacto" class="section-link">
-                HABLEMOS →
-            </a>
+            <p class="section-desc">
+                Cada proyecto parte de una necesidad concreta
+                y se convierte en una experiencia digital diseñada para su propósito.
+            </p>
         </div>
 
     </div>
@@ -258,7 +373,11 @@
                 </div>
 
                 <div class="work-card-image">
-                    <img src="./assets/proyectos/1/NP_1.png" alt="Captura del sitio web de Nivel Pulidos" loading="lazy">
+                    <img
+                        src="./assets/proyectos/1/NP_1.png"
+                        alt="Vista previa del sitio web de Nivel Pulidos"
+                        loading="lazy"
+                    >
                 </div>
 
                 <h3 class="work-card-name">Nivel Pulidos</h3>
@@ -266,7 +385,12 @@
                 <span class="work-card-category">SERVICIOS</span>
 
                 <p class="work-card-claim">
-                    Sitio corporativo con catálogo editable.
+                    Sitio corporativo con catálogo editable
+                    para presentar servicios y facilitar el contacto.
+                </p>
+
+                <p class="work-card-result">
+                    Ver proyecto →
                 </p>
             </article>
 
@@ -278,7 +402,11 @@
                 </div>
 
                 <div class="work-card-image">
-                    <img src="./assets/proyectos/2/foto2.jpg" alt="Captura del sitio web de Migaja" loading="lazy">
+                    <img
+                        src="./assets/proyectos/2/foto2.jpg"
+                        alt="Vista previa del sitio web de Migaja"
+                        loading="lazy"
+                    >
                 </div>
 
                 <h3 class="work-card-name">Migaja</h3>
@@ -286,7 +414,12 @@
                 <span class="work-card-category">GASTRONOMÍA</span>
 
                 <p class="work-card-claim">
-                    Web con menú digital y pedidos.
+                    Web con menú digital y contacto directo
+                    para pedidos por WhatsApp.
+                </p>
+
+                <p class="work-card-result">
+                    Ver proyecto →
                 </p>
             </article>
 
@@ -298,7 +431,11 @@
                 </div>
 
                 <div class="work-card-image">
-                    <img src="./assets/proyectos/3/foto3.jpg" alt="Captura del sitio web de A los pies del Maestro" loading="lazy">
+                    <img
+                        src="./assets/proyectos/3/foto3.jpg"
+                        alt="Vista previa del sitio web de A los pies del Maestro"
+                        loading="lazy"
+                    >
                 </div>
 
                 <h3 class="work-card-name">A los pies del Maestro</h3>
@@ -306,7 +443,12 @@
                 <span class="work-card-category">IGLESIA</span>
 
                 <p class="work-card-claim">
-                    Sitio institucional con landing de contacto.
+                    Sitio institucional con landing de contacto
+                    para comunicar actividades y recibir consultas.
+                </p>
+
+                <p class="work-card-result">
+                    Ver proyecto →
                 </p>
             </article>
 
@@ -322,17 +464,18 @@
      PROCESO
      ===================================================== -->
 
-<section class="process section">
+<section class="process section" id="proceso">
 
     <div class="container">
 
         <div class="section-head">
             <div>
-                <span class="section-eyebrow">03 — PROCESO</span>
-                <h2 class="section-title">/proceso</h2>
+                <span class="section-eyebrow">04 — PROCESO</span>
+                <h2 class="section-title">De la idea al sitio publicado.</h2>
             </div>
             <p class="section-desc">
-                De la idea al lanzamiento en cuatro pasos claros.
+                Cuatro etapas para llevar tu proyecto desde la
+                primera conversación hasta el sitio online.
             </p>
         </div>
 
@@ -346,22 +489,22 @@
                         <path d="M8 12h8"/>
                     </svg>
                 </div>
-                <span class="process-card-num">PASO 01</span>
-                <h3>Hablamos</h3>
-                <p>Entendemos tu negocio, tus objetivos y lo que necesitás.</p>
+                <span class="process-card-num">ETAPA 01</span>
+                <h3>Descubrimiento</h3>
+                <p>Conocemos tu negocio, tus objetivos y las necesidades de tu proyecto.</p>
             </article>
 
             <article class="process-card">
                 <div class="process-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                        <path d="M2 17l10 5 10-5"/>
-                        <path d="M2 12l10 5 10-5"/>
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <path d="M14 2v6h6"/>
+                        <path d="M9 13h6M9 17h4"/>
                     </svg>
                 </div>
-                <span class="process-card-num">PASO 02</span>
-                <h3>Diseñamos</h3>
-                <p>Propuesta visual pensada para tu marca y tu audiencia.</p>
+                <span class="process-card-num">ETAPA 02</span>
+                <h3>Propuesta</h3>
+                <p>Definimos el alcance, las funcionalidades, los plazos y el presupuesto.</p>
             </article>
 
             <article class="process-card">
@@ -371,9 +514,9 @@
                         <path d="M15 5l4 4"/>
                     </svg>
                 </div>
-                <span class="process-card-num">PASO 03</span>
-                <h3>Desarrollamos</h3>
-                <p>Convertimos el diseño en una web rápida y funcional.</p>
+                <span class="process-card-num">ETAPA 03</span>
+                <h3>Diseño y desarrollo</h3>
+                <p>Construimos el sitio siguiendo la propuesta aprobada y los requisitos acordados.</p>
             </article>
 
             <article class="process-card">
@@ -383,70 +526,18 @@
                         <path d="M9 12l2 2 4-4"/>
                     </svg>
                 </div>
-                <span class="process-card-num">PASO 04</span>
-                <h3>Publicamos</h3>
-                <p>Ponemos tu sitio online y te acompañamos post-lanzamiento.</p>
+                <span class="process-card-num">ETAPA 04</span>
+                <h3>Revisión y entrega</h3>
+                <p>Revisamos el resultado, realizamos los ajustes incluidos y coordinamos la publicación.</p>
             </article>
 
         </div>
 
-    </div>
 
-</section>
-
-
-
-<!-- =====================================================
-     POR QUÉ
-     ===================================================== -->
-
-<section class="why section">
-
-    <div class="container">
-
-        <div class="section-head">
-            <div>
-                <span class="section-eyebrow">04 — POR QUÉ ELEGIRNOS</span>
-                <h2 class="section-title">/por-que</h2>
-            </div>
-            <p class="section-desc">
-                Trabajamos con foco en claridad, velocidad y resultados.
-            </p>
-        </div>
-
-
-        <div class="why-list">
-
-            <div class="why-row">
-                <span class="why-row-num">01</span>
-                <h3>Diseño personalizado</h3>
-                <p>Cada sitio se piensa desde cero para tu marca.</p>
-            </div>
-
-            <div class="why-row">
-                <span class="why-row-num">02</span>
-                <h3>Responsive real</h3>
-                <p>Mobile-first: se ve bien en celular, tablet y desktop.</p>
-            </div>
-
-            <div class="why-row">
-                <span class="why-row-num">03</span>
-                <h3>Velocidad</h3>
-                <p>Carga rápida, sin librerías innecesarias.</p>
-            </div>
-
-            <div class="why-row">
-                <span class="why-row-num">04</span>
-                <h3>SEO desde la base</h3>
-                <p>Estructura semántica y meta tags listos para Google.</p>
-            </div>
-
-            <div class="why-row">
-                <span class="why-row-num">05</span>
-                <h3>Acompañamiento</h3>
-                <p>Te seguimos después del lanzamiento.</p>
-            </div>
-
+        <div class="process-cta">
+            <a href="#contacto" class="button button-primary">
+                Empezar un proyecto
+            </a>
         </div>
 
     </div>
@@ -456,7 +547,7 @@
 
 
 <!-- =====================================================
-     PLANES
+     PLANES — mismo alto
      ===================================================== -->
 
 <section class="plans section" id="planes">
@@ -466,10 +557,12 @@
         <div class="section-head">
             <div>
                 <span class="section-eyebrow">05 — PLANES</span>
-                <h2 class="section-title">/planes</h2>
+                <h2 class="section-title">Una solución acorde a tu proyecto.</h2>
             </div>
             <p class="section-desc">
-                Tres formas de empezar. Sin sorpresas.
+                No todos los negocios necesitan la misma web. Por eso,
+                cada propuesta se define según el alcance, el contenido
+                y las funcionalidades requeridas.
             </p>
         </div>
 
@@ -477,90 +570,91 @@
         <div class="plans-grid">
 
             <article class="plan-card">
-                <span class="plan-label">LANDING</span>
+                <span class="plan-label">LANDING PAGE</span>
                 <h3>Landing page</h3>
-
-                <div class="plan-price">
-                    <span class="plan-price-num">Desde USD 350</span>
-                </div>
-
                 <p class="plan-desc">
-                    Una sola página enfocada en convertir.
-                    Ideal para campañas y lanzamientos puntuales.
+                    Para presentar un servicio, producto o propuesta
+                    comercial en una página enfocada.
                 </p>
-
                 <ul class="plan-features">
-                    <li>1 página con secciones definidas</li>
+                    <li>Una página con secciones definidas</li>
                     <li>Diseño responsive</li>
-                    <li>Formulario de contacto</li>
-                    <li>Integración con WhatsApp</li>
-                    <li>SEO básico</li>
+                    <li>Formulario o canal de contacto</li>
+                    <li>Estructura lista para campañas</li>
                 </ul>
-
-                <p class="plan-note">
-                    <strong>No incluye:</strong> contenidos, fotos propias, campañas de Ads.
-                </p>
-
-                <a href="#contacto" class="button button-secondary plan-button">Hablemos →</a>
+                <a href="#contacto" class="button button-secondary plan-button">
+                    Solicitar propuesta
+                </a>
             </article>
-
-
-            <article class="plan-card plan-featured">
-                <span class="plan-label">SITIO · RECOMENDADO</span>
-                <h3>Sitio corporativo</h3>
-
-                <div class="plan-price">
-                    <span class="plan-price-num">Desde USD 700</span>
-                </div>
-
-                <p class="plan-desc">
-                    Varias secciones pensadas para empresas que
-                    necesitan mostrar su operación completa.
-                </p>
-
-                <ul class="plan-features">
-                    <li>Hasta 6 secciones</li>
-                    <li>Gestión de contenido</li>
-                    <li>Blog o novedades</li>
-                    <li>Analytics y métricas</li>
-                    <li>SEO completo</li>
-                </ul>
-
-                <p class="plan-note">
-                    <strong>No incluye:</strong> e-commerce, integraciones complejas, redacción de contenidos.
-                </p>
-
-                <a href="#contacto" class="button button-primary plan-button">Hablemos →</a>
-            </article>
-
 
             <article class="plan-card">
-                <span class="plan-label">A MEDIDA</span>
-                <h3>Proyecto a medida</h3>
-
-                <div class="plan-price">
-                    <span class="plan-price-num">A cotizar</span>
-                </div>
-
+                <span class="plan-label">WEB CORPORATIVA</span>
+                <h3>Web corporativa</h3>
                 <p class="plan-desc">
-                    E-commerce, sistema interno, integraciones
-                    con APIs o algo distinto.
+                    Para empresas y profesionales que necesitan presentar
+                    su negocio, servicios y canales de contacto.
                 </p>
-
                 <ul class="plan-features">
-                    <li>Alcance a definir juntos</li>
-                    <li>Stack adaptado al proyecto</li>
-                    <li>Soporte continuo</li>
-                    <li>Escalable a futuro</li>
+                    <li>Varias secciones y páginas internas</li>
+                    <li>Gestión de contenido</li>
+                    <li>Blog o sección de novedades</li>
+                    <li>SEO y métricas base</li>
                 </ul>
-
-                <p class="plan-note">
-                    <strong>Se cotiza según:</strong> alcance, integraciones y tiempos.
-                </p>
-
-                <a href="#contacto" class="button button-secondary plan-button">Hablemos →</a>
+                <a href="#contacto" class="button button-secondary plan-button">
+                    Solicitar propuesta
+                </a>
             </article>
 
+            <article class="plan-card">
+                <span class="plan-label">TIENDA ONLINE</span>
+                <h3>Tienda online</h3>
+                <p class="plan-desc">
+                    Para negocios que buscan mostrar productos y
+                    gestionar pedidos a través de internet.
+                </p>
+                <ul class="plan-features">
+                    <li>Catálogo de productos</li>
+                    <li>Carrito y checkout</li>
+                    <li>Integración con medios de pago</li>
+                    <li>Panel de gestión</li>
+                </ul>
+                <a href="#contacto" class="button button-secondary plan-button">
+                    Solicitar propuesta
+                </a>
+            </article>
+
+            <article class="plan-card">
+                <span class="plan-label">MANTENIMIENTO</span>
+                <h3>Mantenimiento</h3>
+                <p class="plan-desc">
+                    Para sitios que necesitan actualizaciones,
+                    soporte y mejoras periódicas.
+                </p>
+                <ul class="plan-features">
+                    <li>Actualizaciones de contenido</li>
+                    <li>Copias de seguridad</li>
+                    <li>Revisión técnica periódica</li>
+                    <li>Soporte por incidencias</li>
+                </ul>
+                <a href="#contacto" class="button button-secondary plan-button">
+                    Solicitar propuesta
+                </a>
+            </article>
+
+        </div>
+
+
+        <p class="plans-note">
+            <strong>Sobre los presupuestos:</strong> el presupuesto
+            detalla el alcance del trabajo y los servicios incluidos.
+            Cada proyecto se cotiza según sus necesidades específicas.
+        </p>
+
+
+        <div class="plans-cta">
+            <a href="#contacto" class="button button-primary">
+                Solicitar presupuesto personalizado
+            </a>
         </div>
 
     </div>
@@ -579,11 +673,11 @@
 
         <div class="section-head">
             <div>
-                <span class="section-eyebrow">06 — PREGUNTAS</span>
-                <h2 class="section-title">/preguntas</h2>
+                <span class="section-eyebrow">06 — PREGUNTAS FRECUENTES</span>
+                <h2 class="section-title">Preguntas frecuentes</h2>
             </div>
             <p class="section-desc">
-                Las dudas que aparecen antes de empezar.
+                Las dudas más comunes antes de empezar un proyecto.
             </p>
         </div>
 
@@ -591,35 +685,47 @@
         <div class="faq-list">
 
             <details class="faq-item">
-                <summary>¿Qué necesito para empezar mi proyecto?</summary>
-                <p>Una charla inicial para entender tu negocio y objetivos. No hace falta tener todo definido: te guiamos en el proceso.</p>
+                <summary>¿Cómo se define el precio de un proyecto?</summary>
+                <p>El precio depende del tipo de sitio, la cantidad de secciones, las funcionalidades y el contenido. Solicitá una propuesta para conocer el alcance y el presupuesto de tu proyecto.</p>
             </details>
 
             <details class="faq-item">
-                <summary>¿Cuánto tarda en estar lista mi web?</summary>
-                <p>Una landing page puede estar lista en 1-2 semanas. Un sitio corporativo, entre 3 y 5 semanas según el alcance.</p>
+                <summary>¿Cuánto tarda en estar listo el sitio?</summary>
+                <p>El plazo depende de la complejidad del sitio y de la disponibilidad del contenido necesario. Se define antes de comenzar el trabajo.</p>
             </details>
 
             <details class="faq-item">
-                <summary>¿Puedo actualizar el contenido yo mismo?</summary>
-                <p>Sí. Los planes incluyen gestión de contenido para que puedas editar textos e imágenes sin depender de nosotros.</p>
+                <summary>¿Cómo se define el diseño?</summary>
+                <p>La propuesta visual se adapta a la identidad, los objetivos y las necesidades de cada proyecto.</p>
             </details>
 
             <details class="faq-item">
-                <summary>¿La web va a funcionar bien en celulares?</summary>
-                <p>Sí. Diseñamos mobile-first: cada página se construye pensando primero en cómo se ve en dispositivos móviles.</p>
+                <summary>¿El sitio va a funcionar en celulares y tablets?</summary>
+                <p>Los sitios se desarrollan con diseño responsive para adaptarse a diferentes tamaños de pantalla.</p>
             </details>
 
             <details class="faq-item">
-                <summary>¿Qué pasa después del lanzamiento?</summary>
-                <p>Te acompañamos. Podemos encargarnos del mantenimiento, actualizaciones y mejoras continuas.</p>
+                <summary>¿El hosting y el dominio están incluidos?</summary>
+                <p>Depende de la propuesta contratada. Los servicios incluidos y sus costos se detallan en el presupuesto.</p>
             </details>
 
             <details class="faq-item">
-                <summary>¿Trabajan con clientes de otros países?</summary>
-                <p>Sí. Trabajamos de forma remota con clientes de Argentina y del exterior.</p>
+                <summary>¿Puedo pedir modificaciones después de la entrega?</summary>
+                <p>Los ajustes posteriores pueden presupuestarse por separado o contratarse mediante un servicio de mantenimiento.</p>
             </details>
 
+            <details class="faq-item">
+                <summary>¿Cómo contrato un proyecto?</summary>
+                <p>Contactanos con una descripción de tu proyecto. Revisaremos tus necesidades y prepararemos una propuesta.</p>
+            </details>
+
+        </div>
+
+
+        <div class="faq-cta">
+            <a href="#contacto" class="button button-primary">
+                Consultar por mi proyecto
+            </a>
         </div>
 
     </div>
@@ -639,10 +745,11 @@
         <div class="section-head">
             <div>
                 <span class="section-eyebrow">07 — CONTACTO</span>
-                <h2 class="section-title">/contacto</h2>
+                <h2 class="section-title">Contanos tu idea.</h2>
             </div>
             <p class="section-desc">
-                Contanos qué necesitás y te respondemos en menos de 24 horas.
+                Completá los datos y contanos qué necesitás.
+                Te contactaremos para conversar sobre tu proyecto.
             </p>
         </div>
 
@@ -650,17 +757,25 @@
         <div class="contact-grid">
 
             <div class="contact-info">
-                <h3>Hablemos de <span>tu proyecto.</span></h3>
-                <p>Contanos un poco sobre lo que necesitás y te respondemos con los próximos pasos.</p>
+                <h3>Hagamos realidad tu próximo proyecto digital.</h3>
+                <p>
+                    Contanos qué querés construir. Analizaremos tus
+                    necesidades y te propondremos una solución acorde
+                    con tus objetivos.
+                </p>
 
                 <div class="contact-meta">
                     <div>
                         <span class="contact-meta-label">EMAIL</span>
-                        <a href="mailto:projects@tagback.com.ar" class="contact-meta-value">projects@tagback.com.ar</a>
+                        <a href="mailto:hola@tagback.com" class="contact-meta-value">
+                            hola@tagback.com
+                        </a>
                     </div>
                     <div>
-                        <span class="contact-meta-label">RESPUESTA</span>
-                        <span class="contact-meta-value">&lt; 24 horas</span>
+                        <span class="contact-meta-label">TELÉFONO</span>
+                        <a href="tel:+540000000000" class="contact-meta-value">
+                            +54 000 000 0000
+                        </a>
                     </div>
                     <div>
                         <span class="contact-meta-label">ZONA HORARIA</span>
@@ -677,6 +792,12 @@
                 novalidate
             >
 
+                <h3 class="quote-form-title">Contanos tu idea.</h3>
+                <p class="quote-form-lead">
+                    Completá los datos y contanos qué necesitás.
+                    Te contactaremos para conversar sobre tu proyecto.
+                </p>
+
                 <div class="quote-form-grid">
 
                     <div class="form-field">
@@ -692,7 +813,7 @@
                     </div>
 
                     <div class="form-field">
-                        <label for="quote-email">Correo *</label>
+                        <label for="quote-email">Correo electrónico *</label>
                         <input
                             type="email"
                             id="quote-email"
@@ -704,30 +825,36 @@
                     </div>
 
                     <div class="form-field form-field-full">
-                        <label for="quote-phone">Teléfono</label>
+                        <label for="quote-phone">Teléfono *</label>
                         <input
                             type="tel"
                             id="quote-phone"
                             name="phone"
                             autocomplete="tel"
-                            placeholder="+54 11 5555 5555"
+                            inputmode="tel"
+                            placeholder="Ingresá tu número de teléfono"
+                            required
                         >
                     </div>
 
                     <fieldset class="form-field form-field-full form-fieldset">
-                        <legend>¿Qué necesitás? *</legend>
+                        <legend>Tipo de proyecto *</legend>
                         <div class="pill-group">
                             <label class="pill">
                                 <input type="radio" name="project_type" value="landing" required>
                                 <span>Landing page</span>
                             </label>
                             <label class="pill">
-                                <input type="radio" name="project_type" value="sitio">
-                                <span>Sitio web</span>
+                                <input type="radio" name="project_type" value="web-corporativa">
+                                <span>Web corporativa</span>
                             </label>
                             <label class="pill">
-                                <input type="radio" name="project_type" value="ecommerce">
-                                <span>E-commerce</span>
+                                <input type="radio" name="project_type" value="tienda">
+                                <span>Tienda online</span>
+                            </label>
+                            <label class="pill">
+                                <input type="radio" name="project_type" value="mantenimiento">
+                                <span>Mantenimiento</span>
                             </label>
                             <label class="pill">
                                 <input type="radio" name="project_type" value="otro">
@@ -737,12 +864,26 @@
                     </fieldset>
 
                     <div class="form-field form-field-full">
-                        <label for="quote-message">Mensaje</label>
+                        <label for="quote-budget">
+                            Presupuesto estimado
+                            <span class="form-field-optional">(opcional)</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="quote-budget"
+                            name="budget"
+                            placeholder="Ej: USD 500 - 1000"
+                        >
+                    </div>
+
+                    <div class="form-field form-field-full">
+                        <label for="quote-message">Contanos qué necesitás *</label>
                         <textarea
                             id="quote-message"
                             name="message"
-                            rows="4"
-                            placeholder="Contanos un poco sobre tu proyecto (opcional)"
+                            rows="5"
+                            placeholder="Contanos un poco sobre tu proyecto"
+                            required
                         ></textarea>
                     </div>
 
@@ -750,51 +891,12 @@
 
                 <div class="quote-form-submit">
                     <button type="submit" class="button button-primary">
-                        Enviar mensaje →
+                        Enviar consulta
                     </button>
                 </div>
 
             </form>
 
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CONFÍAN EN NOSOTROS
-     ===================================================== -->
-
-<section class="trust section" id="confianza">
-
-    <div class="container">
-
-        <div class="section-head">
-            <div>
-                <span class="section-eyebrow">08 — CONFIANZA</span>
-                <h2 class="section-title">/confían</h2>
-            </div>
-            <p class="section-desc">
-                Estructura preparada para sumar logos y menciones
-                cuando los clientes lo autoricen.
-            </p>
-        </div>
-
-
-        <div class="trust-note">
-            <p>
-                Estamos construyendo esta sección. A medida que
-                cada proyecto avanza, sumamos aquí los logos y
-                menciones de clientes que autorizan su publicación.
-            </p>
-
-            <p class="trust-contact">
-                ¿Querés ser parte?
-                <a href="#contacto">Hablemos →</a>
-            </p>
         </div>
 
     </div>
@@ -813,16 +915,29 @@
 
         <div class="final-cta-box">
 
-            <span class="final-cta-eyebrow">CUANDO QUIERAS</span>
+            <h2>Hagamos realidad tu próximo proyecto digital.</h2>
 
-            <h2>
-                Tu próxima web
-                <span>empieza acá.</span>
-            </h2>
+            <p>
+                Contanos qué querés construir. Analizaremos tus
+                necesidades y te propondremos una solución acorde
+                con tus objetivos.
+            </p>
 
-            <a href="#contacto" class="button button-cta">
-                Hablemos de tu proyecto →
-            </a>
+            <div class="final-cta-actions">
+
+                <a href="#contacto" class="button button-cta">
+                    Hablemos de tu proyecto
+                </a>
+
+                <a href="tel:+540000000000" class="button button-secondary">
+                    Consultar por teléfono o WhatsApp
+                </a>
+
+            </div>
+
+            <span class="final-cta-note">
+                Sin compromiso de contratación.
+            </span>
 
         </div>
 
@@ -859,30 +974,25 @@
             </div>
 
             <p>
-                Diseño y desarrollo web para marcas
-                que quieren crecer.
+                Diseño y desarrollo web para negocios
+                que quieren construir una presencia digital profesional.
             </p>
 
         </div>
 
         <div class="footer-links">
             <div>
-                <strong>SERVICIOS</strong>
-                <a href="#servicios">Diseño web</a>
-                <a href="#servicios">Desarrollo web</a>
-                <a href="#servicios">Soluciones digitales</a>
-            </div>
-            <div>
-                <strong>TAGBACK</strong>
+                <strong>NAVEGACIÓN</strong>
+                <a href="./">Inicio</a>
+                <a href="#servicios">Servicios</a>
                 <a href="#trabajos">Proyectos</a>
-                <a href="#faq">Preguntas</a>
                 <a href="#contacto">Contacto</a>
             </div>
             <div>
-                <strong>LEGAL</strong>
-                <a href="./privacidad.html">Privacidad</a>
-                <a href="./cookies.html">Cookies</a>
-                <a href="mailto:projects@tagback.com.ar">Contacto legal</a>
+                <strong>CONTACTO</strong>
+                <a href="mailto:hola@tagback.com">Escribir por email</a>
+                <a href="tel:+540000000000">Llamar por teléfono</a>
+                <a href="#contacto">Consultar por WhatsApp</a>
             </div>
         </div>
 
@@ -895,19 +1005,16 @@
             © <span data-current-year></span> TAGBACK. Todos los derechos reservados.
         </span>
 
-        <div class="footer-signature">
+        <span class="footer-credit">
+            <span class="footer-credit-text">DISEÑO Y DESARROLLO POR</span>
             <img
                 src="./assets/logo/guri_isotipo.svg"
                 alt="TAGBACK"
-                class="footer-signature-icon"
-                width="80"
-                height="80"
+                class="footer-credit-icon"
+                width="22"
+                height="22"
             >
-            <div class="footer-signature-text">
-                <span class="footer-signature-label">Diseño y desarrollo por</span>
-                <span class="footer-signature-name">TAGBACK</span>
-            </div>
-        </div>
+        </span>
 
     </div>
 
@@ -916,111 +1023,54 @@
 
 
 <!-- =====================================================
-     BANNER DE COOKIES
+     INTRO CINEMATOGRÁFICA
      ===================================================== -->
 
-<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
-
-    <h3 class="cookie-banner-title">Cookies</h3>
-
-    <p class="cookie-banner-text">
-        Usamos cookies para analizar el uso del sitio y mejorar la experiencia.
-        Podés aceptar todas, rechazar las opcionales o configurarlas.
-        Más info en <a href="./cookies.html">Política de Cookies</a>.
-    </p>
-
-    <div class="cookie-banner-actions">
-        <button type="button" id="cookie-accept" class="button button-primary">
-            Aceptar todas
-        </button>
-        <button type="button" id="cookie-reject" class="button button-secondary">
-            Rechazar
-        </button>
-        <button type="button" id="cookie-config" class="cookie-btn-config">
-            Configurar
-        </button>
-    </div>
-
+<div class="tb-intro no-js" id="tb-intro" aria-hidden="true">
+    <img
+        src="./assets/logo/guri_isotipo.svg"
+        alt=""
+        class="tb-intro-logo"
+        width="720"
+        height="720"
+    >
 </div>
 
 
+
 <!-- =====================================================
-     MODAL DE COOKIES
+     COOKIES
      ===================================================== -->
 
-<div class="cookie-modal" id="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title">
+<div
+    class="cookie-banner"
+    id="cookie-banner"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cookie-title"
+    aria-describedby="cookie-desc"
+>
+    <div class="cookie-card">
 
-    <div class="cookie-modal-content">
+        <h2 id="cookie-title">Uso de cookies</h2>
 
-        <h2 class="cookie-modal-title" id="cookie-modal-title">Configuración de cookies</h2>
-
-        <p class="cookie-modal-intro">
-            Elegí qué tipos de cookies querés permitir. Las necesarias
-            siempre están activas porque el sitio no funciona sin ellas.
+        <p id="cookie-desc">
+            Usamos cookies para analizar cómo se utiliza este sitio
+            y mejorar la experiencia de navegación. Podés aceptarlas
+            o rechazarlas. Para más información, escribinos a
+            <a href="mailto:hola@tagback.com">hola@tagback.com</a>.
         </p>
 
-        <div class="cookie-category">
-
-            <div class="cookie-category-header">
-                <h3 class="cookie-category-title">Necesarias</h3>
-                <label class="cookie-switch">
-                    <input type="checkbox" checked disabled>
-                    <span class="cookie-switch-slider"></span>
-                </label>
-            </div>
-
-            <p class="cookie-category-desc">
-                Permiten el funcionamiento básico del sitio: navegación,
-                formularios y seguridad. No se pueden desactivar.
-            </p>
-
-        </div>
-
-        <div class="cookie-category">
-
-            <div class="cookie-category-header">
-                <h3 class="cookie-category-title">Analíticas</h3>
-                <label class="cookie-switch">
-                    <input type="checkbox" id="cookie-analytics">
-                    <span class="cookie-switch-slider"></span>
-                </label>
-            </div>
-
-            <p class="cookie-category-desc">
-                Nos ayudan a entender cómo se usa el sitio: qué páginas
-                se visitan más, de dónde vienen los usuarios, etc.
-            </p>
-
-        </div>
-
-        <div class="cookie-category">
-
-            <div class="cookie-category-header">
-                <h3 class="cookie-category-title">Marketing</h3>
-                <label class="cookie-switch">
-                    <input type="checkbox" id="cookie-marketing">
-                    <span class="cookie-switch-slider"></span>
-                </label>
-            </div>
-
-            <p class="cookie-category-desc">
-                Se usan para mostrarte anuncios relevantes en otros sitios
-                y medir el rendimiento de campañas publicitarias.
-            </p>
-
-        </div>
-
-        <div class="cookie-modal-actions">
-            <button type="button" id="cookie-save" class="button button-primary">
-                Guardar preferencias
+        <div class="cookie-actions">
+            <button type="button" class="button button-primary" data-cookie-accept>
+                Aceptar
             </button>
-            <button type="button" id="cookie-close-modal" class="button button-secondary">
-                Cerrar
+            <button type="button" class="button button-secondary" data-cookie-reject>
+                Rechazar
             </button>
         </div>
 
     </div>
-
 </div>
 
 
