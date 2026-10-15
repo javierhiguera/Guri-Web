@@ -1,78 +1,8 @@
 /* =========================================================
-   TAGBACK — JAVASCRIPT v7 (intro split + premium)
+   TAGBACK — JAVASCRIPT v2
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
-
-    /* =====================================================
-       INTRO CINEMATOGRÁFICA — apertura en dos
-       ===================================================== */
-
-    const intro = document.getElementById("tb-intro");
-
-    if (intro) {
-
-        const prefersReducedMotion = window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        ).matches;
-
-        const INTRO_KEY = "tagback-intro-shown";
-
-        /* Tiempos (ms) */
-        const INTRO_LOGO_APPEAR  = 900;
-        const INTRO_HOLD         = 1100;
-        const INTRO_SPLIT        = 1200;
-
-        const hideIntro = () => {
-            intro.classList.add("is-hiding");
-            intro.setAttribute("aria-hidden", "true");
-
-            const cleanup = () => {
-                if (intro && intro.parentNode) {
-                    intro.parentNode.removeChild(intro);
-                }
-            };
-
-            intro.addEventListener("transitionend", cleanup, { once: true });
-            setTimeout(cleanup, 1500);
-        };
-
-        const splitIntro = () => {
-            intro.classList.add("is-opening");
-            setTimeout(hideIntro, INTRO_SPLIT - 200);
-        };
-
-        if (prefersReducedMotion) {
-            setTimeout(hideIntro, 200);
-        } else {
-
-            let alreadyShown = false;
-
-            try {
-                alreadyShown = sessionStorage.getItem(INTRO_KEY) === "1";
-            } catch (e) { /* ignorar */ }
-
-            if (alreadyShown) {
-                hideIntro();
-            } else {
-
-                setTimeout(splitIntro, INTRO_LOGO_APPEAR + INTRO_HOLD);
-
-                try {
-                    sessionStorage.setItem(INTRO_KEY, "1");
-                } catch (e) { /* ignorar */ }
-            }
-
-        }
-
-        window.addEventListener("error", () => {
-            if (intro && intro.parentNode) {
-                intro.style.display = "none";
-            }
-        });
-
-    }
-
 
     /* =====================================================
        MENÚ MÓVIL
@@ -154,15 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       RESPETO A PREFERS-REDUCED-MOTION
-       ===================================================== */
-
-    const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-
-    /* =====================================================
        ANIMACIONES AL ENTRAR EN PANTALLA
        ===================================================== */
 
@@ -172,32 +93,19 @@ document.addEventListener("DOMContentLoaded", () => {
             ".why-row",
             ".process-card",
             ".plan-card",
-            ".work-card"
+            ".work-card",
+            ".trust-note"
         ].join(", ")
     );
 
-    if (
-        !prefersReducedMotion &&
-        "IntersectionObserver" in window &&
-        animatedElements.length
-    ) {
+    if ("IntersectionObserver" in window && animatedElements.length) {
 
         const observer = new IntersectionObserver(
             entries => {
                 entries.forEach(entry => {
                     if (!entry.isIntersecting) return;
-
-                    const el = entry.target;
-                    const parent = el.parentElement;
-                    const siblings = parent ? Array.from(parent.children) : [];
-                    const index = siblings.indexOf(el);
-                    const delay = Math.min(index, 4) * 90;
-
-                    setTimeout(() => {
-                        el.classList.add("visible");
-                    }, delay);
-
-                    observer.unobserve(el);
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
                 });
             },
             {
@@ -206,11 +114,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
 
-        animatedElements.forEach(el => observer.observe(el));
+        animatedElements.forEach(element => observer.observe(element));
 
     } else {
 
-        animatedElements.forEach(el => el.classList.add("visible"));
+        animatedElements.forEach(element => element.classList.add("visible"));
 
     }
 
@@ -235,7 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const formSubmit = quoteForm.querySelector(".quote-form-submit");
         const submitBtn = quoteForm.querySelector('button[type="submit"]');
-        const submitBtnDefaultText = submitBtn ? submitBtn.textContent : "";
 
         const showFeedback = (type, message) => {
 
@@ -259,60 +166,16 @@ document.addEventListener("DOMContentLoaded", () => {
             if (feedback) feedback.remove();
         };
 
-        const getFieldError = (field) => {
-
-            if (field.validity.valueMissing) {
-                return "Este campo es obligatorio.";
-            }
-
-            if (field.validity.typeMismatch && field.type === "email") {
-                return "Revisá este dato.";
-            }
-
-            if (field.name === "phone" && field.validity.patternMismatch) {
-                return "Ingresá un número de teléfono válido.";
-            }
-
-            if (!field.checkValidity()) {
-                return "Revisá este dato.";
-            }
-
-            return "";
-
-        };
-
-        const setFieldError = (field, message) => {
-
-            const wrapper = field.closest(".form-field");
-            if (!wrapper) return;
-
-            let errorEl = wrapper.querySelector(".form-field-error");
-
-            if (!errorEl) {
-                errorEl = document.createElement("span");
-                errorEl.className = "form-field-error";
-                wrapper.appendChild(errorEl);
-            }
-
-            if (message) {
-                field.setAttribute("aria-invalid", "true");
-                errorEl.textContent = message;
-                errorEl.classList.add("is-visible");
-            } else {
-                field.removeAttribute("aria-invalid");
-                errorEl.textContent = "";
-                errorEl.classList.remove("is-visible");
-            }
-
-        };
-
         const validateField = (field) => {
-            const message = getFieldError(field);
-            setFieldError(field, message);
-            return !message;
+            if (field.checkValidity()) {
+                field.removeAttribute("aria-invalid");
+                return true;
+            }
+            field.setAttribute("aria-invalid", "true");
+            return false;
         };
 
-        quoteForm.querySelectorAll("input, textarea, select").forEach(field => {
+        quoteForm.querySelectorAll("input, textarea").forEach(field => {
             field.addEventListener("blur", () => validateField(field));
             field.addEventListener("input", () => {
                 if (field.getAttribute("aria-invalid") === "true") {
@@ -326,18 +189,8 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
             clearFeedback();
 
-            const fields = quoteForm.querySelectorAll("input, textarea, select");
-            let allValid = true;
-
-            fields.forEach(field => {
-                if (!validateField(field)) {
-                    allValid = false;
-                }
-            });
-
-            if (!allValid) {
-                const firstInvalid = quoteForm.querySelector('[aria-invalid="true"]');
-                if (firstInvalid) firstInvalid.focus();
+            if (!quoteForm.checkValidity()) {
+                quoteForm.reportValidity();
                 return;
             }
 
@@ -352,15 +205,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 showFeedback(
                     "info",
-                    "Formulario en configuración. Mientras tanto, escribinos por email o WhatsApp."
+                    "Formulario en configuración. Mientras tanto, escribinos a hola@tagback.com"
                 );
 
                 return;
 
             }
 
+            const originalText = submitBtn.textContent;
             submitBtn.disabled = true;
-            submitBtn.textContent = "Enviando consulta…";
+            submitBtn.textContent = "Enviando...";
 
             const formData = new FormData(quoteForm);
 
@@ -372,32 +226,26 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(response => {
 
                 if (response.ok) {
-                    showFeedback(
-                        "success",
-                        "Tu consulta fue enviada correctamente. Nos pondremos en contacto con vos."
-                    );
+                    showFeedback("success", "¡Mensaje enviado! Te respondemos en menos de 24 horas.");
                     quoteForm.reset();
-                    quoteForm.querySelectorAll('[aria-invalid="true"]').forEach(f => {
-                        f.removeAttribute("aria-invalid");
-                    });
-                    quoteForm.querySelectorAll(".form-field-error").forEach(e => {
-                        e.textContent = "";
-                        e.classList.remove("is-visible");
-                    });
                 } else {
                     throw new Error("Error en la respuesta");
                 }
 
             })
             .catch(() => {
+
                 showFeedback(
                     "error",
-                    "No pudimos enviar tu consulta. Intentá nuevamente o contactanos por WhatsApp."
+                    "No pudimos enviar el mensaje. Probá de nuevo o escribinos a hola@tagback.com"
                 );
+
             })
             .finally(() => {
+
                 submitBtn.disabled = false;
-                submitBtn.textContent = submitBtnDefaultText;
+                submitBtn.textContent = originalText;
+
             });
 
         });
