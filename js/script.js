@@ -1,11 +1,11 @@
 /* =========================================================
-   TAGBACK — JAVASCRIPT v13
+   TAGBACK — JAVASCRIPT v14
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
-       INTRO — parpadeo rápido, ~700ms total
+       INTRO — logo + globo, transición breve
        ===================================================== */
 
     const intro = document.getElementById("tb-intro");
@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const INTRO_KEY = "tagback-intro-shown";
 
         const hideIntro = () => {
+            if (!intro) return;
             intro.classList.add("is-hiding");
             intro.setAttribute("aria-hidden", "true");
 
@@ -29,8 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             intro.addEventListener("transitionend", cleanup, { once: true });
-            setTimeout(cleanup, 500);
+            setTimeout(cleanup, 600);
         };
+
+        // Si JS falla, el intro se oculta por seguridad
+        window.addEventListener("error", () => {
+            if (intro && intro.parentNode) {
+                intro.style.display = "none";
+            }
+        });
 
         if (prefersReducedMotion) {
             setTimeout(hideIntro, 100);
@@ -45,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (alreadyShown) {
                 hideIntro();
             } else {
-                setTimeout(hideIntro, 450);
+                setTimeout(hideIntro, 700);
 
                 try {
                     sessionStorage.setItem(INTRO_KEY, "1");
@@ -53,12 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
         }
-
-        window.addEventListener("error", () => {
-            if (intro && intro.parentNode) {
-                intro.style.display = "none";
-            }
-        });
 
     }
 
@@ -227,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     const parent = el.parentElement;
                     const siblings = parent ? Array.from(parent.children) : [];
                     const index = siblings.indexOf(el);
-                    const delay = Math.min(index, 4) * 90;
+                    const delay = Math.min(index, 4) * 80;
 
                     setTimeout(() => {
                         el.classList.add("visible");
@@ -283,16 +285,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     });
-
-
-    /* =====================================================
-       AÑO DEL FOOTER
-       ===================================================== */
-
-    const currentYear = document.querySelector("[data-current-year]");
-    if (currentYear) {
-        currentYear.textContent = new Date().getFullYear();
-    }
 
 
     /* =====================================================
@@ -422,7 +414,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 showFeedback(
                     "info",
-                    "Estamos configurando el formulario. Mientras tanto, escribinos a projects@tagback.com"
+                    "Estamos configurando el formulario. Mientras tanto, escribinos a hola@tagback.com"
                 );
 
                 return;
@@ -462,7 +454,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch(() => {
                 showFeedback(
                     "error",
-                    "No pudimos enviar tu consulta. Intentá nuevamente o escribinos a projects@tagback.com"
+                    "No pudimos enviar tu consulta. Intentá nuevamente o escribinos a hola@tagback.com"
                 );
             })
             .finally(() => {
