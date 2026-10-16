@@ -1,5 +1,5 @@
 /* =========================================================
-   TAGBACK — STYLES v15 (mundo grande + mobile optimizado)
+   TAGBACK — STYLES v16 (mundo funcional)
    ========================================================= */
 
 
@@ -334,7 +334,7 @@ h1, h2, h3, h4, h5, h6,
 
 
 /* =========================================================
-   HERO — con mundo SVG enorme a la derecha
+   HERO — con mundo grande a la derecha
    ========================================================= */
 
 .hero {
@@ -344,43 +344,38 @@ h1, h2, h3, h4, h5, h6,
     background: var(--bg);
     border-bottom: 1px solid var(--line);
     overflow: hidden;
-    isolation: isolate;
-    min-height: 820px;
+    min-height: 720px;
 }
 
-.hero::before {
-    content: "";
+/* Mundo SVG — mitad derecha del hero, cortado por el borde */
+.hero-world {
     position: absolute;
     top: 50%;
     right: 0;
-    width: 95vh;
-    height: 95vh;
-    min-width: 800px;
-    min-height: 800px;
+    width: 55%;
+    height: 90%;
+    transform: translateY(-50%);
     background-image: url("../assets/seleccion/mundo.svg");
     background-repeat: no-repeat;
     background-position: right center;
     background-size: contain;
-    transform: translateY(-50%) translateX(28%);
-    z-index: -2;
     pointer-events: none;
-    opacity: 0.7;
-    filter: drop-shadow(0 0 80px rgba(0, 102, 255, 0.12));
+    opacity: 1;
+    z-index: 0;
     animation: mundo-float 18s ease-in-out infinite;
-    will-change: transform, opacity;
+    will-change: transform;
 }
 
 @keyframes mundo-float {
     0%, 100% {
-        transform: translateY(-50%) translateX(28%) rotate(0deg);
-        opacity: 0.7;
+        transform: translateY(-50%) rotate(0deg);
     }
     50% {
-        transform: translateY(-50%) translateX(31%) rotate(-3deg);
-        opacity: 0.85;
+        transform: translateY(-52%) rotate(-2deg);
     }
 }
 
+/* Gradiente azul suave encima del mundo */
 .hero::after {
     content: "";
     position: absolute;
@@ -394,18 +389,21 @@ h1, h2, h3, h4, h5, h6,
         rgba(0, 102, 255, 0.04) 40%,
         transparent 70%
     );
-    z-index: -1;
+    z-index: 1;
     pointer-events: none;
     animation: hero-ambient 24s ease-in-out infinite;
-    will-change: transform, opacity;
 }
 
 @keyframes hero-ambient {
-    0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
-    50% { transform: translate3d(-2%, 2%, 0) scale(1.05); opacity: 0.85; }
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(-2%, 2%, 0) scale(1.05); }
 }
 
-.hero .container { position: relative; z-index: 1; }
+/* El contenido va por encima */
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
 
 .hero-eyebrow {
     display: flex;
@@ -804,7 +802,7 @@ h1, h2, h3, h4, h5, h6,
 
 
 /* =========================================================
-   WORK — proyectos con fondo de mapa full width
+   WORK
    ========================================================= */
 
 .work {
@@ -1630,7 +1628,7 @@ a.contact-meta-value:hover { color: var(--blue); }
 
 
 /* =========================================================
-   INTRO — parpadeo ultra corto (700ms total)
+   INTRO
    ========================================================= */
 
 .tb-intro {
@@ -2023,9 +2021,8 @@ select:focus-visible {
         scroll-behavior: auto !important;
     }
 
-    .hero::before {
+    .hero-world {
         animation: none !important;
-        opacity: 0.4;
     }
 
     .hero::after {
@@ -2082,35 +2079,19 @@ select:focus-visible {
     .footer-inner { grid-template-columns: 1fr; gap: 50px; }
     .footer-links { grid-template-columns: repeat(3, 1fr); }
 
-    /* Mundo grande en tablet */
     .hero {
-        min-height: 700px;
+        min-height: 640px;
     }
 
-    .hero::before {
-        width: 80vh;
-        height: 80vh;
-        min-width: 600px;
-        min-height: 600px;
-        transform: translateY(-50%) translateX(30%);
-        opacity: 0.6;
-    }
-
-    @keyframes mundo-float {
-        0%, 100% {
-            transform: translateY(-50%) translateX(30%) rotate(0deg);
-            opacity: 0.6;
-        }
-        50% {
-            transform: translateY(-50%) translateX(33%) rotate(-3deg);
-            opacity: 0.75;
-        }
+    .hero-world {
+        width: 60%;
+        height: 85%;
     }
 }
 
 
 /* =========================================================
-   RESPONSIVE — 900px (nav mobile)
+   RESPONSIVE — 900px
    ========================================================= */
 
 @media (max-width: 900px) {
@@ -2167,8 +2148,13 @@ select:focus-visible {
     .main-nav a::after { display: none; }
     .main-nav a:last-child { border-bottom: 0; }
 
-    .hero { padding-top: 120px; padding-bottom: 70px; min-height: 640px; }
+    .hero { padding-top: 120px; padding-bottom: 70px; min-height: 580px; }
     .hero h1 { font-size: clamp(2.2rem, 7vw, 3.6rem); }
+
+    .hero-world {
+        width: 65%;
+        height: 80%;
+    }
 
     .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 24px 0; }
     .hero-stat { padding: 0 12px 0 0; }
@@ -2193,28 +2179,6 @@ select:focus-visible {
     .legal-hero { padding-top: 130px; }
     .legal-content { padding: 60px 0 80px; }
 
-    /* Mundo bien visible en tablet vertical */
-    .hero::before {
-        width: 70vh;
-        height: 70vh;
-        min-width: 500px;
-        min-height: 500px;
-        top: 55%;
-        transform: translateY(-50%) translateX(35%);
-        opacity: 0.55;
-    }
-
-    @keyframes mundo-float {
-        0%, 100% {
-            transform: translateY(-50%) translateX(35%) rotate(0deg);
-            opacity: 0.55;
-        }
-        50% {
-            transform: translateY(-50%) translateX(38%) rotate(-3deg);
-            opacity: 0.7;
-        }
-    }
-
     .work::before { opacity: 0.14; }
 }
 
@@ -2232,8 +2196,7 @@ select:focus-visible {
     .logo-icon { width: 28px; height: 28px; flex: 0 0 28px; }
     .logo-wordmark { font-size: 0.9rem; }
 
-    /* Hero */
-    .hero { padding-top: 130px; padding-bottom: 60px; min-height: 620px; }
+    .hero { padding-top: 130px; padding-bottom: 60px; min-height: 560px; }
     .hero-eyebrow { gap: 10px; font-size: 0.65rem; margin-bottom: 26px; }
     .hero h1 { font-size: clamp(2rem, 10vw, 3rem); margin-bottom: 22px; }
     .hero-lead { font-size: 1rem; margin-bottom: 12px; }
@@ -2241,32 +2204,12 @@ select:focus-visible {
     .hero-actions { gap: 10px; margin-bottom: 40px; }
     .hero-actions .button { flex: 1 1 100%; }
 
-    /* Mundo en mobile: arriba a la derecha, bien visible */
-    .hero::before {
-        width: 90vw;
-        height: 90vw;
-        max-width: 520px;
-        max-height: 520px;
-        min-width: 0;
-        min-height: 0;
-        top: 8%;
-        right: 0;
-        transform: translateY(0) translateX(35%);
-        opacity: 0.45;
+    .hero-world {
+        width: 75%;
+        height: 70%;
+        top: 35%;
     }
 
-    @keyframes mundo-float {
-        0%, 100% {
-            transform: translateY(0) translateX(35%) rotate(0deg);
-            opacity: 0.45;
-        }
-        50% {
-            transform: translateY(-10px) translateX(38%) rotate(-3deg);
-            opacity: 0.6;
-        }
-    }
-
-    /* Section head */
     .section-head {
         flex-direction: column;
         align-items: flex-start;
@@ -2277,7 +2220,6 @@ select:focus-visible {
     .section-title { font-size: 1.9rem; }
     .section-desc { font-size: 0.9rem; }
 
-    /* Accordions */
     .accordion-stack { max-width: 100%; }
     .accordion-stack--right { margin-left: 0; }
     .accordion-header { padding: 18px 20px; gap: 14px; }
@@ -2285,7 +2227,6 @@ select:focus-visible {
     .accordion-title { font-size: 1rem; }
     .accordion-panel-content { padding: 0 20px 20px 58px; font-size: 0.85rem; }
 
-    /* Work */
     .work { padding-top: 80px; padding-bottom: 80px; }
     .work-grid { grid-template-columns: 1fr; gap: 18px; }
     .work-card {
@@ -2301,36 +2242,29 @@ select:focus-visible {
 
     .work::before { opacity: 0.10; }
 
-    /* Plans */
     .plan-card { padding: 26px 22px; }
     .plan-price { font-size: 1.5rem; }
 
-    /* Trust */
     .trust { padding: 45px 0; }
     .trust p { font-size: 1.2rem; }
 
-    /* FAQ */
     .faq-item summary { font-size: 0.98rem; padding: 20px 0; }
     .faq-item p { font-size: 0.88rem; padding-bottom: 20px; }
 
-    /* Contact */
     .contact-grid { grid-template-columns: 1fr; gap: 32px; }
     .contact-info h3 { font-size: 1.7rem; }
     .contact-info > p { font-size: 0.9rem; margin-bottom: 24px; }
     .contact-meta { gap: 14px; padding-top: 20px; }
 
-    /* Form */
     .quote-form { padding: 24px 20px; }
     .quote-form-title { font-size: 1.2rem; }
     .quote-form-grid { grid-template-columns: 1fr; gap: 16px; }
     .form-field-full { grid-column: auto; }
     .quote-form-submit .button { width: 100%; }
 
-    /* Final CTA */
     .final-cta { padding: 55px 0; }
     .final-cta h2 { font-size: 1.5rem; }
 
-    /* Footer */
     .footer-inner { grid-template-columns: 1fr; gap: 32px; padding-bottom: 40px; }
     .footer-links { grid-template-columns: 1fr 1fr; gap: 24px 20px; }
     .footer-bottom {
@@ -2341,7 +2275,6 @@ select:focus-visible {
     }
     .footer-credit-icon { width: 42px; height: 42px; }
 
-    /* Legal */
     .legal-hero { padding-top: 110px; padding-bottom: 40px; }
     .legal-hero h1 { font-size: 2rem; }
     .legal-content { padding: 50px 0 70px; }
@@ -2353,7 +2286,7 @@ select:focus-visible {
 
 
 /* =========================================================
-   RESPONSIVE — 480px (mobile chico)
+   RESPONSIVE — 480px
    ========================================================= */
 
 @media (max-width: 480px) {
@@ -2361,44 +2294,23 @@ select:focus-visible {
     .logo-icon { width: 26px; height: 26px; flex: 0 0 26px; }
     .logo-wordmark { font-size: 0.85rem; }
 
-    /* Hero */
-    .hero { padding-top: 120px; padding-bottom: 50px; min-height: 580px; }
+    .hero { padding-top: 120px; padding-bottom: 50px; min-height: 520px; }
     .hero h1 { font-size: 1.75rem; }
     .hero-stat-num { font-size: 1.2rem; }
     .hero-stat-label { font-size: 0.58rem; letter-spacing: 0.06em; }
 
-    /* Mundo en mobile chico: grande arriba a la derecha */
-    .hero::before {
-        width: 100vw;
-        height: 100vw;
-        max-width: 440px;
-        max-height: 440px;
-        top: 6%;
-        right: 0;
-        transform: translateY(0) translateX(38%);
-        opacity: 0.4;
+    .hero-world {
+        width: 90%;
+        height: 65%;
+        top: 30%;
     }
 
-    @keyframes mundo-float {
-        0%, 100% {
-            transform: translateY(0) translateX(38%) rotate(0deg);
-            opacity: 0.4;
-        }
-        50% {
-            transform: translateY(-8px) translateX(41%) rotate(-3deg);
-            opacity: 0.55;
-        }
-    }
-
-    /* Section title */
     .section-title { font-size: 1.55rem; }
 
-    /* Accordion */
     .accordion-header { padding: 16px 18px; gap: 12px; }
     .accordion-title { font-size: 0.95rem; }
     .accordion-panel-content { padding: 0 18px 18px 54px; font-size: 0.82rem; }
 
-    /* Work */
     .work { padding-top: 60px; padding-bottom: 60px; }
     .work-card { padding: 20px 18px; }
     .work-card-name { font-size: 1.2rem; }
@@ -2406,38 +2318,30 @@ select:focus-visible {
 
     .work::before { opacity: 0.08; }
 
-    /* Plans */
     .plan-card { padding: 22px 18px; }
     .plan-card h3 { font-size: 1.15rem; }
     .plan-price { font-size: 1.3rem; }
     .plan-features li { font-size: 0.82rem; }
 
-    /* FAQ */
     .faq-item summary { font-size: 0.92rem; }
 
-    /* Contact */
     .contact-info h3 { font-size: 1.5rem; }
 
-    /* Form */
     .quote-form { padding: 22px 18px; }
     .form-field input,
     .form-field select { min-height: 42px; font-size: 0.88rem; }
     .form-field textarea { min-height: 100px; font-size: 0.88rem; }
 
-    /* Pills */
     .pill-group { gap: 6px; }
     .pill span { padding: 8px 14px; font-size: 0.68rem; }
 
-    /* Final CTA */
     .final-cta h2 { font-size: 1.35rem; }
 
-    /* Footer */
     .footer-links { grid-template-columns: 1fr; gap: 22px; }
     .footer-bottom { font-size: 0.55rem; gap: 8px; }
     .footer-credit { gap: 10px; }
     .footer-credit-icon { width: 36px; height: 36px; }
 
-    /* Legal */
     .legal-hero { padding-top: 100px; }
     .legal-hero h1 { font-size: 1.6rem; }
     .legal-content { padding: 40px 0 60px; }
@@ -2457,7 +2361,8 @@ select:focus-visible {
     .final-cta,
     .quote-form-submit,
     .tb-intro,
-    .cookie-banner {
+    .cookie-banner,
+    .hero-world {
         display: none !important;
     }
 
