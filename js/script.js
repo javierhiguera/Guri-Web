@@ -1,5 +1,5 @@
 /* =========================================================
-   TAGBACK — JAVASCRIPT v12 (intro 700ms parpadeo)
+   TAGBACK — JAVASCRIPT v13
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -45,9 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (alreadyShown) {
                 hideIntro();
             } else {
-                /* La animación del logo dura 350ms.
-                   Esperamos un poco para que se vea y arrancamos el fade out.
-                   Total: ~700ms = parpadeo. */
                 setTimeout(hideIntro, 450);
 
                 try {
@@ -67,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       COOKIES — modal centrado
+       COOKIES
        ===================================================== */
 
     const COOKIE_KEY = "tagback-cookies-accepted";
@@ -81,8 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
             alreadyAccepted = localStorage.getItem(COOKIE_KEY) === "1";
         } catch (e) { /* ignorar */ }
 
-        /* Mostrar después de la intro (que dura ~700ms).
-           Delay de 1.2s para no superponer. */
         if (!alreadyAccepted) {
             setTimeout(() => {
                 cookieBanner.classList.add("is-visible");
@@ -197,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       RESPETO A PREFERS-REDUCED-MOTION
+       PREFERS-REDUCED-MOTION
        ===================================================== */
 
     const prefersReducedMotion = window.matchMedia(
@@ -257,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       ACORDEONES (Servicios + Beneficios)
+       ACORDEONES
        ===================================================== */
 
     const accordionItems = document.querySelectorAll(".accordion-item");
@@ -271,7 +266,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const isOpen = item.classList.contains("is-open");
 
-            /* Cerrar los hermanos del mismo stack */
             const stack = item.parentElement;
             if (stack) {
                 stack.querySelectorAll(".accordion-item.is-open").forEach(sibling => {
