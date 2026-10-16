@@ -1,5 +1,5 @@
 /* =========================================================
-   TAGBACK — STYLES v17 (mundo mitad derecha + título negro)
+   TAGBACK — STYLES v18
    ========================================================= */
 
 
@@ -334,7 +334,7 @@ h1, h2, h3, h4, h5, h6,
 
 
 /* =========================================================
-   HERO — con mundo grande a la derecha (mitad exacta)
+   HERO — mundo de fondo en la mitad derecha
    ========================================================= */
 
 .hero {
@@ -347,19 +347,19 @@ h1, h2, h3, h4, h5, h6,
     min-height: 720px;
 }
 
-/* Mundo SVG — ocupa exactamente la mitad derecha del hero */
+/* Mundo SVG — fondo en la mitad derecha, DETRÁS del texto */
 .hero-world {
     position: absolute;
     top: 0;
     right: 0;
-    width: 50%;
+    width: 55%;
     height: 100%;
     background-image: url("../assets/seleccion/mundo.svg");
     background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 130% auto;
+    background-position: right center;
+    background-size: 90% auto;
     pointer-events: none;
-    opacity: 1;
+    opacity: 0.9;
     z-index: 0;
     animation: mundo-float 18s ease-in-out infinite;
     will-change: transform;
@@ -374,7 +374,7 @@ h1, h2, h3, h4, h5, h6,
     }
 }
 
-/* Gradiente azul suave encima */
+/* Gradiente azul suave encima del mundo */
 .hero::after {
     content: "";
     position: absolute;
@@ -384,8 +384,8 @@ h1, h2, h3, h4, h5, h6,
     height: 90%;
     background: radial-gradient(
         circle at 60% 40%,
-        rgba(0, 102, 255, 0.08),
-        rgba(0, 102, 255, 0.03) 40%,
+        rgba(0, 102, 255, 0.10),
+        rgba(0, 102, 255, 0.04) 40%,
         transparent 70%
     );
     z-index: 1;
@@ -398,7 +398,7 @@ h1, h2, h3, h4, h5, h6,
     50% { transform: translate3d(-2%, 2%, 0) scale(1.05); }
 }
 
-/* El contenido va por encima */
+/* El contenido va por ENCIMA del mundo */
 .hero .container {
     position: relative;
     z-index: 2;
@@ -416,25 +416,24 @@ h1, h2, h3, h4, h5, h6,
     margin-bottom: 40px;
     flex-wrap: wrap;
     opacity: 0;
-    max-width: 55%;
     animation: hero-fade-up 500ms var(--ease-out) 80ms forwards;
 }
 
 .hero-eyebrow .dot { color: var(--blue); }
 
 .hero h1 {
-    font-size: clamp(2rem, 4.5vw, 3.8rem);
-    line-height: 1.05;
+    font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+    line-height: 1.0;
     letter-spacing: -0.03em;
     color: var(--ink);
     margin-bottom: 28px;
-    max-width: 55%;
+    max-width: 900px;
     overflow: hidden;
 }
 
 .hero h1 em {
     font-style: normal;
-    color: var(--ink);
+    color: var(--blue);
 }
 
 .hero h1 .reveal-line {
@@ -457,9 +456,9 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .hero-lead {
-    max-width: 520px;
+    max-width: 620px;
     color: var(--gray);
-    font-size: 1rem;
+    font-size: 1.05rem;
     line-height: 1.65;
     margin-bottom: 16px;
     opacity: 0;
@@ -468,9 +467,9 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .hero-support {
-    max-width: 520px;
+    max-width: 620px;
     color: var(--gray);
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     line-height: 1.7;
     margin-bottom: 36px;
     opacity: 0;
@@ -495,7 +494,6 @@ h1, h2, h3, h4, h5, h6,
     gap: 0;
     border-top: 1px solid var(--line);
     padding-top: 32px;
-    max-width: 55%;
     opacity: 0;
     transform: translate3d(0, 16px, 0);
     animation: hero-fade-up 500ms var(--ease-out) 860ms forwards;
@@ -513,7 +511,7 @@ h1, h2, h3, h4, h5, h6,
 
 .hero-stat-num {
     font-family: var(--mono);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 500;
     color: var(--ink);
     letter-spacing: -0.02em;
@@ -521,7 +519,7 @@ h1, h2, h3, h4, h5, h6,
 
 .hero-stat-label {
     font-family: var(--mono);
-    font-size: 0.68rem;
+    font-size: 0.7rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--gray);
@@ -2085,14 +2083,10 @@ select:focus-visible {
     }
 
     .hero-world {
-        width: 50%;
+        width: 55%;
         height: 100%;
-        background-size: 140% auto;
+        background-size: 85% auto;
     }
-
-    .hero h1 { max-width: 60%; font-size: clamp(1.8rem, 4vw, 3rem); }
-    .hero-eyebrow { max-width: 60%; }
-    .hero-stats { max-width: 60%; }
 }
 
 
@@ -2155,14 +2149,13 @@ select:focus-visible {
     .main-nav a:last-child { border-bottom: 0; }
 
     .hero { padding-top: 120px; padding-bottom: 70px; min-height: 580px; }
-    .hero h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); max-width: 60%; }
-    .hero-eyebrow { max-width: 60%; }
-    .hero-stats { max-width: 60%; }
+    .hero h1 { font-size: clamp(2.2rem, 7vw, 3.6rem); }
 
     .hero-world {
-        width: 55%;
+        width: 60%;
         height: 100%;
-        background-size: 130% auto;
+        background-size: 80% auto;
+        opacity: 0.85;
     }
 
     .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 24px 0; }
@@ -2205,25 +2198,23 @@ select:focus-visible {
     .logo-icon { width: 28px; height: 28px; flex: 0 0 28px; }
     .logo-wordmark { font-size: 0.9rem; }
 
-    .hero { padding-top: 130px; padding-bottom: 60px; min-height: auto; }
-    .hero-eyebrow { gap: 10px; font-size: 0.65rem; margin-bottom: 26px; max-width: 100%; }
-    .hero h1 { font-size: clamp(2rem, 10vw, 3rem); margin-bottom: 22px; max-width: 100%; }
-    .hero-lead { font-size: 1rem; margin-bottom: 12px; max-width: 100%; }
-    .hero-support { font-size: 0.9rem; margin-bottom: 28px; max-width: 100%; }
+    .hero { padding-top: 130px; padding-bottom: 60px; min-height: 620px; }
+    .hero-eyebrow { gap: 10px; font-size: 0.65rem; margin-bottom: 26px; }
+    .hero h1 { font-size: clamp(2rem, 10vw, 3rem); margin-bottom: 22px; }
+    .hero-lead { font-size: 1rem; margin-bottom: 12px; }
+    .hero-support { font-size: 0.9rem; margin-bottom: 28px; }
     .hero-actions { gap: 10px; margin-bottom: 40px; }
     .hero-actions .button { flex: 1 1 100%; }
 
-    .hero-stats { max-width: 100%; }
-
-    /* Mundo arriba a la derecha en mobile, detrás del título */
+    /* Mundo en mobile: arriba a la derecha, más sutil */
     .hero-world {
-        width: 100%;
-        height: 50%;
+        width: 85%;
+        height: 55%;
         top: 0;
         right: 0;
-        background-size: 130% auto;
-        background-position: right center;
-        opacity: 0.25;
+        background-size: 100% auto;
+        background-position: right top;
+        opacity: 0.35;
     }
 
     .section-head {
@@ -2310,15 +2301,16 @@ select:focus-visible {
     .logo-icon { width: 26px; height: 26px; flex: 0 0 26px; }
     .logo-wordmark { font-size: 0.85rem; }
 
-    .hero { padding-top: 120px; padding-bottom: 50px; }
+    .hero { padding-top: 120px; padding-bottom: 50px; min-height: 580px; }
     .hero h1 { font-size: 1.75rem; }
     .hero-stat-num { font-size: 1.2rem; }
     .hero-stat-label { font-size: 0.58rem; letter-spacing: 0.06em; }
 
     .hero-world {
-        height: 45%;
-        background-size: 140% auto;
-        opacity: 0.20;
+        width: 100%;
+        height: 50%;
+        background-size: 110% auto;
+        opacity: 0.3;
     }
 
     .section-title { font-size: 1.55rem; }
