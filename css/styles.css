@@ -1,5 +1,5 @@
 /* =========================================================
-   TAGBACK — STYLES v20 (mundo grande saliéndose del hero)
+   TAGBACK — STYLES v21 (mundo 45% más grande)
    ========================================================= */
 
 
@@ -347,13 +347,13 @@ h1, h2, h3, h4, h5, h6,
     min-height: 720px;
 }
 
-/* Mundo — se sale por arriba y por abajo, cortado por el borde derecho */
+/* Mundo — 45% más grande que antes */
 .hero-world {
     position: absolute;
     top: 50%;
     right: 0;
     width: 55%;
-    height: 160%;
+    height: 232%;
     transform: translateY(-50%);
     background-image: url("../assets/seleccion/mundo.svg");
     background-repeat: no-repeat;
@@ -2085,7 +2085,7 @@ select:focus-visible {
 
     .hero-world {
         width: 55%;
-        height: 150%;
+        height: 220%;
         background-size: auto 100%;
         background-position: left center;
     }
@@ -2155,7 +2155,7 @@ select:focus-visible {
 
     .hero-world {
         width: 65%;
-        height: 140%;
+        height: 200%;
         background-size: auto 100%;
         background-position: left center;
         opacity: 0.85;
