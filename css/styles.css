@@ -1,5 +1,5 @@
 /* =========================================================
-   TAGBACK — STYLES v22 (mundo mitad derecha bien)
+   TAGBACK — STYLES v22 (mundo mitad izquierda)
    ========================================================= */
 
 
@@ -334,7 +334,7 @@ h1, h2, h3, h4, h5, h6,
 
 
 /* =========================================================
-   HERO — mundo grande a la derecha
+   HERO — mundo grande a la IZQUIERDA
    ========================================================= */
 
 .hero {
@@ -350,9 +350,9 @@ h1, h2, h3, h4, h5, h6,
 .hero-world {
     position: absolute;
     top: 50%;
-    right: 0;
-    width: 47%;          /* antes 55% → -15% */
-    height: 170%;        /* antes 200% → -15% */
+    left: 0;                    /* antes: right: 0 → ahora izquierda */
+    width: 47%;                 /* reducido un 15% (antes 55%) */
+    height: 170%;               /* reducido un 15% (antes 200%) */
     transform: translateY(-50%);
     background-image: url("../assets/seleccion/mundo.svg");
     background-repeat: no-repeat;
@@ -378,11 +378,11 @@ h1, h2, h3, h4, h5, h6,
     content: "";
     position: absolute;
     top: -20%;
-    right: -10%;
+    left: -10%;                 /* el halo también se mueve a la izquierda */
     width: 60%;
     height: 90%;
     background: radial-gradient(
-        circle at 60% 40%,
+        circle at 40% 40%,      /* antes 60% → ahora 40% */
         rgba(0, 102, 255, 0.10),
         rgba(0, 102, 255, 0.04) 40%,
         transparent 70%
@@ -394,12 +394,12 @@ h1, h2, h3, h4, h5, h6,
 
 @keyframes hero-ambient {
     0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-    50% { transform: translate3d(-2%, 2%, 0) scale(1.05); }
+    50% { transform: translate3d(2%, 2%, 0) scale(1.05); }   /* se mueve hacia el centro */
 }
 
 .hero .container {
     position: relative;
-    z-index: 2;
+    z-index: 2;                 /* el contenido queda SIEMPRE por encima del mundo */
 }
 
 .hero-eyebrow {
@@ -2081,8 +2081,9 @@ select:focus-visible {
     }
 
     .hero-world {
-        width: 51%;          /* antes 60% → -15% */
-        height: 153%;        /* antes 180% → -15% */
+        left: 0;
+        width: 51%;          /* -15% */
+        height: 153%;        /* -15% */
         background-size: cover;
         background-position: center center;
     }
@@ -2151,8 +2152,9 @@ select:focus-visible {
     .hero h1 { font-size: clamp(2.2rem, 7vw, 3.6rem); }
 
     .hero-world {
-        width: 60%;          /* antes 70% → -15% */
-        height: 136%;        /* antes 160% → -15% */
+        left: 0;
+        width: 60%;          /* -15% */
+        height: 136%;        /* -15% */
         background-size: cover;
         background-position: center center;
         opacity: 0.85;
@@ -2207,13 +2209,13 @@ select:focus-visible {
     .hero-actions .button { flex: 1 1 100%; }
 
     .hero-world {
-        width: 85%;          /* antes 100% → -15% */
-        height: 68%;         /* antes 80% → -15% */
+        left: 0;
+        width: 85%;          /* -15% */
+        height: 68%;         /* -15% */
         top: 5%;
-        right: 0;
         transform: none;
         background-size: cover;
-        background-position: right center;
+        background-position: left center;   /* ahora a la izquierda */
         opacity: 0.25;
         animation: none;
     }
@@ -2308,8 +2310,9 @@ select:focus-visible {
     .hero-stat-label { font-size: 0.58rem; letter-spacing: 0.06em; }
 
     .hero-world {
-        width: 85%;          /* antes 100% → -15% */
-        height: 60%;         /* antes 70% → -15% */
+        left: 0;
+        width: 85%;          /* -15% */
+        height: 60%;         /* -15% */
         top: 3%;
         opacity: 0.2;
     }
