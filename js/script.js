@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 /* Dejar que la animación de entrada del logo se vea
                    completa antes de empezar el fade out */
-                setTimeout(hideIntro, 2800);
+                setTimeout(hideIntro, 1000);
 
                 try {
                     sessionStorage.setItem(INTRO_KEY, "1");
