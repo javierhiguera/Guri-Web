@@ -1,5 +1,5 @@
 /* =========================================================
-   TAGBACK — STYLES v13
+   TAGBACK — STYLES v14 (mundo grande a la derecha)
    ========================================================= */
 
 
@@ -334,7 +334,7 @@ h1, h2, h3, h4, h5, h6,
 
 
 /* =========================================================
-   HERO — con mundo SVG de fondo
+   HERO — mundo SVG grande a la derecha (mitad cortada)
    ========================================================= */
 
 .hero {
@@ -345,38 +345,39 @@ h1, h2, h3, h4, h5, h6,
     border-bottom: 1px solid var(--line);
     overflow: hidden;
     isolation: isolate;
+    min-height: 720px;
 }
 
-/* Mundo SVG de fondo */
+/* Mundo SVG grande — mitad derecha, cortado por el borde */
 .hero::before {
     content: "";
     position: absolute;
     top: 50%;
-    right: -8%;
-    width: 55%;
-    max-width: 720px;
-    aspect-ratio: 1 / 1;
+    right: 0;
+    width: 60vw;
+    height: 110vh;
+    max-height: 1100px;
     background-image: url("../assets/seleccion/mundo.svg");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: right center;
     background-size: contain;
-    transform: translateY(-50%);
+    transform: translateY(-50%) translateX(35%);
     z-index: -2;
     pointer-events: none;
-    opacity: 0.55;
-    filter: drop-shadow(0 0 60px rgba(0, 102, 255, 0.10));
-    animation: mundo-float 14s ease-in-out infinite;
+    opacity: 0.7;
+    filter: drop-shadow(0 0 80px rgba(0, 102, 255, 0.12));
+    animation: mundo-float 18s ease-in-out infinite;
     will-change: transform, opacity;
 }
 
 @keyframes mundo-float {
     0%, 100% {
-        transform: translateY(-50%) translateX(0) rotate(0deg);
-        opacity: 0.55;
+        transform: translateY(-50%) translateX(35%) rotate(0deg);
+        opacity: 0.7;
     }
     50% {
-        transform: translateY(-50%) translateX(-20px) rotate(-4deg);
-        opacity: 0.75;
+        transform: translateY(-50%) translateX(38%) rotate(-3deg);
+        opacity: 0.85;
     }
 }
 
@@ -816,7 +817,6 @@ h1, h2, h3, h4, h5, h6,
     isolation: isolate;
 }
 
-/* Fondo del mapa de lado a lado */
 .work::before {
     content: "";
     position: absolute;
@@ -831,7 +831,6 @@ h1, h2, h3, h4, h5, h6,
     mix-blend-mode: multiply;
 }
 
-/* Degradado suave arriba y abajo para fundir con las secciones vecinas */
 .work::after {
     content: "";
     position: absolute;
@@ -2084,11 +2083,23 @@ select:focus-visible {
     .footer-inner { grid-template-columns: 1fr; gap: 50px; }
     .footer-links { grid-template-columns: repeat(3, 1fr); }
 
-    /* Mundo más sutil en tablet */
+    /* Mundo más chico en tablet */
     .hero::before {
-        width: 45%;
-        right: -12%;
-        opacity: 0.4;
+        width: 55%;
+        right: 0;
+        transform: translateY(-50%) translateX(40%);
+        opacity: 0.55;
+    }
+
+    @keyframes mundo-float {
+        0%, 100% {
+            transform: translateY(-50%) translateX(40%) rotate(0deg);
+            opacity: 0.55;
+        }
+        50% {
+            transform: translateY(-50%) translateX(43%) rotate(-3deg);
+            opacity: 0.7;
+        }
     }
 }
 
@@ -2151,7 +2162,7 @@ select:focus-visible {
     .main-nav a::after { display: none; }
     .main-nav a:last-child { border-bottom: 0; }
 
-    .hero { padding-top: 120px; padding-bottom: 70px; }
+    .hero { padding-top: 120px; padding-bottom: 70px; min-height: 600px; }
     .hero h1 { font-size: clamp(2.2rem, 7vw, 3.6rem); }
 
     .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 24px 0; }
@@ -2179,12 +2190,23 @@ select:focus-visible {
 
     /* Mundo aún más chico */
     .hero::before {
-        width: 40%;
-        right: -15%;
-        opacity: 0.3;
+        width: 50%;
+        right: 0;
+        transform: translateY(-50%) translateX(45%);
+        opacity: 0.45;
     }
 
-    /* Mapa menos marcado en tablet */
+    @keyframes mundo-float {
+        0%, 100% {
+            transform: translateY(-50%) translateX(45%) rotate(0deg);
+            opacity: 0.45;
+        }
+        50% {
+            transform: translateY(-50%) translateX(48%) rotate(-3deg);
+            opacity: 0.6;
+        }
+    }
+
     .work::before { opacity: 0.14; }
 }
 
@@ -2203,7 +2225,7 @@ select:focus-visible {
     .logo-wordmark { font-size: 0.9rem; }
 
     /* Hero */
-    .hero { padding-top: 100px; padding-bottom: 60px; }
+    .hero { padding-top: 100px; padding-bottom: 60px; min-height: 540px; }
     .hero-eyebrow { gap: 10px; font-size: 0.65rem; margin-bottom: 26px; }
     .hero h1 { font-size: clamp(2rem, 10vw, 3rem); margin-bottom: 22px; }
     .hero-lead { font-size: 1rem; margin-bottom: 12px; }
@@ -2211,12 +2233,24 @@ select:focus-visible {
     .hero-actions { gap: 10px; margin-bottom: 40px; }
     .hero-actions .button { flex: 1 1 100%; }
 
-    /* Mundo más sutil aún */
+    /* Mundo muy sutil */
     .hero::before {
-        width: 55%;
-        right: -25%;
-        top: 30%;
-        opacity: 0.22;
+        width: 60%;
+        right: 0;
+        top: 40%;
+        transform: translateY(-50%) translateX(50%);
+        opacity: 0.3;
+    }
+
+    @keyframes mundo-float {
+        0%, 100% {
+            transform: translateY(-50%) translateX(50%) rotate(0deg);
+            opacity: 0.3;
+        }
+        50% {
+            transform: translateY(-50%) translateX(53%) rotate(-3deg);
+            opacity: 0.45;
+        }
     }
 
     /* Section head */
@@ -2315,15 +2349,28 @@ select:focus-visible {
     .logo-wordmark { font-size: 0.85rem; }
 
     /* Hero */
-    .hero { padding-top: 90px; padding-bottom: 50px; }
+    .hero { padding-top: 90px; padding-bottom: 50px; min-height: 500px; }
     .hero h1 { font-size: 1.75rem; }
     .hero-stat-num { font-size: 1.2rem; }
     .hero-stat-label { font-size: 0.58rem; letter-spacing: 0.06em; }
 
     .hero::before {
         width: 70%;
-        right: -35%;
-        opacity: 0.15;
+        right: 0;
+        top: 45%;
+        transform: translateY(-50%) translateX(55%);
+        opacity: 0.22;
+    }
+
+    @keyframes mundo-float {
+        0%, 100% {
+            transform: translateY(-50%) translateX(55%) rotate(0deg);
+            opacity: 0.22;
+        }
+        50% {
+            transform: translateY(-50%) translateX(58%) rotate(-3deg);
+            opacity: 0.35;
+        }
     }
 
     /* Section title */
