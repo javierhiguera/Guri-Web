@@ -1,11 +1,11 @@
 /* =========================================================
-   TAGBACK — JAVASCRIPT v10
+   TAGBACK — JAVASCRIPT v11 (intro 1.5s + cookies delay)
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
-       INTRO — fade simple, más lenta
+       INTRO — fade simple, 1.5s total
        ===================================================== */
 
     const intro = document.getElementById("tb-intro");
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             intro.addEventListener("transitionend", cleanup, { once: true });
-            setTimeout(cleanup, 2000);
+            setTimeout(cleanup, 800);
         };
 
         if (prefersReducedMotion) {
@@ -45,8 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (alreadyShown) {
                 hideIntro();
             } else {
-                /* Dejar que la animación de entrada del logo se vea
-                   completa antes de empezar el fade out */
+                /* La animación del logo dura 600ms.
+                   Esperamos a que termine y hacemos el fade out. */
                 setTimeout(hideIntro, 1000);
 
                 try {
@@ -80,12 +80,12 @@ document.addEventListener("DOMContentLoaded", () => {
             alreadyAccepted = localStorage.getItem(COOKIE_KEY) === "1";
         } catch (e) { /* ignorar */ }
 
-        /* Mostrar después de la intro, con un delay
-           para que no se superpongan */
+        /* Mostrar después de la intro.
+           Intro termina en 1,5s → delay de 2s para no superponer. */
         if (!alreadyAccepted) {
             setTimeout(() => {
                 cookieBanner.classList.add("is-visible");
-            }, 3600);
+            }, 2000);
         }
 
         const acceptBtn = cookieBanner.querySelector("[data-cookie-accept]");
@@ -263,10 +263,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     accordionItems.forEach(item => {
 
-        const header = item.querySelector(".accordion-header");
-        if (!header) return;
+        const accHeader = item.querySelector(".accordion-header");
+        if (!accHeader) return;
 
-        header.addEventListener("click", () => {
+        accHeader.addEventListener("click", () => {
 
             const isOpen = item.classList.contains("is-open");
 
@@ -283,7 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             item.classList.toggle("is-open", !isOpen);
-            header.setAttribute("aria-expanded", String(!isOpen));
+            accHeader.setAttribute("aria-expanded", String(!isOpen));
 
         });
 
