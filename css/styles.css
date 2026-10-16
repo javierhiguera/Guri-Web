@@ -1,5 +1,5 @@
 /* =========================================================
-   TAGBACK — STYLES v14 (mundo grande a la derecha)
+   TAGBACK — STYLES v15 (mundo grande + mobile optimizado)
    ========================================================= */
 
 
@@ -334,7 +334,7 @@ h1, h2, h3, h4, h5, h6,
 
 
 /* =========================================================
-   HERO — mundo SVG grande a la derecha (mitad cortada)
+   HERO — con mundo SVG enorme a la derecha
    ========================================================= */
 
 .hero {
@@ -345,23 +345,23 @@ h1, h2, h3, h4, h5, h6,
     border-bottom: 1px solid var(--line);
     overflow: hidden;
     isolation: isolate;
-    min-height: 720px;
+    min-height: 820px;
 }
 
-/* Mundo SVG grande — mitad derecha, cortado por el borde */
 .hero::before {
     content: "";
     position: absolute;
     top: 50%;
     right: 0;
-    width: 60vw;
-    height: 110vh;
-    max-height: 1100px;
+    width: 95vh;
+    height: 95vh;
+    min-width: 800px;
+    min-height: 800px;
     background-image: url("../assets/seleccion/mundo.svg");
     background-repeat: no-repeat;
     background-position: right center;
     background-size: contain;
-    transform: translateY(-50%) translateX(35%);
+    transform: translateY(-50%) translateX(28%);
     z-index: -2;
     pointer-events: none;
     opacity: 0.7;
@@ -372,16 +372,15 @@ h1, h2, h3, h4, h5, h6,
 
 @keyframes mundo-float {
     0%, 100% {
-        transform: translateY(-50%) translateX(35%) rotate(0deg);
+        transform: translateY(-50%) translateX(28%) rotate(0deg);
         opacity: 0.7;
     }
     50% {
-        transform: translateY(-50%) translateX(38%) rotate(-3deg);
+        transform: translateY(-50%) translateX(31%) rotate(-3deg);
         opacity: 0.85;
     }
 }
 
-/* Gradiente azul sutil encima */
 .hero::after {
     content: "";
     position: absolute;
@@ -2062,7 +2061,7 @@ select:focus-visible {
 
 
 /* =========================================================
-   RESPONSIVE — 1100px
+   RESPONSIVE — 1100px (tablet)
    ========================================================= */
 
 @media (max-width: 1100px) {
@@ -2083,29 +2082,35 @@ select:focus-visible {
     .footer-inner { grid-template-columns: 1fr; gap: 50px; }
     .footer-links { grid-template-columns: repeat(3, 1fr); }
 
-    /* Mundo más chico en tablet */
+    /* Mundo grande en tablet */
+    .hero {
+        min-height: 700px;
+    }
+
     .hero::before {
-        width: 55%;
-        right: 0;
-        transform: translateY(-50%) translateX(40%);
-        opacity: 0.55;
+        width: 80vh;
+        height: 80vh;
+        min-width: 600px;
+        min-height: 600px;
+        transform: translateY(-50%) translateX(30%);
+        opacity: 0.6;
     }
 
     @keyframes mundo-float {
         0%, 100% {
-            transform: translateY(-50%) translateX(40%) rotate(0deg);
-            opacity: 0.55;
+            transform: translateY(-50%) translateX(30%) rotate(0deg);
+            opacity: 0.6;
         }
         50% {
-            transform: translateY(-50%) translateX(43%) rotate(-3deg);
-            opacity: 0.7;
+            transform: translateY(-50%) translateX(33%) rotate(-3deg);
+            opacity: 0.75;
         }
     }
 }
 
 
 /* =========================================================
-   RESPONSIVE — 900px
+   RESPONSIVE — 900px (nav mobile)
    ========================================================= */
 
 @media (max-width: 900px) {
@@ -2162,7 +2167,7 @@ select:focus-visible {
     .main-nav a::after { display: none; }
     .main-nav a:last-child { border-bottom: 0; }
 
-    .hero { padding-top: 120px; padding-bottom: 70px; min-height: 600px; }
+    .hero { padding-top: 120px; padding-bottom: 70px; min-height: 640px; }
     .hero h1 { font-size: clamp(2.2rem, 7vw, 3.6rem); }
 
     .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 24px 0; }
@@ -2188,22 +2193,25 @@ select:focus-visible {
     .legal-hero { padding-top: 130px; }
     .legal-content { padding: 60px 0 80px; }
 
-    /* Mundo aún más chico */
+    /* Mundo bien visible en tablet vertical */
     .hero::before {
-        width: 50%;
-        right: 0;
-        transform: translateY(-50%) translateX(45%);
-        opacity: 0.45;
+        width: 70vh;
+        height: 70vh;
+        min-width: 500px;
+        min-height: 500px;
+        top: 55%;
+        transform: translateY(-50%) translateX(35%);
+        opacity: 0.55;
     }
 
     @keyframes mundo-float {
         0%, 100% {
-            transform: translateY(-50%) translateX(45%) rotate(0deg);
-            opacity: 0.45;
+            transform: translateY(-50%) translateX(35%) rotate(0deg);
+            opacity: 0.55;
         }
         50% {
-            transform: translateY(-50%) translateX(48%) rotate(-3deg);
-            opacity: 0.6;
+            transform: translateY(-50%) translateX(38%) rotate(-3deg);
+            opacity: 0.7;
         }
     }
 
@@ -2212,7 +2220,7 @@ select:focus-visible {
 
 
 /* =========================================================
-   RESPONSIVE — 768px
+   RESPONSIVE — 768px (mobile)
    ========================================================= */
 
 @media (max-width: 768px) {
@@ -2225,7 +2233,7 @@ select:focus-visible {
     .logo-wordmark { font-size: 0.9rem; }
 
     /* Hero */
-    .hero { padding-top: 100px; padding-bottom: 60px; min-height: 540px; }
+    .hero { padding-top: 130px; padding-bottom: 60px; min-height: 620px; }
     .hero-eyebrow { gap: 10px; font-size: 0.65rem; margin-bottom: 26px; }
     .hero h1 { font-size: clamp(2rem, 10vw, 3rem); margin-bottom: 22px; }
     .hero-lead { font-size: 1rem; margin-bottom: 12px; }
@@ -2233,23 +2241,28 @@ select:focus-visible {
     .hero-actions { gap: 10px; margin-bottom: 40px; }
     .hero-actions .button { flex: 1 1 100%; }
 
-    /* Mundo muy sutil */
+    /* Mundo en mobile: arriba a la derecha, bien visible */
     .hero::before {
-        width: 60%;
+        width: 90vw;
+        height: 90vw;
+        max-width: 520px;
+        max-height: 520px;
+        min-width: 0;
+        min-height: 0;
+        top: 8%;
         right: 0;
-        top: 40%;
-        transform: translateY(-50%) translateX(50%);
-        opacity: 0.3;
+        transform: translateY(0) translateX(35%);
+        opacity: 0.45;
     }
 
     @keyframes mundo-float {
         0%, 100% {
-            transform: translateY(-50%) translateX(50%) rotate(0deg);
-            opacity: 0.3;
+            transform: translateY(0) translateX(35%) rotate(0deg);
+            opacity: 0.45;
         }
         50% {
-            transform: translateY(-50%) translateX(53%) rotate(-3deg);
-            opacity: 0.45;
+            transform: translateY(-10px) translateX(38%) rotate(-3deg);
+            opacity: 0.6;
         }
     }
 
@@ -2340,7 +2353,7 @@ select:focus-visible {
 
 
 /* =========================================================
-   RESPONSIVE — 480px
+   RESPONSIVE — 480px (mobile chico)
    ========================================================= */
 
 @media (max-width: 480px) {
@@ -2349,27 +2362,31 @@ select:focus-visible {
     .logo-wordmark { font-size: 0.85rem; }
 
     /* Hero */
-    .hero { padding-top: 90px; padding-bottom: 50px; min-height: 500px; }
+    .hero { padding-top: 120px; padding-bottom: 50px; min-height: 580px; }
     .hero h1 { font-size: 1.75rem; }
     .hero-stat-num { font-size: 1.2rem; }
     .hero-stat-label { font-size: 0.58rem; letter-spacing: 0.06em; }
 
+    /* Mundo en mobile chico: grande arriba a la derecha */
     .hero::before {
-        width: 70%;
+        width: 100vw;
+        height: 100vw;
+        max-width: 440px;
+        max-height: 440px;
+        top: 6%;
         right: 0;
-        top: 45%;
-        transform: translateY(-50%) translateX(55%);
-        opacity: 0.22;
+        transform: translateY(0) translateX(38%);
+        opacity: 0.4;
     }
 
     @keyframes mundo-float {
         0%, 100% {
-            transform: translateY(-50%) translateX(55%) rotate(0deg);
-            opacity: 0.22;
+            transform: translateY(0) translateX(38%) rotate(0deg);
+            opacity: 0.4;
         }
         50% {
-            transform: translateY(-50%) translateX(58%) rotate(-3deg);
-            opacity: 0.35;
+            transform: translateY(-8px) translateX(41%) rotate(-3deg);
+            opacity: 0.55;
         }
     }
 
