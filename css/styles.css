@@ -1,5 +1,5 @@
 /* =========================================================
-   TAGBACK — STYLES v11 (+ legales)
+   TAGBACK — STYLES v12 (intro 1.5s + mobile optimizado)
    ========================================================= */
 
 
@@ -1558,7 +1558,7 @@ a.contact-meta-value:hover { color: var(--blue); }
 
 
 /* =========================================================
-   INTRO
+   INTRO — 1.5s total (CORREGIDO)
    ========================================================= */
 
 .tb-intro {
@@ -1574,7 +1574,7 @@ a.contact-meta-value:hover { color: var(--blue); }
     transition:
         opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
         filter 500ms cubic-bezier(0.4, 0, 0.2, 1),
-        visibility 0ms linear 1000ms;
+        visibility 0ms linear 500ms;
 }
 
 .tb-intro.is-hiding {
@@ -1609,7 +1609,7 @@ a.contact-meta-value:hover { color: var(--blue); }
 }
 
 .tb-intro.no-js {
-    animation: tb-intro-auto-close 0ms linear 3200ms forwards;
+    animation: tb-intro-auto-close 0ms linear 1700ms forwards;
 }
 
 @keyframes tb-intro-auto-close {
@@ -1758,7 +1758,7 @@ a.contact-meta-value:hover { color: var(--blue); }
 
 
 /* =========================================================
-   LEGAL — páginas internas
+   LEGAL
    ========================================================= */
 
 .legal-hero {
@@ -1872,18 +1872,14 @@ a.contact-meta-value:hover { color: var(--blue); }
     transition: color 200ms var(--ease-soft);
 }
 
-.legal-content a:hover {
-    color: var(--blue-dark);
-}
+.legal-content a:hover { color: var(--blue-dark); }
 
 .legal-content strong {
     color: var(--ink);
     font-weight: 600;
 }
 
-.legal-content h2:first-of-type {
-    margin-top: 40px;
-}
+.legal-content h2:first-of-type { margin-top: 40px; }
 
 
 /* =========================================================
@@ -1992,7 +1988,7 @@ select:focus-visible {
 
 
 /* =========================================================
-   RESPONSIVE — 1100px
+   RESPONSIVE — 1100px (tablet)
    ========================================================= */
 
 @media (max-width: 1100px) {
@@ -2016,7 +2012,7 @@ select:focus-visible {
 
 
 /* =========================================================
-   RESPONSIVE — 900px
+   RESPONSIVE — 900px (nav mobile)
    ========================================================= */
 
 @media (max-width: 900px) {
@@ -2102,7 +2098,7 @@ select:focus-visible {
 
 
 /* =========================================================
-   RESPONSIVE — 768px
+   RESPONSIVE — 768px (mobile)
    ========================================================= */
 
 @media (max-width: 768px) {
@@ -2114,13 +2110,16 @@ select:focus-visible {
     .logo-icon { width: 28px; height: 28px; flex: 0 0 28px; }
     .logo-wordmark { font-size: 0.9rem; }
 
+    /* Hero */
     .hero { padding-top: 100px; padding-bottom: 60px; }
     .hero-eyebrow { gap: 10px; font-size: 0.65rem; margin-bottom: 26px; }
-    .hero h1 { font-size: clamp(2rem, 10vw, 3rem); }
-    .hero-lead { font-size: 1rem; }
-    .hero-support { font-size: 0.9rem; }
-    .hero-actions { gap: 10px; }
+    .hero h1 { font-size: clamp(2rem, 10vw, 3rem); margin-bottom: 22px; }
+    .hero-lead { font-size: 1rem; margin-bottom: 12px; }
+    .hero-support { font-size: 0.9rem; margin-bottom: 28px; }
+    .hero-actions { gap: 10px; margin-bottom: 40px; }
+    .hero-actions .button { flex: 1 1 100%; }
 
+    /* Section head */
     .section-head {
         flex-direction: column;
         align-items: flex-start;
@@ -2131,25 +2130,69 @@ select:focus-visible {
     .section-title { font-size: 1.9rem; }
     .section-desc { font-size: 0.9rem; }
 
-    .accordion-header { padding: 18px 20px; }
+    /* Accordions */
+    .accordion-stack { max-width: 100%; }
+    .accordion-stack--right { margin-left: 0; }
+    .accordion-header { padding: 18px 20px; gap: 14px; }
+    .accordion-num { min-width: 26px; font-size: 0.68rem; }
     .accordion-title { font-size: 1rem; }
-    .accordion-panel-content { padding: 0 20px 20px 60px; }
+    .accordion-panel-content { padding: 0 20px 20px 58px; font-size: 0.85rem; }
 
-    .work-card { padding: 22px 20px; }
+    /* Work */
+    .work { padding-bottom: 80px; }
+    .work-grid { grid-template-columns: 1fr; gap: 18px; }
+    .work-card {
+        padding: 22px 20px;
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .work-card-info { gap: 10px; }
     .work-card-name { font-size: 1.35rem; }
+    .work-card-claim { font-size: 0.85rem; }
+    .work-card-image { aspect-ratio: 16 / 10; }
+    .work-card-link { padding-top: 14px; margin-top: 8px; }
 
+    /* Plans */
     .plan-card { padding: 26px 22px; }
+    .plan-price { font-size: 1.5rem; }
 
+    /* Trust */
+    .trust { padding: 45px 0; }
+    .trust p { font-size: 1.2rem; }
+
+    /* FAQ */
+    .faq-item summary { font-size: 0.98rem; padding: 20px 0; }
+    .faq-item p { font-size: 0.88rem; padding-bottom: 20px; }
+
+    /* Contact */
+    .contact-grid { grid-template-columns: 1fr; gap: 32px; }
     .contact-info h3 { font-size: 1.7rem; }
+    .contact-info > p { font-size: 0.9rem; margin-bottom: 24px; }
+    .contact-meta { gap: 14px; padding-top: 20px; }
 
+    /* Form */
     .quote-form { padding: 24px 20px; }
+    .quote-form-title { font-size: 1.2rem; }
     .quote-form-grid { grid-template-columns: 1fr; gap: 16px; }
     .form-field-full { grid-column: auto; }
+    .quote-form-submit .button { width: 100%; }
 
-    .footer-links { grid-template-columns: 1fr 1fr; gap: 24px; }
-    .footer-bottom { font-size: 0.6rem; }
-    .footer-credit-icon { width: 44px; height: 44px; }
+    /* Final CTA */
+    .final-cta { padding: 55px 0; }
+    .final-cta h2 { font-size: 1.5rem; }
 
+    /* Footer */
+    .footer-inner { grid-template-columns: 1fr; gap: 32px; padding-bottom: 40px; }
+    .footer-links { grid-template-columns: 1fr 1fr; gap: 24px 20px; }
+    .footer-bottom {
+        font-size: 0.6rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .footer-credit-icon { width: 42px; height: 42px; }
+
+    /* Legal */
     .legal-hero { padding-top: 110px; padding-bottom: 40px; }
     .legal-hero h1 { font-size: 2rem; }
     .legal-content { padding: 50px 0 70px; }
@@ -2161,7 +2204,7 @@ select:focus-visible {
 
 
 /* =========================================================
-   RESPONSIVE — 480px
+   RESPONSIVE — 480px (mobile chico)
    ========================================================= */
 
 @media (max-width: 480px) {
@@ -2169,25 +2212,61 @@ select:focus-visible {
     .logo-icon { width: 26px; height: 26px; flex: 0 0 26px; }
     .logo-wordmark { font-size: 0.85rem; }
 
-    .hero h1 { font-size: 1.9rem; }
-    .hero-stat-num { font-size: 1.3rem; }
-    .hero-stat-label { font-size: 0.6rem; }
+    /* Hero */
+    .hero { padding-top: 90px; padding-bottom: 50px; }
+    .hero h1 { font-size: 1.75rem; }
+    .hero-stat-num { font-size: 1.2rem; }
+    .hero-stat-label { font-size: 0.58rem; letter-spacing: 0.06em; }
 
-    .section-title { font-size: 1.7rem; }
+    /* Section title */
+    .section-title { font-size: 1.55rem; }
 
-    .plan-card h3 { font-size: 1.2rem; }
-    .plan-price { font-size: 1.35rem; }
+    /* Accordion */
+    .accordion-header { padding: 16px 18px; gap: 12px; }
+    .accordion-title { font-size: 0.95rem; }
+    .accordion-panel-content { padding: 0 18px 18px 54px; font-size: 0.82rem; }
+
+    /* Work */
+    .work-card { padding: 20px 18px; }
     .work-card-name { font-size: 1.2rem; }
+    .work-card-header { font-size: 0.6rem; }
 
-    .footer-links { grid-template-columns: 1fr; gap: 20px; }
+    /* Plans */
+    .plan-card { padding: 22px 18px; }
+    .plan-card h3 { font-size: 1.15rem; }
+    .plan-price { font-size: 1.3rem; }
+    .plan-features li { font-size: 0.82rem; }
+
+    /* FAQ */
+    .faq-item summary { font-size: 0.92rem; }
+
+    /* Contact */
+    .contact-info h3 { font-size: 1.5rem; }
+
+    /* Form */
+    .quote-form { padding: 22px 18px; }
+    .form-field input,
+    .form-field select { min-height: 42px; font-size: 0.88rem; }
+    .form-field textarea { min-height: 100px; font-size: 0.88rem; }
+
+    /* Pills */
+    .pill-group { gap: 6px; }
+    .pill span { padding: 8px 14px; font-size: 0.68rem; }
+
+    /* Final CTA */
+    .final-cta h2 { font-size: 1.35rem; }
+
+    /* Footer */
+    .footer-links { grid-template-columns: 1fr; gap: 22px; }
     .footer-bottom { font-size: 0.55rem; gap: 8px; }
     .footer-credit { gap: 10px; }
     .footer-credit-icon { width: 36px; height: 36px; }
 
+    /* Legal */
     .legal-hero { padding-top: 100px; }
-    .legal-hero h1 { font-size: 1.7rem; }
+    .legal-hero h1 { font-size: 1.6rem; }
     .legal-content { padding: 40px 0 60px; }
-    .legal-content h2 { font-size: 1.1rem; }
+    .legal-content h2 { font-size: 1.08rem; }
     .legal-meta { margin-bottom: 30px; }
 }
 
