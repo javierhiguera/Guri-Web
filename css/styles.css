@@ -1572,8 +1572,8 @@ a.contact-meta-value:hover { color: var(--blue); }
     pointer-events: auto;
     will-change: opacity, filter;
     transition:
-        opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1),
-        filter 1000ms cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+        filter 500ms cubic-bezier(0.4, 0, 0.2, 1),
         visibility 0ms linear 1000ms;
 }
 
@@ -1589,7 +1589,7 @@ a.contact-meta-value:hover { color: var(--blue); }
     max-width: 720px;
     height: auto;
     display: block;
-    animation: tb-intro-logo-in 1400ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+    animation: tb-intro-logo-in 600ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
     will-change: opacity, transform;
 }
 
