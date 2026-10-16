@@ -1,11 +1,11 @@
 /* =========================================================
-   TAGBACK — JAVASCRIPT v9
+   TAGBACK — JAVASCRIPT v10
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
-       INTRO — fade simple
+       INTRO — fade simple, más lenta
        ===================================================== */
 
     const intro = document.getElementById("tb-intro");
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             intro.addEventListener("transitionend", cleanup, { once: true });
-            setTimeout(cleanup, 1500);
+            setTimeout(cleanup, 2000);
         };
 
         if (prefersReducedMotion) {
@@ -45,7 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
             if (alreadyShown) {
                 hideIntro();
             } else {
-                setTimeout(hideIntro, 2000);
+                /* Dejar que la animación de entrada del logo se vea
+                   completa antes de empezar el fade out */
+                setTimeout(hideIntro, 2800);
+
                 try {
                     sessionStorage.setItem(INTRO_KEY, "1");
                 } catch (e) { /* ignorar */ }
@@ -63,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       COOKIES
+       COOKIES — modal centrado
        ===================================================== */
 
     const COOKIE_KEY = "tagback-cookies-accepted";
@@ -77,10 +80,12 @@ document.addEventListener("DOMContentLoaded", () => {
             alreadyAccepted = localStorage.getItem(COOKIE_KEY) === "1";
         } catch (e) { /* ignorar */ }
 
+        /* Mostrar después de la intro, con un delay
+           para que no se superpongan */
         if (!alreadyAccepted) {
             setTimeout(() => {
                 cookieBanner.classList.add("is-visible");
-            }, 500);
+            }, 3600);
         }
 
         const acceptBtn = cookieBanner.querySelector("[data-cookie-accept]");
@@ -205,11 +210,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const animatedElements = document.querySelectorAll(
         [
-            ".service-card",
-            ".why-row",
-            ".process-card",
-            ".plan-card",
-            ".work-card"
+            ".accordion-item",
+            ".work-card",
+            ".plan-card"
         ].join(", ")
     );
 
@@ -238,7 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             },
             {
-                threshold: 0.12,
+                threshold: 0.10,
                 rootMargin: "0px 0px -40px 0px"
             }
         );
@@ -250,6 +253,41 @@ document.addEventListener("DOMContentLoaded", () => {
         animatedElements.forEach(el => el.classList.add("visible"));
 
     }
+
+
+    /* =====================================================
+       ACORDEONES (Servicios + Beneficios)
+       ===================================================== */
+
+    const accordionItems = document.querySelectorAll(".accordion-item");
+
+    accordionItems.forEach(item => {
+
+        const header = item.querySelector(".accordion-header");
+        if (!header) return;
+
+        header.addEventListener("click", () => {
+
+            const isOpen = item.classList.contains("is-open");
+
+            /* Cerrar los hermanos del mismo stack */
+            const stack = item.parentElement;
+            if (stack) {
+                stack.querySelectorAll(".accordion-item.is-open").forEach(sibling => {
+                    if (sibling !== item) {
+                        sibling.classList.remove("is-open");
+                        const h = sibling.querySelector(".accordion-header");
+                        if (h) h.setAttribute("aria-expanded", "false");
+                    }
+                });
+            }
+
+            item.classList.toggle("is-open", !isOpen);
+            header.setAttribute("aria-expanded", String(!isOpen));
+
+        });
+
+    });
 
 
     /* =====================================================
@@ -389,7 +427,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 showFeedback(
                     "info",
-                    "Formulario en configuración. Mientras tanto, escribinos por email o WhatsApp."
+                    "Estamos configurando el formulario. Mientras tanto, escribinos a projects@tagback.com"
                 );
 
                 return;
@@ -429,7 +467,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch(() => {
                 showFeedback(
                     "error",
-                    "No pudimos enviar tu consulta. Intentá nuevamente o contactanos por WhatsApp."
+                    "No pudimos enviar tu consulta. Intentá nuevamente o escribinos a projects@tagback.com"
                 );
             })
             .finally(() => {
