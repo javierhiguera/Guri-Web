@@ -1,11 +1,11 @@
 /* =========================================================
-   TAGBACK — JAVASCRIPT v11 (intro 1.5s + cookies delay)
+   TAGBACK — JAVASCRIPT v12 (intro 700ms parpadeo)
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
-       INTRO — fade simple, 1.5s total
+       INTRO — parpadeo rápido, ~700ms total
        ===================================================== */
 
     const intro = document.getElementById("tb-intro");
@@ -29,11 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             intro.addEventListener("transitionend", cleanup, { once: true });
-            setTimeout(cleanup, 800);
+            setTimeout(cleanup, 500);
         };
 
         if (prefersReducedMotion) {
-            setTimeout(hideIntro, 200);
+            setTimeout(hideIntro, 100);
         } else {
 
             let alreadyShown = false;
@@ -45,9 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
             if (alreadyShown) {
                 hideIntro();
             } else {
-                /* La animación del logo dura 600ms.
-                   Esperamos a que termine y hacemos el fade out. */
-                setTimeout(hideIntro, 1000);
+                /* La animación del logo dura 350ms.
+                   Esperamos un poco para que se vea y arrancamos el fade out.
+                   Total: ~700ms = parpadeo. */
+                setTimeout(hideIntro, 450);
 
                 try {
                     sessionStorage.setItem(INTRO_KEY, "1");
@@ -80,12 +81,12 @@ document.addEventListener("DOMContentLoaded", () => {
             alreadyAccepted = localStorage.getItem(COOKIE_KEY) === "1";
         } catch (e) { /* ignorar */ }
 
-        /* Mostrar después de la intro.
-           Intro termina en 1,5s → delay de 2s para no superponer. */
+        /* Mostrar después de la intro (que dura ~700ms).
+           Delay de 1.2s para no superponer. */
         if (!alreadyAccepted) {
             setTimeout(() => {
                 cookieBanner.classList.add("is-visible");
-            }, 2000);
+            }, 1200);
         }
 
         const acceptBtn = cookieBanner.querySelector("[data-cookie-accept]");
