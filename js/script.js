@@ -1,5 +1,5 @@
 /* =========================================================
-   TAGBACK — JAVASCRIPT v14
+   TAGBACK — JAVASCRIPT v15
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -53,7 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (alreadyShown) {
                 hideIntro();
             } else {
-                setTimeout(hideIntro, 700);
+                // NUEVO: intro más rápida (700ms → 350ms)
+                setTimeout(hideIntro, 350);
 
                 try {
                     sessionStorage.setItem(INTRO_KEY, "1");
@@ -210,7 +211,9 @@ document.addEventListener("DOMContentLoaded", () => {
         [
             ".accordion-item",
             ".work-card",
-            ".plan-card"
+            ".plan-card",
+            ".service-card",    // NUEVO
+            ".process-item"     // NUEVO
         ].join(", ")
     );
 
@@ -254,7 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       ACORDEONES
+       ACORDEONES (Beneficios)
        ===================================================== */
 
     const accordionItems = document.querySelectorAll(".accordion-item");
@@ -281,6 +284,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
             item.classList.toggle("is-open", !isOpen);
             accHeader.setAttribute("aria-expanded", String(!isOpen));
+
+        });
+
+    });
+
+
+    /* =====================================================
+       SERVICE CARDS — acordeón horizontal (NUEVO)
+       ===================================================== */
+
+    const serviceCards = document.querySelectorAll(".service-card");
+
+    serviceCards.forEach(card => {
+
+        const cardHeader = card.querySelector(".service-card-header");
+        if (!cardHeader) return;
+
+        cardHeader.addEventListener("click", () => {
+
+            const isOpen = card.classList.contains("is-open");
+
+            // Cierra las demás cards abiertas dentro del mismo grupo
+            const group = card.parentElement;
+            if (group) {
+                group.querySelectorAll(".service-card.is-open").forEach(sibling => {
+                    if (sibling !== card) {
+                        sibling.classList.remove("is-open");
+                        const h = sibling.querySelector(".service-card-header");
+                        if (h) h.setAttribute("aria-expanded", "false");
+                    }
+                });
+            }
+
+            card.classList.toggle("is-open", !isOpen);
+            cardHeader.setAttribute("aria-expanded", String(!isOpen));
 
         });
 
@@ -493,5 +531,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     });
+
+
+    /* =====================================================
+       AÑO ACTUAL EN FOOTER (NUEVO)
+       ===================================================== */
+
+    const yearEls = document.querySelectorAll("[data-current-year]");
+
+    if (yearEls.length) {
+        const currentYear = new Date().getFullYear();
+        yearEls.forEach(el => {
+            el.textContent = currentYear;
+        });
+    }
 
 });
