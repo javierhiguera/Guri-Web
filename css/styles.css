@@ -1,5 +1,5 @@
 /* =========================================================
-   TAGBACK — STYLES v25
+   TAGBACK — STYLES v26
    Tipografías: SF UI Display Heavy (títulos)
                 IBM Plex Mono Medium (contenido/técnico)
                 Syne (marca)
@@ -60,7 +60,7 @@
     --success: #10893e;
     --error: #c81e1e;
 
-    /* NUEVO: Asignación tipográfica solicitada */
+    /* Asignación tipográfica */
     --title: "SFUIDisplayHeavy", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --body: "IBMPlexMonoMedium", "IBM Plex Mono", "SF Mono", monospace;
     --brand: "Syne", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -92,7 +92,7 @@ body {
     color: var(--ink);
     font-family: var(--body);
     font-weight: 500;
-    font-size: 0.95rem; /* Ajuste por IBM Plex Mono */
+    font-size: 0.95rem;
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -199,7 +199,7 @@ h1, h2, h3, h4, h5, h6,
 
 .section-title {
     font-size: clamp(2.4rem, 5.5vw, 4.5rem);
-    line-height: 1.05; /* Ajustado por SFUIDisplay */
+    line-height: 1.05;
     letter-spacing: -0.03em;
     color: var(--ink);
     margin: 0;
@@ -308,7 +308,7 @@ h1, h2, h3, h4, h5, h6,
 
 
 /* =========================================================
-   SELECTOR DE IDIOMA (NUEVO)
+   SELECTOR DE IDIOMA
    ========================================================= */
 
 .lang-switcher {
@@ -1541,7 +1541,7 @@ h1, h2, h3, h4, h5, h6,
 
 
 /* =========================================================
-   FOOTER (REDISEÑADO)
+   FOOTER REDISEÑADO
    ========================================================= */
 
 .site-footer {
@@ -1551,21 +1551,14 @@ h1, h2, h3, h4, h5, h6,
 
 .footer-inner {
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
     padding-bottom: 50px;
     border-bottom: 1px solid var(--line);
     align-items: start;
 }
 
-.footer-brand-name {
-    display: block;
-    font-size: 1.4rem;
-    color: var(--ink);
-    margin-bottom: 24px;
-    letter-spacing: -0.02em;
-}
-
+/* Columna 1: Contacto */
 .footer-contact {
     display: flex;
     flex-direction: column;
@@ -1604,6 +1597,7 @@ h1, h2, h3, h4, h5, h6,
 
 a.contact-meta-value:hover { color: var(--blue); }
 
+/* Columnas 2 y 3: Links */
 .footer-links {
     display: flex;
     flex-direction: column;
@@ -1620,8 +1614,7 @@ a.contact-meta-value:hover { color: var(--blue); }
     text-transform: uppercase;
 }
 
-.footer-links a,
-.footer-links span {
+.footer-links a {
     color: var(--gray);
     font-family: var(--body);
     font-size: 0.85rem;
@@ -1644,30 +1637,43 @@ a.contact-meta-value:hover { color: var(--blue); }
     letter-spacing: 0.06em;
     text-transform: uppercase;
     flex-wrap: wrap;
+    border-top: 1px solid var(--line); /* Separador del crédito */
 }
 
+.footer-copyright {
+    color: var(--gray-dark);
+}
+
+/* Crédito alineado al mismo tamaño */
 .footer-credit-brand {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    font-family: var(--body);
+    font-size: 0.75rem;
+    color: var(--gray-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
 }
 
 .footer-credit-icon {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     display: block;
+    margin: 0 2px;
 }
 
 .footer-credit-wordmark {
+    font-family: var(--brand);
+    font-weight: 800;
     font-size: 1.1rem;
-    letter-spacing: -0.01em;
     color: var(--ink);
     text-transform: lowercase;
+    letter-spacing: -0.01em;
 }
 
 .footer-credit-text {
-    color: var(--gray-dark);
-    margin-right: 4px;
+    margin-right: 2px;
 }
 
 
@@ -2050,7 +2056,6 @@ select:focus-visible {
     .contact-grid { max-width: 100%; }
     
     .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
-    .footer-links { grid-template-columns: 1fr; }
 }
 
 
@@ -2233,13 +2238,8 @@ select:focus-visible {
     .logo-icon { width: 32px; height: 32px; flex: 0 0 32px; }
     .logo-wordmark { font-size: 1.1rem; }
 
-    .lang-switcher {
-        padding: 2px;
-    }
-    .lang-btn {
-        padding: 4px 6px;
-        font-size: 0.65rem;
-    }
+    .lang-switcher { padding: 2px; }
+    .lang-btn { padding: 4px 6px; font-size: 0.65rem; }
 
     .hero { padding-top: 120px; padding-bottom: 50px; }
     .hero h1 { font-size: 1.75rem; }
