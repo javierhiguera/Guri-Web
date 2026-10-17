@@ -1,5 +1,5 @@
 /* =========================================================
-   TAGBACK — JAVASCRIPT v15
+   TAGBACK — JAVASCRIPT v16
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(cleanup, 600);
         };
 
-        // Si JS falla, el intro se oculta por seguridad
         window.addEventListener("error", () => {
             if (intro && intro.parentNode) {
                 intro.style.display = "none";
@@ -43,9 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (prefersReducedMotion) {
             setTimeout(hideIntro, 100);
         } else {
-
             let alreadyShown = false;
-
             try {
                 alreadyShown = sessionStorage.getItem(INTRO_KEY) === "1";
             } catch (e) { /* ignorar */ }
@@ -53,14 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
             if (alreadyShown) {
                 hideIntro();
             } else {
-                // NUEVO: intro más rápida (700ms → 350ms)
                 setTimeout(hideIntro, 350);
-
                 try {
                     sessionStorage.setItem(INTRO_KEY, "1");
                 } catch (e) { /* ignorar */ }
             }
-
         }
 
     }
@@ -74,9 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cookieBanner = document.getElementById("cookie-banner");
 
     if (cookieBanner) {
-
         let alreadyAccepted = false;
-
         try {
             alreadyAccepted = localStorage.getItem(COOKIE_KEY) === "1";
         } catch (e) { /* ignorar */ }
@@ -104,14 +96,27 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 400);
         };
 
-        if (acceptBtn) {
-            acceptBtn.addEventListener("click", () => closeBanner("1"));
-        }
+        if (acceptBtn) acceptBtn.addEventListener("click", () => closeBanner("1"));
+        if (rejectBtn) rejectBtn.addEventListener("click", () => closeBanner("0"));
+    }
 
-        if (rejectBtn) {
-            rejectBtn.addEventListener("click", () => closeBanner("0"));
-        }
 
+    /* =====================================================
+       SELECTOR DE IDIOMA (UI)
+       ===================================================== */
+
+    const langBtns = document.querySelectorAll(".lang-btn");
+
+    if (langBtns.length) {
+        langBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                langBtns.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+                
+                // Aquí iría la lógica para cambiar los textos del sitio en el futuro.
+                // Ej: document.documentElement.lang = btn.getAttribute("lang");
+            });
+        });
     }
 
 
@@ -174,7 +179,6 @@ document.addEventListener("DOMContentLoaded", () => {
        ===================================================== */
 
     if (header) {
-
         let ticking = false;
 
         const updateHeader = () => {
@@ -190,7 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         window.addEventListener("scroll", onScroll, { passive: true });
         updateHeader();
-
     }
 
 
@@ -212,8 +215,8 @@ document.addEventListener("DOMContentLoaded", () => {
             ".accordion-item",
             ".work-card",
             ".plan-card",
-            ".service-card",    // NUEVO
-            ".process-item"     // NUEVO
+            ".service-card",
+            ".process-item"
         ].join(", ")
     );
 
@@ -222,7 +225,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "IntersectionObserver" in window &&
         animatedElements.length
     ) {
-
         const observer = new IntersectionObserver(
             entries => {
                 entries.forEach(entry => {
@@ -248,11 +250,8 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         animatedElements.forEach(el => observer.observe(el));
-
     } else {
-
         animatedElements.forEach(el => el.classList.add("visible"));
-
     }
 
 
@@ -263,12 +262,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const accordionItems = document.querySelectorAll(".accordion-item");
 
     accordionItems.forEach(item => {
-
         const accHeader = item.querySelector(".accordion-header");
         if (!accHeader) return;
 
         accHeader.addEventListener("click", () => {
-
             const isOpen = item.classList.contains("is-open");
 
             const stack = item.parentElement;
@@ -284,28 +281,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
             item.classList.toggle("is-open", !isOpen);
             accHeader.setAttribute("aria-expanded", String(!isOpen));
-
         });
-
     });
 
 
     /* =====================================================
-       SERVICE CARDS — acordeón horizontal (NUEVO)
+       SERVICE CARDS — acordeón horizontal
        ===================================================== */
 
     const serviceCards = document.querySelectorAll(".service-card");
 
     serviceCards.forEach(card => {
-
         const cardHeader = card.querySelector(".service-card-header");
         if (!cardHeader) return;
 
         cardHeader.addEventListener("click", () => {
-
             const isOpen = card.classList.contains("is-open");
 
-            // Cierra las demás cards abiertas dentro del mismo grupo
             const group = card.parentElement;
             if (group) {
                 group.querySelectorAll(".service-card.is-open").forEach(sibling => {
@@ -319,9 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             card.classList.toggle("is-open", !isOpen);
             cardHeader.setAttribute("aria-expanded", String(!isOpen));
-
         });
-
     });
 
 
@@ -332,13 +322,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const quoteForm = document.querySelector(".quote-form");
 
     if (quoteForm) {
-
         const formSubmit = quoteForm.querySelector(".quote-form-submit");
         const submitBtn = quoteForm.querySelector('button[type="submit"]');
         const submitBtnDefaultText = submitBtn ? submitBtn.textContent : "";
 
         const showFeedback = (type, message) => {
-
             let feedback = quoteForm.querySelector(".form-feedback");
 
             if (!feedback) {
@@ -351,7 +339,6 @@ document.addEventListener("DOMContentLoaded", () => {
             feedback.textContent = message;
             feedback.setAttribute("role", "status");
             feedback.setAttribute("aria-live", "polite");
-
         };
 
         const clearFeedback = () => {
@@ -360,29 +347,14 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         const getFieldError = (field) => {
-
-            if (field.validity.valueMissing) {
-                return "Este campo es obligatorio.";
-            }
-
-            if (field.validity.typeMismatch && field.type === "email") {
-                return "Revisá este dato.";
-            }
-
-            if (field.name === "phone" && field.validity.patternMismatch) {
-                return "Ingresá un número de teléfono válido.";
-            }
-
-            if (!field.checkValidity()) {
-                return "Revisá este dato.";
-            }
-
+            if (field.validity.valueMissing) return "Este campo es obligatorio.";
+            if (field.validity.typeMismatch && field.type === "email") return "Revisá este dato.";
+            if (field.name === "phone" && field.validity.patternMismatch) return "Ingresá un número de teléfono válido.";
+            if (!field.checkValidity()) return "Revisá este dato.";
             return "";
-
         };
 
         const setFieldError = (field, message) => {
-
             const wrapper = field.closest(".form-field");
             if (!wrapper) return;
 
@@ -403,7 +375,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 errorEl.textContent = "";
                 errorEl.classList.remove("is-visible");
             }
-
         };
 
         const validateField = (field) => {
@@ -422,7 +393,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         quoteForm.addEventListener("submit", event => {
-
             event.preventDefault();
             clearFeedback();
 
@@ -430,9 +400,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let allValid = true;
 
             fields.forEach(field => {
-                if (!validateField(field)) {
-                    allValid = false;
-                }
+                if (!validateField(field)) allValid = false;
             });
 
             if (!allValid) {
@@ -444,19 +412,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const action = quoteForm.getAttribute("action");
 
             if (!action || action === "#" || action.includes("TU_ID")) {
-
                 console.warn(
                     "TAGBACK: el formulario no está configurado. " +
                     "Reemplazá TU_ID en el action del <form> por tu ID de Formspree."
                 );
-
                 showFeedback(
                     "info",
                     "Estamos configurando el formulario. Mientras tanto, escribinos a hola@tagback.com"
                 );
-
                 return;
-
             }
 
             submitBtn.disabled = true;
@@ -470,7 +434,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 headers: { "Accept": "application/json" }
             })
             .then(response => {
-
                 if (response.ok) {
                     showFeedback(
                         "success",
@@ -487,7 +450,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else {
                     throw new Error("Error en la respuesta");
                 }
-
             })
             .catch(() => {
                 showFeedback(
@@ -499,9 +461,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 submitBtn.disabled = false;
                 submitBtn.textContent = submitBtnDefaultText;
             });
-
         });
-
     }
 
 
@@ -510,15 +470,11 @@ document.addEventListener("DOMContentLoaded", () => {
        ===================================================== */
 
     document.querySelectorAll('a[href^="#"]').forEach(link => {
-
         link.addEventListener("click", event => {
-
             const targetId = link.getAttribute("href");
-
             if (targetId === "#" || targetId.length < 2) return;
 
             const target = document.querySelector(targetId);
-
             if (!target) return;
 
             if (!("scrollBehavior" in document.documentElement.style)) {
@@ -527,14 +483,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset;
                 window.scrollTo({ top: targetPosition, behavior: "smooth" });
             }
-
         });
-
     });
 
 
     /* =====================================================
-       AÑO ACTUAL EN FOOTER (NUEVO)
+       AÑO ACTUAL EN FOOTER
        ===================================================== */
 
     const yearEls = document.querySelectorAll("[data-current-year]");
