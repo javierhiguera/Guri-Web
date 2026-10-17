@@ -1,281 +1,124 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Política de Cookies — tagback</title>
-
     <meta name="description" content="Política de Cookies de tagback. Qué cookies usamos, para qué y cómo gestionarlas.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#F7F8FA">
     <meta name="author" content="tagback">
-
     <link rel="icon" href="./favicon/favicon.ico">
-
     <link rel="stylesheet" href="./css/styles.css">
-
 </head>
-
-
 <body>
-
-<a class="skip-link" href="#main">Saltar al contenido principal</a>
-
-
-<!-- =====================================================
-     HEADER
-     ===================================================== -->
+<a class="skip-link" href="#main" data-i18n="skip_link">Saltar al contenido principal</a>
 
 <header class="site-header">
-
     <div class="container header-inner">
-
         <a href="./index.html" class="logo" aria-label="tagback — Inicio">
-
-            <img
-                src="./assets/logo/guri_isotipo.svg"
-                alt=""
-                class="logo-icon"
-                width="42"
-                height="42"
-            >
-
-            <span class="logo-text">
-                <span class="logo-wordmark">tagback</span>
-            </span>
-
+            <img src="./assets/logo/guri_isotipo.svg" alt="" class="logo-icon" width="42" height="42">
+            <span class="logo-text"><span class="logo-wordmark">tagback</span></span>
         </a>
-
-
         <nav class="main-nav" id="main-navigation" aria-label="Navegación principal">
-
-            <a href="./index.html#servicios">Servicios</a>
-            <a href="./index.html#trabajos">Proyectos</a>
-            <a href="./index.html#proceso">Proceso</a>
-            <a href="./index.html#planes">Planes</a>
-            <a href="./index.html#faq">Preguntas</a>
-            <a href="./index.html#contacto">Contacto</a>
-
+            <a href="./index.html#servicios" data-i18n="nav_services">Servicios</a>
+            <a href="./index.html#trabajos" data-i18n="nav_projects">Proyectos</a>
+            <a href="./index.html#proceso" data-i18n="nav_process">Proceso</a>
+            <a href="./index.html#planes" data-i18n="nav_plans">Planes</a>
+            <a href="./index.html#faq" data-i18n="nav_faq">Preguntas</a>
+            <a href="./index.html#contacto" data-i18n="nav_contact">Contacto</a>
         </nav>
-
-
         <div class="lang-switcher" aria-label="Selector de idioma">
-            <button type="button" class="lang-btn active" lang="es">ES</button>
-            <button type="button" class="lang-btn" lang="en">EN</button>
+            <button type="button" class="lang-btn active" data-lang="es" lang="es">ES</button>
+            <button type="button" class="lang-btn" data-lang="en" lang="en">EN</button>
         </div>
-
-
-        <button
-            class="menu-toggle"
-            type="button"
-            aria-label="Abrir menú"
-            aria-expanded="false"
-            aria-controls="main-navigation"
-        >
-            <span></span>
-            <span></span>
+        <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-navigation">
+            <span></span><span></span>
         </button>
-
     </div>
-
 </header>
 
-
-
 <main id="main">
+    <section class="legal-hero">
+        <div class="container">
+            <a href="./index.html" class="legal-back" data-i18n="back_home">← Volver al inicio</a>
+            <span class="section-eyebrow" data-i18n="legal_eyebrow">LEGAL</span>
+            <h1 data-i18n="cookies_title">Política de Cookies</h1>
+        </div>
+    </section>
 
+    <section class="legal-content">
+        <div class="container">
+            <p class="legal-meta" data-i18n="legal_updated">Última actualización: 2025</p>
+            <p data-i18n="cookies_intro">Esta política explica qué son las cookies, cuáles usamos en tagback, para qué sirven y cómo podés gestionarlas.</p>
 
-<!-- =====================================================
-     LEGAL HERO
-     ===================================================== -->
+            <h2 data-i18n="cookies_h2_1">1. Qué son las cookies</h2>
+            <p data-i18n="cookies_p_1">Las cookies son pequeños archivos de texto que los sitios web guardan en tu dispositivo cuando los visitás. Sirven para recordar tus preferencias, analizar cómo usás el sitio y mostrarte contenido o anuncios relevantes.</p>
 
-<section class="legal-hero">
+            <h2 data-i18n="cookies_h2_2">2. Qué cookies usamos</h2>
+            <h3 data-i18n="cookies_h3_1">Cookies necesarias</h3>
+            <p data-i18n="cookies_p_2">Son imprescindibles para que el sitio funcione correctamente. Sin ellas, algunas partes del sitio no funcionarían.</p>
+            <ul>
+                <li data-i18n="cookies_li_1">Preferencia de consentimiento de cookies (localStorage)</li>
+                <li data-i18n="cookies_li_2">Funcionamiento básico del sitio y seguridad</li>
+            </ul>
 
-    <div class="container">
+            <h3 data-i18n="cookies_h3_2">Cookies analíticas</h3>
+            <p data-i18n="cookies_p_3">Nos ayudan a entender cómo se usa el sitio: qué páginas se visitan más, cuánto tiempo se quedan los usuarios, de dónde vienen. Esta información es agregada y anónima.</p>
+            <ul>
+                <li data-i18n="cookies_li_3">Google Analytics (si está activado)</li>
+                <li data-i18n="cookies_li_4">Métricas de rendimiento y errores</li>
+            </ul>
 
-        <a href="./index.html" class="legal-back">← Volver al inicio</a>
+            <h3 data-i18n="cookies_h3_3">Cookies de marketing</h3>
+            <p data-i18n="cookies_p_4">Se usan para mostrarte anuncios relevantes en otros sitios y medir el rendimiento de campañas publicitarias.</p>
+            <ul>
+                <li data-i18n="cookies_li_5">Google Ads (si está activado)</li>
+                <li data-i18n="cookies_li_6">Meta Ads (si está activado)</li>
+            </ul>
 
-        <span class="section-eyebrow">LEGAL</span>
+            <h2 data-i18n="cookies_h2_3">3. Cookies de terceros</h2>
+            <p data-i18n="cookies_p_5">Algunos servicios que usamos pueden instalar sus propias cookies:</p>
+            <ul>
+                <li><strong>Google Analytics</strong> — <span data-i18n="cookies_li_7">para analítica web</span></li>
+                <li><strong>Formspree</strong> — <span data-i18n="cookies_li_8">para gestionar el formulario de contacto</span></li>
+            </ul>
 
-        <h1>Política de Cookies</h1>
+            <h2 data-i18n="cookies_h2_4">4. Cómo gestionar las cookies</h2>
+            <p data-i18n="cookies_p_6">Podés cambiar tus preferencias en cualquier momento desde el botón de configuración del banner de cookies, o desde la configuración de tu navegador:</p>
+            <ul>
+                <li>Chrome: Configuración → Privacidad y seguridad → Cookies</li>
+                <li>Firefox: Preferencias → Privacidad y seguridad</li>
+                <li>Safari: Preferencias → Privacidad</li>
+                <li>Edge: Configuración → Cookies y permisos del sitio</li>
+            </ul>
+            <p data-i18n="cookies_p_7">Si bloqueás todas las cookies, algunas funciones del sitio podrían no funcionar correctamente.</p>
 
-    </div>
+            <h2 data-i18n="cookies_h2_5">5. Cómo revocar tu consentimiento</h2>
+            <p data-i18n="cookies_p_8">Podés eliminar las cookies guardadas desde la configuración de tu navegador, o volver a abrir el banner de cookies para cambiar tus preferencias. Si querés resetear tu elección actual, escribinos a <a href="mailto:privacy@tagback.com">privacy@tagback.com</a>.</p>
 
-</section>
+            <h2 data-i18n="cookies_h2_6">6. Actualizaciones</h2>
+            <p data-i18n="cookies_p_9">Podemos actualizar esta Política de Cookies cuando cambien las herramientas que usamos o la normativa aplicable. La versión vigente siempre estará publicada en esta página.</p>
 
-
-
-<!-- =====================================================
-     LEGAL CONTENT
-     ===================================================== -->
-
-<section class="legal-content">
-
-    <div class="container">
-
-        <p class="legal-meta">Última actualización: 2025</p>
-
-        <p>
-            Esta política explica qué son las cookies, cuáles usamos en
-            tagback, para qué sirven y cómo podés gestionarlas.
-        </p>
-
-
-        <h2>1. Qué son las cookies</h2>
-
-        <p>
-            Las cookies son pequeños archivos de texto que los sitios web
-            guardan en tu dispositivo cuando los visitás. Sirven para recordar
-            tus preferencias, analizar cómo usás el sitio y mostrarte contenido
-            o anuncios relevantes.
-        </p>
-
-
-        <h2>2. Qué cookies usamos</h2>
-
-        <h3>Cookies necesarias</h3>
-
-        <p>
-            Son imprescindibles para que el sitio funcione correctamente.
-            Sin ellas, algunas partes del sitio no funcionarían.
-        </p>
-
-        <ul>
-            <li>Preferencia de consentimiento de cookies (localStorage)</li>
-            <li>Funcionamiento básico del sitio y seguridad</li>
-        </ul>
-
-        <h3>Cookies analíticas</h3>
-
-        <p>
-            Nos ayudan a entender cómo se usa el sitio: qué páginas se visitan
-            más, cuánto tiempo se quedan los usuarios, de dónde vienen. Esta
-            información es agregada y anónima.
-        </p>
-
-        <ul>
-            <li>Google Analytics (si está activado)</li>
-            <li>Métricas de rendimiento y errores</li>
-        </ul>
-
-        <h3>Cookies de marketing</h3>
-
-        <p>
-            Se usan para mostrarte anuncios relevantes en otros sitios y medir
-            el rendimiento de campañas publicitarias.
-        </p>
-
-        <ul>
-            <li>Google Ads (si está activado)</li>
-            <li>Meta Ads (si está activado)</li>
-        </ul>
-
-
-        <h2>3. Cookies de terceros</h2>
-
-        <p>
-            Algunos servicios que usamos pueden instalar sus propias cookies:
-        </p>
-
-        <ul>
-            <li><strong>Google Analytics</strong> — para analítica web</li>
-            <li><strong>Formspree</strong> — para gestionar el formulario de contacto</li>
-            <li><strong>Google Fonts</strong> — actualmente NO usamos, pero puede mencionarse en el futuro</li>
-        </ul>
-
-
-        <h2>4. Cómo gestionar las cookies</h2>
-
-        <p>
-            Podés cambiar tus preferencias en cualquier momento desde el botón
-            de configuración del banner de cookies, o desde la configuración
-            de tu navegador:
-        </p>
-
-        <ul>
-            <li>Chrome: Configuración → Privacidad y seguridad → Cookies</li>
-            <li>Firefox: Preferencias → Privacidad y seguridad</li>
-            <li>Safari: Preferencias → Privacidad</li>
-            <li>Edge: Configuración → Cookies y permisos del sitio</li>
-        </ul>
-
-        <p>
-            Si bloqueás todas las cookies, algunas funciones del sitio podrían
-            no funcionar correctamente.
-        </p>
-
-
-        <h2>5. Cómo revocar tu consentimiento</h2>
-
-        <p>
-            Podés eliminar las cookies guardadas desde la configuración de tu
-            navegador, o volver a abrir el banner de cookies para cambiar tus
-            preferencias. Si querés resetear tu elección actual, escribinos a
-            <a href="mailto:privacy@tagback.com">privacy@tagback.com</a>.
-        </p>
-
-
-        <h2>6. Actualizaciones</h2>
-
-        <p>
-            Podemos actualizar esta Política de Cookies cuando cambien las
-            herramientas que usamos o la normativa aplicable. La versión
-            vigente siempre estará publicada en esta página.
-        </p>
-
-
-        <h2>7. Contacto</h2>
-
-        <p>
-            Para consultas sobre cookies, escribinos a
-            <a href="mailto:privacy@tagback.com">privacy@tagback.com</a>.
-        </p>
-
-    </div>
-
-</section>
-
-
+            <h2 data-i18n="cookies_h2_7">7. Contacto</h2>
+            <p data-i18n="cookies_p_10">Para consultas sobre cookies, escribinos a <a href="mailto:privacy@tagback.com">privacy@tagback.com</a>.</p>
+        </div>
+    </section>
 </main>
 
-
-
-<!-- =====================================================
-     FOOTER
-     ===================================================== -->
-
 <footer class="site-footer">
-
     <div class="container footer-bottom">
-
         <span class="footer-copyright">
-            © <span data-current-year></span> tagback. Todos los derechos reservados.
+            © <span data-current-year></span> tagback. <span data-i18n="foot_rights">Todos los derechos reservados.</span>
         </span>
-
         <span class="footer-credit-brand">
-            <span class="footer-credit-text">Diseño y desarrollo por</span>
-            <img
-                src="./assets/logo/guri_isotipo.svg"
-                alt=""
-                class="footer-credit-icon"
-                width="20"
-                height="20"
-            >
+            <span class="footer-credit-text" data-i18n="foot_credit">Diseño y desarrollo por</span>
+            <img src="./assets/logo/guri_isotipo.svg" alt="" class="footer-credit-icon" width="22" height="22">
             <span class="footer-credit-wordmark">tagback</span>
         </span>
-
     </div>
-
 </footer>
 
-
-
 <script src="./js/script.js"></script>
-
 </body>
-
 </html>
