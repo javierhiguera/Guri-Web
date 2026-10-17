@@ -56,9 +56,6 @@
         document.documentElement.classList.remove('no-js');
     </script>
 
-    <!-- Fuentes locales declaradas en css/styles.css vía @font-face.
-         Se eliminaron las referencias a Google Fonts. -->
-
     <link rel="stylesheet" href="./css/styles.css">
 
 </head>
@@ -104,6 +101,12 @@
             <a href="#contacto">Contacto</a>
 
         </nav>
+
+
+        <div class="lang-switcher" aria-label="Selector de idioma">
+            <button type="button" class="lang-btn active" lang="es">ES</button>
+            <button type="button" class="lang-btn" lang="en">EN</button>
+        </div>
 
 
         <button
@@ -179,11 +182,7 @@
         <div class="services-cards">
 
             <article class="service-card">
-                <button
-                    type="button"
-                    class="service-card-header"
-                    aria-expanded="false"
-                >
+                <button type="button" class="service-card-header" aria-expanded="false">
                     <span class="service-card-num">01</span>
                     <h3 class="service-card-title">Landing pages</h3>
                     <span class="service-card-icon" aria-hidden="true"></span>
@@ -196,11 +195,7 @@
             </article>
 
             <article class="service-card">
-                <button
-                    type="button"
-                    class="service-card-header"
-                    aria-expanded="false"
-                >
+                <button type="button" class="service-card-header" aria-expanded="false">
                     <span class="service-card-num">02</span>
                     <h3 class="service-card-title">Sitios web corporativos</h3>
                     <span class="service-card-icon" aria-hidden="true"></span>
@@ -213,11 +208,7 @@
             </article>
 
             <article class="service-card">
-                <button
-                    type="button"
-                    class="service-card-header"
-                    aria-expanded="false"
-                >
+                <button type="button" class="service-card-header" aria-expanded="false">
                     <span class="service-card-num">03</span>
                     <h3 class="service-card-title">Tiendas online</h3>
                     <span class="service-card-icon" aria-hidden="true"></span>
@@ -230,11 +221,7 @@
             </article>
 
             <article class="service-card">
-                <button
-                    type="button"
-                    class="service-card-header"
-                    aria-expanded="false"
-                >
+                <button type="button" class="service-card-header" aria-expanded="false">
                     <span class="service-card-num">04</span>
                     <h3 class="service-card-title">Mantenimiento web</h3>
                     <span class="service-card-icon" aria-hidden="true"></span>
@@ -275,11 +262,7 @@
         <div class="accordion-stack accordion-stack--right">
 
             <div class="accordion-item">
-                <button
-                    type="button"
-                    class="accordion-header"
-                    aria-expanded="false"
-                >
+                <button type="button" class="accordion-header" aria-expanded="false">
                     <span class="accordion-num">01</span>
                     <h3 class="accordion-title">Diseño</h3>
                     <span class="accordion-icon" aria-hidden="true"></span>
@@ -294,11 +277,7 @@
             </div>
 
             <div class="accordion-item">
-                <button
-                    type="button"
-                    class="accordion-header"
-                    aria-expanded="false"
-                >
+                <button type="button" class="accordion-header" aria-expanded="false">
                     <span class="accordion-num">02</span>
                     <h3 class="accordion-title">Responsive</h3>
                     <span class="accordion-icon" aria-hidden="true"></span>
@@ -313,11 +292,7 @@
             </div>
 
             <div class="accordion-item">
-                <button
-                    type="button"
-                    class="accordion-header"
-                    aria-expanded="false"
-                >
+                <button type="button" class="accordion-header" aria-expanded="false">
                     <span class="accordion-num">03</span>
                     <h3 class="accordion-title">Rendimiento</h3>
                     <span class="accordion-icon" aria-hidden="true"></span>
@@ -332,11 +307,7 @@
             </div>
 
             <div class="accordion-item">
-                <button
-                    type="button"
-                    class="accordion-header"
-                    aria-expanded="false"
-                >
+                <button type="button" class="accordion-header" aria-expanded="false">
                     <span class="accordion-num">04</span>
                     <h3 class="accordion-title">Experiencia de usuario</h3>
                     <span class="accordion-icon" aria-hidden="true"></span>
@@ -351,11 +322,7 @@
             </div>
 
             <div class="accordion-item">
-                <button
-                    type="button"
-                    class="accordion-header"
-                    aria-expanded="false"
-                >
+                <button type="button" class="accordion-header" aria-expanded="false">
                     <span class="accordion-num">05</span>
                     <h3 class="accordion-title">Escalabilidad</h3>
                     <span class="accordion-icon" aria-hidden="true"></span>
@@ -873,41 +840,20 @@
         </div>
 
         <div class="footer-links">
-            <div>
-                <strong>NAVEGACIÓN</strong>
-                <a href="./">Inicio</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#trabajos">Proyectos</a>
-                <a href="#planes">Planes</a>
-                <a href="#contacto">Contacto</a>
-            </div>
-            <div>
-                <strong>LEGAL</strong>
-                <a href="./privacidad.html">Política de Privacidad</a>
-                <a href="./cookies.html">Política de Cookies</a>
-            </div>
-            <div>
-                <strong>CONTACTO</strong>
-                <a href="mailto:hola@tagback.com">hola@tagback.com</a>
-                <a href="tel:+541122790690">+54 11 2279 0690</a>
-            </div>
+            <strong>NAVEGACIÓN</strong>
+            <a href="./">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#trabajos">Proyectos</a>
+            <a href="#planes">Planes</a>
+            <a href="#contacto">Contacto</a>
         </div>
 
-    </div>
+        <div class="footer-links">
+            <strong>LEGAL</strong>
+            <a href="./privacidad.html">Política de Privacidad</a>
+            <a href="./cookies.html">Política de Cookies</a>
+        </div>
 
-
-    <div class="container footer-credit-line">
-        <span class="footer-credit-text">Diseño y desarrollo por</span>
-        <span class="footer-credit-brand">
-            <img
-                src="./assets/logo/guri_isotipo.svg"
-                alt=""
-                class="footer-credit-icon"
-                width="22"
-                height="22"
-            >
-            <span class="footer-credit-wordmark">tagback</span>
-        </span>
     </div>
 
 
@@ -915,6 +861,18 @@
 
         <span class="footer-copyright">
             © 2026 tagback. Todos los derechos reservados.
+        </span>
+
+        <span class="footer-credit-brand">
+            <span class="footer-credit-text">Diseño y desarrollo por</span>
+            <img
+                src="./assets/logo/guri_isotipo.svg"
+                alt=""
+                class="footer-credit-icon"
+                width="20"
+                height="20"
+            >
+            <span class="footer-credit-wordmark">tagback</span>
         </span>
 
     </div>
